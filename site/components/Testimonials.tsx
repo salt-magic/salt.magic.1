@@ -87,8 +87,8 @@ export default function Testimonials() {
               <button
                 key={i}
                 onClick={() => setActive(i)}
-                className={`w-2 h-2 rounded-full border-none cursor-pointer transition-all ${
-                  i === active ? 'bg-gold scale-125' : 'bg-border-warm'
+                className={`relative w-8 h-8 rounded-full border-none cursor-pointer transition-all flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold bg-transparent after:block after:w-2 after:h-2 after:rounded-full after:transition-all ${
+                  i === active ? 'after:bg-gold after:scale-125' : 'after:bg-border-warm'
                 }`}
                 aria-label={`Testimonial ${i + 1}`}
               />

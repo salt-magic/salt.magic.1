@@ -50,7 +50,7 @@ export default function Faq() {
           <div key={i} className="border-b border-border-warm">
             <button
               onClick={() => toggle(i)}
-              className="w-full flex items-center justify-between py-7 cursor-pointer gap-5 bg-transparent border-none text-left"
+              className="w-full flex items-center justify-between py-7 cursor-pointer gap-5 bg-transparent border-none text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold rounded-sm"
             >
               <h3 className="font-display text-[17px] font-normal text-mineral leading-[1.4]">
                 {faq.q}

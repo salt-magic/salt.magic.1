@@ -41,7 +41,17 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V2 Redesign implementiert (2026-03-26). Referenz-basiertes Upgrade. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`. Warmer Off-White (#F5F0E8), Editorial-Typografie (48-56px Headlines, Uppercase Labels, Inter Light Subheadlines), Pill-Buttons (30px radius), AnnouncementBar mit Marquee, Nav mit Uppercase Links + Pill-CTA, Hero-Slider, grosszuegiges Whitespace-System, Framer Motion Animationen. Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Kein Terracotta, kein Pure White/Black.
+**Current status:** V3 Header/UX Upgrade (2026-03-26). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V3 Session:
+- **Nav:** Echtes PNG-Logo (80px, weiss->blau on scroll), focus-visible States, text-shadow fuer Lesbarkeit, verbesserte Scroll-Transition
+- **Hero:** Luxo-Style einfacher `bg-black/40` Overlay, weisser Primary CTA, Film-Grain-Texture, `object-position: center 35%`, reduced-motion Support
+- **Bilder:** Alle Produktfotos durch hoechstaufloesende Versionen ersetzt, Logos optimiert (1024px->160px, -90%), externe Framer-URLs lokal gespeichert
+- **Performance:** 23 Zombie-Node-Prozesse bereinigt, korrupten .next Cache geloescht, ~990KB weniger Bildgewicht
+- **Accessibility:** Skip-to-content Link, focus-visible auf allen interaktiven Elementen, reduced-motion fuer Marquee + Hero-Carousel, Form-Labels, Footer-Kontrast verbessert
+- **Neue Components:** Team.tsx (Placeholder mit Initialen, wartet auf Portrait-Fotos), Divider.tsx ueberarbeitet (transparentes Logo, scroll-triggered Animation)
+
+Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Kein Terracotta, kein Pure White/Black.
 
 **Key brand assets available in `reference/`:**
 - Brand guidelines (`reference/brand-guidelines/`)
@@ -85,7 +95,7 @@ Claude should always orient via `/prime` at session start, then act with full aw
 │   └── logos/             # Logo variants
 ├── site/                  # Next.js 14 React project (Preview V3 implementation)
 │   ├── app/               # App Router pages and layout
-│   ├── components/        # React components (AnnouncementBar, Nav, Hero, Products, FAQ, etc.)
+│   ├── components/        # React components (AnnouncementBar, Nav, Hero, Products, Team, FAQ, etc.)
 │   └── public/images/     # Optimized product photos and logos
 └── scripts/               # Automation scripts (if applicable)
 ```

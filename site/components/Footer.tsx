@@ -21,7 +21,7 @@ export default function Footer() {
       {/* Wave area with centered logo */}
       <div className="bg-mineral py-10 flex flex-col items-center">
         <Image
-          src="/images/logos/logo.png"
+          src="/images/logos/logo-transparent.png"
           alt="Salt.Magic"
           width={48}
           height={48}
@@ -40,22 +40,23 @@ export default function Footer() {
               <div className="font-display text-[22px] font-medium text-white mb-3.5">
                 Salt.Magic
               </div>
-              <p className="text-[13px] font-light leading-relaxed text-white/35">
+              <p className="text-[13px] font-light leading-relaxed text-white/50">
                 Clean Electrolytes. Naturally Powerful.
                 <br />
                 No sugar. No flavors. No waste.
               </p>
               {/* Social icons */}
-              <div className="flex gap-4 mt-5">
-                <a href="https://www.instagram.com/saltmagic.electrolytes" className="text-white/30 hover:text-gold transition-colors" aria-label="Instagram">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Issue #7: social icons min 44x44 touch target + improved contrast */}
+              <div className="flex gap-2 mt-5">
+                <a href="https://www.instagram.com/saltmagic.electrolytes" className="text-white/50 hover:text-gold transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm" aria-label="Instagram">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" />
                     <circle cx="12" cy="12" r="5" />
                     <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                   </svg>
                 </a>
-                <a href="#" className="text-white/30 hover:text-gold transition-colors" aria-label="Facebook">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <a href="#" className="text-white/50 hover:text-gold transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm" aria-label="Facebook">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                   </svg>
                 </a>
@@ -67,16 +68,16 @@ export default function Footer() {
               <div className="text-[10px] font-semibold tracking-[.18em] uppercase text-gold mb-4 font-display">
                 Navigate
               </div>
-              <a href="#why" className="block text-[13px] font-light text-white/45 mb-2.5 hover:text-gold transition-colors">
+              <a href="#why" className="block text-[13px] font-light text-white/55 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
                 Why Salt.Magic
               </a>
-              <a href="#products" className="block text-[13px] font-light text-white/45 mb-2.5 hover:text-gold transition-colors">
+              <a href="#products" className="block text-[13px] font-light text-white/55 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
                 Products
               </a>
-              <a href="#story" className="block text-[13px] font-light text-white/45 mb-2.5 hover:text-gold transition-colors">
+              <a href="#story" className="block text-[13px] font-light text-white/55 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
                 Our Story
               </a>
-              <a href="#partner" className="block text-[13px] font-light text-white/45 mb-2.5 hover:text-gold transition-colors">
+              <a href="#partner" className="block text-[13px] font-light text-white/55 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
                 Partner With Us
               </a>
             </div>
@@ -86,13 +87,13 @@ export default function Footer() {
               <div className="text-[10px] font-semibold tracking-[.18em] uppercase text-gold mb-4 font-display">
                 Connect
               </div>
-              <span className="block text-[13px] font-light text-white/45 mb-2.5">
+              <span className="block text-[13px] font-light text-white/55 mb-2.5">
                 info@salt-magic.com
               </span>
-              <span className="block text-[13px] font-light text-white/45 mb-2.5">
+              <span className="block text-[13px] font-light text-white/55 mb-2.5">
                 +66 826 020 486
               </span>
-              <span className="block text-[13px] font-light text-white/45 mb-2.5">
+              <span className="block text-[13px] font-light text-white/55 mb-2.5">
                 @saltmagic.electrolytes
               </span>
             </div>
@@ -102,16 +103,18 @@ export default function Footer() {
               <div className="text-[10px] font-semibold tracking-[.18em] uppercase text-gold mb-4 font-display">
                 Stay Hydrated
               </div>
-              <p className="text-[13px] font-light text-white/30 mb-1.5">
+              <p className="text-[13px] font-light text-white/50 mb-1.5">
                 Tips &amp; product updates.
               </p>
               <div className="flex gap-2 mt-2.5">
+                <label htmlFor="footer-email" className="sr-only">Email address</label>
                 <input
+                  id="footer-email"
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 py-2.5 px-3.5 bg-white/5 border border-white/10 rounded-pill text-[13px] font-light text-white font-body outline-none placeholder:text-white/25"
+                  className="flex-1 py-2.5 px-3.5 bg-white/5 border border-white/10 rounded-pill text-[13px] font-light text-white font-body outline-none placeholder:text-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
                 />
-                <button className="py-2.5 px-5 bg-mineral border-none rounded-pill text-white text-[11px] font-semibold tracking-[.08em] uppercase cursor-pointer font-body hover:bg-mineral-light transition-all duration-300">
+                <button className="py-2.5 px-5 bg-mineral border-none rounded-pill text-white text-[11px] font-semibold tracking-[.08em] uppercase cursor-pointer font-body hover:bg-mineral-light transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
                   Join
                 </button>
               </div>
@@ -119,7 +122,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="flex flex-col sm:flex-row justify-between pt-6 text-xs font-light text-white/20 gap-1.5">
+          <div className="flex flex-col sm:flex-row justify-between pt-6 text-xs font-light text-white/40 gap-1.5">
             <span>Made on Koh Samui, Thailand</span>
             <span>&copy; 2026 Salt.Magic</span>
           </div>

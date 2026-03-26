@@ -30,7 +30,7 @@ export default function AnnouncementBar() {
       </div>
       <button
         onClick={() => setVisible(false)}
-        className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-transparent border-none cursor-pointer p-1"
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors bg-transparent border-none cursor-pointer p-2 min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
         aria-label="Close announcement"
       >
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">

@@ -34,7 +34,7 @@ export default function CtaBanner() {
               </p>
               <a
                 href="#"
-                className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-pill text-white bg-mineral hover:bg-mineral-light transition-all duration-300"
+                className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-pill text-white bg-mineral hover:bg-mineral-light transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Shop Now
               </a>

@@ -6,6 +6,7 @@ import Ingredients from '@/components/Ingredients'
 import Comparison from '@/components/Comparison'
 import Products from '@/components/Products'
 import Testimonials from '@/components/Testimonials'
+import Team from '@/components/Team'
 import Partner from '@/components/Partner'
 import Faq from '@/components/Faq'
 import CtaBanner from '@/components/CtaBanner'
@@ -132,7 +133,12 @@ export default function Home() {
 
       <div className="h-[clamp(120px,18vw,200px)]" />
 
-      {/* 14. Partner (#partner) */}
+      {/* 14. Team */}
+      <Team />
+
+      <div className="h-[clamp(120px,18vw,200px)]" />
+
+      {/* 15. Partner (#partner) */}
       <Partner />
 
       <div className="h-[clamp(120px,18vw,200px)]" />
