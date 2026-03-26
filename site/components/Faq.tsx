@@ -47,10 +47,10 @@ export default function Faq() {
 
       <FadeIn className="max-w-[660px] mx-auto px-[clamp(24px,5vw,64px)]">
         {faqs.map((faq, i) => (
-          <div key={i} className="border-b border-sand">
+          <div key={i} className="border-b border-border-warm">
             <button
               onClick={() => toggle(i)}
-              className="w-full flex items-center justify-between py-6 cursor-pointer gap-5 bg-transparent border-none text-left"
+              className="w-full flex items-center justify-between py-7 cursor-pointer gap-5 bg-transparent border-none text-left"
             >
               <h3 className="font-display text-[17px] font-normal text-mineral leading-[1.4]">
                 {faq.q}

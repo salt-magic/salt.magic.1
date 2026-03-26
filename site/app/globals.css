@@ -8,7 +8,7 @@
   }
 
   body {
-    background: #FFFFFF;
+    background: #F5F0E8;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -19,7 +19,34 @@
   .gold-line {
     width: 48px;
     height: 1px;
-    background: #C4A882;
+    background: #D4BFAA;
     margin: 0 auto 24px;
+  }
+
+  .label-uppercase {
+    @apply uppercase tracking-[0.12em] text-sm font-medium;
+  }
+
+  .headline-editorial {
+    @apply font-display text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1];
+  }
+
+  .subheadline-light {
+    @apply font-body text-xl md:text-2xl font-light leading-relaxed;
+  }
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
   }
 }

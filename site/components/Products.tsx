@@ -62,7 +62,7 @@ export default function Products() {
             </p>
             <a
               href="#"
-              className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-full text-mineral border border-mineral hover:bg-mineral hover:text-white transition-all"
+              className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-pill border border-mineral text-mineral hover:bg-mineral hover:text-white transition-all duration-300"
             >
               Shop on Lazada
             </a>

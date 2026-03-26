@@ -39,9 +39,9 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Target audience:** Both D2C customers (health-conscious consumers, expats, families) and B2B distributors (pharmacies, retail chains, wellness hubs)
 
-**Design references:** Luxo Webflow Template (luxo-128.webflow.io) — Premium Spa/Wellness Aesthetic als Hauptreferenz fuer visuellen Stil
+**Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** Luxo-Style Redesign implementiert (2026-03-26). Next.js 14 + Tailwind CSS + Framer Motion Projekt unter `site/`. Weisser Hintergrund, zentriertes Logo in Nav, Hero-Slider mit Pfeilen und Auto-Advance, Framer Motion Animationen (FadeIn, Stagger, Parallax, AnimatePresence), Overlap-CTA-Card, Mineral-Blue SVG-Welle im Footer. Alle Scroll-Animationen nutzen Framer Motion statt CSS Intersection Observer.
+**Current status:** V2 Redesign implementiert (2026-03-26). Referenz-basiertes Upgrade. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`. Warmer Off-White (#F5F0E8), Editorial-Typografie (48-56px Headlines, Uppercase Labels, Inter Light Subheadlines), Pill-Buttons (30px radius), AnnouncementBar mit Marquee, Nav mit Uppercase Links + Pill-CTA, Hero-Slider, grosszuegiges Whitespace-System, Framer Motion Animationen. Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Kein Terracotta, kein Pure White/Black.
 
 **Key brand assets available in `reference/`:**
 - Brand guidelines (`reference/brand-guidelines/`)
@@ -85,7 +85,7 @@ Claude should always orient via `/prime` at session start, then act with full aw
 │   └── logos/             # Logo variants
 ├── site/                  # Next.js 14 React project (Preview V3 implementation)
 │   ├── app/               # App Router pages and layout
-│   ├── components/        # React components (Nav, Hero, Products, FAQ, etc.)
+│   ├── components/        # React components (AnnouncementBar, Nav, Hero, Products, FAQ, etc.)
 │   └── public/images/     # Optimized product photos and logos
 └── scripts/               # Automation scripts (if applicable)
 ```

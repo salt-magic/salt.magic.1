@@ -126,7 +126,7 @@ export default function Partner() {
             </div>
             <button
               type="submit"
-              className="w-full py-4 bg-mineral text-white font-body text-[11px] font-semibold tracking-[.12em] uppercase border-none rounded-lg cursor-pointer hover:bg-[#1D3347] transition-colors"
+              className="w-full py-4 bg-mineral text-white font-body text-[11px] font-semibold tracking-[.12em] uppercase border-none rounded-pill cursor-pointer hover:bg-mineral-light transition-all duration-300"
             >
               Submit Inquiry
             </button>

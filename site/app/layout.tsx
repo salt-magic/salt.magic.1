@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
+import AnnouncementBar from '@/components/AnnouncementBar'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
@@ -86,7 +87,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="font-body text-ink bg-white">
+      <body className="font-body text-ink bg-warm-white">
+        <AnnouncementBar />
         <Nav />
         <main>{children}</main>
         <Footer />

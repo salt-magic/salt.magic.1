@@ -67,13 +67,13 @@ export default function Testimonials() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ type: 'spring', stiffness: 100, damping: 20 }}
             >
-              <div className="font-display text-[clamp(20px,2.8vw,30px)] font-normal italic leading-[1.55] text-mineral mb-7 relative">
-                <span className="absolute -top-11 left-1/2 -translate-x-1/2 font-display text-[100px] not-italic text-gold/25 leading-none">
+              <div className="font-display text-2xl md:text-3xl font-normal italic leading-relaxed text-mineral mb-7 relative">
+                <span className="absolute -top-12 left-1/2 -translate-x-1/2 font-display text-[120px] not-italic text-gold/30 leading-none">
                   &ldquo;
                 </span>
                 {testimonials[active].quote}
               </div>
-              <div className="text-[13px] font-semibold tracking-[.08em] uppercase text-ink">
+              <div className="label-uppercase text-[12px] text-ink-light">
                 {testimonials[active].author}
               </div>
               <div className="text-[13px] font-light text-ink-faint mt-1">
@@ -88,7 +88,7 @@ export default function Testimonials() {
                 key={i}
                 onClick={() => setActive(i)}
                 className={`w-2 h-2 rounded-full border-none cursor-pointer transition-all ${
-                  i === active ? 'bg-mineral scale-125' : 'bg-sand'
+                  i === active ? 'bg-gold scale-125' : 'bg-border-warm'
                 }`}
                 aria-label={`Testimonial ${i + 1}`}
               />

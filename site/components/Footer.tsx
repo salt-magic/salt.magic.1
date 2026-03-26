@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer>
       {/* Mineral-Blue wave transition */}
-      <div className="relative bg-white">
+      <div className="relative bg-warm-white">
         <svg
           viewBox="0 0 1440 120"
           preserveAspectRatio="none"
@@ -109,9 +109,9 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 py-2.5 px-3.5 bg-white/5 border border-white/10 rounded-md text-[13px] font-light text-white font-body outline-none placeholder:text-white/25"
+                  className="flex-1 py-2.5 px-3.5 bg-white/5 border border-white/10 rounded-pill text-[13px] font-light text-white font-body outline-none placeholder:text-white/25"
                 />
-                <button className="py-2.5 px-5 bg-mineral border-none rounded-md text-white text-[11px] font-semibold tracking-[.08em] uppercase cursor-pointer font-body hover:bg-[#3A6089] transition-colors">
+                <button className="py-2.5 px-5 bg-mineral border-none rounded-pill text-white text-[11px] font-semibold tracking-[.08em] uppercase cursor-pointer font-body hover:bg-mineral-light transition-all duration-300">
                   Join
                 </button>
               </div>

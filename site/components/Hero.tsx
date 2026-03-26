@@ -82,25 +82,38 @@ export default function Hero() {
 
       {/* Content — centered vertically */}
       <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-center text-center px-[clamp(24px,5vw,64px)] pt-24">
-        <FadeIn delay={0.1}>
-          <h1 className="font-display text-[clamp(44px,8vw,110px)] font-normal leading-[1.05] text-white max-w-[1000px] mb-7 tracking-[-0.01em]">
-            Rediscover what your <em className="italic">water is missing</em>
+        <FadeIn delay={0.05}>
+          <p className="label-uppercase text-[11px] text-white/60 mb-5">
+            Thailand&apos;s Natural Electrolyte Mineralizer
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.15}>
+          <h1 className="headline-editorial text-white max-w-[900px] mb-7 tracking-[-0.01em]">
+            Rediscover what your <em className="italic font-normal">water is missing</em>
           </h1>
         </FadeIn>
         <FadeIn delay={0.35}>
-          <p className="text-[clamp(14px,1.3vw,17px)] font-light leading-[1.7] text-white/70 max-w-[560px] mb-10">
+          <p className="subheadline-light text-white/70 max-w-[560px] mb-10">
             Three natural minerals. Zero sugar. Zero additives.
             <br />
             312mg magnesium in every serving.
           </p>
         </FadeIn>
         <FadeIn delay={0.55}>
-          <a
-            href="#why"
-            className="inline-block text-[14px] font-normal tracking-[.02em] px-9 py-[14px] text-white border border-white/40 hover:bg-white hover:text-ink hover:scale-[1.02] transition-all duration-300"
-          >
-            Learn more
-          </a>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#products"
+              className="inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-9 py-4 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-all duration-300"
+            >
+              Shop Now
+            </a>
+            <a
+              href="#why"
+              className="inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-9 py-4 rounded-pill text-white border border-white/40 hover:bg-white hover:text-ink transition-all duration-300"
+            >
+              Learn More
+            </a>
+          </div>
         </FadeIn>
       </div>
     </section>

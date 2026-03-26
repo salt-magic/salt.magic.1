@@ -25,7 +25,7 @@ export default function CtaBanner() {
       <div className="flex justify-center px-[clamp(24px,5vw,64px)]">
         <ScaleIn className="-mt-[120px] relative z-10 w-full max-w-[640px]">
           <FadeIn>
-            <div className="bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,.08)] px-[clamp(32px,5vw,64px)] py-[clamp(48px,6vw,72px)] text-center">
+            <div className="bg-warm-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,.08)] px-[clamp(32px,5vw,64px)] py-[clamp(48px,6vw,72px)] text-center">
               <h2 className="font-display text-[clamp(28px,4vw,44px)] font-normal leading-[1.2] text-mineral mb-4 tracking-tight">
                 Start remineralizing your water <em>today</em>
               </h2>
@@ -34,7 +34,7 @@ export default function CtaBanner() {
               </p>
               <a
                 href="#"
-                className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-full text-white bg-mineral hover:bg-[#1D3347] transition-colors"
+                className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-pill text-white bg-mineral hover:bg-mineral-light transition-all duration-300"
               >
                 Shop Now
               </a>

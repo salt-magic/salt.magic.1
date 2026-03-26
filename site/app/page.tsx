@@ -38,13 +38,13 @@ export default function Home() {
       </section>
 
       {/* Spacer + Image (Greenery Jars, padded + rounded) */}
-      <div className="h-[clamp(100px,14vw,160px)]" />
+      <div className="h-[clamp(120px,18vw,200px)]" />
       <ImageBreak
         src="/images/products/greenery-jars.jpg"
         alt="Salt.Magic jars among tropical greenery"
         padded
       />
-      <div className="h-[clamp(100px,14vw,160px)]" />
+      <div className="h-[clamp(120px,18vw,200px)]" />
 
       {/* 5. Three Ingredients + Ingredients grid */}
       <section>
@@ -54,11 +54,11 @@ export default function Home() {
             more magnesium than leading competitors.
           </p>
         </TextBlock>
-        <div className="h-[clamp(60px,8vw,100px)]" />
+        <div className="h-[clamp(80px,10vw,120px)]" />
         <Ingredients />
       </section>
 
-      <div className="h-[clamp(100px,14vw,160px)]" />
+      <div className="h-[clamp(120px,18vw,200px)]" />
 
       {/* 6. Full-bleed image break (Taylor Water, tall) */}
       <ImageBreak
@@ -67,7 +67,7 @@ export default function Home() {
         tall
       />
 
-      <div className="h-[clamp(100px,14vw,160px)]" />
+      <div className="h-[clamp(120px,18vw,200px)]" />
 
       {/* 7. For Everyone, Every Day */}
       <section>
@@ -84,7 +84,7 @@ export default function Home() {
         </TextBlock>
       </section>
 
-      <div className="h-[clamp(60px,8vw,100px)]" />
+      <div className="h-[clamp(80px,10vw,120px)]" />
 
       {/* 8. Divider (sm) */}
       <Divider size="sm" />
@@ -92,16 +92,16 @@ export default function Home() {
       {/* 9. Find Your Format + Products (#products) */}
       <section id="products">
         <TextBlock title={<>Two formats, <em>same formula</em></>} />
-        <div className="h-[clamp(60px,8vw,100px)]" />
+        <div className="h-[clamp(80px,10vw,120px)]" />
         <Products />
       </section>
 
-      <div className="h-[clamp(100px,14vw,160px)]" />
+      <div className="h-[clamp(120px,18vw,200px)]" />
 
       {/* 11. Testimonials */}
       <Testimonials />
 
-      <div className="h-[clamp(100px,14vw,160px)]" />
+      <div className="h-[clamp(120px,18vw,200px)]" />
 
       {/* 12. Divider (sm) */}
       <Divider size="sm" />
@@ -125,7 +125,7 @@ export default function Home() {
         </TextBlock>
       </section>
 
-      <div className="h-[clamp(60px,8vw,100px)]" />
+      <div className="h-[clamp(80px,10vw,120px)]" />
 
       <ImageBreak
         src="/images/products/taylor-story.jpg"
@@ -133,17 +133,17 @@ export default function Home() {
         padded
       />
 
-      <div className="h-[clamp(100px,14vw,160px)]" />
+      <div className="h-[clamp(120px,18vw,200px)]" />
 
       {/* 14. Partner (#partner) */}
       <Partner />
 
-      <div className="h-[clamp(100px,14vw,160px)]" />
+      <div className="h-[clamp(120px,18vw,200px)]" />
 
       {/* 15. FAQ */}
       <Faq />
 
-      <div className="h-[clamp(100px,14vw,160px)]" />
+      <div className="h-[clamp(120px,18vw,200px)]" />
 
       {/* 16. CTA Banner */}
       <CtaBanner />

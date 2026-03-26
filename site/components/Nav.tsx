@@ -27,9 +27,9 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-white/90 backdrop-blur-[20px] shadow-[0_1px_0_rgba(0,0,0,.06)]'
+          ? 'bg-warm-white/90 backdrop-blur-[20px] shadow-[0_1px_0_rgba(0,0,0,.06)]'
           : ''
       }`}
     >
@@ -43,7 +43,7 @@ export default function Nav() {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`text-[14px] font-normal tracking-[.01em] transition-colors ${
+              className={`text-[13px] font-medium uppercase tracking-[0.08em] transition-colors hover:underline underline-offset-4 decoration-1 ${
                 scrolled ? 'text-ink-light hover:text-mineral' : 'text-white/85 hover:text-white'
               }`}
             >
@@ -85,7 +85,7 @@ export default function Nav() {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.16 + i * 0.08 }}
-              className={`text-[14px] font-normal tracking-[.01em] transition-colors ${
+              className={`text-[13px] font-medium uppercase tracking-[0.08em] transition-colors hover:underline underline-offset-4 decoration-1 ${
                 scrolled ? 'text-ink-light hover:text-mineral' : 'text-white/85 hover:text-white'
               }`}
             >
@@ -97,9 +97,7 @@ export default function Nav() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.32 }}
-            className={`text-[14px] font-normal tracking-[.01em] transition-colors ${
-              scrolled ? 'text-ink-light hover:text-mineral' : 'text-white/85 hover:text-white'
-            }`}
+            className="text-[13px] font-semibold uppercase tracking-[0.08em] px-6 py-2.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-all duration-300"
           >
             Shop Now
           </motion.a>
@@ -108,9 +106,7 @@ export default function Nav() {
         {/* Mobile CTA */}
         <a
           href="#"
-          className={`md:hidden text-[14px] font-normal tracking-[.01em] transition-colors min-h-[44px] flex items-center ${
-            scrolled ? 'text-mineral' : 'text-white/85'
-          }`}
+          className="md:hidden text-[11px] font-semibold uppercase tracking-[0.08em] px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center"
         >
           Shop
         </a>
@@ -124,7 +120,7 @@ export default function Nav() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
-            className="absolute top-24 left-0 right-0 bg-white/95 backdrop-blur-[20px] border-b border-sand md:hidden"
+            className="absolute top-24 left-0 right-0 bg-warm-white/95 backdrop-blur-[20px] border-b border-border-warm md:hidden"
           >
             <nav className="flex flex-col items-center gap-6 py-8">
               {allLinks.map((link) => (
@@ -132,12 +128,12 @@ export default function Nav() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-[15px] font-normal text-ink-light hover:text-mineral transition-colors"
+                  className="text-[13px] font-medium uppercase tracking-[0.08em] text-ink-light hover:text-mineral transition-colors"
                 >
                   {link.label}
                 </a>
               ))}
-              <a href="#" className="text-[15px] font-normal text-ink-light hover:text-mineral transition-colors">
+              <a href="#" className="text-[13px] font-semibold uppercase tracking-[0.08em] px-6 py-2.5 rounded-pill bg-mineral text-white">
                 Shop Now
               </a>
             </nav>

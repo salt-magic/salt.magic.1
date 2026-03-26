@@ -8,17 +8,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'warm-white': '#FFFFFF',
+        'warm-white': '#F5F0E8',
         'cream': '#FAF8F5',
-        'ink': '#2C2421',
-        'ink-light': '#6B5D4F',
+        'ink': '#3C3028',
+        'ink-light': '#5A4A3C',
         'ink-faint': '#9B8E82',
         'mineral': '#294B6D',
-        'gold': '#C4A882',
-        'gold-light': '#D4BFAA',
-        'terra': '#B86B3E',
+        'mineral-light': '#3D6588',
+        'gold': '#D4BFAA',
+        'gold-light': '#E2D5C5',
         'sand': '#E5DDD2',
+        'border-warm': '#E8DFD3',
         'footer-dark': '#1D3347',
+      },
+      borderRadius: {
+        'pill': '30px',
       },
       fontFamily: {
         display: ['var(--font-playfair)', 'Georgia', 'serif'],
