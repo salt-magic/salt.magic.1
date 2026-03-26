@@ -1,0 +1,130 @@
+import Image from 'next/image'
+
+export default function Footer() {
+  return (
+    <footer>
+      {/* Mineral-Blue wave transition */}
+      <div className="relative bg-white">
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="block w-full h-[80px] md:h-[120px]"
+          fill="none"
+        >
+          <path
+            d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z"
+            fill="#294B6D"
+          />
+        </svg>
+      </div>
+
+      {/* Wave area with centered logo */}
+      <div className="bg-mineral py-10 flex flex-col items-center">
+        <Image
+          src="/images/logos/logo.png"
+          alt="Salt.Magic"
+          width={48}
+          height={48}
+          className="h-12 w-auto brightness-0 invert opacity-80"
+        />
+        <div className="w-[60px] h-px bg-white/15 mt-8" />
+      </div>
+
+      {/* Dark footer area */}
+      <div className="bg-footer-dark pt-[clamp(48px,6vw,72px)] pb-8 px-[clamp(24px,5vw,64px)]">
+        <div className="max-w-[1200px] mx-auto">
+          {/* Top grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr] gap-[clamp(24px,4vw,56px)] pb-12 border-b border-white/[.07]">
+            {/* Brand */}
+            <div>
+              <div className="font-display text-[22px] font-medium text-white mb-3.5">
+                Salt.Magic
+              </div>
+              <p className="text-[13px] font-light leading-relaxed text-white/35">
+                Clean Electrolytes. Naturally Powerful.
+                <br />
+                No sugar. No flavors. No waste.
+              </p>
+              {/* Social icons */}
+              <div className="flex gap-4 mt-5">
+                <a href="https://www.instagram.com/saltmagic.electrolytes" className="text-white/30 hover:text-gold transition-colors" aria-label="Instagram">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                    <circle cx="12" cy="12" r="5" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  </svg>
+                </a>
+                <a href="#" className="text-white/30 hover:text-gold transition-colors" aria-label="Facebook">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Navigate */}
+            <div>
+              <div className="text-[10px] font-semibold tracking-[.18em] uppercase text-gold mb-4 font-display">
+                Navigate
+              </div>
+              <a href="#why" className="block text-[13px] font-light text-white/45 mb-2.5 hover:text-gold transition-colors">
+                Why Salt.Magic
+              </a>
+              <a href="#products" className="block text-[13px] font-light text-white/45 mb-2.5 hover:text-gold transition-colors">
+                Products
+              </a>
+              <a href="#story" className="block text-[13px] font-light text-white/45 mb-2.5 hover:text-gold transition-colors">
+                Our Story
+              </a>
+              <a href="#partner" className="block text-[13px] font-light text-white/45 mb-2.5 hover:text-gold transition-colors">
+                Partner With Us
+              </a>
+            </div>
+
+            {/* Connect */}
+            <div>
+              <div className="text-[10px] font-semibold tracking-[.18em] uppercase text-gold mb-4 font-display">
+                Connect
+              </div>
+              <span className="block text-[13px] font-light text-white/45 mb-2.5">
+                info@salt-magic.com
+              </span>
+              <span className="block text-[13px] font-light text-white/45 mb-2.5">
+                +66 826 020 486
+              </span>
+              <span className="block text-[13px] font-light text-white/45 mb-2.5">
+                @saltmagic.electrolytes
+              </span>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <div className="text-[10px] font-semibold tracking-[.18em] uppercase text-gold mb-4 font-display">
+                Stay Hydrated
+              </div>
+              <p className="text-[13px] font-light text-white/30 mb-1.5">
+                Tips &amp; product updates.
+              </p>
+              <div className="flex gap-2 mt-2.5">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="flex-1 py-2.5 px-3.5 bg-white/5 border border-white/10 rounded-md text-[13px] font-light text-white font-body outline-none placeholder:text-white/25"
+                />
+                <button className="py-2.5 px-5 bg-mineral border-none rounded-md text-white text-[11px] font-semibold tracking-[.08em] uppercase cursor-pointer font-body hover:bg-[#3A6089] transition-colors">
+                  Join
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom bar */}
+          <div className="flex flex-col sm:flex-row justify-between pt-6 text-xs font-light text-white/20 gap-1.5">
+            <span>Made on Koh Samui, Thailand</span>
+            <span>&copy; 2026 Salt.Magic</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
