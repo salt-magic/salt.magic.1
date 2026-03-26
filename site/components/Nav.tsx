@@ -27,10 +27,10 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed top-9 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-warm-white/90 backdrop-blur-[20px] shadow-[0_1px_0_rgba(0,0,0,.06)]'
-          : ''
+          ? 'top-0 bg-warm-white/90 backdrop-blur-[20px] shadow-[0_1px_0_rgba(0,0,0,.06)]'
+          : 'top-9'
       }`}
     >
       <div className="w-full max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)] h-24 flex items-center justify-between">

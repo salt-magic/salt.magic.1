@@ -8,7 +8,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'warm-white': '#F5F0E8',
+        'warm-white': '#FFFFFF',
         'cream': '#FAF8F5',
         'ink': '#3C3028',
         'ink-light': '#5A4A3C',

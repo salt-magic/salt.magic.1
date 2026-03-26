@@ -3,6 +3,7 @@ import Divider from '@/components/Divider'
 import TextBlock from '@/components/TextBlock'
 import ImageBreak from '@/components/ImageBreak'
 import Ingredients from '@/components/Ingredients'
+import Comparison from '@/components/Comparison'
 import Products from '@/components/Products'
 import Testimonials from '@/components/Testimonials'
 import Partner from '@/components/Partner'
@@ -60,12 +61,8 @@ export default function Home() {
 
       <div className="h-[clamp(120px,18vw,200px)]" />
 
-      {/* 6. Full-bleed image break (Taylor Water, tall) */}
-      <ImageBreak
-        src="/images/products/taylor-water.jpg"
-        alt="Salt.Magic jar in tropical water setting"
-        tall
-      />
+      {/* 6. Comparison Table (Cure-Style) */}
+      <Comparison />
 
       <div className="h-[clamp(120px,18vw,200px)]" />
 
