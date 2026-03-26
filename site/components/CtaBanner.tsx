@@ -16,7 +16,7 @@ export default function CtaBanner() {
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to bottom, rgba(41,75,109,.1) 0%, rgba(41,75,109,.3) 100%)',
+            background: 'linear-gradient(to bottom, rgba(60,48,40,0.15) 0%, rgba(41,75,109,0.25) 100%)',
           }}
         />
       </div>
@@ -25,7 +25,7 @@ export default function CtaBanner() {
       <div className="flex justify-center px-[clamp(24px,5vw,64px)]">
         <ScaleIn className="-mt-[120px] relative z-10 w-full max-w-[640px]">
           <FadeIn>
-            <div className="bg-warm-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,.08)] px-[clamp(32px,5vw,64px)] py-[clamp(48px,6vw,72px)] text-center">
+            <div className="bg-warm-white rounded-2xl shadow-[0_20px_60px_rgba(60,48,40,.08)] px-[clamp(32px,5vw,64px)] py-[clamp(48px,6vw,72px)] text-center">
               <h2 className="font-display text-[clamp(28px,4vw,44px)] font-normal leading-[1.2] text-mineral mb-4 tracking-tight">
                 Start remineralizing your water <em>today</em>
               </h2>

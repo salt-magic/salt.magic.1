@@ -31,10 +31,10 @@ export default function Products() {
         <StaggerItem key={product.name}>
           <motion.div
             className="text-center group"
-            whileHover={{ y: -8 }}
+            whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(60,48,40,0.08)' }}
             transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
           >
-            <div className="overflow-hidden rounded-xl mb-7">
+            <div className="overflow-hidden rounded-2xl mb-7">
               <motion.div whileHover={{ scale: 1.04 }} transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}>
                 <Image
                   src={product.image}

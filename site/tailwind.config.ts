@@ -9,7 +9,8 @@ const config: Config = {
     extend: {
       colors: {
         'warm-white': '#FFFFFF',
-        'cream': '#FAF8F5',
+        'cream': '#F2EDE6',
+        'amber-warm': '#FDF8F0',
         'ink': '#3C3028',
         'ink-light': '#5A4A3C',
         'ink-faint': '#9B8E82',

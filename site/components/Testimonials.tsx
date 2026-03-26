@@ -68,7 +68,7 @@ export default function Testimonials() {
               transition={{ type: 'spring', stiffness: 100, damping: 20 }}
             >
               <div className="font-display text-2xl md:text-3xl font-normal italic leading-relaxed text-mineral mb-7 relative">
-                <span className="absolute -top-12 left-1/2 -translate-x-1/2 font-display text-[120px] not-italic text-gold/30 leading-none">
+                <span className="absolute -top-12 left-1/2 -translate-x-1/2 font-display text-[120px] not-italic text-gold/40 leading-none">
                   &ldquo;
                 </span>
                 {testimonials[active].quote}

@@ -26,7 +26,15 @@ const faqs = [
   },
   {
     q: 'Where can I buy Salt.Magic?',
-    a: 'On Lazada and in 150+ wellness locations across Thailand — Bangkok, Chiang Mai, Koh Samui, Phuket, Hua Hin, and more.',
+    a: 'On Lazada and in 150+ wellness locations across Thailand — Bangkok, Phuket, Koh Samui, Chiang Mai, Hua Hin, Pattaya, Krabi, and more. We\'re expanding to pharmacies and retail chains nationwide.',
+  },
+  {
+    q: 'Why is 85% of Thai water "dead water"?',
+    a: 'Most bottled water in Thailand uses reverse osmosis filtration, which removes bacteria but also strips all natural minerals. The result is ultra-pure but nutritionally empty water — your body gets hydration without the electrolytes it needs to actually use it.',
+  },
+  {
+    q: 'What\'s the difference between wellness and sports electrolytes?',
+    a: 'Sports electrolytes are designed for occasional, high-intensity use — typically 3–5 times per week. Salt.Magic is a wellness electrolyte: pure minerals meant for daily use, 365 days a year. No sugar, no flavors, no artificial ingredients — just what your water is missing.',
   },
 ]
 

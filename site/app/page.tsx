@@ -4,9 +4,11 @@ import TextBlock from '@/components/TextBlock'
 import ImageBreak from '@/components/ImageBreak'
 import Ingredients from '@/components/Ingredients'
 import Comparison from '@/components/Comparison'
+import Benefits from '@/components/Benefits'
+import SocialProof from '@/components/SocialProof'
 import Products from '@/components/Products'
 import Testimonials from '@/components/Testimonials'
-import Team from '@/components/Team'
+import BlogSection from '@/components/BlogSection'
 import Partner from '@/components/Partner'
 import Faq from '@/components/Faq'
 import CtaBanner from '@/components/CtaBanner'
@@ -14,13 +16,14 @@ import CtaBanner from '@/components/CtaBanner'
 export default function Home() {
   return (
     <>
-      {/* 1. Hero */}
+      {/* ── ATTENTION ── */}
+
+      {/* 1. Hero — emotional hook + primary CTA */}
       <Hero />
 
-      {/* 2. Divider */}
-      <Divider />
+      {/* ── INTEREST ── */}
 
-      {/* 3. The Dead Water Crisis (#why) */}
+      {/* 2. The Dead Water Crisis (#why) — problem awareness */}
       <section id="why">
         <TextBlock title={<>Why does your water need <em>minerals</em>?</>}>
           <p>
@@ -39,35 +42,71 @@ export default function Home() {
         </TextBlock>
       </section>
 
-      {/* Spacer + Image (Greenery Jars, padded + rounded) */}
-      <div className="h-[clamp(120px,18vw,200px)]" />
-      <ImageBreak
-        src="/images/products/greenery-jars.jpg"
-        alt="Salt.Magic jars among tropical greenery"
-        padded
-      />
-      <div className="h-[clamp(120px,18vw,200px)]" />
+      <div className="h-[clamp(80px,12vw,140px)]" />
 
-      {/* 5. Three Ingredients + Ingredients grid */}
-      <section>
+      {/* 3. What's inside — the solution */}
+      <section className="bg-warm-white py-[clamp(80px,12vw,140px)]">
         <TextBlock title={<>What&apos;s inside <em>every serving</em></>}>
           <p>
             Just 2 grams of pure minerals — flavorless, invisible in any drink, and 7x
             more magnesium than leading competitors.
           </p>
         </TextBlock>
-        <div className="h-[clamp(80px,10vw,120px)]" />
+        <div className="h-[clamp(80px,12vw,140px)]" />
         <Ingredients />
       </section>
 
-      <div className="h-[clamp(120px,18vw,200px)]" />
-
-      {/* 6. Comparison Table (Cure-Style) */}
+      {/* 4. Comparison — why better than alternatives */}
       <Comparison />
 
-      <div className="h-[clamp(120px,18vw,200px)]" />
+      <div className="h-[clamp(80px,12vw,140px)]" />
 
-      {/* 7. For Everyone, Every Day */}
+      {/* ── DESIRE ── */}
+
+      {/* 5. Products (#products) — what can I buy? EARLY in the funnel */}
+      <section id="products">
+        <TextBlock title={<>Two formats, <em>same formula</em></>} />
+        <div className="h-[clamp(80px,12vw,140px)]" />
+        <Products />
+      </section>
+
+      {/* Inline CTA after products */}
+      <div className="text-center py-[clamp(48px,8vw,80px)]">
+        <a
+          href="#"
+          className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-pill text-white bg-mineral hover:bg-mineral-light transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+        >
+          Shop Now
+        </a>
+      </div>
+
+      {/* 6. Benefits — what changes for me? */}
+      <Benefits />
+
+      <div className="h-[clamp(80px,12vw,140px)]" />
+
+      {/* Product image break */}
+      <ImageBreak
+        src="/images/products/greenery-jars.jpg"
+        alt="Salt.Magic jars among tropical greenery"
+        padded
+      />
+
+      <div className="h-[clamp(80px,12vw,140px)]" />
+
+      {/* ── TRUST ── */}
+
+      {/* 7. Testimonials — social proof from real people */}
+      <section className="bg-warm-white py-[clamp(80px,12vw,140px)]">
+        <Testimonials />
+      </section>
+
+      {/* 8. SocialProof numbers band */}
+      <SocialProof />
+
+      <div className="h-[clamp(80px,12vw,140px)]" />
+
+      {/* 9. For Everyone — broadening the audience */}
       <section>
         <TextBlock title={<>What proper hydration <em>feels like</em></>}>
           <p>
@@ -80,31 +119,56 @@ export default function Home() {
             Thailand&apos;s heat.
           </p>
         </TextBlock>
+
+        {/* Wellness vs Fitness comparison — consumer-focused */}
+        <div className="max-w-[800px] mx-auto px-[clamp(24px,5vw,64px)] mt-[clamp(48px,6vw,80px)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="border border-gold/30 rounded-xl p-6 sm:p-8 text-center">
+              <p className="text-[11px] font-medium tracking-[.15em] uppercase text-gold mb-4">
+                Wellness Hydration
+              </p>
+              <ul className="space-y-2.5 text-[15px] font-light text-ink-light">
+                <li>365 days / year</li>
+                <li>All ages</li>
+                <li>Daily essential</li>
+                <li>Habit-forming</li>
+              </ul>
+            </div>
+            <div className="border border-border-warm rounded-xl p-6 sm:p-8 text-center opacity-60">
+              <p className="text-[11px] font-medium tracking-[.15em] uppercase text-ink-light mb-4">
+                Sports Recovery
+              </p>
+              <ul className="space-y-2.5 text-[15px] font-light text-ink-light">
+                <li>3-5x / week</li>
+                <li>Athletes only</li>
+                <li>Occasional</li>
+                <li>Irregular</li>
+              </ul>
+            </div>
+          </div>
+          <p className="font-display text-[clamp(17px,2.5vw,21px)] text-mineral text-center mt-8 font-normal">
+            Daily minerals, not occasional recovery.
+          </p>
+        </div>
       </section>
 
-      <div className="h-[clamp(80px,10vw,120px)]" />
+      {/* Mid-page CTA */}
+      <div className="text-center py-[clamp(56px,8vw,88px)]">
+        <a
+          href="#"
+          className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-pill text-white bg-mineral hover:bg-mineral-light transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+        >
+          Start Your Daily Mineral Routine
+        </a>
+      </div>
 
-      {/* 8. Divider (sm) */}
       <Divider size="sm" />
 
-      {/* 9. Find Your Format + Products (#products) */}
-      <section id="products">
-        <TextBlock title={<>Two formats, <em>same formula</em></>} />
-        <div className="h-[clamp(80px,10vw,120px)]" />
-        <Products />
-      </section>
+      <div className="h-[clamp(80px,12vw,140px)]" />
 
-      <div className="h-[clamp(120px,18vw,200px)]" />
+      {/* ── BRAND ── */}
 
-      {/* 11. Testimonials */}
-      <Testimonials />
-
-      <div className="h-[clamp(120px,18vw,200px)]" />
-
-      {/* 12. Divider (sm) */}
-      <Divider size="sm" />
-
-      {/* 13. Born on Koh Samui (#story) */}
+      {/* 10. Story (#story) — authenticity */}
       <section id="story">
         <TextBlock title={<>Five years ago, we noticed something <em>wrong with our water</em></>}>
           <p>
@@ -123,7 +187,7 @@ export default function Home() {
         </TextBlock>
       </section>
 
-      <div className="h-[clamp(80px,10vw,120px)]" />
+      <div className="h-[clamp(80px,12vw,140px)]" />
 
       <ImageBreak
         src="/images/products/taylor-story.jpg"
@@ -131,24 +195,30 @@ export default function Home() {
         padded
       />
 
-      <div className="h-[clamp(120px,18vw,200px)]" />
+      <div className="h-[clamp(80px,12vw,140px)]" />
 
-      {/* 14. Team */}
-      <Team />
+      {/* ── OBJECTION HANDLING ── */}
 
-      <div className="h-[clamp(120px,18vw,200px)]" />
-
-      {/* 15. Partner (#partner) */}
-      <Partner />
-
-      <div className="h-[clamp(120px,18vw,200px)]" />
-
-      {/* 15. FAQ */}
+      {/* 11. FAQ */}
       <Faq />
 
-      <div className="h-[clamp(120px,18vw,200px)]" />
+      <div className="h-[clamp(80px,12vw,140px)]" />
 
-      {/* 16. CTA Banner */}
+      {/* ── CONTENT / SEO ── */}
+
+      {/* 12. Blog Teaser */}
+      <BlogSection />
+
+      {/* ── B2B (separate channel) ── */}
+
+      {/* 13. Partner Teaser */}
+      <Partner />
+
+      <div className="h-[clamp(80px,12vw,140px)]" />
+
+      {/* ── FINAL ACTION ── */}
+
+      {/* 14. CTA Banner — last push */}
       <CtaBanner />
     </>
   )

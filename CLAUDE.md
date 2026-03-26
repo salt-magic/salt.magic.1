@@ -41,17 +41,56 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V3 Header/UX Upgrade (2026-03-26). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V6 Multi-Page + Blog + Partner (2026-03-26). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V6 Session (Multi-Page, Blog, Partner):
+- **Multi-Page-Routing**: Site hat jetzt 4 Routen: `/`, `/partner`, `/blog`, `/blog/[slug]`
+- **Partner-Seite** (`/partner`): Vollstaendige B2B-Landingpage mit PartnerHero, MarketStats, Comparison, DistributionTiers, RevenueModel, SocialProof, LocationMap, PartnerForm
+- **Blog-Seite** (`/blog`): Listing im Luxo-Stil mit 4-Spalten-Grid und BlogCard-Components
+- **Blog-Artikel** (`/blog/[slug]`): Full-Width Hero mit Gradient-Platzhalter, zentrierter Titel, schmale Content-Spalte, Blockquotes mit Anfuehrungszeichen-Icon
+- **Blog-Content**: 2 Artikel als statische TS-Dateien in `site/content/blog/` (dead-water-crisis, wellness-vs-sports-electrolytes)
+- **BlogSection auf Homepage**: 4-Spalten Luxo-Grid Teaser zwischen Testimonials und Story
+- **Partner.tsx umgebaut**: Von 2-Spalten (Info + Formular) zu kompaktem Mineral-Blue Teaser mit CTA-Link zu `/partner`
+- **Cream/Beige entfernt**: Alle `bg-cream` Sections auf `bg-warm-white` umgestellt, `.section-fade-to/from-cream` neutralisiert, `.texture-linen` bleibt aber wird nicht mehr auf Cream-Sections genutzt
+- **Nav aktualisiert**: `usePathname()` fuer Multi-Page, Blog + Partner als eigene Route-Links, scrolled-State sofort aktiv auf Unterseiten, Anchor-Links als `/#why` prefixed fuer Unterseiten-Navigation
+- **Footer aktualisiert**: Blog- und Partner-Links, Anchor-Links als `/#why` etc.
+- **Neue Components**: PartnerHero, DistributionTiers, RevenueModel, PartnerForm, LocationMap, BlogCard, BlogSection
+- **Hintergrund weiss**: `warm-white` von `#F8F5F0` auf `#FFFFFF` geaendert, body-BG ebenfalls `#FFFFFF`
+- **Customer Journey Reorder**: Homepage-Sections nach AIDA-Funnel umgeordnet (Attention→Interest→Desire→Trust→Brand→Action)
+- **MarketStats + Team von Homepage entfernt**: Nur noch auf `/partner`, nicht mehr auf D2C-Homepage
+- **Products frueher im Funnel**: Von Section 11 auf Section 5 verschoben
+- **2 Zwischenstop-CTAs eingefuegt**: "Shop Now" nach Products, "Start Your Daily Mineral Routine" nach For-Everyone
+- **B2B-Sprache entfernt**: "4.4x more value per customer" ersetzt durch "Daily minerals, not occasional recovery."
+- **Spacer normalisiert**: Einheitlich `clamp(80px,12vw,140px)` statt Mischung aus 60-200px
+- **UX Fixes**: Blog-Hero groesser (70vh), staerkere Gradients, Nav sofort `top-0` auf Unterseiten, Blog-Grid adaptiv (2 Spalten bei 2 Artikeln), DistributionTiers Tier 2 highlighted, RevenueModel mobile Cards
+
+Key Changes in V5 Session (PDF Content Integration):
+- **MarketStats.tsx** (NEU): 3-Spalten Cream-Section mit 85% Dead Water, $69.1B Market, 8.2% CAGR — nach #why platziert
+- **Benefits.tsx** (NEU): 8-Item Icon-Grid (Hydration, Sleep, Focus, Digestion, Recovery, Hangover, Workout, All Ages) — nach Comparison
+- **SocialProof.tsx** (NEU): Mineral-Blue Zahlenleiste (90% Retention, 150+ Locations, 5 Years, 365 Days) — vor Products
+- **Comparison.tsx** erweitert: 3 neue Text-Zeilen (Mineral Source, Daily Use, Target) mit Haekchen-Icons fuer Salt.Magic
+- **"For Everyone" Section** erweitert: Wellness vs Fitness 2-Spalten-Vergleich + "4.4x more value" Statement
+- **Faq.tsx** erweitert: 2 neue FAQs (Dead Water Erklaerung, Wellness vs Sports Electrolytes), erweiterte Standort-Liste
+
+Key Changes in V4 Session (Mood-Board Warm Shift):
+- **Farbpalette:** `warm-white` von `#FFFFFF` auf `#F8F5F0`, `cream` von `#FAF8F5` auf `#F2EDE6` — sichtbar waermere Basis
+- **Hero:** Overlay von kaltem `bg-black/40` zu warmem Golden-Hour-Gradient (amber-braun -> mineral-blue), Film-Grain leicht verstaerkt
+- **Cream-Sections:** Ingredients + Testimonials in `bg-cream` mit CSS-Leinentextur (`.texture-linen`) und sanften Gradient-Fades an den Raendern
+- **Botanischer Divider:** Neues `variant="botanical"` fuer Divider.tsx — handgezeichnetes SVG mit 3 Kraeutern (Petersilie, Lavendel, Wildblume), inspiriert vom Gemini Mood-Board-Bild
+- **CtaBanner:** Waermerer Overlay-Gradient und warmer Schatten auf der Card
+- **Products:** Weichere Ecken (rounded-2xl), warmer Hover-Shadow
+- **Footer:** Dezenter Gold-Strich entlang der Wave-Oberkante
+- **Neue CSS-Klassen:** `.texture-linen`, `.section-fade-to-cream`, `.section-fade-from-cream`
 
 Key Changes in V3 Session:
 - **Nav:** Echtes PNG-Logo (80px, weiss->blau on scroll), focus-visible States, text-shadow fuer Lesbarkeit, verbesserte Scroll-Transition
-- **Hero:** Luxo-Style einfacher `bg-black/40` Overlay, weisser Primary CTA, Film-Grain-Texture, `object-position: center 35%`, reduced-motion Support
+- **Hero:** Luxo-Style Overlay, weisser Primary CTA, Film-Grain-Texture, `object-position: center 35%`, reduced-motion Support
 - **Bilder:** Alle Produktfotos durch hoechstaufloesende Versionen ersetzt, Logos optimiert (1024px->160px, -90%), externe Framer-URLs lokal gespeichert
 - **Performance:** 23 Zombie-Node-Prozesse bereinigt, korrupten .next Cache geloescht, ~990KB weniger Bildgewicht
 - **Accessibility:** Skip-to-content Link, focus-visible auf allen interaktiven Elementen, reduced-motion fuer Marquee + Hero-Carousel, Form-Labels, Footer-Kontrast verbessert
 - **Neue Components:** Team.tsx (Placeholder mit Initialen, wartet auf Portrait-Fotos), Divider.tsx ueberarbeitet (transparentes Logo, scroll-triggered Animation)
 
-Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Kein Terracotta, kein Pure White/Black.
+Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Basis: Pure White #FFFFFF (war #F8F5F0). Cream #F2EDE6 bleibt in Config aber ungenutzt. Kein Terracotta.
 
 **Key brand assets available in `reference/`:**
 - Brand guidelines (`reference/brand-guidelines/`)
@@ -93,9 +132,10 @@ Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Ke
 │   ├── product-pics/      # Product photography
 │   ├── mood-board/        # Vibe/aesthetic reference images
 │   └── logos/             # Logo variants
-├── site/                  # Next.js 14 React project (Preview V3 implementation)
-│   ├── app/               # App Router pages and layout
-│   ├── components/        # React components (AnnouncementBar, Nav, Hero, Products, Team, FAQ, etc.)
+├── site/                  # Next.js 14 React project (V6 Multi-Page)
+│   ├── app/               # App Router: /, /partner, /blog, /blog/[slug]
+│   ├── components/        # React components (Nav, Hero, BlogCard, BlogSection, PartnerHero, etc.)
+│   ├── content/blog/      # Static blog articles as TS files
 │   └── public/images/     # Optimized product photos and logos
 └── scripts/               # Automation scripts (if applicable)
 ```
