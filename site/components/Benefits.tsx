@@ -5,7 +5,7 @@ import { StaggerContainer, StaggerItem } from './Motion'
 const benefits = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
         <path d="M12 2C12 2 5 9 5 14a7 7 0 0 0 14 0c0-5-7-12-7-12z" />
       </svg>
     ),
@@ -14,7 +14,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
       </svg>
     ),
@@ -23,7 +23,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
         <circle cx="12" cy="12" r="10" />
         <path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10A15 15 0 0 1 12 2z" />
       </svg>
@@ -33,7 +33,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
         <circle cx="12" cy="12" r="3" />
         <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
       </svg>
@@ -43,7 +43,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
       </svg>
     ),
@@ -52,7 +52,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
         <path d="M8 2v4M16 2v4M3 10h18" />
         <rect x="3" y="4" width="18" height="18" rx="2" />
         <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
@@ -63,7 +63,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
         <path d="M6 4v16M18 4v16M6 12h12M6 8h12M6 16h12" />
       </svg>
     ),
@@ -72,7 +72,7 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
         <circle cx="9" cy="7" r="4" />
         <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
         <circle cx="18" cy="10" r="3" />
@@ -86,26 +86,29 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="py-[clamp(80px,12vw,140px)] px-[clamp(24px,5vw,64px)]">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="text-center mb-[clamp(48px,8vw,80px)]">
-          <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+    <section className="bg-warm-off py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,80px)]">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="text-center mb-[clamp(40px,6vw,64px)]">
+          <div className="gold-line" />
+          <p className="text-[11px] font-medium tracking-[.22em] uppercase text-gold mb-5">
             Daily Benefits
           </p>
-          <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
-            What proper minerals <em>do for you</em>
+          <h2 className="font-display text-[clamp(32px,5vw,52px)] font-normal leading-[1.1] text-mineral tracking-tight">
+            What proper minerals <em className="italic">do for you</em>
           </h2>
         </div>
 
-        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14">
           {benefits.map((item) => (
             <StaggerItem key={item.title}>
-              <div className="text-center">
-                <div className="text-gold mb-4 flex justify-center">{item.icon}</div>
-                <h3 className="font-display text-[17px] font-medium text-mineral mb-2">
+              <div className="text-center group">
+                <div className="text-gold group-hover:text-mineral transition-colors duration-300 mb-5 flex justify-center">
+                  {item.icon}
+                </div>
+                <h3 className="font-body text-[15px] font-medium text-mineral mb-2 tracking-wide">
                   {item.title}
                 </h3>
-                <p className="text-[14px] font-light leading-relaxed text-ink-light max-w-[260px] mx-auto">
+                <p className="text-[13px] font-light leading-relaxed text-ink-faint max-w-[220px] mx-auto">
                   {item.desc}
                 </p>
               </div>

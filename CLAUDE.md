@@ -41,7 +41,38 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V6 Multi-Page + Blog + Partner (2026-03-26). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V8 Complete Reference-Style Redesign (2026-03-27). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V8 Session (Complete Reference-Style Redesign):
+- **Hero redesigned**: Text zentriert, groessere Headline (`clamp(44px,6.5vw,72px)`), Eyebrow in Golden-Hour Farbe, waermerer Gradient-Overlay (transparent->55% warm), Pill-Button + Tertiaer-Link, Gold-Bar Slide-Indikatoren mit 44px Touch-Targets
+- **WhySection als Asymmetric Split**: Poolside-Foto links (60%), Text rechts (40%) mit Eyebrow + Pull-Quote + 3 Icon-Badges (Zero Sugar, 100% Natural, 7x Magnesium). Reduced-motion Support
+- **Products PANPURI-Stil**: Borders und Schatten entfernt, Underline-Links statt Pill-Buttons, Playfair Regular statt Bold, Links auf Lazada
+- **Benefits minimalisiert**: Keine Card-Rahmen mehr, nur Icon + Label + Text. Icons in Gold mit Hover zu Mineral-Blue. aria-hidden auf dekorativen SVGs
+- **Testimonials Editorial**: Einzelnes grosses Quote (Playfair Italic 30px) mit 160px Anfuehrungszeichen (Gold, 15% Opacity), Gold-Bar Navigation mit 44px Touch-Targets, Pause on Hover, 8s Auto-Play
+- **SocialProof upgraded**: Groessere Playfair-Zahlen (64px), animierter CountUp (1.5s ease-out cubic), Golden-Hour Labels
+- **ForEveryone.tsx** (NEU): Eigene Component statt Inline-JSX, Reversed Split (Text links, Alo-Lifestyle-Bild rechts), Wellness-vs-Sports Mini-Cards, next/image mit lazy loading
+- **CtaBanner immersiv**: Kein Card mehr — Immersiver dunkler Gradient (deep-navy->mineral) mit PANPURI Silhouetten-Bild als Hintergrund (85% Overlay-Opacity), zentrierter Content
+- **Ingredients modernisiert**: Horizontales Layout (grosse Zahl links + Name/Benefit rechts), Gold-Line Trenner, botanische Illustration als Hintergrund (4% Opacity)
+- **Mood-Board-Bilder integriert**: 10 Bilder aus reference/mood-board/ nach site/public/images/mood/ kopiert. Verwendet in: CtaBanner (panpuri-3), ImageBreak (marocmaroc-2), ForEveryone (alo-1), Ingredients (botanical-illustration)
+- **Spacing reduziert**: Section-Padding von `clamp(80px,12vw,160px)` auf `clamp(64px,8vw,100px)` — weniger Weissflaeche
+- **Neue Tailwind-Tokens**: `deep-navy: '#1A3248'`, `golden-hour: '#E8C9A0'`
+- **transition-all eliminiert**: Durch spezifische `transition-colors` ersetzt (Performance)
+- **Dead Links gefixt**: Alle `href="#"` in Nav/Products durch echte Ziele ersetzt
+- **UI/UX Audit durchgefuehrt**: 5 Critical, 8 High, 10 Medium Findings identifiziert und gefixt (Touch-Targets, Accessibility, Performance, Consistency)
+- **Neue Components**: ForEveryone.tsx
+- **Neue Bilder**: site/public/images/mood/ (10 Mood-Board-Bilder)
+
+Key Changes in V7 Session (Reference Vibe Upgrade):
+- **AnnouncementBar eingebunden**: War als Component vorhanden, wird jetzt in `layout.tsx` gerendert (Marquee mit Brand-Messages)
+- **Headline-Upgrade**: Alle Section-Headlines von `font-bold` auf `font-normal` (Editorial-Stil), Groessen von `clamp(32px,5vw,48px)` auf `clamp(36px,5.5vw,56px)`, Hero `.headline-editorial` auf `4rem`
+- **Eyebrow-Labels durchgehend**: Alle TextBlock-Sections haben jetzt `eyebrow` + `showGoldLine` Props (The Problem, The Formula, Shop Salt.Magic, For Everyone, Our Origin)
+- **Gold-Lines in Components**: Comparison ("How We Compare"), Benefits ("Daily Benefits"), Faq ("Questions") haben eigene Gold-Lines + Eyebrow-Labels
+- **Alternierende Section-Backgrounds**: Neues Farb-Token `warm-off: #F9F7F4` — Ingredients, Benefits, Testimonials, FAQ in `bg-warm-off` fuer visuellen Weiss↔Warm-Off Rhythmus
+- **TrustBand.tsx** (NEU): Dezentes Trust-Signal nach Hero — "Trusted by 150+ wellness locations" + 6 Location-Namen (Koh Samui, Bangkok, etc.)
+- **Newsletter.tsx** (NEU): Eigenstaendige Newsletter-Section vor Footer mit E-Mail-Input + Subscribe-Button (Frontend-only, Backend-Integration spaeter)
+- **Tertiaer-Button-Stil**: Neuer `.link-underline` CSS-Klasse fuer dezente Underline-Links, eingesetzt in Story-Section ("Read the full story")
+- **Neue CSS-Klassen**: `.link-underline` (tertiaerer Button-Stil mit Gold-Underline)
+- **Neue Components**: TrustBand.tsx, Newsletter.tsx
 
 Key Changes in V6 Session (Multi-Page, Blog, Partner):
 - **Multi-Page-Routing**: Site hat jetzt 4 Routen: `/`, `/partner`, `/blog`, `/blog/[slug]`
@@ -90,7 +121,7 @@ Key Changes in V3 Session:
 - **Accessibility:** Skip-to-content Link, focus-visible auf allen interaktiven Elementen, reduced-motion fuer Marquee + Hero-Carousel, Form-Labels, Footer-Kontrast verbessert
 - **Neue Components:** Team.tsx (Placeholder mit Initialen, wartet auf Portrait-Fotos), Divider.tsx ueberarbeitet (transparentes Logo, scroll-triggered Animation)
 
-Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Basis: Pure White #FFFFFF (war #F8F5F0). Cream #F2EDE6 bleibt in Config aber ungenutzt. Kein Terracotta.
+Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Basis: Pure White #FFFFFF. Warm-Off #F9F7F4 fuer alternating Section-Backgrounds. Cream #F2EDE6 bleibt in Config aber ungenutzt. Kein Terracotta.
 
 **Key brand assets available in `reference/`:**
 - Brand guidelines (`reference/brand-guidelines/`)

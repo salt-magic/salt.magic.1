@@ -13,7 +13,7 @@ export default function Nav() {
   const pathname = usePathname()
   const isHome = pathname === '/'
 
-  const [scrolled, setScrolled] = useState(!isHome)
+  const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
   // Anchor links: prefix with / on subpages
@@ -33,12 +33,9 @@ export default function Nav() {
   const allLinks = [...leftLinks, ...rightLinks]
 
   useEffect(() => {
-    if (!isHome) {
-      setScrolled(true)
-      return
-    }
-    const onScroll = () => setScrolled(window.scrollY > 60)
-    onScroll() // check initial position
+    const threshold = isHome ? 60 : 10
+    const onScroll = () => setScrolled(window.scrollY > threshold)
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [isHome])
@@ -57,6 +54,9 @@ export default function Nav() {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [mobileOpen])
+
+  // Dark nav on subpages (white bg) or when scrolled on homepage
+  const useDarkNav = scrolled || !isHome
 
   /* Issue #2: full white + text-shadow when transparent for readability on any hero image */
   const linkClassTransparent = `text-white hover:text-white/80 [text-shadow:_0_1px_8px_rgba(0,0,0,.5)]`
@@ -92,7 +92,7 @@ export default function Nav() {
           ? 'top-0 bg-white/90 backdrop-blur-[20px] shadow-[0_1px_0_rgba(0,0,0,.06)]'
           : isHome
             ? 'top-9'
-            : 'top-0 bg-white/90 backdrop-blur-[20px] shadow-[0_1px_0_rgba(0,0,0,.06)]'
+            : 'top-9 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)]'
       }`}
     >
       <div className="relative w-full max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)] h-24 flex items-center justify-between">
@@ -106,7 +106,7 @@ export default function Nav() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
               className={`text-[13px] font-semibold uppercase tracking-[0.08em] transition-all duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
-                scrolled ? linkClassScrolled : linkClassTransparent
+                useDarkNav ? linkClassScrolled : linkClassTransparent
               }`}
             >
               {link.label}
@@ -120,9 +120,9 @@ export default function Nav() {
           className={`md:hidden flex flex-col justify-center items-center gap-1.5 bg-transparent border-none cursor-pointer min-h-[44px] min-w-[44px] ${focusRing}`}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
-          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${scrolled || mobileOpen ? 'bg-ink' : 'bg-white'} ${mobileOpen ? 'rotate-45 translate-y-[4.5px]' : ''}`} />
-          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${scrolled || mobileOpen ? 'bg-ink' : 'bg-white'} ${mobileOpen ? 'opacity-0 scale-x-0' : ''}`} />
-          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${scrolled || mobileOpen ? 'bg-ink' : 'bg-white'} ${mobileOpen ? '-rotate-45 -translate-y-[4.5px]' : ''}`} />
+          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${useDarkNav || mobileOpen ? 'bg-ink' : 'bg-white'} ${mobileOpen ? 'rotate-45 translate-y-[4.5px]' : ''}`} />
+          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${useDarkNav || mobileOpen ? 'bg-ink' : 'bg-white'} ${mobileOpen ? 'opacity-0 scale-x-0' : ''}`} />
+          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${useDarkNav || mobileOpen ? 'bg-ink' : 'bg-white'} ${mobileOpen ? '-rotate-45 -translate-y-[4.5px]' : ''}`} />
         </button>
 
         {/* Center logo — PNG with scroll color transition */}
@@ -144,7 +144,7 @@ export default function Nav() {
               width={80}
               height={80}
               className={`absolute inset-0 w-full h-full transition-opacity duration-500 brightness-0 invert drop-shadow-[0_1px_6px_rgba(0,0,0,.4)] ${
-                scrolled || mobileOpen ? 'opacity-0' : 'opacity-100'
+                useDarkNav || mobileOpen ? 'opacity-0' : 'opacity-100'
               }`}
               priority
             />
@@ -155,7 +155,7 @@ export default function Nav() {
               width={80}
               height={80}
               className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
-                scrolled || mobileOpen ? 'opacity-100' : 'opacity-0'
+                useDarkNav || mobileOpen ? 'opacity-100' : 'opacity-0'
               }`}
               priority
             />
@@ -177,7 +177,7 @@ export default function Nav() {
                 <El
                   href={link.href}
                   className={`text-[13px] font-semibold uppercase tracking-[0.08em] transition-all duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
-                    scrolled ? linkClassScrolled : linkClassTransparent
+                    useDarkNav ? linkClassScrolled : linkClassTransparent
                   }`}
                 >
                   {link.label}
@@ -191,8 +191,8 @@ export default function Nav() {
             transition={{ duration: 0.6, delay: 0.32 }}
           >
             <a
-              href="#"
-              className={`text-[13px] font-semibold uppercase tracking-[0.08em] px-6 py-2.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-all duration-300 ${focusRing}`}
+              href="#products"
+              className={`text-[11px] font-semibold uppercase tracking-[0.12em] px-6 py-2.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 ${focusRing}`}
             >
               Shop Now
             </a>
@@ -201,8 +201,8 @@ export default function Nav() {
 
         {/* Mobile CTA */}
         <a
-          href="#"
-          className={`md:hidden text-[11px] font-semibold uppercase tracking-[0.08em] px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
+          href="#products"
+          className={`md:hidden text-[11px] font-semibold uppercase tracking-[0.12em] px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
         >
           Shop
         </a>
@@ -254,8 +254,9 @@ export default function Nav() {
                   className="w-full mt-4"
                 >
                   <a
-                    href="#"
-                    className={`block w-full text-center text-[13px] font-semibold uppercase tracking-[0.08em] px-6 py-4 rounded-pill bg-mineral text-white min-h-[48px] flex items-center justify-center ${focusRing}`}
+                    href="#products"
+                    onClick={() => setMobileOpen(false)}
+                    className={`block w-full text-center text-[11px] font-semibold uppercase tracking-[0.12em] px-6 py-4 rounded-pill bg-mineral text-white min-h-[48px] flex items-center justify-center ${focusRing}`}
                   >
                     Shop Now
                   </a>

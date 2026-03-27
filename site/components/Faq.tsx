@@ -48,8 +48,12 @@ export default function Faq() {
   return (
     <section>
       <FadeIn className="max-w-[680px] mx-auto px-[clamp(24px,5vw,64px)] text-center mb-12">
-        <h2 className="font-display text-[clamp(32px,5vw,56px)] font-normal leading-[1.15] text-mineral tracking-tight">
-          Common <em>questions</em>
+        <div className="gold-line" />
+        <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+          Questions
+        </p>
+        <h2 className="font-display text-[clamp(36px,5.5vw,56px)] font-normal leading-[1.15] text-mineral tracking-tight">
+          Common <em className="italic">questions</em>
         </h2>
       </FadeIn>
 

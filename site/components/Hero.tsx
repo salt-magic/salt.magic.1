@@ -7,9 +7,9 @@ import { FadeIn } from './Motion'
 import { useReducedMotion } from 'framer-motion'
 
 const slides = [
-  { src: '/images/products/taylor-hero.jpg', alt: 'Salt.Magic — Natural Electrolytes glass jar' },
+  { src: '/images/products/taylor-hero.jpg', alt: 'Salt.Magic — Natural Electrolytes glass jar in tropical water' },
   { src: '/images/products/greenery-jars.jpg', alt: 'Salt.Magic jars among tropical greenery' },
-  { src: '/images/products/taylor-water.jpg', alt: 'Salt.Magic jar in tropical water setting' },
+  { src: '/images/products/taylor-water-nature.jpg', alt: 'Salt.Magic jar in natural water among tropical plants' },
 ]
 
 export default function Hero() {
@@ -19,7 +19,6 @@ export default function Hero() {
   const next = useCallback(() => setActive((p) => (p + 1) % slides.length), [])
   const prev = useCallback(() => setActive((p) => (p - 1 + slides.length) % slides.length), [])
 
-  // Disable auto-advance when user prefers reduced motion
   useEffect(() => {
     if (reduced) return
     const timer = setInterval(next, 6000)
@@ -50,14 +49,14 @@ export default function Hero() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Warm golden-hour overlay — inspired by mood board */}
+      {/* Warm golden-hour overlay */}
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: 'linear-gradient(to bottom, rgba(60,48,40,0.35) 0%, rgba(30,25,20,0.45) 50%, rgba(41,75,109,0.3) 100%)',
+          background: 'linear-gradient(180deg, rgba(42,30,20,0.0) 0%, rgba(42,30,20,0.15) 40%, rgba(42,30,20,0.55) 100%)',
         }}
       />
-      {/* Film grain texture — masks JPEG compression on upscaled photos */}
+      {/* Film grain texture */}
       <div
         className="absolute inset-0 z-[2] pointer-events-none opacity-[0.04] mix-blend-overlay"
         style={{
@@ -66,67 +65,85 @@ export default function Hero() {
         }}
       />
 
-      {/* Line arrow left — Issue #6: increased from white/40 to white/55 */}
+      {/* Arrow left */}
       <button
         onClick={prev}
         className="absolute left-[clamp(20px,4vw,56px)] top-1/2 -translate-y-1/2 z-10 bg-transparent border-none cursor-pointer group flex items-center justify-center min-h-[44px] min-w-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm"
         aria-label="Previous slide"
       >
-        <svg width="72" height="16" viewBox="0 0 72 16" fill="none" className="text-white/55 group-hover:text-white transition-colors duration-300 drop-shadow-[0_1px_3px_rgba(0,0,0,.3)]">
+        <svg width="72" height="16" viewBox="0 0 72 16" fill="none" className="text-white/40 group-hover:text-white transition-colors duration-300 drop-shadow-[0_1px_3px_rgba(0,0,0,.3)]">
           <line x1="72" y1="8" x2="4" y2="8" stroke="currentColor" strokeWidth="1" />
           <line x1="12" y1="1" x2="4" y2="8" stroke="currentColor" strokeWidth="1" />
           <line x1="12" y1="15" x2="4" y2="8" stroke="currentColor" strokeWidth="1" />
         </svg>
       </button>
 
-      {/* Line arrow right — Issue #6: increased from white/40 to white/55 */}
+      {/* Arrow right */}
       <button
         onClick={next}
         className="absolute right-[clamp(20px,4vw,56px)] top-1/2 -translate-y-1/2 z-10 bg-transparent border-none cursor-pointer group flex items-center justify-center min-h-[44px] min-w-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm"
         aria-label="Next slide"
       >
-        <svg width="72" height="16" viewBox="0 0 72 16" fill="none" className="text-white/55 group-hover:text-white transition-colors duration-300 drop-shadow-[0_1px_3px_rgba(0,0,0,.3)]">
+        <svg width="72" height="16" viewBox="0 0 72 16" fill="none" className="text-white/40 group-hover:text-white transition-colors duration-300 drop-shadow-[0_1px_3px_rgba(0,0,0,.3)]">
           <line x1="0" y1="8" x2="68" y2="8" stroke="currentColor" strokeWidth="1" />
           <line x1="60" y1="1" x2="68" y2="8" stroke="currentColor" strokeWidth="1" />
           <line x1="60" y1="15" x2="68" y2="8" stroke="currentColor" strokeWidth="1" />
         </svg>
       </button>
 
-      {/* Content — centered vertically, clean like Luxo */}
-      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-center text-center px-[clamp(24px,5vw,64px)] pt-24">
-        <FadeIn delay={0.05}>
-          <p className="label-uppercase text-[11px] text-white/70 mb-5">
-            Thailand&apos;s Natural Electrolyte Mineralizer
-          </p>
-        </FadeIn>
-        <FadeIn delay={0.15}>
-          <h1 className="headline-editorial text-white max-w-[900px] mb-7 tracking-[-0.01em]">
-            Rediscover what your <em className="italic font-normal">water is missing</em>
-          </h1>
-        </FadeIn>
-        <FadeIn delay={0.35}>
-          <p className="subheadline-light text-white/80 max-w-[560px] mb-10">
-            Three natural minerals. Zero sugar. Zero additives.
-            <br />
-            312mg magnesium in every serving.
-          </p>
-        </FadeIn>
-        <FadeIn delay={0.55}>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <a
-              href="#products"
-              className="inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-9 py-4 rounded-pill bg-white/90 text-ink hover:bg-white transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+      {/* Content — centered */}
+      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-center text-center px-[clamp(32px,6vw,80px)] pt-24">
+        <div className="max-w-[720px]">
+          <FadeIn delay={0.05}>
+            <p className="text-[11px] font-medium tracking-[.22em] uppercase text-golden-hour mb-6">
+              Thailand&apos;s Premier Mineral Electrolyte
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <h1 className="headline-editorial text-white mb-6">
+              Remineralize Your Water.
+              <br />
+              <em className="italic font-normal">Revitalize Your Life.</em>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <p className="text-[17px] font-light leading-relaxed text-white/75 mb-10 max-w-[480px] mx-auto">
+              Pure minerals. Zero sugar. Every glass. Every day.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.45}>
+            <div className="flex items-center justify-center gap-6">
+              <a
+                href="#products"
+                className="inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-9 py-4 rounded-pill bg-white text-ink hover:bg-gold hover:text-ink transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+              >
+                Shop Now
+              </a>
+              <a
+                href="#why"
+                className="text-[13px] font-medium text-white/60 underline underline-offset-4 decoration-1 decoration-white/30 hover:text-white hover:decoration-white/60 transition-colors duration-300"
+              >
+                Learn More
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-[clamp(32px,4vw,48px)] left-1/2 -translate-x-1/2 flex gap-2">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center border-none cursor-pointer bg-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+              aria-label={`Slide ${i + 1}`}
             >
-              Shop Now
-            </a>
-            <a
-              href="#why"
-              className="inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-9 py-4 rounded-pill text-white border border-white/40 hover:bg-white hover:text-ink transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
-            >
-              Learn More
-            </a>
-          </div>
-        </FadeIn>
+              <span className={`block h-[2px] rounded-full transition-all duration-500 ${
+                i === active ? 'w-10 bg-gold' : 'w-6 bg-white/30'
+              }`} />
+            </button>
+          ))}
+        </div>
       </div>
     </section>
   )

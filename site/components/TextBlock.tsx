@@ -19,7 +19,7 @@ export default function TextBlock({ eyebrow, title, showGoldLine = false, childr
         </p>
       )}
 
-      <h2 className="font-display text-[clamp(32px,5vw,48px)] font-bold leading-[1.1] text-mineral mb-6 tracking-tight [&>em]:italic [&>em]:font-normal">
+      <h2 className="font-display text-[clamp(36px,5.5vw,56px)] font-normal leading-[1.1] text-mineral mb-6 tracking-tight [&>em]:italic [&>em]:font-normal">
         {title}
       </h2>
 

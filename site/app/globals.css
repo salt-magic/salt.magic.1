@@ -24,11 +24,15 @@
   }
 
   .label-uppercase {
-    @apply uppercase tracking-[0.12em] text-sm font-medium;
+    @apply uppercase tracking-[0.22em] text-sm font-medium;
   }
 
   .headline-editorial {
-    @apply font-display text-4xl md:text-5xl lg:text-[3.5rem] font-bold leading-[1.1];
+    @apply font-display text-[clamp(44px,6.5vw,72px)] font-normal leading-[1.05] tracking-[-0.03em];
+  }
+
+  .link-underline {
+    @apply text-[13px] font-medium text-mineral underline underline-offset-4 decoration-1 decoration-gold/50 hover:decoration-gold transition-all duration-300;
   }
 
   .subheadline-light {
@@ -50,14 +54,14 @@
     border-radius: inherit;
   }
 
-  .section-fade-to-cream {
-    height: clamp(40px, 5vw, 60px);
-    background: #FFFFFF;
+  .section-fade-to-warm {
+    height: 1px;
+    background: transparent;
   }
 
-  .section-fade-from-cream {
-    height: clamp(40px, 5vw, 60px);
-    background: #FFFFFF;
+  .section-fade-from-warm {
+    height: 1px;
+    background: transparent;
   }
 }
 

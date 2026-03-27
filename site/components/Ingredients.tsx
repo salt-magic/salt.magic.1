@@ -1,47 +1,73 @@
+'use client'
+
+import Image from 'next/image'
 import { StaggerContainer, StaggerItem } from './Motion'
 
 const ingredients = [
   {
     num: '312',
-    unit: 'mg Magnesium Citrate',
-    title: 'The Foundation',
-    desc: 'The bioavailable form your body absorbs best. Supports muscle recovery, mental clarity, and deep sleep.',
+    unit: 'mg',
+    name: 'Magnesium Citrate',
+    benefit: 'Muscle recovery, mental clarity, deep sleep',
   },
   {
     num: '160',
-    unit: 'mg Potassium Citrate',
-    title: 'The Regulator',
-    desc: 'Essential for heart rhythm, nerve signaling, and muscle function. Works synergistically with magnesium.',
+    unit: 'mg',
+    name: 'Potassium Citrate',
+    benefit: 'Heart rhythm, nerve signaling, fluid balance',
   },
   {
     num: '152',
-    unit: 'mg Pink Himalayan Salt',
-    title: 'The Source',
-    desc: 'Unrefined salt with 84 trace minerals. Provides sodium for fluid balance without processing.',
+    unit: 'mg',
+    name: 'Pink Himalayan Salt',
+    benefit: '84 trace minerals, sodium for hydration',
   },
 ]
 
 export default function Ingredients() {
   return (
-    <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-px max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)]">
-      {ingredients.map((item) => (
-        <StaggerItem key={item.num}>
-          <div className="text-center py-[clamp(48px,6vw,88px)] px-[clamp(24px,4vw,56px)] border-b border-border-warm last:border-b-0 md:border-b-0">
-            <div className="font-display text-[clamp(40px,5vw,64px)] font-normal text-mineral leading-none mb-1">
-              {item.num}
+    <div className="relative">
+      {/* Botanical illustration as subtle background */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <Image
+          src="/images/mood/botanical-illustration.png"
+          alt=""
+          width={800}
+          height={500}
+          className="opacity-[0.04] object-contain"
+          aria-hidden="true"
+        />
+      </div>
+
+      <StaggerContainer className="relative z-10 max-w-[900px] mx-auto px-[clamp(24px,5vw,80px)]">
+        {ingredients.map((item, i) => (
+          <StaggerItem key={item.num}>
+            <div className={`flex items-center gap-6 sm:gap-10 py-8 ${
+              i < ingredients.length - 1 ? 'border-b border-gold/20' : ''
+            }`}>
+              {/* Large number */}
+              <div className="flex items-baseline gap-1 min-w-[120px] sm:min-w-[140px]">
+                <span className="font-display text-[clamp(48px,7vw,72px)] font-normal text-mineral leading-none tracking-tight">
+                  {item.num}
+                </span>
+                <span className="text-[13px] font-medium text-gold tracking-wide">
+                  {item.unit}
+                </span>
+              </div>
+
+              {/* Name + benefit */}
+              <div className="flex-1">
+                <h3 className="text-[15px] font-semibold tracking-[.08em] uppercase text-mineral mb-1">
+                  {item.name}
+                </h3>
+                <p className="text-[14px] font-light text-ink-faint leading-relaxed">
+                  {item.benefit}
+                </p>
+              </div>
             </div>
-            <div className="text-[11px] font-medium tracking-[.15em] uppercase text-gold mb-5">
-              {item.unit}
-            </div>
-            <h3 className="font-display text-xl font-medium text-mineral mb-3">
-              {item.title}
-            </h3>
-            <p className="text-sm font-light leading-relaxed text-ink-light">
-              {item.desc}
-            </p>
-          </div>
-        </StaggerItem>
-      ))}
-    </StaggerContainer>
+          </StaggerItem>
+        ))}
+      </StaggerContainer>
+    </div>
   )
 }

@@ -20,7 +20,10 @@ const config: Config = {
         'gold-light': '#E2D5C5',
         'sand': '#E5DDD2',
         'border-warm': '#E8DFD3',
+        'warm-off': '#F9F7F4',
         'footer-dark': '#1D3347',
+        'deep-navy': '#1A3248',
+        'golden-hour': '#E8C9A0',
       },
       borderRadius: {
         'pill': '30px',

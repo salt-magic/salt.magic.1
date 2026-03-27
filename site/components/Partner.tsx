@@ -9,7 +9,7 @@ const metrics = [
 
 export default function Partner() {
   return (
-    <section id="partner" className="bg-mineral py-[clamp(80px,12vw,120px)] px-[clamp(24px,5vw,64px)]">
+    <section id="partner" className="bg-mineral py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,64px)]">
       <FadeIn className="max-w-[800px] mx-auto text-center">
         <p className="text-[11px] font-medium tracking-[.22em] uppercase text-gold mb-5">
           Distribution Partnership

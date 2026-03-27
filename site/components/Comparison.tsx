@@ -91,10 +91,11 @@ export default function Comparison() {
       />
 
       {/* Content */}
-      <div className="relative z-10 py-[clamp(80px,12vw,140px)] px-[clamp(24px,5vw,64px)]">
+      <div className="relative z-10 py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,64px)]">
         <FadeIn className="max-w-[1200px] mx-auto">
+          <div className="gold-line" />
           <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
-            The Difference
+            How We Compare
           </p>
           <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-[#1A2F42] mb-3 tracking-tight">
             Hydrating Electrolyte Mineralizer

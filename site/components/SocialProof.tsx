@@ -1,28 +1,56 @@
+'use client'
+
+import { useRef, useEffect, useState } from 'react'
+import { useInView, useReducedMotion } from 'framer-motion'
 import { FadeIn } from './Motion'
 
 const metrics = [
-  { value: '90%', label: 'Customer retention' },
-  { value: '150+', label: 'Wellness locations' },
-  { value: '5 Years', label: 'Established track record' },
-  { value: '365 Days', label: 'Designed for daily use' },
+  { value: 90, suffix: '%', label: 'Customer retention' },
+  { value: 150, suffix: '+', label: 'Wellness locations' },
+  { value: 5, suffix: ' Years', label: 'Established track record' },
+  { value: 365, suffix: ' Days', label: 'Designed for daily use' },
 ]
+
+function CountUp({ value, suffix }: { value: number; suffix: string }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const isInView = useInView(ref, { once: true, amount: 0.5 })
+  const reduced = useReducedMotion()
+  const [display, setDisplay] = useState(0)
+
+  useEffect(() => {
+    if (!isInView) return
+    if (reduced) { setDisplay(value); return }
+
+    const duration = 1500
+    const start = performance.now()
+    const step = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3) // ease-out cubic
+      setDisplay(Math.round(eased * value))
+      if (progress < 1) requestAnimationFrame(step)
+    }
+    requestAnimationFrame(step)
+  }, [isInView, value, reduced])
+
+  return <span ref={ref}>{display}{suffix}</span>
+}
 
 export default function SocialProof() {
   return (
     <section className="bg-mineral">
-      <FadeIn className="max-w-[1200px] mx-auto px-[clamp(24px,5vw,64px)] py-[clamp(40px,6vw,64px)]">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8">
+      <FadeIn className="max-w-[1200px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(64px,10vw,100px)]">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
           {metrics.map((item, i) => (
             <div
               key={item.label}
               className={`text-center px-4 ${
-                i < metrics.length - 1 ? 'lg:border-r lg:border-white/15' : ''
+                i < metrics.length - 1 ? 'lg:border-r lg:border-white/10' : ''
               }`}
             >
-              <div className="font-display text-[clamp(28px,4vw,40px)] font-normal text-white leading-none mb-1.5">
-                {item.value}
+              <div className="font-display text-[clamp(36px,5vw,64px)] font-normal text-white leading-none mb-2 tracking-tight">
+                <CountUp value={item.value} suffix={item.suffix} />
               </div>
-              <div className="text-[11px] font-medium tracking-[.12em] uppercase text-gold/70">
+              <div className="text-[12px] font-medium tracking-[.18em] uppercase text-golden-hour/80">
                 {item.label}
               </div>
             </div>

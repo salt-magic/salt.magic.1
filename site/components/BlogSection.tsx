@@ -7,7 +7,7 @@ export default function BlogSection() {
   const posts = blogPosts.slice(0, 4)
 
   return (
-    <section className="py-[clamp(80px,12vw,140px)]">
+    <section className="py-[clamp(64px,8vw,100px)]">
       <FadeIn className="text-center mb-[clamp(48px,8vw,80px)] px-[clamp(24px,5vw,64px)]">
         <div className="gold-line" />
         <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
@@ -33,7 +33,7 @@ export default function BlogSection() {
       <FadeIn className="text-center mt-12">
         <Link
           href="/blog"
-          className="inline-flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.08em] text-mineral hover:text-gold transition-colors"
+          className="link-underline"
         >
           View all articles
           <span>&rarr;</span>
