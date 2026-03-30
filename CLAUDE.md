@@ -41,7 +41,22 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V9 Editorial Alignment Redesign (2026-03-30). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V10 UI/UX Audit & Accessibility Fix (2026-03-30). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V10 Session (UI/UX Audit & Accessibility Fix):
+- **Umfassender UI/UX Audit**: Code-basierte Analyse aller 35 Components gegen WCAG 2.1 AA
+- **14 Kontrast-Failures gefixt**: Alle Eyebrow-Labels von `text-gold` (1.77:1) auf `text-ink-light` (8.47:1) auf hellen BGs, `text-golden-hour` auf dunklen BGs
+- **ink-faint eliminiert als Body-Text**: Ueberall durch `text-ink-light` ersetzt (3.19:1 → 8.47:1)
+- **Minimum Font-Size 12px**: Alle `text-[10px]` und `text-[11px]` Labels auf `text-[12px]` angehoben
+- **White-Opacity standardisiert**: Subheadlines auf dunklen BGs einheitlich `text-white/70`, Footer-Text von /40-/55 auf /60-/70
+- **Comparison semantisch**: `role="table/row/cell"` + `<dl>/<dt>/<dd>` fuer Screen-Reader
+- **Carousel Accessibility**: `aria-current="true"` auf aktive Slides in Hero + Testimonials
+- **Reduced-Motion erweitert**: `useReducedMotion()` in Testimonials (stoppt Auto-Rotation) + StickyMobileCta
+- **Spacing standardisiert**: Section-Padding einheitlich `py-[clamp(64px,8vw,100px)]`, Heading-Margins mb-6 konsistent
+- **Body-Text vereinheitlicht**: `text-[15px]`/`text-[16px]` → `text-base` wo moeglich
+- **Hardcoded Colors entfernt**: `#1D3347` → `footer-dark` Token in 3 Components
+- **transition-all eliminiert**: Letzte Instanz in `.link-underline` durch `transition-colors` ersetzt
+- **Audit-Report**: `outputs/ux-audit-2026-03-30.md` mit allen Findings und Fixes
 
 Key Changes in V9 Session (Editorial Alignment Redesign):
 - **Alignment-Rhythmus eingefuehrt**: Mix aus zentrierten (immersive Momente) und links-ausgerichteten (editorial/informative) Sections ueber alle Seiten
@@ -148,6 +163,7 @@ Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Ba
 - `outputs/copy-meta-v1.md` — Page titles, meta descriptions, Open Graph tags, structured data (JSON-LD)
 - `outputs/sitemap-v1.md` — Site structure, navigation, routing, footer, blog, 404 page
 - `outputs/website-audit-current.md` — Current site audit (21 issues identified, all addressed in V1 spec)
+- `outputs/ux-audit-2026-03-30.md` — V10 UI/UX Audit: 14 WCAG contrast failures, spacing/typography/a11y findings, all fixed
 
 ---
 
