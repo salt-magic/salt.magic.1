@@ -34,7 +34,7 @@
   }
 
   .headline-editorial {
-    @apply font-display text-[clamp(44px,6.5vw,72px)] font-normal leading-[1.05] tracking-[-0.03em];
+    @apply font-display text-[clamp(44px,6.5vw,72px)] font-semibold leading-[1.05] tracking-[-0.03em];
   }
 
   .link-underline {

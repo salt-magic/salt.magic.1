@@ -115,14 +115,14 @@ export default function Comparison() {
       <div className="relative z-10 py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,64px)]">
         <FadeIn className="max-w-[1200px] mx-auto">
           <div className="text-left mb-[clamp(40px,5vw,56px)]">
-            <div className="w-12 h-px bg-deep-navy/25 md:bg-gold mb-6" />
-            <p className="label-uppercase text-[11px] tracking-[.22em] text-deep-navy/50 md:text-gold mb-5">
+            <div className="w-12 h-px bg-gold mb-6" />
+            <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
               How We Compare
             </p>
-            <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-deep-navy mb-3 tracking-tight">
+            <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-white mb-3 tracking-tight">
               Not all electrolytes are <em>created equal</em>
             </h2>
-            <p className="text-[15px] font-light leading-relaxed text-deep-navy/70 max-w-[520px]">
+            <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[520px]">
               7x more magnesium than leading competitors. Zero sugar. Zero additives.
             </p>
           </div>

@@ -50,7 +50,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: 'linear-gradient(180deg, rgba(26,50,72,0.35) 0%, rgba(26,50,72,0.25) 30%, rgba(26,50,72,0.55) 60%, rgba(26,50,72,0.75) 100%)',
+          background: 'linear-gradient(180deg, rgba(26,50,72,0.15) 0%, rgba(26,50,72,0.40) 30%, rgba(26,50,72,0.80) 55%, rgba(26,50,72,0.92) 100%)',
         }}
       />
       {/* Film grain texture — hidden on mobile for performance */}
@@ -87,10 +87,10 @@ export default function Hero() {
       </button>
 
       {/* Content — centered */}
-      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-center text-center px-[clamp(24px,6vw,80px)] pt-24" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.4), 0 1px 4px rgba(0,0,0,0.3)' }}>
+      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-[clamp(24px,6vw,80px)] pb-[clamp(80px,12vw,140px)]" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.4)' }}>
         <div className="max-w-[720px]">
           <FadeIn delay={0.05}>
-            <p className="text-[12px] font-semibold tracking-[.22em] uppercase text-golden-hour mb-6">
+            <p className="text-[13px] font-semibold tracking-[.22em] uppercase text-white mb-6">
               Thailand&apos;s Premier Mineral Electrolyte
             </p>
           </FadeIn>
@@ -102,7 +102,7 @@ export default function Hero() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <p className="text-[17px] font-light leading-relaxed text-white/90 mb-10 max-w-[480px] mx-auto">
+            <p className="text-[20px] font-normal leading-relaxed text-white mb-10 max-w-[480px] mx-auto">
               Pure minerals. Zero sugar. Every glass. Every day.
             </p>
           </FadeIn>
@@ -128,7 +128,7 @@ export default function Hero() {
         </div>
 
         {/* Slide indicators */}
-        <div className="absolute bottom-[clamp(32px,4vw,48px)] left-1/2 -translate-x-1/2 flex gap-2">
+        <div className="mt-8 flex gap-2 justify-center">
           {slides.map((_, i) => (
             <button
               key={i}
