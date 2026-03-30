@@ -90,9 +90,11 @@ export default function Nav() {
       className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'top-0 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)] md:bg-white/90 md:backdrop-blur-[20px]'
-          : isHome
-            ? 'top-9'
-            : 'top-9 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)]'
+          : mobileOpen
+            ? 'top-9 bg-white'
+            : isHome
+              ? 'top-9'
+              : 'top-9 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)]'
       }`}
     >
       <div className="relative w-full max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)] h-24 flex items-center justify-between">
@@ -127,9 +129,9 @@ export default function Nav() {
             </svg>
           ) : (
             <div className="flex flex-col justify-center items-center gap-1.5">
-              <span className={`block w-5 h-[1.5px] ${useDarkNav ? 'bg-ink' : 'bg-white'}`} />
-              <span className={`block w-5 h-[1.5px] ${useDarkNav ? 'bg-ink' : 'bg-white'}`} />
-              <span className={`block w-5 h-[1.5px] ${useDarkNav ? 'bg-ink' : 'bg-white'}`} />
+              <span className={`block w-5 h-[1.5px] ${useDarkNav || mobileOpen ? 'bg-ink' : 'bg-white'}`} />
+              <span className={`block w-5 h-[1.5px] ${useDarkNav || mobileOpen ? 'bg-ink' : 'bg-white'}`} />
+              <span className={`block w-5 h-[1.5px] ${useDarkNav || mobileOpen ? 'bg-ink' : 'bg-white'}`} />
             </div>
           )}
         </button>
