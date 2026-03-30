@@ -89,7 +89,7 @@ export default function Comparison() {
       style={{
         background: isDesktop
           ? undefined
-          : 'linear-gradient(145deg, #1A3248 0%, #294B6D 40%, #3D6588 70%, #294B6D 100%)',
+          : 'linear-gradient(180deg, #7EB0D4 0%, #A8CDE2 35%, #C8DFED 65%, #E4EFF6 100%)',
       }}
     >
       {/* Animated water background — desktop only */}
@@ -119,10 +119,10 @@ export default function Comparison() {
             <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
               How We Compare
             </p>
-            <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-white md:text-deep-navy mb-3 tracking-tight">
+            <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-deep-navy mb-3 tracking-tight">
               Not all electrolytes are <em>created equal</em>
             </h2>
-            <p className="text-[15px] font-light leading-relaxed text-white/70 md:text-deep-navy/80 max-w-[520px]">
+            <p className="text-[15px] font-light leading-relaxed text-deep-navy/70 max-w-[520px]">
               7x more magnesium than leading competitors. Zero sugar. Zero additives.
             </p>
           </div>
@@ -164,25 +164,25 @@ export default function Comparison() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {columns.slice(1).map((col) => (
                 <StaggerItem key={col.name}>
-                  <div className="rounded-2xl bg-white/[0.12] md:bg-white/[0.65] md:backdrop-blur-md border border-white/20 md:border-white/30 p-[clamp(20px,3vw,32px)] h-full">
-                    <h3 className="text-[12px] font-semibold uppercase tracking-[0.1em] text-white/60 md:text-deep-navy/60 mb-5">
+                  <div className="rounded-2xl bg-white/50 md:bg-white/[0.65] md:backdrop-blur-md border border-white/60 md:border-white/30 p-[clamp(20px,3vw,32px)] h-full">
+                    <h3 className="text-[12px] font-semibold uppercase tracking-[0.1em] text-deep-navy/60 mb-5">
                       {col.name}
                     </h3>
 
                     <div className="space-y-4">
                       {col.rows.slice(0, 3).map((row) => (
                         <div key={row.label} className="flex justify-between items-baseline">
-                          <span className="text-[12px] text-white/50 md:text-deep-navy/50">{row.label}</span>
-                          <span className="text-[15px] font-display font-normal text-white/90 md:text-deep-navy/80">
+                          <span className="text-[12px] text-deep-navy/50">{row.label}</span>
+                          <span className="text-[15px] font-display font-normal text-deep-navy/80">
                             {row.value}
                           </span>
                         </div>
                       ))}
                     </div>
 
-                    <div className="w-full h-px bg-white/10 md:bg-deep-navy/10 my-4" />
+                    <div className="w-full h-px bg-deep-navy/10 my-4" />
 
-                    <p className="text-[12px] font-light leading-relaxed text-white/40 md:text-deep-navy/50">
+                    <p className="text-[12px] font-light leading-relaxed text-deep-navy/50">
                       {col.summary}
                     </p>
                   </div>
@@ -191,7 +191,7 @@ export default function Comparison() {
             </div>
           </StaggerContainer>
 
-          <p className="text-left text-[10px] tracking-[.15em] uppercase text-white/30 md:text-deep-navy/40 mt-8">
+          <p className="text-left text-[10px] tracking-[.15em] uppercase text-deep-navy/40 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
         </FadeIn>
