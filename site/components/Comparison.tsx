@@ -84,7 +84,7 @@ export default function Comparison() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden bg-mineral">
+    <section className="relative overflow-hidden bg-mineral md:bg-transparent">
       {/* Animated water background — desktop only for performance */}
       {isDesktop && (
         <WaterBackground
