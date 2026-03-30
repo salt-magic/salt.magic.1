@@ -27,7 +27,7 @@ export default function AboutEditorial() {
           <FadeIn>
             <div>
               <div className="gold-line" />
-              <p className="text-[11px] font-medium tracking-[.22em] uppercase text-gold mb-5">
+              <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
                 The Team
               </p>
               <h2 className="font-display text-[clamp(32px,4.5vw,48px)] font-normal leading-[1.1] text-mineral tracking-tight mb-12">
@@ -48,7 +48,7 @@ export default function AboutEditorial() {
                         <h3 className="font-display text-[22px] font-normal text-mineral mb-1">
                           {person.name}
                         </h3>
-                        <p className="text-[12px] font-medium tracking-[.15em] uppercase text-gold mb-3">
+                        <p className="text-[12px] font-medium tracking-[.15em] uppercase text-ink-light mb-3">
                           {person.role}
                         </p>
                         <p className="text-[15px] font-light leading-relaxed text-ink-light max-w-[380px]">

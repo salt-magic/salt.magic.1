@@ -19,13 +19,13 @@ export default function PartnerForm() {
       <FadeIn className="max-w-[640px] mx-auto">
         <div className="text-center mb-10">
           <div className="gold-line" />
-          <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+          <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
             Get In Touch
           </p>
           <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
             Become a <em>partner</em>
           </h2>
-          <p className="text-sm font-light text-ink-faint mt-3">
+          <p className="text-sm font-light text-ink-light mt-3">
             We&apos;ll respond within 48 hours.
           </p>
         </div>

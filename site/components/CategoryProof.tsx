@@ -37,7 +37,7 @@ export default function CategoryProof() {
           <h2 className="font-display text-[clamp(28px,4.5vw,44px)] font-normal leading-[1.15] text-white tracking-tight mb-4">
             Clean electrolytes are creating <em>a new category</em>
           </h2>
-          <p className="text-[15px] font-light leading-relaxed text-white/60 max-w-[520px] mx-auto">
+          <p className="text-base font-light leading-relaxed text-white/70 max-w-[520px] mx-auto">
             The biggest wellness brands of the last decade started exactly where Salt.Magic is now.
           </p>
         </div>

@@ -46,7 +46,7 @@ export default function Footer() {
 
           {/* Newsletter — full width */}
           <div className="border-t border-white/[.07] pt-8 mb-8">
-            <div className="text-[10px] font-semibold tracking-[.18em] uppercase text-gold mb-3 font-display">
+            <div className="text-[12px] font-semibold tracking-[.18em] uppercase text-golden-hour mb-3 font-display">
               Stay Hydrated
             </div>
             <div className="flex gap-2">

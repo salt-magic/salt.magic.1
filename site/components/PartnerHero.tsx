@@ -12,13 +12,13 @@ export default function PartnerHero() {
     <section className="bg-mineral pt-[clamp(180px,22vw,260px)] pb-[clamp(100px,14vw,160px)] px-[clamp(24px,5vw,64px)]">
       <div className="max-w-[1000px] mx-auto text-center">
         <FadeIn>
-          <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+          <p className="label-uppercase text-[12px] tracking-[.22em] text-golden-hour mb-5">
             Distribution Partnership
           </p>
           <h1 className="font-display text-[clamp(36px,6vw,64px)] font-normal leading-[1.1] text-white tracking-tight mb-5">
             Grow with <em>Salt.Magic</em>
           </h1>
-          <p className="text-[16px] font-light leading-relaxed text-white/60 max-w-[560px] mx-auto mb-10">
+          <p className="text-[16px] font-light leading-relaxed text-white/70 max-w-[560px] mx-auto mb-10">
             The global electrolyte market reaches $69.1B by 2032. APAC is 5-7 years behind
             USA adoption — early partners capture first-mover advantage.
           </p>

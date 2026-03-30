@@ -29,7 +29,7 @@ export default function PartnerPage() {
       <section className="py-[clamp(64px,8vw,100px)]">
         <div className="text-center mb-[clamp(48px,8vw,80px)] px-[clamp(24px,5vw,64px)]">
           <div className="gold-line" />
-          <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+          <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
             The Opportunity
           </p>
           <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
@@ -61,7 +61,7 @@ export default function PartnerPage() {
         <div className="flex items-center px-[clamp(32px,6vw,80px)] py-[clamp(56px,8vw,100px)] bg-warm-off">
           <div className="max-w-[440px]">
             <div className="gold-line" />
-            <p className="text-[11px] font-medium tracking-[.22em] uppercase text-gold mb-5">
+            <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
               The Product
             </p>
             <h3 className="font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-[1.15] text-mineral tracking-tight mb-6">
@@ -80,17 +80,17 @@ export default function PartnerPage() {
             <div className="flex gap-6 mt-8">
               <div>
                 <div className="font-display text-[28px] font-normal text-mineral">90%</div>
-                <div className="text-[11px] font-medium tracking-[.1em] uppercase text-gold">Retention</div>
+                <div className="text-[12px] font-medium tracking-[.1em] uppercase text-ink-light">Retention</div>
               </div>
               <div className="w-px bg-border-warm" />
               <div>
                 <div className="font-display text-[28px] font-normal text-mineral">7x</div>
-                <div className="text-[11px] font-medium tracking-[.1em] uppercase text-gold">Magnesium</div>
+                <div className="text-[12px] font-medium tracking-[.1em] uppercase text-ink-light">Magnesium</div>
               </div>
               <div className="w-px bg-border-warm" />
               <div>
                 <div className="font-display text-[28px] font-normal text-mineral">0g</div>
-                <div className="text-[11px] font-medium tracking-[.1em] uppercase text-gold">Sugar</div>
+                <div className="text-[12px] font-medium tracking-[.1em] uppercase text-ink-light">Sugar</div>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function PartnerPage() {
             <h3 className="font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-[1.15] text-white tracking-tight mb-6">
               From occasional sports drink to <em className="italic text-golden-hour/80">daily wellness essential</em>
             </h3>
-            <p className="text-[15px] font-light leading-relaxed text-white/60">
+            <p className="text-base font-light leading-relaxed text-white/70">
               The brands that win this decade aren&apos;t selling recovery — they&apos;re selling
               a daily habit. Salt.Magic is built for 365 days a year, not 3-5 workouts a week.
             </p>

@@ -17,13 +17,13 @@ export default function PartnerTeaser() {
 
           {/* Left — Text */}
           <div>
-            <p className="text-[11px] font-medium tracking-[.22em] uppercase text-golden-hour mb-4">
+            <p className="text-[12px] font-medium tracking-[.22em] uppercase text-golden-hour mb-5">
               For Business
             </p>
             <h2 className="font-display text-[clamp(24px,3.5vw,36px)] font-normal leading-[1.2] text-white tracking-tight mb-3">
               Bring Salt.Magic to <em className="italic font-normal">your customers</em>
             </h2>
-            <p className="text-[15px] font-light leading-[1.7] text-white/60 max-w-[440px] mb-5">
+            <p className="text-base font-light leading-[1.7] text-white/70 max-w-[440px] mb-5">
               Join the fastest-growing electrolyte brand in Thailand.
             </p>
             <Link
@@ -46,7 +46,7 @@ export default function PartnerTeaser() {
                 <div className="font-display text-[clamp(24px,3vw,36px)] font-normal text-white leading-none mb-1.5 tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-[10px] font-medium tracking-[.16em] uppercase text-golden-hour/70">
+                <div className="text-[12px] font-medium tracking-[.16em] uppercase text-golden-hour/70">
                   {stat.label}
                 </div>
               </div>

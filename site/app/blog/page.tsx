@@ -14,7 +14,7 @@ export default function BlogPage() {
     <div className="pt-[clamp(140px,18vw,200px)] pb-[clamp(80px,12vw,140px)]">
       {/* Header */}
       <FadeIn className="text-center mb-[clamp(60px,10vw,100px)] px-[clamp(24px,5vw,64px)]">
-        <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+        <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
           Salt.Magic Blog
         </p>
         <h1 className="font-display text-[clamp(36px,6vw,56px)] font-normal leading-[1.1] text-mineral tracking-tight">

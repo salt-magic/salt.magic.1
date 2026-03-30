@@ -27,7 +27,7 @@ export default function MarketStats() {
             <div className="font-display text-[clamp(48px,6vw,72px)] font-normal text-mineral leading-none mb-1">
               {item.value}
             </div>
-            <div className="text-[11px] font-medium tracking-[.15em] uppercase text-gold mb-5">
+            <div className="text-[12px] font-medium tracking-[.15em] uppercase text-ink-light mb-5">
               {item.label}
             </div>
             <p className="text-sm font-light leading-relaxed text-ink-light max-w-[280px] mx-auto">

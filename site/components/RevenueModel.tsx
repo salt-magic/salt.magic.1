@@ -27,7 +27,7 @@ export default function RevenueModel() {
       <FadeIn className="max-w-[900px] mx-auto">
         <div className="text-center mb-[clamp(48px,8vw,80px)]">
           <div className="gold-line" />
-          <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+          <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
             Revenue Model
           </p>
           <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
