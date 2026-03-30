@@ -222,59 +222,46 @@ export default function Nav() {
       {/* Mobile menu — fullscreen overlay */}
       <AnimatePresence>
         {mobileOpen && (
-          <>
-            {/* Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 top-0 bg-black/20 backdrop-blur-sm md:hidden z-[-1]"
-              onClick={() => setMobileOpen(false)}
-            />
-            {/* Menu panel */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-              className="absolute top-24 left-0 right-0 bg-white shadow-[0_20px_60px_rgba(0,0,0,.08)] md:hidden"
-            >
-              <nav className="flex flex-col items-center gap-1 py-8 px-6">
-                {allLinks.map((link, i) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.05 + i * 0.06 }}
-                    className="w-full"
-                  >
-                    <LinkOrAnchor
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className={`block w-full text-center text-[15px] font-medium uppercase tracking-[0.08em] text-ink-light hover:text-mineral transition-colors py-4 border-b border-border-warm last:border-b-0 ${focusRing}`}
-                    >
-                      {link.label}
-                    </LinkOrAnchor>
-                  </motion.div>
-                ))}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
+            className="fixed inset-0 top-0 bg-white z-[-1] md:hidden flex flex-col items-center justify-center"
+          >
+            <nav className="flex flex-col items-center gap-2">
+              {allLinks.map((link, i) => (
                 <motion.div
-                  initial={{ opacity: 0, y: 12 }}
+                  key={link.href}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.05 + allLinks.length * 0.06 }}
-                  className="w-full mt-4"
+                  transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
                 >
-                  <a
-                    href="#products"
+                  <LinkOrAnchor
+                    href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`block w-full text-center text-[11px] font-semibold uppercase tracking-[0.12em] px-6 py-4 rounded-pill bg-mineral text-white min-h-[48px] flex items-center justify-center ${focusRing}`}
+                    className={`block text-center font-display text-[28px] font-normal tracking-[-0.01em] text-ink hover:text-mineral transition-colors py-3 ${focusRing}`}
                   >
-                    Shop Now
-                  </a>
+                    {link.label}
+                  </LinkOrAnchor>
                 </motion.div>
-              </nav>
-            </motion.div>
-          </>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 + allLinks.length * 0.06 }}
+                className="mt-6"
+              >
+                <a
+                  href="#products"
+                  onClick={() => setMobileOpen(false)}
+                  className={`inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-10 py-4 rounded-pill bg-mineral text-white min-h-[48px] ${focusRing}`}
+                >
+                  Shop Now
+                </a>
+              </motion.div>
+            </nav>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>
