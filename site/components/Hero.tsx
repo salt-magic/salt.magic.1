@@ -50,7 +50,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: 'linear-gradient(180deg, rgba(26,50,72,0.15) 0%, rgba(26,50,72,0.40) 30%, rgba(26,50,72,0.80) 55%, rgba(26,50,72,0.92) 100%)',
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.70) 55%, rgba(0,0,0,0.88) 100%)',
         }}
       />
       {/* Film grain texture — hidden on mobile for performance */}
