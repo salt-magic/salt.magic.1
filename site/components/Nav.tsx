@@ -117,12 +117,21 @@ export default function Nav() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden flex flex-col justify-center items-center gap-1.5 bg-transparent border-none cursor-pointer min-h-[44px] min-w-[44px] ${focusRing}`}
+          className={`md:hidden flex items-center justify-center bg-transparent border-none cursor-pointer min-h-[44px] min-w-[44px] ${focusRing}`}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
-          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${useDarkNav || mobileOpen ? 'bg-ink' : 'bg-white'} ${mobileOpen ? 'rotate-45 translate-y-[4.5px]' : ''}`} />
-          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${useDarkNav || mobileOpen ? 'bg-ink' : 'bg-white'} ${mobileOpen ? 'opacity-0 scale-x-0' : ''}`} />
-          <span className={`block w-5 h-[1.5px] transition-all duration-300 ${useDarkNav || mobileOpen ? 'bg-ink' : 'bg-white'} ${mobileOpen ? '-rotate-45 -translate-y-[4.5px]' : ''}`} />
+          {mobileOpen ? (
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className={useDarkNav ? 'text-ink' : 'text-ink'}>
+              <line x1="3" y1="3" x2="15" y2="15" />
+              <line x1="15" y1="3" x2="3" y2="15" />
+            </svg>
+          ) : (
+            <div className="flex flex-col justify-center items-center gap-1.5">
+              <span className={`block w-5 h-[1.5px] ${useDarkNav ? 'bg-ink' : 'bg-white'}`} />
+              <span className={`block w-5 h-[1.5px] ${useDarkNav ? 'bg-ink' : 'bg-white'}`} />
+              <span className={`block w-5 h-[1.5px] ${useDarkNav ? 'bg-ink' : 'bg-white'}`} />
+            </div>
+          )}
         </button>
 
         {/* Center logo — PNG with scroll color transition */}
