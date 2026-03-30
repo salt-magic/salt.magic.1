@@ -69,7 +69,7 @@ export default function WhySection() {
           >
             <div className="max-w-[480px]">
               <div className="w-12 h-px bg-gold mb-6" />
-              <p className="text-[11px] font-medium tracking-[.22em] uppercase text-gold mb-6">
+              <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-6">
                 The Problem
               </p>
 
@@ -77,7 +77,7 @@ export default function WhySection() {
                 Your water is missing what your body needs <em className="italic">most</em>
               </h2>
 
-              <div className="space-y-5 text-[16px] font-light leading-[1.8] text-ink-light">
+              <div className="space-y-5 text-base font-light leading-[1.85] text-ink-light">
                 <p>
                   85% of bottled water in Thailand goes through reverse osmosis, stripping
                   all natural minerals. The result is &ldquo;dead water&rdquo; — purified but
@@ -100,7 +100,7 @@ export default function WhySection() {
                     <div className="w-14 h-14 rounded-full border border-gold/30 flex items-center justify-center text-gold mx-auto mb-2.5">
                       {badge.icon}
                     </div>
-                    <p className="text-[10px] font-semibold tracking-[.15em] uppercase text-ink-faint">
+                    <p className="text-[12px] font-semibold tracking-[.15em] uppercase text-ink-light">
                       {badge.label}
                     </p>
                   </div>

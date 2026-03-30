@@ -5,13 +5,13 @@ export default function Newsletter() {
     <section className="bg-warm-off py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,80px)]">
       <FadeIn className="max-w-[560px] mx-auto text-center">
         <div className="gold-line" />
-        <p className="text-[11px] font-medium tracking-[.22em] uppercase text-gold mb-5">
+        <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
           Stay Connected
         </p>
         <h2 className="font-display text-[clamp(28px,4vw,40px)] font-normal leading-[1.2] text-mineral mb-4 tracking-tight">
           Join the Salt.Magic <em className="italic">community</em>
         </h2>
-        <p className="text-[15px] font-light text-ink-light mb-6">
+        <p className="text-base font-light text-ink-light mb-6">
           Wellness tips, product updates, and exclusive offers — delivered to your inbox.
         </p>
 
@@ -36,7 +36,7 @@ export default function Newsletter() {
             Subscribe
           </button>
         </div>
-        <p className="text-[11px] text-ink-faint mt-4">No spam. Unsubscribe anytime.</p>
+        <p className="text-[12px] text-ink-light mt-4">No spam. Unsubscribe anytime.</p>
       </FadeIn>
     </section>
   )

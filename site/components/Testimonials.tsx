@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback } from 'react'
+import { useReducedMotion } from 'framer-motion'
 import { FadeIn, motion, AnimatePresence } from './Motion'
 
 const testimonials = [
@@ -44,16 +45,17 @@ const testimonials = [
 export default function Testimonials() {
   const [active, setActive] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
+  const reduced = useReducedMotion()
 
   const next = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length)
   }, [])
 
   useEffect(() => {
-    if (isPaused) return
+    if (isPaused || reduced) return
     const timer = setInterval(next, 8000)
     return () => clearInterval(timer)
-  }, [next, isPaused])
+  }, [next, isPaused, reduced])
 
   return (
     <section
@@ -111,7 +113,7 @@ export default function Testimonials() {
                       <div className="text-[14px] font-medium text-mineral">
                         {testimonials[active].author}
                       </div>
-                      <div className="text-[12px] font-light text-ink-faint">
+                      <div className="text-[12px] font-light text-ink-light">
                         {testimonials[active].role} &middot; {testimonials[active].location}
                       </div>
                     </div>
@@ -128,6 +130,7 @@ export default function Testimonials() {
                   onClick={() => setActive(i)}
                   className="min-h-[44px] min-w-[44px] flex items-center justify-center border-none cursor-pointer bg-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
                   aria-label={`Testimonial ${i + 1}`}
+                  aria-current={i === active ? 'true' : undefined}
                 >
                   <span className={`block h-[2px] rounded-full transition-[width,background-color] duration-500 ${
                     i === active ? 'w-10 bg-gold' : 'w-6 bg-border-warm'

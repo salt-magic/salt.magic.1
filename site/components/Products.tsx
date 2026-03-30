@@ -112,7 +112,7 @@ export default function Products() {
                 </div>
 
                 {/* Tag */}
-                <div className={`text-[10px] font-semibold tracking-[.2em] uppercase mb-3 ${isComingSoon ? 'text-ink-faint' : 'text-gold'}`}>
+                <div className={`text-[12px] font-semibold tracking-[.2em] uppercase mb-3 ${isComingSoon ? 'text-ink-faint' : 'text-ink-light'}`}>
                   {product.tag}
                 </div>
 
@@ -125,7 +125,7 @@ export default function Products() {
                 <div className="text-[17px] font-body font-semibold text-ink mb-1">
                   {product.price}
                 </div>
-                <div className="text-[13px] font-light text-ink-faint mb-4">
+                <div className="text-[14px] font-light text-ink-light mb-4">
                   {product.meta}
                 </div>
 

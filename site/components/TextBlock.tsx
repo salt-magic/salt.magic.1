@@ -15,7 +15,7 @@ export default function TextBlock({ eyebrow, title, showGoldLine = false, childr
       {showGoldLine && <div className="gold-line" />}
 
       {eyebrow && (
-        <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+        <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
           {eyebrow}
         </p>
       )}

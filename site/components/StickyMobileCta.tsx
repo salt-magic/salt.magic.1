@@ -1,14 +1,14 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 
 export default function StickyMobileCta() {
   const [visible, setVisible] = useState(false)
+  const reduced = useReducedMotion()
 
   useEffect(() => {
     const handleScroll = () => {
-      // Show after scrolling past the hero (roughly 90vh)
       setVisible(window.scrollY > window.innerHeight * 0.9)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -19,10 +19,10 @@ export default function StickyMobileCta() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+          initial={reduced ? { opacity: 1 } : { y: 100, opacity: 0 }}
+          animate={reduced ? { opacity: 1 } : { y: 0, opacity: 1 }}
+          exit={reduced ? { opacity: 0 } : { y: 100, opacity: 0 }}
+          transition={{ duration: reduced ? 0 : 0.25, ease: [0.23, 1, 0.32, 1] }}
           className="fixed bottom-0 left-0 right-0 z-50 lg:hidden"
         >
           <div className="bg-white border-t border-border-warm px-5 py-3 pb-[max(12px,env(safe-area-inset-bottom))]">

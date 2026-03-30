@@ -10,7 +10,7 @@ export default function BlogSection() {
     <>
       <FadeIn className="text-center mb-[clamp(32px,5vw,48px)] px-[clamp(24px,5vw,64px)]">
         <div className="gold-line" />
-        <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+        <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
           Salt.Magic Blog
         </p>
         <h2 className="font-display text-[clamp(28px,4.5vw,42px)] font-normal leading-[1.15] text-mineral tracking-tight">

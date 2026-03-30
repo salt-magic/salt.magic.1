@@ -135,6 +135,7 @@ export default function Hero() {
               onClick={() => setActive(i)}
               className="min-h-[44px] min-w-[44px] flex items-center justify-center border-none cursor-pointer bg-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
               aria-label={`Slide ${i + 1}`}
+              aria-current={i === active ? 'true' : undefined}
             >
               <span className={`block h-[2px] rounded-full transition-all duration-500 ${
                 i === active ? 'w-10 bg-gold' : 'w-6 bg-white/30'

@@ -116,13 +116,13 @@ export default function Comparison() {
         <FadeIn className="max-w-[1200px] mx-auto">
           <div className="text-left mb-[clamp(40px,5vw,56px)]">
             <div className="w-12 h-px bg-gold mb-6" />
-            <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+            <p className="label-uppercase text-[12px] tracking-[.22em] text-white/70 mb-5">
               How We Compare
             </p>
-            <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-white mb-3 tracking-tight">
+            <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-white mb-6 tracking-tight">
               Not all electrolytes are <em>created equal</em>
             </h2>
-            <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[520px]">
+            <p className="text-base font-light leading-relaxed text-white/70 max-w-[520px]">
               7x more magnesium than leading competitors. Zero sugar. Zero additives.
             </p>
           </div>
@@ -130,17 +130,17 @@ export default function Comparison() {
           {/* Salt.Magic highlight card */}
           <StaggerContainer className="space-y-4">
             <StaggerItem>
-              <div className="rounded-2xl bg-white/50 border border-gold/30 md:bg-[rgba(25,55,80,0.75)] md:border-white/15 md:backdrop-blur-md p-[clamp(24px,4vw,40px)]">
+              <div className="rounded-2xl bg-white/50 border border-gold/30 md:bg-[rgba(25,55,80,0.75)] md:border-white/15 md:backdrop-blur-md p-[clamp(24px,4vw,40px)]" role="table" aria-label="Salt.Magic formula details">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-[13px] font-semibold uppercase tracking-[0.12em] text-mineral md:text-gold">Salt.Magic</span>
-                  <span className="text-[10px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-full bg-mineral/10 text-mineral md:bg-gold/20 md:text-gold">
+                  <span className="text-[12px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-full bg-mineral/10 text-mineral md:bg-gold/20 md:text-gold">
                     Our Formula
                   </span>
                 </div>
 
-                <div className="grid grid-cols-3 sm:grid-cols-6 gap-6 sm:gap-4">
+                <div className="grid grid-cols-3 sm:grid-cols-6 gap-6 sm:gap-4" role="row">
                   {columns[0].rows.map((row) => (
-                    <div key={row.label}>
+                    <div key={row.label} role="cell">
                       <div className="font-display text-[clamp(22px,3vw,32px)] font-normal leading-none text-deep-navy md:text-white mb-1">
                         {row.isText ? (
                           <span className="text-[15px] font-medium leading-snug flex items-center gap-1.5">
@@ -151,7 +151,7 @@ export default function Comparison() {
                           </span>
                         ) : row.value}
                       </div>
-                      <div className="text-[11px] font-medium tracking-[0.04em] text-deep-navy/50 md:text-gold/80 mt-1">
+                      <div className="text-[12px] font-medium tracking-[0.04em] text-deep-navy/50 md:text-gold/80 mt-1">
                         {row.label}
                       </div>
                     </div>
@@ -169,16 +169,16 @@ export default function Comparison() {
                       {col.name}
                     </h3>
 
-                    <div className="space-y-4">
+                    <dl className="space-y-4">
                       {col.rows.slice(0, 3).map((row) => (
                         <div key={row.label} className="flex justify-between items-baseline">
-                          <span className="text-[12px] text-deep-navy/50">{row.label}</span>
-                          <span className="text-[15px] font-display font-normal text-deep-navy/80">
+                          <dt className="text-[12px] text-deep-navy/50">{row.label}</dt>
+                          <dd className="text-[15px] font-display font-normal text-deep-navy/80">
                             {row.value}
-                          </span>
+                          </dd>
                         </div>
                       ))}
-                    </div>
+                    </dl>
 
                     <div className="w-full h-px bg-deep-navy/10 my-4" />
 
@@ -191,7 +191,7 @@ export default function Comparison() {
             </div>
           </StaggerContainer>
 
-          <p className="text-left text-[10px] tracking-[.15em] uppercase text-deep-navy/40 mt-8">
+          <p className="text-left text-[12px] tracking-[.15em] uppercase text-deep-navy/40 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
         </FadeIn>

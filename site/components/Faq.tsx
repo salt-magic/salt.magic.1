@@ -49,7 +49,7 @@ export default function Faq() {
     <section>
       <FadeIn className="max-w-[680px] mx-auto px-[clamp(24px,5vw,64px)] text-center mb-12">
         <div className="gold-line" />
-        <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+        <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
           Questions
         </p>
         <h2 className="font-display text-[clamp(36px,5.5vw,56px)] font-normal leading-[1.15] text-mineral tracking-tight">
@@ -86,7 +86,7 @@ export default function Faq() {
                   transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                   className="overflow-hidden"
                 >
-                  <div className="pb-6 text-[15px] font-light leading-relaxed text-ink-light">
+                  <div className="pb-6 text-base font-light leading-relaxed text-ink-light">
                     {faq.a}
                   </div>
                 </motion.div>

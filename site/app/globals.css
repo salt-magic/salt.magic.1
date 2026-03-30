@@ -38,7 +38,7 @@
   }
 
   .link-underline {
-    @apply text-[13px] font-medium text-mineral underline underline-offset-4 decoration-1 decoration-gold/50 hover:decoration-gold transition-all duration-300;
+    @apply text-[13px] font-medium text-mineral underline underline-offset-4 decoration-1 decoration-gold/50 hover:decoration-gold transition-colors duration-300;
   }
 
   .subheadline-light {
