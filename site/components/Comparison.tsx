@@ -76,7 +76,7 @@ export default function Comparison() {
   return (
     <section className="relative overflow-hidden bg-mineral">
       {/* Animated water background — desktop only for performance */}
-      <div className="hidden md:block">
+      <div className="hidden md:block absolute inset-0">
         <WaterBackground
           color="rgba(41, 75, 109, 1)"
           animation={{ scale: 80, speed: 85 }}
