@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence } from './Motion'
 import { FadeIn } from './Motion'
 import { useReducedMotion } from 'framer-motion'
 
@@ -27,27 +26,25 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[100dvh] min-h-[600px] overflow-hidden">
-      {/* Slides */}
-      <AnimatePresence mode="sync">
-        <motion.div
-          key={active}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.1, ease: [0.23, 1, 0.32, 1] }}
-          className="absolute inset-0"
+      {/* Slides — CSS transitions for mobile performance */}
+      {slides.map((slide, i) => (
+        <div
+          key={slide.src}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+            i === active ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           <Image
-            src={slides[active].src}
-            alt={slides[active].alt}
+            src={slide.src}
+            alt={slide.alt}
             fill
-            priority={active === 0}
-            className="object-cover object-[center_35%] scale-[1.02]"
+            priority={i === 0}
+            className="object-cover object-[center_35%]"
             sizes="100vw"
             quality={85}
           />
-        </motion.div>
-      </AnimatePresence>
+        </div>
+      ))}
 
       {/* Warm golden-hour overlay */}
       <div
@@ -56,9 +53,9 @@ export default function Hero() {
           background: 'linear-gradient(180deg, rgba(42,30,20,0.0) 0%, rgba(42,30,20,0.15) 40%, rgba(42,30,20,0.55) 100%)',
         }}
       />
-      {/* Film grain texture */}
+      {/* Film grain texture — hidden on mobile for performance */}
       <div
-        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.04] mix-blend-overlay"
+        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.04] mix-blend-overlay hidden md:block"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
           backgroundSize: '128px 128px',

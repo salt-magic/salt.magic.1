@@ -25,7 +25,7 @@ export default function StickyMobileCta() {
           transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
           className="fixed bottom-0 left-0 right-0 z-50 lg:hidden"
         >
-          <div className="bg-white/95 backdrop-blur-md border-t border-border-warm px-5 py-3 pb-[max(12px,env(safe-area-inset-bottom))]">
+          <div className="bg-white border-t border-border-warm px-5 py-3 pb-[max(12px,env(safe-area-inset-bottom))]">
             <a
               href="https://www.lazada.co.th/shop/salt-magic/"
               className="flex items-center justify-center gap-2 w-full py-3.5 bg-mineral text-white text-[13px] font-semibold tracking-[0.08em] uppercase rounded-pill transition-colors duration-200 hover:bg-mineral-light active:bg-deep-navy"
