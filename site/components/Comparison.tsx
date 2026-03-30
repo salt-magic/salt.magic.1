@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { FadeIn, StaggerContainer, StaggerItem } from './Motion'
 import WaterBackground from './WaterBackground'
 
@@ -73,16 +74,25 @@ const columns: Column[] = [
 ]
 
 export default function Comparison() {
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 768)
+    check()
+    window.addEventListener('resize', check, { passive: true })
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
   return (
     <section className="relative overflow-hidden bg-mineral">
       {/* Animated water background — desktop only for performance */}
-      <div className="hidden md:block absolute inset-0">
+      {isDesktop && (
         <WaterBackground
           color="rgba(41, 75, 109, 1)"
           animation={{ scale: 80, speed: 85 }}
           style={{ position: 'absolute', inset: 0 }}
         />
-      </div>
+      )}
 
       {/* Dark overlay — keeps water animation vibrant */}
       <div
