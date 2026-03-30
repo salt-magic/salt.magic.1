@@ -130,10 +130,10 @@ export default function Comparison() {
           {/* Salt.Magic highlight card */}
           <StaggerContainer className="space-y-4">
             <StaggerItem>
-              <div className="rounded-2xl bg-[rgba(25,55,80,0.75)] md:backdrop-blur-md border border-white/15 p-[clamp(24px,4vw,40px)]">
+              <div className="rounded-2xl bg-white/50 border border-gold/30 md:bg-[rgba(25,55,80,0.75)] md:border-white/15 md:backdrop-blur-md p-[clamp(24px,4vw,40px)]">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="text-[13px] font-semibold uppercase tracking-[0.12em] text-gold">Salt.Magic</span>
-                  <span className="text-[10px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-full bg-gold/20 text-gold">
+                  <span className="text-[13px] font-semibold uppercase tracking-[0.12em] text-mineral md:text-gold">Salt.Magic</span>
+                  <span className="text-[10px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-full bg-mineral/10 text-mineral md:bg-gold/20 md:text-gold">
                     Our Formula
                   </span>
                 </div>
@@ -141,17 +141,17 @@ export default function Comparison() {
                 <div className="grid grid-cols-3 sm:grid-cols-6 gap-6 sm:gap-4">
                   {columns[0].rows.map((row) => (
                     <div key={row.label}>
-                      <div className="font-display text-[clamp(22px,3vw,32px)] font-normal leading-none text-white mb-1">
+                      <div className="font-display text-[clamp(22px,3vw,32px)] font-normal leading-none text-deep-navy md:text-white mb-1">
                         {row.isText ? (
                           <span className="text-[15px] font-medium leading-snug flex items-center gap-1.5">
-                            <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 text-gold shrink-0" aria-hidden="true">
+                            <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 text-mineral md:text-gold shrink-0" aria-hidden="true">
                               <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z" />
                             </svg>
                             {row.value}
                           </span>
                         ) : row.value}
                       </div>
-                      <div className="text-[11px] font-medium tracking-[0.04em] text-gold/80 mt-1">
+                      <div className="text-[11px] font-medium tracking-[0.04em] text-deep-navy/50 md:text-gold/80 mt-1">
                         {row.label}
                       </div>
                     </div>
