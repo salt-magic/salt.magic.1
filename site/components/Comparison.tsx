@@ -74,13 +74,15 @@ const columns: Column[] = [
 
 export default function Comparison() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Animated water background */}
-      <WaterBackground
-        color="rgba(41, 75, 109, 1)"
-        animation={{ scale: 80, speed: 85 }}
-        style={{ position: 'absolute', inset: 0 }}
-      />
+    <section className="relative overflow-hidden bg-mineral">
+      {/* Animated water background — desktop only for performance */}
+      <div className="hidden md:block">
+        <WaterBackground
+          color="rgba(41, 75, 109, 1)"
+          animation={{ scale: 80, speed: 85 }}
+          style={{ position: 'absolute', inset: 0 }}
+        />
+      </div>
 
       {/* Dark overlay — keeps water animation vibrant */}
       <div

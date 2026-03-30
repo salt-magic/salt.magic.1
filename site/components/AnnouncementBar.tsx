@@ -19,8 +19,8 @@ export default function AnnouncementBar() {
   const track = messages.join(separator) + separator
 
   return (
-    <div className="bg-mineral h-9 flex items-center overflow-hidden relative z-[60]">
-      <div className="animate-marquee whitespace-nowrap flex">
+    <div className="bg-mineral h-9 flex items-center overflow-hidden relative z-[60]" style={{ contain: 'layout paint' }}>
+      <div className="animate-marquee whitespace-nowrap flex will-change-transform">
         <span className="uppercase tracking-[0.12em] text-[11px] font-medium text-white/90">
           {track}
         </span>

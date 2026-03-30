@@ -2,18 +2,19 @@
 
 import Image from 'next/image'
 import { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 
 export default function StorySection() {
   const sectionRef = useRef(null)
+  const reduced = useReducedMotion()
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start end', 'end start'],
   })
 
-  const imageY = useTransform(scrollYProgress, [0, 1], ['-5%', '5%'])
-  const textOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1])
-  const textY = useTransform(scrollYProgress, [0, 0.3], [40, 0])
+  const imageY = useTransform(scrollYProgress, [0, 1], reduced ? ['0%', '0%'] : ['-5%', '5%'])
+  const textOpacity = useTransform(scrollYProgress, [0, 0.3], reduced ? [1, 1] : [0, 1])
+  const textY = useTransform(scrollYProgress, [0, 0.3], reduced ? [0, 0] : [40, 0])
 
   return (
     <section

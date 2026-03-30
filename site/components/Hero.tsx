@@ -46,11 +46,11 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Warm golden-hour overlay */}
+      {/* Warm golden-hour overlay — stronger on mobile for text readability */}
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: 'linear-gradient(180deg, rgba(42,30,20,0.0) 0%, rgba(42,30,20,0.15) 40%, rgba(42,30,20,0.55) 100%)',
+          background: 'linear-gradient(180deg, rgba(26,50,72,0.35) 0%, rgba(26,50,72,0.25) 30%, rgba(26,50,72,0.55) 60%, rgba(26,50,72,0.75) 100%)',
         }}
       />
       {/* Film grain texture — hidden on mobile for performance */}
@@ -62,10 +62,10 @@ export default function Hero() {
         }}
       />
 
-      {/* Arrow left */}
+      {/* Arrows — hidden on mobile (too small, overlap text) */}
       <button
         onClick={prev}
-        className="absolute left-[clamp(20px,4vw,56px)] top-1/2 -translate-y-1/2 z-10 bg-transparent border-none cursor-pointer group flex items-center justify-center min-h-[44px] min-w-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm"
+        className="hidden md:flex absolute left-[clamp(20px,4vw,56px)] top-1/2 -translate-y-1/2 z-10 bg-transparent border-none cursor-pointer group items-center justify-center min-h-[44px] min-w-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm"
         aria-label="Previous slide"
       >
         <svg width="72" height="16" viewBox="0 0 72 16" fill="none" className="text-white/40 group-hover:text-white transition-colors duration-300 drop-shadow-[0_1px_3px_rgba(0,0,0,.3)]">
@@ -74,11 +74,9 @@ export default function Hero() {
           <line x1="12" y1="15" x2="4" y2="8" stroke="currentColor" strokeWidth="1" />
         </svg>
       </button>
-
-      {/* Arrow right */}
       <button
         onClick={next}
-        className="absolute right-[clamp(20px,4vw,56px)] top-1/2 -translate-y-1/2 z-10 bg-transparent border-none cursor-pointer group flex items-center justify-center min-h-[44px] min-w-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm"
+        className="hidden md:flex absolute right-[clamp(20px,4vw,56px)] top-1/2 -translate-y-1/2 z-10 bg-transparent border-none cursor-pointer group items-center justify-center min-h-[44px] min-w-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm"
         aria-label="Next slide"
       >
         <svg width="72" height="16" viewBox="0 0 72 16" fill="none" className="text-white/40 group-hover:text-white transition-colors duration-300 drop-shadow-[0_1px_3px_rgba(0,0,0,.3)]">
@@ -89,10 +87,10 @@ export default function Hero() {
       </button>
 
       {/* Content — centered */}
-      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-center text-center px-[clamp(32px,6vw,80px)] pt-24">
+      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-center text-center px-[clamp(24px,6vw,80px)] pt-24" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.4), 0 1px 4px rgba(0,0,0,0.3)' }}>
         <div className="max-w-[720px]">
           <FadeIn delay={0.05}>
-            <p className="text-[11px] font-medium tracking-[.22em] uppercase text-golden-hour mb-6">
+            <p className="text-[12px] font-semibold tracking-[.22em] uppercase text-golden-hour mb-6">
               Thailand&apos;s Premier Mineral Electrolyte
             </p>
           </FadeIn>
@@ -104,7 +102,7 @@ export default function Hero() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <p className="text-[17px] font-light leading-relaxed text-white/75 mb-10 max-w-[480px] mx-auto">
+            <p className="text-[17px] font-light leading-relaxed text-white/90 mb-10 max-w-[480px] mx-auto">
               Pure minerals. Zero sugar. Every glass. Every day.
             </p>
           </FadeIn>

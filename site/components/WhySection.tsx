@@ -40,7 +40,8 @@ export default function WhySection() {
   })
 
   const reduced = useReducedMotion()
-  const imageScale = useTransform(scrollYProgress, [0, 0.5], reduced ? [1, 1] : [1.08, 1])
+  // Scale disabled — causes GPU jank on mobile with large images
+  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 1])
   const textOpacity = useTransform(scrollYProgress, [0.1, 0.35], reduced ? [1, 1] : [0, 1])
   const textY = useTransform(scrollYProgress, [0.1, 0.35], reduced ? [0, 0] : [30, 0])
 
