@@ -5,8 +5,9 @@ import { StaggerContainer, StaggerItem } from './Motion'
 const benefits = [
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
-        <path d="M12 2C12 2 5 9 5 14a7 7 0 0 0 14 0c0-5-7-12-7-12z" />
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+        <path d="M16 3C16 3 7 12 7 18a9 9 0 0 0 18 0c0-6-9-15-9-15z" />
+        <path d="M12 20a4 4 0 0 0 4 4" opacity="0.4" />
       </svg>
     ),
     title: 'Enhanced Hydration',
@@ -14,8 +15,8 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+        <path d="M27 16.4A12 12 0 1 1 14.6 4 9 9 0 0 0 27 16.4z" />
       </svg>
     ),
     title: 'Better Sleep',
@@ -23,9 +24,10 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2a15 15 0 0 1 4 10 15 15 0 0 1-4 10 15 15 0 0 1-4-10A15 15 0 0 1 12 2z" />
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+        <circle cx="16" cy="16" r="12" />
+        <circle cx="16" cy="16" r="4" />
+        <path d="M16 4v4M16 24v4M4 16h4M24 16h4" opacity="0.4" />
       </svg>
     ),
     title: 'Mental Focus',
@@ -33,9 +35,10 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+        <path d="M16 4c-4 6-8 10-8 16a8 8 0 0 0 16 0c0-6-4-10-8-16z" opacity="0.2" fill="currentColor" />
+        <path d="M16 4c-4 6-8 10-8 16a8 8 0 0 0 16 0c0-6-4-10-8-16z" />
+        <path d="M12 22c0-2 2-4 4-6" opacity="0.4" />
       </svg>
     ),
     title: 'Digestive Support',
@@ -43,8 +46,8 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+        <path d="M29 16h-6l-4 12L11 4l-4 12H1" />
       </svg>
     ),
     title: 'Faster Recovery',
@@ -52,10 +55,9 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
-        <path d="M8 2v4M16 2v4M3 10h18" />
-        <rect x="3" y="4" width="18" height="18" rx="2" />
-        <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01" />
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+        <path d="M22 4L18 14h8L10 28l4-10H6L14 4h8z" opacity="0.15" fill="currentColor" />
+        <path d="M22 4L18 14h8L10 28l4-10H6L14 4h8z" />
       </svg>
     ),
     title: 'Hangover Relief',
@@ -63,8 +65,11 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
-        <path d="M6 4v16M18 4v16M6 12h12M6 8h12M6 16h12" />
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+        <path d="M8 6v20M24 6v20" />
+        <path d="M8 16h16" strokeWidth="2" />
+        <circle cx="5" cy="16" r="3" opacity="0.3" fill="currentColor" />
+        <circle cx="27" cy="16" r="3" opacity="0.3" fill="currentColor" />
       </svg>
     ),
     title: 'Workout Performance',
@@ -72,11 +77,11 @@ const benefits = [
   },
   {
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
-        <circle cx="9" cy="7" r="4" />
-        <path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" />
-        <circle cx="18" cy="10" r="3" />
-        <path d="M21 21v-1.5a3 3 0 0 0-3-3" />
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+        <circle cx="12" cy="10" r="5" />
+        <path d="M4 28v-3a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v3" />
+        <circle cx="23" cy="13" r="4" />
+        <path d="M28 28v-2a4 4 0 0 0-4-4" />
       </svg>
     ),
     title: 'Safe for All Ages',
@@ -88,7 +93,7 @@ export default function Benefits() {
   return (
     <section className="bg-warm-off py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,80px)]">
       <div className="max-w-[1200px] mx-auto">
-        <div className="text-center mb-[clamp(40px,6vw,64px)]">
+        <div className="text-left mb-[clamp(40px,6vw,64px)]">
           <div className="gold-line" />
           <p className="text-[11px] font-medium tracking-[.22em] uppercase text-gold mb-5">
             Daily Benefits
@@ -98,19 +103,21 @@ export default function Benefits() {
           </h2>
         </div>
 
-        <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-14">
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
           {benefits.map((item) => (
             <StaggerItem key={item.title}>
-              <div className="text-center group">
-                <div className="text-gold group-hover:text-mineral transition-colors duration-300 mb-5 flex justify-center">
+              <div className="group flex items-start gap-4">
+                <div className="w-12 h-12 shrink-0 rounded-2xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-mineral/10 group-hover:text-mineral transition-colors duration-300">
                   {item.icon}
                 </div>
-                <h3 className="font-body text-[15px] font-medium text-mineral mb-2 tracking-wide">
-                  {item.title}
-                </h3>
-                <p className="text-[13px] font-light leading-relaxed text-ink-faint max-w-[220px] mx-auto">
-                  {item.desc}
-                </p>
+                <div>
+                  <h3 className="font-body text-[15px] font-medium text-mineral mb-1 tracking-wide">
+                    {item.title}
+                  </h3>
+                  <p className="text-[13px] font-light leading-relaxed text-ink-faint">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
             </StaggerItem>
           ))}

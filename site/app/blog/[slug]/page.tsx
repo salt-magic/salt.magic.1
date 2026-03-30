@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { blogPosts, getPostBySlug, getAllSlugs } from '@/content/blog'
 import BlogCard from '@/components/BlogCard'
@@ -38,8 +39,18 @@ export default async function BlogArticlePage({
 
   return (
     <>
-      {/* Hero — full-width gradient with overlay, pt accounts for fixed Nav + AnnouncementBar */}
+      {/* Hero — full-width image with overlay */}
       <div className={`relative w-full min-h-[70vh] min-h-[480px] ${post.heroGradient}`}>
+        {post.heroImage && (
+          <Image
+            src={post.heroImage}
+            alt={post.title}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        )}
         <div
           className="absolute inset-0"
           style={{

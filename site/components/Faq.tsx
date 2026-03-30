@@ -67,14 +67,15 @@ export default function Faq() {
               <h3 className="font-display text-[17px] font-normal text-mineral leading-[1.4]">
                 {faq.q}
               </h3>
-              <div className="w-5 h-5 flex-shrink-0 relative">
-                <span className="absolute w-3.5 h-[1.5px] bg-gold rounded-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
-                <motion.span
-                  animate={{ rotate: openIndex === i ? 90 : 0 }}
-                  transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-                  className="absolute w-[1.5px] h-3.5 bg-gold rounded-sm top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 origin-center"
-                />
-              </div>
+              <motion.div
+                animate={{ rotate: openIndex === i ? 180 : 0 }}
+                transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
+                className="w-5 h-5 flex-shrink-0 flex items-center justify-center"
+              >
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" className="text-gold">
+                  <path d="M1 1l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </motion.div>
             </button>
             <AnimatePresence initial={false}>
               {openIndex === i && (

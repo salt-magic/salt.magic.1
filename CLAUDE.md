@@ -41,7 +41,19 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V8 Complete Reference-Style Redesign (2026-03-27). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V9 Editorial Alignment Redesign (2026-03-30). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V9 Session (Editorial Alignment Redesign):
+- **Alignment-Rhythmus eingefuehrt**: Mix aus zentrierten (immersive Momente) und links-ausgerichteten (editorial/informative) Sections ueber alle Seiten
+- **Homepage Editorial-Flow**: Hero/TrustBand zentriert → WhySection/Formula/Comparison/Benefits/ForEveryone links → Products zentriert → Testimonials links → SocialProof zentriert → Story/FAQ/Blog links → CTA/Newsletter zentriert
+- **Benefits horizontal**: Von vertikalem 4-Spalten-Grid (Icon oben, Text unten) zu horizontalem 2-Spalten-Layout (Icon links, Text rechts) — editorialerer Look
+- **Testimonials links-ausgerichtet**: Quote und Autor links statt zentriert, dekoratives Anfuehrungszeichen nach links verschoben
+- **TextBlock.tsx align-Prop**: Neues `align?: 'center' | 'left'` Prop (Default: center) fuer flexible Ausrichtung
+- **Gold-Line context-aware**: CSS geaendert — Gold-Line ist links-ausgerichtet by default, nur in `text-center` Parents zentriert
+- **Partner-Seite editorial**: Alle Section-Headers (MarketComparison, CategoryProof, RevenueComparison, DistributionTiers, RevenueModel, LocationMap) auf links umgestellt
+- **Blog-Listing editorial**: Page-Header links-ausgerichtet im Magazin-Stil
+- **Comparison/FAQ/BlogSection**: Headers durchgehend links-ausgerichtet
+- **Referenz-Analyse**: Cure Hydration als Vorbild fuer Editorial-Layout, kombiniert mit PANPURI/Grown Alchemist Luxury-Zentrierung fuer immersive Momente
 
 Key Changes in V8 Session (Complete Reference-Style Redesign):
 - **Hero redesigned**: Text zentriert, groessere Headline (`clamp(44px,6.5vw,72px)`), Eyebrow in Golden-Hour Farbe, waermerer Gradient-Overlay (transparent->55% warm), Pill-Button + Tertiaer-Link, Gold-Bar Slide-Indikatoren mit 44px Touch-Targets

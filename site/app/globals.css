@@ -20,7 +20,12 @@
     width: 48px;
     height: 1px;
     background: #D4BFAA;
-    margin: 0 auto 24px;
+    margin-bottom: 24px;
+  }
+
+  .text-center > .gold-line {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .label-uppercase {

@@ -121,9 +121,12 @@ export default function Hero() {
               </a>
               <a
                 href="#why"
-                className="text-[13px] font-medium text-white/60 underline underline-offset-4 decoration-1 decoration-white/30 hover:text-white hover:decoration-white/60 transition-colors duration-300"
+                className="inline-flex items-center gap-2 text-[13px] font-medium text-white/80 hover:text-white transition-colors duration-300"
               >
                 Learn More
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4 animate-bounce" aria-hidden="true" style={{ animationDuration: '2s' }}>
+                  <path d="M8 3v10M4 9l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </a>
             </div>
           </FadeIn>

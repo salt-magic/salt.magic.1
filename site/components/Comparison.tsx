@@ -74,7 +74,7 @@ const columns: Column[] = [
 
 export default function Comparison() {
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
       {/* Animated water background */}
       <WaterBackground
         color="rgba(41, 75, 109, 1)"
@@ -82,90 +82,95 @@ export default function Comparison() {
         style={{ position: 'absolute', inset: 0 }}
       />
 
-      {/* Subtle dark gradient behind headline area for guaranteed readability */}
+      {/* Dark overlay — keeps water animation vibrant */}
       <div
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
-          background: 'linear-gradient(180deg, rgba(20,40,60,0.45) 0%, rgba(20,40,60,0.15) 35%, transparent 55%)',
+          background: 'linear-gradient(180deg, rgba(20,40,60,0.45) 0%, rgba(20,40,60,0.2) 35%, rgba(20,40,60,0.15) 100%)',
         }}
       />
 
       {/* Content */}
       <div className="relative z-10 py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,64px)]">
         <FadeIn className="max-w-[1200px] mx-auto">
-          <div className="gold-line" />
-          <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
-            How We Compare
-          </p>
-          <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-[#1A2F42] mb-3 tracking-tight">
-            Hydrating Electrolyte Mineralizer
-          </h2>
-          <p className="text-[15px] font-light leading-relaxed text-[#1A2F42]/80 max-w-[520px] mb-12">
-            With 7x more magnesium than leading competitors, Salt.Magic restores
-            what your water is missing — so your body can operate at 100%.
-          </p>
+          <div className="text-left mb-[clamp(40px,5vw,56px)]">
+            <div className="gold-line" />
+            <p className="label-uppercase text-[11px] tracking-[.22em] text-gold mb-5">
+              How We Compare
+            </p>
+            <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-deep-navy mb-3 tracking-tight">
+              Not all electrolytes are <em>created equal</em>
+            </h2>
+            <p className="text-[15px] font-light leading-relaxed text-deep-navy/80 max-w-[520px]">
+              7x more magnesium than leading competitors. Zero sugar. Zero additives.
+            </p>
+          </div>
 
-          {/* Comparison Grid */}
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px rounded-lg overflow-hidden">
-            {columns.map((col) => (
-              <StaggerItem key={col.name}>
-                <div
-                  className={`p-[clamp(24px,3vw,40px)] h-full flex flex-col ${
-                    col.highlight
-                      ? 'bg-[rgba(25,55,80,0.75)] backdrop-blur-md border border-white/15'
-                      : 'bg-[rgba(25,55,80,0.60)] backdrop-blur-md border border-white/10'
-                  }`}
-                >
-                  <h3
-                    className={`text-[13px] font-semibold uppercase tracking-[0.1em] mb-6 ${
-                      col.highlight ? 'text-gold' : 'text-white'
-                    }`}
-                  >
-                    {col.name}
-                  </h3>
-                  <div className={`w-10 h-px mb-7 ${col.highlight ? 'bg-gold/50' : 'bg-white/25'}`} />
-                  <div className="flex flex-col gap-5 mb-8">
-                    {col.rows.map((row) => (
-                      <div key={row.label}>
-                        {row.isText ? (
-                          <div className={`text-[14px] font-medium leading-snug mb-0.5 ${
-                            row.positive ? 'text-white' : 'text-white/60'
-                          }`}>
-                            {row.positive && (
-                              <svg viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5 inline-block mr-1.5 -mt-0.5 text-gold">
-                                <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z" />
-                              </svg>
-                            )}
-                            {row.value}
-                          </div>
-                        ) : (
-                          <div className="font-display text-[clamp(28px,3vw,36px)] font-normal leading-none mb-0.5 text-white">
-                            {row.value}
-                          </div>
-                        )}
-                        <div
-                          className={`text-[12px] font-medium tracking-[0.04em] ${
-                            col.highlight ? 'text-gold' : 'text-gold/70'
-                          }`}
-                        >
-                          {row.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <p
-                    className={`text-[13px] font-light leading-relaxed mt-auto ${
-                      col.highlight ? 'text-white/90' : 'text-white/70'
-                    }`}
-                  >
-                    {col.summary}
-                  </p>
+          {/* Salt.Magic highlight card — glass effect */}
+          <StaggerContainer className="space-y-4">
+            <StaggerItem>
+              <div className="rounded-2xl bg-[rgba(25,55,80,0.75)] backdrop-blur-md border border-white/15 p-[clamp(24px,4vw,40px)]">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[13px] font-semibold uppercase tracking-[0.12em] text-gold">Salt.Magic</span>
+                  <span className="text-[10px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-full bg-gold/20 text-gold">
+                    Our Formula
+                  </span>
                 </div>
-              </StaggerItem>
-            ))}
+
+                <div className="grid grid-cols-3 sm:grid-cols-6 gap-6 sm:gap-4">
+                  {columns[0].rows.map((row) => (
+                    <div key={row.label}>
+                      <div className="font-display text-[clamp(22px,3vw,32px)] font-normal leading-none text-white mb-1">
+                        {row.isText ? (
+                          <span className="text-[15px] font-medium leading-snug flex items-center gap-1.5">
+                            <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 text-gold shrink-0" aria-hidden="true">
+                              <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z" />
+                            </svg>
+                            {row.value}
+                          </span>
+                        ) : row.value}
+                      </div>
+                      <div className="text-[11px] font-medium tracking-[0.04em] text-gold/80 mt-1">
+                        {row.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </StaggerItem>
+
+            {/* Competitor cards — frosted glass */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {columns.slice(1).map((col) => (
+                <StaggerItem key={col.name}>
+                  <div className="rounded-2xl bg-white/[0.65] backdrop-blur-md border border-white/30 p-[clamp(20px,3vw,32px)] h-full">
+                    <h3 className="text-[12px] font-semibold uppercase tracking-[0.1em] text-deep-navy/60 mb-5">
+                      {col.name}
+                    </h3>
+
+                    <div className="space-y-4">
+                      {col.rows.slice(0, 3).map((row) => (
+                        <div key={row.label} className="flex justify-between items-baseline">
+                          <span className="text-[12px] text-deep-navy/50">{row.label}</span>
+                          <span className="text-[15px] font-display font-normal text-deep-navy/80">
+                            {row.value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="w-full h-px bg-deep-navy/10 my-4" />
+
+                    <p className="text-[12px] font-light leading-relaxed text-deep-navy/50">
+                      {col.summary}
+                    </p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </div>
           </StaggerContainer>
 
-          <p className="label-uppercase text-[10px] tracking-[.15em] text-white/40 mt-6">
+          <p className="text-left text-[10px] tracking-[.15em] uppercase text-deep-navy/40 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
         </FadeIn>

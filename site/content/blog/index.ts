@@ -6,6 +6,7 @@ export interface BlogPost {
   date: string
   readTime: string
   heroGradient: string
+  heroImage?: string
   content: string
 }
 

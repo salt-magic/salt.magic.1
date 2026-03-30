@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { StaggerItem } from './Motion'
 import type { BlogPost } from '@/content/blog'
@@ -10,9 +11,19 @@ export default function BlogCard({ post }: { post: BlogPost }) {
         className="group block"
       >
         {/* Image container — Luxo rounded style */}
-        <div className="relative aspect-[4/5] rounded-[24px] overflow-hidden mb-5">
-          {/* Gradient placeholder */}
-          <div className={`absolute inset-0 ${post.heroGradient} transition-transform duration-500 group-hover:scale-[1.03]`} />
+        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5">
+          {/* Hero image or gradient fallback */}
+          {post.heroImage ? (
+            <Image
+              src={post.heroImage}
+              alt={post.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            />
+          ) : (
+            <div className={`absolute inset-0 ${post.heroGradient} transition-transform duration-500 group-hover:scale-[1.03]`} />
+          )}
 
           {/* Bottom overlay with date + arrow */}
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-between px-5 pb-4">

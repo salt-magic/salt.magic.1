@@ -6,11 +6,12 @@ interface TextBlockProps {
   title: ReactNode
   showGoldLine?: boolean
   children?: ReactNode
+  align?: 'center' | 'left'
 }
 
-export default function TextBlock({ eyebrow, title, showGoldLine = false, children }: TextBlockProps) {
+export default function TextBlock({ eyebrow, title, showGoldLine = false, children, align = 'center' }: TextBlockProps) {
   return (
-    <FadeIn className="max-w-[680px] mx-auto px-[clamp(24px,5vw,64px)] text-center">
+    <FadeIn className={`max-w-[680px] mx-auto px-[clamp(24px,5vw,64px)] ${align === 'left' ? 'text-left' : 'text-center'}`}>
       {showGoldLine && <div className="gold-line" />}
 
       {eyebrow && (

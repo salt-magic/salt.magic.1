@@ -4,6 +4,7 @@ import './globals.css'
 import AnnouncementBar from '@/components/AnnouncementBar'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import StickyMobileCta from '@/components/StickyMobileCta'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -99,6 +100,7 @@ export default function RootLayout({
         <Nav />
         <main id="main-content">{children}</main>
         <Footer />
+        <StickyMobileCta />
       </body>
     </html>
   )

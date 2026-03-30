@@ -9,7 +9,7 @@
 ## Überblick
 
 ### Was dieser Plan erreicht
-
+                                       
 Erstellt ein vollständiges Next.js 14 (App Router) + Tailwind CSS Projekt, das die Salt.Magic Website als funktionsfähige React-Applikation implementiert. Das Design basiert 1:1 auf der abgenommenen Preview V3 (Luxo-Stil): centered Layouts, full-bleed Produktfotos, Droplet-Logo als dekoratives Motiv, grosszügiger Whitespace, spa-artiger Flow.
 
 ### Warum das wichtig ist
