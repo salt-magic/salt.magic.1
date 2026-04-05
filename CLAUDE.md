@@ -41,7 +41,27 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V10 UI/UX Audit & Accessibility Fix (2026-03-30). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V11 Copy Review Complete (2026-04-05). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V11 Session (Copy Review Implementation):
+- **Vollstaendiges Copy Review umgesetzt**: Alle 20 Sections aus Leo's Copy Review Dokument (`reference/V1_Salt-Magic-Copy-Review.docx`) implementiert
+- **Section 1 (Nav/Hero/AnnouncementBar)**: "Mineralize Your Water, Everywhere", Eyebrow entfernt, Pill-Style Buttons, Logo 80→100px, "Why"→"About"
+- **160+ Locations global**: Alle "150+" durch "160+" ersetzt, "wellness" entfernt, 4 neue Staedte (Pai, Koh Tao, Krabi, Khanom)
+- **SocialProof verschoben**: Von nach Testimonials auf nach TrustBand (fruehes Trust-Signal)
+- **WhySection**: Weniger klinisch ("energy, recovery, vitality" statt "enzymatic reactions")
+- **Ingredients/Formula**: "Everything your water is missing. Nothing you can taste." + neue Benefit-Descriptions
+- **Comparison komplett umgebaut**: 4-Spalten-Grid mit Verdict-Zeilen, 3 Kernzeilen (Sugar, Magnesium, Ingredients), "The Clear Choice"
+- **Benefits 8→6**: "Feel the Difference", punchigere Descriptions, Digestive Support + Safe for All Ages entfernt
+- **ForEveryone**: "Not a Sports Drink. A Daily Essential." + Old Way vs Salt.Magic Way Comparison
+- **Products**: Single Sachet entfernt, 3→2 Grid, "Signature Glass Jar" + "Travel Pouch", "Ready to upgrade your water?"
+- **StorySection**: "The Koh Samui Story" + Trust-Box Highlight
+- **AboutEditorial komplett entfernt**: Team-Section von Homepage geloescht
+- **PartnerTeaser**: "Stock Salt.Magic" + ans Seitenende verschoben (nach Newsletter)
+- **FAQ**: "Got Questions? Let's clear the water." + alle 8 Antworten konversationell umgeschrieben
+- **CtaBanner**: "Bring Your Water Back to Life" + Lazada-CTA mit target=_blank
+- **Newsletter**: "Join the Ritual" + "Unlock 10% Off" Button
+- **UI/UX Pro Max Audit**: 11 Findings gefixt (3 Critical Kontrast, reduced-motion, 12px Minimum, Semantik, line-length)
+- **Footer**: "Why Salt.Magic"→"About", 160+ Update
 
 Key Changes in V10 Session (UI/UX Audit & Accessibility Fix):
 - **Umfassender UI/UX Audit**: Code-basierte Analyse aller 35 Components gegen WCAG 2.1 AA
