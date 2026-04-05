@@ -20,7 +20,7 @@ export default function Nav() {
   const anchor = (hash: string) => (isHome ? hash : `/${hash}`)
 
   const leftLinks = [
-    { href: anchor('#why'), label: 'Why' },
+    { href: anchor('#why'), label: 'About' },
     { href: anchor('#products'), label: 'Products' },
   ]
 
@@ -141,7 +141,7 @@ export default function Nav() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="flex-shrink-0 relative h-20 w-20"
+          className="flex-shrink-0 relative h-[100px] w-[100px]"
         >
           <Link
             href="/"
@@ -152,8 +152,8 @@ export default function Nav() {
             <Image
               src="/images/logos/logo-transparent.png"
               alt="Salt.Magic"
-              width={80}
-              height={80}
+              width={100}
+              height={100}
               className={`absolute inset-0 w-full h-full transition-opacity duration-500 brightness-0 invert drop-shadow-[0_1px_6px_rgba(0,0,0,.4)] ${
                 useDarkNav || mobileOpen ? 'opacity-0' : 'opacity-100'
               }`}
@@ -163,8 +163,8 @@ export default function Nav() {
             <Image
               src="/images/logos/logo-transparent.png"
               alt="Salt.Magic"
-              width={80}
-              height={80}
+              width={100}
+              height={100}
               className={`absolute inset-0 w-full h-full transition-opacity duration-500 ${
                 useDarkNav || mobileOpen ? 'opacity-100' : 'opacity-0'
               }`}
@@ -215,7 +215,7 @@ export default function Nav() {
           href="#products"
           className={`md:hidden text-[11px] font-semibold uppercase tracking-[0.12em] px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
         >
-          Shop
+          Shop Now
         </a>
       </div>
 

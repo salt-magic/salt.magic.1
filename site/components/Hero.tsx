@@ -89,16 +89,11 @@ export default function Hero() {
       {/* Content — centered */}
       <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-[clamp(24px,6vw,80px)] pb-[clamp(80px,12vw,140px)]" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.4)' }}>
         <div className="max-w-[720px]">
-          <FadeIn delay={0.05}>
-            <p className="text-[13px] font-semibold tracking-[.22em] uppercase text-white mb-6">
-              Thailand&apos;s Premier Mineral Electrolyte
-            </p>
-          </FadeIn>
           <FadeIn delay={0.15}>
             <h1 className="headline-editorial text-white mb-6">
-              Remineralize Your Water.
+              Mineralize Your Water,
               <br />
-              <em className="italic font-normal">Revitalize Your Life.</em>
+              <em className="italic font-normal">Everywhere.</em>
             </h1>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -107,7 +102,7 @@ export default function Hero() {
             </p>
           </FadeIn>
           <FadeIn delay={0.45}>
-            <div className="flex items-center justify-center gap-6">
+            <div className="flex items-center justify-center gap-4">
               <a
                 href="#products"
                 className="inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-9 py-4 rounded-pill bg-white text-ink hover:bg-gold hover:text-ink transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
@@ -116,12 +111,9 @@ export default function Hero() {
               </a>
               <a
                 href="#why"
-                className="inline-flex items-center gap-2 text-[13px] font-medium text-white/80 hover:text-white transition-colors duration-300"
+                className="inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-9 py-4 rounded-pill border border-white/60 text-white hover:bg-white/10 transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Learn More
-                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4 animate-bounce" aria-hidden="true" style={{ animationDuration: '2s' }}>
-                  <path d="M8 3v10M4 9l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
               </a>
             </div>
           </FadeIn>
