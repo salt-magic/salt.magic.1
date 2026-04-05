@@ -107,10 +107,10 @@ export default function Comparison() {
 
           {/* Comparison grid */}
           <StaggerContainer>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" role="table" aria-label="Electrolyte comparison">
               {columns.map((col) => (
                 <StaggerItem key={col.name}>
-                  <div className={`rounded-2xl p-[clamp(20px,3vw,32px)] h-full flex flex-col ${
+                  <div role="row" className={`rounded-2xl p-[clamp(20px,3vw,32px)] h-full flex flex-col ${
                     col.highlight
                       ? 'bg-white/90 md:bg-white/95 border-2 border-gold/40'
                       : 'bg-white/50 md:bg-white/[0.65] md:backdrop-blur-md border border-white/30'
@@ -124,7 +124,7 @@ export default function Comparison() {
                     <dl className="space-y-4 flex-1">
                       {rowKeys.map((key, i) => (
                         <div key={key} className="flex justify-between items-baseline">
-                          <dt className="text-[13px] text-deep-navy/50">{rows[i]}</dt>
+                          <dt className="text-[13px] text-deep-navy/70">{rows[i]}</dt>
                           <dd className={`text-[15px] font-display font-normal ${
                             col.highlight ? 'text-mineral' : 'text-deep-navy/80'
                           }`}>
@@ -139,7 +139,7 @@ export default function Comparison() {
                     <p className={`text-[13px] leading-relaxed ${
                       col.highlight
                         ? 'font-medium text-mineral'
-                        : 'font-light text-deep-navy/50'
+                        : 'font-normal text-deep-navy/70'
                     }`}>
                       {col.verdict}
                     </p>
@@ -149,7 +149,7 @@ export default function Comparison() {
             </div>
           </StaggerContainer>
 
-          <p className="text-left text-[12px] tracking-[.15em] uppercase text-white/40 mt-8">
+          <p className="text-left text-[12px] tracking-[.15em] uppercase text-white/60 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
         </FadeIn>

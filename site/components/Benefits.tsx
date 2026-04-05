@@ -94,7 +94,7 @@ export default function Benefits() {
                   <h3 className="font-body text-[15px] font-medium text-mineral mb-1 tracking-wide">
                     {item.title}
                   </h3>
-                  <p className="text-[14px] font-light leading-relaxed text-ink-light">
+                  <p className="text-[14px] font-light leading-relaxed text-ink-light max-w-[420px]">
                     {item.desc}
                   </p>
                 </div>

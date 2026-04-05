@@ -29,6 +29,9 @@ export default function Home() {
       {/* 2. Trust Band — Subtle social proof */}
       <TrustBand />
 
+      {/* Visual break between trust sections */}
+      <div className="h-[clamp(24px,3vw,40px)]" aria-hidden="true" />
+
       {/* 3. Social Proof — Numbers (moved up for early trust) */}
       <SocialProof />
 

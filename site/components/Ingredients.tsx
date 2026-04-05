@@ -60,7 +60,7 @@ export default function Ingredients() {
                 <h3 className="text-[15px] font-semibold tracking-[.08em] uppercase text-mineral mb-1">
                   {item.name}
                 </h3>
-                <p className="text-[14px] font-light text-ink-light leading-relaxed">
+                <p className="text-[15px] font-normal text-ink/80 leading-relaxed">
                   {item.benefit}
                 </p>
               </div>

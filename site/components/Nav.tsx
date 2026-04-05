@@ -203,7 +203,7 @@ export default function Nav() {
           >
             <a
               href="#products"
-              className={`text-[11px] font-semibold uppercase tracking-[0.12em] px-6 py-2.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 ${focusRing}`}
+              className={`text-[12px] font-semibold uppercase tracking-[0.12em] px-6 py-2.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 ${focusRing}`}
             >
               Shop Now
             </a>
@@ -213,7 +213,7 @@ export default function Nav() {
         {/* Mobile CTA */}
         <a
           href="#products"
-          className={`md:hidden text-[11px] font-semibold uppercase tracking-[0.12em] px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
+          className={`md:hidden text-[12px] font-semibold uppercase tracking-[0.12em] px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
         >
           Shop Now
         </a>
@@ -255,7 +255,7 @@ export default function Nav() {
                 <a
                   href="#products"
                   onClick={() => setMobileOpen(false)}
-                  className={`inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-10 py-4 rounded-pill bg-mineral text-white min-h-[48px] ${focusRing}`}
+                  className={`inline-block text-[12px] font-semibold uppercase tracking-[0.12em] px-10 py-4 rounded-pill bg-mineral text-white min-h-[48px] ${focusRing}`}
                 >
                   Shop Now
                 </a>
