@@ -50,23 +50,23 @@ export default function StorySection() {
             </p>
 
             <h2 className="font-display text-[clamp(32px,4vw,48px)] font-normal leading-[1.15] text-white/90 tracking-tight mb-8">
-              Five years ago, we noticed something{' '}
-              <em className="italic text-gold/80">wrong with our water</em>
+              The Koh Samui{' '}
+              <em className="italic text-gold/80">Story</em>
             </h2>
 
             <div className="space-y-5 text-[16px] font-light leading-[1.85] text-white/70">
               <p>
                 Living on a tropical island, we drank more water than most — but still felt
-                depleted. A TDS meter confirmed it: our &ldquo;purified&rdquo; water had
-                virtually zero minerals.
+                constantly depleted. We finally tested it with a TDS meter, and the results
+                confirmed it: our daily &ldquo;purified&rdquo; water had virtually zero minerals.
               </p>
               <p>
                 We couldn&apos;t find a clean electrolyte that was sugar-free, flavorless, and
                 affordable for daily use. So we made one.
               </p>
-              <p className="text-white/90 font-normal">
-                What started in a kitchen on Koh Samui is now in over 160 locations across
-                Thailand.
+              <p className="text-white/90 font-normal bg-white/10 border border-gold/20 rounded-xl px-6 py-4">
+                What started in a kitchen on Koh Samui is now trusted by over 160 locations
+                across Thailand.
               </p>
             </div>
 

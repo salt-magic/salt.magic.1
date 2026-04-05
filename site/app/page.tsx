@@ -15,7 +15,6 @@ import TrustBand from '@/components/TrustBand'
 import Newsletter from '@/components/Newsletter'
 import CtaBanner from '@/components/CtaBanner'
 import StorySection from '@/components/StorySection'
-import AboutEditorial from '@/components/AboutEditorial'
 import PartnerTeaser from '@/components/PartnerTeaser'
 
 export default function Home() {
@@ -82,7 +81,9 @@ export default function Home() {
 
       {/* 9. Products — Shop now */}
       <section id="products" className="py-[clamp(64px,8vw,100px)]">
-        <TextBlock eyebrow="Shop Salt.Magic" showGoldLine title={<>Three formats, <em>one formula</em></>} />
+        <TextBlock eyebrow="Shop Salt.Magic" showGoldLine title={<>Ready to upgrade <em>your water?</em></>}>
+          <p>Choose your daily ritual. Less than the cost of your morning coffee.</p>
+        </TextBlock>
         <div className="h-[clamp(32px,4vw,48px)]" />
         <Products />
       </section>
@@ -98,12 +99,6 @@ export default function Home() {
 
       {/* 12. Origin Story */}
       <StorySection />
-
-      {/* 13. About — The Team */}
-      <AboutEditorial />
-
-      {/* 14. Partner Teaser — B2B hook */}
-      <PartnerTeaser />
 
       {/* ===== OBJECTION HANDLING ===== */}
 
@@ -126,6 +121,9 @@ export default function Home() {
 
       {/* 16. Newsletter — Retention */}
       <Newsletter />
+
+      {/* 17. Partner Teaser — B2B hook (bottom placement) */}
+      <PartnerTeaser />
 
       {/* Bottom safe-area for sticky mobile CTA */}
       <div className="h-20 lg:hidden" aria-hidden="true" />

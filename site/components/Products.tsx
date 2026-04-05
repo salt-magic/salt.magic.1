@@ -6,33 +6,23 @@ import { StaggerContainer, StaggerItem, motion } from './Motion'
 const products = [
   {
     image: '/images/products/taylor-closeup.jpg',
-    alt: 'Salt.Magic Glass Jar close-up',
-    tag: 'Heritage Line',
-    name: 'Glass Jar',
+    alt: 'Salt.Magic Signature Glass Jar close-up',
+    tag: 'Best Value',
+    name: 'The Signature Glass Jar',
     price: '490 THB',
-    meta: '70 servings — 7 THB each',
-    desc: 'Premium reusable glass jar with gold lid. Produced at our Koh Samui hub.',
+    meta: 'Over 2 months of daily hydration (70 servings) — Just 7 THB per day',
+    desc: 'A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Proudly crafted at our Koh Samui hub.',
     href: 'https://www.lazada.co.th/shop/salt-magic/',
   },
   {
     image: '/images/products/sachet.jpg',
-    alt: 'Salt.Magic Paper Sachet Pouch',
+    alt: 'Salt.Magic Travel Pouch',
     tag: 'Most Popular',
-    name: 'Paper Sachet',
+    name: 'The Travel Pouch',
     price: '290 THB',
-    meta: '30 servings — 9.6 THB each',
-    desc: 'Portable, resealable paper pouch. GMP/HACCP certified. For your bag, gym, travel.',
+    meta: "A full month's supply (30 servings) — Just 9.6 THB per day",
+    desc: 'Your daily minerals, perfectly portable. A resealable, GMP/HACCP-certified pouch built for your gym bag, office drawer, or long flights.',
     href: 'https://www.lazada.co.th/shop/salt-magic/',
-  },
-  {
-    image: null,
-    alt: 'Salt.Magic Single Sachet',
-    tag: 'Coming 2026',
-    name: 'Single Sachet',
-    price: '9–12 THB',
-    meta: '1 serving — trial & impulse format',
-    desc: 'Single-serve 2g sachet. Perfect for trial, travel, and pharmacy counters.',
-    href: null,
   },
 ]
 
@@ -66,7 +56,7 @@ const usps = [
 
 export default function Products() {
   return (
-    <div className="max-w-[1100px] mx-auto px-[clamp(24px,5vw,64px)]">
+    <div className="max-w-[800px] mx-auto px-[clamp(24px,5vw,64px)]">
       {/* USP Badges */}
       <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-[clamp(40px,6vw,64px)]">
         {usps.map((usp) => (
@@ -78,41 +68,25 @@ export default function Products() {
       </div>
 
       {/* Product Cards */}
-      <StaggerContainer className="grid grid-cols-1 sm:grid-cols-3 gap-[clamp(24px,3vw,40px)]">
-        {products.map((product) => {
-          const isComingSoon = !product.href
-          const Wrapper = isComingSoon ? 'div' : 'a'
-          const wrapperProps = isComingSoon ? {} : { href: product.href }
-
-          return (
+      <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-[clamp(24px,3vw,40px)]">
+        {products.map((product) => (
             <StaggerItem key={product.name}>
-              <Wrapper {...wrapperProps} className={`block text-center ${isComingSoon ? 'opacity-75' : 'group'}`}>
-                {/* Image or Placeholder */}
+              <a href={product.href} className="block text-center group">
+                {/* Image */}
                 <div className="overflow-hidden rounded-2xl mb-8 bg-warm-off">
-                  {product.image ? (
-                    <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}>
-                      <Image
-                        src={product.image}
-                        alt={product.alt}
-                        width={550}
-                        height={733}
-                        className="w-full aspect-[3/4] object-cover"
-                      />
-                    </motion.div>
-                  ) : (
-                    <div className="w-full aspect-[3/4] flex flex-col items-center justify-center bg-gradient-to-b from-warm-off to-sand/30">
-                      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1" className="w-16 h-16 text-gold/40 mb-4" aria-hidden="true">
-                        <rect x="14" y="8" width="20" height="32" rx="3" />
-                        <path d="M20 16h8M20 22h8M20 28h5" opacity="0.5" />
-                        <circle cx="24" cy="36" r="1.5" fill="currentColor" opacity="0.3" />
-                      </svg>
-                      <span className="text-[11px] font-medium tracking-[0.15em] uppercase text-ink-faint">Coming 2026</span>
-                    </div>
-                  )}
+                  <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}>
+                    <Image
+                      src={product.image}
+                      alt={product.alt}
+                      width={550}
+                      height={733}
+                      className="w-full aspect-[3/4] object-cover"
+                    />
+                  </motion.div>
                 </div>
 
                 {/* Tag */}
-                <div className={`text-[12px] font-semibold tracking-[.2em] uppercase mb-3 ${isComingSoon ? 'text-ink-faint' : 'text-ink-light'}`}>
+                <div className="text-[12px] font-semibold tracking-[.2em] uppercase mb-3 text-ink-light">
                   {product.tag}
                 </div>
 
@@ -135,22 +109,15 @@ export default function Products() {
                 </p>
 
                 {/* CTA */}
-                {!isComingSoon ? (
-                  <span className="inline-flex items-center gap-2 text-[11px] font-semibold tracking-[.12em] uppercase text-mineral border-b border-mineral/40 pb-1 group-hover:border-mineral transition-colors duration-300">
-                    Shop on Lazada
-                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
-                      <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                ) : (
-                  <span className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[.12em] uppercase text-ink-faint">
-                    Notify me when available
-                  </span>
-                )}
-              </Wrapper>
+                <span className="inline-flex items-center gap-2 text-[12px] font-semibold tracking-[.12em] uppercase text-mineral border-b border-mineral/40 pb-1 group-hover:border-mineral transition-colors duration-300">
+                  Shop on Lazada
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </a>
             </StaggerItem>
-          )
-        })}
+          ))}
       </StaggerContainer>
     </div>
   )

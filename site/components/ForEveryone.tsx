@@ -15,47 +15,42 @@ export default function ForEveryone() {
               <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
                 For Everyone
               </p>
-              <h2 className="font-display text-[clamp(28px,4vw,44px)] font-normal leading-[1.1] text-mineral tracking-tight mb-6">
-                What proper hydration <em className="italic">feels like</em>
+              <h2 className="font-display text-[clamp(28px,4vw,44px)] font-normal leading-[1.1] text-mineral tracking-tight mb-3">
+                Not a Sports Drink.{' '}
+                <em className="italic">A Daily Essential.</em>
               </h2>
-              <div className="space-y-4 text-[15px] font-light leading-[1.8] text-ink-light mb-6">
-                <p>
-                  Clearer thinking. Steadier energy without crashes. Fewer muscle cramps. Better
-                  sleep. Users notice the difference within days.
-                </p>
-                <p>
-                  Salt.Magic isn&apos;t for athletes only — it&apos;s for everyone who drinks
-                  water. Office workers, parents, travelers, fasters, anyone living in
-                  Thailand&apos;s heat.
-                </p>
-              </div>
+              <p className="text-[15px] font-light text-ink-light mb-6">
+                Pure hydration for daily life, not just game day.
+              </p>
+              <p className="text-[15px] font-light leading-[1.8] text-ink-light mb-8">
+                Most electrolytes are packed with sugar and designed for extreme athletes
+                to use once in a while. Salt.Magic is designed for life. Whether you&apos;re
+                intermittent fasting, surviving the tropical heat, traveling, or just
+                navigating a busy workday, your body burns through minerals every single day.
+              </p>
 
-              <div className="grid grid-cols-2 gap-3 mb-6">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="border border-border-warm rounded-xl p-4 text-center opacity-60">
+                  <p className="text-[12px] font-semibold tracking-[.18em] uppercase text-ink-light mb-2">
+                    The Old Way (Sports Drinks)
+                  </p>
+                  <ul className="space-y-1 text-[12px] font-light text-ink-light">
+                    <li>Occasional use (3-5x a week)</li>
+                    <li>Built for intense workouts</li>
+                    <li>Loaded with sugar &amp; artificial colors</li>
+                  </ul>
+                </div>
                 <div className="border border-gold/30 rounded-xl p-4 text-center">
                   <p className="text-[12px] font-semibold tracking-[.18em] uppercase text-mineral mb-2">
-                    Wellness
+                    The Salt.Magic Way
                   </p>
                   <ul className="space-y-1 text-[12px] font-light text-ink-light">
-                    <li>365 days / year</li>
-                    <li>All ages</li>
-                    <li>Daily essential</li>
-                  </ul>
-                </div>
-                <div className="border border-border-warm rounded-xl p-4 text-center opacity-50">
-                  <p className="text-[11px] font-semibold tracking-[.18em] uppercase text-ink-faint mb-2">
-                    Sports
-                  </p>
-                  <ul className="space-y-1 text-[12px] font-light text-ink-light">
-                    <li>3-5x / week</li>
-                    <li>Athletes only</li>
-                    <li>Occasional</li>
+                    <li>Daily essential (365 days a year)</li>
+                    <li>Built for anyone who drinks water</li>
+                    <li>Pure, invisible, natural minerals</li>
                   </ul>
                 </div>
               </div>
-
-              <p className="font-display text-[16px] text-mineral font-normal italic">
-                Daily minerals, not occasional recovery.
-              </p>
             </div>
           </FadeIn>
 

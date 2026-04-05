@@ -6,35 +6,35 @@ import { FadeIn, motion, AnimatePresence } from './Motion'
 const faqs = [
   {
     q: 'What is Salt.Magic made of?',
-    a: 'Exactly three ingredients: magnesium citrate (312mg), potassium citrate (160mg), and pink Himalayan salt (152mg). No sugars, sweeteners, flavors, colors, or preservatives. Each serving is 2 grams.',
+    a: 'Exactly three ingredients: Magnesium Citrate (312mg), Potassium Citrate (160mg), and Pink Himalayan Salt (152mg). That\u2019s it. A 2-gram serving with absolutely no sugars, sweeteners, artificial flavors, colors, or preservatives.',
   },
   {
     q: 'Is Salt.Magic just salt?',
-    a: 'No. Pink Himalayan salt is only 20% of the blend. The majority (50%) is magnesium citrate — the most bioavailable form of magnesium.',
+    a: 'No. Pink Himalayan salt makes up just 20% of the blend. The majority (over 50%) is Magnesium Citrate \u2014 the most highly bioavailable form of magnesium \u2014 and the rest is pure Potassium Citrate. No fillers.',
   },
   {
     q: 'How do I use it?',
-    a: 'Add one scoop (2g) to any drink. It dissolves instantly with no taste. Most users take 1-2 servings per day — morning and evening.',
+    a: 'Add one scoop (2g) or one travel pouch to any drink. It dissolves instantly and is completely flavorless. Most of our users take 1\u20132 servings per day \u2014 once in the morning, once in the evening.',
   },
   {
-    q: 'How does it compare to LMNT or Wilder?',
-    a: '312mg magnesium per serving (7x more than most) at 7-10 THB vs 25-40 THB for imports. Same clean philosophy, dramatically better value.',
+    q: 'How does it compare to imported brands like LMNT or Wilder?',
+    a: 'We share the same zero-sugar, clean-ingredient philosophy as the premium US brands. The difference? We deliver 7x more magnesium per serving. Crafted locally in Thailand, you pay 7\u201310 THB per serving instead of the 25\u201340 THB import markup.',
   },
   {
     q: 'Is it safe for children?',
-    a: 'Natural minerals safe for all ages. Half serving (1g) recommended for children. Consult your pediatrician for specific health conditions.',
+    a: 'Yes, these are natural minerals safe for all ages. We recommend a half-serving (1g) for children. As always, consult your pediatrician for specific health conditions.',
   },
   {
     q: 'Where can I buy Salt.Magic?',
-    a: 'On Lazada and in 160+ locations across Thailand — Bangkok, Phuket, Koh Samui, Chiang Mai, Hua Hin, Pattaya, Krabi, and more. We\'re expanding to pharmacies and retail chains nationwide.',
+    a: 'You can order directly on Lazada for nationwide delivery, or find us in 160+ locations across Thailand, including Bangkok, Phuket, Koh Samui, Chiang Mai, Hua Hin, Pattaya, and Krabi.',
   },
   {
-    q: 'Why is 85% of Thai water "dead water"?',
-    a: 'Most bottled water in Thailand uses reverse osmosis filtration, which removes bacteria but also strips all natural minerals. The result is ultra-pure but nutritionally empty water — your body gets hydration without the electrolytes it needs to actually use it.',
+    q: 'Why do you say 85% of Thai water is "dead water"?',
+    a: 'Most bottled water in Thailand is filtered using reverse osmosis. This removes bacteria, but it also strips away all the natural minerals. The result is ultra-pure but nutritionally empty water. It hydrates you, but lacks the electrolytes your body needs to actually absorb and use that hydration.',
   },
   {
-    q: 'What\'s the difference between wellness and sports electrolytes?',
-    a: 'Sports electrolytes are designed for occasional, high-intensity use — typically 3–5 times per week. Salt.Magic is a wellness electrolyte: pure minerals meant for daily use, 365 days a year. No sugar, no flavors, no artificial ingredients — just what your water is missing.',
+    q: 'What\u2019s the difference between "wellness" and "sports" electrolytes?',
+    a: 'Sports drinks are built for occasional, high-intensity use (3\u20135 times a week) and are usually packed with sugar and flavors. Salt.Magic is a daily wellness essential: pure, invisible minerals meant to be added to your water 365 days a year.',
   },
 ]
 
@@ -52,8 +52,8 @@ export default function Faq() {
         <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
           Questions
         </p>
-        <h2 className="font-display text-[clamp(36px,5.5vw,56px)] font-normal leading-[1.15] text-mineral tracking-tight">
-          Common <em className="italic">questions</em>
+        <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
+          Got Questions? Let&apos;s clear <em className="italic">the water.</em>
         </h2>
       </FadeIn>
 

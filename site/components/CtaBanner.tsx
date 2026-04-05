@@ -29,16 +29,18 @@ export default function CtaBanner() {
           Start Today
         </p>
         <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-white tracking-tight mb-6">
-          Start remineralizing your water <em className="italic">today</em>
+          Bring Your Water <em className="italic">Back to Life</em>
         </h2>
         <p className="text-[16px] font-light text-white/80 mb-10 max-w-[420px] mx-auto leading-relaxed">
-          Three ingredients. Zero compromise. Join thousands across Thailand who&apos;ve made the switch.
+          Three ingredients. Zero compromise. Join thousands across Thailand who&apos;ve made the daily switch.
         </p>
         <a
-          href="#products"
-          className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-pill text-mineral bg-white hover:bg-golden-hour hover:text-ink transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+          href="https://www.lazada.co.th/shop/salt-magic/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-[12px] font-semibold tracking-[.12em] uppercase px-10 py-4 rounded-pill text-mineral bg-white hover:bg-golden-hour hover:text-ink transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         >
-          Shop Now
+          Shop Salt.Magic on Lazada
         </a>
       </FadeIn>
     </section>
