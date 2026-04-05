@@ -6,7 +6,7 @@ import { FadeIn } from './Motion'
 const stats = [
   { value: '35–40%', label: 'Retailer Margins' },
   { value: '90%', label: 'Customer Retention' },
-  { value: '150+', label: 'Partner Locations' },
+  { value: '160+', label: 'Partner Locations' },
 ]
 
 export default function PartnerTeaser() {

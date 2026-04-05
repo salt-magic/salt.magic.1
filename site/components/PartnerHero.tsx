@@ -4,7 +4,7 @@ const highlights = [
   { value: '$69.1B', label: 'Market by 2032' },
   { value: '8.2%', label: 'Annual CAGR' },
   { value: '90%', label: 'Customer Retention' },
-  { value: '150+', label: 'Locations' },
+  { value: '160+', label: 'Locations' },
 ]
 
 export default function PartnerHero() {

@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: 'Where can I buy Salt.Magic?',
-    a: 'On Lazada and in 150+ wellness locations across Thailand — Bangkok, Phuket, Koh Samui, Chiang Mai, Hua Hin, Pattaya, Krabi, and more. We\'re expanding to pharmacies and retail chains nationwide.',
+    a: 'On Lazada and in 160+ locations across Thailand — Bangkok, Phuket, Koh Samui, Chiang Mai, Hua Hin, Pattaya, Krabi, and more. We\'re expanding to pharmacies and retail chains nationwide.',
   },
   {
     q: 'Why is 85% of Thai water "dead water"?',

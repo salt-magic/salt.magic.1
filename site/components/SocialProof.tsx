@@ -6,7 +6,7 @@ import { FadeIn } from './Motion'
 
 const metrics = [
   { value: 90, suffix: '%', label: 'Customer retention' },
-  { value: 150, suffix: '+', label: 'Wellness locations' },
+  { value: 160, suffix: '+', label: 'Locations across Thailand' },
   { value: 5, suffix: '', unit: 'Years', label: 'Established track record' },
   { value: 365, suffix: '', unit: 'Days', label: 'Designed for daily use' },
 ]

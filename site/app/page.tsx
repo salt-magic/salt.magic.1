@@ -29,6 +29,9 @@ export default function Home() {
       {/* 2. Trust Band — Subtle social proof */}
       <TrustBand />
 
+      {/* 3. Social Proof — Numbers (moved up for early trust) */}
+      <SocialProof />
+
       {/* ===== INTEREST ===== */}
 
       {/* 3. The Problem — Why your water is "dead" */}
@@ -42,12 +45,13 @@ export default function Home() {
             The Formula
           </p>
           <h2 className="font-display text-[clamp(36px,5.5vw,56px)] font-normal leading-[1.1] text-mineral mb-6 tracking-tight">
-            What&apos;s inside <em className="italic font-normal">every serving</em>
+            Everything your water is missing.{' '}
+            <em className="italic font-normal">Nothing you can taste.</em>
           </h2>
-          <p className="text-base font-light leading-[1.85] text-ink-light max-w-[520px]">
-            Just 2 grams of pure minerals — flavorless, invisible in any drink, and 7x
-            more magnesium than leading competitors. Three natural ingredients including
-            Pink Himalayan Salt with 84 trace minerals.
+          <p className="text-base font-light leading-[1.85] text-ink max-w-[520px]">
+            Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly,
+            is completely flavorless, and delivers 7x more magnesium than leading
+            competitors. Three natural ingredients. Zero junk.
           </p>
         </div>
         <div className="h-[clamp(32px,4vw,48px)]" />
@@ -86,9 +90,6 @@ export default function Home() {
       <section className="bg-warm-off py-[clamp(64px,8vw,100px)]">
         <Testimonials />
       </section>
-
-      {/* 11. Social Proof — Numbers */}
-      <SocialProof />
 
       {/* ===== BRAND ===== */}
 

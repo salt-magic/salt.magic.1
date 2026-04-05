@@ -65,7 +65,7 @@ export default function StorySection() {
                 affordable for daily use. So we made one.
               </p>
               <p className="text-white/90 font-normal">
-                What started in a kitchen on Koh Samui is now in over 150 wellness hubs across
+                What started in a kitchen on Koh Samui is now in over 160 locations across
                 Thailand.
               </p>
             </div>

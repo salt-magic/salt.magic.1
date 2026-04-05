@@ -4,74 +4,52 @@ import { useState, useEffect } from 'react'
 import { FadeIn, StaggerContainer, StaggerItem } from './Motion'
 import WaterBackground from './WaterBackground'
 
-interface Row {
-  value: string
-  label: string
-  isText?: boolean
-  positive?: boolean
-}
-
 interface Column {
   name: string
   highlight: boolean
-  rows: Row[]
-  summary: string
+  sugar: string
+  magnesium: string
+  ingredients: string
+  verdict: string
 }
 
 const columns: Column[] = [
   {
     name: 'Salt.Magic',
     highlight: true,
-    rows: [
-      { value: '0g', label: 'sugar' },
-      { value: '312mg', label: 'magnesium' },
-      { value: '2g', label: 'serving size' },
-      { value: 'Natural minerals', label: 'mineral source', isText: true, positive: true },
-      { value: 'Designed for it', label: 'daily use', isText: true, positive: true },
-      { value: 'Everyone, all ages', label: 'target', isText: true, positive: true },
-    ],
-    summary: 'Pure minerals, flavorless, designed for daily wellness — all ages',
+    sugar: '0g',
+    magnesium: '312mg',
+    ingredients: '3 natural minerals',
+    verdict: 'Clean, daily hydration without the sugar crash.',
   },
   {
     name: 'Sports Drinks',
     highlight: false,
-    rows: [
-      { value: '27g', label: 'added sugar' },
-      { value: '0–25mg', label: 'magnesium' },
-      { value: '10–20g', label: 'serving size' },
-      { value: 'Artificial / synthetic', label: 'mineral source', isText: true },
-      { value: 'Too much sugar', label: 'daily use', isText: true },
-      { value: 'Athletes only', label: 'target', isText: true },
-    ],
-    summary: 'Added sugar, low in electrolytes, and made with artificial ingredients',
+    sugar: '27g+',
+    magnesium: '0–25mg',
+    ingredients: 'Artificial colors & flavors',
+    verdict: 'Glorified syrup. High in sugar, low in actual electrolytes.',
   },
   {
     name: 'Coconut Water',
     highlight: false,
-    rows: [
-      { value: '28g', label: 'sugar' },
-      { value: '~15mg', label: 'magnesium' },
-      { value: '330ml', label: 'serving size' },
-      { value: 'Natural (unbalanced)', label: 'mineral source', isText: true },
-      { value: 'Too much sugar', label: 'daily use', isText: true },
-      { value: 'General consumers', label: 'target', isText: true },
-    ],
-    summary: 'Unbalanced electrolytes, high sugar, low sodium and potassium',
+    sugar: '28g',
+    magnesium: '~15mg',
+    ingredients: 'Natural, but unbalanced',
+    verdict: 'A tasty treat, but too much sugar for optimal daily hydration.',
   },
   {
     name: 'Other Electrolyte Mixes',
     highlight: false,
-    rows: [
-      { value: '11g', label: 'added sugar' },
-      { value: '0–50mg', label: 'magnesium' },
-      { value: '7–12g', label: 'serving size' },
-      { value: 'Mixed synthetic', label: 'mineral source', isText: true },
-      { value: 'Artificial ingredients', label: 'daily use', isText: true },
-      { value: 'Athletes & fitness', label: 'target', isText: true },
-    ],
-    summary: 'Synthetic ingredients, added sugars, artificial flavors and colors',
+    sugar: 'Up to 11g',
+    magnesium: '0–50mg',
+    ingredients: 'Synthetic blends',
+    verdict: 'Overpriced, under-dosed, and often full of fillers.',
   },
 ]
+
+const rows = ['Sugar', 'Magnesium', 'Ingredients'] as const
+const rowKeys = ['sugar', 'magnesium', 'ingredients'] as const
 
 export default function Comparison() {
   const [isDesktop, setIsDesktop] = useState(false)
@@ -120,70 +98,50 @@ export default function Comparison() {
               How We Compare
             </p>
             <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-white mb-6 tracking-tight">
-              Not all electrolytes are <em>created equal</em>
+              The Clear <em>Choice</em>
             </h2>
             <p className="text-base font-light leading-relaxed text-white/70 max-w-[520px]">
-              7x more magnesium than leading competitors. Zero sugar. Zero additives.
+              Maximum minerals. Zero junk. See how we stack up.
             </p>
           </div>
 
-          {/* Salt.Magic highlight card */}
-          <StaggerContainer className="space-y-4">
-            <StaggerItem>
-              <div className="rounded-2xl bg-white/50 border border-gold/30 md:bg-[rgba(25,55,80,0.75)] md:border-white/15 md:backdrop-blur-md p-[clamp(24px,4vw,40px)]" role="table" aria-label="Salt.Magic formula details">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-[13px] font-semibold uppercase tracking-[0.12em] text-mineral md:text-gold">Salt.Magic</span>
-                  <span className="text-[12px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-full bg-mineral/10 text-mineral md:bg-gold/20 md:text-gold">
-                    Our Formula
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-3 sm:grid-cols-6 gap-6 sm:gap-4" role="row">
-                  {columns[0].rows.map((row) => (
-                    <div key={row.label} role="cell">
-                      <div className="font-display text-[clamp(22px,3vw,32px)] font-normal leading-none text-deep-navy md:text-white mb-1">
-                        {row.isText ? (
-                          <span className="text-[15px] font-medium leading-snug flex items-center gap-1.5">
-                            <svg viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 text-mineral md:text-gold shrink-0" aria-hidden="true">
-                              <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 1.06-1.06L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0z" />
-                            </svg>
-                            {row.value}
-                          </span>
-                        ) : row.value}
-                      </div>
-                      <div className="text-[12px] font-medium tracking-[0.04em] text-deep-navy/50 md:text-gold/80 mt-1">
-                        {row.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </StaggerItem>
-
-            {/* Competitor cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {columns.slice(1).map((col) => (
+          {/* Comparison grid */}
+          <StaggerContainer>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {columns.map((col) => (
                 <StaggerItem key={col.name}>
-                  <div className="rounded-2xl bg-white/50 md:bg-white/[0.65] md:backdrop-blur-md border border-white/60 md:border-white/30 p-[clamp(20px,3vw,32px)] h-full">
-                    <h3 className="text-[12px] font-semibold uppercase tracking-[0.1em] text-deep-navy/60 mb-5">
+                  <div className={`rounded-2xl p-[clamp(20px,3vw,32px)] h-full flex flex-col ${
+                    col.highlight
+                      ? 'bg-white/90 md:bg-white/95 border-2 border-gold/40'
+                      : 'bg-white/50 md:bg-white/[0.65] md:backdrop-blur-md border border-white/30'
+                  }`}>
+                    <h3 className={`text-[13px] font-semibold uppercase tracking-[0.1em] mb-6 ${
+                      col.highlight ? 'text-mineral' : 'text-deep-navy/60'
+                    }`}>
                       {col.name}
                     </h3>
 
-                    <dl className="space-y-4">
-                      {col.rows.slice(0, 3).map((row) => (
-                        <div key={row.label} className="flex justify-between items-baseline">
-                          <dt className="text-[12px] text-deep-navy/50">{row.label}</dt>
-                          <dd className="text-[15px] font-display font-normal text-deep-navy/80">
-                            {row.value}
+                    <dl className="space-y-4 flex-1">
+                      {rowKeys.map((key, i) => (
+                        <div key={key} className="flex justify-between items-baseline">
+                          <dt className="text-[13px] text-deep-navy/50">{rows[i]}</dt>
+                          <dd className={`text-[15px] font-display font-normal ${
+                            col.highlight ? 'text-mineral' : 'text-deep-navy/80'
+                          }`}>
+                            {col[key]}
                           </dd>
                         </div>
                       ))}
                     </dl>
 
-                    <div className="w-full h-px bg-deep-navy/10 my-4" />
+                    <div className="w-full h-px bg-deep-navy/10 my-5" />
 
-                    <p className="text-[12px] font-light leading-relaxed text-deep-navy/50">
-                      {col.summary}
+                    <p className={`text-[13px] leading-relaxed ${
+                      col.highlight
+                        ? 'font-medium text-mineral'
+                        : 'font-light text-deep-navy/50'
+                    }`}>
+                      {col.verdict}
                     </p>
                   </div>
                 </StaggerItem>
@@ -191,7 +149,7 @@ export default function Comparison() {
             </div>
           </StaggerContainer>
 
-          <p className="text-left text-[12px] tracking-[.15em] uppercase text-deep-navy/40 mt-8">
+          <p className="text-left text-[12px] tracking-[.15em] uppercase text-white/40 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
         </FadeIn>

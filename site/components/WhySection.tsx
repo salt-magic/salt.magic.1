@@ -80,12 +80,12 @@ export default function WhySection() {
               <div className="space-y-5 text-base font-light leading-[1.85] text-ink-light">
                 <p>
                   85% of bottled water in Thailand goes through reverse osmosis, stripping
-                  all natural minerals. The result is &ldquo;dead water&rdquo; — purified but
-                  nutritionally empty.
+                  away essential natural minerals. The result is &ldquo;dead water&rdquo; — purified,
+                  but nutritionally empty.
                 </p>
                 <p>
-                  Your body depends on magnesium for over 300 enzymatic reactions. Yet the water
-                  you drink every day provides almost none of it.
+                  Your body needs magnesium for energy, recovery, and daily vitality. Yet, the
+                  water you drink provides almost none of it, leaving you constantly depleted.
                 </p>
               </div>
 

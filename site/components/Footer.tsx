@@ -28,7 +28,7 @@ export default function Footer() {
               <div className="text-[12px] font-semibold tracking-[.18em] uppercase text-golden-hour mb-4 font-display">
                 Navigate
               </div>
-              <a href="/#why" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors">Why Salt.Magic</a>
+              <a href="/#why" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors">About</a>
               <a href="/#products" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors">Products</a>
               <a href="/#story" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors">Our Story</a>
               <Link href="/blog" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors">Blog</Link>
@@ -106,7 +106,7 @@ export default function Footer() {
             {/* Navigate */}
             <div>
               <div className="text-[12px] font-semibold tracking-[.18em] uppercase text-golden-hour mb-4 font-display">Navigate</div>
-              <a href="/#why" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">Why Salt.Magic</a>
+              <a href="/#why" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">About</a>
               <a href="/#products" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">Products</a>
               <a href="/#story" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">Our Story</a>
               <Link href="/blog" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">Blog</Link>

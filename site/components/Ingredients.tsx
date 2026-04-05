@@ -8,19 +8,19 @@ const ingredients = [
     num: '312',
     unit: 'mg',
     name: 'Magnesium Citrate',
-    benefit: 'Muscle recovery, mental clarity, deep sleep',
+    benefit: 'For deep sleep, fast muscle recovery, and calm, mental clarity.',
   },
   {
     num: '160',
     unit: 'mg',
     name: 'Potassium Citrate',
-    benefit: 'Heart rhythm, nerve signaling, fluid balance',
+    benefit: 'For sustained energy, cramp prevention, and perfect hydration.',
   },
   {
     num: '152',
     unit: 'mg',
     name: 'Pink Himalayan Salt',
-    benefit: '84 trace minerals, sodium for hydration',
+    benefit: 'For complete balance, delivering essential sodium and 84 vital trace minerals.',
   },
 ]
 
