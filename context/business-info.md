@@ -40,7 +40,7 @@ Salt.Magic is Thailand's premier all-natural, daily electrolyte mineralizer. Fou
 - **Stage:** Transitioning from proven 5-year D2C "Island" product to national B2B brand in 2026
 - **Team:** Leo (Founder & CEO, 100% beneficial owner), Kawin (Head of Operations, Samui Hub & Logistics)
 - **Market position:** Occupies the gap between cheap/toxic mass-market electrolytes (D-Lyte, Royal-D) and expensive premium imports (LMNT, Wilder)
-- **Distribution:** 150+ health & wellness hubs across Thailand (Bangkok, Chiang Mai, Koh Samui, Phuket, Hua Hin, Koh Phangan, Pai, Krabi, Koh Tao)
+- **Distribution:** 160+ health & wellness hubs across Thailand (Bangkok, Chiang Mai, Koh Samui, Phuket, Hua Hin, Koh Phangan, Pai, Krabi, Koh Tao, Khanom)
 - **Channel partners:** Pharmacies, health food stores, detox centers, wellness resorts, high-end hotels, yoga & fitness studios
 - **Customer base:** Health-conscious consumers, expat communities, wellness tourists, families, daily users
 - **Retention:** 90% — proven habit-forming product

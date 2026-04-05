@@ -31,7 +31,7 @@ export default function CategoryProof() {
       <FadeIn className="max-w-[1100px] mx-auto">
         <div className="text-center mb-[clamp(36px,5vw,56px)]">
           <div className="w-12 h-px bg-golden-hour/50 mx-auto mb-6" />
-          <p className="text-[11px] font-medium tracking-[.22em] uppercase text-golden-hour mb-5">
+          <p className="text-[12px] font-medium tracking-[.22em] uppercase text-golden-hour mb-5">
             Category Proof
           </p>
           <h2 className="font-display text-[clamp(28px,4.5vw,44px)] font-normal leading-[1.15] text-white tracking-tight mb-4">
@@ -52,7 +52,7 @@ export default function CategoryProof() {
                 <div className="font-display text-[clamp(18px,2vw,24px)] font-normal text-golden-hour leading-tight mb-2">
                   {brand.stat}
                 </div>
-                <p className="text-[12px] font-light text-white/50">
+                <p className="text-[12px] font-light text-white/70">
                   {brand.desc}
                 </p>
               </div>
@@ -61,7 +61,7 @@ export default function CategoryProof() {
         </StaggerContainer>
 
         <FadeIn className="text-center mt-10">
-          <p className="text-[14px] font-light text-white/50 max-w-[480px] mx-auto">
+          <p className="text-[14px] font-light text-white/70 max-w-[480px] mx-auto">
             Thailand is where the USA was 7 years ago. Salt.Magic is positioned to lead the wellness electrolytes category in APAC.
           </p>
         </FadeIn>

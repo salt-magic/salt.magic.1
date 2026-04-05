@@ -33,12 +33,21 @@ export const metadata: Metadata = {
     url: 'https://salt-magic.com',
     siteName: 'Salt.Magic',
     locale: 'en_US',
+    images: [
+      {
+        url: 'https://salt-magic.com/images/products/taylor-hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Salt.Magic — Natural Electrolyte Mineralizer',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Salt.Magic — Thailand's Natural Electrolyte Mineralizer",
     description:
       '3 natural minerals. Zero sugar. Zero additives. 312mg magnesium per serving.',
+    images: ['https://salt-magic.com/images/products/taylor-hero.jpg'],
   },
   robots: 'index, follow',
   authors: [{ name: 'Salt.Magic' }],
@@ -85,6 +94,45 @@ export default function RootLayout({
               ],
               areaServed: { '@type': 'Country', name: 'Thailand' },
             }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Product',
+                name: 'Salt.Magic Signature Glass Jar',
+                description:
+                  'Premium glass jar with 70 servings of natural electrolyte mineralizer. 312mg magnesium, zero sugar, flavorless. Crafted on Koh Samui.',
+                brand: { '@type': 'Brand', name: 'Salt.Magic' },
+                offers: {
+                  '@type': 'Offer',
+                  price: '490',
+                  priceCurrency: 'THB',
+                  availability: 'https://schema.org/InStock',
+                  url: 'https://www.lazada.co.th/shop/salt-magic/',
+                },
+                image: 'https://salt-magic.com/images/products/taylor-closeup.jpg',
+              },
+              {
+                '@context': 'https://schema.org',
+                '@type': 'Product',
+                name: 'Salt.Magic Travel Pouch',
+                description:
+                  'Portable resealable pouch with 30 servings of natural electrolyte mineralizer. 312mg magnesium, zero sugar, GMP/HACCP certified.',
+                brand: { '@type': 'Brand', name: 'Salt.Magic' },
+                offers: {
+                  '@type': 'Offer',
+                  price: '290',
+                  priceCurrency: 'THB',
+                  availability: 'https://schema.org/InStock',
+                  url: 'https://www.lazada.co.th/shop/salt-magic/',
+                },
+                image: 'https://salt-magic.com/images/products/sachet.jpg',
+              },
+            ]),
           }}
         />
       </head>

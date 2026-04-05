@@ -41,7 +41,7 @@ export default function PartnerForm() {
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-3.5">
               <div>
-                <label className="block text-[11px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
+                <label className="block text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
                   Name
                 </label>
                 <input
@@ -52,7 +52,7 @@ export default function PartnerForm() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
+                <label className="block text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
                   Company
                 </label>
                 <input
@@ -65,7 +65,7 @@ export default function PartnerForm() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-3.5">
               <div>
-                <label className="block text-[11px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
+                <label className="block text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
                   Role
                 </label>
                 <input
@@ -76,7 +76,7 @@ export default function PartnerForm() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
+                <label className="block text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
                   Email
                 </label>
                 <input
@@ -88,7 +88,7 @@ export default function PartnerForm() {
               </div>
             </div>
             <div className="mb-3.5">
-              <label className="block text-[11px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
+              <label className="block text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1.5">
                 Message
               </label>
               <textarea
@@ -99,7 +99,7 @@ export default function PartnerForm() {
             </div>
             <button
               type="submit"
-              className="w-full py-4 bg-mineral text-white font-body text-[11px] font-semibold tracking-[.12em] uppercase border-none rounded-pill cursor-pointer hover:bg-mineral-light transition-all duration-300"
+              className="w-full py-4 bg-mineral text-white font-body text-[12px] font-semibold tracking-[.12em] uppercase border-none rounded-pill cursor-pointer hover:bg-mineral-light transition-colors duration-300"
             >
               Submit Inquiry
             </button>

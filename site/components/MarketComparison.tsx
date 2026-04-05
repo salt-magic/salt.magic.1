@@ -20,7 +20,7 @@ export default function MarketComparison() {
           {/* USA */}
           <StaggerItem>
             <div className="rounded-2xl bg-warm-off p-8 h-full">
-              <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-ink-faint mb-6">
+              <p className="text-[12px] font-semibold tracking-[0.15em] uppercase text-ink-light mb-6">
                 USA Today
               </p>
               <div className="font-display text-[clamp(36px,5vw,52px)] font-normal text-mineral leading-none mb-2">
@@ -42,7 +42,7 @@ export default function MarketComparison() {
               <div className="mt-6 pt-5 border-t border-border-warm">
                 <div className="flex items-baseline gap-2">
                   <span className="font-display text-[24px] font-normal text-mineral">$21.3B</span>
-                  <span className="text-[13px] text-ink-faint">projected by 2034</span>
+                  <span className="text-[13px] text-ink-light">projected by 2034</span>
                 </div>
                 <span className="text-[12px] font-medium text-gold">88% growth</span>
               </div>
@@ -52,25 +52,25 @@ export default function MarketComparison() {
           {/* APAC */}
           <StaggerItem>
             <div className="rounded-2xl bg-mineral p-8 h-full text-white">
-              <p className="text-[11px] font-semibold tracking-[0.15em] uppercase text-golden-hour/70 mb-6">
+              <p className="text-[12px] font-semibold tracking-[0.15em] uppercase text-golden-hour mb-6">
                 Asia Pacific Today
               </p>
               <div className="font-display text-[clamp(36px,5vw,52px)] font-normal leading-none mb-2">
                 $3.0B
               </div>
-              <p className="text-[14px] font-light text-white/60 mb-6">Market size (2023)</p>
+              <p className="text-[14px] font-light text-white/70 mb-6">Market size (2023)</p>
 
               <div className="space-y-3">
                 {['Limited shelf presence in pharmacies', 'Still dominated by sports positioning', 'Mostly sugary options available', 'Early stage = massive opportunity'].map((item, i) => (
                   <div key={item} className="flex items-start gap-2.5">
-                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className={`w-4 h-4 shrink-0 mt-0.5 ${i === 3 ? 'text-golden-hour' : 'text-white/40'}`} aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className={`w-4 h-4 shrink-0 mt-0.5 ${i === 3 ? 'text-golden-hour' : 'text-white/70'}`} aria-hidden="true">
                       {i === 3 ? (
                         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" />
                       ) : (
                         <path d="M8 3v10M4 8h8" strokeLinecap="round" />
                       )}
                     </svg>
-                    <span className={`text-[13px] font-light ${i === 3 ? 'text-golden-hour font-medium' : 'text-white/60'}`}>{item}</span>
+                    <span className={`text-[13px] font-light ${i === 3 ? 'text-golden-hour font-medium' : 'text-white/70'}`}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -78,7 +78,7 @@ export default function MarketComparison() {
               <div className="mt-6 pt-5 border-t border-white/10">
                 <div className="flex items-baseline gap-2">
                   <span className="font-display text-[24px] font-normal">$4.3B</span>
-                  <span className="text-[13px] text-white/50">projected by 2030</span>
+                  <span className="text-[13px] text-white/70">projected by 2030</span>
                 </div>
                 <span className="text-[12px] font-medium text-golden-hour">44% growth</span>
               </div>

@@ -25,11 +25,11 @@ export default function PartnerHero() {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#partner-form"
-              className="px-8 py-3.5 bg-white text-mineral text-[11px] font-semibold tracking-[.12em] uppercase rounded-pill hover:bg-gold-light transition-all duration-300"
+              className="px-8 py-3.5 bg-white text-mineral text-[12px] font-semibold tracking-[.12em] uppercase rounded-pill hover:bg-gold-light transition-colors duration-300"
             >
               Contact Us
             </a>
-            <span className="px-8 py-3.5 border border-white/30 text-white text-[11px] font-semibold tracking-[.12em] uppercase rounded-pill opacity-50 cursor-default">
+            <span className="px-8 py-3.5 border border-white/30 text-white text-[12px] font-semibold tracking-[.12em] uppercase rounded-pill opacity-50 cursor-default">
               Download Deck (Coming Soon)
             </span>
           </div>
@@ -41,7 +41,7 @@ export default function PartnerHero() {
               <div className="font-display text-[clamp(28px,4vw,40px)] font-normal text-white leading-none mb-1.5">
                 {item.value}
               </div>
-              <div className="text-[11px] font-medium tracking-[.12em] uppercase text-gold/70">
+              <div className="text-[12px] font-medium tracking-[.12em] uppercase text-gold/70">
                 {item.label}
               </div>
             </StaggerItem>

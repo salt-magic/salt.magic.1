@@ -1,8 +1,9 @@
-# Salt.Magic Homepage Copy V1 (GEO-Optimized)
+# Salt.Magic Homepage Copy V11 (GEO-Optimized)
 
 **Created:** 2026-03-26
-**Status:** V1 Draft
-**GEO Strategy:** QAE pattern (Question → Answer → Evidence), answer-first paragraphs, citable data blocks, structured content for AI search citation.
+**Last Updated:** 2026-04-05 (V11 Copy Review — all 20 sections from Leo's review implemented)
+**Status:** V11 Final — matches live code
+**GEO Strategy:** QAE pattern (Question -> Answer -> Evidence), answer-first paragraphs, citable data blocks, structured content for AI search citation.
 
 ---
 
@@ -16,547 +17,503 @@
 
 ---
 
+## Homepage Section Order (AIDA Funnel)
+
+1. AnnouncementBar (Marquee)
+2. Hero
+3. TrustBand
+4. SocialProof (Numbers)
+5. WhySection (The Problem)
+6. The Formula + Ingredients
+7. Comparison
+8. Benefits
+9. ForEveryone
+10. ImageBreak
+11. Products
+12. Testimonials
+13. StorySection
+14. FAQ
+15. BlogSection
+16. CtaBanner
+17. Newsletter
+18. PartnerTeaser
+19. Footer
+
+---
+
+## AnnouncementBar (Marquee)
+
+**[Scrolling messages — mineral-blue background]**
+
+- 100% Natural  |  Zero Sugar  |  Zero Flavor
+- 5 Years Trusted  |  90% Retention  |  160+ Locations
+- Mineralize Your Water, Everywhere.
+
+---
+
+## Navigation
+
+**[Left Links]** About | Products
+**[Center]** Salt.Magic Logo (100px)
+**[Right Links]** Story | Blog | Partner | [Shop Now] (pill button)
+
+**[Mobile]** Hamburger -> Fullscreen overlay with Playfair Display links
+
+---
+
 ## Section 1: Hero
 
-**[Eyebrow]**
-THAILAND'S ALL-NATURAL ELECTROLYTE MINERALIZER
-
 **[H1]**
-Salt.Magic
+Mineralize Your Water,
+*Everywhere.*
 
-**[Subheading — Playfair Display, 28px]**
-Your Water Is Missing Something Essential
+**[Body — 20px]**
+Pure minerals. Zero sugar. Every glass. Every day.
 
-**[Body — 18px, max 2 lines]**
-85% of bottled water in Thailand is stripped of minerals. Salt.Magic restores what filtration removes — with just three natural ingredients and zero additives.
+**[CTA Primary]** Shop Now (white pill button, scrolls to #products)
+**[CTA Secondary]** Learn More (outlined pill button, scrolls to #why)
 
-**[CTA Primary]**
-Shop Now → (links to Lazada)
+**[Hero Images — 3-slide carousel, 6s auto-rotate]**
+1. Salt.Magic jar in tropical water
+2. Salt.Magic jars among tropical greenery
+3. Salt.Magic jar in natural water among tropical plants
 
-**[CTA Secondary]**
-Partner With Us (outlined button, scrolls to #partner)
-
-**[Hero Image]**
-Glass jar on natural stone surface with warm golden light. Use product photo from `reference/product-pics/` — Salt Magic Greenery series or jar shot with gold lid.
+**[Slide indicators]** Gold bar indicators with 44px touch targets
 
 ---
 
-## Section 2: The Problem (#why)
+## Section 2: TrustBand
 
-**[Eyebrow]**
-THE DEAD WATER CRISIS
+**[Label]**
+Trusted by 160+ locations across Thailand
 
-**[H2]**
-Why Does Your Water Need Minerals?
+**[Location list]**
+Koh Samui  -  Bangkok  -  Chiang Mai  -  Phuket  -  Hua Hin  -  Koh Phangan  -  Pai  -  Koh Tao  -  Krabi  -  Khanom
 
-**[Answer — first paragraph, citable]**
-Most bottled water in Thailand goes through reverse osmosis (RO) filtration, which removes virtually all natural minerals. The result is "dead water" — purified but nutritionally empty. Your body needs electrolytes like magnesium, potassium, and sodium for basic cellular function, yet the water you drink every day provides almost none.
+---
 
-**[Evidence Block — stat callout]**
+## Section 3: SocialProof (Numbers)
 
-| Stat | Source |
+**[Background: Mineral Blue]**
+
+| Value | Label |
 |---|---|
-| 85% of Thai bottled water brands use RO filtration | TDS meter analysis |
-| 50% of people worldwide are magnesium deficient | National Institutes of Health (NIH) |
-| <10 TDS (Total Dissolved Solids) in most Thai bottled water | Independent lab testing |
+| 90% | Customer retention |
+| 160+ | Locations across Thailand |
+| 5 Years | Established track record |
+| 365 Days | Designed for daily use |
 
-**[Supporting Copy]**
-Reverse osmosis removes contaminants — but it also strips away the essential minerals your body depends on. Magnesium supports over 300 enzymatic reactions. Potassium regulates heart rhythm and muscle function. Sodium maintains fluid balance. Without these electrolytes, even "premium" water leaves your body under-hydrated at the cellular level.
-
-**[Key Takeaway Callout]**
-> **Key Takeaway:** Clean water isn't the same as complete water. If your bottled water has a TDS below 50, you're drinking mineral-free water every day — and your body is paying the price.
-
-**[CTA]**
-See What's Inside Salt.Magic → (scrolls to #solution)
+**[Animated CountUp on scroll, 1.8s ease-out cubic]**
 
 ---
 
-## Section 3: The Solution (#solution)
+## Section 4: WhySection — The Problem (#why)
 
-**[Eyebrow]**
-THREE INGREDIENTS. ZERO COMPROMISE.
+**[Eyebrow]** The Problem
+**[Gold-Line]** Yes
 
 **[H2]**
-What Makes Salt.Magic Different From Other Electrolytes?
+Your water is missing what your body needs *most*
 
-**[Answer — first paragraph, citable]**
-Salt.Magic is a daily electrolyte mineralizer made from three natural ingredients: magnesium citrate, potassium citrate, and pink Himalayan salt. Each 2-gram serving delivers 312mg of magnesium — 7x more than leading competitors — with zero sugar, zero stevia, zero artificial flavors or colors. It's flavorless, dissolves instantly, and works in any drink.
+**[Body — 2 paragraphs]**
+85% of bottled water in Thailand goes through reverse osmosis, stripping away essential natural minerals. The result is "dead water" — purified, but nutritionally empty.
 
-**[Ingredient Cards — 3 columns]**
+Your body needs magnesium for energy, recovery, and daily vitality. Yet, the water you drink provides almost none of it, leaving you constantly depleted.
 
-### Magnesium Citrate — 312mg
-The bioavailable form your body absorbs best. Supports muscle recovery, mental clarity, deep sleep, and over 300 enzymatic reactions. Most electrolyte brands contain less than 50mg.
+**[Pull-Quote — italic, left border gold]**
+50% of people worldwide are magnesium deficient. Your water could be why.
 
-### Potassium Citrate — 160mg
-Essential for heart rhythm, nerve signaling, and muscle function. Works synergistically with magnesium to optimize cellular hydration and prevent cramping.
+**[Icon Badges — 3 circular badges]**
+- Zero Sugar (water drop icon)
+- 100% Natural (globe icon)
+- 7x Magnesium (pulse icon)
 
-### Pink Himalayan Salt — 152mg
-Unrefined salt containing 84 trace minerals. Provides sodium for fluid balance without the processing of table salt. Sourced from ancient Himalayan deposits.
-
-**[Mineral Ratio Visual]**
-- Magnesium: 50%
-- Potassium: 30%
-- Sodium: 20%
-
-**[Product Claims Row — icon badges]**
-No Sugar | No Sweeteners | Flavorless | Vegan | Gluten Free | Non-GMO | Keto Friendly | Eco Friendly
-
-**[Key Takeaway Callout]**
-> **Key Takeaway:** Salt.Magic contains just 3 natural minerals in a 2g serving — no sugar, no stevia, no fillers. With 312mg magnesium citrate per serving, it delivers 7x more magnesium than most electrolyte products on the market.
+**[Image]** Poolside lifestyle photo (left side, 60% width on desktop)
 
 ---
 
-## Section 4: Comparison Table (#comparison)
+## Section 5: The Formula + Ingredients
 
-**[Eyebrow]**
-HONEST COMPARISON
+**[Background: warm-off]**
+
+**[Eyebrow]** The Formula
+**[Gold-Line]** Yes
 
 **[H2]**
-How Does Salt.Magic Compare to Other Hydration Options?
+Everything your water is missing. *Nothing you can taste.*
 
-**[Answer — first paragraph, citable]**
-Most hydration products rely on sugar, artificial sweeteners, or synthetic dyes to mask low mineral content. Salt.Magic takes the opposite approach: maximum mineral density, minimum ingredients, zero compromise. Here's how it compares to what's currently on shelves in Thailand.
+**[Body]**
+Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly, is completely flavorless, and delivers 7x more magnesium than leading competitors. Three natural ingredients. Zero junk.
 
-**[Comparison Table — 4 columns]**
+**[Ingredients — horizontal layout, large numbers]**
 
-| Feature | Dead Water (RO/Filtered) | Mainstream Electrolytes (D-Lyte, Royal-D) | Electrolyte Powders (LMNT, Wilder) | Salt.Magic |
+### 312 mg — Magnesium Citrate
+For deep sleep, fast muscle recovery, and calm, mental clarity.
+
+### 160 mg — Potassium Citrate
+For sustained energy, cramp prevention, and perfect hydration.
+
+### 152 mg — Pink Himalayan Salt
+For complete balance, delivering essential sodium and 84 vital trace minerals.
+
+**[Background decoration]** Botanical illustration at 4% opacity
+
+---
+
+## Section 6: Comparison (#comparison)
+
+**[Background: Animated water effect (desktop) / blue gradient (mobile)]**
+
+**[Eyebrow]** How We Compare
+**[Gold-Line]** Yes
+
+**[H2]**
+The Clear *Choice*
+
+**[Body]**
+Maximum minerals. Zero junk. See how we stack up.
+
+**[4-Column Comparison Grid]**
+
+| | Salt.Magic | Sports Drinks | Coconut Water | Other Electrolyte Mixes |
 |---|---|---|---|---|
-| Magnesium | 0mg | 5-20mg | 40-60mg | **312mg** |
-| Sugar | 0g | 6-15g | 0g | **0g** |
-| Artificial Sweeteners | None | Yes (sucralose) | Some (stevia) | **None** |
-| Artificial Colors | None | Yes | Some | **None** |
-| Serving Size | N/A | 10-20g | 6-10g | **2g** |
-| Flavor | None | Fruit/sweet | Flavored | **Flavorless** |
-| Price per Serving | ~2 THB | 5-8 THB | 25-40 THB | **7-10 THB** |
-| Daily Use Friendly | No minerals | Too much sugar | Too expensive | **Yes** |
+| **Sugar** | 0g | 27g+ | 28g | Up to 11g |
+| **Magnesium** | 312mg | 0-25mg | ~15mg | 0-50mg |
+| **Ingredients** | 3 natural minerals | Artificial colors & flavors | Natural, but unbalanced | Synthetic blends |
 
-**[Key Takeaway Callout]**
-> **Key Takeaway:** Salt.Magic offers the highest magnesium content (312mg) at the lowest serving size (2g), with no sugar, no sweeteners, and no artificial additives — at a price point (7-10 THB/serving) that makes daily use realistic.
+**[Verdict lines per column]**
+- Salt.Magic: "Clean, daily hydration without the sugar crash."
+- Sports Drinks: "Glorified syrup. High in sugar, low in actual electrolytes."
+- Coconut Water: "A tasty treat, but too much sugar for optimal daily hydration."
+- Other Mixes: "Overpriced, under-dosed, and often full of fillers."
 
----
-
-## Section 5: Benefits (#benefits)
-
-**[Eyebrow]**
-WHAT CHANGES WHEN YOU REMINERALIZE
-
-**[H2]**
-What Does Proper Mineral Hydration Feel Like?
-
-**[Answer — first paragraph, citable]**
-When your body gets the electrolytes it needs daily, you notice the difference within days. Users report clearer thinking, steadier energy without crashes, fewer muscle cramps, and better sleep. It's not a supplement — it's restoring what your water should have contained in the first place.
-
-**[4 Benefit Cards — icon + title + description]**
-
-### Clear Thinking
-Magnesium supports cognitive function, focus, and mental clarity. Many people attribute "brain fog" to stress or sleep — when the real cause is mineral deficiency in their daily water.
-
-### Steady Energy
-Unlike caffeine or sugar, electrolytes provide sustained energy by supporting cellular hydration. No spike, no crash — just consistent function throughout the day.
-
-### Body Ease
-Muscle cramps, tension headaches, and restless legs are common signs of magnesium deficiency. Proper electrolyte intake helps muscles relax and recover, whether you exercise or not.
-
-### Better Sleep
-Magnesium is one of the most well-researched natural sleep supports. It activates the parasympathetic nervous system — helping you fall asleep faster and sleep deeper.
-
-**[Daily Ritual Block]**
-
-**Your Daily Hydration Ritual:**
-- **Morning:** One scoop in your first glass of water — start hydrated, not depleted
-- **Afternoon:** Mix into your water bottle — maintain focus through the midday slump
-- **Evening:** Add to herbal tea or warm water — support deep, restorative sleep
+**[Footnote]**
+Based on a 2g serving of Salt.Magic vs typical 16oz servings
 
 ---
 
-## Section 6: Who It's For (#use-cases)
+## Section 7: Benefits (#benefits)
 
-**[Eyebrow]**
-NOT JUST FOR ATHLETES
+**[Background: warm-off]**
+
+**[Eyebrow]** Daily Benefits
+**[Gold-Line]** Yes
 
 **[H2]**
-Who Uses Salt.Magic?
+Feel the *Difference*
 
-**[Answer — first paragraph, citable]**
-Salt.Magic is designed for daily use by everyone — not just athletes or fitness enthusiasts. It's a wellness essential for anyone drinking filtered or bottled water, which is most people in Thailand. From office workers to new parents, fasting practitioners to frequent travelers, proper hydration starts with minerals.
+**[Body]**
+What happens when your water actually works.
 
-**[8 Use Case Cards — 2x4 grid, icon + persona + description]**
+**[6 Benefits — 2-column horizontal layout, icon left + text right]**
 
-### The Daily Grinder
-Office workers, remote workers, students. You drink water all day but still feel drained. That's because filtered water without minerals doesn't hydrate at the cellular level.
+### True Hydration
+Stop flushing water straight through your system. Give your body the minerals it needs to actually absorb every drop.
 
-### Fasters & Detoxers
-Intermittent fasting, juice cleanses, detox protocols. When you're not eating, you're not getting minerals from food. Electrolytes are essential to fasting safely and feeling good doing it.
+### Deeper Sleep
+Magnesium is nature's relaxant. Ease muscle tension, calm your nervous system, and wake up restored.
 
-### Sauna & Heat Lovers
-Sauna, hot yoga, steam rooms, Thai heat. You lose minerals through sweat faster than you realize. One scoop before or after replaces what the heat takes.
+### Sustained Focus
+Clear the brain fog. Keep your mind sharp and your concentration steady without the caffeine crash.
 
-### Divers & Water Sports
-Diving, surfing, swimming. Saltwater and sun accelerate mineral depletion. Rehydrate with minerals, not just water.
+### Travel & Heat Recovery
+Replenish vital electrolytes lost to tropical heat, long flights, or simply running empty.
 
-### Travelers & Expats
-Flights, jet lag, unfamiliar water sources. Travel disrupts your body's hydration baseline. Salt.Magic works in any water, anywhere.
+### Peak Performance
+Push harder and recover faster. Maintain your energy and banish muscle cramps during exercise.
 
-### Recovery Days
-Hangovers, illness, fever recovery. Your body is depleted and needs minerals to bounce back — not sugar-loaded sports drinks.
-
-### Families & Kids
-Parents want clean hydration for their children without sugar or artificial ingredients. Flavorless Salt.Magic mixes invisibly into any drink.
-
-### Sensitive Stomachs
-IBS, acid reflux, medication sensitivity. Zero sugar, zero sweeteners, zero fillers means no digestive triggers. Just minerals your body recognizes.
-
-**[Positioning Callout]**
-> Salt.Magic is for everyone who drinks water — which is everyone. It's not a sports supplement. It's a daily wellness essential.
+### Natural Hangover Defense
+Woke up severely dehydrated? Instantly restore your mineral balance and bounce back faster.
 
 ---
 
-## Section 7: Products & Pricing (#products)
+## Section 8: ForEveryone
 
-**[Eyebrow]**
-FIND YOUR FORMAT
+**[Eyebrow]** For Everyone
+**[Gold-Line]** Yes
 
 **[H2]**
-Which Salt.Magic Format Is Right for You?
+Not a Sports Drink. *A Daily Essential.*
 
-**[Answer — first paragraph, citable]**
-Salt.Magic comes in two formats — a premium glass jar for home use and a portable paper sachet pouch for on-the-go. Both contain the same 3-ingredient formula. A third format, the single-serve sachet, launches in 2026 for trial and impulse purchase.
+**[Subhead]**
+Pure hydration for daily life, not just game day.
 
-**[Product Card 1: Glass Jar]**
-- **Image:** Glass jar from `reference/product-pics/`
-- **Badge:** Heritage Line
-- **Name:** Salt.Magic Glass Jar
+**[Body]**
+Most electrolytes are packed with sugar and designed for extreme athletes to use once in a while. Salt.Magic is designed for life. Whether you're intermittent fasting, surviving the tropical heat, traveling, or just navigating a busy workday, your body burns through minerals every single day.
+
+**[Old Way vs Salt.Magic Way — 2-column comparison cards]**
+
+| The Old Way (Sports Drinks) | The Salt.Magic Way |
+|---|---|
+| Occasional use (3-5x a week) | Daily essential (365 days a year) |
+| Built for intense workouts | Built for anyone who drinks water |
+| Loaded with sugar & artificial colors | Pure, invisible, natural minerals |
+
+**[Image]** Alo lifestyle photo (right side on desktop)
+
+---
+
+## Section 9: ImageBreak
+
+**[Full-width image]** MarocMaroc beach wellness shot
+**[Alt text]** Artisanal wellness products by the beach — natural beauty ritual
+
+---
+
+## Section 10: Products (#products)
+
+**[Eyebrow]** Shop Salt.Magic
+**[Gold-Line]** Yes
+
+**[H2]**
+Ready to upgrade *your water?*
+
+**[Body]**
+Choose your daily ritual. Less than the cost of your morning coffee.
+
+**[USP Badges — centered row]**
+- Zero Sugar
+- 100% Natural
+- 7x Magnesium
+
+**[Product Card 1: Signature Glass Jar]**
+- **Tag:** Best Value
+- **Name:** The Signature Glass Jar
 - **Price:** 490 THB
-- **Servings:** 70 servings (7 THB per serving)
-- **Description:** Premium reusable glass jar with gold lid. Perfect for home, office, or kitchen counter. Produced in-house at our Samui Hub.
-- **Best for:** Home use, daily ritual
-- **CTA:** Shop on Lazada →
+- **Meta:** Over 2 months of daily hydration (70 servings) — Just 7 THB per day
+- **Description:** A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Proudly crafted at our Koh Samui hub.
+- **CTA:** Shop on Lazada -> (links to Lazada)
 
-**[Product Card 2: Paper Sachet Pouch]**
-- **Image:** Sachet from `reference/product-pics/`
-- **Badge:** Most Popular
-- **Name:** Salt.Magic Paper Sachet
+**[Product Card 2: Travel Pouch]**
+- **Tag:** Most Popular
+- **Name:** The Travel Pouch
 - **Price:** 290 THB
-- **Servings:** 30 servings (9.6 THB per serving)
-- **Description:** Portable, resealable paper pouch. GMP/HACCP certified manufacturing. Fits in your bag, gym locker, or travel kit.
-- **Best for:** On-the-go, travel, gym
-- **CTA:** Shop on Lazada →
+- **Meta:** A full month's supply (30 servings) — Just 9.6 THB per day
+- **Description:** Your daily minerals, perfectly portable. A resealable, GMP/HACCP-certified pouch built for your gym bag, office drawer, or long flights.
+- **CTA:** Shop on Lazada -> (links to Lazada)
 
-**[Product Card 3: Single Sachet — Coming Soon]**
-- **Badge:** Coming 2026
-- **Name:** Salt.Magic Single Sachet
-- **Price:** 9-12 THB per serving
-- **Description:** Individual single-serve sachets. Perfect for trying Salt.Magic for the first time or grabbing at checkout.
-- **Best for:** Trial, impulse buy, pharmacy/retail
-- **CTA:** Get Notified → (email capture)
-
-**[Per-Serving Cost Comparison]**
-
-| Product | Price | Servings | Per Serving |
-|---|---|---|---|
-| Salt.Magic Glass Jar | 490 THB | 70 | **7.0 THB** |
-| Salt.Magic Paper Sachet | 290 THB | 30 | **9.6 THB** |
-| LMNT (import) | 1,200+ THB | 30 | ~40 THB |
-| Wilder (import) | 900+ THB | 30 | ~30 THB |
-| D-Lyte / Royal-D | 150-200 THB | 30 | ~5-7 THB (but high sugar) |
+**[Note: Single Sachet removed from homepage in V11]**
 
 ---
 
-## Section 8: Sustainability (#sustainability)
+## Section 11: Testimonials
 
-**[Eyebrow]**
-CLEAN FOR YOUR BODY. CLEAN FOR THE PLANET.
-
-**[H2]**
-How Is Salt.Magic Sustainable?
-
-**[Answer — first paragraph, citable]**
-Salt.Magic's multi-serving bulk format eliminates up to 85% of the plastic waste created by single-serve stick packs. Every glass jar replaces 70 individual plastic sachets. Every paper pouch replaces 30. Sustainability isn't a side feature — it's built into the product design from day one.
-
-**[Sustainability Points — icon + stat + description]**
-
-### 85% Less Plastic
-One 30-serving pouch replaces 30 individual stick packs. One 70-serving jar replaces 70. That's up to 85% less packaging waste per serving compared to single-serve competitors.
-
-### Reusable Glass Packaging
-The heritage glass jar is designed to be kept, refilled, and reused. Premium packaging that doesn't become waste.
-
-### Recyclable Paper Sachets
-Paper pouch with minimal plastic lining. Designed for recyclability, not landfill.
-
-### Anti-Microplastic Brand Pillar
-We actively work against the microplastic crisis. No plastic bottles, no plastic scoops, no unnecessary plastic components. Clean hydration shouldn't create dirty waste.
-
-**[Key Takeaway Callout]**
-> **Key Takeaway:** Salt.Magic reduces plastic waste by up to 85% versus single-serve electrolyte packs through multi-serving bulk formats — glass jars (70 servings) and recyclable paper sachets (30 servings).
-
----
-
-## Section 9: Social Proof (#testimonials)
-
-**[Eyebrow]**
-5 YEARS. 150+ LOCATIONS. 90% RETENTION.
+**[Background: warm-off]**
 
 **[H2]**
-What Do Salt.Magic Customers Say?
+Look what our *customers say*
 
-**[Answer — first paragraph, citable]**
-Salt.Magic has a 90% customer retention rate over 5 years — meaning 9 out of 10 customers who try it continue using it as a daily essential. It's available in over 150 health and wellness locations across Thailand, from Bangkok to Koh Samui.
+**[CTA]** Shop Now (pill button)
 
-**[Headline Stats — 3 animated counters]**
-
-| Stat | Value | Label |
-|---|---|---|
-| Years Established | 5+ | Years Trusted |
-| Partner Locations | 150+ | Across Thailand |
-| Customer Retention | 90% | Keep Using Daily |
-
-**[Testimonial Carousel — 6 slides]**
+**[Testimonial Carousel — 5 slides, 8s auto-play, pause on hover]**
 
 > "I've tried every electrolyte on the market. Salt.Magic is the only one I actually use every single day. No taste, no sugar, just works."
-> — **Sarah C.**, Bangkok
+> — **Sarah C.**, Wellness Enthusiast, Bangkok
 
-> "As a yoga instructor, I recommend Salt.Magic to all my students. It's the cleanest electrolyte I've found — and it doesn't interfere with fasting."
-> — **Sarah McLaughlin**, Koh Samui
+> "As a yoga instructor, I recommend Salt.Magic to all my students. The cleanest electrolyte I've found."
+> — **Sarah McLaughlin**, Yoga Instructor, Koh Samui
 
 > "My whole family uses it — even my kids don't notice it in their water. That's the whole point."
-> — **Ploy**, Chiang Mai
+> — **Ploy**, Mother of Three, Chiang Mai
 
-> "I was skeptical about another supplement, but Salt.Magic isn't a supplement — it's just minerals. My energy and sleep improved within a week."
-> — **David**, Bangkok
-
-> "The sustainability angle sealed it for me. One jar lasts two months and creates zero plastic waste. Finally, a brand that matches my values."
-> — **Shannon Diablo**, Phuket
+> "One jar lasts two months and creates zero plastic waste. Finally, a brand that matches my values."
+> — **Shannon Diablo**, Sustainability Advocate, Phuket
 
 > "I take it before every dive. The difference in how I feel after 2-3 hours in saltwater is massive."
-> — **Tom W.**, Koh Tao
+> — **Tom W.**, Dive Instructor, Koh Tao
 
 ---
 
-## Section 10: About (#about)
+## Section 12: StorySection (#story)
 
-**[Eyebrow]**
-OUR STORY
+**[Background: footer-dark, split layout]**
+
+**[Eyebrow]** Our Origin (golden-hour color on dark bg)
 
 **[H2]**
-Who Is Behind Salt.Magic?
+The Koh Samui *Story*
 
-**[Answer — first paragraph, citable]**
-Salt.Magic was born on Koh Samui, Thailand — created by people who actually live the tropical wellness lifestyle, not just market it. What started as a personal solution for mineral-depleted island water became a product used by thousands across Thailand.
+**[Body — 2 paragraphs + trust box]**
+Living on a tropical island, we drank more water than most — but still felt constantly depleted. We finally tested it with a TDS meter, and the results confirmed it: our daily "purified" water had virtually zero minerals.
 
-**[Origin Story]**
-Five years ago, we noticed something wrong with our water. Living on a tropical island, we drank more water than most — but we still felt depleted. A TDS meter confirmed what we suspected: our "purified" water had virtually zero minerals. We couldn't find a clean electrolyte that was sugar-free, flavorless, and affordable enough for daily use. So we made one.
+We couldn't find a clean electrolyte that was sugar-free, flavorless, and affordable for daily use. So we made one.
 
-Salt.Magic started in a kitchen on Koh Samui. Today it's in over 150 wellness hubs, yoga studios, pharmacies, and health food stores across Thailand — and we're just getting started.
+**[Trust-Box Highlight — bg-white/10, gold border]**
+What started in a kitchen on Koh Samui is now trusted by over 160 locations across Thailand.
 
-**[Team Cards — 2 columns]**
+**[CTAs]**
+- Shop Now (gold pill button)
+- Read the full story (underline link)
 
-### Leo — Founder & CEO
-Drives the brand vision, product development, and B2B distribution strategy. Based in Thailand.
-
-### Kawin — Head of Operations
-Manages the Samui production hub, logistics, and partner network across Thailand.
+**[Image]** Salt.Magic jar in tropical water (left side with parallax)
 
 ---
 
-## Section 11: Partner With Us (#partner)
+## Section 13: FAQ (#faq)
 
-**[Eyebrow]**
-DISTRIBUTION PARTNERSHIP
+**[Background: warm-off]**
 
-**[H2]**
-Want to Distribute Salt.Magic?
-
-**[Answer — first paragraph, citable]**
-Salt.Magic offers distribution partnerships with attractive margins (35-40%) in a global electrolyte market projected to reach $69.1 billion by 2032. With 90% customer retention and a daily-use wellness positioning (365 days/year vs. fitness-only 3-5 days/week), Salt.Magic delivers consistent sell-through and repeat orders.
-
-**[Market Opportunity Block — animated stats on scroll]**
-
-#### The Electrolyte Market Is Exploding
-
-| Metric | Value |
-|---|---|
-| Global Market 2024 | $39.9 Billion |
-| Global Market 2032 (projected) | $69.1 Billion |
-| CAGR | 8.2% |
-| APAC Position | 5-7 years behind USA adoption curve |
-
-> The APAC electrolyte market is where the USA market was 5-7 years ago. Early distribution partners capture first-mover advantage in a market that's about to accelerate.
-
-**[Why Partner — Key Metrics Block, animated counters]**
-
-| Metric | Value | Why It Matters |
-|---|---|---|
-| Customer Retention | 90% | Proven repeat purchase — not a one-time buy |
-| Locations | 150+ | Established distribution across Thailand |
-| Years Established | 5+ | Proven product-market fit, not a startup experiment |
-| Customer LTV/Year | 4,200 THB | High lifetime value drives distributor revenue |
-| Distributor Margin | 35-40% | Competitive margins on a premium product |
-| Cannibalization Risk | 0% | 100% incremental revenue — new category, no shelf substitution |
-
-**[Revenue Model Block]**
-
-#### Why Daily Wellness Beats Fitness-Only
-
-| Model | Usage | Days per Year | Revenue per Customer |
-|---|---|---|---|
-| Fitness Electrolytes | 3-5 workouts/week | ~200 days | ~2,400 THB/year |
-| Salt.Magic (Daily Wellness) | Every day | 365 days | ~4,200 THB/year |
-| **Difference** | | | **4.4x more revenue per customer** |
-
-> Salt.Magic isn't competing for the fitness shelf. It's creating a new daily wellness category — 365 days/year, not 3-5 days/week. That's 4.4x more revenue per customer for distributors.
-
-**[Three Revenue Streams]**
-
-### Glass Jar — Heritage Line
-490 THB MSRP | 70 servings | Premium home/office use
-
-### Paper Sachet — Mass Scale
-290 THB MSRP | 30 servings | Retail, pharmacy, convenience
-
-### Single Sachet — Trial & Impulse (Coming 2026)
-9-12 THB MSRP | 1 serving | Pharmacy counter, checkout, sampling
-
-**[Partnership Inquiry Form]**
-
-**Become a Salt.Magic Distribution Partner**
-
-| Field | Type | Required |
-|---|---|---|
-| Full Name | Text | Yes |
-| Company Name | Text | Yes |
-| Your Role | Text (dropdown: Owner, Buyer, Manager, Other) | Yes |
-| Email | Email | Yes |
-| Phone | Tel | No |
-| Message / Inquiry | Textarea | No |
-
-**[Submit Button]:** Submit Partnership Inquiry
-
-**[Below form]**
-Or email us directly: info@salt-magic.com | WhatsApp: +66 826020486
-
----
-
-## Section 12: FAQ (#faq)
-
-**[Eyebrow]**
-FREQUENTLY ASKED QUESTIONS
+**[Eyebrow]** Questions
+**[Gold-Line]** Yes
 
 **[H2]**
-Everything You Need to Know About Salt.Magic
+Got Questions? Let's clear *the water.*
 
-**[Intro — citable]**
-Answers to the most common questions about Salt.Magic electrolytes — from ingredients and safety to usage and ordering.
-
-### Product & Ingredients
+**[8 Accordion FAQs]**
 
 **Q: What is Salt.Magic made of?**
-Salt.Magic contains exactly three ingredients: magnesium citrate (312mg), potassium citrate (160mg), and pink Himalayan salt (152mg). There are no added sugars, sweeteners, flavors, colors, or preservatives. Each serving is 2 grams.
+Exactly three ingredients: Magnesium Citrate (312mg), Potassium Citrate (160mg), and Pink Himalayan Salt (152mg). That's it. A 2-gram serving with absolutely no sugars, sweeteners, artificial flavors, colors, or preservatives.
 
 **Q: Is Salt.Magic just salt?**
-No. Despite the name, Salt.Magic is a balanced electrolyte mineralizer. Pink Himalayan salt is only one of three ingredients and provides just 20% of the mineral blend. The majority (50%) is magnesium citrate — the most bioavailable form of magnesium.
+No. Pink Himalayan salt makes up just 20% of the blend. The majority (over 50%) is Magnesium Citrate — the most highly bioavailable form of magnesium — and the rest is pure Potassium Citrate. No fillers.
 
-**Q: Why is it flavorless?**
-Because we designed Salt.Magic for daily use in any drink — water, tea, coffee, smoothies, juice. Flavored electrolytes limit when and how you can use them. Flavorless means it disappears into whatever you're already drinking.
+**Q: How do I use it?**
+Add one scoop (2g) or one travel pouch to any drink. It dissolves instantly and is completely flavorless. Most of our users take 1-2 servings per day — once in the morning, once in the evening.
 
-**Q: How does Salt.Magic compare to LMNT or Wilder?**
-Salt.Magic delivers 312mg of magnesium per serving (7x more than most competitors) at 7-10 THB per serving vs. 25-40 THB for imported brands like LMNT or Wilder. Same clean-ingredient philosophy, dramatically better value.
+**Q: How does it compare to imported brands like LMNT or Wilder?**
+We share the same zero-sugar, clean-ingredient philosophy as the premium US brands. The difference? We deliver 7x more magnesium per serving. Crafted locally in Thailand, you pay 7-10 THB per serving instead of the 25-40 THB import markup.
 
-### Usage & Dosage
-
-**Q: How do I use Salt.Magic?**
-Add one scoop (2g) to any glass of water or beverage. Stir or shake. It dissolves instantly and has no taste. Most users take 1-2 servings per day — morning and evening.
-
-**Q: Can I take Salt.Magic every day?**
-Yes. Salt.Magic is designed as a daily essential, not an occasional supplement. The dosage (312mg magnesium, 160mg potassium, 152mg sodium) is within safe daily intake levels for adults. 90% of our customers use it daily.
-
-**Q: Can I mix Salt.Magic with coffee or tea?**
-Absolutely. It's flavorless and dissolves in hot or cold liquids. Many users add it to their morning coffee or evening herbal tea as part of their hydration ritual.
-
-### Health & Safety
-
-**Q: Is Salt.Magic safe for children?**
-The ingredients are natural minerals safe for all ages. For children, we recommend half a serving (1g). As with any supplement, consult your pediatrician if your child has specific health conditions.
-
-**Q: Is Salt.Magic safe during pregnancy?**
-Magnesium and potassium are commonly recommended during pregnancy. However, always consult your doctor before starting any new supplement while pregnant or nursing.
-
-**Q: Does Salt.Magic contain allergens?**
-No. Salt.Magic is free from all major allergens. It's vegan, gluten-free, dairy-free, soy-free, and nut-free.
-
-**Q: Is Salt.Magic FDA approved?**
-Salt.Magic is registered with Thai regulatory authorities. National Thai FDA approval for retail and pharmacy distribution is currently in progress for 2026.
-
-### Ordering & Availability
+**Q: Is it safe for children?**
+Yes, these are natural minerals safe for all ages. We recommend a half-serving (1g) for children. As always, consult your pediatrician for specific health conditions.
 
 **Q: Where can I buy Salt.Magic?**
-Salt.Magic is available on Lazada (online) and in 150+ health and wellness locations across Thailand — including Bangkok, Chiang Mai, Koh Samui, Phuket, Hua Hin, Koh Phangan, and more. Check our store locator or visit our Lazada shop.
+You can order directly on Lazada for nationwide delivery, or find us in 160+ locations across Thailand, including Bangkok, Phuket, Koh Samui, Chiang Mai, Hua Hin, Pattaya, and Krabi.
 
-**Q: Do you ship internationally?**
-Currently, Salt.Magic ships within Thailand only. International shipping is planned for a future expansion phase.
+**Q: Why do you say 85% of Thai water is "dead water"?**
+Most bottled water in Thailand is filtered using reverse osmosis. This removes bacteria, but it also strips away all the natural minerals. The result is ultra-pure but nutritionally empty water. It hydrates you, but lacks the electrolytes your body needs to actually absorb and use that hydration.
 
-**Q: How do I become a distributor?**
-Fill out our Partnership Inquiry Form in the "Partner With Us" section above, or email info@salt-magic.com. We offer 35-40% distributor margins with full brand and marketing support.
-
----
-
-## Section 13: Final CTA
-
-**[Background: navy gradient #294B6D → #3D6588]**
-
-**[Eyebrow — soft gold]**
-YOUR DAILY HYDRATION RITUAL STARTS HERE
-
-**[H2 — white]**
-Start Remineralizing Your Water Today
-
-**[Body — white/90 opacity]**
-Join thousands of people across Thailand who've made Salt.Magic part of their daily routine. Three ingredients. Zero compromise. Real hydration.
-
-**[CTA Primary]**
-Shop Now → (Lazable, terracotta button on dark bg)
-
-**[CTA Secondary]**
-Partner With Us (white outline button, scrolls to #partner)
+**Q: What's the difference between "wellness" and "sports" electrolytes?**
+Sports drinks are built for occasional, high-intensity use (3-5 times a week) and are usually packed with sugar and flavors. Salt.Magic is a daily wellness essential: pure, invisible minerals meant to be added to your water 365 days a year.
 
 ---
 
-## Section 14: Footer
+## Section 14: BlogSection
 
-**[See outputs/sitemap-v1.md for complete footer structure]**
+**[Eyebrow]** Salt.Magic Blog
+**[Gold-Line]** Yes
 
-**Tagline:** Clean Electrolytes. Naturally Powerful. No sugar. No flavors. No waste.
+**[H2]**
+Science-backed insights for *better hydration*
 
-**Origin:** Made on Koh Samui, Thailand
+**[Blog Grid]** Up to 4 posts from content/blog/ (responsive: 2-col on 2 posts, 3-col on 3, 4-col on 4)
 
-**Newsletter CTA:** "Stay hydrated. Stay informed." + email input + "Sign Up" button
+**[CTA]** View all articles -> (link to /blog)
 
-**Contact:**
-- info@salt-magic.com
-- Instagram: @saltmagic.electrolytes
-- WhatsApp: +66 826020486
+---
 
-**Copyright:** © 2026 Salt.Magic. All rights reserved.
+## Section 15: CtaBanner
+
+**[Background: PANPURI silhouette image with dark mineral gradient overlay (85%)]**
+
+**[Eyebrow]** Start Today
+
+**[H2]**
+Bring Your Water *Back to Life*
+
+**[Body]**
+Three ingredients. Zero compromise. Join thousands across Thailand who've made the daily switch.
+
+**[CTA]** Shop Salt.Magic on Lazada (white pill button, links to Lazada, target=_blank)
+
+---
+
+## Section 16: Newsletter
+
+**[Background: warm-off]**
+
+**[Eyebrow]** Stay Connected
+**[Gold-Line]** Yes
+
+**[H2]**
+Join the *Ritual*
+
+**[Body]**
+Drop your email below for exclusive wellness tips, product drops, and community offers. No spam, just pure hydration.
+
+**[Lead Magnet Badge]**
+Get our free Mineral Guide + 10% off your first order
+
+**[Form]** Email input + "Unlock 10% Off" button (pill style)
+
+---
+
+## Section 17: PartnerTeaser
+
+**[Background: footer-dark]**
+
+**[Eyebrow]** For Business (golden-hour)
+
+**[H2]**
+Stock *Salt.Magic*
+
+**[Body]**
+Join Thailand's fastest-growing daily hydration brand.
+
+**[CTA]** Explore Partnership (outlined pill button, links to /partner)
+
+**[Stats — 3 columns]**
+
+| Value | Label |
+|---|---|
+| 35-40% | Retailer Margins |
+| 90% | Customer Retention |
+| 160+ | Partner Locations |
+
+---
+
+## Section 18: Footer
+
+**[Background: footer-dark]**
+
+**[Tagline]** Clean Electrolytes. Naturally Powerful. No sugar. No flavors. No waste.
+
+**[Navigate]** About | Products | Our Story | Blog | Partner With Us
+
+**[Connect]** info@salt-magic.com | +66 826 020 486 | @saltmagic.electrolytes
+
+**[Social]** Instagram | Facebook
+
+**[Newsletter]** "Stay Hydrated" — Tips & product updates. Email input + "Join" button
+
+**[Bottom Bar]** Made on Koh Samui, Thailand | (c) 2026 Salt.Magic
+
+---
+
+## V11 Change Log (vs V1)
+
+| Section | V1 | V11 |
+|---|---|---|
+| Hero | "Your Water Is Missing Something Essential" + Eyebrow | "Mineralize Your Water, Everywhere." — no eyebrow, pill buttons |
+| Locations | 150+ wellness locations | 160+ locations, +4 cities (Pai, Koh Tao, Krabi, Khanom) |
+| SocialProof | After Testimonials | Moved to after TrustBand (early trust signal) |
+| WhySection | "enzymatic reactions", clinical tone | "energy, recovery, vitality" — accessible |
+| Formula/Ingredients | Standard descriptions | "Everything your water is missing. Nothing you can taste." + new benefit lines |
+| Comparison | 3-column table | 4-column cards with verdict lines, "The Clear Choice" |
+| Benefits | 8 items | 6 items — removed Digestive Support & Safe for All Ages |
+| ForEveryone | Standard | "Not a Sports Drink. A Daily Essential." + Old Way vs Salt.Magic Way |
+| Products | 3 products (incl. Single Sachet) | 2 products, "Signature Glass Jar" + "Travel Pouch" |
+| About/Team | Team section on homepage | Removed from homepage |
+| StorySection | "Our Story" | "The Koh Samui Story" + Trust-Box |
+| FAQ | Formal tone | "Got Questions? Let's clear the water." + conversational answers |
+| CtaBanner | Standard | "Bring Your Water Back to Life" + Lazada target=_blank |
+| Newsletter | Standard | "Join the Ritual" + "Unlock 10% Off" |
+| PartnerTeaser | Mid-page | Moved to bottom (after Newsletter), "Stock Salt.Magic" |
+| Nav | "Why" link, 80px logo | "About" link, 100px logo |
 
 ---
 
 ## Copy Notes
 
-### Grammar Fixes (from audit)
-- **Fixed:** "Salt.Magic makes your money worth with highest dosage" → Replaced with clear per-serving cost comparison table
-- **Fixed:** "Salt.Magic isn't just clean for your body and it's clean for the planet" → Rewritten as "Clean for your body. Clean for the planet." (section eyebrow) with proper full copy below
-
 ### GEO-Specific Optimizations
-- Every H2 is a question real users would type into ChatGPT or Perplexity
-- Answer-first format in every section (first 40-60 words answer the question directly)
-- Key Takeaway callouts provide self-contained citable paragraphs
-- Comparison table uses specific numbers (not vague claims) for AI extraction
-- FAQ questions match actual search queries (verified against common electrolyte/hydration searches)
-- Stat blocks use structured data (tables, specific numbers with sources)
+- Every H2 is a question or statement real users would search
+- Answer-first format in every section
+- Comparison table uses specific numbers for AI extraction
+- FAQ questions match actual search queries
+- Stat blocks use structured data (tables, specific numbers)
 
-### Brand Voice Consistency
-- Tone: Minimalist, premium, science-backed, trustworthy
-- Never hype or oversell — let data and ingredients speak
-- Warm but authoritative — like a knowledgeable friend, not a salesperson
+### Brand Voice (V11)
+- Tone: Conversational but authoritative — "clear the water", "the old way vs salt.magic way"
+- Punchier, shorter headlines — declarative statements over questions
+- Less clinical, more lifestyle — "energy, recovery, vitality" not "enzymatic reactions"
 - Direct language — no filler, no marketing jargon
 - Inclusive — "for everyone, every day" positioning throughout

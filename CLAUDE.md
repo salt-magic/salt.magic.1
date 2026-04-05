@@ -41,7 +41,20 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V11 Copy Review Complete (2026-04-05). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V12 UI/UX Audit Complete (2026-04-05). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V12 Session (Comprehensive UI/UX & Copy Audit):
+- **Copy-Dokument V11 aktualisiert**: `outputs/copy-homepage-v1.md` jetzt auf V11-Stand, Section fuer Section aus dem Code extrahiert
+- **Partner-Seite Accessibility**: 19x `text-ink-faint` → `text-ink-light`, 12x `text-white/50` → `text-white/70` in 4 Components
+- **Partner-Seite Font-Size**: 22x `text-[10px]`/`text-[11px]` → `text-[12px]` in 6 Components (Minimum 12px Regel)
+- **Homepage Kontrast**: Footer + Comparison `text-white/60` → `text-white/70`
+- **SEO/GEO**: `og:image` + Twitter image + Product JSON-LD Schema (Glass Jar + Travel Pouch) in layout.tsx
+- **Lazada Links**: `target="_blank" rel="noopener noreferrer"` auf Products + StickyMobileCta (konsistent mit CtaBanner)
+- **transition-all eliminiert**: 6 Stellen in Nav, Hero, PartnerForm, PartnerHero durch spezifische Transitions ersetzt
+- **AnnouncementBar**: `role="marquee" aria-label="Brand announcements"` hinzugefuegt
+- **Footer**: Toter Facebook `href="#"` auskommentiert (TODO: echte URL von Leo)
+- **AboutEditorial.tsx geloescht**: Toter Code seit V11 entfernt
+- **business-info.md**: 150+ → 160+ Locations aktualisiert
 
 Key Changes in V11 Session (Copy Review Implementation):
 - **Vollstaendiges Copy Review umgesetzt**: Alle 20 Sections aus Leo's Copy Review Dokument (`reference/V1_Salt-Magic-Copy-Review.docx`) implementiert

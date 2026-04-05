@@ -149,7 +149,7 @@ export default function Comparison() {
             </div>
           </StaggerContainer>
 
-          <p className="text-left text-[12px] tracking-[.15em] uppercase text-white/60 mt-8">
+          <p className="text-left text-[12px] tracking-[.15em] uppercase text-white/70 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
         </FadeIn>

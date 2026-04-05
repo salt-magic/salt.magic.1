@@ -40,16 +40,16 @@ export default function RevenueModel() {
           <table className="w-full text-left">
             <thead>
               <tr className="border-b border-border-warm">
-                <th className="text-[11px] font-semibold tracking-[.1em] uppercase text-ink-faint pb-4 pr-4">
+                <th className="text-[12px] font-semibold tracking-[.1em] uppercase text-ink-light pb-4 pr-4">
                   Product
                 </th>
-                <th className="text-[11px] font-semibold tracking-[.1em] uppercase text-ink-faint pb-4 pr-4">
+                <th className="text-[12px] font-semibold tracking-[.1em] uppercase text-ink-light pb-4 pr-4">
                   MSRP
                 </th>
-                <th className="text-[11px] font-semibold tracking-[.1em] uppercase text-ink-faint pb-4 pr-4">
+                <th className="text-[12px] font-semibold tracking-[.1em] uppercase text-ink-light pb-4 pr-4">
                   Wholesale
                 </th>
-                <th className="text-[11px] font-semibold tracking-[.1em] uppercase text-ink-faint pb-4">
+                <th className="text-[12px] font-semibold tracking-[.1em] uppercase text-ink-light pb-4">
                   Margin
                 </th>
               </tr>
@@ -82,15 +82,15 @@ export default function RevenueModel() {
               <h3 className="font-medium text-mineral text-[15px] mb-3">{item.name}</h3>
               <div className="grid grid-cols-3 gap-3 text-center">
                 <div>
-                  <div className="text-[11px] font-medium tracking-[.1em] uppercase text-ink-faint mb-1">MSRP</div>
+                  <div className="text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1">MSRP</div>
                   <div className="text-[15px] font-light text-ink-light">{item.msrp}</div>
                 </div>
                 <div>
-                  <div className="text-[11px] font-medium tracking-[.1em] uppercase text-ink-faint mb-1">Wholesale</div>
+                  <div className="text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1">Wholesale</div>
                   <div className="text-[15px] font-light text-ink-light">{item.wholesale}</div>
                 </div>
                 <div>
-                  <div className="text-[11px] font-medium tracking-[.1em] uppercase text-ink-faint mb-1">Margin</div>
+                  <div className="text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1">Margin</div>
                   <div className="text-[15px] font-medium text-gold">{item.margin}</div>
                 </div>
               </div>

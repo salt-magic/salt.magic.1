@@ -87,7 +87,7 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed left-0 right-0 z-50 transition-[top,background-color,box-shadow] duration-500 ${
         scrolled
           ? 'top-0 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)] md:bg-white/90 md:backdrop-blur-[20px]'
           : mobileOpen
@@ -107,7 +107,7 @@ export default function Nav() {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`text-[13px] font-semibold uppercase tracking-[0.08em] transition-all duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
+              className={`text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
                 useDarkNav ? linkClassScrolled : linkClassTransparent
               }`}
             >
@@ -187,7 +187,7 @@ export default function Nav() {
               >
                 <El
                   href={link.href}
-                  className={`text-[13px] font-semibold uppercase tracking-[0.08em] transition-all duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
+                  className={`text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
                     useDarkNav ? linkClassScrolled : linkClassTransparent
                   }`}
                 >

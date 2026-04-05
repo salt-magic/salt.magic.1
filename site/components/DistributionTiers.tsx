@@ -54,7 +54,7 @@ export default function DistributionTiers() {
                 ? 'bg-mineral text-white border border-mineral shadow-lg'
                 : 'border border-border-warm'
             }`}>
-              <p className={`text-[11px] font-semibold tracking-[.15em] uppercase mb-3 ${
+              <p className={`text-[12px] font-semibold tracking-[.15em] uppercase mb-3 ${
                 tier.featured ? 'text-gold' : 'text-gold'
               }`}>
                 {tier.tier}
@@ -73,15 +73,15 @@ export default function DistributionTiers() {
                 tier.featured ? 'border-white/20' : 'border-border-warm'
               }`}>
                 <div className="flex justify-between text-[13px]">
-                  <span className={tier.featured ? 'font-light text-white/50' : 'font-light text-ink-faint'}>Margin</span>
+                  <span className={tier.featured ? 'font-light text-white/70' : 'font-light text-ink-light'}>Margin</span>
                   <span className={tier.featured ? 'font-medium text-gold' : 'font-medium text-mineral'}>{tier.margin}</span>
                 </div>
                 <div className="flex justify-between text-[13px]">
-                  <span className={tier.featured ? 'font-light text-white/50' : 'font-light text-ink-faint'}>Min. Order</span>
+                  <span className={tier.featured ? 'font-light text-white/70' : 'font-light text-ink-light'}>Min. Order</span>
                   <span className={tier.featured ? 'font-medium text-white' : 'font-medium text-mineral'}>{tier.minOrder}</span>
                 </div>
                 <div className="flex justify-between text-[13px]">
-                  <span className={tier.featured ? 'font-light text-white/50' : 'font-light text-ink-faint'}>Examples</span>
+                  <span className={tier.featured ? 'font-light text-white/70' : 'font-light text-ink-light'}>Examples</span>
                   <span className={tier.featured ? 'font-medium text-white' : 'font-medium text-mineral'}>{tier.examples}</span>
                 </div>
               </div>

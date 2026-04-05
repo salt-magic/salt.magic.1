@@ -129,7 +129,7 @@ export default function Hero() {
               aria-label={`Slide ${i + 1}`}
               aria-current={i === active ? 'true' : undefined}
             >
-              <span className={`block h-[2px] rounded-full transition-all duration-500 ${
+              <span className={`block h-[2px] rounded-full transition-[width,background-color] duration-500 ${
                 i === active ? 'w-10 bg-gold' : 'w-6 bg-white/30'
               }`} />
             </button>

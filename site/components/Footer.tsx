@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="border-t border-white/[.07] pt-6 flex justify-between text-xs font-light text-white/60">
+          <div className="border-t border-white/[.07] pt-6 flex justify-between text-xs font-light text-white/70">
             <span>Made on Koh Samui</span>
             <span>&copy; 2026 Salt.Magic</span>
           </div>
@@ -95,11 +95,7 @@ export default function Footer() {
                     <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
                   </svg>
                 </a>
-                <a href="#" className="text-white/70 hover:text-gold transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm" aria-label="Facebook">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                  </svg>
-                </a>
+{/* TODO: Add Facebook link when URL is available from Leo */}
               </div>
             </div>
 
@@ -141,7 +137,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="flex justify-between pt-6 text-xs font-light text-white/60">
+          <div className="flex justify-between pt-6 text-xs font-light text-white/70">
             <span>Made on Koh Samui, Thailand</span>
             <span>&copy; 2026 Salt.Magic</span>
           </div>
