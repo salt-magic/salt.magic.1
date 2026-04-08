@@ -84,7 +84,7 @@ export default function Comparison() {
         className="absolute inset-0 z-[1] pointer-events-none"
         style={{
           background: isDesktop
-            ? 'linear-gradient(180deg, rgba(20,40,60,0.45) 0%, rgba(20,40,60,0.2) 35%, rgba(20,40,60,0.15) 100%)'
+            ? 'linear-gradient(180deg, rgba(20,40,60,0.7) 0%, rgba(20,40,60,0.55) 35%, rgba(20,40,60,0.45) 100%)'
             : 'none',
         }}
       />
@@ -94,13 +94,13 @@ export default function Comparison() {
         <FadeIn className="max-w-[1200px] mx-auto">
           <div className="text-left mb-[clamp(40px,5vw,56px)]">
             <div className="w-12 h-px bg-gold mb-6" />
-            <p className="label-uppercase text-[12px] tracking-eyebrow text-white/70 mb-5">
+            <p className="label-uppercase text-[12px] tracking-eyebrow text-white/80 mb-5">
               How We Compare
             </p>
             <h2 className="font-display text-h2 font-normal text-white mb-6 tracking-tight">
               The Clear <em>Choice</em>
             </h2>
-            <p className="text-base font-light leading-relaxed text-white/70 max-w-[520px]">
+            <p className="text-base font-light leading-relaxed text-white/80 max-w-[520px]">
               Maximum minerals. Zero junk. See how we stack up.
             </p>
           </div>
@@ -149,7 +149,7 @@ export default function Comparison() {
             </div>
           </StaggerContainer>
 
-          <p className="text-left text-[12px] tracking-cta uppercase text-white/70 mt-8">
+          <p className="text-left text-[12px] tracking-cta uppercase text-white/80 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
         </FadeIn>
