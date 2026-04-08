@@ -41,7 +41,19 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V13 Ingredients Pixel-Match + Comparison Options (2026-04-08). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V14 Refined Type Scale + Heading Hierarchy (2026-04-08). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V14 Session (Refined Type Scale + Heading Hierarchy):
+- **Refined Type Scale angewendet**: Alle Tailwind-Tokens bereits auf Refined-Werte (display 64px, h1 48px, h2 42px, h3 36px, h4 26px, Section-Padding 48-80px). 6 inline Clamp-Werte durch Tokens ersetzt
+- **Type Scale Comparison**: `outputs/type-scale-comparison.html` — Side-by-Side HTML-Vergleich "Aktuell vs Refined" mit Legend-Tabelle (10-19% Reduktion pro Token)
+- **Konsistente Heading-Hierarchie durchgesetzt**: Jedes HTML-Heading-Level nutzt exakt einen visuellen Stil:
+  - `<h1>` → `headline-editorial` (= text-display, 40-64px) — 4x, 1 pro Seite
+  - `<h2>` → `text-h2` (28-42px) — 22x, alle Section-Headers
+  - `<h3>` → `text-h3` (24-36px) fuer Section-Sub-Headers ODER originale Mockup-Groesse fuer Card-Level Labels (13-15px)
+  - `<h4>` → `text-h4` (20-26px) — BlogCard-Titel
+- **Semantik beibehalten**: Alle Headings bleiben als h1/h2/h3/h4 fuer SEO, auch Card-Level Labels
+- **23 Dateien geaendert**: Alle Pages (homepage, partner, blog, blog/[slug]) + 19 Components
+- **Naechster Schritt**: Leo waehlt Comparison-Option (A/B/C aus `outputs/comparison-options.html`), dann Umsetzung in React
 
 Key Changes in V13 Session (Ingredients Pixel-Match + Comparison Redesign):
 - **Ingredients Section pixel-matched**: Alle Werte exakt aus `outputs/transition-a-d.html` Mockup uebernommen — Headline `clamp(28px,4.5vw,40px)`, Content-Padding `56px/40px/64px`, Grid `min-h-[800px]` (hoeher als Mockup wegen Next.js Image fill), Ingredient-Name 13px, Zahlen `clamp(40px,5vw,52px)`
