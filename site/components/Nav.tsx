@@ -43,7 +43,7 @@ export default function Nav() {
   // Close mobile menu on resize to desktop
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth >= 768) setMobileOpen(false)
+      if (window.innerWidth >= 1024) setMobileOpen(false)
     }
     window.addEventListener('resize', onResize)
     return () => window.removeEventListener('resize', onResize)
@@ -89,7 +89,7 @@ export default function Nav() {
     <header
       className={`fixed left-0 right-0 z-50 transition-[top,background-color,box-shadow] duration-500 ${
         scrolled
-          ? 'top-0 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)] md:bg-white/90 md:backdrop-blur-[20px]'
+          ? 'top-0 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)] lg:bg-white/90 lg:backdrop-blur-[20px]'
           : mobileOpen
             ? 'top-9 bg-white'
             : isHome
@@ -99,7 +99,7 @@ export default function Nav() {
     >
       <div className="relative w-full max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)] h-24 flex items-center justify-between">
         {/* Left links (desktop) */}
-        <div className="hidden md:flex items-center gap-10 flex-1">
+        <div className="hidden lg:flex items-center gap-[clamp(20px,2.5vw,40px)] flex-1">
           {leftLinks.map((link, i) => (
             <motion.a
               key={link.href}
@@ -119,7 +119,7 @@ export default function Nav() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className={`md:hidden flex items-center justify-center bg-transparent border-none cursor-pointer min-h-[44px] min-w-[44px] ${focusRing}`}
+          className={`lg:hidden flex items-center justify-center bg-transparent border-none cursor-pointer min-h-[44px] min-w-[44px] ${focusRing}`}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
           {mobileOpen ? (
@@ -174,7 +174,7 @@ export default function Nav() {
         </motion.div>
 
         {/* Right links + CTA (desktop) */}
-        <div className="hidden md:flex items-center justify-end gap-10 flex-1">
+        <div className="hidden lg:flex items-center justify-end gap-[clamp(20px,2.5vw,40px)] flex-1">
           {rightLinks.map((link, i) => {
             const isRoute = isRouteLink(link.href) && !link.href.startsWith('/#')
             const El = isRoute ? Link : 'a'
@@ -213,7 +213,7 @@ export default function Nav() {
         {/* Mobile CTA */}
         <a
           href="#products"
-          className={`md:hidden text-[12px] font-semibold uppercase tracking-cta px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
+          className={`lg:hidden text-[12px] font-semibold uppercase tracking-cta px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
         >
           Shop Now
         </a>
@@ -227,7 +227,7 @@ export default function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-            className="fixed inset-0 top-0 bg-white z-[-1] md:hidden flex flex-col items-center justify-center"
+            className="fixed inset-0 top-0 bg-white z-[-1] lg:hidden flex flex-col items-center justify-center"
           >
             <nav className="flex flex-col items-center gap-2">
               {allLinks.map((link, i) => (
