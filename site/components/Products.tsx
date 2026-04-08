@@ -12,6 +12,7 @@ const products = [
     price: '490 THB',
     meta: 'Over 2 months of daily hydration (70 servings) — Just 7 THB per day',
     desc: 'A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Proudly crafted at our Koh Samui hub.',
+    badge: 'Eco-friendly & reusable',
     href: 'https://www.lazada.co.th/shop/salt-magic/',
   },
   {
@@ -22,6 +23,7 @@ const products = [
     price: '290 THB',
     meta: "A full month's supply (30 servings) — Just 9.6 THB per day",
     desc: 'Your daily minerals, perfectly portable. A resealable, GMP/HACCP-certified pouch built for your gym bag, office drawer, or long flights.',
+    badge: 'Lightweight & travel-ready',
     href: 'https://www.lazada.co.th/shop/salt-magic/',
   },
 ]
@@ -104,8 +106,13 @@ export default function Products() {
                 </div>
 
                 {/* Description */}
-                <p className="text-[13px] font-light leading-relaxed text-ink-light max-w-[280px] mx-auto mb-6">
+                <p className="text-[13px] font-light leading-relaxed text-ink-light max-w-[280px] mx-auto mb-3">
                   {product.desc}
+                </p>
+
+                {/* Badge */}
+                <p className="text-[12px] font-medium tracking-wide uppercase text-gold mb-6">
+                  {product.badge}
                 </p>
 
                 {/* CTA */}
