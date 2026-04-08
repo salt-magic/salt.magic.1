@@ -75,7 +75,7 @@ export default function Home() {
               <em className="italic font-normal">Nothing you can taste.</em>
             </h2>
             <p className="text-[15px] font-light leading-[1.75] text-ink max-w-[460px] mb-[8px]">
-              Just 2 grams of pure, highly bioavailable minerals. Three natural ingredients. Zero junk.
+              Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly, is completely flavorless, and delivers 7x more magnesium than leading competitors. Three natural ingredients. Zero junk.
             </p>
             <Ingredients />
           </div>

@@ -28,11 +28,11 @@ export default function Ingredients() {
     <StaggerContainer>
       {ingredients.map((item, i) => (
         <StaggerItem key={item.num}>
-          <div className={`flex items-center gap-6 py-6 ${
+          <div className={`flex items-center gap-4 sm:gap-6 py-6 ${
             i > 0 ? 'border-t border-gold/25' : ''
           }`}>
             {/* Large number */}
-            <div className="flex items-baseline gap-[3px] min-w-[110px]">
+            <div className="flex items-baseline gap-[3px] min-w-[90px] sm:min-w-[110px]">
               <span className="font-display text-[clamp(40px,5vw,52px)] font-normal leading-none tracking-tight text-mineral">
                 {item.num}
               </span>
