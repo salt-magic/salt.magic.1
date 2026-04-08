@@ -67,13 +67,13 @@ export default function Testimonials() {
 
           {/* Left — Headline + CTA */}
           <div className="mb-10 lg:mb-0">
-            <h2 className="font-display text-[clamp(32px,4.5vw,48px)] font-normal leading-[1.1] text-mineral tracking-tight">
+            <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
               Look what our <em className="italic">customers say</em>
             </h2>
             <div className="mt-6">
               <a
                 href="#products"
-                className="inline-block text-[11px] font-semibold uppercase tracking-[0.12em] px-8 py-3.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[11px] font-semibold uppercase tracking-cta px-8 py-3.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Shop Now
               </a>

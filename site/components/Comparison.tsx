@@ -94,10 +94,10 @@ export default function Comparison() {
         <FadeIn className="max-w-[1200px] mx-auto">
           <div className="text-left mb-[clamp(40px,5vw,56px)]">
             <div className="w-12 h-px bg-gold mb-6" />
-            <p className="label-uppercase text-[12px] tracking-[.22em] text-white/70 mb-5">
+            <p className="label-uppercase text-[12px] tracking-eyebrow text-white/70 mb-5">
               How We Compare
             </p>
-            <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-white mb-6 tracking-tight">
+            <h2 className="font-display text-h2 font-normal text-white mb-6 tracking-tight">
               The Clear <em>Choice</em>
             </h2>
             <p className="text-base font-light leading-relaxed text-white/70 max-w-[520px]">
@@ -115,7 +115,7 @@ export default function Comparison() {
                       ? 'bg-white/90 md:bg-white/95 border-2 border-gold/40'
                       : 'bg-white/50 md:bg-white/[0.65] md:backdrop-blur-md border border-white/30'
                   }`}>
-                    <h3 className={`text-[13px] font-semibold uppercase tracking-[0.1em] mb-6 ${
+                    <h3 className={`text-[13px] font-semibold uppercase tracking-cta mb-6 ${
                       col.highlight ? 'text-mineral' : 'text-deep-navy/60'
                     }`}>
                       {col.name}
@@ -149,7 +149,7 @@ export default function Comparison() {
             </div>
           </StaggerContainer>
 
-          <p className="text-left text-[12px] tracking-[.15em] uppercase text-white/70 mt-8">
+          <p className="text-left text-[12px] tracking-cta uppercase text-white/70 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
         </FadeIn>

@@ -47,7 +47,7 @@ export default function Ingredients() {
             }`}>
               {/* Large number */}
               <div className="flex items-baseline gap-1 min-w-[120px] sm:min-w-[140px]">
-                <span className="font-display text-[clamp(48px,7vw,72px)] font-normal text-mineral leading-none tracking-tight">
+                <span className="font-display text-stat font-normal text-mineral leading-none tracking-tight">
                   {item.num}
                 </span>
                 <span className="text-[13px] font-medium text-gold tracking-wide">
@@ -57,7 +57,7 @@ export default function Ingredients() {
 
               {/* Name + benefit */}
               <div className="flex-1">
-                <h3 className="text-[15px] font-semibold tracking-[.08em] uppercase text-mineral mb-1">
+                <h3 className="text-[15px] font-semibold tracking-cta uppercase text-mineral mb-1">
                   {item.name}
                 </h3>
                 <p className="text-[15px] font-normal text-ink/80 leading-relaxed">

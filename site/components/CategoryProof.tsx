@@ -31,10 +31,10 @@ export default function CategoryProof() {
       <FadeIn className="max-w-[1100px] mx-auto">
         <div className="text-center mb-[clamp(36px,5vw,56px)]">
           <div className="w-12 h-px bg-golden-hour/50 mx-auto mb-6" />
-          <p className="text-[12px] font-medium tracking-[.22em] uppercase text-golden-hour mb-5">
+          <p className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour mb-5">
             Category Proof
           </p>
-          <h2 className="font-display text-[clamp(28px,4.5vw,44px)] font-normal leading-[1.15] text-white tracking-tight mb-4">
+          <h2 className="font-display text-h3 font-normal text-white tracking-tight mb-4">
             Clean electrolytes are creating <em>a new category</em>
           </h2>
           <p className="text-base font-light leading-relaxed text-white/70 max-w-[520px] mx-auto">
@@ -49,7 +49,7 @@ export default function CategoryProof() {
                 <h3 className="text-[13px] font-semibold text-white mb-3">
                   {brand.name}
                 </h3>
-                <div className="font-display text-[clamp(18px,2vw,24px)] font-normal text-golden-hour leading-tight mb-2">
+                <div className="font-display text-h5 font-normal text-golden-hour leading-tight mb-2">
                   {brand.stat}
                 </div>
                 <p className="text-[12px] font-light text-white/70">

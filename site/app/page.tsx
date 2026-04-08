@@ -43,10 +43,10 @@ export default function Home() {
       <section className="bg-warm-off py-[clamp(64px,8vw,100px)]">
         <div className="max-w-[900px] mx-auto px-[clamp(24px,5vw,80px)]">
           <div className="gold-line" />
-          <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
+          <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
             The Formula
           </p>
-          <h2 className="font-display text-[clamp(36px,5.5vw,56px)] font-normal leading-[1.1] text-mineral mb-6 tracking-tight">
+          <h2 className="font-display text-h1 font-normal text-mineral mb-6 tracking-tight">
             Everything your water is missing.{' '}
             <em className="italic font-normal">Nothing you can taste.</em>
           </h2>

@@ -18,10 +18,10 @@ export default function LocationMap() {
     <section className="py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,64px)]">
       <FadeIn className="text-center mb-[clamp(48px,8vw,80px)]">
         <div className="gold-line" />
-        <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
+        <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">
           Our Network
         </p>
-        <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
+        <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
           160+ locations across <em>Thailand</em>
         </h2>
       </FadeIn>

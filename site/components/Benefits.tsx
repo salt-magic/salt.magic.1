@@ -72,10 +72,10 @@ export default function Benefits() {
       <div className="max-w-[1200px] mx-auto">
         <div className="text-left mb-[clamp(40px,6vw,64px)]">
           <div className="gold-line" />
-          <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
+          <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
             Daily Benefits
           </p>
-          <h2 className="font-display text-[clamp(32px,5vw,52px)] font-normal leading-[1.1] text-mineral tracking-tight mb-4">
+          <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
             Feel the <em className="italic">Difference</em>
           </h2>
           <p className="text-base font-light leading-relaxed text-ink-light max-w-[480px]">

@@ -107,7 +107,7 @@ export default function Nav() {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
+              className={`text-[13px] font-semibold uppercase tracking-cta transition-colors duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
                 useDarkNav ? linkClassScrolled : linkClassTransparent
               }`}
             >
@@ -187,7 +187,7 @@ export default function Nav() {
               >
                 <El
                   href={link.href}
-                  className={`text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
+                  className={`text-[13px] font-semibold uppercase tracking-cta transition-colors duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
                     useDarkNav ? linkClassScrolled : linkClassTransparent
                   }`}
                 >
@@ -203,7 +203,7 @@ export default function Nav() {
           >
             <a
               href="#products"
-              className={`text-[12px] font-semibold uppercase tracking-[0.12em] px-6 py-2.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 ${focusRing}`}
+              className={`text-[12px] font-semibold uppercase tracking-cta px-6 py-2.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 ${focusRing}`}
             >
               Shop Now
             </a>
@@ -213,7 +213,7 @@ export default function Nav() {
         {/* Mobile CTA */}
         <a
           href="#products"
-          className={`md:hidden text-[12px] font-semibold uppercase tracking-[0.12em] px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
+          className={`md:hidden text-[12px] font-semibold uppercase tracking-cta px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
         >
           Shop Now
         </a>
@@ -255,7 +255,7 @@ export default function Nav() {
                 <a
                   href="#products"
                   onClick={() => setMobileOpen(false)}
-                  className={`inline-block text-[12px] font-semibold uppercase tracking-[0.12em] px-10 py-4 rounded-pill bg-mineral text-white min-h-[48px] ${focusRing}`}
+                  className={`inline-block text-[12px] font-semibold uppercase tracking-cta px-10 py-4 rounded-pill bg-mineral text-white min-h-[48px] ${focusRing}`}
                 >
                   Shop Now
                 </a>

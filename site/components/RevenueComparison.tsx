@@ -8,10 +8,10 @@ export default function RevenueComparison() {
       <FadeIn className="max-w-[1000px] mx-auto">
         <div className="text-center mb-[clamp(36px,5vw,48px)]">
           <div className="gold-line" />
-          <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
+          <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
             The Revenue Difference
           </p>
-          <h2 className="font-display text-[clamp(28px,4.5vw,44px)] font-normal leading-[1.15] text-mineral tracking-tight">
+          <h2 className="font-display text-h3 font-normal text-mineral tracking-tight">
             Daily wellness creates <em>4.4x more revenue</em>
           </h2>
         </div>
@@ -21,13 +21,13 @@ export default function RevenueComparison() {
           <StaggerItem>
             <div className="rounded-2xl bg-mineral p-8 text-white h-full">
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.12em] text-golden-hour">Wellness</span>
-                <span className="text-[12px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-full bg-golden-hour/20 text-golden-hour">
+                <span className="text-[12px] font-semibold uppercase tracking-cta text-golden-hour">Wellness</span>
+                <span className="text-[12px] font-medium tracking-cta uppercase px-2.5 py-1 rounded-full bg-golden-hour/20 text-golden-hour">
                   Salt.Magic
                 </span>
               </div>
 
-              <div className="font-display text-[clamp(48px,6vw,64px)] font-normal leading-none text-white mb-1">
+              <div className="font-display text-stat font-normal text-white mb-1">
                 365
               </div>
               <p className="text-[14px] font-light text-white/70 mb-8">days per year — every single day</p>
@@ -53,13 +53,13 @@ export default function RevenueComparison() {
           <StaggerItem>
             <div className="rounded-2xl bg-white border border-border-warm p-8 h-full">
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-[12px] font-semibold uppercase tracking-[0.12em] text-ink-light">Fitness</span>
-                <span className="text-[12px] font-medium tracking-[0.1em] uppercase px-2.5 py-1 rounded-full bg-ink-faint/10 text-ink-light">
+                <span className="text-[12px] font-semibold uppercase tracking-cta text-ink-light">Fitness</span>
+                <span className="text-[12px] font-medium tracking-cta uppercase px-2.5 py-1 rounded-full bg-ink-faint/10 text-ink-light">
                   Traditional
                 </span>
               </div>
 
-              <div className="font-display text-[clamp(48px,6vw,64px)] font-normal leading-none text-ink-light mb-1">
+              <div className="font-display text-stat font-normal text-ink-light mb-1">
                 3–5
               </div>
               <p className="text-[14px] font-light text-ink-light mb-8">days per week — only after workouts</p>

@@ -12,10 +12,10 @@ export default function ForEveryone() {
           <FadeIn>
             <div className="max-w-[480px]">
               <div className="w-12 h-px bg-gold mb-5" />
-              <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
+              <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
                 For Everyone
               </p>
-              <h2 className="font-display text-[clamp(28px,4vw,44px)] font-normal leading-[1.1] text-mineral tracking-tight mb-3">
+              <h2 className="font-display text-h3 font-normal text-mineral tracking-tight mb-3">
                 Not a Sports Drink.{' '}
                 <em className="italic">A Daily Essential.</em>
               </h2>
@@ -31,7 +31,7 @@ export default function ForEveryone() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="border border-border-warm rounded-xl p-4 text-center opacity-60">
-                  <p className="text-[12px] font-semibold tracking-[.18em] uppercase text-ink-light mb-2">
+                  <p className="text-[12px] font-semibold tracking-eyebrow uppercase text-ink-light mb-2">
                     The Old Way (Sports Drinks)
                   </p>
                   <ul className="space-y-1 text-[12px] font-light text-ink-light">
@@ -41,7 +41,7 @@ export default function ForEveryone() {
                   </ul>
                 </div>
                 <div className="border border-gold/30 rounded-xl p-4 text-center">
-                  <p className="text-[12px] font-semibold tracking-[.18em] uppercase text-mineral mb-2">
+                  <p className="text-[12px] font-semibold tracking-eyebrow uppercase text-mineral mb-2">
                     The Salt.Magic Way
                   </p>
                   <ul className="space-y-1 text-[12px] font-light text-ink-light">

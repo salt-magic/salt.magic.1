@@ -17,10 +17,10 @@ export default function PartnerTeaser() {
 
           {/* Left — Text */}
           <div>
-            <p className="text-[12px] font-medium tracking-[.22em] uppercase text-golden-hour mb-5">
+            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour mb-5">
               For Business
             </p>
-            <h2 className="font-display text-[clamp(24px,3.5vw,36px)] font-normal leading-[1.2] text-white tracking-tight mb-3">
+            <h2 className="font-display text-h3 font-normal text-white tracking-tight mb-3">
               Stock <em className="italic font-normal">Salt.Magic</em>
             </h2>
             <p className="text-base font-light leading-[1.7] text-white/70 max-w-[440px] mb-5">
@@ -28,7 +28,7 @@ export default function PartnerTeaser() {
             </p>
             <Link
               href="/partner"
-              className="inline-block text-[12px] font-semibold uppercase tracking-[0.12em] px-8 py-3.5 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+              className="inline-block text-[12px] font-semibold uppercase tracking-cta px-8 py-3.5 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
               Explore Partnership
             </Link>
@@ -43,10 +43,10 @@ export default function PartnerTeaser() {
                   i < stats.length - 1 ? 'pr-8 lg:pr-12 border-r border-white/10' : ''
                 }`}
               >
-                <div className="font-display text-[clamp(24px,3vw,36px)] font-normal text-white leading-none mb-1.5 tracking-tight">
+                <div className="font-display text-h3 font-normal text-white leading-none mb-1.5 tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-[12px] font-medium tracking-[.16em] uppercase text-golden-hour/70">
+                <div className="text-[12px] font-medium tracking-cta uppercase text-golden-hour/70">
                   {stat.label}
                 </div>
               </div>

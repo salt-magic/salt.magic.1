@@ -70,11 +70,11 @@ export default function WhySection() {
           >
             <div className="max-w-[480px]">
               <div className="w-12 h-px bg-gold mb-6" />
-              <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-6">
+              <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-6">
                 The Problem
               </p>
 
-              <h2 className="font-display text-[clamp(32px,4.5vw,52px)] font-normal leading-[1.1] text-mineral tracking-tight mb-8">
+              <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-8">
                 Your water is missing what your body needs <em className="italic">most</em>
               </h2>
 
@@ -90,7 +90,7 @@ export default function WhySection() {
                 </p>
               </div>
 
-              <p className="font-display text-[clamp(17px,2vw,21px)] italic text-mineral/80 font-normal leading-relaxed mt-8 border-l-2 border-gold/40 pl-6">
+              <p className="font-display text-h5 italic text-mineral/80 font-normal leading-relaxed mt-8 border-l-2 border-gold/40 pl-6">
                 50% of people worldwide are magnesium deficient. Your water could be why.
               </p>
 
@@ -101,7 +101,7 @@ export default function WhySection() {
                     <div className="w-14 h-14 rounded-full border border-gold/30 flex items-center justify-center text-gold mx-auto mb-2.5">
                       {badge.icon}
                     </div>
-                    <p className="text-[12px] font-semibold tracking-[.15em] uppercase text-ink-light">
+                    <p className="text-[12px] font-semibold tracking-cta uppercase text-ink-light">
                       {badge.label}
                     </p>
                   </div>

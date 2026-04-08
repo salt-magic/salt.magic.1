@@ -27,10 +27,10 @@ export default function RevenueModel() {
       <FadeIn className="max-w-[900px] mx-auto">
         <div className="text-center mb-[clamp(48px,8vw,80px)]">
           <div className="gold-line" />
-          <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
+          <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">
             Revenue Model
           </p>
-          <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
+          <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
             Built for <em>healthy margins</em>
           </h2>
         </div>
@@ -40,16 +40,16 @@ export default function RevenueModel() {
           <table className="w-full text-left">
             <thead>
               <tr className="border-b border-border-warm">
-                <th className="text-[12px] font-semibold tracking-[.1em] uppercase text-ink-light pb-4 pr-4">
+                <th className="text-[12px] font-semibold tracking-cta uppercase text-ink-light pb-4 pr-4">
                   Product
                 </th>
-                <th className="text-[12px] font-semibold tracking-[.1em] uppercase text-ink-light pb-4 pr-4">
+                <th className="text-[12px] font-semibold tracking-cta uppercase text-ink-light pb-4 pr-4">
                   MSRP
                 </th>
-                <th className="text-[12px] font-semibold tracking-[.1em] uppercase text-ink-light pb-4 pr-4">
+                <th className="text-[12px] font-semibold tracking-cta uppercase text-ink-light pb-4 pr-4">
                   Wholesale
                 </th>
-                <th className="text-[12px] font-semibold tracking-[.1em] uppercase text-ink-light pb-4">
+                <th className="text-[12px] font-semibold tracking-cta uppercase text-ink-light pb-4">
                   Margin
                 </th>
               </tr>
@@ -82,15 +82,15 @@ export default function RevenueModel() {
               <h3 className="font-medium text-mineral text-[15px] mb-3">{item.name}</h3>
               <div className="grid grid-cols-3 gap-3 text-center">
                 <div>
-                  <div className="text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1">MSRP</div>
+                  <div className="text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1">MSRP</div>
                   <div className="text-[15px] font-light text-ink-light">{item.msrp}</div>
                 </div>
                 <div>
-                  <div className="text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1">Wholesale</div>
+                  <div className="text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1">Wholesale</div>
                   <div className="text-[15px] font-light text-ink-light">{item.wholesale}</div>
                 </div>
                 <div>
-                  <div className="text-[12px] font-medium tracking-[.1em] uppercase text-ink-light mb-1">Margin</div>
+                  <div className="text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1">Margin</div>
                   <div className="text-[15px] font-medium text-gold">{item.margin}</div>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function RevenueModel() {
 
         {/* LTV statement */}
         <div className="text-center mt-12 p-8 border border-gold/30 rounded-xl">
-          <p className="font-display text-[clamp(20px,3vw,28px)] font-normal text-mineral leading-[1.3]">
+          <p className="font-display text-h4 font-normal text-mineral">
             Customer lifetime value:{' '}
             <span className="text-gold">3,600-4,800 THB</span>
           </p>

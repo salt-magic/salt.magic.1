@@ -24,10 +24,10 @@ export default function MarketStats() {
       {stats.map((item) => (
         <StaggerItem key={item.label}>
           <div className="text-center py-[clamp(48px,6vw,88px)] px-[clamp(24px,4vw,56px)] border-b border-border-warm last:border-b-0 md:border-b-0">
-            <div className="font-display text-[clamp(48px,6vw,72px)] font-normal text-mineral leading-none mb-1">
+            <div className="font-display text-stat font-normal text-mineral mb-1">
               {item.value}
             </div>
-            <div className="text-[12px] font-medium tracking-[.15em] uppercase text-ink-light mb-5">
+            <div className="text-[12px] font-medium tracking-cta uppercase text-ink-light mb-5">
               {item.label}
             </div>
             <p className="text-sm font-light leading-relaxed text-ink-light max-w-[280px] mx-auto">

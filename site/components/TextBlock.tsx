@@ -15,12 +15,12 @@ export default function TextBlock({ eyebrow, title, showGoldLine = false, childr
       {showGoldLine && <div className="gold-line" />}
 
       {eyebrow && (
-        <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
+        <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">
           {eyebrow}
         </p>
       )}
 
-      <h2 className="font-display text-[clamp(36px,5.5vw,56px)] font-normal leading-[1.1] text-mineral mb-6 tracking-tight [&>em]:italic [&>em]:font-normal">
+      <h2 className="font-display text-h1 font-normal text-mineral mb-6 tracking-tight [&>em]:italic [&>em]:font-normal">
         {title}
       </h2>
 

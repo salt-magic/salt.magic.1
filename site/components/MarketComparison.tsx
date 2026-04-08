@@ -8,10 +8,10 @@ export default function MarketComparison() {
       <FadeIn className="max-w-[1100px] mx-auto">
         <div className="text-center mb-[clamp(40px,6vw,56px)]">
           <div className="gold-line" />
-          <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
+          <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
             Market Opportunity
           </p>
-          <h2 className="font-display text-[clamp(28px,4.5vw,44px)] font-normal leading-[1.15] text-mineral tracking-tight">
+          <h2 className="font-display text-h3 font-normal text-mineral tracking-tight">
             APAC is 5–7 years behind <em>the USA</em>
           </h2>
         </div>
@@ -20,10 +20,10 @@ export default function MarketComparison() {
           {/* USA */}
           <StaggerItem>
             <div className="rounded-2xl bg-warm-off p-8 h-full">
-              <p className="text-[12px] font-semibold tracking-[0.15em] uppercase text-ink-light mb-6">
+              <p className="text-[12px] font-semibold tracking-cta uppercase text-ink-light mb-6">
                 USA Today
               </p>
-              <div className="font-display text-[clamp(36px,5vw,52px)] font-normal text-mineral leading-none mb-2">
+              <div className="font-display text-h1 font-normal text-mineral mb-2">
                 $11.3B
               </div>
               <p className="text-[14px] font-light text-ink-light mb-6">Market size (2023)</p>
@@ -52,10 +52,10 @@ export default function MarketComparison() {
           {/* APAC */}
           <StaggerItem>
             <div className="rounded-2xl bg-mineral p-8 h-full text-white">
-              <p className="text-[12px] font-semibold tracking-[0.15em] uppercase text-golden-hour mb-6">
+              <p className="text-[12px] font-semibold tracking-cta uppercase text-golden-hour mb-6">
                 Asia Pacific Today
               </p>
-              <div className="font-display text-[clamp(36px,5vw,52px)] font-normal leading-none mb-2">
+              <div className="font-display text-h1 font-normal mb-2">
                 $3.0B
               </div>
               <p className="text-[14px] font-light text-white/70 mb-6">Market size (2023)</p>

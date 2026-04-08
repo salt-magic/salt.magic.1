@@ -49,10 +49,10 @@ export default function Faq() {
     <section>
       <FadeIn className="max-w-[680px] mx-auto px-[clamp(24px,5vw,64px)] text-center mb-12">
         <div className="gold-line" />
-        <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
+        <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">
           Questions
         </p>
-        <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
+        <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
           Got Questions? Let&apos;s clear <em className="italic">the water.</em>
         </h2>
       </FadeIn>

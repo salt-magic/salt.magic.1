@@ -45,11 +45,11 @@ export default function StorySection() {
         >
           <div className="max-w-[480px]">
             <div className="w-12 h-px bg-gold mb-6" />
-            <p className="text-[12px] font-medium tracking-[.22em] uppercase text-golden-hour mb-5">
+            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour mb-5">
               Our Origin
             </p>
 
-            <h2 className="font-display text-[clamp(32px,4vw,48px)] font-normal leading-[1.15] text-white/90 tracking-tight mb-8">
+            <h2 className="font-display text-h2 font-normal text-white/90 tracking-tight mb-8">
               The Koh Samui{' '}
               <em className="italic text-gold/80">Story</em>
             </h2>
@@ -73,7 +73,7 @@ export default function StorySection() {
             <div className="mt-10 flex items-center gap-8">
               <a
                 href="#products"
-                className="inline-block text-[11px] font-semibold tracking-[.12em] uppercase px-8 py-3.5 rounded-pill text-footer-dark bg-gold/90 hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[11px] font-semibold tracking-cta uppercase px-8 py-3.5 rounded-pill text-footer-dark bg-gold/90 hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Shop Now
               </a>

@@ -12,10 +12,10 @@ export default function AnnouncementBar() {
   return (
     <div role="marquee" aria-label="Brand announcements" className="bg-mineral h-9 flex items-center overflow-hidden relative z-[60]" style={{ contain: 'layout paint' }}>
       <div className="animate-marquee motion-reduce:animate-none whitespace-nowrap flex will-change-transform">
-        <span className="uppercase tracking-[0.12em] text-[12px] font-medium text-white/90">
+        <span className="uppercase tracking-cta text-[12px] font-medium text-white/90">
           {track}
         </span>
-        <span className="uppercase tracking-[0.12em] text-[12px] font-medium text-white/90">
+        <span className="uppercase tracking-cta text-[12px] font-medium text-white/90">
           {track}
         </span>
       </div>

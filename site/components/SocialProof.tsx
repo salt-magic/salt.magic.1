@@ -51,13 +51,13 @@ export default function SocialProof() {
                 i < metrics.length - 1 ? 'lg:border-r lg:border-white/10' : ''
               }`}
             >
-              <div className="font-display text-[clamp(36px,5vw,64px)] font-normal text-white leading-none mb-2 tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>
+              <div className="font-display text-h1 font-normal text-white leading-none mb-2 tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>
                 <CountUp value={item.value} suffix={item.suffix} />
                 {'unit' in item && item.unit && (
-                  <span className="text-[clamp(20px,3vw,36px)] ml-2">{item.unit}</span>
+                  <span className="text-h4 ml-2">{item.unit}</span>
                 )}
               </div>
-              <div className="text-[12px] font-medium tracking-[.18em] uppercase text-golden-hour/80">
+              <div className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour/80">
                 {item.label}
               </div>
             </div>

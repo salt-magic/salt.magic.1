@@ -38,10 +38,10 @@ export default function DistributionTiers() {
     <section className="py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,64px)]">
       <FadeIn className="text-center mb-[clamp(48px,8vw,80px)]">
         <div className="gold-line" />
-        <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
+        <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">
           Distribution Model
         </p>
-        <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
+        <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
           Three paths to <em>partnership</em>
         </h2>
       </FadeIn>
@@ -54,7 +54,7 @@ export default function DistributionTiers() {
                 ? 'bg-mineral text-white border border-mineral shadow-lg'
                 : 'border border-border-warm'
             }`}>
-              <p className={`text-[12px] font-semibold tracking-[.15em] uppercase mb-3 ${
+              <p className={`text-[12px] font-semibold tracking-cta uppercase mb-3 ${
                 tier.featured ? 'text-gold' : 'text-gold'
               }`}>
                 {tier.tier}
