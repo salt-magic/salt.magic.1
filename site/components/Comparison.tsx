@@ -76,28 +76,29 @@ export default function Comparison() {
 
       {/* Content */}
       <div className="relative z-10 py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,64px)]">
-        <FadeIn className="max-w-[1200px] mx-auto">
-          {/* Header */}
-          <div className="text-left mb-[clamp(40px,5vw,56px)]">
-            <div className="w-12 h-px bg-gold mb-6" />
-            <p className="label-uppercase text-[12px] tracking-eyebrow text-white/70 mb-5">
-              How We Compare
-            </p>
-            <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-6">
-              The Clear <em className="italic">Choice</em>
-            </h2>
-            <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[520px]">
-              Maximum minerals. Zero junk. See how we stack up.
-            </p>
-          </div>
-
-          {/* Comparison Grid — single FadeIn to preserve backdrop-blur */}
+        <div className="max-w-[1200px] mx-auto">
+          {/* Header — animated */}
           <FadeIn>
-            <div
-              className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr_1fr_1fr] rounded-3xl overflow-hidden shadow-[0_12px_48px_rgba(0,0,0,0.25)]"
-              role="table"
-              aria-label="Electrolyte comparison"
-            >
+            <div className="text-left mb-[clamp(40px,5vw,56px)]">
+              <div className="w-12 h-px bg-gold mb-6" />
+              <p className="label-uppercase text-[12px] tracking-eyebrow text-white/70 mb-5">
+                How We Compare
+              </p>
+              <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-6">
+                The Clear <em className="italic">Choice</em>
+              </h2>
+              <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[520px]">
+                Maximum minerals. Zero junk. See how we stack up.
+              </p>
+            </div>
+          </FadeIn>
+
+          {/* Comparison Grid — NO opacity animation to preserve backdrop-blur */}
+          <div
+            className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr_1fr_1fr] rounded-3xl overflow-hidden shadow-[0_12px_48px_rgba(0,0,0,0.25)]"
+            role="table"
+            aria-label="Electrolyte comparison"
+          >
               {columns.map((col) => (
                 <div key={col.name}>
                   <div
@@ -191,13 +192,13 @@ export default function Comparison() {
                 </div>
               ))}
             </div>
-          </FadeIn>
+          </div>
 
           {/* Footnote */}
           <p className="text-left text-[12px] tracking-cta uppercase text-white/50 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
-        </FadeIn>
+        </div>
       </div>
     </section>
   )
