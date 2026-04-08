@@ -148,6 +148,7 @@ export default function Testimonials() {
                 onClick={() => setActive(i)}
                 className="min-h-[44px] min-w-[44px] flex items-center justify-center border-none cursor-pointer bg-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
                 aria-label={`Testimonial ${i + 1}`}
+                aria-current={i === active ? 'true' : undefined}
               >
                 <span className={`block h-[2px] rounded-full transition-[width,background-color] duration-500 ${
                   i === active ? 'w-10 bg-gold' : 'w-6 bg-border-warm'
