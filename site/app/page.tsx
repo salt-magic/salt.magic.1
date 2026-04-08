@@ -44,7 +44,7 @@ export default function Home() {
       <section className="bg-warm-off">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
           {/* Image — left side */}
-          <div className="relative min-h-[300px] lg:min-h-[620px] overflow-hidden">
+          <div className="relative min-h-[300px] lg:min-h-[700px] overflow-hidden">
             <Image
               src="/images/products/taylor-closeup.jpg"
               alt="Salt.Magic glass jar with natural electrolytes"
@@ -65,7 +65,7 @@ export default function Home() {
           </div>
 
           {/* Content — right side */}
-          <div className="flex flex-col justify-center py-[56px] px-[clamp(24px,4vw,40px)] lg:pl-[40px] lg:pr-[64px]">
+          <div className="flex flex-col justify-center py-[clamp(72px,9vw,100px)] px-[clamp(24px,4vw,40px)] lg:pl-[40px] lg:pr-[64px]">
             <div className="gold-line" />
             <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
               The Formula
