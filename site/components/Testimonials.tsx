@@ -100,7 +100,7 @@ export default function Testimonials() {
                   transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
                   className="pt-14"
                 >
-                  <blockquote className="font-body text-[clamp(16px,2vw,18px)] font-light leading-[1.75] text-ink-light mb-8">
+                  <blockquote className="text-body-lg font-light leading-[1.75] text-ink-light mb-8">
                     {testimonials[active].quote}
                   </blockquote>
 

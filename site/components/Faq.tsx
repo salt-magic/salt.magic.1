@@ -49,7 +49,7 @@ export default function Faq() {
     <section>
       <FadeIn className="max-w-[680px] mx-auto px-[clamp(24px,5vw,64px)] text-center mb-12">
         <div className="gold-line" />
-        <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">
+        <p className="label-uppercase text-ink-light mb-5">
           Questions
         </p>
         <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
@@ -64,7 +64,7 @@ export default function Faq() {
               onClick={() => toggle(i)}
               className="w-full flex items-center justify-between py-5 cursor-pointer gap-5 bg-transparent border-none text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold rounded-sm"
             >
-              <h3 className="font-body text-[clamp(16px,1.8vw,18px)] font-medium text-mineral leading-snug">
+              <h3 className="text-body-lg font-medium text-mineral leading-snug">
                 {faq.q}
               </h3>
               <motion.div

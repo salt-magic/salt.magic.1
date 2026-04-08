@@ -55,7 +55,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
     <>
       <h3
         role="cell"
-        className={`text-[13px] font-semibold uppercase tracking-cta mb-7 pb-4 ${
+        className={`text-[12px] font-medium uppercase tracking-eyebrow mb-7 pb-4 ${
           isHero
             ? 'text-mineral border-b-2 border-gold'
             : 'text-white/60 border-b border-white/[0.12]'
@@ -66,7 +66,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
 
       <div role="cell" className="mb-7">
         <div
-          className={`font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-none tracking-tight mb-1 ${
+          className={`font-display text-h2 font-normal leading-none tracking-tight mb-1 ${
             isHero ? 'text-mineral' : 'text-white/95'
           }`}
         >
@@ -79,7 +79,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
 
       <div role="cell" className="mb-7">
         <div
-          className={`font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-none tracking-tight mb-1 ${
+          className={`font-display text-h2 font-normal leading-none tracking-tight mb-1 ${
             isHero ? 'text-mineral' : 'text-white/95'
           }`}
         >
@@ -92,7 +92,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
 
       <div role="cell" className="mb-7">
         <div
-          className={`font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-tight mb-1 ${
+          className={`font-display text-h2 font-normal leading-tight mb-1 ${
             isHero ? 'text-mineral' : 'text-white/95'
           }`}
         >
@@ -176,8 +176,8 @@ export default function Comparison() {
           {/* Header */}
           <FadeIn>
             <div className="text-left mb-[clamp(40px,5vw,56px)]">
-              <div className="w-12 h-px bg-gold mb-6" />
-              <p className="label-uppercase text-[12px] tracking-eyebrow text-white/70 mb-5">
+              <div className="gold-line" />
+              <p className="label-uppercase text-white/70 mb-5">
                 How We Compare
               </p>
               <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-6">

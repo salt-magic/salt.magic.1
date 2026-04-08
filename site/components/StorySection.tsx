@@ -44,7 +44,7 @@ export default function StorySection() {
           className="flex flex-col justify-center px-[clamp(32px,6vw,80px)] py-[clamp(48px,6vw,80px)] lg:py-0"
         >
           <div className="max-w-[480px]">
-            <div className="w-12 h-px bg-gold mb-6" />
+            <div className="gold-line" />
             <p className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour mb-5">
               Our Origin
             </p>

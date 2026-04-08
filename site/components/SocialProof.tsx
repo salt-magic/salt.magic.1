@@ -41,23 +41,23 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
 
 export default function SocialProof() {
   return (
-    <section className="bg-mineral">
+    <section className="bg-warm-off">
       <FadeIn className="max-w-[1200px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(48px,6vw,80px)]">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
           {metrics.map((item, i) => (
             <div
               key={item.label}
               className={`text-center px-4 ${
-                i < metrics.length - 1 ? 'lg:border-r lg:border-white/10' : ''
+                i < metrics.length - 1 ? 'lg:border-r lg:border-border-warm' : ''
               }`}
             >
-              <div className="font-display text-h1 font-normal text-white leading-none mb-2 tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>
+              <div className="font-display text-h1 font-normal text-mineral leading-none mb-2 tracking-tight" style={{ fontVariantNumeric: 'tabular-nums' }}>
                 <CountUp value={item.value} suffix={item.suffix} />
                 {'unit' in item && item.unit && (
                   <span className="text-h4 ml-2">{item.unit}</span>
                 )}
               </div>
-              <div className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour/80">
+              <div className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light">
                 {item.label}
               </div>
             </div>

@@ -29,16 +29,13 @@ export default function Home() {
       {/* 2. Trust Band — Subtle social proof */}
       <TrustBand />
 
-      {/* Visual break between trust sections */}
-      <div className="h-[clamp(24px,3vw,40px)]" aria-hidden="true" />
-
-      {/* 3. Social Proof — Numbers (moved up for early trust) */}
-      <SocialProof />
-
       {/* ===== INTEREST ===== */}
 
       {/* 3. The Problem — Why your water is "dead" */}
       <WhySection />
+
+      {/* 4. Social Proof — Numbers (after problem = credibility) */}
+      <SocialProof />
 
       {/* 4. The Formula — Split layout: image left, ingredients right */}
       <section className="bg-warm-off">
@@ -83,13 +80,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Transition: clean whitespace + gold divider */}
-      <div className="py-[clamp(40px,5vw,56px)] flex items-center justify-center bg-white" aria-hidden="true">
+      {/* Transition: gold divider + gradient into dark Comparison */}
+      <div className="py-[clamp(40px,5vw,56px)] flex items-center justify-center bg-warm-off" aria-hidden="true">
         <div className="w-12 h-px bg-gold" />
       </div>
+      <div className="section-fade-warm-to-dark" aria-hidden="true" />
 
       {/* 5. Comparison — How we're different */}
       <Comparison />
+
+      {/* Transition: dark Comparison → warm Benefits */}
+      <div className="section-fade-dark-to-warm" aria-hidden="true" />
 
       {/* ===== DESIRE ===== */}
 
@@ -119,14 +120,21 @@ export default function Home() {
       {/* ===== TRUST ===== */}
 
       {/* 10. Testimonials — Real people */}
+      <div className="section-fade-to-warm" aria-hidden="true" />
       <section className="bg-warm-off py-[clamp(48px,6vw,80px)]">
         <Testimonials />
       </section>
+
+      {/* Transition: warm Testimonials → dark Story */}
+      <div className="section-fade-warm-to-dark" aria-hidden="true" />
 
       {/* ===== BRAND ===== */}
 
       {/* 12. Origin Story */}
       <StorySection />
+
+      {/* Transition: dark Story → warm FAQ */}
+      <div className="section-fade-deepdark-to-warm" aria-hidden="true" />
 
       {/* ===== OBJECTION HANDLING ===== */}
 
@@ -144,11 +152,20 @@ export default function Home() {
 
       {/* ===== FINAL CONVERSION ===== */}
 
+      {/* Transition: white Blog → dark CTA */}
+      <div className="section-fade-to-dark" aria-hidden="true" />
+
       {/* 15. CTA Banner — Last push */}
       <CtaBanner />
 
+      {/* Transition: dark CTA → warm Newsletter */}
+      <div className="section-fade-dark-to-warm" aria-hidden="true" />
+
       {/* 16. Newsletter — Retention */}
       <Newsletter />
+
+      {/* Transition: warm Newsletter → dark PartnerTeaser */}
+      <div className="section-fade-warm-to-mineral" aria-hidden="true" />
 
       {/* 17. Partner Teaser — B2B hook (bottom placement) */}
       <PartnerTeaser />

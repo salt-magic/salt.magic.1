@@ -24,7 +24,7 @@ export default function CtaBanner() {
       </div>
 
       <FadeIn className="relative z-10 max-w-[600px] mx-auto text-center px-[clamp(32px,6vw,80px)] py-[clamp(80px,10vw,120px)]">
-        <div className="w-12 h-px bg-golden-hour/50 mx-auto mb-6" />
+        <div className="gold-line" />
         <p className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour mb-5">
           Start Today
         </p>
@@ -38,7 +38,7 @@ export default function CtaBanner() {
           href="https://www.lazada.co.th/shop/salt-magic/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block text-[12px] font-semibold tracking-cta uppercase px-10 py-4 rounded-pill text-mineral bg-white hover:bg-golden-hour hover:text-ink transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+          className="inline-block text-[12px] font-semibold tracking-cta uppercase px-10 py-4 rounded-pill bg-gold/90 text-footer-dark hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         >
           Shop Salt.Magic on Lazada
         </a>

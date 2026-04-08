@@ -67,7 +67,7 @@ export default function WhySection() {
             className="flex flex-col justify-center"
           >
             <div className="max-w-[480px]">
-              <div className="w-12 h-px bg-gold mb-6" />
+              <div className="gold-line" />
               <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-6">
                 The Problem
               </p>
@@ -99,7 +99,7 @@ export default function WhySection() {
                     <div className="w-14 h-14 rounded-full border border-gold/30 flex items-center justify-center text-gold mx-auto mb-2.5">
                       {badge.icon}
                     </div>
-                    <p className="text-[12px] font-semibold tracking-cta uppercase text-ink-light">
+                    <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light">
                       {badge.label}
                     </p>
                   </div>

@@ -88,7 +88,7 @@ export default function Products() {
                 </div>
 
                 {/* Tag */}
-                <div className="text-[12px] font-semibold tracking-eyebrow uppercase mb-2 text-ink-light">
+                <div className="text-[12px] font-medium tracking-eyebrow uppercase mb-2 text-ink-light">
                   {product.tag}
                 </div>
 
@@ -98,7 +98,7 @@ export default function Products() {
                 </h3>
 
                 {/* Price */}
-                <div className="text-[18px] font-body font-semibold text-ink mb-1">
+                <div className="text-[18px] font-semibold text-ink mb-1">
                   {product.price}
                 </div>
                 <div className="text-[13px] font-light text-ink-light mb-5">

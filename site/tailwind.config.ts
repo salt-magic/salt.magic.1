@@ -40,6 +40,7 @@ const config: Config = {
         'h3': ['clamp(24px, 3.5vw, 36px)', { lineHeight: '1.15' }],
         'h4': ['clamp(20px, 2.5vw, 26px)', { lineHeight: '1.2' }],
         'h5': ['clamp(17px, 2vw, 20px)', { lineHeight: '1.3' }],
+        'body-lg': ['clamp(16px, 1.8vw, 18px)', { lineHeight: '1.6' }],
       },
       letterSpacing: {
         'eyebrow': '0.2em',
