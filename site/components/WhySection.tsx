@@ -40,8 +40,6 @@ export default function WhySection() {
   })
 
   const reduced = useReducedMotion()
-  // Scale disabled — causes GPU jank on mobile with large images
-  const imageScale = useTransform(scrollYProgress, [0, 0.5], [1, 1])
   const textOpacity = useTransform(scrollYProgress, [0.1, 0.35], reduced ? [1, 1] : [0, 1])
   const textY = useTransform(scrollYProgress, [0.1, 0.35], reduced ? [0, 0] : [30, 0])
 
@@ -51,7 +49,7 @@ export default function WhySection() {
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-[clamp(40px,6vw,80px)] items-center">
           {/* Lifestyle photo — left side, rounded like Sakara */}
           <div className="relative overflow-hidden rounded-2xl aspect-[4/5] lg:aspect-auto lg:min-h-[600px]">
-            <motion.div style={{ scale: imageScale }} className="absolute inset-0">
+            <div className="absolute inset-0">
               <Image
                 src="/images/products/taylor-poolside.jpg"
                 alt="Salt.Magic glass jar by the pool — natural electrolytes for daily wellness"
@@ -60,7 +58,7 @@ export default function WhySection() {
                 sizes="(max-width: 1024px) 100vw, 55vw"
                 priority
               />
-            </motion.div>
+            </div>
           </div>
 
           {/* Content — right side */}
@@ -90,12 +88,12 @@ export default function WhySection() {
                 </p>
               </div>
 
-              <p className="font-display text-h5 italic text-mineral/80 font-normal leading-relaxed mt-8 border-l-2 border-gold/40 pl-6">
+              <p className="font-display text-h5 italic text-mineral font-normal leading-relaxed mt-8 border-l-2 border-gold/40 pl-6">
                 50% of people worldwide are magnesium deficient. Your water could be why.
               </p>
 
               {/* Cure-style icon badges */}
-              <div className="flex gap-8 mt-10">
+              <div className="flex flex-wrap gap-6 sm:gap-8 mt-10">
                 {badges.map((badge) => (
                   <div key={badge.label} className="text-center">
                     <div className="w-14 h-14 rounded-full border border-gold/30 flex items-center justify-center text-gold mx-auto mb-2.5">
