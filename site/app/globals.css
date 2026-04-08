@@ -61,43 +61,13 @@
   }
 
   .section-fade-to-warm {
-    height: clamp(40px, 5vw, 64px);
-    background: linear-gradient(to bottom, #FFFFFF, #F9F7F4);
+    height: 1px;
+    background: transparent;
   }
 
   .section-fade-from-warm {
-    height: clamp(40px, 5vw, 64px);
-    background: linear-gradient(to bottom, #F9F7F4, #FFFFFF);
-  }
-
-  .section-fade-to-dark {
-    height: clamp(48px, 6vw, 80px);
-    background: linear-gradient(to bottom, #FFFFFF, #294B6D);
-  }
-
-  .section-fade-warm-to-dark {
-    height: clamp(48px, 6vw, 80px);
-    background: linear-gradient(to bottom, #F9F7F4, #294B6D);
-  }
-
-  .section-fade-dark-to-warm {
-    height: clamp(48px, 6vw, 80px);
-    background: linear-gradient(to bottom, #294B6D, #F9F7F4);
-  }
-
-  .section-fade-dark-to-dark {
-    height: clamp(48px, 6vw, 80px);
-    background: linear-gradient(to bottom, #294B6D, #1D3347);
-  }
-
-  .section-fade-deepdark-to-warm {
-    height: clamp(48px, 6vw, 80px);
-    background: linear-gradient(to bottom, #1D3347, #F9F7F4);
-  }
-
-  .section-fade-warm-to-mineral {
-    height: clamp(48px, 6vw, 80px);
-    background: linear-gradient(to bottom, #F9F7F4, #294B6D);
+    height: 1px;
+    background: transparent;
   }
 }
 
