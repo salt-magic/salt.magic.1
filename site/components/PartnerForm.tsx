@@ -14,7 +14,7 @@ export default function PartnerForm() {
   return (
     <section
       id="partner-form"
-      className="py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,64px)]"
+      className="py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,64px)]"
     >
       <FadeIn className="max-w-[640px] mx-auto">
         <div className="text-center mb-10">

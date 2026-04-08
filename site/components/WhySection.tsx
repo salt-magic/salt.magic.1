@@ -47,7 +47,7 @@ export default function WhySection() {
 
   return (
     <section id="why" ref={ref}>
-      <div className="max-w-[1400px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(64px,8vw,100px)]">
+      <div className="max-w-[1400px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(48px,6vw,80px)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-[clamp(40px,6vw,80px)] items-center">
           {/* Lifestyle photo — left side, rounded like Sakara */}
           <div className="relative overflow-hidden rounded-2xl aspect-[4/5] lg:aspect-auto lg:min-h-[600px]">

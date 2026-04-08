@@ -2,7 +2,7 @@ import { FadeIn } from './Motion'
 
 export default function Newsletter() {
   return (
-    <section className="bg-warm-off py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,80px)]">
+    <section className="bg-warm-off py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,80px)]">
       <FadeIn className="max-w-[560px] mx-auto text-center">
         <div className="gold-line" />
         <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">

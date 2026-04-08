@@ -42,7 +42,7 @@ function CountUp({ value, suffix }: { value: number; suffix: string }) {
 export default function SocialProof() {
   return (
     <section className="bg-mineral">
-      <FadeIn className="max-w-[1200px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(64px,8vw,100px)]">
+      <FadeIn className="max-w-[1200px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(48px,6vw,80px)]">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-10">
           {metrics.map((item, i) => (
             <div

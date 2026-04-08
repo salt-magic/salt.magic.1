@@ -4,7 +4,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from './Motion'
 
 export default function RevenueComparison() {
   return (
-    <section className="bg-warm-off py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,80px)]">
+    <section className="bg-warm-off py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,80px)]">
       <FadeIn className="max-w-[1000px] mx-auto">
         <div className="text-center mb-[clamp(36px,5vw,48px)]">
           <div className="gold-line" />

@@ -15,7 +15,7 @@ const locations = [
 
 export default function LocationMap() {
   return (
-    <section className="py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,64px)]">
+    <section className="py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,64px)]">
       <FadeIn className="text-center mb-[clamp(48px,8vw,80px)]">
         <div className="gold-line" />
         <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">

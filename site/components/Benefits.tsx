@@ -68,7 +68,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="bg-warm-off py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,80px)]">
+    <section className="bg-warm-off py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,80px)]">
       <div className="max-w-[1200px] mx-auto">
         <div className="text-left mb-[clamp(40px,6vw,64px)]">
           <div className="gold-line" />

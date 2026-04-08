@@ -90,7 +90,7 @@ export default function Comparison() {
       />
 
       {/* Content */}
-      <div className="relative z-10 py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,64px)]">
+      <div className="relative z-10 py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,64px)]">
         <FadeIn className="max-w-[1200px] mx-auto">
           <div className="text-left mb-[clamp(40px,5vw,56px)]">
             <div className="w-12 h-px bg-gold mb-6" />

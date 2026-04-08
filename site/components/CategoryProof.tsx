@@ -27,7 +27,7 @@ const brands = [
 
 export default function CategoryProof() {
   return (
-    <section className="bg-deep-navy py-[clamp(64px,8vw,100px)] px-[clamp(24px,5vw,80px)]">
+    <section className="bg-deep-navy py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,80px)]">
       <FadeIn className="max-w-[1100px] mx-auto">
         <div className="text-center mb-[clamp(36px,5vw,56px)]">
           <div className="w-12 h-px bg-golden-hour/50 mx-auto mb-6" />

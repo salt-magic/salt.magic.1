@@ -54,7 +54,7 @@ export default function Home() {
             />
             {/* Subtle fade into content on desktop */}
             <div
-              className="hidden lg:block absolute top-0 bottom-0 right-0 w-[25%]"
+              className="hidden lg:block absolute top-0 bottom-0 right-0 w-[35%]"
               style={{ background: 'linear-gradient(to right, transparent, #F9F7F4)' }}
             />
             {/* Bottom fade on mobile */}
@@ -107,7 +107,7 @@ export default function Home() {
       {/* ===== ACTION ===== */}
 
       {/* 9. Products — Shop now */}
-      <section id="products" className="py-[clamp(64px,8vw,100px)]">
+      <section id="products" className="py-[clamp(48px,6vw,80px)]">
         <TextBlock eyebrow="Shop Salt.Magic" showGoldLine title={<>Ready to upgrade <em>your water?</em></>}>
           <p>Choose your daily ritual. Less than the cost of your morning coffee.</p>
         </TextBlock>
@@ -118,7 +118,7 @@ export default function Home() {
       {/* ===== TRUST ===== */}
 
       {/* 10. Testimonials — Real people */}
-      <section className="bg-warm-off py-[clamp(64px,8vw,100px)]">
+      <section className="bg-warm-off py-[clamp(48px,6vw,80px)]">
         <Testimonials />
       </section>
 
@@ -130,14 +130,14 @@ export default function Home() {
       {/* ===== OBJECTION HANDLING ===== */}
 
       {/* 13. FAQ */}
-      <div className="bg-warm-off py-[clamp(64px,8vw,100px)]">
+      <div className="bg-warm-off py-[clamp(48px,6vw,80px)]">
         <Faq />
       </div>
 
       {/* ===== EDUCATION ===== */}
 
       {/* 14. Blog */}
-      <section className="py-[clamp(64px,8vw,100px)]">
+      <section className="py-[clamp(48px,6vw,80px)]">
         <BlogSection />
       </section>
 

@@ -5,7 +5,7 @@ import { FadeIn } from './Motion'
 
 export default function ForEveryone() {
   return (
-    <section id="for-everyone" className="py-[clamp(64px,8vw,100px)]">
+    <section id="for-everyone" className="py-[clamp(48px,6vw,80px)]">
       <div className="max-w-[1400px] mx-auto px-[clamp(24px,5vw,80px)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-[clamp(32px,5vw,64px)] items-center">
           {/* Text side */}

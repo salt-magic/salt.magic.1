@@ -34,7 +34,7 @@
   }
 
   .headline-editorial {
-    @apply font-display text-display font-semibold;
+    @apply font-display text-display font-normal;
   }
 
   .link-underline {

@@ -33,12 +33,12 @@ const config: Config = {
         body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'display': ['clamp(44px, 6.5vw, 72px)', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
-        'stat': ['clamp(48px, 6vw, 64px)', { lineHeight: '1' }],
-        'h1': ['clamp(36px, 5.5vw, 56px)', { lineHeight: '1.1' }],
-        'h2': ['clamp(32px, 5vw, 48px)', { lineHeight: '1.1' }],
-        'h3': ['clamp(28px, 4.5vw, 40px)', { lineHeight: '1.15' }],
-        'h4': ['clamp(22px, 3vw, 28px)', { lineHeight: '1.2' }],
+        'display': ['clamp(40px, 5.5vw, 64px)', { lineHeight: '1.05', letterSpacing: '-0.03em' }],
+        'stat': ['clamp(36px, 4.5vw, 52px)', { lineHeight: '1' }],
+        'h1': ['clamp(32px, 4.5vw, 48px)', { lineHeight: '1.1' }],
+        'h2': ['clamp(28px, 4vw, 42px)', { lineHeight: '1.1' }],
+        'h3': ['clamp(24px, 3.5vw, 36px)', { lineHeight: '1.15' }],
+        'h4': ['clamp(20px, 2.5vw, 26px)', { lineHeight: '1.2' }],
         'h5': ['clamp(17px, 2vw, 20px)', { lineHeight: '1.3' }],
       },
       letterSpacing: {

@@ -41,7 +41,7 @@ export default function StorySection() {
         {/* Text side */}
         <motion.div
           style={{ opacity: textOpacity, y: textY }}
-          className="flex flex-col justify-center px-[clamp(32px,6vw,80px)] py-[clamp(64px,8vw,100px)] lg:py-0"
+          className="flex flex-col justify-center px-[clamp(32px,6vw,80px)] py-[clamp(48px,6vw,80px)] lg:py-0"
         >
           <div className="max-w-[480px]">
             <div className="w-12 h-px bg-gold mb-6" />
