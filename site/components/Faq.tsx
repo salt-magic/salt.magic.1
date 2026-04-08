@@ -72,7 +72,7 @@ export default function Faq() {
                 transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                 className="w-5 h-5 flex-shrink-0 flex items-center justify-center"
               >
-                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" className="text-gold">
+                <svg width="14" height="8" viewBox="0 0 14 8" fill="none" className="text-ink-light">
                   <path d="M1 1l6 6 6-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </motion.div>
