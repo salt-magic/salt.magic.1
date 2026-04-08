@@ -41,10 +41,10 @@ export default function Home() {
       <WhySection />
 
       {/* 4. The Formula — Split layout: image left, ingredients right */}
-      <section className="bg-warm-off py-[clamp(48px,6vw,80px)]">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] max-w-[1400px] mx-auto">
+      <section className="bg-warm-off">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
           {/* Image — left side */}
-          <div className="relative min-h-[300px] lg:min-h-[600px] overflow-hidden">
+          <div className="relative min-h-[300px] lg:min-h-[620px] overflow-hidden">
             <Image
               src="/images/products/taylor-closeup.jpg"
               alt="Salt.Magic glass jar with natural electrolytes"
@@ -54,7 +54,7 @@ export default function Home() {
             />
             {/* Subtle fade into content on desktop */}
             <div
-              className="hidden lg:block absolute top-0 bottom-0 right-0 w-[35%]"
+              className="hidden lg:block absolute top-0 bottom-0 right-0 w-[25%]"
               style={{ background: 'linear-gradient(to right, transparent, #F9F7F4)' }}
             />
             {/* Bottom fade on mobile */}
@@ -65,16 +65,16 @@ export default function Home() {
           </div>
 
           {/* Content — right side */}
-          <div className="flex flex-col justify-center py-[clamp(56px,7vw,88px)] px-[clamp(28px,4vw,56px)] lg:pl-[clamp(40px,3.5vw,56px)] lg:pr-[clamp(48px,5vw,80px)]">
+          <div className="flex flex-col justify-center py-[56px] px-[clamp(24px,4vw,40px)] lg:pl-[40px] lg:pr-[64px]">
             <div className="gold-line" />
-            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-4">
+            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
               The Formula
             </p>
-            <h2 className="font-display text-h3 font-normal text-mineral mb-3 tracking-tight">
+            <h2 className="font-display text-h2 font-normal text-mineral mb-4 tracking-tight leading-[1.15]">
               Everything your water is missing.{' '}
               <em className="italic font-normal">Nothing you can taste.</em>
             </h2>
-            <p className="text-[15px] font-light leading-[1.75] text-ink max-w-[460px] mb-6">
+            <p className="text-[15px] font-light leading-[1.75] text-ink max-w-[460px] mb-2">
               Just 2 grams of pure, highly bioavailable minerals. Three natural ingredients. Zero junk.
             </p>
             <Ingredients />

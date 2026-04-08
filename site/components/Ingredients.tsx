@@ -28,12 +28,12 @@ export default function Ingredients() {
     <StaggerContainer>
       {ingredients.map((item, i) => (
         <StaggerItem key={item.num}>
-          <div className={`flex items-center gap-5 sm:gap-8 py-6 ${
-            i < ingredients.length - 1 ? 'border-b border-gold/20' : ''
+          <div className={`flex items-center gap-6 py-6 ${
+            i > 0 ? 'border-t border-gold/25' : ''
           }`}>
             {/* Large number */}
-            <div className="flex items-baseline gap-1 min-w-[90px] sm:min-w-[110px]">
-              <span className="font-display text-stat font-normal text-mineral tracking-tight">
+            <div className="flex items-baseline gap-[3px] min-w-[110px]">
+              <span className="font-display text-[clamp(40px,5vw,52px)] font-normal leading-none tracking-tight text-mineral">
                 {item.num}
               </span>
               <span className="text-[13px] font-medium text-gold tracking-wide">
@@ -43,10 +43,10 @@ export default function Ingredients() {
 
             {/* Name + benefit */}
             <div className="flex-1">
-              <h3 className="text-[15px] font-semibold tracking-cta uppercase text-mineral mb-1">
+              <h3 className="text-[13px] font-semibold tracking-cta uppercase text-mineral mb-[3px]">
                 {item.name}
               </h3>
-              <p className="text-[15px] font-normal text-ink/80 leading-relaxed">
+              <p className="text-[15px] font-light text-ink/80 leading-normal">
                 {item.benefit}
               </p>
             </div>
