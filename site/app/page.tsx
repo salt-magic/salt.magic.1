@@ -82,8 +82,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Transition: warm-off → dark comparison */}
-      <div className="h-[clamp(48px,6vw,80px)] bg-gradient-to-b from-warm-off to-white" aria-hidden="true" />
+      {/* Transition: clean whitespace + gold divider */}
+      <div className="py-[clamp(40px,5vw,56px)] flex items-center justify-center bg-white" aria-hidden="true">
+        <div className="w-12 h-px bg-gold" />
+      </div>
 
       {/* 5. Comparison — How we're different */}
       <Comparison />
