@@ -41,7 +41,20 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V14 Refined Type Scale + Heading Hierarchy (2026-04-08). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V16 Homepage UI/UX Audit (2026-04-08). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V16 Session (Homepage UI/UX Audit — Brand Consistency, Typography & Section Flow):
+- **Section-Transitions bereinigt**: 8 Gradient-Transition-Divs eingefuegt, dann wieder entfernt (sahen aus wie Schatten). Sections gehen jetzt direkt ineinander ueber.
+- **SocialProof nach WhySection verschoben**: Flow jetzt Hero → TrustBand → WhySection (Problem) → SocialProof (Beweis) — psychologisch staerker
+- **SocialProof von dunkel auf hell**: `bg-mineral` → `bg-warm-off`, eliminiert harten Hell-Dunkel-Bruch
+- **PartnerTeaser von dunkel auf hell**: `bg-mineral` → `bg-warm-off`, reduziert dunkle Section-Stapelung am Seitenende
+- **Typografie standardisiert**: Alle Eyebrow-Labels auf `text-[12px] font-medium tracking-eyebrow`, `label-uppercase` von text-sm auf text-[12px], doppeltes Tracking in TextBlock/FAQ/BlogSection entfernt
+- **Inline Clamps durch Tokens ersetzt**: Comparison (text-h2), Ingredients (text-stat), Testimonials/FAQ (text-body-lg)
+- **Neuer body-lg Token**: `clamp(16px, 1.8vw, 18px)` in tailwind.config.ts
+- **Gold Lines standardisiert**: 5 inline Gold Lines durch `.gold-line` CSS-Klasse ersetzt
+- **CTA-Buttons vereinheitlicht**: 3 Varianten definiert — Primary auf hell (bg-mineral), Primary auf dunkel (bg-gold/90), Ghost (border white/25). Hero + CtaBanner auf Gold umgestellt.
+- **Redundante font-body Klassen entfernt**: Products, Testimonials, FAQ
+- **16 Dateien geaendert**: globals.css, page.tsx, tailwind.config.ts + 13 Components
 
 Key Changes in V14 Session (Refined Type Scale + Heading Hierarchy):
 - **Refined Type Scale angewendet**: Alle Tailwind-Tokens bereits auf Refined-Werte (display 64px, h1 48px, h2 42px, h3 36px, h4 26px, Section-Padding 48-80px). 6 inline Clamp-Werte durch Tokens ersetzt
