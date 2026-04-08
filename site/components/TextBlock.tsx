@@ -25,7 +25,7 @@ export default function TextBlock({ eyebrow, title, showGoldLine = false, childr
       </h2>
 
       {children && (
-        <div className="text-base font-light leading-[1.85] text-ink-light [&>p+p]:mt-5">
+        <div className="text-[15px] font-light leading-[1.85] text-ink-light [&>p+p]:mt-5">
           {children}
         </div>
       )}

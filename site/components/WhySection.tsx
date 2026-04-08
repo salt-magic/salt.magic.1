@@ -78,7 +78,7 @@ export default function WhySection() {
                 Your water is missing what your body needs <em className="italic">most</em>
               </h2>
 
-              <div className="space-y-5 text-base font-light leading-[1.85] text-ink-light">
+              <div className="space-y-5 text-[15px] font-light leading-[1.85] text-ink-light">
                 <p>
                   85% of bottled water in Thailand goes through reverse osmosis, stripping
                   away essential natural minerals. The result is &ldquo;dead water&rdquo; — purified,

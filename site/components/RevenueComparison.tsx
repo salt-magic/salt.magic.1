@@ -30,7 +30,7 @@ export default function RevenueComparison() {
               <div className="font-display text-stat font-normal text-white mb-1">
                 365
               </div>
-              <p className="text-[14px] font-light text-white/70 mb-8">days per year — every single day</p>
+              <p className="text-[15px] font-light text-white/70 mb-8">days per year — every single day</p>
 
               <div className="space-y-4">
                 <div className="flex justify-between items-baseline border-b border-white/10 pb-3">
@@ -62,7 +62,7 @@ export default function RevenueComparison() {
               <div className="font-display text-stat font-normal text-ink-light mb-1">
                 3–5
               </div>
-              <p className="text-[14px] font-light text-ink-light mb-8">days per week — only after workouts</p>
+              <p className="text-[15px] font-light text-ink-light mb-8">days per week — only after workouts</p>
 
               <div className="space-y-4">
                 <div className="flex justify-between items-baseline border-b border-border-warm pb-3">
@@ -83,7 +83,7 @@ export default function RevenueComparison() {
         </StaggerContainer>
 
         <FadeIn className="text-center mt-8">
-          <p className="text-[14px] font-light text-ink-light max-w-[500px] mx-auto">
+          <p className="text-[15px] font-light text-ink-light max-w-[500px] mx-auto">
             365 days/year = 4.4x more revenue per customer.
             Daily wellness positioning isn&apos;t just better for customers — it&apos;s better for your bottom line.
           </p>

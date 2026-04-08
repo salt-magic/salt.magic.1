@@ -37,7 +37,7 @@ export default function CategoryProof() {
           <h2 className="font-display text-h3 font-normal text-white tracking-tight mb-4">
             Clean electrolytes are creating <em>a new category</em>
           </h2>
-          <p className="text-base font-light leading-relaxed text-white/70 max-w-[520px] mx-auto">
+          <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[520px] mx-auto">
             The biggest wellness brands of the last decade started exactly where Salt.Magic is now.
           </p>
         </div>
@@ -61,7 +61,7 @@ export default function CategoryProof() {
         </StaggerContainer>
 
         <FadeIn className="text-center mt-10">
-          <p className="text-[14px] font-light text-white/70 max-w-[480px] mx-auto">
+          <p className="text-[15px] font-light text-white/70 max-w-[480px] mx-auto">
             Thailand is where the USA was 7 years ago. Salt.Magic is positioned to lead the wellness electrolytes category in APAC.
           </p>
         </FadeIn>

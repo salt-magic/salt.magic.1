@@ -31,7 +31,7 @@ export default function CtaBanner() {
         <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-6">
           Bring Your Water <em className="italic">Back to Life</em>
         </h2>
-        <p className="text-[16px] font-light text-white/80 mb-10 max-w-[420px] mx-auto leading-relaxed">
+        <p className="text-[15px] font-light text-white/80 mb-10 max-w-[420px] mx-auto leading-relaxed">
           Three ingredients. Zero compromise. Join thousands across Thailand who&apos;ve made the daily switch.
         </p>
         <a

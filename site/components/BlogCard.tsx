@@ -40,7 +40,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
         <h3 className="font-display text-h5 font-normal leading-[1.3] text-mineral mb-2.5 line-clamp-2">
           {post.title}
         </h3>
-        <p className="text-[14px] font-light leading-relaxed text-ink-light line-clamp-3 mb-3">
+        <p className="text-[15px] font-light leading-relaxed text-ink-light line-clamp-3 mb-3">
           {post.excerpt}
         </p>
         <span className="text-[13px] font-medium text-mineral group-hover:text-gold transition-colors">

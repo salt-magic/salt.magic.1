@@ -86,7 +86,7 @@ export default function Faq() {
                   transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
                   className="overflow-hidden"
                 >
-                  <div className="pb-6 text-base font-light leading-relaxed text-ink-light">
+                  <div className="pb-6 text-[15px] font-light leading-relaxed text-ink-light">
                     {faq.a}
                   </div>
                 </motion.div>

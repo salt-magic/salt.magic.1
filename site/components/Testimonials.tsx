@@ -73,7 +73,7 @@ export default function Testimonials() {
             <div className="mt-6">
               <a
                 href="#products"
-                className="inline-block text-[11px] font-semibold uppercase tracking-cta px-8 py-3.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[12px] font-semibold uppercase tracking-cta px-8 py-3.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Shop Now
               </a>
@@ -110,7 +110,7 @@ export default function Testimonials() {
                       {testimonials[active].author.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
-                      <div className="text-[14px] font-medium text-mineral">
+                      <div className="text-[15px] font-medium text-mineral">
                         {testimonials[active].author}
                       </div>
                       <div className="text-[12px] font-light text-ink-light">

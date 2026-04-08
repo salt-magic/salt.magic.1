@@ -100,7 +100,7 @@ export default function Comparison() {
             <h2 className="font-display text-h2 font-normal text-white mb-6 tracking-tight">
               The Clear <em>Choice</em>
             </h2>
-            <p className="text-base font-light leading-relaxed text-white/80 max-w-[520px]">
+            <p className="text-[15px] font-light leading-relaxed text-white/80 max-w-[520px]">
               Maximum minerals. Zero junk. See how we stack up.
             </p>
           </div>

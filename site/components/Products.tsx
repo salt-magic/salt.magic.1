@@ -99,7 +99,7 @@ export default function Products() {
                 <div className="text-[17px] font-body font-semibold text-ink mb-1">
                   {product.price}
                 </div>
-                <div className="text-[14px] font-light text-ink-light mb-4">
+                <div className="text-[15px] font-light text-ink-light mb-4">
                   {product.meta}
                 </div>
 

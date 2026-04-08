@@ -23,7 +23,7 @@ export default function PartnerTeaser() {
             <h2 className="font-display text-h3 font-normal text-white tracking-tight mb-3">
               Stock <em className="italic font-normal">Salt.Magic</em>
             </h2>
-            <p className="text-base font-light leading-[1.7] text-white/70 max-w-[440px] mb-5">
+            <p className="text-[15px] font-light leading-[1.7] text-white/70 max-w-[440px] mb-5">
               Join Thailand&apos;s fastest-growing daily hydration brand.
             </p>
             <Link

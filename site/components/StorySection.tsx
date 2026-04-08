@@ -54,7 +54,7 @@ export default function StorySection() {
               <em className="italic text-gold/80">Story</em>
             </h2>
 
-            <div className="space-y-5 text-[16px] font-light leading-[1.85] text-white/70">
+            <div className="space-y-5 text-[15px] font-light leading-[1.85] text-white/70">
               <p>
                 Living on a tropical island, we drank more water than most — but still felt
                 constantly depleted. We finally tested it with a TDS meter, and the results
@@ -73,7 +73,7 @@ export default function StorySection() {
             <div className="mt-10 flex items-center gap-8">
               <a
                 href="#products"
-                className="inline-block text-[11px] font-semibold tracking-cta uppercase px-8 py-3.5 rounded-pill text-footer-dark bg-gold/90 hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[12px] font-semibold tracking-cta uppercase px-8 py-3.5 rounded-pill text-footer-dark bg-gold/90 hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Shop Now
               </a>

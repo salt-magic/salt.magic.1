@@ -97,7 +97,7 @@ export default function Hero() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <p className="text-[20px] font-normal leading-relaxed text-white mb-10 max-w-[480px] mx-auto">
+            <p className="text-[17px] font-normal leading-relaxed text-white mb-10 max-w-[480px] mx-auto">
               Pure minerals. Zero sugar. Every glass. Every day.
             </p>
           </FadeIn>

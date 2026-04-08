@@ -55,9 +55,9 @@ export default function Footer() {
                 id="footer-email-mobile"
                 type="email"
                 placeholder="Your email"
-                className="flex-1 min-h-[44px] py-3 px-4 bg-white/5 border border-white/10 rounded-pill text-[14px] font-light text-white font-body outline-none placeholder:text-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                className="flex-1 min-h-[44px] py-3 px-4 bg-white/5 border border-white/10 rounded-pill text-[15px] font-light text-white font-body outline-none placeholder:text-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
               />
-              <button className="min-h-[44px] py-3 px-5 bg-mineral border-none rounded-pill text-white text-[11px] font-semibold tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
+              <button className="min-h-[44px] py-3 px-5 bg-mineral border-none rounded-pill text-white text-[12px] font-semibold tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
                 Join
               </button>
             </div>
@@ -127,9 +127,9 @@ export default function Footer() {
                   id="footer-email"
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 min-h-[44px] py-3 px-4 bg-white/5 border border-white/10 rounded-pill text-[14px] font-light text-white font-body outline-none placeholder:text-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                  className="flex-1 min-h-[44px] py-3 px-4 bg-white/5 border border-white/10 rounded-pill text-[15px] font-light text-white font-body outline-none placeholder:text-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
                 />
-                <button className="min-h-[44px] py-3 px-5 bg-mineral border-none rounded-pill text-white text-[11px] font-semibold tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
+                <button className="min-h-[44px] py-3 px-5 bg-mineral border-none rounded-pill text-white text-[12px] font-semibold tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
                   Join
                 </button>
               </div>

@@ -104,7 +104,7 @@ export default function RevenueModel() {
             Customer lifetime value:{' '}
             <span className="text-gold">3,600-4,800 THB</span>
           </p>
-          <p className="text-[14px] font-light text-ink-light mt-2">
+          <p className="text-[15px] font-light text-ink-light mt-2">
             Based on daily use at 365 days/year with 90% retention
           </p>
         </div>

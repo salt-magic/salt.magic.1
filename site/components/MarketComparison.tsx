@@ -26,7 +26,7 @@ export default function MarketComparison() {
               <div className="font-display text-h1 font-normal text-mineral mb-2">
                 $11.3B
               </div>
-              <p className="text-[14px] font-light text-ink-light mb-6">Market size (2023)</p>
+              <p className="text-[15px] font-light text-ink-light mb-6">Market size (2023)</p>
 
               <div className="space-y-3">
                 {['Full retail aisles dedicated to electrolytes', 'Daily wellness positioning dominant', 'Premium brands ($2–3 per serving)', 'Multiple formats: RTD, powders, tablets'].map((item) => (
@@ -41,7 +41,7 @@ export default function MarketComparison() {
 
               <div className="mt-6 pt-5 border-t border-border-warm">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-display text-[24px] font-normal text-mineral">$21.3B</span>
+                  <span className="font-display text-h4 font-normal text-mineral">$21.3B</span>
                   <span className="text-[13px] text-ink-light">projected by 2034</span>
                 </div>
                 <span className="text-[12px] font-medium text-gold">88% growth</span>
@@ -58,7 +58,7 @@ export default function MarketComparison() {
               <div className="font-display text-h1 font-normal mb-2">
                 $3.0B
               </div>
-              <p className="text-[14px] font-light text-white/70 mb-6">Market size (2023)</p>
+              <p className="text-[15px] font-light text-white/70 mb-6">Market size (2023)</p>
 
               <div className="space-y-3">
                 {['Limited shelf presence in pharmacies', 'Still dominated by sports positioning', 'Mostly sugary options available', 'Early stage = massive opportunity'].map((item, i) => (
@@ -77,7 +77,7 @@ export default function MarketComparison() {
 
               <div className="mt-6 pt-5 border-t border-white/10">
                 <div className="flex items-baseline gap-2">
-                  <span className="font-display text-[24px] font-normal">$4.3B</span>
+                  <span className="font-display text-h4 font-normal">$4.3B</span>
                   <span className="text-[13px] text-white/70">projected by 2030</span>
                 </div>
                 <span className="text-[12px] font-medium text-golden-hour">44% growth</span>

@@ -18,7 +18,7 @@ export default function PartnerHero() {
           <h1 className="font-display text-h1 font-normal text-white tracking-tight mb-5">
             Grow with <em>Salt.Magic</em>
           </h1>
-          <p className="text-[16px] font-light leading-relaxed text-white/70 max-w-[560px] mx-auto mb-10">
+          <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[560px] mx-auto mb-10">
             The global electrolyte market reaches $69.1B by 2032. APAC is 5-7 years behind
             USA adoption — early partners capture first-mover advantage.
           </p>
