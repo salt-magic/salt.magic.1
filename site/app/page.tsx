@@ -71,7 +71,8 @@ export default function Home() {
               The Formula
             </p>
             <h2 className="font-display text-h2 font-normal text-mineral mb-[16px] tracking-tight">
-              Everything your water is missing.{' '}
+              Everything your water is missing.
+              <br />
               <em className="italic font-normal">Nothing you can taste.</em>
             </h2>
             <p className="text-[15px] font-light leading-[1.75] text-ink max-w-[460px] mb-[8px]">
