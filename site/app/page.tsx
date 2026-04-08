@@ -82,6 +82,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Transition: warm-off → dark comparison */}
+      <div className="h-[clamp(48px,6vw,80px)] bg-gradient-to-b from-warm-off to-white" aria-hidden="true" />
+
       {/* 5. Comparison — How we're different */}
       <Comparison />
 
