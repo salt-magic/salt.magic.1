@@ -247,7 +247,7 @@ export default function Comparison() {
             </div>
 
             {/* Dot indicators */}
-            <div className="flex justify-center gap-2 py-4 bg-white/[0.06]">
+            <div className="flex justify-center gap-2 py-4 bg-white/[0.12] backdrop-blur-lg border-t border-white/[0.08]">
               {competitors.map((comp, i) => (
                 <button
                   key={comp.name}
