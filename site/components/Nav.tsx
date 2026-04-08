@@ -15,6 +15,7 @@ export default function Nav() {
 
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   // Anchor links: prefix with / on subpages
   const anchor = (hash: string) => (isHome ? hash : `/${hash}`)
@@ -49,6 +50,26 @@ export default function Nav() {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
+  // Track active section on homepage via IntersectionObserver
+  useEffect(() => {
+    if (!isHome) return
+    const sectionIds = ['why', 'products', 'story']
+    const observers: IntersectionObserver[] = []
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (!el) return
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id)
+        },
+        { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+      )
+      obs.observe(el)
+      observers.push(obs)
+    })
+    return () => observers.forEach((obs) => obs.disconnect())
+  }, [isHome])
+
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
@@ -63,6 +84,20 @@ export default function Nav() {
   const linkClassScrolled = 'text-ink hover:text-mineral [text-shadow:none]'
 
   const isRouteLink = (href: string) => href.startsWith('/')
+
+  // Check if a nav link is currently active
+  const isActive = (href: string) => {
+    // Subpage routes: /blog, /partner
+    if (href.startsWith('/') && !href.startsWith('/#') && href !== '/') {
+      return pathname.startsWith(href)
+    }
+    // Anchor links on homepage: #why, #products, #story
+    if (isHome && href.startsWith('#')) {
+      const id = href.replace('#', '')
+      return activeSection === id
+    }
+    return false
+  }
 
   const LinkOrAnchor = ({ href, className, children, onClick, ...props }: {
     href: string
@@ -107,9 +142,9 @@ export default function Nav() {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`text-[13px] font-semibold uppercase tracking-cta transition-colors duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
+              className={`text-[13px] font-semibold uppercase tracking-cta transition-colors duration-300 underline-offset-4 decoration-1 ${focusRing} ${
                 useDarkNav ? linkClassScrolled : linkClassTransparent
-              }`}
+              } ${isActive(link.href) ? 'underline decoration-gold' : 'hover:underline'}`}
             >
               {link.label}
             </motion.a>
@@ -187,9 +222,9 @@ export default function Nav() {
               >
                 <El
                   href={link.href}
-                  className={`text-[13px] font-semibold uppercase tracking-cta transition-colors duration-300 hover:underline underline-offset-4 decoration-1 ${focusRing} ${
+                  className={`text-[13px] font-semibold uppercase tracking-cta transition-colors duration-300 underline-offset-4 decoration-1 ${focusRing} ${
                     useDarkNav ? linkClassScrolled : linkClassTransparent
-                  }`}
+                  } ${isActive(link.href) ? 'underline decoration-gold' : 'hover:underline'}`}
                 >
                   {link.label}
                 </El>
@@ -210,12 +245,19 @@ export default function Nav() {
           </motion.div>
         </div>
 
-        {/* Mobile CTA */}
+        {/* Mobile shop icon — links to products, avoids duplicate "Shop Now" with menu CTA */}
         <a
           href="#products"
-          className={`lg:hidden text-[12px] font-semibold uppercase tracking-cta px-5 py-2 rounded-pill bg-mineral text-white min-h-[44px] flex items-center ${focusRing}`}
+          className={`lg:hidden flex items-center justify-center min-h-[44px] min-w-[44px] transition-colors duration-300 ${focusRing} ${
+            useDarkNav || mobileOpen ? 'text-ink' : 'text-white [filter:drop-shadow(0_1px_4px_rgba(0,0,0,.4))]'
+          }`}
+          aria-label="Shop Salt.Magic"
         >
-          Shop Now
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 01-8 0" />
+          </svg>
         </a>
       </div>
 

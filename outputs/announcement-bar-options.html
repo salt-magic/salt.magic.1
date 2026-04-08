@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Announcement Bar Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --gold: #D4BFAA;
+    --charcoal: #3C3028;
+    --ink: #1a1a1a;
+    --ink-light: #6B6560;
+    --ink-faint: #9B9590;
+    --warm-off: #F9F7F4;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #E8E4DF;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Label for each option */
+  .option-label {
+    max-width: 1200px;
+    margin: 40px auto 12px;
+    padding: 0 24px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .option-label:first-of-type { margin-top: 24px; }
+
+  .option-description {
+    max-width: 1200px;
+    margin: 0 auto 16px;
+    padding: 0 24px;
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+
+  /* Fake nav below each bar for context */
+  .fake-nav {
+    height: 80px;
+    background: var(--white);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+  .fake-nav span.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--mineral);
+    letter-spacing: 0.02em;
+    text-transform: none;
+    margin: 0 32px;
+  }
+
+  /* Wrapper */
+  .option-block {
+    max-width: 1200px;
+    margin: 0 auto 48px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+
+  /* ============================================
+     OPTION A: Static Rotating Fade
+     ============================================ */
+  .bar-a {
+    background: var(--mineral);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bar-a__message {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.9);
+    opacity: 0;
+    animation: fadeRotate 12s infinite;
+  }
+
+  .bar-a__message:nth-child(1) { animation-delay: 0s; }
+  .bar-a__message:nth-child(2) { animation-delay: 4s; }
+  .bar-a__message:nth-child(3) { animation-delay: 8s; }
+
+  @keyframes fadeRotate {
+    0%   { opacity: 0; transform: translateY(6px); }
+    8%   { opacity: 1; transform: translateY(0); }
+    30%  { opacity: 1; transform: translateY(0); }
+    38%  { opacity: 0; transform: translateY(-6px); }
+    100% { opacity: 0; }
+  }
+
+  /* ============================================
+     OPTION B: Gold Marquee on Charcoal
+     ============================================ */
+  .bar-b {
+    background: var(--charcoal);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .bar-b__track {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 25s linear infinite;
+  }
+
+  .bar-b__text {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-right: 0;
+  }
+
+  .bar-b__separator {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 24px;
+    color: rgba(212, 191, 170, 0.35);
+    font-size: 8px;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ============================================
+     OPTION C: Single Centered Message
+     ============================================ */
+  .bar-c {
+    background: var(--charcoal);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .bar-c__line {
+    width: 32px;
+    height: 1px;
+    background: rgba(212, 191, 170, 0.4);
+  }
+
+  .bar-c__text {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.03em;
+    color: var(--gold);
+  }
+
+  /* ============================================
+     OPTION D: Hybrid — Centered Message + Subtle Rotating Fact
+     ============================================ */
+  .bar-d {
+    background: var(--mineral);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .bar-d__center {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.95);
+  }
+
+  .bar-d__right {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+    height: 36px;
+  }
+
+  .bar-d__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .bar-d__fact {
+    position: relative;
+    height: 36px;
+    overflow: hidden;
+  }
+
+  .bar-d__fact-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    white-space: nowrap;
+    opacity: 0;
+    animation: factRotate 9s infinite;
+  }
+
+  .bar-d__fact-item:nth-child(1) { animation-delay: 0s; }
+  .bar-d__fact-item:nth-child(2) { animation-delay: 3s; }
+  .bar-d__fact-item:nth-child(3) { animation-delay: 6s; }
+
+  @keyframes factRotate {
+    0%   { opacity: 0; }
+    8%   { opacity: 1; }
+    30%  { opacity: 1; }
+    38%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  /* ============================================
+     OPTION E: Minimal Warm — No bar, just a line
+     ============================================ */
+  .bar-e {
+    background: var(--warm-off);
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid rgba(212, 191, 170, 0.3);
+  }
+
+  .bar-e__item {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .bar-e__divider {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* Mobile adjustments */
+  @media (max-width: 767px) {
+    .bar-d__right { display: none; }
+    .bar-e__item:nth-child(n+6) { display: none; }
+    .bar-e__divider:nth-child(n+5) { display: none; }
+    .bar-e { gap: 12px; }
+    .bar-e__item { font-size: 10px; letter-spacing: 0.08em; }
+    .fake-nav { gap: 20px; font-size: 11px; }
+    .fake-nav span.logo { margin: 0 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- OPTION A -->
+<p class="option-label">Option A — Static Rotating Fade</p>
+<p class="option-description">Kein Marquee-Scroll. 3 Messages faden sanft durch (alle 4s). Ruhiger, editorialer. Wie Sakara/Grown Alchemist.</p>
+<div class="option-block">
+  <div class="bar-a">
+    <span class="bar-a__message">100% Natural &nbsp;&bull;&nbsp; Zero Sugar &nbsp;&bull;&nbsp; Zero Flavor</span>
+    <span class="bar-a__message">5 Years Trusted &nbsp;&bull;&nbsp; 90% Retention &nbsp;&bull;&nbsp; 160+ Locations</span>
+    <span class="bar-a__message">Mineralize Your Water, Everywhere.</span>
+  </div>
+  <div class="fake-nav">
+    <span>About</span>
+    <span>Products</span>
+    <span class="logo">Salt.Magic</span>
+    <span>Story</span>
+    <span>Blog</span>
+    <span>Partner</span>
+  </div>
+</div>
+
+<!-- OPTION B -->
+<p class="option-label">Option B — Gold Marquee on Charcoal</p>
+<p class="option-description">Marquee bleibt, aber Charcoal-BG (#3C3028) mit goldener Schrift. Visuell sofort anders als Wilder's blauer Bar. Waermer, luxurioeser.</p>
+<div class="option-block">
+  <div class="bar-b">
+    <div class="bar-b__track">
+      <span class="bar-b__text">100% Natural</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">Zero Sugar</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">Zero Flavor</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">5 Years Trusted</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">90% Retention</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">160+ Locations</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">Mineralize Your Water, Everywhere</span><span class="bar-b__separator">&#9670;</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="bar-b__text">100% Natural</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">Zero Sugar</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">Zero Flavor</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">5 Years Trusted</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">90% Retention</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">160+ Locations</span><span class="bar-b__separator">&#9670;</span>
+      <span class="bar-b__text">Mineralize Your Water, Everywhere</span><span class="bar-b__separator">&#9670;</span>
+    </div>
+  </div>
+  <div class="fake-nav">
+    <span>About</span>
+    <span>Products</span>
+    <span class="logo">Salt.Magic</span>
+    <span>Story</span>
+    <span>Blog</span>
+    <span>Partner</span>
+  </div>
+</div>
+
+<!-- OPTION C -->
+<p class="option-label">Option C — Single Centered Message</p>
+<p class="option-description">Kein Marquee, kein Wechsel. Eine klare Botschaft in Playfair Italic + Gold auf Charcoal. PANPURI-Stil — maximal zurueckgenommen.</p>
+<div class="option-block">
+  <div class="bar-c">
+    <div class="bar-c__line"></div>
+    <span class="bar-c__text">Mineralize Your Water, Everywhere.</span>
+    <div class="bar-c__line"></div>
+  </div>
+  <div class="fake-nav">
+    <span>About</span>
+    <span>Products</span>
+    <span class="logo">Salt.Magic</span>
+    <span>Story</span>
+    <span>Blog</span>
+    <span>Partner</span>
+  </div>
+</div>
+
+<!-- OPTION D -->
+<p class="option-label">Option D — Hybrid: Centered Tagline + Rotating Fact</p>
+<p class="option-description">Tagline steht fest in der Mitte (Playfair Italic). Rechts daneben rotieren dezent Fakten (160+ Locations, 90% Retention, etc.) — nur auf Desktop sichtbar.</p>
+<div class="option-block">
+  <div class="bar-d">
+    <span class="bar-d__center">Mineralize Your Water, Everywhere.</span>
+    <div class="bar-d__right">
+      <div class="bar-d__dot"></div>
+      <div class="bar-d__fact">
+        <span class="bar-d__fact-item">160+ Locations</span>
+        <span class="bar-d__fact-item">90% Retention</span>
+        <span class="bar-d__fact-item">5 Years Trusted</span>
+      </div>
+    </div>
+  </div>
+  <div class="fake-nav">
+    <span>About</span>
+    <span>Products</span>
+    <span class="logo">Salt.Magic</span>
+    <span>Story</span>
+    <span>Blog</span>
+    <span>Partner</span>
+  </div>
+</div>
+
+<!-- OPTION E -->
+<p class="option-label">Option E — Minimal Warm: No Color Bar</p>
+<p class="option-description">Gar kein farbiger Bar. Nur eine dezente Zeile auf Warm-Off BG mit feiner Gold-Border unten. Am wenigsten "E-Commerce", am meisten "Luxury Editorial".</p>
+<div class="option-block">
+  <div class="bar-e">
+    <span class="bar-e__item">100% Natural</span>
+    <span class="bar-e__divider"></span>
+    <span class="bar-e__item">Zero Sugar</span>
+    <span class="bar-e__divider"></span>
+    <span class="bar-e__item">Zero Flavor</span>
+    <span class="bar-e__divider"></span>
+    <span class="bar-e__item">160+ Locations</span>
+    <span class="bar-e__divider"></span>
+    <span class="bar-e__item">5 Years Trusted</span>
+  </div>
+  <div class="fake-nav">
+    <span>About</span>
+    <span>Products</span>
+    <span class="logo">Salt.Magic</span>
+    <span>Story</span>
+    <span>Blog</span>
+    <span>Partner</span>
+  </div>
+</div>
+
+</body>
+</html>
