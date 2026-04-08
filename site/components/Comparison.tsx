@@ -108,17 +108,29 @@ export default function Comparison() {
                         : 'bg-white/[0.12] backdrop-blur-lg md:border-l md:border-white/[0.12]'
                     }`}
                   >
-                    {/* Name */}
-                    <h3
+                    {/* Name / Logo */}
+                    <div
                       role="cell"
-                      className={`text-[13px] font-semibold uppercase tracking-cta mb-7 pb-4 ${
+                      className={`mb-7 pb-4 ${
                         col.highlight
-                          ? 'text-mineral border-b-2 border-gold'
-                          : 'text-white/60 border-b border-white/[0.12]'
+                          ? 'border-b-2 border-gold'
+                          : 'border-b border-white/[0.12]'
                       }`}
                     >
-                      {col.name}
-                    </h3>
+                      {col.highlight ? (
+                        <Image
+                          src="/images/logos/logo-transparent.png"
+                          alt="Salt.Magic"
+                          width={80}
+                          height={80}
+                          className="h-[56px] w-auto object-contain animate-[fadeScale_0.8s_ease-out_0.3s_both]"
+                        />
+                      ) : (
+                        <h3 className="text-[13px] font-semibold uppercase tracking-cta text-white/60">
+                          {col.name}
+                        </h3>
+                      )}
+                    </div>
 
                     {/* Sugar */}
                     <div role="cell" className="mb-7">
