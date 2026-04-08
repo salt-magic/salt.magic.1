@@ -38,7 +38,7 @@ export default function Footer() {
               <div className="text-[12px] font-semibold tracking-[.18em] uppercase text-golden-hour mb-4 font-display">
                 Connect
               </div>
-              <a href="mailto:info@salt-magic.com" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors">info@salt-magic.com</a>
+              <a href="mailto:leo@salt-magic.com" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors">leo@salt-magic.com</a>
               <a href="tel:+66826020486" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors">+66 826 020 486</a>
               <a href="https://www.instagram.com/saltmagic.electrolytes" className="block text-[13px] font-light text-white/70 hover:text-gold transition-colors">@saltmagic.electrolytes</a>
             </div>
@@ -112,7 +112,7 @@ export default function Footer() {
             {/* Connect */}
             <div>
               <div className="text-[12px] font-semibold tracking-[.18em] uppercase text-golden-hour mb-4 font-display">Connect</div>
-              <span className="block text-[13px] font-light text-white/70 mb-2.5">info@salt-magic.com</span>
+              <span className="block text-[13px] font-light text-white/70 mb-2.5">leo@salt-magic.com</span>
               <span className="block text-[13px] font-light text-white/70 mb-2.5">+66 826 020 486</span>
               <span className="block text-[13px] font-light text-white/70 mb-2.5">@saltmagic.electrolytes</span>
             </div>
@@ -120,7 +120,7 @@ export default function Footer() {
             {/* Newsletter */}
             <div>
               <div className="text-[12px] font-semibold tracking-[.18em] uppercase text-golden-hour mb-4 font-display">Stay Hydrated</div>
-              <p className="text-[13px] font-light text-white/70 mb-1.5">Tips &amp; product updates.</p>
+              <p className="text-[13px] font-light text-white/70 mb-1.5">No spam, just pure hydration.</p>
               <div className="flex gap-2 mt-2.5">
                 <label htmlFor="footer-email" className="sr-only">Email address</label>
                 <input

@@ -31,8 +31,8 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
     </p>
 
     <blockquote>
-      Wellness electrolytes are a daily essential. Sports electrolytes are an occasional supplement.
-      The difference in customer lifetime value? 4.4x.
+      Sports electrolytes are an occasional supplement. Wellness electrolytes are a daily essential.
+      The difference in your everyday energy and focus? Massive.
     </blockquote>
 
     <h2>The Sugar Question</h2>
@@ -51,16 +51,15 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
     <h2>Who Needs Daily Minerals?</h2>
 
     <p>
-      The short answer: everyone. But some groups feel the impact more acutely:
+      The short answer: everyone. But some groups feel the impact of mineral depletion much more acutely:
     </p>
-    <p>
-      <strong>Office workers</strong> spending 8+ hours in air conditioning lose minerals through
-      dehydration without realizing it. <strong>Parents</strong> managing kids, meals, and
-      schedules rarely drink enough mineralized water. <strong>Travelers and expats</strong> in
-      tropical climates lose electrolytes through sweat at 2-3x the rate of temperate zones.
-      <strong>Older adults</strong> absorb fewer minerals from food and need supplementation.
-      <strong>Fasting practitioners</strong> deplete minerals rapidly without food intake.
-    </p>
+    <ul>
+      <li><strong>Office Workers:</strong> Spending 8+ hours in air conditioning causes you to lose minerals through unseen dehydration.</li>
+      <li><strong>Parents:</strong> Managing kids, meals, and chaotic schedules means you rarely drink enough mineralized water.</li>
+      <li><strong>Travelers &amp; Expats:</strong> Living or traveling in tropical climates (like Thailand) means you lose electrolytes through sweat at 2-3x the rate of temperate zones.</li>
+      <li><strong>Fasters:</strong> If you practice intermittent fasting, your body depletes its minerals rapidly without food intake to replace them.</li>
+      <li><strong>Older Adults:</strong> As we age, we naturally absorb fewer minerals from our food and require daily supplementation.</li>
+    </ul>
 
     <h2>The Daily Mineral Approach</h2>
 
@@ -72,6 +71,12 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
       Salt.Magic is formulated for this exact use case — 312mg magnesium, zero sugar, zero
       flavor, designed to dissolve completely in any beverage. It's not a sports recovery product.
       It's a daily mineral essential for everyone who drinks water.
+    </p>
+
+    <p class="mt-8">
+      <a href="https://www.lazada.co.th/shop/salt-magic" target="_blank" rel="noopener noreferrer" class="inline-block text-sm font-semibold uppercase tracking-wider px-8 py-3 rounded-full bg-mineral text-white hover:bg-mineral-light transition-colors">
+        Start Your Daily Mineral Habit — Shop Salt.Magic
+      </a>
     </p>
   `,
 }

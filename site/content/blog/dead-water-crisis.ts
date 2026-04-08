@@ -2,7 +2,7 @@ import { BlogPost } from './index'
 
 export const deadWaterCrisis: BlogPost = {
   slug: 'dead-water-crisis',
-  title: 'Why 85% of Thai Water is Dead Water',
+  title: 'The "Dead Water" Problem: Why Thailand\u2019s Purest Bottled Water is Leaving You Depleted',
   excerpt:
     'Most bottled water in Thailand goes through reverse osmosis, stripping away the very minerals your body needs. Here\'s what that means for your health.',
   category: 'Hydration Science',
@@ -16,7 +16,7 @@ export const deadWaterCrisis: BlogPost = {
       Crystal clear. Lab-tested. Safe to drink. But there's something missing — literally.
     </p>
 
-    <h2>The Reverse Osmosis Problem</h2>
+    <h2>The Reverse Osmosis Trap</h2>
 
     <p>
       Approximately 85% of bottled water in Thailand undergoes reverse osmosis (RO) filtration.
@@ -58,25 +58,39 @@ export const deadWaterCrisis: BlogPost = {
       under-mineralized.
     </p>
     <p>
-      Symptoms of mineral deficiency are easy to dismiss: fatigue, muscle cramps, poor sleep,
-      brain fog, irregular heartbeat. They creep in slowly. Most people blame stress, age, or
-      lifestyle — never their water.
+      Symptoms of mineral deficiency are easy to dismiss:
+    </p>
+    <ul>
+      <li>Chronic fatigue</li>
+      <li>Muscle cramps</li>
+      <li>Poor sleep &amp; brain fog</li>
+      <li>Irregular heartbeat</li>
+    </ul>
+    <p>
+      They creep in slowly. Most people blame stress, aging, or their lifestyle — they rarely
+      blame their water.
     </p>
 
-    <h2>What You Can Do</h2>
+    <h2>The Simple Fix</h2>
 
     <p>
-      The simplest solution is to add minerals back. Not through sugary sports drinks or
-      flavored electrolyte packets designed for athletes — but through a clean, daily mineral
-      supplement that dissolves invisibly in any water.
+      The simplest solution is to add the minerals back. Not through sugary sports drinks or
+      neon-colored electrolyte packets designed for extreme athletes — but through a clean, daily
+      mineral protocol that dissolves invisibly in any water.
     </p>
     <p>
-      Salt.Magic was created for exactly this purpose: 312mg of magnesium, plus potassium and
-      sodium, in a flavorless 2-gram serving. No sugar, no additives, no taste. Just the minerals
-      your water should have had in the first place.
+      Salt.Magic was created for exactly this purpose: 312mg of magnesium, plus essential potassium
+      and sodium, in a flavorless 2-gram serving. No sugar. No additives. No taste.
     </p>
     <p>
-      Because the water you drink every day shouldn't be working against you.
+      Just the essential minerals your water should have had in the first place. Because the water
+      you drink every day shouldn't be working against you.
+    </p>
+
+    <p class="mt-8">
+      <a href="https://www.lazada.co.th/shop/salt-magic" target="_blank" rel="noopener noreferrer" class="inline-block text-sm font-semibold uppercase tracking-wider px-8 py-3 rounded-full bg-mineral text-white hover:bg-mineral-light transition-colors">
+        Upgrade Your Water Today — Shop Salt.Magic
+      </a>
     </p>
   `,
 }
