@@ -11,7 +11,7 @@ export default function MarketComparison() {
           <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
             Market Opportunity
           </p>
-          <h2 className="font-display text-h3 font-normal text-mineral tracking-tight">
+          <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
             APAC is 5–7 years behind <em>the USA</em>
           </h2>
         </div>

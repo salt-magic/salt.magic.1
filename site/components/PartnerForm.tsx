@@ -32,7 +32,7 @@ export default function PartnerForm() {
 
         {submitted ? (
           <div className="text-center py-16">
-            <h3 className="font-display text-2xl text-mineral mb-3">Thank you!</h3>
+            <h3 className="font-display text-h3 font-normal text-mineral mb-3">Thank you!</h3>
             <p className="text-sm text-ink-light">
               We&apos;ve received your inquiry and will respond within 48 hours.
             </p>

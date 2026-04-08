@@ -115,7 +115,7 @@ export default function Comparison() {
                       ? 'bg-white/90 md:bg-white/95 border-2 border-gold/40'
                       : 'bg-white/50 md:bg-white/[0.65] md:backdrop-blur-md border border-white/30'
                   }`}>
-                    <h3 className={`text-[13px] font-semibold uppercase tracking-cta mb-6 ${
+                    <h3 className={`font-display text-h3 font-normal mb-6 ${
                       col.highlight ? 'text-mineral' : 'text-deep-navy/60'
                     }`}>
                       {col.name}

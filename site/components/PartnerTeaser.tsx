@@ -20,7 +20,7 @@ export default function PartnerTeaser() {
             <p className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour mb-5">
               For Business
             </p>
-            <h2 className="font-display text-h3 font-normal text-white tracking-tight mb-3">
+            <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-3">
               Stock <em className="italic font-normal">Salt.Magic</em>
             </h2>
             <p className="text-[15px] font-light leading-[1.7] text-white/70 max-w-[440px] mb-5">

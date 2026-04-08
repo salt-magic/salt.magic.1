@@ -13,7 +13,7 @@ export default function BlogSection() {
         <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">
           Salt.Magic Blog
         </p>
-        <h2 className="font-display text-h3 font-normal text-mineral tracking-tight">
+        <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
           Science-backed insights for <em>better hydration</em>
         </h2>
       </FadeIn>

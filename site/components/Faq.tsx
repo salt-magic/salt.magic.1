@@ -64,7 +64,7 @@ export default function Faq() {
               onClick={() => toggle(i)}
               className="w-full flex items-center justify-between py-7 cursor-pointer gap-5 bg-transparent border-none text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold rounded-sm"
             >
-              <h3 className="font-display text-[17px] font-normal text-mineral leading-[1.4]">
+              <h3 className="font-display text-h3 font-normal text-mineral">
                 {faq.q}
               </h3>
               <motion.div

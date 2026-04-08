@@ -32,7 +32,7 @@ export default function PartnerPage() {
           <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
             The Opportunity
           </p>
-          <h2 className="font-display text-h1 font-normal leading-[1.15] text-mineral tracking-tight">
+          <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
             A market ready for <em>real hydration</em>
           </h2>
         </div>

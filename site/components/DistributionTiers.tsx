@@ -59,7 +59,7 @@ export default function DistributionTiers() {
               }`}>
                 {tier.tier}
               </p>
-              <h3 className={`font-display text-h4 font-normal mb-3 ${
+              <h3 className={`font-display text-h3 font-normal mb-3 ${
                 tier.featured ? 'text-white' : 'text-mineral'
               }`}>
                 {tier.name}

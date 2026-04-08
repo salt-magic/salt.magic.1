@@ -91,7 +91,7 @@ export default function Products() {
                 </div>
 
                 {/* Name */}
-                <h3 className="font-display text-h4 font-normal text-mineral mb-2 tracking-tight">
+                <h3 className="font-display text-h3 font-normal text-mineral mb-2 tracking-tight">
                   {product.name}
                 </h3>
 

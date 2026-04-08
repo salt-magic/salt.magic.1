@@ -67,7 +67,7 @@ export default async function BlogArticlePage({
               {post.date}
             </span>
           </div>
-          <h1 className="font-display text-h1 font-normal text-white max-w-[800px] tracking-tight">
+          <h1 className="headline-editorial text-white max-w-[800px] tracking-tight">
             {post.title}
           </h1>
           <p className="text-[13px] font-light text-white/60 mt-4">
@@ -110,7 +110,7 @@ export default async function BlogArticlePage({
         {/* Related articles */}
         {relatedPosts.length > 0 && (
           <>
-            <h2 className="font-display text-[clamp(24px,3vw,32px)] font-normal text-mineral mb-8">
+            <h2 className="font-display text-h2 font-normal text-mineral mb-8 tracking-tight">
               Related Articles
             </h2>
             <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

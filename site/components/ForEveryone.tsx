@@ -15,7 +15,7 @@ export default function ForEveryone() {
               <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
                 For Everyone
               </p>
-              <h2 className="font-display text-h3 font-normal text-mineral tracking-tight mb-3">
+              <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-3">
                 Not a Sports Drink.{' '}
                 <em className="italic">A Daily Essential.</em>
               </h2>

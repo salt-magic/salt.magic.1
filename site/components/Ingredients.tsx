@@ -43,7 +43,7 @@ export default function Ingredients() {
 
             {/* Name + benefit */}
             <div className="flex-1">
-              <h3 className="text-[13px] font-semibold tracking-cta uppercase text-mineral mb-[3px]">
+              <h3 className="font-display text-h3 font-normal text-mineral mb-[3px]">
                 {item.name}
               </h3>
               <p className="text-[15px] font-light text-ink/80 leading-normal">

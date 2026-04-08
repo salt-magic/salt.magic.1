@@ -37,9 +37,9 @@ export default function BlogCard({ post }: { post: BlogPost }) {
         </div>
 
         {/* Text content */}
-        <h3 className="font-display text-h5 font-normal leading-[1.3] text-mineral mb-2.5 line-clamp-2">
+        <h4 className="font-display text-h4 font-normal text-mineral mb-2.5 line-clamp-2">
           {post.title}
-        </h3>
+        </h4>
         <p className="text-[15px] font-light leading-relaxed text-ink-light line-clamp-3 mb-3">
           {post.excerpt}
         </p>

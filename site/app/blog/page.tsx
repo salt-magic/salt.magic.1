@@ -17,7 +17,7 @@ export default function BlogPage() {
         <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
           Salt.Magic Blog
         </p>
-        <h1 className="font-display text-h1 font-normal text-mineral tracking-tight">
+        <h1 className="headline-editorial text-mineral tracking-tight">
           Hydration science & <em>daily wellness</em>
         </h1>
         <p className="text-[16px] font-light leading-relaxed text-ink-light max-w-[520px] mx-auto mt-5">

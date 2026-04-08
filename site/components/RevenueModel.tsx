@@ -79,7 +79,7 @@ export default function RevenueModel() {
         <div className="sm:hidden space-y-4">
           {products.map((item) => (
             <div key={item.name} className="border border-border-warm rounded-xl p-5">
-              <h3 className="font-medium text-mineral text-[15px] mb-3">{item.name}</h3>
+              <h3 className="font-display text-h3 font-normal text-mineral mb-3">{item.name}</h3>
               <div className="grid grid-cols-3 gap-3 text-center">
                 <div>
                   <div className="text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1">MSRP</div>

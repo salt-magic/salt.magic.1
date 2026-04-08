@@ -8,7 +8,7 @@ export default function Newsletter() {
         <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
           Stay Connected
         </p>
-        <h2 className="font-display text-h3 font-normal text-mineral mb-4 tracking-tight">
+        <h2 className="font-display text-h2 font-normal text-mineral mb-4 tracking-tight">
           Join the <em className="italic">Ritual</em>
         </h2>
         <p className="text-[15px] font-light text-ink-light mb-6">

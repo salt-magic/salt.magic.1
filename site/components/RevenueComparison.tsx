@@ -11,7 +11,7 @@ export default function RevenueComparison() {
           <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
             The Revenue Difference
           </p>
-          <h2 className="font-display text-h3 font-normal text-mineral tracking-tight">
+          <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
             Daily wellness creates <em>4.4x more revenue</em>
           </h2>
         </div>
