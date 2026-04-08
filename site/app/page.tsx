@@ -70,7 +70,7 @@ export default function Home() {
             <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-[20px]">
               The Formula
             </p>
-            <h2 className="font-display text-[clamp(28px,4.5vw,40px)] font-normal text-mineral mb-[16px] tracking-tight leading-[1.15]">
+            <h2 className="font-display text-h3 font-normal text-mineral mb-[16px] tracking-tight">
               Everything your water is missing.{' '}
               <em className="italic font-normal">Nothing you can taste.</em>
             </h2>

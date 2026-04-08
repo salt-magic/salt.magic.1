@@ -32,7 +32,7 @@ export default function PartnerPage() {
           <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
             The Opportunity
           </p>
-          <h2 className="font-display text-[clamp(32px,5vw,48px)] font-normal leading-[1.15] text-mineral tracking-tight">
+          <h2 className="font-display text-h1 font-normal leading-[1.15] text-mineral tracking-tight">
             A market ready for <em>real hydration</em>
           </h2>
         </div>
@@ -64,7 +64,7 @@ export default function PartnerPage() {
             <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
               The Product
             </p>
-            <h3 className="font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-[1.15] text-mineral tracking-tight mb-6">
+            <h3 className="font-display text-h3 font-normal text-mineral tracking-tight mb-6">
               Why distribute <em className="italic">Salt.Magic</em>?
             </h3>
             <div className="space-y-4 text-[15px] font-light leading-relaxed text-ink-light">
@@ -105,7 +105,7 @@ export default function PartnerPage() {
             <p className="text-[11px] font-medium tracking-[.22em] uppercase text-golden-hour mb-5">
               The Shift
             </p>
-            <h3 className="font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-[1.15] text-white tracking-tight mb-6">
+            <h3 className="font-display text-h3 font-normal text-white tracking-tight mb-6">
               From occasional sports drink to <em className="italic text-golden-hour/80">daily wellness essential</em>
             </h3>
             <p className="text-base font-light leading-relaxed text-white/70">

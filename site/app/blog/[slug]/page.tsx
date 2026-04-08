@@ -67,7 +67,7 @@ export default async function BlogArticlePage({
               {post.date}
             </span>
           </div>
-          <h1 className="font-display text-[clamp(32px,5vw,56px)] font-normal leading-[1.1] text-white max-w-[800px] tracking-tight">
+          <h1 className="font-display text-h1 font-normal text-white max-w-[800px] tracking-tight">
             {post.title}
           </h1>
           <p className="text-[13px] font-light text-white/60 mt-4">
