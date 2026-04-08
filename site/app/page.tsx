@@ -42,9 +42,9 @@ export default function Home() {
 
       {/* 4. The Formula — Split layout: image left, ingredients right */}
       <section className="bg-warm-off">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] lg:min-h-[620px]">
           {/* Image — left side */}
-          <div className="relative min-h-[300px] lg:min-h-[700px] overflow-hidden">
+          <div className="relative min-h-[300px] overflow-hidden">
             <Image
               src="/images/products/taylor-closeup.jpg"
               alt="Salt.Magic glass jar with natural electrolytes"
@@ -65,16 +65,16 @@ export default function Home() {
           </div>
 
           {/* Content — right side */}
-          <div className="flex flex-col justify-center py-[clamp(72px,9vw,100px)] px-[clamp(24px,4vw,40px)] lg:pl-[40px] lg:pr-[64px]">
+          <div className="flex flex-col justify-center py-[56px] px-[24px] lg:pl-[40px] lg:pr-[64px]">
             <div className="gold-line" />
-            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
+            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-[20px]">
               The Formula
             </p>
-            <h2 className="font-display text-h2 font-normal text-mineral mb-4 tracking-tight leading-[1.15]">
+            <h2 className="font-display text-[clamp(28px,4.5vw,40px)] font-normal text-mineral mb-[16px] tracking-tight leading-[1.15]">
               Everything your water is missing.{' '}
               <em className="italic font-normal">Nothing you can taste.</em>
             </h2>
-            <p className="text-[15px] font-light leading-[1.75] text-ink max-w-[460px] mb-2">
+            <p className="text-[15px] font-light leading-[1.75] text-ink max-w-[460px] mb-[8px]">
               Just 2 grams of pure, highly bioavailable minerals. Three natural ingredients. Zero junk.
             </p>
             <Ingredients />
