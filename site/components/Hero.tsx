@@ -46,11 +46,11 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Warm golden-hour overlay — stronger on mobile for text readability */}
+      {/* Warm overlay — lighter to let product imagery breathe */}
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.70) 55%, rgba(0,0,0,0.88) 100%)',
+          background: 'linear-gradient(180deg, rgba(30,20,10,0.05) 0%, rgba(30,20,10,0.18) 30%, rgba(30,20,10,0.40) 55%, rgba(30,20,10,0.60) 100%)',
         }}
       />
       {/* Film grain texture — hidden on mobile for performance */}

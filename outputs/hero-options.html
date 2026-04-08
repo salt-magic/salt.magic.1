@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Hero Section Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --gold: #D4BFAA;
+    --charcoal: #3C3028;
+    --ink: #1a1a1a;
+    --ink-light: #6B6560;
+    --ink-faint: #9B9590;
+    --warm-off: #F9F7F4;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #E8E4DF;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .option-label {
+    max-width: 1200px;
+    margin: 40px auto 12px;
+    padding: 0 24px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .option-label:first-of-type { margin-top: 24px; }
+
+  .option-description {
+    max-width: 1200px;
+    margin: 0 auto 16px;
+    padding: 0 24px;
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+
+  .option-block {
+    max-width: 1200px;
+    margin: 0 auto 56px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+
+  /* Shared */
+  .hero-image-placeholder {
+    width: 100%;
+    height: 70vh;
+    min-height: 480px;
+    background: linear-gradient(135deg, #3D6588 0%, #294B6D 40%, #1A3248 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-image-placeholder::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 128px;
+    opacity: 0.03;
+    mix-blend-mode: overlay;
+  }
+
+  .hero-image-placeholder .jar-mockup {
+    width: 120px;
+    height: 200px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .pill-btn {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 999px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .pill-primary {
+    background: var(--mineral);
+    color: var(--white);
+  }
+
+  .pill-ghost {
+    background: transparent;
+    color: var(--mineral);
+    border: 1px solid rgba(41,75,109,0.3);
+  }
+
+  .pill-white {
+    background: white;
+    color: var(--ink);
+  }
+
+  .pill-white-ghost {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+
+  .gold-line {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* Dots */
+  .dots {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  .dot {
+    width: 32px;
+    height: 2px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.15);
+  }
+  .dot.active {
+    width: 40px;
+    background: var(--gold);
+  }
+  .dot-white { background: rgba(255,255,255,0.25); }
+  .dot-white.active { background: var(--gold); }
+
+  /* ============================================
+     OPTION A: PANPURI — Text Under Image
+     ============================================ */
+  .hero-a .hero-image-placeholder {
+    height: 65vh;
+    min-height: 400px;
+  }
+
+  .hero-a__content {
+    background: var(--white);
+    padding: clamp(48px, 6vw, 72px) clamp(24px, 5vw, 64px);
+    text-align: center;
+  }
+
+  .hero-a__headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-a__body {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--ink-light);
+    max-width: 440px;
+    margin: 0 auto 32px;
+  }
+
+  .hero-a__dots {
+    margin-top: 32px;
+  }
+
+  /* ============================================
+     OPTION B: Split — Image Left, Text Right
+     ============================================ */
+  .hero-b {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+  }
+
+  .hero-b__image {
+    background: linear-gradient(135deg, #3D6588 0%, #294B6D 40%, #1A3248 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+  }
+
+  .hero-b__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 128px;
+    opacity: 0.03;
+  }
+
+  .hero-b__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(48px, 6vw, 80px);
+    background: var(--white);
+  }
+
+  .hero-b__headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 3.5vw, 52px);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-b__body {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 420px;
+    margin-bottom: 36px;
+  }
+
+  .hero-b__ctas {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* ============================================
+     OPTION C: Current Layout Refined (Overlay, but lighter)
+     ============================================ */
+  .hero-c .hero-image-placeholder {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 clamp(24px, 6vw, 80px) clamp(80px, 12vw, 140px);
+    text-align: center;
+  }
+
+  .hero-c .hero-image-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    /* Lighter gradient — lets image breathe */
+    background: linear-gradient(180deg,
+      rgba(0,0,0,0.05) 0%,
+      rgba(0,0,0,0.15) 30%,
+      rgba(0,0,0,0.45) 60%,
+      rgba(0,0,0,0.65) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-c__content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+  }
+
+  .hero-c__headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5.5vw, 64px);
+    font-weight: 400;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+
+  .hero-c__body {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+
+  .hero-c__ctas {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+
+  /* ============================================
+     OPTION D: PANPURI Immersive — Tall image, compact text strip
+     ============================================ */
+  .hero-d .hero-image-placeholder {
+    height: 75vh;
+    min-height: 480px;
+  }
+
+  .hero-d__strip {
+    background: var(--mineral);
+    padding: clamp(32px, 4vw, 48px) clamp(24px, 5vw, 64px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .hero-d__text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .hero-d__headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 400;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .hero-d__body {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 400px;
+    line-height: 1.6;
+  }
+
+  .hero-d__ctas {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .pill-gold {
+    background: var(--gold);
+    color: var(--charcoal);
+  }
+
+  .pill-mineral-ghost {
+    background: transparent;
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+
+  /* ============================================
+     OPTION E: Sakara Editorial — Centered, generous space
+     ============================================ */
+  .hero-e .hero-image-placeholder {
+    height: 55vh;
+    min-height: 360px;
+  }
+
+  .hero-e__content {
+    background: var(--warm-off);
+    padding: clamp(56px, 8vw, 96px) clamp(24px, 5vw, 64px);
+    text-align: center;
+  }
+
+  .hero-e__eyebrow {
+    color: var(--ink-faint);
+    margin-bottom: 24px;
+  }
+
+  .hero-e__headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5.5vw, 60px);
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-e__body {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 480px;
+    margin: 0 auto 40px;
+  }
+
+  .hero-e__ctas {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .hero-e__dots { margin-top: 40px; }
+
+  /* ============================================
+     Mobile
+     ============================================ */
+  @media (max-width: 767px) {
+    .hero-b {
+      grid-template-columns: 1fr;
+    }
+    .hero-b__image {
+      min-height: 300px;
+    }
+    .hero-d__strip {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-d__body {
+      margin: 0 auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- OPTION A: PANPURI — Text Under Image -->
+<p class="option-label">Option A — PANPURI: Text Under Image</p>
+<p class="option-description">Genau was Leo wollte. Bild steht fuer sich, Text darunter auf weissem Hintergrund. Sauber, luxurioes, maximale Bildwirkung. Carousel-Dots unter dem Text.</p>
+<div class="option-block">
+  <div class="hero-a">
+    <div class="hero-image-placeholder">
+      <div class="jar-mockup">Product<br>Image</div>
+    </div>
+    <div class="hero-a__content">
+      <h1 class="hero-a__headline">Mineralize Your Water,<br><em>Everywhere.</em></h1>
+      <p class="hero-a__body">Pure minerals. Zero sugar. Every glass. Every day.</p>
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <a class="pill-btn pill-primary" href="#">Shop Now</a>
+        <a class="pill-btn pill-ghost" href="#">Learn More</a>
+      </div>
+      <div class="hero-a__dots dots" style="margin-top: 32px;">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION B: Split — Image Left, Text Right -->
+<p class="option-label">Option B — Split Layout: Image + Text Side by Side</p>
+<p class="option-description">Asymmetrischer Split. Bild links (50%), Text rechts auf Weiss. Editorial, Grown Alchemist Stil. Kein Overlay noetig. Auf Mobile stacken sie vertikal.</p>
+<div class="option-block">
+  <div class="hero-b">
+    <div class="hero-b__image">
+      <div class="jar-mockup">Product<br>Image</div>
+    </div>
+    <div class="hero-b__content">
+      <div class="gold-line" style="margin-bottom: 24px;"></div>
+      <h1 class="hero-b__headline">Mineralize Your Water,<br><em>Everywhere.</em></h1>
+      <p class="hero-b__body">Pure minerals. Zero sugar. Every glass. Every day.</p>
+      <div class="hero-b__ctas">
+        <a class="pill-btn pill-primary" href="#">Shop Now</a>
+        <a class="pill-btn pill-ghost" href="#">Learn More</a>
+      </div>
+      <div class="dots" style="margin-top: 40px; justify-content: flex-start;">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION C: Current Refined (Lighter Overlay) -->
+<p class="option-label">Option C — Aktuelles Layout, aber leichterer Overlay</p>
+<p class="option-description">Behaelt den Overlay-Ansatz, aber reduziert den Gradient deutlich (max 65% statt 88%). Bild wird sichtbarer, Text hat trotzdem Kontrast. Minimale Aenderung.</p>
+<div class="option-block">
+  <div class="hero-c">
+    <div class="hero-image-placeholder">
+      <div class="hero-c__content">
+        <h1 class="hero-c__headline">Mineralize Your Water,<br><em>Everywhere.</em></h1>
+        <p class="hero-c__body">Pure minerals. Zero sugar. Every glass. Every day.</p>
+        <div class="hero-c__ctas">
+          <a class="pill-btn pill-white" href="#">Shop Now</a>
+          <a class="pill-btn pill-white-ghost" href="#">Learn More</a>
+        </div>
+        <div class="dots" style="margin-top: 32px;">
+          <span class="dot dot-white active"></span>
+          <span class="dot dot-white"></span>
+          <span class="dot dot-white"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION D: Immersive Strip -->
+<p class="option-label">Option D — Immersive: Grosses Bild + Mineral-Blue Text-Strip</p>
+<p class="option-description">Bild nimmt 75% Viewport ein (kein Overlay). Darunter ein kompakter Mineral-Blue Strip mit Headline + CTAs. Vereint PANPURI (Bild atmet) mit Brand-Farbe.</p>
+<div class="option-block">
+  <div class="hero-d">
+    <div class="hero-image-placeholder">
+      <div class="jar-mockup">Product<br>Image</div>
+    </div>
+    <div class="hero-d__strip">
+      <div class="hero-d__text">
+        <h1 class="hero-d__headline">Mineralize Your Water, <em>Everywhere.</em></h1>
+        <p class="hero-d__body">Pure minerals. Zero sugar. Every glass. Every day.</p>
+      </div>
+      <div class="hero-d__ctas">
+        <a class="pill-btn pill-gold" href="#">Shop Now</a>
+        <a class="pill-btn pill-mineral-ghost" href="#">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPTION E: Sakara Editorial -->
+<p class="option-label">Option E — Sakara Editorial: Bild + Warm-Off Content Block</p>
+<p class="option-description">Kuerzeres Bild (55vh), dann grosszuegiger Content-Block auf Warm-Off (#F9F7F4) mit viel Whitespace. Am meisten "Editorial Magazine". Eyebrow optional.</p>
+<div class="option-block">
+  <div class="hero-e">
+    <div class="hero-image-placeholder">
+      <div class="jar-mockup">Product<br>Image</div>
+    </div>
+    <div class="hero-e__content">
+      <p class="eyebrow hero-e__eyebrow">Thailand's Daily Electrolyte</p>
+      <h1 class="hero-e__headline">Mineralize Your Water,<br><em>Everywhere.</em></h1>
+      <p class="hero-e__body">Pure minerals. Zero sugar. Every glass. Every day.</p>
+      <div class="hero-e__ctas">
+        <a class="pill-btn pill-primary" href="#">Shop Now</a>
+        <a class="pill-btn pill-ghost" href="#">Learn More</a>
+      </div>
+      <div class="hero-e__dots dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
