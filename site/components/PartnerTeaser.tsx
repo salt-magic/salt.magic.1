@@ -11,24 +11,24 @@ const stats = [
 
 export default function PartnerTeaser() {
   return (
-    <section className="bg-mineral">
+    <section className="bg-warm-off">
       <FadeIn className="max-w-[1200px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(56px,8vw,80px)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-center">
 
           {/* Left — Text */}
           <div>
-            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour mb-5">
+            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
               For Business
             </p>
-            <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-3">
+            <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-3">
               Stock <em className="italic font-normal">Salt.Magic</em>
             </h2>
-            <p className="text-[15px] font-light leading-[1.7] text-white/70 max-w-[440px] mb-5">
+            <p className="text-[15px] font-light leading-[1.7] text-ink-light max-w-[440px] mb-5">
               Join Thailand&apos;s fastest-growing daily hydration brand.
             </p>
             <Link
               href="/partner"
-              className="inline-block text-[12px] font-semibold uppercase tracking-cta px-8 py-3.5 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+              className="inline-block text-[12px] font-semibold uppercase tracking-cta px-8 py-3.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
               Explore Partnership
             </Link>
@@ -40,13 +40,13 @@ export default function PartnerTeaser() {
               <div
                 key={stat.label}
                 className={`text-center ${
-                  i < stats.length - 1 ? 'pr-8 lg:pr-12 border-r border-white/10' : ''
+                  i < stats.length - 1 ? 'pr-8 lg:pr-12 border-r border-border-warm' : ''
                 }`}
               >
-                <div className="font-display text-h3 font-normal text-white leading-none mb-1.5 tracking-tight">
+                <div className="font-display text-h3 font-normal text-mineral leading-none mb-1.5 tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-[12px] font-medium tracking-cta uppercase text-golden-hour/70">
+                <div className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light">
                   {stat.label}
                 </div>
               </div>
