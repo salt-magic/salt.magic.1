@@ -65,11 +65,11 @@ export default function Comparison() {
           sizes="100vw"
           aria-hidden="true"
         />
-        {/* Mineral blue overlay for consistent brand color */}
+        {/* Mineral blue overlay — lighter to let water photo show through */}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(135deg, rgba(41,75,109,0.82) 0%, rgba(41,75,109,0.88) 40%, rgba(26,50,72,0.92) 100%)',
+            background: 'linear-gradient(135deg, rgba(41,75,109,0.72) 0%, rgba(41,75,109,0.78) 40%, rgba(26,50,72,0.82) 100%)',
           }}
         />
       </div>
@@ -94,7 +94,7 @@ export default function Comparison() {
           {/* Comparison Grid */}
           <StaggerContainer>
             <div
-              className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr_1fr_1fr] rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.2)]"
+              className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr_1fr_1fr] rounded-3xl overflow-hidden shadow-[0_12px_48px_rgba(0,0,0,0.25)]"
               role="table"
               aria-label="Electrolyte comparison"
             >
@@ -104,8 +104,8 @@ export default function Comparison() {
                     role="row"
                     className={`p-[clamp(28px,3vw,40px)] h-full flex flex-col ${
                       col.highlight
-                        ? 'bg-white'
-                        : 'bg-white/[0.08] backdrop-blur-md md:border-l md:border-white/10'
+                        ? 'bg-white shadow-[4px_0_24px_rgba(212,191,170,0.15)]'
+                        : 'bg-white/[0.12] backdrop-blur-lg md:border-l md:border-white/[0.12]'
                     }`}
                   >
                     {/* Name */}
