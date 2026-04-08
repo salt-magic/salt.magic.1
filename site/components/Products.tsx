@@ -58,24 +58,24 @@ const usps = [
 
 export default function Products() {
   return (
-    <div className="max-w-[800px] mx-auto px-[clamp(24px,5vw,64px)]">
+    <div className="max-w-[1000px] mx-auto px-[clamp(24px,5vw,80px)]">
       {/* USP Badges */}
       <div className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-[clamp(40px,6vw,64px)]">
         {usps.map((usp) => (
           <div key={usp.label} className="flex items-center gap-2.5 text-mineral">
-            <span className="text-gold">{usp.icon}</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden="true" />
             <span className="text-[13px] font-medium tracking-wide">{usp.label}</span>
           </div>
         ))}
       </div>
 
       {/* Product Cards */}
-      <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-[clamp(24px,3vw,40px)]">
+      <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-[clamp(40px,5vw,80px)]">
         {products.map((product) => (
             <StaggerItem key={product.name}>
               <a href={product.href} target="_blank" rel="noopener noreferrer" className="block text-center group">
                 {/* Image */}
-                <div className="overflow-hidden rounded-2xl mb-8 bg-warm-off">
+                <div className="overflow-hidden rounded-[20px] mb-8 bg-warm-off shadow-[0_2px_20px_rgba(60,48,40,0.06)]">
                   <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}>
                     <Image
                       src={product.image}
@@ -88,25 +88,25 @@ export default function Products() {
                 </div>
 
                 {/* Tag */}
-                <div className="text-[12px] font-semibold tracking-eyebrow uppercase mb-3 text-ink-light">
+                <div className="text-[12px] font-semibold tracking-eyebrow uppercase mb-2 text-ink-light">
                   {product.tag}
                 </div>
 
                 {/* Name */}
-                <h3 className="font-display text-h3 font-normal text-mineral mb-2 tracking-tight">
+                <h3 className="font-display text-h3 font-normal text-mineral mb-4 tracking-tight">
                   {product.name}
                 </h3>
 
                 {/* Price */}
-                <div className="text-[17px] font-body font-semibold text-ink mb-1">
+                <div className="text-[18px] font-body font-semibold text-ink mb-1">
                   {product.price}
                 </div>
-                <div className="text-[15px] font-light text-ink-light mb-4">
+                <div className="text-[13px] font-light text-ink-light mb-5">
                   {product.meta}
                 </div>
 
                 {/* Description */}
-                <p className="text-[13px] font-light leading-relaxed text-ink-light max-w-[280px] mx-auto mb-3">
+                <p className="text-[13px] font-light leading-[1.7] text-ink-light max-w-[280px] mx-auto mb-2">
                   {product.desc}
                 </p>
 
