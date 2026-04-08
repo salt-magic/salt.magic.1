@@ -42,7 +42,7 @@ export default function Home() {
 
       {/* 4. The Formula — Split layout: image left, ingredients right */}
       <section className="bg-warm-off">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] lg:min-h-[620px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] lg:min-h-[800px]">
           {/* Image — left side */}
           <div className="relative min-h-[300px] overflow-hidden">
             <Image
