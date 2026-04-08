@@ -41,8 +41,8 @@ export default function Home() {
       <WhySection />
 
       {/* 4. The Formula — Split layout: image left, ingredients right */}
-      <section className="bg-warm-off">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr]">
+      <section className="bg-warm-off py-[clamp(48px,6vw,80px)]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] max-w-[1400px] mx-auto">
           {/* Image — left side */}
           <div className="relative min-h-[300px] lg:min-h-[600px] overflow-hidden">
             <Image
