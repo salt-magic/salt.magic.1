@@ -11,7 +11,7 @@ const stats = [
 
 export default function PartnerTeaser() {
   return (
-    <section className="bg-footer-dark">
+    <section className="bg-mineral">
       <FadeIn className="max-w-[1200px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(56px,8vw,80px)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-center">
 

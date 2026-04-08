@@ -55,7 +55,7 @@ export default function Footer() {
                 id="footer-email-mobile"
                 type="email"
                 placeholder="Your email"
-                className="flex-1 min-h-[44px] py-3 px-4 bg-white/5 border border-white/10 rounded-pill text-[15px] font-light text-white font-body outline-none placeholder:text-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                className="flex-1 min-h-[44px] py-3 px-4 bg-white/5 border border-white/10 rounded-pill text-[15px] font-light text-white font-body outline-none placeholder:text-white/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
               />
               <button className="min-h-[44px] py-3 px-5 bg-mineral border-none rounded-pill text-white text-[12px] font-semibold tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
                 Join
@@ -112,9 +112,9 @@ export default function Footer() {
             {/* Connect */}
             <div>
               <div className="text-[12px] font-semibold tracking-eyebrow uppercase text-golden-hour mb-4 font-display">Connect</div>
-              <span className="block text-[13px] font-light text-white/70 mb-2.5">leo@salt-magic.com</span>
-              <span className="block text-[13px] font-light text-white/70 mb-2.5">+66 826 020 486</span>
-              <span className="block text-[13px] font-light text-white/70 mb-2.5">@saltmagic.electrolytes</span>
+              <a href="mailto:leo@salt-magic.com" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">leo@salt-magic.com</a>
+              <a href="tel:+66826020486" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">+66 826 020 486</a>
+              <a href="https://www.instagram.com/saltmagic.electrolytes" target="_blank" rel="noopener noreferrer" className="block text-[13px] font-light text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">@saltmagic.electrolytes</a>
             </div>
 
             {/* Newsletter */}
@@ -127,7 +127,7 @@ export default function Footer() {
                   id="footer-email"
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 min-h-[44px] py-3 px-4 bg-white/5 border border-white/10 rounded-pill text-[15px] font-light text-white font-body outline-none placeholder:text-white/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+                  className="flex-1 min-h-[44px] py-3 px-4 bg-white/5 border border-white/10 rounded-pill text-[15px] font-light text-white font-body outline-none placeholder:text-white/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
                 />
                 <button className="min-h-[44px] py-3 px-5 bg-mineral border-none rounded-pill text-white text-[12px] font-semibold tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
                   Join
