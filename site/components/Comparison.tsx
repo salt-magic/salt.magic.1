@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { FadeIn, StaggerContainer, StaggerItem } from './Motion'
+import { FadeIn } from './Motion'
 
 interface Column {
   name: string
@@ -91,15 +91,15 @@ export default function Comparison() {
             </p>
           </div>
 
-          {/* Comparison Grid */}
-          <StaggerContainer>
+          {/* Comparison Grid — single FadeIn to preserve backdrop-blur */}
+          <FadeIn>
             <div
               className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr_1fr_1fr] rounded-3xl overflow-hidden shadow-[0_12px_48px_rgba(0,0,0,0.25)]"
               role="table"
               aria-label="Electrolyte comparison"
             >
               {columns.map((col) => (
-                <StaggerItem key={col.name}>
+                <div key={col.name}>
                   <div
                     role="row"
                     className={`p-[clamp(28px,3vw,40px)] h-full flex flex-col ${
@@ -188,10 +188,10 @@ export default function Comparison() {
                       </p>
                     </div>
                   </div>
-                </StaggerItem>
+                </div>
               ))}
             </div>
-          </StaggerContainer>
+          </FadeIn>
 
           {/* Footnote */}
           <p className="text-left text-[12px] tracking-cta uppercase text-white/50 mt-8">
