@@ -42,7 +42,7 @@ const columns: Column[] = [
     verdict: 'Too much sugar for optimal daily hydration.',
   },
   {
-    name: 'Other Electrolyte Mixes',
+    name: 'Other Mixes',
     highlight: false,
     sugar: 'Up to 11g',
     sugarLabel: 'added sugar',
