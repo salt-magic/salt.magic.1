@@ -191,7 +191,6 @@ export default function Comparison() {
                   </div>
                 </div>
               ))}
-            </div>
           </div>
 
           {/* Footnote */}
