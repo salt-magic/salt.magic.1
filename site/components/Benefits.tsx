@@ -86,8 +86,8 @@ export default function Benefits() {
         <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
           {benefits.map((item) => (
             <StaggerItem key={item.title}>
-              <div className="group flex items-start gap-4">
-                <div className="w-12 h-12 shrink-0 rounded-2xl bg-gold/10 flex items-center justify-center text-gold group-hover:bg-mineral/10 group-hover:text-mineral transition-colors duration-300">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 shrink-0 rounded-2xl bg-gold/10 flex items-center justify-center text-gold">
                   {item.icon}
                 </div>
                 <div>
