@@ -65,16 +65,16 @@ export default function Home() {
           </div>
 
           {/* Content — right side */}
-          <div className="flex flex-col justify-center py-[clamp(40px,5vw,72px)] px-[clamp(28px,4vw,56px)] lg:pl-[clamp(32px,3vw,48px)] lg:pr-[clamp(48px,5vw,80px)]">
+          <div className="flex flex-col justify-center py-[clamp(56px,7vw,88px)] px-[clamp(28px,4vw,56px)] lg:pl-[clamp(40px,3.5vw,56px)] lg:pr-[clamp(48px,5vw,80px)]">
             <div className="gold-line" />
-            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
+            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-4">
               The Formula
             </p>
-            <h2 className="font-display text-h3 font-normal text-mineral mb-4 tracking-tight">
+            <h2 className="font-display text-h3 font-normal text-mineral mb-3 tracking-tight">
               Everything your water is missing.{' '}
               <em className="italic font-normal">Nothing you can taste.</em>
             </h2>
-            <p className="text-[15px] font-light leading-[1.75] text-ink max-w-[460px] mb-2">
+            <p className="text-[15px] font-light leading-[1.75] text-ink max-w-[460px] mb-6">
               Just 2 grams of pure, highly bioavailable minerals. Three natural ingredients. Zero junk.
             </p>
             <Ingredients />
