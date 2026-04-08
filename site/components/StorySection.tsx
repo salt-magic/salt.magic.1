@@ -49,10 +49,13 @@ export default function StorySection() {
               Our Origin
             </p>
 
-            <h2 className="font-display text-h2 font-normal text-white/90 tracking-tight mb-8">
+            <h2 className="font-display text-h2 font-normal text-white/90 tracking-tight mb-3">
               The Koh Samui{' '}
               <em className="italic text-gold/80">Story</em>
             </h2>
+            <p className="text-[15px] font-light text-white/60 mb-8">
+              We noticed something was wrong with our water.
+            </p>
 
             <div className="space-y-5 text-[15px] font-light leading-[1.85] text-white/70">
               <p>
@@ -62,7 +65,7 @@ export default function StorySection() {
               </p>
               <p>
                 We couldn&apos;t find a clean electrolyte that was sugar-free, flavorless, and
-                affordable for daily use. So we made one.
+                affordable enough for daily use. So, we made it ourselves.
               </p>
               <p className="text-white/90 font-normal bg-white/10 border border-gold/20 rounded-xl px-6 py-4">
                 What started in a kitchen on Koh Samui is now trusted by over 160 locations
