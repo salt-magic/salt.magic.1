@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Hero from '@/components/Hero'
 import TextBlock from '@/components/TextBlock'
 import ImageBreak from '@/components/ImageBreak'
@@ -39,25 +40,38 @@ export default function Home() {
       {/* 3. The Problem — Why your water is "dead" */}
       <WhySection />
 
-      {/* 4. The Formula — What we put in */}
-      <section className="bg-warm-off py-[clamp(64px,8vw,100px)]">
-        <div className="max-w-[900px] mx-auto px-[clamp(24px,5vw,80px)]">
-          <div className="gold-line" />
-          <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
-            The Formula
-          </p>
-          <h2 className="font-display text-h1 font-normal text-mineral mb-6 tracking-tight">
-            Everything your water is missing.{' '}
-            <em className="italic font-normal">Nothing you can taste.</em>
-          </h2>
-          <p className="text-base font-light leading-[1.85] text-ink max-w-[520px]">
-            Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly,
-            is completely flavorless, and delivers 7x more magnesium than leading
-            competitors. Three natural ingredients. Zero junk.
-          </p>
+      {/* 4. The Formula — Split layout: image left, ingredients right */}
+      <section className="bg-warm-off">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+          {/* Image — left side */}
+          <div className="relative min-h-[350px] lg:min-h-0">
+            <Image
+              src="/images/products/taylor-closeup.jpg"
+              alt="Salt.Magic glass jar with natural electrolytes"
+              fill
+              className="object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
+            {/* Subtle fade into content on desktop */}
+            <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-warm-off" style={{ right: 0, width: '30%' }} />
+          </div>
+
+          {/* Content — right side */}
+          <div className="flex flex-col justify-center py-[clamp(48px,6vw,80px)] px-[clamp(32px,4vw,64px)]">
+            <div className="gold-line" />
+            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
+              The Formula
+            </p>
+            <h2 className="font-display text-h2 font-normal text-mineral mb-4 tracking-tight">
+              Everything your water is missing.{' '}
+              <em className="italic font-normal">Nothing you can taste.</em>
+            </h2>
+            <p className="text-base font-light leading-[1.85] text-ink max-w-[480px] mb-2">
+              Just 2 grams of pure, highly bioavailable minerals. Three natural ingredients. Zero junk.
+            </p>
+            <Ingredients />
+          </div>
         </div>
-        <div className="h-[clamp(32px,4vw,48px)]" />
-        <Ingredients />
       </section>
 
       {/* 5. Comparison — How we're different */}

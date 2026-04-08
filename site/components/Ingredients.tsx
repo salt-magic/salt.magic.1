@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { StaggerContainer, StaggerItem } from './Motion'
 
 const ingredients = [
@@ -26,48 +25,34 @@ const ingredients = [
 
 export default function Ingredients() {
   return (
-    <div className="relative">
-      {/* Botanical illustration as subtle background */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <Image
-          src="/images/mood/botanical-illustration.png"
-          alt=""
-          width={800}
-          height={500}
-          className="opacity-[0.04] object-contain"
-          aria-hidden="true"
-        />
-      </div>
-
-      <StaggerContainer className="relative z-10 max-w-[900px] mx-auto px-[clamp(24px,5vw,80px)]">
-        {ingredients.map((item, i) => (
-          <StaggerItem key={item.num}>
-            <div className={`flex items-center gap-6 sm:gap-10 py-8 ${
-              i < ingredients.length - 1 ? 'border-b border-gold/20' : ''
-            }`}>
-              {/* Large number */}
-              <div className="flex items-baseline gap-1 min-w-[120px] sm:min-w-[140px]">
-                <span className="font-display text-stat font-normal text-mineral leading-none tracking-tight">
-                  {item.num}
-                </span>
-                <span className="text-[13px] font-medium text-gold tracking-wide">
-                  {item.unit}
-                </span>
-              </div>
-
-              {/* Name + benefit */}
-              <div className="flex-1">
-                <h3 className="text-[15px] font-semibold tracking-cta uppercase text-mineral mb-1">
-                  {item.name}
-                </h3>
-                <p className="text-[15px] font-normal text-ink/80 leading-relaxed">
-                  {item.benefit}
-                </p>
-              </div>
+    <StaggerContainer>
+      {ingredients.map((item, i) => (
+        <StaggerItem key={item.num}>
+          <div className={`flex items-center gap-6 sm:gap-10 py-8 ${
+            i < ingredients.length - 1 ? 'border-b border-gold/20' : ''
+          }`}>
+            {/* Large number */}
+            <div className="flex items-baseline gap-1 min-w-[100px] sm:min-w-[120px]">
+              <span className="font-display text-stat font-normal text-mineral tracking-tight">
+                {item.num}
+              </span>
+              <span className="text-[13px] font-medium text-gold tracking-wide">
+                {item.unit}
+              </span>
             </div>
-          </StaggerItem>
-        ))}
-      </StaggerContainer>
-    </div>
+
+            {/* Name + benefit */}
+            <div className="flex-1">
+              <h3 className="text-[15px] font-semibold tracking-cta uppercase text-mineral mb-1">
+                {item.name}
+              </h3>
+              <p className="text-[15px] font-normal text-ink/80 leading-relaxed">
+                {item.benefit}
+              </p>
+            </div>
+          </div>
+        </StaggerItem>
+      ))}
+    </StaggerContainer>
   )
 }
