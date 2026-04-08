@@ -31,17 +31,17 @@ export default function ForEveryone() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="border border-border-warm rounded-xl p-4 text-center">
-                  <p className="text-[13px] font-semibold tracking-eyebrow uppercase text-ink-faint mb-2">
+                  <p className="text-[13px] font-semibold tracking-eyebrow uppercase text-ink-light mb-2">
                     The Old Way (Sports Drinks)
                   </p>
-                  <ul className="space-y-1 text-[13px] font-light text-ink-faint">
+                  <ul className="space-y-1 text-[13px] font-light text-ink-light">
                     <li>Occasional use (3-5x a week)</li>
                     <li>Built for intense workouts</li>
                     <li>Loaded with sugar &amp; artificial colors</li>
                   </ul>
                 </div>
                 <div className="border border-gold/30 rounded-xl p-4 text-center">
-                  <p className="text-[12px] font-semibold tracking-eyebrow uppercase text-mineral mb-2">
+                  <p className="text-[13px] font-semibold tracking-eyebrow uppercase text-mineral mb-2">
                     The Salt.Magic Way
                   </p>
                   <ul className="space-y-1 text-[13px] font-light text-ink-light">
