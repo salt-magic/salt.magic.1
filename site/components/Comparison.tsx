@@ -123,7 +123,7 @@ export default function Comparison() {
                     {/* Sugar */}
                     <div role="cell" className="mb-7">
                       <div
-                        className={`font-display text-[clamp(36px,4.5vw,52px)] font-normal leading-none tracking-tight mb-1 ${
+                        className={`font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-none tracking-tight mb-1 ${
                           col.highlight ? 'text-mineral' : 'text-white/95'
                         }`}
                       >
@@ -131,7 +131,7 @@ export default function Comparison() {
                       </div>
                       <div
                         className={`text-[13px] ${
-                          col.highlight ? 'text-ink-light' : 'text-white/[0.55]'
+                          col.highlight ? 'text-ink-light' : 'text-white/70'
                         }`}
                       >
                         {col.sugarLabel}
@@ -141,7 +141,7 @@ export default function Comparison() {
                     {/* Magnesium */}
                     <div role="cell" className="mb-7">
                       <div
-                        className={`font-display text-[clamp(36px,4.5vw,52px)] font-normal leading-none tracking-tight mb-1 ${
+                        className={`font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-none tracking-tight mb-1 ${
                           col.highlight ? 'text-mineral' : 'text-white/95'
                         }`}
                       >
@@ -149,7 +149,7 @@ export default function Comparison() {
                       </div>
                       <div
                         className={`text-[13px] ${
-                          col.highlight ? 'text-ink-light' : 'text-white/[0.55]'
+                          col.highlight ? 'text-ink-light' : 'text-white/70'
                         }`}
                       >
                         magnesium
@@ -159,7 +159,7 @@ export default function Comparison() {
                     {/* Ingredients */}
                     <div role="cell" className="mb-7">
                       <div
-                        className={`font-display text-[clamp(20px,2.5vw,28px)] font-normal leading-tight mb-1 ${
+                        className={`font-display text-[clamp(28px,3.5vw,40px)] font-normal leading-tight mb-1 ${
                           col.highlight ? 'text-mineral' : 'text-white/95'
                         }`}
                       >
@@ -167,7 +167,7 @@ export default function Comparison() {
                       </div>
                       <div
                         className={`text-[13px] ${
-                          col.highlight ? 'text-ink-light' : 'text-white/[0.55]'
+                          col.highlight ? 'text-ink-light' : 'text-white/70'
                         }`}
                       >
                         {col.ingredients}
@@ -181,7 +181,7 @@ export default function Comparison() {
                         className={`text-[14px] leading-relaxed pt-5 ${
                           col.highlight
                             ? 'font-display italic text-mineral border-t border-gold/25'
-                            : 'font-light text-white/50 border-t border-white/[0.08]'
+                            : 'font-light text-white/70 border-t border-white/[0.08]'
                         }`}
                       >
                         {col.verdict}
