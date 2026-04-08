@@ -62,9 +62,9 @@ export default function Faq() {
           <div key={i} className="border-b border-border-warm">
             <button
               onClick={() => toggle(i)}
-              className="w-full flex items-center justify-between py-7 cursor-pointer gap-5 bg-transparent border-none text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold rounded-sm"
+              className="w-full flex items-center justify-between py-5 cursor-pointer gap-5 bg-transparent border-none text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold rounded-sm"
             >
-              <h3 className="font-display text-h3 font-normal text-mineral">
+              <h3 className="font-body text-[clamp(16px,1.8vw,18px)] font-medium text-mineral leading-snug">
                 {faq.q}
               </h3>
               <motion.div
