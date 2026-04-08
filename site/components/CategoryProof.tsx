@@ -46,7 +46,7 @@ export default function CategoryProof() {
           {brands.map((brand) => (
             <StaggerItem key={brand.name}>
               <div className="rounded-2xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] p-6 h-full text-center">
-                <h3 className="font-display text-h3 font-normal text-white mb-3">
+                <h3 className="text-[13px] font-semibold text-white mb-3">
                   {brand.name}
                 </h3>
                 <div className="font-display text-h5 font-normal text-golden-hour leading-tight mb-2">
