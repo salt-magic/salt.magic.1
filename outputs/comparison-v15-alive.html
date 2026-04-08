@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Comparison V15: Alive Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --mineral-light: #3D6588;
+    --deep-navy: #1A3248;
+    --gold: #D4BFAA;
+    --gold-30: rgba(212, 191, 170, 0.3);
+    --charcoal: #3C3028;
+    --ink: #1a1a1a;
+    --ink-light: #6B6560;
+    --ink-faint: #9B9590;
+    --warm-off: #F9F7F4;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #E8E4DF;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .option-label {
+    max-width: 1200px;
+    margin: 48px auto 12px;
+    padding: 0 24px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+  .option-label:first-of-type { margin-top: 24px; }
+  .option-description {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 0 24px;
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+
+  /* ============================================
+     SHARED COLUMN STYLES
+     ============================================ */
+  .col-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+  }
+  .col-metric { margin-bottom: 28px; }
+  .col-value {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 4.5vw, 52px);
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .col-label { font-size: 13px; }
+  .col-verdict {
+    font-size: 14px;
+    line-height: 1.6;
+    padding-top: 20px;
+    margin-top: auto;
+  }
+
+  /* ============================================
+     OPTION A: Water Photo BG (Cure-Style)
+     Salt.Magic = white card ON the water
+     Competitors = translucent on the water
+     ============================================ */
+  .comp-a {
+    position: relative;
+    overflow: hidden;
+    /* Use a pool/water photo — replace URL with your actual image */
+    background: linear-gradient(135deg, #4A8DB7 0%, #2E6E94 30%, #1D5A7E 60%, #294B6D 100%);
+    /* Simulated water texture via repeating pattern */
+  }
+  .comp-a::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 30%, rgba(255,255,255,0.06) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 80%, rgba(255,255,255,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .comp-a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015' numOctaves='3' seed='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
+    background-size: 400px;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  .comp-a__inner {
+    position: relative;
+    z-index: 1;
+    padding: clamp(48px, 6vw, 80px) clamp(24px, 5vw, 64px);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .comp-a__header { margin-bottom: clamp(40px, 5vw, 56px); }
+  .comp-a__gold-line { width: 48px; height: 1px; background: var(--gold); margin-bottom: 24px; }
+  .comp-a__eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+  .comp-a__headline { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 400; color: white; line-height: 1.15; margin-bottom: 12px; }
+  .comp-a__headline em { font-style: italic; }
+  .comp-a__subhead { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.7); max-width: 480px; }
+
+  .comp-a__grid {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr 1fr 1fr;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
+  }
+
+  .comp-a__col { padding: clamp(28px, 3vw, 40px); display: flex; flex-direction: column; }
+
+  .comp-a__col--hero {
+    background: white;
+  }
+  .comp-a__col--hero .col-name { color: var(--mineral); border-bottom: 2px solid var(--gold); }
+  .comp-a__col--hero .col-value { color: var(--mineral); }
+  .comp-a__col--hero .col-label { color: var(--ink-light); }
+  .comp-a__col--hero .col-verdict {
+    color: var(--mineral);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    border-top: 1px solid var(--gold-30);
+  }
+
+  .comp-a__col--comp {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  .comp-a__col--comp .col-name { color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .comp-a__col--comp .col-value { color: rgba(255,255,255,0.95); }
+  .comp-a__col--comp .col-label { color: rgba(255,255,255,0.55); }
+  .comp-a__col--comp .col-verdict {
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .comp-a__footnote { color: rgba(255,255,255,0.5); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 24px; }
+
+  /* ============================================
+     OPTION B: Water Photo BG + White Card elevated
+     More dramatic — white card has shadow + slight offset
+     ============================================ */
+  .comp-b {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #5A9BBF 0%, #3A7DA3 25%, #2B6B91 50%, #294B6D 80%, #1A3248 100%);
+  }
+  .comp-b::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 40%),
+      radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .comp-b::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.008' numOctaves='2' seed='5'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23w)' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E");
+    background-size: 500px;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  .comp-b__inner {
+    position: relative;
+    z-index: 1;
+    padding: clamp(48px, 6vw, 80px) clamp(24px, 5vw, 64px);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .comp-b__header { margin-bottom: clamp(40px, 5vw, 56px); text-align: center; }
+  .comp-b__gold-line { width: 48px; height: 1px; background: var(--gold); margin: 0 auto 24px; }
+  .comp-b__eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
+  .comp-b__headline { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px); font-weight: 400; color: white; line-height: 1.15; margin-bottom: 12px; }
+  .comp-b__headline em { font-style: italic; }
+  .comp-b__subhead { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto; }
+
+  .comp-b__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .comp-b__col { padding: clamp(32px, 3.5vw, 48px); display: flex; flex-direction: column; }
+
+  .comp-b__col--hero {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 12px 48px rgba(0,0,0,0.25), 0 0 0 1px rgba(212,191,170,0.3);
+    position: relative;
+    z-index: 2;
+    margin: -8px 0;
+  }
+  .comp-b__col--hero .col-name { color: var(--mineral); border-bottom: 2px solid var(--gold); }
+  .comp-b__col--hero .col-value { color: var(--mineral); font-size: clamp(40px, 5vw, 60px); }
+  .comp-b__col--hero .col-label { color: var(--ink-light); }
+  .comp-b__col--hero .col-verdict {
+    color: var(--mineral);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    border-top: 1px solid var(--gold-30);
+  }
+
+  .comp-b__col--comp {
+    padding-top: clamp(40px, 4vw, 56px);
+  }
+  .comp-b__col--comp:not(:last-child) { border-right: 1px solid rgba(255,255,255,0.08); }
+  .comp-b__col--comp .col-name { color: rgba(255,255,255,0.5); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .comp-b__col--comp .col-value { color: rgba(255,255,255,0.85); }
+  .comp-b__col--comp .col-label { color: rgba(255,255,255,0.45); }
+  .comp-b__col--comp .col-verdict {
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+    font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .comp-b__footnote { color: rgba(255,255,255,0.45); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 32px; text-align: center; }
+
+  /* ============================================
+     OPTION C: Split — White section left, Photo-BG right
+     More editorial, asymmetric
+     ============================================ */
+  .comp-c__wrapper {
+    display: grid;
+    grid-template-columns: 1.3fr 2.7fr;
+  }
+
+  .comp-c__left {
+    background: var(--white);
+    padding: clamp(48px, 6vw, 80px) clamp(32px, 4vw, 56px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .comp-c__gold-line { width: 48px; height: 1px; background: var(--gold); margin-bottom: 24px; }
+  .comp-c__eyebrow { font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 16px; }
+  .comp-c__headline { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 38px); font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 12px; }
+  .comp-c__headline em { font-style: italic; }
+  .comp-c__subhead { font-size: 15px; font-weight: 300; color: var(--ink-light); margin-bottom: clamp(32px, 4vw, 48px); line-height: 1.6; }
+
+  .comp-c__hero-stats { flex: 1; }
+  .comp-c__hero-stats .col-name { color: var(--mineral); border-bottom: 2px solid var(--gold); }
+  .comp-c__hero-stats .col-value { color: var(--mineral); font-size: clamp(44px, 5.5vw, 64px); }
+  .comp-c__hero-stats .col-label { color: var(--ink-light); }
+  .comp-c__hero-stats .col-verdict {
+    color: var(--mineral);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    border-top: 1px solid var(--gold-30);
+  }
+
+  .comp-c__right {
+    position: relative;
+    background: linear-gradient(135deg, #4A8DB7 0%, #2E6E94 30%, #294B6D 70%, #1A3248 100%);
+    overflow: hidden;
+  }
+  .comp-c__right::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015' numOctaves='3' seed='8'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.1'/%3E%3C/svg%3E");
+    background-size: 400px;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+  }
+
+  .comp-c__competitors {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 100%;
+  }
+
+  .comp-c__comp-col {
+    padding: clamp(48px, 4vw, 80px) clamp(24px, 2.5vw, 36px);
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(255,255,255,0.08);
+  }
+  .comp-c__comp-col .col-name { color: rgba(255,255,255,0.5); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .comp-c__comp-col .col-value { color: rgba(255,255,255,0.9); }
+  .comp-c__comp-col .col-label { color: rgba(255,255,255,0.5); }
+  .comp-c__comp-col .col-verdict {
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+    font-size: 13px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .comp-c__footnote { color: var(--ink-faint); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 20px clamp(32px, 4vw, 56px); background: var(--white); }
+
+  /* ============================================
+     MOBILE
+     ============================================ */
+  @media (max-width: 767px) {
+    .comp-a__grid, .comp-b__grid { grid-template-columns: 1fr; }
+    .comp-b__col--hero { margin: 0; border-radius: 20px 20px 0 0; }
+    .comp-a__col--comp { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+    .comp-b__col--comp:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .comp-c__wrapper { grid-template-columns: 1fr; }
+    .comp-c__competitors { grid-template-columns: 1fr; }
+    .comp-c__comp-col { border-left: none; border-top: 1px solid rgba(255,255,255,0.08); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     OPTION A: Full Water BG + White Card (closest to Cure)
+     ============================================ -->
+<p class="option-label">Option A — Cure-Style: Water-Textur BG + White Card</p>
+<p class="option-description">Am naechsten an Cure. Gesamte Section auf einem lebendigen Water-Gradient mit Textur. Salt.Magic auf knackigem Weiss, Competitors auf Frosted Glass. Die Textur gibt Leben, das Weiss sticht raus.</p>
+<div style="max-width:1200px; margin:0 auto 64px; border-radius:16px; overflow:hidden; box-shadow:0 4px 30px rgba(0,0,0,0.08);">
+  <div class="comp-a">
+    <div class="comp-a__inner">
+      <div class="comp-a__header">
+        <div class="comp-a__gold-line"></div>
+        <p class="comp-a__eyebrow">How We Compare</p>
+        <h2 class="comp-a__headline">The Clear <em>Choice</em></h2>
+        <p class="comp-a__subhead">Maximum minerals. Zero junk. See how we stack up.</p>
+      </div>
+      <div class="comp-a__grid">
+        <div class="comp-a__col comp-a__col--hero">
+          <p class="col-name">Salt.Magic</p>
+          <div class="col-metric"><div class="col-value">0g</div><div class="col-label">sugar</div></div>
+          <div class="col-metric"><div class="col-value">312mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">3</div><div class="col-label">natural ingredients</div></div>
+          <p class="col-verdict">Clean, daily hydration without the sugar crash.</p>
+        </div>
+        <div class="comp-a__col comp-a__col--comp">
+          <p class="col-name">Sports Drinks</p>
+          <div class="col-metric"><div class="col-value">27g+</div><div class="col-label">added sugar</div></div>
+          <div class="col-metric"><div class="col-value">0–25mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">&mdash;</div><div class="col-label">artificial colors & flavors</div></div>
+          <p class="col-verdict">High in sugar, low in actual electrolytes.</p>
+        </div>
+        <div class="comp-a__col comp-a__col--comp">
+          <p class="col-name">Coconut Water</p>
+          <div class="col-metric"><div class="col-value">28g</div><div class="col-label">sugar</div></div>
+          <div class="col-metric"><div class="col-value">~15mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">&mdash;</div><div class="col-label">natural, but unbalanced</div></div>
+          <p class="col-verdict">Too much sugar for optimal daily hydration.</p>
+        </div>
+        <div class="comp-a__col comp-a__col--comp">
+          <p class="col-name">Other Mixes</p>
+          <div class="col-metric"><div class="col-value">11g</div><div class="col-label">added sugar</div></div>
+          <div class="col-metric"><div class="col-value">0–50mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">&mdash;</div><div class="col-label">synthetic blends</div></div>
+          <p class="col-verdict">Under-dosed and often full of fillers.</p>
+        </div>
+      </div>
+      <p class="comp-a__footnote">Based on a 2g serving of Salt.Magic vs typical 16oz servings</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     OPTION B: Elevated White Card (floats above water)
+     ============================================ -->
+<p class="option-label">Option B — Elevated: White Card floats ueber Water</p>
+<p class="option-description">Salt.Magic Card ist groesser, hat Shadow, "schwebt" ueber dem Water-BG. Zentrierter Header. Die dramatischste Option — Salt.Magic ist der klare Held.</p>
+<div style="max-width:1200px; margin:0 auto 64px; border-radius:16px; overflow:hidden; box-shadow:0 4px 30px rgba(0,0,0,0.08);">
+  <div class="comp-b">
+    <div class="comp-b__inner">
+      <div class="comp-b__header">
+        <div class="comp-b__gold-line"></div>
+        <p class="comp-b__eyebrow">How We Compare</p>
+        <h2 class="comp-b__headline">The Clear <em>Choice</em></h2>
+        <p class="comp-b__subhead">Maximum minerals. Zero junk. See how we stack up.</p>
+      </div>
+      <div class="comp-b__grid">
+        <div class="comp-b__col comp-b__col--hero">
+          <p class="col-name">Salt.Magic</p>
+          <div class="col-metric"><div class="col-value">0g</div><div class="col-label">sugar</div></div>
+          <div class="col-metric"><div class="col-value">312mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">3</div><div class="col-label">natural ingredients</div></div>
+          <p class="col-verdict">Clean, daily hydration without the sugar crash.</p>
+        </div>
+        <div class="comp-b__col comp-b__col--comp">
+          <p class="col-name">Sports Drinks</p>
+          <div class="col-metric"><div class="col-value">27g+</div><div class="col-label">added sugar</div></div>
+          <div class="col-metric"><div class="col-value">0–25mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">&mdash;</div><div class="col-label">artificial colors & flavors</div></div>
+          <p class="col-verdict">High in sugar, low in actual electrolytes.</p>
+        </div>
+        <div class="comp-b__col comp-b__col--comp">
+          <p class="col-name">Coconut Water</p>
+          <div class="col-metric"><div class="col-value">28g</div><div class="col-label">sugar</div></div>
+          <div class="col-metric"><div class="col-value">~15mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">&mdash;</div><div class="col-label">natural, but unbalanced</div></div>
+          <p class="col-verdict">Too much sugar for optimal daily hydration.</p>
+        </div>
+        <div class="comp-b__col comp-b__col--comp">
+          <p class="col-name">Other Mixes</p>
+          <div class="col-metric"><div class="col-value">11g</div><div class="col-label">added sugar</div></div>
+          <div class="col-metric"><div class="col-value">0–50mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">&mdash;</div><div class="col-label">synthetic blends</div></div>
+          <p class="col-verdict">Under-dosed and often full of fillers.</p>
+        </div>
+      </div>
+      <p class="comp-b__footnote">Based on a 2g serving of Salt.Magic vs typical 16oz servings</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================
+     OPTION C: Editorial Split — White left, Water right
+     ============================================ -->
+<p class="option-label">Option C — Editorial Split: Weiss links, Water rechts</p>
+<p class="option-description">Asymmetrisch. Salt.Magic hat die gesamte linke Seite (weiss, gross, editorial). Competitors teilen sich die rechte Seite auf Water-BG. Am meisten "Magazine Layout".</p>
+<div style="max-width:1200px; margin:0 auto 64px; border-radius:16px; overflow:hidden; box-shadow:0 4px 30px rgba(0,0,0,0.08);">
+  <div class="comp-c__wrapper">
+    <div class="comp-c__left">
+      <div class="comp-c__gold-line"></div>
+      <p class="comp-c__eyebrow">How We Compare</p>
+      <h2 class="comp-c__headline">The Clear <em>Choice</em></h2>
+      <p class="comp-c__subhead">Maximum minerals. Zero junk. See how we stack up.</p>
+      <div class="comp-c__hero-stats">
+        <p class="col-name">Salt.Magic</p>
+        <div class="col-metric"><div class="col-value">0g</div><div class="col-label">sugar</div></div>
+        <div class="col-metric"><div class="col-value">312mg</div><div class="col-label">magnesium</div></div>
+        <div class="col-metric"><div class="col-value">3</div><div class="col-label">natural ingredients</div></div>
+        <p class="col-verdict">Clean, daily hydration without the sugar crash.</p>
+      </div>
+    </div>
+    <div class="comp-c__right">
+      <div class="comp-c__competitors">
+        <div class="comp-c__comp-col">
+          <p class="col-name">Sports Drinks</p>
+          <div class="col-metric"><div class="col-value">27g+</div><div class="col-label">added sugar</div></div>
+          <div class="col-metric"><div class="col-value">0–25mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">&mdash;</div><div class="col-label">artificial colors & flavors</div></div>
+          <p class="col-verdict">High in sugar, low in actual electrolytes.</p>
+        </div>
+        <div class="comp-c__comp-col">
+          <p class="col-name">Coconut Water</p>
+          <div class="col-metric"><div class="col-value">28g</div><div class="col-label">sugar</div></div>
+          <div class="col-metric"><div class="col-value">~15mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">&mdash;</div><div class="col-label">natural, but unbalanced</div></div>
+          <p class="col-verdict">Too much sugar for optimal daily hydration.</p>
+        </div>
+        <div class="comp-c__comp-col">
+          <p class="col-name">Other Mixes</p>
+          <div class="col-metric"><div class="col-value">11g</div><div class="col-label">added sugar</div></div>
+          <div class="col-metric"><div class="col-value">0–50mg</div><div class="col-label">magnesium</div></div>
+          <div class="col-metric"><div class="col-value">&mdash;</div><div class="col-label">synthetic blends</div></div>
+          <p class="col-verdict">Under-dosed and often full of fillers.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="comp-c__footnote">Based on a 2g serving of Salt.Magic vs typical 16oz servings</p>
+</div>
+
+</body>
+</html>

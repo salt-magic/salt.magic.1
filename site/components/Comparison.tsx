@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { FadeIn, StaggerContainer, StaggerItem } from './Motion'
 
 interface Column {
@@ -27,7 +28,7 @@ const columns: Column[] = [
     highlight: false,
     sugar: '27g+',
     sugarLabel: 'added sugar',
-    magnesium: '0–25mg',
+    magnesium: '0\u201325mg',
     ingredients: 'Artificial colors & flavors',
     verdict: 'High in sugar, low in actual electrolytes.',
   },
@@ -45,7 +46,7 @@ const columns: Column[] = [
     highlight: false,
     sugar: 'Up to 11g',
     sugarLabel: 'added sugar',
-    magnesium: '0–50mg',
+    magnesium: '0\u201350mg',
     ingredients: 'Synthetic blends',
     verdict: 'Under-dosed and often full of fillers.',
   },
@@ -53,19 +54,39 @@ const columns: Column[] = [
 
 export default function Comparison() {
   return (
-    <section className="bg-white">
-      <div className="py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,64px)]">
+    <section className="relative overflow-hidden">
+      {/* Water photo background */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/products/taylor-water.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        {/* Mineral blue overlay for consistent brand color */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(135deg, rgba(41,75,109,0.82) 0%, rgba(41,75,109,0.88) 40%, rgba(26,50,72,0.92) 100%)',
+          }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,64px)]">
         <FadeIn className="max-w-[1200px] mx-auto">
           {/* Header */}
           <div className="text-left mb-[clamp(40px,5vw,56px)]">
             <div className="w-12 h-px bg-gold mb-6" />
-            <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">
+            <p className="label-uppercase text-[12px] tracking-eyebrow text-white/70 mb-5">
               How We Compare
             </p>
-            <h2 className="font-display text-h2 font-normal text-ink tracking-tight mb-6">
+            <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-6">
               The Clear <em className="italic">Choice</em>
             </h2>
-            <p className="text-[15px] font-light leading-relaxed text-ink-light max-w-[520px]">
+            <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[520px]">
               Maximum minerals. Zero junk. See how we stack up.
             </p>
           </div>
@@ -73,7 +94,7 @@ export default function Comparison() {
           {/* Comparison Grid */}
           <StaggerContainer>
             <div
-              className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr_1fr_1fr] rounded-2xl overflow-hidden"
+              className="grid grid-cols-1 md:grid-cols-[1.15fr_1fr_1fr_1fr] rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(0,0,0,0.2)]"
               role="table"
               aria-label="Electrolyte comparison"
             >
@@ -81,10 +102,10 @@ export default function Comparison() {
                 <StaggerItem key={col.name}>
                   <div
                     role="row"
-                    className={`p-[clamp(24px,3vw,40px)] h-full flex flex-col ${
+                    className={`p-[clamp(28px,3vw,40px)] h-full flex flex-col ${
                       col.highlight
-                        ? 'bg-white md:border-r md:border-gold/25'
-                        : 'bg-mineral text-white md:border-r md:border-white/10 md:last:border-r-0'
+                        ? 'bg-white'
+                        : 'bg-white/[0.08] backdrop-blur-md md:border-l md:border-white/10'
                     }`}
                   >
                     {/* Name */}
@@ -93,7 +114,7 @@ export default function Comparison() {
                       className={`text-[13px] font-semibold uppercase tracking-cta mb-7 pb-4 ${
                         col.highlight
                           ? 'text-mineral border-b-2 border-gold'
-                          : 'text-white/70 border-b border-white/15'
+                          : 'text-white/60 border-b border-white/[0.12]'
                       }`}
                     >
                       {col.name}
@@ -110,7 +131,7 @@ export default function Comparison() {
                       </div>
                       <div
                         className={`text-[13px] ${
-                          col.highlight ? 'text-ink-light' : 'text-white/70'
+                          col.highlight ? 'text-ink-light' : 'text-white/[0.55]'
                         }`}
                       >
                         {col.sugarLabel}
@@ -128,7 +149,7 @@ export default function Comparison() {
                       </div>
                       <div
                         className={`text-[13px] ${
-                          col.highlight ? 'text-ink-light' : 'text-white/70'
+                          col.highlight ? 'text-ink-light' : 'text-white/[0.55]'
                         }`}
                       >
                         magnesium
@@ -146,7 +167,7 @@ export default function Comparison() {
                       </div>
                       <div
                         className={`text-[13px] ${
-                          col.highlight ? 'text-ink-light' : 'text-white/70'
+                          col.highlight ? 'text-ink-light' : 'text-white/[0.55]'
                         }`}
                       >
                         {col.ingredients}
@@ -160,7 +181,7 @@ export default function Comparison() {
                         className={`text-[14px] leading-relaxed pt-5 ${
                           col.highlight
                             ? 'font-display italic text-mineral border-t border-gold/25'
-                            : 'font-light text-white/70 border-t border-white/10'
+                            : 'font-light text-white/50 border-t border-white/[0.08]'
                         }`}
                       >
                         {col.verdict}
@@ -173,7 +194,7 @@ export default function Comparison() {
           </StaggerContainer>
 
           {/* Footnote */}
-          <p className="text-left text-[12px] tracking-cta uppercase text-ink-faint mt-8">
+          <p className="text-left text-[12px] tracking-cta uppercase text-white/50 mt-8">
             Based on a 2g serving of Salt.Magic vs typical 16oz servings
           </p>
         </FadeIn>
