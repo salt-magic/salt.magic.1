@@ -41,7 +41,16 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V12 UI/UX Audit Complete (2026-04-05). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V13 Ingredients Pixel-Match + Comparison Options (2026-04-08). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V13 Session (Ingredients Pixel-Match + Comparison Redesign):
+- **Ingredients Section pixel-matched**: Alle Werte exakt aus `outputs/transition-a-d.html` Mockup uebernommen — Headline `clamp(28px,4.5vw,40px)`, Content-Padding `56px/40px/64px`, Grid `min-h-[800px]` (hoeher als Mockup wegen Next.js Image fill), Ingredient-Name 13px, Zahlen `clamp(40px,5vw,52px)`
+- **Fade-Overlay reduziert**: 35% → 25% Breite auf dem Produktbild
+- **Comparison Section Redesign vorbereitet**: 3 HTML-Optionen in `outputs/comparison-options.html` — alle auf hellem BG basierend auf Leo's Feedback ("copy gets lost in dark background", "don't like Salt.Magic box")
+  - Option A: Elevated Table (Grown Alchemist Stil)
+  - Option B: Hero Card + Ghost List (Salt.Magic dominiert)
+  - Option C: Magazine Split (Editorial Zweispalter mit Gold-Divider)
+- **Naechster Schritt**: Leo waehlt Comparison-Option, dann Umsetzung in React
 
 Key Changes in V12 Session (Comprehensive UI/UX & Copy Audit):
 - **Copy-Dokument V11 aktualisiert**: `outputs/copy-homepage-v1.md` jetzt auf V11-Stand, Section fuer Section aus dem Code extrahiert

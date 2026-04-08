@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparison Section — 3 Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #3C3028; background: #fff; }
+
+  /* ===== Option Labels ===== */
+  .option-label {
+    text-align: center;
+    padding: 48px 20px;
+    background: #294B6D;
+    color: white;
+  }
+  .option-label h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .option-label p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ===== Shared ===== */
+  .gold-line { width: 48px; height: 1px; background: #D4BFAA; margin-bottom: 24px; }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #5A4A3C;
+    margin-bottom: 20px;
+  }
+  .section-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #294B6D;
+    margin-bottom: 16px;
+  }
+  .section-h2 em { font-style: italic; }
+  .section-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: #3C3028;
+    line-height: 1.6;
+    margin-bottom: 48px;
+    max-width: 520px;
+  }
+  .footnote {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(60,48,40,0.5);
+    margin-top: 32px;
+  }
+  .separator {
+    height: 80px;
+    background: linear-gradient(180deg, #F9F7F4, #fff 50%, #294B6D);
+  }
+
+  /* ============================================================
+     OPTION A — Elevated Table
+     ============================================================ */
+  .option-a {
+    background: #F9F7F4;
+    padding: 80px clamp(24px, 5vw, 80px);
+  }
+  .option-a .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .elevated-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .elevated-table thead th {
+    text-align: left;
+    padding: 20px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(212,191,170,0.3);
+    vertical-align: bottom;
+  }
+  .elevated-table thead th:first-child {
+    color: transparent;
+    width: 140px;
+  }
+  .elevated-table thead th.th-highlight {
+    color: #294B6D;
+    background: rgba(212,191,170,0.08);
+    border-top: 3px solid #D4BFAA;
+    border-radius: 8px 8px 0 0;
+  }
+  .elevated-table thead th.th-normal {
+    color: rgba(60,48,40,0.45);
+  }
+
+  .elevated-table tbody td {
+    padding: 16px 24px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(212,191,170,0.15);
+    vertical-align: top;
+  }
+  .elevated-table tbody td:first-child {
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(60,48,40,0.6);
+    letter-spacing: 0.05em;
+  }
+  .elevated-table tbody td.td-highlight {
+    background: rgba(212,191,170,0.08);
+    color: #294B6D;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+  }
+  .elevated-table tbody td.td-normal {
+    color: rgba(60,48,40,0.7);
+    font-weight: 300;
+  }
+
+  /* Verdict row */
+  .elevated-table tbody tr.verdict-row td {
+    padding-top: 20px;
+    padding-bottom: 24px;
+    border-bottom: none;
+    font-size: 13px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .elevated-table tbody tr.verdict-row td.td-highlight {
+    font-weight: 500;
+    font-style: normal;
+    color: #294B6D;
+    border-radius: 0 0 8px 8px;
+  }
+  .elevated-table tbody tr.verdict-row td.td-normal {
+    color: rgba(60,48,40,0.5);
+  }
+
+  /* ============================================================
+     OPTION B — Hero Card + Ghost Cards
+     ============================================================ */
+  .option-b {
+    background: #F9F7F4;
+    padding: 80px clamp(24px, 5vw, 80px);
+  }
+  .option-b .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .option-b-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* Hero card — Salt.Magic */
+  .hero-card {
+    background: white;
+    border: 2px solid rgba(212,191,170,0.4);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 4px 24px rgba(41,75,109,0.06);
+  }
+  .hero-card-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #294B6D;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .hero-card-title .badge {
+    background: #294B6D;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+  .hero-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+  }
+  .hero-card-row + .hero-card-row {
+    border-top: 1px solid rgba(212,191,170,0.2);
+  }
+  .hero-card-label {
+    font-size: 14px;
+    color: rgba(41,75,109,0.6);
+  }
+  .hero-card-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #294B6D;
+  }
+  .hero-card-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(212,191,170,0.25);
+    margin: 20px 0;
+  }
+  .hero-card-verdict {
+    font-size: 15px;
+    font-weight: 400;
+    color: #294B6D;
+    line-height: 1.6;
+  }
+
+  /* Ghost list — Competitors */
+  .ghost-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .ghost-item {
+    padding: 24px 0;
+  }
+  .ghost-item + .ghost-item {
+    border-top: 1px solid rgba(60,48,40,0.1);
+  }
+  .ghost-item-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(60,48,40,0.4);
+    margin-bottom: 12px;
+  }
+  .ghost-item-stats {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 8px;
+  }
+  .ghost-stat {
+    font-size: 13px;
+    color: rgba(60,48,40,0.55);
+  }
+  .ghost-stat strong {
+    font-weight: 500;
+    color: rgba(60,48,40,0.7);
+  }
+  .ghost-verdict {
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(60,48,40,0.45);
+    line-height: 1.5;
+  }
+
+  /* ============================================================
+     OPTION C — Magazine Split
+     ============================================================ */
+  .option-c {
+    background: #F9F7F4;
+    padding: 80px clamp(24px, 5vw, 80px);
+  }
+  .option-c .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .option-c-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 0 48px;
+    align-items: start;
+  }
+  .option-c-divider {
+    width: 1px;
+    background: linear-gradient(180deg, transparent, #D4BFAA 20%, #D4BFAA 80%, transparent);
+    align-self: stretch;
+  }
+
+  /* Left column — Salt.Magic */
+  .mag-left-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #294B6D;
+    margin-bottom: 24px;
+  }
+  .mag-stat-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  .mag-stat-row + .mag-stat-row {
+    border-top: 1px solid rgba(212,191,170,0.25);
+  }
+  .mag-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #294B6D;
+    min-width: 80px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .mag-stat-num span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #D4BFAA;
+    margin-left: 2px;
+  }
+  .mag-stat-detail h4 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #294B6D;
+    margin-bottom: 2px;
+  }
+  .mag-stat-detail p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(60,48,40,0.7);
+    line-height: 1.5;
+  }
+  .mag-left-verdict {
+    margin-top: 24px;
+    padding: 20px 24px;
+    background: rgba(212,191,170,0.12);
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #294B6D;
+    line-height: 1.6;
+  }
+
+  /* Right column — Others */
+  .mag-right-label {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(60,48,40,0.4);
+    margin-bottom: 24px;
+  }
+  .mag-other-block {
+    padding: 20px 0;
+  }
+  .mag-other-block + .mag-other-block {
+    border-top: 1px solid rgba(60,48,40,0.08);
+  }
+  .mag-other-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(60,48,40,0.5);
+    margin-bottom: 10px;
+  }
+  .mag-other-stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+  }
+  .mag-other-stat {
+    font-size: 13px;
+    color: rgba(60,48,40,0.5);
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .mag-other-stat strong {
+    font-weight: 500;
+    color: rgba(60,48,40,0.65);
+  }
+  .mag-other-verdict {
+    font-size: 13px;
+    font-style: italic;
+    color: rgba(60,48,40,0.4);
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== OPTION A ==================== -->
+<div class="option-label">
+  <h2>Option A — Elevated Table</h2>
+  <p>Grown Alchemist Minimalismus. Heller BG, klassische Tabelle. Salt.Magic-Spalte hervorgehoben durch Gold-Akzent oben und getoenten Hintergrund. Maximale Lesbarkeit, clean, luxurioes.</p>
+</div>
+
+<section class="option-a">
+  <div class="inner">
+    <div class="gold-line"></div>
+    <p class="eyebrow">How We Compare</p>
+    <h2 class="section-h2">The Clear <em>Choice</em></h2>
+    <p class="section-sub">Maximum minerals. Zero junk. See how we stack up.</p>
+
+    <table class="elevated-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="th-highlight">Salt.Magic</th>
+          <th class="th-normal">Sports Drinks</th>
+          <th class="th-normal">Coconut Water</th>
+          <th class="th-normal">Other Mixes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sugar</td>
+          <td class="td-highlight">0g</td>
+          <td class="td-normal">27g+</td>
+          <td class="td-normal">28g</td>
+          <td class="td-normal">Up to 11g</td>
+        </tr>
+        <tr>
+          <td>Magnesium</td>
+          <td class="td-highlight">312mg</td>
+          <td class="td-normal">0–25mg</td>
+          <td class="td-normal">~15mg</td>
+          <td class="td-normal">0–50mg</td>
+        </tr>
+        <tr>
+          <td>Ingredients</td>
+          <td class="td-highlight">3 natural minerals</td>
+          <td class="td-normal">Artificial colors & flavors</td>
+          <td class="td-normal">Natural, but unbalanced</td>
+          <td class="td-normal">Synthetic blends</td>
+        </tr>
+        <tr class="verdict-row">
+          <td></td>
+          <td class="td-highlight">Clean, daily hydration without the sugar crash.</td>
+          <td class="td-normal">Glorified syrup. High in sugar, low in actual electrolytes.</td>
+          <td class="td-normal">A tasty treat, but too much sugar for optimal daily hydration.</td>
+          <td class="td-normal">Overpriced, under-dosed, and often full of fillers.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="footnote">Based on a 2g serving of Salt.Magic vs typical 16oz servings</p>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- ==================== OPTION B ==================== -->
+<div class="option-label">
+  <h2>Option B — Hero Card + Ghost List</h2>
+  <p>Salt.Magic dominiert als grosse, prominente Card links. Competitors rechts als kompakte, gestapelte Zeilen — fast wie eine Fussnote. Klare visuelle Hierarchie: Salt.Magic ist der Star.</p>
+</div>
+
+<section class="option-b">
+  <div class="inner">
+    <div class="gold-line"></div>
+    <p class="eyebrow">How We Compare</p>
+    <h2 class="section-h2">The Clear <em>Choice</em></h2>
+    <p class="section-sub">Maximum minerals. Zero junk. See how we stack up.</p>
+
+    <div class="option-b-grid">
+      <!-- Salt.Magic Hero Card -->
+      <div class="hero-card">
+        <div class="hero-card-title">
+          Salt.Magic
+          <span class="badge">THE STANDARD</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="hero-card-label">Sugar</span>
+          <span class="hero-card-value">0g</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="hero-card-label">Magnesium</span>
+          <span class="hero-card-value">312mg</span>
+        </div>
+        <div class="hero-card-row">
+          <span class="hero-card-label">Ingredients</span>
+          <span class="hero-card-value">3 natural minerals</span>
+        </div>
+        <div class="hero-card-divider"></div>
+        <p class="hero-card-verdict">Clean, daily hydration without the sugar crash.</p>
+      </div>
+
+      <!-- Competitors Ghost List -->
+      <div class="ghost-list">
+        <div class="ghost-item">
+          <div class="ghost-item-title">Sports Drinks</div>
+          <div class="ghost-item-stats">
+            <span class="ghost-stat">Sugar: <strong>27g+</strong></span>
+            <span class="ghost-stat">Magnesium: <strong>0–25mg</strong></span>
+            <span class="ghost-stat">Ingredients: <strong>Artificial</strong></span>
+          </div>
+          <p class="ghost-verdict">Glorified syrup. High in sugar, low in actual electrolytes.</p>
+        </div>
+        <div class="ghost-item">
+          <div class="ghost-item-title">Coconut Water</div>
+          <div class="ghost-item-stats">
+            <span class="ghost-stat">Sugar: <strong>28g</strong></span>
+            <span class="ghost-stat">Magnesium: <strong>~15mg</strong></span>
+            <span class="ghost-stat">Ingredients: <strong>Unbalanced</strong></span>
+          </div>
+          <p class="ghost-verdict">A tasty treat, but too much sugar for optimal daily hydration.</p>
+        </div>
+        <div class="ghost-item">
+          <div class="ghost-item-title">Other Electrolyte Mixes</div>
+          <div class="ghost-item-stats">
+            <span class="ghost-stat">Sugar: <strong>Up to 11g</strong></span>
+            <span class="ghost-stat">Magnesium: <strong>0–50mg</strong></span>
+            <span class="ghost-stat">Ingredients: <strong>Synthetic</strong></span>
+          </div>
+          <p class="ghost-verdict">Overpriced, under-dosed, and often full of fillers.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="footnote">Based on a 2g serving of Salt.Magic vs typical 16oz servings</p>
+  </div>
+</section>
+
+<div class="separator"></div>
+
+<!-- ==================== OPTION C ==================== -->
+<div class="option-label">
+  <h2>Option C — Magazine Split</h2>
+  <p>Editorial Zweispalter. Links: Salt.Magic mit grossen Zahlen und Gold-Akzenten (wie die Ingredients-Section). Rechts: Kompakte Competitor-Zusammenfassung. Getrennt durch vertikale Gold-Line.</p>
+</div>
+
+<section class="option-c">
+  <div class="inner">
+    <div class="gold-line"></div>
+    <p class="eyebrow">How We Compare</p>
+    <h2 class="section-h2">The Clear <em>Choice</em></h2>
+    <p class="section-sub">Maximum minerals. Zero junk. See how we stack up.</p>
+
+    <div class="option-c-grid">
+      <!-- Left — Salt.Magic -->
+      <div>
+        <div class="mag-left-label">Salt.Magic</div>
+
+        <div class="mag-stat-row">
+          <div class="mag-stat-num">0<span>g</span></div>
+          <div class="mag-stat-detail">
+            <h4>Sugar</h4>
+            <p>Zero sugar. Zero sweeteners. Zero compromise.</p>
+          </div>
+        </div>
+        <div class="mag-stat-row">
+          <div class="mag-stat-num">312<span>mg</span></div>
+          <div class="mag-stat-detail">
+            <h4>Magnesium</h4>
+            <p>Highly bioavailable citrate form. 7x more than competitors.</p>
+          </div>
+        </div>
+        <div class="mag-stat-row">
+          <div class="mag-stat-num">3</div>
+          <div class="mag-stat-detail">
+            <h4>Natural Ingredients</h4>
+            <p>Magnesium, potassium, pink Himalayan salt. Nothing else.</p>
+          </div>
+        </div>
+
+        <div class="mag-left-verdict">Clean, daily hydration without the sugar crash.</div>
+      </div>
+
+      <!-- Gold divider -->
+      <div class="option-c-divider"></div>
+
+      <!-- Right — Others -->
+      <div>
+        <div class="mag-right-label">The Alternatives</div>
+
+        <div class="mag-other-block">
+          <div class="mag-other-title">Sports Drinks</div>
+          <div class="mag-other-stats">
+            <span class="mag-other-stat">Sugar: <strong>27g+</strong></span>
+            <span class="mag-other-stat">Mag: <strong>0–25mg</strong></span>
+          </div>
+          <p class="mag-other-verdict">Glorified syrup. High in sugar, low in actual electrolytes.</p>
+        </div>
+
+        <div class="mag-other-block">
+          <div class="mag-other-title">Coconut Water</div>
+          <div class="mag-other-stats">
+            <span class="mag-other-stat">Sugar: <strong>28g</strong></span>
+            <span class="mag-other-stat">Mag: <strong>~15mg</strong></span>
+          </div>
+          <p class="mag-other-verdict">A tasty treat, but too much sugar for optimal daily hydration.</p>
+        </div>
+
+        <div class="mag-other-block">
+          <div class="mag-other-title">Other Electrolyte Mixes</div>
+          <div class="mag-other-stats">
+            <span class="mag-other-stat">Sugar: <strong>Up to 11g</strong></span>
+            <span class="mag-other-stat">Mag: <strong>0–50mg</strong></span>
+          </div>
+          <p class="mag-other-verdict">Overpriced, under-dosed, and often full of fillers.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="footnote">Based on a 2g serving of Salt.Magic vs typical 16oz servings</p>
+  </div>
+</section>
+
+<div style="height: 80px; background: #F9F7F4;"></div>
+
+</body>
+</html>
