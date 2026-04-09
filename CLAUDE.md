@@ -41,7 +41,20 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V16 Homepage UI/UX Audit (2026-04-08). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V17 Partner Page Copy Review (2026-04-09). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V17 Session (Partner Page — Leo's Copy Review Implementation):
+- **Partner-Seite auf Leo's Copy umgestellt**: Alle 5 Sections aus `reference/V1_Salt-Magic-Copy-Review.docx` PART 2 implementiert
+- **Hero**: "Capture the Next Wave of Wellness", Stats-Bar mit einzigartigen Metriken (90%/35-40%/160+/5Yrs), "Download Pitch Deck" aktiv
+- **Market Opportunity**: MarketStats + MarketComparison zu einer Section gemergt, 85% Dead Water Callout, "The wave is coming" Closer
+- **Category Proof**: "Clean hydration builds unicorns", 3 Brands (Liquid IV/LMNT/Liquid Death), Editorial Rows auf hellem BG
+- **Why Distribute**: Leo's exakte Bullets (35-40% Margins, 90% Retention, 7x Magnesium), "Become a Distribution Partner" CTA
+- **Revenue Difference**: "The Bottom Line: 4.4x More Revenue" mit Leo's Body-Copy
+- **Product Formats**: 3→2 Grid (Single Sachet entfernt), Gradient-Overlay mit Labels (Name/Format/MSRP)
+- **6 Sections entfernt**: MarketStats (redundant), The Shift (zu duenn), DistributionTiers, RevenueModel, SocialProof, LocationMap (nicht in Leo's Copy — Details gehoeren ins Pitch Deck, wie LMNT/Cure Hydration)
+- **Background-Rhythmus gefixt**: Dunkel→Warm→Weiss→Weiss+Bild→Dunkel→Warm — nie zwei gleiche BGs hintereinander
+- **Seite von 14 auf 8 Sections verschlankt**: Hero, Market, CategoryProof, Product, Revenue, Comparison, Formats, Form
+- **Offen**: PartnerForm Backend + CTA-Text Update
 
 Key Changes in V16 Session (Homepage UI/UX Audit — Brand Consistency, Typography & Section Flow):
 - **Section-Transitions bereinigt**: 8 Gradient-Transition-Divs eingefuegt, dann wieder entfernt (sahen aus wie Schatten). Sections gehen jetzt direkt ineinander ueber.
