@@ -41,7 +41,16 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V18 Homepage Consistency & Brand Enforcement (2026-04-09). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V19 KI Product Images & Hero Refresh (2026-04-09). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V19 Session (KI Product Images & Image Optimization):
+- **Image Optimizer Script**: `scripts/optimize-images.py` — Batch-Resize, WebP-Konvertierung, automatische Watermark-Entfernung (Gemini-Sterne + Letterbox-Balken). 87.5 MB → 1.4 MB (98.5% Ersparnis)
+- **KI-Produktbilder integriert**: 12 neue KI-generierte Bilder (Gemini + HuggingFace) in `reference/product-pics/KI Product bilder/`, optimierte WebPs in `weboptimiert/` Unterordner
+- **Hero Carousel aktualisiert**: 4 Slides — Beach Sunset Jar (Titelbild, neu), Yoga Sachet (neu), Poolside Yoga (neu), Taylor Water Nature
+- **Hero Mobile Fix**: Buttons gestackt (`flex-col` auf Mobile), besseres Padding (`px-5`, `pb-16`), `object-center` statt fixem Offset auf Mobile
+- **WhySection Bild getauscht**: Taylor-Poolside → KI-generiertes Sachet-Pouch-Bild
+- **ForEveryone Bild getauscht**: Alo-1 Mood → KI-generiertes Yoga-Poolside-Stretch, Gemini-Stern per Crop entfernt, Container auf `aspect-[3/4]`
+- **Offen**: 2 Gemini-Bilder haben Stern auf hellem BG (automatische Erkennung schwierig), ggf. manuell mit `--remove-watermark` entfernen
 
 Key Changes in V18 Session (Homepage Consistency, Typography Cleanup & Brand Color Enforcement):
 - **Copy Review analysiert**: `reference/V1_Salt-Magic-Copy-Review.docx` vollstaendig durchgelesen, Section-Notes vs Master Copy verglichen, 7 Abweichungen dokumentiert. Section Notes sind die Quelle der Wahrheit
