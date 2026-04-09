@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-footer-dark pt-[clamp(40px,8vw,96px)] pb-8 px-[clamp(24px,5vw,64px)]">
+    <footer className="bg-mineral pt-[clamp(40px,8vw,96px)] pb-8 px-[clamp(24px,5vw,64px)]">
       <div className="max-w-[1200px] mx-auto">
 
         {/* Mobile layout */}

@@ -30,7 +30,7 @@ export default function StickyMobileCta() {
               href="https://www.lazada.co.th/shop/salt-magic/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 w-full py-3.5 bg-mineral text-white text-[13px] font-medium tracking-cta uppercase rounded-pill transition-colors duration-200 hover:bg-mineral-light active:bg-deep-navy"
+              className="flex items-center justify-center gap-2 w-full py-3.5 bg-mineral text-white text-[13px] font-medium tracking-cta uppercase rounded-pill transition-colors duration-200 hover:bg-mineral-light active:bg-mineral"
             >
               Shop Now
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-4 h-4" aria-hidden="true">

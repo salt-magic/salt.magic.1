@@ -20,7 +20,7 @@ export default function StorySection() {
     <section
       id="story"
       ref={sectionRef}
-      className="relative overflow-hidden bg-footer-dark"
+      className="relative overflow-hidden bg-mineral"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
         {/* Image side - full bleed */}
@@ -35,7 +35,7 @@ export default function StorySection() {
             />
           </motion.div>
           {/* Subtle gradient to blend into text side */}
-          <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent via-transparent to-footer-dark/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-transparent via-transparent to-mineral/60 pointer-events-none" />
         </div>
 
         {/* Text side */}
@@ -75,7 +75,7 @@ export default function StorySection() {
             <div className="mt-10">
               <a
                 href="#products"
-                className="inline-block text-[12px] font-medium tracking-cta uppercase px-8 py-3.5 rounded-pill text-footer-dark bg-gold/90 hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[12px] font-medium tracking-cta uppercase px-8 py-3.5 rounded-pill text-mineral bg-gold/90 hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Shop Now
               </a>

@@ -38,7 +38,7 @@ export default function CtaBanner() {
           href="https://www.lazada.co.th/shop/salt-magic/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block text-[12px] font-medium tracking-cta uppercase px-10 py-4 rounded-pill bg-gold/90 text-footer-dark hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+          className="inline-block text-[12px] font-medium tracking-cta uppercase px-10 py-4 rounded-pill bg-gold/90 text-mineral hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         >
           Shop Salt.Magic on Lazada
         </a>
