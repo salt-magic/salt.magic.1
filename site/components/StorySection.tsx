@@ -72,15 +72,12 @@ export default function StorySection() {
               </p>
             </div>
 
-            <div className="mt-10 flex items-center gap-8">
+            <div className="mt-10">
               <a
                 href="#products"
                 className="inline-block text-[12px] font-medium tracking-cta uppercase px-8 py-3.5 rounded-pill text-footer-dark bg-gold/90 hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Shop Now
-              </a>
-              <a href="#story" className="text-[13px] font-medium text-white/70 underline underline-offset-4 decoration-1 decoration-gold/30 hover:text-white/90 hover:decoration-gold transition-colors duration-300">
-                Read the full story
               </a>
             </div>
           </div>
