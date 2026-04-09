@@ -4,12 +4,7 @@ import PartnerHero from '@/components/PartnerHero'
 import MarketComparison from '@/components/MarketComparison'
 import CategoryProof from '@/components/CategoryProof'
 import RevenueComparison from '@/components/RevenueComparison'
-import TextBlock from '@/components/TextBlock'
 import Comparison from '@/components/Comparison'
-import DistributionTiers from '@/components/DistributionTiers'
-import RevenueModel from '@/components/RevenueModel'
-import SocialProof from '@/components/SocialProof'
-import LocationMap from '@/components/LocationMap'
 import PartnerForm from '@/components/PartnerForm'
 
 export const metadata: Metadata = {
@@ -62,7 +57,7 @@ export default function PartnerPage() {
               </li>
               <li className="flex items-start gap-3 text-[15px] font-light text-ink-light leading-relaxed">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2.5" />
-                <span><strong className="font-medium text-ink">90% customer retention</strong> across 160+ partner locations</span>
+                <span><strong className="font-medium text-ink">90% customer retention</strong> across 150+ partner locations</span>
               </li>
               <li className="flex items-start gap-3 text-[15px] font-light text-ink-light leading-relaxed">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2.5" />
@@ -88,51 +83,38 @@ export default function PartnerPage() {
       <Comparison />
 
       {/* 9. Product Formats Break */}
-      <section className="grid grid-cols-1 sm:grid-cols-3 min-h-[320px]">
-        <div className="relative h-[280px] sm:h-auto overflow-hidden">
+      <section className="grid grid-cols-1 sm:grid-cols-2 min-h-[320px]">
+        <div className="relative h-[380px] sm:h-auto overflow-hidden">
           <Image
             src="/images/products/greenery-jars.jpg"
-            alt="Salt.Magic glass jars — premium product packaging"
+            alt="Signature Glass Jar — 160g, 70 servings, 490 THB"
             fill
             className="object-cover"
-            sizes="(max-width: 640px) 100vw, 33vw"
+            sizes="(max-width: 640px) 100vw, 50vw"
           />
+          <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 bg-gradient-to-t from-[rgba(26,50,72,0.85)] via-[rgba(26,50,72,0.4)] to-transparent">
+            <h3 className="font-display text-[20px] font-normal text-white mb-1">Signature Glass Jar</h3>
+            <p className="text-[12px] font-light text-white/70">160g — 70 servings</p>
+            <p className="text-[13px] font-medium text-golden-hour mt-1">MSRP 490 THB</p>
+          </div>
         </div>
-        <div className="relative h-[280px] sm:h-auto overflow-hidden">
+        <div className="relative h-[380px] sm:h-auto overflow-hidden">
           <Image
             src="/images/products/sachet.jpg"
-            alt="Salt.Magic paper sachet — portable electrolyte format"
+            alt="Travel Pouch — 16g, 30 servings, 290 THB"
             fill
             className="object-cover"
-            sizes="(max-width: 640px) 100vw, 33vw"
+            sizes="(max-width: 640px) 100vw, 50vw"
           />
-        </div>
-        <div className="relative h-[280px] sm:h-auto overflow-hidden">
-          <Image
-            src="/images/products/greenery-duo.jpg"
-            alt="Salt.Magic duo jars — retail display format"
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw, 33vw"
-          />
+          <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 bg-gradient-to-t from-[rgba(26,50,72,0.85)] via-[rgba(26,50,72,0.4)] to-transparent">
+            <h3 className="font-display text-[20px] font-normal text-white mb-1">Travel Pouch</h3>
+            <p className="text-[12px] font-light text-white/70">16g — 30 servings</p>
+            <p className="text-[13px] font-medium text-golden-hour mt-1">MSRP 290 THB</p>
+          </div>
         </div>
       </section>
 
-      {/* 10. Distribution Tiers */}
-      <DistributionTiers />
-
-      {/* 11. Revenue Model */}
-      <section className="bg-warm-off">
-        <RevenueModel />
-      </section>
-
-      {/* 12. Social Proof */}
-      <SocialProof />
-
-      {/* 13. Locations */}
-      <LocationMap />
-
-      {/* 14. Contact Form */}
+      {/* 10. Contact Form */}
       <section className="bg-warm-off">
         <PartnerForm />
       </section>

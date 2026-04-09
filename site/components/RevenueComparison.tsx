@@ -11,9 +11,14 @@ export default function RevenueComparison() {
           <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
             The Revenue Difference
           </p>
-          <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
-            Daily wellness creates <em>4.4x more revenue</em>
+          <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
+            The Bottom Line: <em>4.4x More Revenue</em>
           </h2>
+          <p className="text-[15px] font-light leading-relaxed text-ink-light max-w-[600px] mx-auto">
+            We aren&apos;t selling an occasional sports recovery drink. We are selling a 365-day habit.
+            Daily wellness positioning isn&apos;t just better for your customers — it&apos;s significantly
+            better for your bottom line.
+          </p>
         </div>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[800px] mx-auto">
@@ -82,12 +87,6 @@ export default function RevenueComparison() {
           </StaggerItem>
         </StaggerContainer>
 
-        <FadeIn className="text-center mt-8">
-          <p className="text-[15px] font-light text-ink-light max-w-[500px] mx-auto">
-            365 days/year = 4.4x more revenue per customer.
-            Daily wellness positioning isn&apos;t just better for customers — it&apos;s better for your bottom line.
-          </p>
-        </FadeIn>
       </FadeIn>
     </section>
   )

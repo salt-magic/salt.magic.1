@@ -11,7 +11,7 @@ const brands = [
   {
     name: 'LMNT',
     desc: 'Dominating DTC and retail',
-    stat: '8-figure rev',
+    stat: '8-figure revenue',
   },
   {
     name: 'Liquid Death',
