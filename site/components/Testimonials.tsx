@@ -68,12 +68,12 @@ export default function Testimonials() {
           {/* Left — Headline + CTA */}
           <div className="mb-10 lg:mb-0">
             <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
-              Look what our <em className="italic">customers say</em>
+              Look what our customers say
             </h2>
             <div className="mt-6">
               <a
                 href="#products"
-                className="inline-block text-[12px] font-semibold uppercase tracking-cta px-8 py-3.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Shop Now
               </a>
@@ -100,20 +100,20 @@ export default function Testimonials() {
                   transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
                   className="pt-14"
                 >
-                  <blockquote className="text-body-lg font-light leading-[1.75] text-ink-light mb-8">
+                  <blockquote className="text-body-lg font-normal leading-[1.75] text-ink-light mb-8">
                     {testimonials[active].quote}
                   </blockquote>
 
                   {/* Author */}
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center text-[13px] font-semibold text-mineral tracking-wide">
+                    <div className="w-10 h-10 rounded-full bg-gold/15 flex items-center justify-center text-[13px] font-medium text-mineral tracking-wide">
                       {testimonials[active].author.split(' ').map(n => n[0]).join('')}
                     </div>
                     <div>
                       <div className="text-[15px] font-medium text-mineral">
                         {testimonials[active].author}
                       </div>
-                      <div className="text-[12px] font-light text-ink-light">
+                      <div className="text-[12px] font-normal text-ink-light">
                         {testimonials[active].role} &middot; {testimonials[active].location}
                       </div>
                     </div>

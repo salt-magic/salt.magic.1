@@ -76,9 +76,9 @@ export default function Benefits() {
             Daily Benefits
           </p>
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
-            Feel the <em className="italic">Difference</em>
+            Feel the Difference
           </h2>
-          <p className="text-[15px] font-light leading-relaxed text-ink-light max-w-[480px]">
+          <p className="text-[15px] font-normal leading-relaxed text-ink-light max-w-[480px]">
             What happens when your water actually works.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function Benefits() {
                   <h3 className="font-body text-[15px] font-medium text-mineral mb-1 tracking-wide">
                     {item.title}
                   </h3>
-                  <p className="text-[15px] font-light leading-relaxed text-ink-light max-w-[420px]">
+                  <p className="text-[15px] font-normal leading-relaxed text-ink-light max-w-[420px]">
                     {item.desc}
                   </p>
                 </div>

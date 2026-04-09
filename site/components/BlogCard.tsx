@@ -27,7 +27,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
 
           {/* Bottom overlay with date + arrow */}
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-between px-5 pb-4">
-            <span className="text-[12px] font-light text-white/80">
+            <span className="text-[12px] font-normal text-white/80">
               {post.date}
             </span>
             <span className="text-white/80 text-lg transition-transform duration-300 group-hover:translate-x-1">
@@ -40,7 +40,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
         <h4 className="font-display text-h4 font-normal text-mineral mb-2.5 line-clamp-2">
           {post.title}
         </h4>
-        <p className="text-[15px] font-light leading-relaxed text-ink-light line-clamp-3 mb-3">
+        <p className="text-[15px] font-normal leading-relaxed text-ink-light line-clamp-3 mb-3">
           {post.excerpt}
         </p>
         <span className="text-[13px] font-medium text-mineral group-hover:text-gold transition-colors">

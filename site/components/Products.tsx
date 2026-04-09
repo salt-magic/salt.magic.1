@@ -98,15 +98,15 @@ export default function Products() {
                 </h3>
 
                 {/* Price */}
-                <div className="text-[18px] font-semibold text-ink mb-1">
+                <div className="text-[18px] font-medium text-ink mb-1">
                   {product.price}
                 </div>
-                <div className="text-[13px] font-light text-ink-light mb-5">
+                <div className="text-[13px] font-normal text-ink-light mb-5">
                   {product.meta}
                 </div>
 
                 {/* Description */}
-                <p className="text-[13px] font-light leading-[1.7] text-ink-light max-w-[280px] mx-auto mb-2">
+                <p className="text-[13px] font-normal leading-[1.7] text-ink-light max-w-[280px] mx-auto mb-2">
                   {product.desc}
                 </p>
 
@@ -116,7 +116,7 @@ export default function Products() {
                 </p>
 
                 {/* CTA */}
-                <span className="inline-flex items-center gap-2 text-[12px] font-semibold tracking-cta uppercase text-mineral border-b border-mineral/40 pb-1 group-hover:border-mineral transition-colors duration-300">
+                <span className="inline-flex items-center gap-2 text-[12px] font-medium tracking-cta uppercase text-mineral border-b border-mineral/40 pb-1 group-hover:border-mineral transition-colors duration-300">
                   Shop on Lazada
                   <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
                     <path d="M3 8h10M9 4l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />

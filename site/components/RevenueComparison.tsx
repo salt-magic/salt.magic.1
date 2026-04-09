@@ -14,7 +14,7 @@ export default function RevenueComparison() {
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
             The Bottom Line: <em>4.4x More Revenue</em>
           </h2>
-          <p className="text-[15px] font-light leading-relaxed text-ink-light max-w-[600px] mx-auto">
+          <p className="text-[15px] font-normal leading-relaxed text-ink-light max-w-[600px] mx-auto">
             We aren&apos;t selling an occasional sports recovery drink. We are selling a 365-day habit.
             Daily wellness positioning isn&apos;t just better for your customers — it&apos;s significantly
             better for your bottom line.
@@ -26,7 +26,7 @@ export default function RevenueComparison() {
           <StaggerItem>
             <div className="rounded-2xl bg-mineral p-8 text-white h-full">
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-[12px] font-semibold uppercase tracking-cta text-golden-hour">Wellness</span>
+                <span className="text-[12px] font-medium uppercase tracking-cta text-golden-hour">Wellness</span>
                 <span className="text-[12px] font-medium tracking-cta uppercase px-2.5 py-1 rounded-full bg-golden-hour/20 text-golden-hour">
                   Salt.Magic
                 </span>
@@ -35,7 +35,7 @@ export default function RevenueComparison() {
               <div className="font-display text-stat font-normal text-white mb-1">
                 365
               </div>
-              <p className="text-[15px] font-light text-white/70 mb-8">days per year — every single day</p>
+              <p className="text-[15px] font-normal text-white/70 mb-8">days per year — every single day</p>
 
               <div className="space-y-4">
                 <div className="flex justify-between items-baseline border-b border-white/10 pb-3">
@@ -58,7 +58,7 @@ export default function RevenueComparison() {
           <StaggerItem>
             <div className="rounded-2xl bg-white border border-border-warm p-8 h-full">
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-[12px] font-semibold uppercase tracking-cta text-ink-light">Fitness</span>
+                <span className="text-[12px] font-medium uppercase tracking-cta text-ink-light">Fitness</span>
                 <span className="text-[12px] font-medium tracking-cta uppercase px-2.5 py-1 rounded-full bg-ink-faint/10 text-ink-light">
                   Traditional
                 </span>
@@ -67,7 +67,7 @@ export default function RevenueComparison() {
               <div className="font-display text-stat font-normal text-ink-light mb-1">
                 3–5
               </div>
-              <p className="text-[15px] font-light text-ink-light mb-8">days per week — only after workouts</p>
+              <p className="text-[15px] font-normal text-ink-light mb-8">days per week — only after workouts</p>
 
               <div className="space-y-4">
                 <div className="flex justify-between items-baseline border-b border-border-warm pb-3">

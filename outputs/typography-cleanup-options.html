@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic Typography Cleanup — 3 Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --gold: #D4BFAA;
+    --golden-hour: #E8C9A0;
+    --ink: #3C3028;
+    --ink-light: #7A7067;
+    --warm-off: #F9F7F4;
+    --white: #FFFFFF;
+    --footer-dark: #1A2A3A;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: #f5f3f0;
+    line-height: 1.6;
+  }
+
+  .page-header {
+    background: var(--mineral);
+    color: white;
+    padding: 48px 40px 40px;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    font-size: 14px;
+    opacity: 0.7;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  /* Problem showcase */
+  .problem-section {
+    background: #fff0f0;
+    border-left: 4px solid #c44;
+    padding: 32px 40px;
+    margin: 32px auto;
+    max-width: 1200px;
+    border-radius: 0 8px 8px 0;
+  }
+  .problem-section h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #c44;
+    margin-bottom: 16px;
+  }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .problem-item {
+    background: white;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #f0e0e0;
+  }
+  .problem-item .label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #c44;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+  .problem-item .count {
+    font-size: 28px;
+    font-weight: 700;
+    color: #c44;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .problem-item .desc {
+    font-size: 13px;
+    color: #666;
+  }
+
+  /* Options */
+  .options-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+  }
+
+  .option {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .option-header {
+    padding: 28px 36px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #f0ede8;
+  }
+  .option-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+  .option:nth-child(1) .option-badge { background: var(--mineral); }
+  .option:nth-child(2) .option-badge { background: #6B5B4E; }
+  .option:nth-child(3) .option-badge { background: #8B7355; }
+
+  .option-header h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .option-header .ref {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-top: 2px;
+  }
+
+  .option-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .option-rules {
+    padding: 28px 36px;
+    border-right: 1px solid #f0ede8;
+  }
+  .option-rules h3 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+  .rule {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .rule .icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    margin-top: 2px;
+  }
+  .rule .icon.remove { background: #fde8e8; color: #c44; }
+  .rule .icon.keep { background: #e8f5e8; color: #2a7; }
+  .rule .icon.change { background: #e8f0ff; color: #47a; }
+
+  .option-preview {
+    padding: 28px 36px;
+    background: var(--warm-off);
+  }
+  .option-preview h3 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-light);
+    margin-bottom: 20px;
+  }
+
+  /* Preview elements */
+  .preview-section {
+    margin-bottom: 24px;
+  }
+  .preview-section:last-child { margin-bottom: 0; }
+
+  .preview-label {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--ink-light);
+    margin-bottom: 4px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Dark preview panel */
+  .preview-dark {
+    background: var(--mineral);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+
+  /* Comparison footer */
+  .comparison-table {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+  .comparison-table table {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .comparison-table th {
+    background: var(--mineral);
+    color: white;
+    padding: 14px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .comparison-table td {
+    padding: 12px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #f0ede8;
+    vertical-align: top;
+  }
+  .comparison-table tr:last-child td {
+    border-bottom: none;
+  }
+  .comparison-table .highlight {
+    background: #f8f6f2;
+    font-weight: 500;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tag.removed { background: #fde8e8; color: #c44; }
+  .tag.kept { background: #e8f5e8; color: #2a7; }
+  .tag.changed { background: #e8f0ff; color: #47a; }
+
+  /* Button previews */
+  .btn-preview {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 100px;
+    font-size: 12px;
+    text-decoration: none;
+    margin-right: 12px;
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 768px) {
+    .option-body { grid-template-columns: 1fr; }
+    .option-rules { border-right: none; border-bottom: 1px solid #f0ede8; }
+    .problem-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Typography Cleanup Options</h1>
+  <p>Leo's Feedback: "There are way too many font styles. Bold, italics, capitalized etc. Be consistent and clean." &mdash; 3 options inspired by Grown Alchemist, Sakara, PANPURI, Cure Hydration</p>
+</div>
+
+<!-- Current Problem -->
+<div class="problem-section">
+  <h2>Current Problem: Font Style Soup</h2>
+  <div class="problem-grid">
+    <div class="problem-item">
+      <div class="label">Italic in Headings</div>
+      <div class="count">12</div>
+      <div class="desc">Components use &lt;em italic&gt; in headings (Hero, Benefits, CTA, FAQ, Story, Newsletter, Testimonials, etc.)</div>
+    </div>
+    <div class="problem-item">
+      <div class="label">Font Weights Used</div>
+      <div class="count">4</div>
+      <div class="desc">font-normal, font-medium, font-semibold, font-bold &mdash; mixed across 32 files, 221 instances</div>
+    </div>
+    <div class="problem-item">
+      <div class="label">Uppercase Elements</div>
+      <div class="count">50+</div>
+      <div class="desc">Eyebrows, buttons, nav, footer labels, form labels, comparison tabs &mdash; everything shouts</div>
+    </div>
+    <div class="problem-item">
+      <div class="label">Reference Brands Use</div>
+      <div class="count">2</div>
+      <div class="desc">Max 2 weights. Zero italic (structurally). Uppercase only on eyebrows + buttons. That's it.</div>
+    </div>
+  </div>
+</div>
+
+<div class="options-container">
+
+  <!-- ═══════════════════════════════════════ OPTION A ═══════════════════════════════════════ -->
+  <div class="option">
+    <div class="option-header">
+      <div class="option-badge">A</div>
+      <div>
+        <h2>Minimal Cleanup</h2>
+        <div class="ref">Inspired by Sakara Life &mdash; keep italic as one signature move, tighten everything else</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="option-rules">
+        <h3>What Changes</h3>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div><strong>Italic: keep only in Hero H1</strong> &mdash; remove from all other 11 headings. One italic moment per page = signature, not noise.</div>
+        </div>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div><strong>Reduce to 2 weights:</strong> font-normal (400) for headings + body, font-medium (500) for eyebrows + buttons. Kill font-semibold and font-bold.</div>
+        </div>
+        <div class="rule">
+          <div class="icon keep">&#10003;</div>
+          <div><strong>Keep uppercase</strong> on eyebrows + buttons + nav as-is. Already matches Sakara's pattern.</div>
+        </div>
+        <div class="rule">
+          <div class="icon remove">&#10005;</div>
+          <div><strong>Remove text-shadow</strong> from hero text elements (already done).</div>
+        </div>
+
+        <h3 style="margin-top: 24px;">Impact</h3>
+        <div class="rule">
+          <div class="icon keep">&#10003;</div>
+          <div>Smallest change &mdash; fixes the worst offender (italic everywhere) without touching layout or button styles. ~30 files affected.</div>
+        </div>
+      </div>
+
+      <div class="option-preview">
+        <h3>Preview: How Headings Look</h3>
+
+        <div class="preview-section">
+          <div class="preview-label">Hero H1 (italic kept as signature)</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--mineral); line-height: 1.2;">
+            Your water is missing what<br>
+            <em style="font-style: italic;">your body needs most.</em>
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Eyebrow &mdash; uppercase, medium weight</div>
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light);">
+            The Formula
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Section H2 (no italic, normal weight)</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25;">
+            Everything your water is missing. Nothing you can taste.
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">All other section headings &mdash; no italic</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25; margin-bottom: 8px;">
+            Feel the Difference
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25; margin-bottom: 8px;">
+            Got Questions? Let's clear the water.
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25;">
+            The Koh Samui Story
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Buttons &mdash; medium weight (was semibold)</div>
+          <a class="btn-preview" style="background: var(--gold); color: var(--footer-dark); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;">Shop on Lazada</a>
+          <a class="btn-preview" style="background: var(--mineral); color: white; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ OPTION B ═══════════════════════════════════════ -->
+  <div class="option">
+    <div class="option-header">
+      <div class="option-badge">B</div>
+      <div>
+        <h2>Full Cleanup</h2>
+        <div class="ref">Inspired by PANPURI + Cure Hydration &mdash; zero italic, zero bold, pure size-and-color hierarchy</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="option-rules">
+        <h3>What Changes</h3>
+        <div class="rule">
+          <div class="icon remove">&#10005;</div>
+          <div><strong>Remove ALL italic</strong> &mdash; from every heading, every component. Zero exceptions. Playfair Display Regular only.</div>
+        </div>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div><strong>Exactly 2 weights:</strong> font-normal (400) everywhere. font-medium (500) only for buttons + nav links. Nothing else.</div>
+        </div>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div><strong>Uppercase only on:</strong> eyebrow labels + buttons. Reduce Footer labels from uppercase to sentence case.</div>
+        </div>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div><strong>Heading hierarchy by size only:</strong> H1 display, H2 large, H3 medium &mdash; no weight or style variation between them.</div>
+        </div>
+
+        <h3 style="margin-top: 24px;">Impact</h3>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div>Significant cleanup. Removes all decorative typography. Site becomes very calm and confident. ~35 files affected. Most aligned with PANPURI and Cure.</div>
+        </div>
+      </div>
+
+      <div class="option-preview">
+        <h3>Preview: How Headings Look</h3>
+
+        <div class="preview-section">
+          <div class="preview-label">Hero H1 (no italic, pure serif)</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--mineral); line-height: 1.2;">
+            Your water is missing what<br>
+            your body needs most.
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Eyebrow &mdash; stays uppercase (the only shout)</div>
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light);">
+            The Formula
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Section H2s &mdash; clean, identical weight</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25; margin-bottom: 8px;">
+            Everything your water is missing. Nothing you can taste.
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25; margin-bottom: 8px;">
+            Feel the Difference
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25; margin-bottom: 8px;">
+            The Clear Choice
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25;">
+            Got Questions? Let's clear the water.
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Footer labels &mdash; sentence case (was uppercase)</div>
+          <div style="font-size: 12px; font-weight: 500; color: var(--golden-hour); margin-bottom: 4px;">Navigate</div>
+          <div style="font-size: 12px; font-weight: 500; color: var(--golden-hour);">Connect</div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Buttons &mdash; medium weight, uppercase</div>
+          <a class="btn-preview" style="background: var(--gold); color: var(--footer-dark); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;">Shop on Lazada</a>
+          <a class="btn-preview" style="background: var(--mineral); color: white; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;">Shop Now</a>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Body text &mdash; Inter 400, consistent everywhere</div>
+          <div style="font-size: 15px; font-weight: 400; color: var(--ink-light); line-height: 1.7; max-width: 480px;">
+            85% of bottled water in Thailand goes through reverse osmosis, stripping away essential natural minerals. The result is "dead water" &mdash; purified, but nutritionally empty.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ OPTION C ═══════════════════════════════════════ -->
+  <div class="option">
+    <div class="option-header">
+      <div class="option-badge">C</div>
+      <div>
+        <h2>Luxury Quiet</h2>
+        <div class="ref">Inspired by Grown Alchemist &mdash; zero italic, zero uppercase on buttons, hierarchy through scale alone</div>
+      </div>
+    </div>
+    <div class="option-body">
+      <div class="option-rules">
+        <h3>What Changes</h3>
+        <div class="rule">
+          <div class="icon remove">&#10005;</div>
+          <div><strong>Remove ALL italic</strong> &mdash; same as Option B. Playfair Regular only.</div>
+        </div>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div><strong>2 weights:</strong> font-normal (400) for everything. font-medium (500) only for eyebrow labels.</div>
+        </div>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div><strong>Buttons: sentence case.</strong> No uppercase, no letter-spacing. Just clean text in a pill. Like Grown Alchemist's "Shop" buttons.</div>
+        </div>
+        <div class="rule">
+          <div class="icon keep">&#10003;</div>
+          <div><strong>Uppercase only on eyebrows.</strong> Everything else is sentence case. The quietest possible typography.</div>
+        </div>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div><strong>Nav links: sentence case.</strong> No uppercase, no tracking. Just weight 400 + color for active state.</div>
+        </div>
+
+        <h3 style="margin-top: 24px;">Impact</h3>
+        <div class="rule">
+          <div class="icon change">~</div>
+          <div>Most dramatic shift. Site feels like a high-end apothecary. Very quiet, very confident. ~40 files affected. Closest to Grown Alchemist's approach.</div>
+        </div>
+      </div>
+
+      <div class="option-preview">
+        <h3>Preview: How Everything Looks</h3>
+
+        <div class="preview-section">
+          <div class="preview-label">Hero H1</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--mineral); line-height: 1.2;">
+            Your water is missing what<br>
+            your body needs most.
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Eyebrow &mdash; the ONLY uppercase element on the page</div>
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light);">
+            The Formula
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Section H2s &mdash; clean serif, no decoration</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25; margin-bottom: 8px;">
+            Everything your water is missing. Nothing you can taste.
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400; color: var(--mineral); line-height: 1.25;">
+            Not a Sports Drink. A Daily Essential.
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Navigation &mdash; sentence case, weight 400</div>
+          <div style="display: flex; gap: 32px; align-items: center; padding: 16px 0;">
+            <span style="font-size: 13px; font-weight: 400; color: var(--mineral);">About</span>
+            <span style="font-size: 13px; font-weight: 400; color: var(--mineral);">Products</span>
+            <span style="font-size: 13px; font-weight: 400; color: var(--ink-light);">Story</span>
+            <span style="font-size: 13px; font-weight: 400; color: var(--ink-light);">Blog</span>
+            <span style="font-size: 13px; font-weight: 400; color: var(--ink-light);">Partner</span>
+            <a class="btn-preview" style="background: var(--mineral); color: white; font-weight: 400; font-size: 13px; letter-spacing: normal; text-transform: none; padding: 8px 20px; margin: 0;">Shop Now</a>
+          </div>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Buttons &mdash; sentence case, no tracking (Grown Alchemist style)</div>
+          <a class="btn-preview" style="background: var(--gold); color: var(--footer-dark); font-weight: 400; letter-spacing: normal; text-transform: none; font-size: 14px;">Shop on Lazada</a>
+          <a class="btn-preview" style="background: var(--mineral); color: white; font-weight: 400; letter-spacing: normal; text-transform: none; font-size: 14px;">Shop Now</a>
+          <a class="btn-preview" style="background: transparent; color: var(--mineral); font-weight: 400; letter-spacing: normal; text-transform: none; font-size: 14px; border: 1px solid var(--mineral);">Explore Partnership</a>
+        </div>
+
+        <div class="preview-section">
+          <div class="preview-label">Footer labels &mdash; sentence case, subtle</div>
+          <div style="display: flex; gap: 40px;">
+            <div>
+              <div style="font-size: 12px; font-weight: 500; color: var(--golden-hour); margin-bottom: 6px;">Navigate</div>
+              <div style="font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.6);">About</div>
+              <div style="font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.6);">Products</div>
+            </div>
+            <div>
+              <div style="font-size: 12px; font-weight: 500; color: var(--golden-hour); margin-bottom: 6px;">Connect</div>
+              <div style="font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.6);">leo@salt-magic.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Comparison Table -->
+<div class="comparison-table">
+  <table>
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Current</th>
+        <th>A: Minimal Cleanup</th>
+        <th>B: Full Cleanup</th>
+        <th>C: Luxury Quiet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Heading Italic</strong></td>
+        <td><span class="tag removed">12 components</span></td>
+        <td><span class="tag changed">Hero only</span></td>
+        <td><span class="tag removed">None</span></td>
+        <td><span class="tag removed">None</span></td>
+      </tr>
+      <tr>
+        <td><strong>Font Weights</strong></td>
+        <td><span class="tag removed">4 (normal, medium, semibold, bold)</span></td>
+        <td><span class="tag changed">2 (normal + medium)</span></td>
+        <td><span class="tag changed">2 (normal + medium)</span></td>
+        <td><span class="tag changed">2 (normal + medium)</span></td>
+      </tr>
+      <tr>
+        <td><strong>Buttons</strong></td>
+        <td>UPPERCASE, semibold, tracking</td>
+        <td><span class="tag changed">UPPERCASE, medium</span></td>
+        <td><span class="tag changed">UPPERCASE, medium</span></td>
+        <td><span class="tag changed">Sentence case, normal</span></td>
+      </tr>
+      <tr>
+        <td><strong>Nav Links</strong></td>
+        <td>UPPERCASE, semibold, tracking</td>
+        <td><span class="tag kept">Keep as-is</span></td>
+        <td><span class="tag kept">Keep as-is</span></td>
+        <td><span class="tag changed">Sentence case, normal</span></td>
+      </tr>
+      <tr>
+        <td><strong>Eyebrows</strong></td>
+        <td>UPPERCASE, medium, tracking</td>
+        <td><span class="tag kept">Keep as-is</span></td>
+        <td><span class="tag kept">Keep as-is</span></td>
+        <td><span class="tag kept">Keep as-is</span></td>
+      </tr>
+      <tr>
+        <td><strong>Footer Labels</strong></td>
+        <td>UPPERCASE, semibold, serif</td>
+        <td><span class="tag kept">Keep as-is</span></td>
+        <td><span class="tag changed">Sentence case, medium</span></td>
+        <td><span class="tag changed">Sentence case, medium</span></td>
+      </tr>
+      <tr class="highlight">
+        <td><strong>Total Uppercase Areas</strong></td>
+        <td>6 (eyebrow, button, nav, footer, form, announcement)</td>
+        <td>6 (unchanged)</td>
+        <td>4 (eyebrow, button, nav, announcement)</td>
+        <td>2 (eyebrow, announcement)</td>
+      </tr>
+      <tr class="highlight">
+        <td><strong>Files to Change</strong></td>
+        <td>&mdash;</td>
+        <td>~30</td>
+        <td>~35</td>
+        <td>~40</td>
+      </tr>
+      <tr class="highlight">
+        <td><strong>Closest Reference</strong></td>
+        <td>&mdash;</td>
+        <td>Sakara Life</td>
+        <td>PANPURI / Cure</td>
+        <td>Grown Alchemist</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

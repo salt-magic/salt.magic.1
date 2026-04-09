@@ -46,7 +46,7 @@ export default function Ingredients() {
               <h3 className="text-[12px] font-medium tracking-eyebrow uppercase text-mineral mb-[3px]">
                 {item.name}
               </h3>
-              <p className="text-[15px] font-light text-ink/80 leading-normal">
+              <p className="text-[15px] font-normal text-ink/80 leading-normal">
                 {item.benefit}
               </p>
             </div>

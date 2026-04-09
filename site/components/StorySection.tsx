@@ -50,14 +50,13 @@ export default function StorySection() {
             </p>
 
             <h2 className="font-display text-h2 font-normal text-white/90 tracking-tight mb-3">
-              The Koh Samui{' '}
-              <em className="italic text-gold/80">Story</em>
+              The Koh Samui Story
             </h2>
-            <p className="text-[15px] font-light text-white/60 mb-8">
+            <p className="text-[15px] font-normal text-white/60 mb-8">
               We noticed something was wrong with our water.
             </p>
 
-            <div className="space-y-5 text-[15px] font-light leading-[1.85] text-white/70">
+            <div className="space-y-5 text-[15px] font-normal leading-[1.85] text-white/70">
               <p>
                 Living on a tropical island, we drank more water than most — but still felt
                 constantly depleted. We finally tested it with a TDS meter, and the results
@@ -76,7 +75,7 @@ export default function StorySection() {
             <div className="mt-10 flex items-center gap-8">
               <a
                 href="#products"
-                className="inline-block text-[12px] font-semibold tracking-cta uppercase px-8 py-3.5 rounded-pill text-footer-dark bg-gold/90 hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[12px] font-medium tracking-cta uppercase px-8 py-3.5 rounded-pill text-footer-dark bg-gold/90 hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Shop Now
               </a>

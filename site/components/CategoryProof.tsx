@@ -32,7 +32,7 @@ export default function CategoryProof() {
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
             Clean hydration builds <em>unicorns.</em>
           </h2>
-          <p className="text-[15px] font-light leading-relaxed text-ink-light max-w-[560px]">
+          <p className="text-[15px] font-normal leading-relaxed text-ink-light max-w-[560px]">
             The biggest wellness brands of the last decade started exactly where Salt.Magic is now.
             Clean electrolytes are creating an entirely new, highly lucrative retail category.
           </p>
@@ -42,10 +42,10 @@ export default function CategoryProof() {
           {brands.map((brand) => (
             <StaggerItem key={brand.name}>
               <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr_auto] items-center gap-2 sm:gap-6 px-6 sm:px-8 py-5 sm:py-6 bg-white">
-                <h3 className="text-[14px] font-semibold text-mineral">
+                <h3 className="text-[14px] font-medium text-mineral">
                   {brand.name}
                 </h3>
-                <p className="text-[14px] font-light text-ink-light">
+                <p className="text-[14px] font-normal text-ink-light">
                   {brand.desc}
                 </p>
                 <span className="font-display text-[18px] font-normal text-gold">

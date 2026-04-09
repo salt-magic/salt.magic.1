@@ -98,7 +98,7 @@ export default function Hero() {
             <h1 className="headline-editorial text-white mb-6" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.4)' }}>
               Your water is missing what
               <br />
-              <em className="italic font-normal">your body needs most.</em>
+              your body needs most.
             </h1>
           </FadeIn>
           <FadeIn delay={0.35}>
@@ -110,13 +110,13 @@ export default function Hero() {
             <div className="flex items-center justify-center gap-4">
               <a
                 href="#products"
-                className="inline-block text-[12px] font-semibold uppercase tracking-cta px-9 py-4 rounded-pill bg-gold/90 text-footer-dark hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[12px] font-medium uppercase tracking-cta px-9 py-4 rounded-pill bg-gold/90 text-footer-dark hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Bring Your Water Back to Life
               </a>
               <a
                 href="#why"
-                className="inline-block text-[12px] font-semibold uppercase tracking-cta px-9 py-4 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[12px] font-medium uppercase tracking-cta px-9 py-4 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Learn More
               </a>

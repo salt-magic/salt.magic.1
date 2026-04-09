@@ -16,13 +16,12 @@ export default function ForEveryone() {
                 For Everyone
               </p>
               <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-3">
-                Not a Sports Drink.{' '}
-                <em className="italic">A Daily Essential.</em>
+                Not a Sports Drink. A Daily Essential.
               </h2>
-              <p className="text-[15px] font-light text-ink-light mb-6">
+              <p className="text-[15px] font-normal text-ink-light mb-6">
                 Pure hydration for daily life, not just game day.
               </p>
-              <p className="text-[15px] font-light leading-[1.8] text-ink-light mb-8">
+              <p className="text-[15px] font-normal leading-[1.8] text-ink-light mb-8">
                 Most electrolytes are packed with sugar and designed for extreme athletes
                 to use once in a while. Salt.Magic is designed for life. Whether you&apos;re
                 intermittent fasting, surviving the tropical heat, traveling, or just
@@ -34,7 +33,7 @@ export default function ForEveryone() {
                   <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-2">
                     The Old Way (Sports Drinks)
                   </p>
-                  <ul className="space-y-1 text-[13px] font-light text-ink-light">
+                  <ul className="space-y-1 text-[13px] font-normal text-ink-light">
                     <li>Occasional use (3-5x a week)</li>
                     <li>Built for intense workouts</li>
                     <li>Loaded with sugar &amp; artificial colors</li>
@@ -44,7 +43,7 @@ export default function ForEveryone() {
                   <p className="text-[12px] font-medium tracking-eyebrow uppercase text-mineral mb-2">
                     The Salt.Magic Way
                   </p>
-                  <ul className="space-y-1 text-[13px] font-light text-ink-light">
+                  <ul className="space-y-1 text-[13px] font-normal text-ink-light">
                     <li>Daily essential (365 days a year)</li>
                     <li>Built for anyone who drinks water</li>
                     <li>Pure, invisible, natural minerals</li>

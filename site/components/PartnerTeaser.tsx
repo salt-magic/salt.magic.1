@@ -21,14 +21,14 @@ export default function PartnerTeaser() {
               For Business
             </p>
             <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-3">
-              Stock <em className="italic font-normal">Salt.Magic</em>
+              Stock Salt.Magic
             </h2>
-            <p className="text-[15px] font-light leading-[1.7] text-ink-light max-w-[440px] mb-5">
+            <p className="text-[15px] font-normal leading-[1.7] text-ink-light max-w-[440px] mb-5">
               Join Thailand&apos;s fastest-growing daily hydration brand.
             </p>
             <Link
               href="/partner"
-              className="inline-block text-[12px] font-semibold uppercase tracking-cta px-8 py-3.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+              className="inline-block text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill bg-mineral text-white hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
               Explore Partnership
             </Link>

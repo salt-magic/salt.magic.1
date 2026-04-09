@@ -108,8 +108,8 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
           role="cell"
           className={`text-[14px] leading-relaxed pt-5 ${
             isHero
-              ? 'font-display italic text-mineral border-t border-gold/25'
-              : 'font-light text-white/70 border-t border-white/[0.08]'
+              ? 'font-display text-mineral border-t border-gold/25'
+              : 'font-normal text-white/70 border-t border-white/[0.08]'
           }`}
         >
           {col.verdict}
@@ -181,9 +181,9 @@ export default function Comparison() {
                 How We Compare
               </p>
               <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-6">
-                The Clear <em className="italic">Choice</em>
+                The Clear Choice
               </h2>
-              <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[520px]">
+              <p className="text-[15px] font-normal leading-relaxed text-white/70 max-w-[520px]">
                 Maximum minerals. Zero junk. See how we stack up.
               </p>
             </div>

@@ -18,14 +18,14 @@ export default function PartnerHero() {
           <h1 className="headline-editorial text-white tracking-tight mb-5">
             Capture the Next Wave<br className="hidden sm:inline" /> of <em>Wellness</em>
           </h1>
-          <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[560px] mx-auto mb-10">
+          <p className="text-[15px] font-normal leading-relaxed text-white/70 max-w-[560px] mx-auto mb-10">
             The global electrolyte market is exploding. Partner with Thailand&apos;s first
             daily mineralizer and claim your first-mover advantage.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#partner-form"
-              className="px-8 py-3.5 bg-white text-mineral text-[12px] font-semibold tracking-cta uppercase rounded-pill hover:bg-gold-light transition-colors duration-300"
+              className="px-8 py-3.5 bg-white text-mineral text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-gold-light transition-colors duration-300"
             >
               Contact Us
             </a>
@@ -33,7 +33,7 @@ export default function PartnerHero() {
               href="/pitch-deck.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 border border-white/30 text-white text-[12px] font-semibold tracking-cta uppercase rounded-pill hover:border-white/60 hover:bg-white/5 transition-colors duration-300"
+              className="px-8 py-3.5 border border-white/30 text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:border-white/60 hover:bg-white/5 transition-colors duration-300"
             >
               Download Pitch Deck
             </a>

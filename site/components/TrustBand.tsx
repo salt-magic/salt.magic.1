@@ -9,7 +9,7 @@ export default function TrustBand() {
         <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-3">
           Trusted by 160+ locations across Thailand
         </p>
-        <p className="text-[13px] font-light text-ink-light/80">
+        <p className="text-[13px] font-normal text-ink-light/80">
           {locations.join('  \u2022  ')}
         </p>
       </div>

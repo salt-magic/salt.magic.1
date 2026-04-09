@@ -30,7 +30,7 @@ export default function MarketStats() {
             <div className="text-[12px] font-medium tracking-cta uppercase text-ink-light mb-5">
               {item.label}
             </div>
-            <p className="text-sm font-light leading-relaxed text-ink-light max-w-[280px] mx-auto">
+            <p className="text-sm font-normal leading-relaxed text-ink-light max-w-[280px] mx-auto">
               {item.desc}
             </p>
           </div>

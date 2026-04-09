@@ -20,12 +20,12 @@ export default function TextBlock({ eyebrow, title, showGoldLine = false, childr
         </p>
       )}
 
-      <h2 className="font-display text-h2 font-normal text-mineral mb-6 tracking-tight [&>em]:italic [&>em]:font-normal">
+      <h2 className="font-display text-h2 font-normal text-mineral mb-6 tracking-tight">
         {title}
       </h2>
 
       {children && (
-        <div className="text-[15px] font-light leading-[1.85] text-ink-light [&>p+p]:mt-5">
+        <div className="text-[15px] font-normal leading-[1.85] text-ink-light [&>p+p]:mt-5">
           {children}
         </div>
       )}

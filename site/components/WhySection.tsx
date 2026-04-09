@@ -73,10 +73,10 @@ export default function WhySection() {
               </p>
 
               <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-8">
-                Your water is missing what your body needs <em className="italic">most</em>
+                Your water is missing what your body needs most
               </h2>
 
-              <div className="space-y-5 text-[15px] font-light leading-[1.85] text-ink-light">
+              <div className="space-y-5 text-[15px] font-normal leading-[1.85] text-ink-light">
                 <p>
                   85% of bottled water in Thailand goes through reverse osmosis, stripping
                   away essential natural minerals. The result is &ldquo;dead water&rdquo; — purified,
@@ -88,7 +88,7 @@ export default function WhySection() {
                 </p>
               </div>
 
-              <p className="font-display text-h5 italic text-mineral font-normal leading-relaxed mt-8 border-l-2 border-gold/40 pl-6">
+              <p className="font-display text-h5 text-mineral font-normal leading-relaxed mt-8 border-l-2 border-gold/40 pl-6">
                 50% of people worldwide are magnesium deficient. Your water could be why.
               </p>
 
