@@ -6,7 +6,7 @@ import { FadeIn } from './Motion'
 import { useReducedMotion } from 'framer-motion'
 
 const slides = [
-  { src: '/images/products/taylor-hero.jpg', alt: 'Salt.Magic - Natural Electrolytes glass jar in tropical water' },
+  { src: '/images/products/beach-jar-sunset.webp', alt: 'Salt.Magic glass jar on beach at golden hour sunset' },
   { src: '/images/products/yoga-sachet.webp', alt: 'Woman holding Salt.Magic sachet in yoga studio' },
   { src: '/images/products/greenery-jars.jpg', alt: 'Salt.Magic jars among tropical greenery' },
   { src: '/images/products/taylor-water-nature.jpg', alt: 'Salt.Magic jar in natural water among tropical plants' },
