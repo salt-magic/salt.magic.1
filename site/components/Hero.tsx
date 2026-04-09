@@ -40,7 +40,7 @@ export default function Hero() {
             alt={slide.alt}
             fill
             priority={i === 0}
-            className="object-cover object-[center_35%]"
+            className="object-cover object-center md:object-[center_35%]"
             sizes="100vw"
             quality={85}
           />
@@ -88,7 +88,7 @@ export default function Hero() {
       </button>
 
       {/* Content - centered */}
-      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-[clamp(24px,6vw,80px)] pb-[clamp(80px,12vw,140px)]">
+      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-5 md:px-[clamp(24px,6vw,80px)] pb-16 md:pb-[clamp(80px,12vw,140px)]">
         <div className="max-w-[720px]">
           <FadeIn delay={0.1}>
             <p className="label-uppercase text-white/70 mb-5" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
@@ -103,21 +103,21 @@ export default function Hero() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.35}>
-            <p className="text-[15px] font-normal leading-relaxed text-white/90 mb-10 max-w-[520px] mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
+            <p className="text-[15px] font-normal leading-relaxed text-white/90 mb-8 md:mb-10 max-w-[520px] mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
               85% of bottled water in Thailand is &ldquo;dead water&rdquo; - purified, but nutritionally empty. Your body deserves better.
             </p>
           </FadeIn>
           <FadeIn delay={0.45}>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
               <a
                 href="#products"
-                className="inline-block text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill bg-gold/90 text-mineral hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block w-full sm:w-auto text-center text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill bg-gold/90 text-mineral hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Bring Your Water Back to Life
               </a>
               <a
                 href="#why"
-                className="inline-block text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block w-full sm:w-auto text-center text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Learn More
               </a>
