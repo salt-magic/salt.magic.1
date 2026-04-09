@@ -57,8 +57,8 @@ export default function ForEveryone() {
           <FadeIn delay={0.15}>
             <div className="relative overflow-hidden rounded-2xl aspect-[4/5] lg:aspect-auto lg:min-h-[500px]">
               <Image
-                src="/images/mood/alo-1.png"
-                alt="Active wellness lifestyle - daily hydration for everyone"
+                src="/images/products/yoga-poolside-stretch.webp"
+                alt="Woman stretching poolside - Salt.Magic daily hydration for everyone"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 55vw"
