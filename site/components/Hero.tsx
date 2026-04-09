@@ -8,7 +8,7 @@ import { useReducedMotion } from 'framer-motion'
 const slides = [
   { src: '/images/products/beach-jar-sunset.webp', alt: 'Salt.Magic glass jar on beach at golden hour sunset' },
   { src: '/images/products/yoga-sachet.webp', alt: 'Woman holding Salt.Magic sachet in yoga studio' },
-  { src: '/images/products/greenery-jars.jpg', alt: 'Salt.Magic jars among tropical greenery' },
+  { src: '/images/products/poolside-yoga.webp', alt: 'Woman relaxing poolside after yoga session' },
   { src: '/images/products/taylor-water-nature.jpg', alt: 'Salt.Magic jar in natural water among tropical plants' },
 ]
 
