@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic TrustBand Marquee — 3 Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --gold: #D4BFAA;
+    --golden-hour: #E8C9A0;
+    --ink: #3C3028;
+    --ink-light: #7A7067;
+    --warm-off: #F9F7F4;
+    --white: #FFFFFF;
+    --border-warm: #E8E2DA;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background: #f5f3f0;
+  }
+
+  .page-header {
+    background: var(--mineral);
+    color: white;
+    padding: 40px;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .page-header p {
+    font-size: 14px;
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .option-wrapper {
+    max-width: 1200px;
+    margin: 32px auto;
+    padding: 0 24px;
+  }
+
+  .option-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 48px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .option-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 32px;
+    border-bottom: 1px solid #f0ede8;
+  }
+  .option-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--mineral);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .option-label h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .option-label .sub {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-top: 2px;
+  }
+
+  .option-notes {
+    padding: 20px 32px;
+    background: var(--warm-off);
+    font-size: 13px;
+    color: var(--ink-light);
+    line-height: 1.6;
+    border-bottom: 1px solid #f0ede8;
+  }
+  .option-notes strong {
+    color: var(--ink);
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     SHARED MARQUEE MECHANICS
+     ════════════════════════════════════════════════════════════════ */
+
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scroll-left 30s linear infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     OPTION A: Luxo Gold Band
+     ════════════════════════════════════════════════════════════════ */
+
+  .band-a {
+    background: var(--gold);
+    padding: 14px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .band-a .marquee-track {
+    gap: 0;
+    animation-duration: 28s;
+  }
+
+  .band-a .item {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 0 32px;
+    white-space: nowrap;
+  }
+
+  .band-a .item span {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--mineral);
+    font-style: italic;
+  }
+
+  .band-a .separator {
+    width: 20px;
+    height: 20px;
+    opacity: 0.4;
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     OPTION B: Mineral Marquee (Luxo-exact)
+     ════════════════════════════════════════════════════════════════ */
+
+  .band-b {
+    background: var(--mineral);
+    padding: 16px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .band-b .marquee-track {
+    gap: 0;
+    animation-duration: 32s;
+  }
+
+  .band-b .item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 0 40px;
+    white-space: nowrap;
+  }
+
+  .band-b .item span {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--golden-hour);
+    font-style: italic;
+  }
+
+  .band-b .separator {
+    width: 16px;
+    height: 16px;
+    opacity: 0.3;
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     OPTION C: Warm-Off Subtle Band
+     ════════════════════════════════════════════════════════════════ */
+
+  .band-c {
+    background: var(--warm-off);
+    border-top: 1px solid var(--border-warm);
+    border-bottom: 1px solid var(--border-warm);
+    padding: 14px 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .band-c .marquee-track {
+    gap: 0;
+    animation-duration: 35s;
+  }
+
+  .band-c .item {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 0 48px;
+    white-space: nowrap;
+  }
+
+  .band-c .item .text {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  .band-c .separator {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     FAKE HERO for context
+     ════════════════════════════════════════════════════════════════ */
+
+  .fake-hero {
+    background: linear-gradient(to bottom, rgba(41,75,109,0.7), rgba(41,75,109,0.85)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="%23294B6D" width="100" height="100"/></svg>');
+    background-size: cover;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+  }
+  .fake-hero .eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+  .fake-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: white;
+  }
+
+  .fake-content {
+    padding: 48px 32px;
+    text-align: center;
+    color: var(--ink-light);
+    font-size: 14px;
+    background: white;
+  }
+
+  /* ════════════════════════════════════════════════════════════════
+     Comparison table
+     ════════════════════════════════════════════════════════════════ */
+
+  .comparison {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+  }
+  .comparison table {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border-collapse: collapse;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .comparison th {
+    background: var(--mineral);
+    color: white;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+  }
+  .comparison td {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-bottom: 1px solid #f0ede8;
+  }
+  .comparison tr:last-child td { border-bottom: none; }
+
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .tag.gold { background: #fdf4e8; color: #8B6914; }
+  .tag.blue { background: #e8f0ff; color: #294B6D; }
+  .tag.neutral { background: #f0ede8; color: var(--ink-light); }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>TrustBand Marquee Options</h1>
+  <p>Inspiriert vom Luxo Webflow Template — scrollendes Band direkt nach dem Hero, ersetzt den statischen TrustBand</p>
+</div>
+
+<div class="option-wrapper">
+
+  <!-- ════════════════════════════ OPTION A ════════════════════════════ -->
+  <div class="option-card">
+    <div class="option-label">
+      <div class="option-badge">A</div>
+      <div>
+        <h2>Gold Band</h2>
+        <div class="sub">Warmer Gold-Hintergrund, Playfair Italic, Mineral-Text. Luxury Spa Vibe.</div>
+      </div>
+    </div>
+    <div class="option-notes">
+      <strong>Stil:</strong> Soft Gold Background mit dunkler Serif-Schrift. Dekorativer Tropfen-Separator.<br>
+      <strong>Stimmung:</strong> Warm, einladend, wie ein goldenes Band das die Seite teilt. Nah am Luxo-Original aber in Salt.Magic Farben.<br>
+      <strong>Am besten fuer:</strong> Maximale Waerme, auffaellig aber nicht laut.
+    </div>
+
+    <div class="fake-hero">
+      <div class="eyebrow">Mineralize Your Water, Everywhere.</div>
+      <h2>Your water is missing what<br>your body needs most.</h2>
+    </div>
+
+    <!-- MARQUEE A -->
+    <div class="band-a">
+      <div class="marquee-track">
+        <!-- Set 1 -->
+        <div class="item">
+          <span>160+ locations across Thailand</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>5 years trusted</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>90% customer retention</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>100% natural minerals</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>Zero sugar, zero flavor</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>Koh Samui to Bangkok</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+        </div>
+        <!-- Set 2 (duplicate for seamless loop) -->
+        <div class="item">
+          <span>160+ locations across Thailand</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>5 years trusted</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>90% customer retention</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>100% natural minerals</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>Zero sugar, zero flavor</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+          <span>Koh Samui to Bangkok</span>
+          <svg class="separator" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14l-3-3 1.41-1.41L11 13.17l4.59-4.59L17 10l-6 6z" fill="#294B6D" opacity="0.35"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="fake-content">
+      <span style="color: var(--ink-light); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;">The Problem</span>
+      <div style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--mineral); margin-top: 8px;">Your water is missing what your body needs most</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ OPTION B ════════════════════════════ -->
+  <div class="option-card">
+    <div class="option-label">
+      <div class="option-badge">B</div>
+      <div>
+        <h2>Mineral Marquee</h2>
+        <div class="sub">Luxo-exakt: Dunkler Mineral-Blue Hintergrund, Golden-Hour Serif Italic. Statement-Band.</div>
+      </div>
+    </div>
+    <div class="option-notes">
+      <strong>Stil:</strong> 1:1 Luxo-Prinzip — dunkles Band mit heller Italic-Schrift. Wie der rote Luxo-Marquee, aber in Salt.Magic Mineral-Blue + Golden Hour.<br>
+      <strong>Stimmung:</strong> Confident, premium, trennt Hero klar vom Content. Das Band "spricht" zum Besucher.<br>
+      <strong>Am besten fuer:</strong> Staerkstes Statement, hoechster Kontrast, klarste Trennung. Empfehlung.
+    </div>
+
+    <div class="fake-hero">
+      <div class="eyebrow">Mineralize Your Water, Everywhere.</div>
+      <h2>Your water is missing what<br>your body needs most.</h2>
+    </div>
+
+    <!-- MARQUEE B -->
+    <div class="band-b">
+      <div class="marquee-track">
+        <div class="item">
+          <span>Trusted by 160+ locations across Thailand</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>5 years of daily wellness</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>90% customer retention</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>Pure minerals, zero compromise</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>From Koh Samui to Bangkok</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>Ready to mineralize your water?</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+        </div>
+        <div class="item">
+          <span>Trusted by 160+ locations across Thailand</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>5 years of daily wellness</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>90% customer retention</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>Pure minerals, zero compromise</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>From Koh Samui to Bangkok</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+          <span>Ready to mineralize your water?</span>
+          <svg class="separator" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5H18l-3.5 2.5L16 15l-4-3-4 3 1.5-5L6 7.5h4.5z" fill="currentColor" opacity="0.4" style="color: var(--golden-hour)"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="fake-content">
+      <span style="color: var(--ink-light); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;">The Problem</span>
+      <div style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--mineral); margin-top: 8px;">Your water is missing what your body needs most</div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════ OPTION C ════════════════════════════ -->
+  <div class="option-card">
+    <div class="option-label">
+      <div class="option-badge" style="background: #8B7355;">C</div>
+      <div>
+        <h2>Subtle Track</h2>
+        <div class="sub">Warm-Off Hintergrund, Sans-Serif Uppercase, minimalste Variante. Passt zum Option B Typography Cleanup.</div>
+      </div>
+    </div>
+    <div class="option-notes">
+      <strong>Stil:</strong> Kein farbiger Hintergrund — nur warm-off mit feiner Border. Uppercase Sans-Serif, Gold-Dots als Trenner. Wie ein dezenter Ticker.<br>
+      <strong>Stimmung:</strong> Zurueckhaltend, informativ, kein visuelles Statement. Der Content spricht, nicht das Band.<br>
+      <strong>Am besten fuer:</strong> Wenn der Marquee-Effekt cool ist aber das Band sich nicht zu sehr aufdraengen soll.
+    </div>
+
+    <div class="fake-hero">
+      <div class="eyebrow">Mineralize Your Water, Everywhere.</div>
+      <h2>Your water is missing what<br>your body needs most.</h2>
+    </div>
+
+    <!-- MARQUEE C -->
+    <div class="band-c">
+      <div class="marquee-track">
+        <div class="item">
+          <span class="text">160+ Locations</span>
+          <span class="separator"></span>
+          <span class="text">5 Years Trusted</span>
+          <span class="separator"></span>
+          <span class="text">90% Retention</span>
+          <span class="separator"></span>
+          <span class="text">100% Natural</span>
+          <span class="separator"></span>
+          <span class="text">Zero Sugar</span>
+          <span class="separator"></span>
+          <span class="text">Zero Flavor</span>
+          <span class="separator"></span>
+          <span class="text">Koh Samui</span>
+          <span class="separator"></span>
+          <span class="text">Bangkok</span>
+          <span class="separator"></span>
+          <span class="text">Chiang Mai</span>
+          <span class="separator"></span>
+          <span class="text">Phuket</span>
+          <span class="separator"></span>
+        </div>
+        <div class="item">
+          <span class="text">160+ Locations</span>
+          <span class="separator"></span>
+          <span class="text">5 Years Trusted</span>
+          <span class="separator"></span>
+          <span class="text">90% Retention</span>
+          <span class="separator"></span>
+          <span class="text">100% Natural</span>
+          <span class="separator"></span>
+          <span class="text">Zero Sugar</span>
+          <span class="separator"></span>
+          <span class="text">Zero Flavor</span>
+          <span class="separator"></span>
+          <span class="text">Koh Samui</span>
+          <span class="separator"></span>
+          <span class="text">Bangkok</span>
+          <span class="separator"></span>
+          <span class="text">Chiang Mai</span>
+          <span class="separator"></span>
+          <span class="text">Phuket</span>
+          <span class="separator"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="fake-content">
+      <span style="color: var(--ink-light); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;">The Problem</span>
+      <div style="font-family: 'Playfair Display', serif; font-size: 24px; color: var(--mineral); margin-top: 8px;">Your water is missing what your body needs most</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Comparison -->
+<div class="comparison">
+  <table>
+    <thead>
+      <tr>
+        <th>Eigenschaft</th>
+        <th>A: Gold Band</th>
+        <th>B: Mineral Marquee</th>
+        <th>C: Subtle Track</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Hintergrund</strong></td>
+        <td><span class="tag gold">Soft Gold</span></td>
+        <td><span class="tag blue">Mineral Blue</span></td>
+        <td><span class="tag neutral">Warm-Off + Border</span></td>
+      </tr>
+      <tr>
+        <td><strong>Schrift</strong></td>
+        <td>Playfair Italic, 15px</td>
+        <td>Playfair Italic, 16px</td>
+        <td>Inter Uppercase, 12px</td>
+      </tr>
+      <tr>
+        <td><strong>Textfarbe</strong></td>
+        <td>Mineral Blue</td>
+        <td>Golden Hour</td>
+        <td>Ink Light</td>
+      </tr>
+      <tr>
+        <td><strong>Separator</strong></td>
+        <td>Checkmark Icon</td>
+        <td>Star Icon</td>
+        <td>Gold Dot</td>
+      </tr>
+      <tr>
+        <td><strong>Auffaelligkeit</strong></td>
+        <td>Mittel — warm, einladend</td>
+        <td>Hoch — Statement-Band</td>
+        <td>Niedrig — dezenter Ticker</td>
+      </tr>
+      <tr>
+        <td><strong>Luxo-Naehe</strong></td>
+        <td>Farb-Twist (Gold statt Rot)</td>
+        <td>Am naechsten (dunkles Band, helle Schrift)</td>
+        <td>Eigene Interpretation</td>
+      </tr>
+      <tr>
+        <td><strong>Italic-Ausnahme?</strong></td>
+        <td>Ja (Playfair Italic im Band)</td>
+        <td>Ja (Playfair Italic im Band)</td>
+        <td>Nein (konsistent mit Option B Cleanup)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

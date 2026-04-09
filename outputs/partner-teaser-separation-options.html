@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PartnerTeaser Separation - 3 Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --mineral-light: #3D6588;
+    --gold: #D4BFAA;
+    --golden-hour: #E8C9A0;
+    --ink: #3C3028;
+    --ink-light: #7A7067;
+    --warm-off: #F9F7F4;
+    --white: #FFFFFF;
+    --border-warm: #E8DFD3;
+    --footer-dark: #1D3347;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: var(--ink); background: #f0ede8; }
+
+  .page-header {
+    background: var(--mineral);
+    color: white;
+    padding: 40px;
+    text-align: center;
+  }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+  .page-header p { font-size: 14px; opacity: 0.7; max-width: 600px; margin: 0 auto; }
+
+  .option-wrapper { max-width: 1200px; margin: 32px auto; padding: 0 24px; }
+
+  .option-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 48px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .option-label {
+    display: flex; align-items: center; gap: 16px;
+    padding: 24px 32px; border-bottom: 1px solid #f0ede8;
+  }
+  .option-badge {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--mineral); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 18px; flex-shrink: 0;
+  }
+  .option-label h2 { font-size: 20px; font-weight: 600; }
+  .option-label .sub { font-size: 13px; color: var(--ink-light); margin-top: 2px; }
+  .option-notes {
+    padding: 20px 32px; background: var(--warm-off);
+    font-size: 13px; color: var(--ink-light); line-height: 1.6;
+    border-bottom: 1px solid #f0ede8;
+  }
+  .option-notes strong { color: var(--ink); }
+
+  /* Shared newsletter mock */
+  .mock-newsletter {
+    background: var(--warm-off);
+    padding: 48px 32px;
+    text-align: center;
+  }
+  .mock-newsletter .eyebrow {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-light); margin-bottom: 16px;
+  }
+  .mock-newsletter h3 {
+    font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400;
+    color: var(--mineral); margin-bottom: 12px;
+  }
+  .mock-newsletter p {
+    font-size: 15px; color: var(--ink-light); margin-bottom: 24px; max-width: 480px; margin-inline: auto;
+  }
+  .mock-newsletter .form-row {
+    display: flex; gap: 12px; max-width: 400px; margin: 0 auto;
+  }
+  .mock-newsletter input {
+    flex: 1; padding: 12px 20px; border: 1px solid var(--border-warm);
+    border-radius: 30px; font-size: 15px; font-family: inherit; outline: none;
+  }
+  .mock-newsletter button {
+    padding: 12px 24px; background: var(--mineral); color: white;
+    border: none; border-radius: 30px; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; white-space: nowrap;
+  }
+
+  /* Shared partner content */
+  .partner-content {
+    max-width: 1200px; margin: 0 auto;
+    padding: 56px clamp(24px, 5vw, 80px);
+    display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
+  }
+  .partner-content .eyebrow {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .partner-content h3 {
+    font-family: 'Playfair Display', serif; font-weight: 400;
+    margin-bottom: 8px; letter-spacing: -0.02em;
+  }
+  .partner-content .body { font-size: 15px; margin-bottom: 20px; max-width: 440px; }
+  .partner-content .cta {
+    display: inline-block; padding: 14px 32px; border-radius: 30px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none; transition: all 0.3s;
+  }
+  .partner-stats { display: flex; gap: 48px; }
+  .partner-stat { text-align: center; }
+  .partner-stat:not(:last-child) { padding-right: 48px; border-right: 1px solid; }
+  .partner-stat .num {
+    font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400;
+    line-height: 1; margin-bottom: 4px; letter-spacing: -0.02em;
+  }
+  .partner-stat .lbl {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+
+  /* Footer mock */
+  .mock-footer {
+    background: var(--footer-dark);
+    padding: 40px 32px;
+    text-align: center;
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    .partner-content { grid-template-columns: 1fr; gap: 32px; }
+    .partner-stats { gap: 24px; }
+    .partner-stat:not(:last-child) { padding-right: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>PartnerTeaser Separation Options</h1>
+  <p>Problem: Newsletter (bg-warm-off) und PartnerTeaser (bg-warm-off) verschmelzen visuell. 3 Loesungen.</p>
+</div>
+
+<div class="option-wrapper">
+
+  <!-- ════════════════════ OPTION A ════════════════════ -->
+  <div class="option-card">
+    <div class="option-label">
+      <div class="option-badge">A</div>
+      <div>
+        <h2>Mineral Blue Block</h2>
+        <div class="sub">PartnerTeaser bekommt bg-mineral (dunkel). Maximale Trennung, B2B-Signal.</div>
+      </div>
+    </div>
+    <div class="option-notes">
+      <strong>Logik:</strong> B2B-Content auf dunklem Hintergrund differenziert sich sofort von D2C-Content. Der Wechsel warm-off → mineral signalisiert: "Das hier ist fuer Geschaeftskunden."<br>
+      <strong>Vorteil:</strong> Staerkste visuelle Trennung. Stats in Gold auf Mineral-Blue wirken premium.<br>
+      <strong>Nachteil:</strong> Kann zu dunkel wirken direkt vor dem Footer (auch dunkel). Aber: Newsletter dazwischen puffert.
+    </div>
+
+    <div class="mock-newsletter">
+      <div class="eyebrow">Stay Connected</div>
+      <h3>Join the Ritual</h3>
+      <p>Drop your email below for exclusive wellness tips, product drops, and community offers.</p>
+      <div class="form-row">
+        <input type="email" placeholder="your@email.com">
+        <button>Unlock 10% Off</button>
+      </div>
+    </div>
+
+    <!-- OPTION A: Mineral Blue -->
+    <div style="background: var(--mineral);">
+      <div class="partner-content">
+        <div>
+          <div class="eyebrow" style="color: var(--golden-hour);">For Business</div>
+          <h3 style="font-size: 32px; color: white;">Stock Salt.Magic</h3>
+          <div class="body" style="color: rgba(255,255,255,0.7);">Join Thailand's fastest-growing daily hydration brand.</div>
+          <a class="cta" style="background: var(--gold); color: var(--footer-dark);">Explore Partnership</a>
+        </div>
+        <div class="partner-stats">
+          <div class="partner-stat" style="border-color: rgba(255,255,255,0.15);">
+            <div class="num" style="color: var(--golden-hour);">35-40%</div>
+            <div class="lbl" style="color: rgba(255,255,255,0.5);">Retailer Margins</div>
+          </div>
+          <div class="partner-stat" style="border-color: rgba(255,255,255,0.15);">
+            <div class="num" style="color: var(--golden-hour);">90%</div>
+            <div class="lbl" style="color: rgba(255,255,255,0.5);">Customer Retention</div>
+          </div>
+          <div class="partner-stat">
+            <div class="num" style="color: var(--golden-hour);">160+</div>
+            <div class="lbl" style="color: rgba(255,255,255,0.5);">Partner Locations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mock-footer">Made on Koh Samui &middot; &copy; 2026 Salt.Magic</div>
+  </div>
+
+  <!-- ════════════════════ OPTION B ════════════════════ -->
+  <div class="option-card">
+    <div class="option-label">
+      <div class="option-badge" style="background: #6B5B4E;">B</div>
+      <div>
+        <h2>White Block + Gold Border</h2>
+        <div class="sub">PartnerTeaser bekommt bg-white mit Gold-Topborder. Subtile aber klare Trennung.</div>
+      </div>
+    </div>
+    <div class="option-notes">
+      <strong>Logik:</strong> Wechsel von warm-off (#F9F7F4) zu reinem Weiss (#FFFFFF) plus eine Gold-Linie oben. Dezent, aber sichtbar.<br>
+      <strong>Vorteil:</strong> Minimaler Eingriff, bleibt hell, kein Dark-vor-Dark Problem mit Footer.<br>
+      <strong>Nachteil:</strong> Weniger dramatisch als Option A. Koennte zu subtil sein.
+    </div>
+
+    <div class="mock-newsletter">
+      <div class="eyebrow">Stay Connected</div>
+      <h3>Join the Ritual</h3>
+      <p>Drop your email below for exclusive wellness tips, product drops, and community offers.</p>
+      <div class="form-row">
+        <input type="email" placeholder="your@email.com">
+        <button>Unlock 10% Off</button>
+      </div>
+    </div>
+
+    <!-- OPTION B: White + Gold Border -->
+    <div style="background: white; border-top: 2px solid var(--gold);">
+      <div class="partner-content">
+        <div>
+          <div class="eyebrow" style="color: var(--ink-light);">For Business</div>
+          <h3 style="font-size: 32px; color: var(--mineral);">Stock Salt.Magic</h3>
+          <div class="body" style="color: var(--ink-light);">Join Thailand's fastest-growing daily hydration brand.</div>
+          <a class="cta" style="background: var(--mineral); color: white;">Explore Partnership</a>
+        </div>
+        <div class="partner-stats">
+          <div class="partner-stat" style="border-color: var(--border-warm);">
+            <div class="num" style="color: var(--mineral);">35-40%</div>
+            <div class="lbl" style="color: var(--ink-light);">Retailer Margins</div>
+          </div>
+          <div class="partner-stat" style="border-color: var(--border-warm);">
+            <div class="num" style="color: var(--mineral);">90%</div>
+            <div class="lbl" style="color: var(--ink-light);">Customer Retention</div>
+          </div>
+          <div class="partner-stat">
+            <div class="num" style="color: var(--mineral);">160+</div>
+            <div class="lbl" style="color: var(--ink-light);">Partner Locations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mock-footer">Made on Koh Samui &middot; &copy; 2026 Salt.Magic</div>
+  </div>
+
+  <!-- ════════════════════ OPTION C ════════════════════ -->
+  <div class="option-card">
+    <div class="option-label">
+      <div class="option-badge" style="background: #8B7355;">C</div>
+      <div>
+        <h2>Contained Card</h2>
+        <div class="sub">PartnerTeaser als gerahmte Card innerhalb der warm-off Flaeche. Section bleibt, Teaser hebt sich ab.</div>
+      </div>
+    </div>
+    <div class="option-notes">
+      <strong>Logik:</strong> Statt den Hintergrund zu aendern, wird der Teaser-Content als Card mit Border und leicht dunklerem Hintergrund dargestellt. Aehnlich wie bei Referenz-Brands die B2B-CTAs als "eingebettete Karten" zeigen.<br>
+      <strong>Vorteil:</strong> Kein Section-BG-Wechsel noetig. Card hebt sich klar ab. Sehr modular.<br>
+      <strong>Nachteil:</strong> Etwas weniger "full-bleed" Wirkung als A oder B.
+    </div>
+
+    <div class="mock-newsletter">
+      <div class="eyebrow">Stay Connected</div>
+      <h3>Join the Ritual</h3>
+      <p>Drop your email below for exclusive wellness tips, product drops, and community offers.</p>
+      <div class="form-row">
+        <input type="email" placeholder="your@email.com">
+        <button>Unlock 10% Off</button>
+      </div>
+    </div>
+
+    <!-- OPTION C: Contained Card -->
+    <div style="background: var(--warm-off); padding: 56px clamp(24px, 5vw, 80px);">
+      <div style="max-width: 1200px; margin: 0 auto; background: var(--mineral); border-radius: 16px; padding: 48px clamp(32px, 5vw, 56px); overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;">
+          <div>
+            <div class="eyebrow" style="color: var(--golden-hour);">For Business</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; color: white; margin-bottom: 8px; letter-spacing: -0.02em;">Stock Salt.Magic</h3>
+            <div style="font-size: 15px; color: rgba(255,255,255,0.7); margin-bottom: 20px; max-width: 440px;">Join Thailand's fastest-growing daily hydration brand.</div>
+            <a style="display: inline-block; padding: 14px 32px; background: var(--gold); color: var(--footer-dark); border-radius: 30px; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;">Explore Partnership</a>
+          </div>
+          <div class="partner-stats">
+            <div class="partner-stat" style="border-color: rgba(255,255,255,0.15);">
+              <div class="num" style="color: var(--golden-hour);">35-40%</div>
+              <div class="lbl" style="color: rgba(255,255,255,0.5);">Retailer Margins</div>
+            </div>
+            <div class="partner-stat" style="border-color: rgba(255,255,255,0.15);">
+              <div class="num" style="color: var(--golden-hour);">90%</div>
+              <div class="lbl" style="color: rgba(255,255,255,0.5);">Customer Retention</div>
+            </div>
+            <div class="partner-stat">
+              <div class="num" style="color: var(--golden-hour);">160+</div>
+              <div class="lbl" style="color: rgba(255,255,255,0.5);">Partner Locations</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mock-footer">Made on Koh Samui &middot; &copy; 2026 Salt.Magic</div>
+  </div>
+
+</div>
+
+<!-- Comparison -->
+<div style="max-width: 1200px; margin: 0 auto 60px; padding: 0 24px;">
+  <table style="width: 100%; background: white; border-radius: 12px; overflow: hidden; border-collapse: collapse; box-shadow: 0 2px 12px rgba(0,0,0,0.06);">
+    <thead>
+      <tr>
+        <th style="background: var(--mineral); color: white; padding: 12px 20px; font-size: 13px; font-weight: 500; text-align: left;">Eigenschaft</th>
+        <th style="background: var(--mineral); color: white; padding: 12px 20px; font-size: 13px; font-weight: 500; text-align: left;">A: Mineral Block</th>
+        <th style="background: var(--mineral); color: white; padding: 12px 20px; font-size: 13px; font-weight: 500; text-align: left;">B: White + Gold</th>
+        <th style="background: var(--mineral); color: white; padding: 12px 20px; font-size: 13px; font-weight: 500; text-align: left;">C: Contained Card</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;"><strong>Trennung</strong></td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">Maximal (Hell → Dunkel)</td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">Mittel (Warm-Off → Weiss + Linie)</td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">Stark (Card hebt sich ab)</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;"><strong>Footer-Uebergang</strong></td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">Dunkel → Dunkel (fliesst)</td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">Weiss → Dunkel (Kontrast)</td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">Warm-Off → Dunkel (sanft)</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;"><strong>B2B-Signal</strong></td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">Stark - eigene "Welt"</td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">Subtil</td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">Stark - eingerahmte Einladung</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;"><strong>Aufwand</strong></td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">~5 Zeilen CSS aendern</td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">~3 Zeilen CSS aendern</td>
+        <td style="padding: 10px 20px; border-bottom: 1px solid #f0ede8;">~10 Zeilen Layout aendern</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px 20px;"><strong>Empfehlung</strong></td>
+        <td style="padding: 10px 20px; font-weight: 600; color: var(--mineral);">Empfohlen</td>
+        <td style="padding: 10px 20px;">Sicher</td>
+        <td style="padding: 10px 20px;">Modern</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

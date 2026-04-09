@@ -41,7 +41,21 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V17 Partner Page Copy Review (2026-04-09). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V18 Homepage Consistency & Brand Enforcement (2026-04-09). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V18 Session (Homepage Consistency, Typography Cleanup & Brand Color Enforcement):
+- **Copy Review analysiert**: `reference/V1_Salt-Magic-Copy-Review.docx` vollstaendig durchgelesen, Section-Notes vs Master Copy verglichen, 7 Abweichungen dokumentiert. Section Notes sind die Quelle der Wahrheit
+- **Hero text-shadow gefixt**: Shadow vom Container auf einzelne Text-Elemente verschoben, Buttons haben keinen Shadow mehr
+- **Typography Option B umgesetzt** (PANPURI/Cure-inspiriert): 15 Italic-Instanzen aus 12 Components entfernt, alle `<em>` Tags eliminiert, font-weights auf 2 reduziert (normal + medium), font-semibold/font-bold/font-light komplett eliminiert, Footer-Labels von uppercase auf sentence case
+- **TrustBand Marquee** (Option C): Statisches Trust-Band durch scrollenden CSS-Marquee ersetzt — warm-off BG, uppercase sans-serif, Gold-Dot-Separatoren, 16 Items (6 Metriken + 10 Staedte), `animate-marquee` Keyframe in Tailwind Config
+- **SocialProof von Homepage entfernt**: Redundant mit TrustBand (3/4 Metriken identisch), unterbricht Problem→Loesung Flow. Component bleibt fuer Partner-Seite
+- **Em-Dashes durch Hyphens ersetzt**: 90 Instanzen in 21 Dateien, ueberall `-` statt `—`
+- **"Read the full story" Link entfernt**: StorySection hat nur noch "Shop Now" Button
+- **PartnerTeaser: Contained Card** (Option C): Mineral-Blue Card auf warm-off Background statt unsichtbarer Section-Wechsel. Gold-Eyebrow, weisser Text, Gold-Button
+- **Homepage Consistency Audit**: Eyebrow-Margins auf mb-5 standardisiert, inline-Klassen auf `.label-uppercase` CSS-Klasse, Body-Text von 5 auf 2 Groessen (15px + 13px), Button-Padding auf 2 Varianten (px-8 py-3.5 Standard, px-10 py-4 Large)
+- **Brand Color Enforcement**: `footer-dark` (#1D3347) und `deep-navy` (#1A3248) eliminiert — alles auf `mineral` (#294B6D). `golden-hour` (#E8C9A0) und `gold-light` (#E2D5C5) eliminiert — alles auf `gold` (#D4BFAA). `cream` und `amber-warm` als ungenutzte Tokens entfernt
+- **Farbpalette jetzt strikt nach Brand Guidelines**: Brand: mineral (#294B6D), gold (#D4BFAA), warm-white (#FFFFFF), mineral-light (#3D6588). Utility: ink, ink-light, ink-faint, sand, border-warm, warm-off
+- **Offen**: Copy Review Section Notes als Grundlage fuer naechste Copy-Implementierung
 
 Key Changes in V17 Session (Partner Page — Leo's Copy Review Implementation):
 - **Partner-Seite auf Leo's Copy umgestellt**: Alle 5 Sections aus `reference/V1_Salt-Magic-Copy-Review.docx` PART 2 implementiert
@@ -228,7 +242,7 @@ Key Changes in V3 Session:
 - **Accessibility:** Skip-to-content Link, focus-visible auf allen interaktiven Elementen, reduced-motion fuer Marquee + Hero-Carousel, Form-Labels, Footer-Kontrast verbessert
 - **Neue Components:** Team.tsx (Placeholder mit Initialen, wartet auf Portrait-Fotos), Divider.tsx ueberarbeitet (transparentes Logo, scroll-triggered Animation)
 
-Brand Colors: Mineral Blue #294B6D, Soft Gold #D4BFAA, Warm Charcoal #3C3028. Basis: Pure White #FFFFFF. Warm-Off #F9F7F4 fuer alternating Section-Backgrounds. Cream #F2EDE6 bleibt in Config aber ungenutzt. Kein Terracotta.
+Brand Colors (strikt nach Guidelines): Mineral Blue #294B6D (`mineral`), Soft Gold #D4BFAA (`gold`), Pure White #FFFFFF (`warm-white`), Product Photo BG #3D6588 (`mineral-light`). Utility-Tokens: Warm Charcoal #3C3028 (`ink`), Warm-Off #F9F7F4 (`warm-off`). Eliminiert in V18: footer-dark, deep-navy, golden-hour, gold-light, cream, amber-warm.
 
 **Key brand assets available in `reference/`:**
 - Brand guidelines (`reference/brand-guidelines/`)
