@@ -14,7 +14,9 @@ const items = [
   'Hua Hin',
   'Koh Phangan',
   'Pai',
+  'Koh Tao',
   'Krabi',
+  'Khanom',
 ]
 
 function MarqueeSet() {
