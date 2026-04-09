@@ -19,7 +19,7 @@ export default function PartnerForm() {
       <FadeIn className="max-w-[640px] mx-auto">
         <div className="text-center mb-10">
           <div className="gold-line" />
-          <p className="label-uppercase text-[12px] tracking-eyebrow text-ink-light mb-5">
+          <p className="label-uppercase text-ink-light mb-5">
             Get In Touch
           </p>
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
@@ -31,20 +31,22 @@ export default function PartnerForm() {
         </div>
 
         {submitted ? (
-          <div className="text-center py-16">
+          <div className="text-center py-16" aria-live="polite">
             <h3 className="font-display text-h3 font-normal text-mineral mb-3">Thank you!</h3>
             <p className="text-sm text-ink-light">
               We&apos;ve received your inquiry and will respond within 48 hours.
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} aria-label="Partner inquiry form">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-3.5">
               <div>
-                <label className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5">
+                <label htmlFor="partner-name" className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5 after:content-['*'] after:ml-0.5 after:text-gold">
                   Name
                 </label>
                 <input
+                  id="partner-name"
+                  name="name"
                   type="text"
                   required
                   placeholder="Your name"
@@ -52,10 +54,12 @@ export default function PartnerForm() {
                 />
               </div>
               <div>
-                <label className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5">
+                <label htmlFor="partner-company" className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5 after:content-['*'] after:ml-0.5 after:text-gold">
                   Company
                 </label>
                 <input
+                  id="partner-company"
+                  name="company"
                   type="text"
                   required
                   placeholder="Company name"
@@ -65,10 +69,12 @@ export default function PartnerForm() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-3.5">
               <div>
-                <label className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5">
+                <label htmlFor="partner-role" className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5 after:content-['*'] after:ml-0.5 after:text-gold">
                   Role
                 </label>
                 <input
+                  id="partner-role"
+                  name="role"
                   type="text"
                   required
                   placeholder="Your role"
@@ -76,10 +82,12 @@ export default function PartnerForm() {
                 />
               </div>
               <div>
-                <label className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5">
+                <label htmlFor="partner-email" className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5 after:content-['*'] after:ml-0.5 after:text-gold">
                   Email
                 </label>
                 <input
+                  id="partner-email"
+                  name="email"
                   type="email"
                   required
                   placeholder="you@company.com"
@@ -88,10 +96,12 @@ export default function PartnerForm() {
               </div>
             </div>
             <div className="mb-3.5">
-              <label className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5">
+              <label htmlFor="partner-message" className="block text-[12px] font-medium tracking-cta uppercase text-ink-light mb-1.5">
                 Message
               </label>
               <textarea
+                id="partner-message"
+                name="message"
                 rows={3}
                 placeholder="Tell us about your distribution interest..."
                 className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-sm font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint resize-none"
@@ -99,9 +109,9 @@ export default function PartnerForm() {
             </div>
             <button
               type="submit"
-              className="w-full py-4 bg-mineral text-white font-body text-[12px] font-medium tracking-cta uppercase border-none rounded-pill cursor-pointer hover:bg-mineral-light transition-colors duration-300"
+              className="w-full py-4 bg-mineral text-white font-body text-[12px] font-medium tracking-cta uppercase border-none rounded-pill cursor-pointer hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
-              Submit Inquiry
+              Become a Distribution Partner
             </button>
           </form>
         )}

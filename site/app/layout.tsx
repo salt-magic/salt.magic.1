@@ -10,15 +10,15 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
   display: 'swap',
-  weight: ['400', '500', '700'],
-  style: ['normal', 'italic'],
+  weight: ['400', '500'],
+  style: ['normal'],
 })
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500'],
 })
 
 export const metadata: Metadata = {

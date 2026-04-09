@@ -22,7 +22,7 @@ const brands = [
 
 export default function CategoryProof() {
   return (
-    <section className="py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,80px)]">
+    <section className="py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,64px)]">
       <FadeIn className="max-w-[1100px] mx-auto">
         <div className="mb-[clamp(36px,5vw,48px)]">
           <div className="gold-line" />
@@ -48,7 +48,7 @@ export default function CategoryProof() {
                 <p className="text-[13px] font-normal text-ink-light">
                   {brand.desc}
                 </p>
-                <span className="font-display text-[18px] font-normal text-gold">
+                <span className="font-display text-[18px] font-normal text-mineral">
                   {brand.stat}
                 </span>
               </div>

@@ -12,7 +12,7 @@ export default function PartnerHero() {
     <section className="bg-mineral pt-[clamp(180px,22vw,260px)] pb-[clamp(100px,14vw,160px)] px-[clamp(24px,5vw,64px)]">
       <div className="max-w-[1000px] mx-auto text-center">
         <FadeIn>
-          <p className="label-uppercase text-[12px] tracking-eyebrow text-gold mb-5">
+          <p className="label-uppercase text-gold mb-5">
             Distribution Partnership
           </p>
           <h1 className="headline-editorial text-white tracking-tight mb-5">
@@ -25,7 +25,7 @@ export default function PartnerHero() {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#partner-form"
-              className="px-8 py-3.5 bg-white text-mineral text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-gold transition-colors duration-300"
+              className="px-8 py-3.5 bg-white text-mineral text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
               Contact Us
             </a>
@@ -33,7 +33,7 @@ export default function PartnerHero() {
               href="/pitch-deck.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 border border-white/30 text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:border-white/60 hover:bg-white/5 transition-colors duration-300"
+              className="px-8 py-3.5 border border-white/30 text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:border-white/60 hover:bg-white/5 transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
               Download Pitch Deck
             </a>
@@ -46,7 +46,7 @@ export default function PartnerHero() {
               <div className="font-display text-h3 font-normal text-white mb-1.5">
                 {item.value}
               </div>
-              <div className="text-[12px] font-medium tracking-cta uppercase text-gold/70">
+              <div className="text-[12px] font-normal tracking-eyebrow uppercase text-gold">
                 {item.label}
               </div>
             </StaggerItem>

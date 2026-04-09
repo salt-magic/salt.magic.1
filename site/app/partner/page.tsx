@@ -41,7 +41,7 @@ export default function PartnerPage() {
         <div className="flex items-center px-[clamp(32px,6vw,80px)] py-[clamp(56px,8vw,100px)]">
           <div className="max-w-[460px]">
             <div className="gold-line" />
-            <p className="text-[12px] font-medium tracking-[.22em] uppercase text-ink-light mb-5">
+            <p className="label-uppercase text-ink-light mb-5">
               Why Distribute
             </p>
             <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
@@ -57,7 +57,7 @@ export default function PartnerPage() {
               </li>
               <li className="flex items-start gap-3 text-[15px] font-normal text-ink-light leading-relaxed">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2.5" />
-                <span><strong className="font-medium text-ink">90% customer retention</strong> across 150+ partner locations</span>
+                <span><strong className="font-medium text-ink">90% customer retention</strong> across 160+ partner locations</span>
               </li>
               <li className="flex items-start gap-3 text-[15px] font-normal text-ink-light leading-relaxed">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2.5" />
@@ -67,7 +67,7 @@ export default function PartnerPage() {
             <div className="mt-10">
               <a
                 href="#partner-form"
-                className="inline-block px-8 py-3.5 bg-mineral text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-mineral-light transition-colors duration-300"
+                className="inline-block px-8 py-3.5 bg-mineral text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Become a Distribution Partner
               </a>
@@ -112,6 +112,19 @@ export default function PartnerPage() {
             <p className="text-[13px] font-medium text-gold mt-1">MSRP 290 THB</p>
           </div>
         </div>
+      </section>
+
+      {/* 9b. Inline CTA */}
+      <section className="py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,64px)] text-center">
+        <p className="text-[15px] font-normal text-ink-light mb-6">
+          Ready to bring real hydration to your customers?
+        </p>
+        <a
+          href="#partner-form"
+          className="inline-block px-8 py-3.5 bg-mineral text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+        >
+          Become a Distribution Partner
+        </a>
       </section>
 
       {/* 10. Contact Form */}

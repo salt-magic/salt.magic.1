@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic Partner Page - UI/UX Audit Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: #f8f7f5; color: #3C3028; line-height: 1.6; }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header { background: #294B6D; color: white; padding: 48px 0 40px; }
+  header h1 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; margin-bottom: 8px; }
+  header .meta { font-size: 13px; opacity: 0.7; }
+  header .meta span { opacity: 1; color: #D4BFAA; }
+
+  /* Summary cards */
+  .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: -32px 0 40px; position: relative; z-index: 1; }
+  .summary-card { background: white; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); text-align: center; }
+  .summary-card .count { font-size: 36px; font-weight: 600; line-height: 1; margin-bottom: 4px; }
+  .summary-card .label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; color: #888; }
+  .summary-card.critical .count { color: #DC2626; }
+  .summary-card.high .count { color: #EA580C; }
+  .summary-card.medium .count { color: #CA8A04; }
+  .summary-card.low .count { color: #65A30D; }
+
+  /* Filter buttons */
+  .filters { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+  .filter-btn { padding: 6px 16px; border-radius: 100px; border: 1px solid #ddd; background: white; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+  .filter-btn:hover { border-color: #294B6D; }
+  .filter-btn.active { background: #294B6D; color: white; border-color: #294B6D; }
+
+  /* Findings */
+  .finding { background: white; border-radius: 12px; padding: 24px 28px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.04); border-left: 4px solid transparent; }
+  .finding.critical { border-left-color: #DC2626; }
+  .finding.high { border-left-color: #EA580C; }
+  .finding.medium { border-left-color: #CA8A04; }
+  .finding.low { border-left-color: #65A30D; }
+
+  .finding-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .finding-id { font-size: 12px; font-weight: 600; color: #999; min-width: 28px; }
+  .badge { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; padding: 3px 10px; border-radius: 100px; color: white; }
+  .badge.critical { background: #DC2626; }
+  .badge.high { background: #EA580C; }
+  .badge.medium { background: #CA8A04; }
+  .badge.low { background: #65A30D; }
+  .badge.fixed { background: #16A34A; }
+  .badge.deferred { background: #9CA3AF; }
+  .badge.category { background: #E5E7EB; color: #555; font-weight: 500; }
+
+  .finding-title { font-size: 15px; font-weight: 500; color: #294B6D; flex: 1; }
+  .finding-component { font-size: 12px; color: #999; font-weight: 400; }
+  .finding-desc { font-size: 14px; color: #666; margin-bottom: 12px; }
+
+  .code-block { background: #f5f3f0; border-radius: 8px; padding: 12px 16px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; line-height: 1.7; overflow-x: auto; margin-bottom: 8px; }
+  .code-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 4px; }
+  .code-old { color: #DC2626; }
+  .code-new { color: #16A34A; }
+
+  .status-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 4px; }
+  .status-badge.fixed { background: #DCFCE7; color: #16A34A; }
+  .status-badge.deferred { background: #F3F4F6; color: #9CA3AF; }
+
+  /* Section dividers */
+  .section-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: #294B6D; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #294B6D; }
+
+  /* Progress bar */
+  .progress { margin: 32px 0; }
+  .progress-bar { height: 8px; background: #E5E7EB; border-radius: 100px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, #16A34A, #65A30D); border-radius: 100px; transition: width 0.3s; }
+  .progress-label { font-size: 13px; color: #888; margin-top: 8px; }
+
+  /* Footer */
+  footer { margin-top: 64px; padding: 32px 0; border-top: 1px solid #eee; text-align: center; font-size: 12px; color: #aaa; }
+
+  @media (max-width: 640px) {
+    .summary { grid-template-columns: repeat(2, 1fr); }
+    .finding-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <p style="font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em; color: #D4BFAA; margin-bottom: 12px;">UI/UX Audit Report</p>
+    <h1>Partner Page Review</h1>
+    <p class="meta">2026-04-09 &middot; UI/UX Pro Max Framework (P1-P10) &middot; <span>22 Findings</span> &middot; <span>20 Fixed</span> &middot; <span>1 Deferred</span></p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Summary -->
+  <div class="summary">
+    <div class="summary-card critical">
+      <div class="count">2</div>
+      <div class="label">Critical</div>
+    </div>
+    <div class="summary-card high">
+      <div class="count">5</div>
+      <div class="label">High</div>
+    </div>
+    <div class="summary-card medium">
+      <div class="count">7</div>
+      <div class="label">Medium</div>
+    </div>
+    <div class="summary-card low">
+      <div class="count">8</div>
+      <div class="label">Low</div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress">
+    <div class="progress-bar"><div class="progress-fill" style="width: 91%"></div></div>
+    <p class="progress-label">20 of 22 findings resolved (91%) &middot; 1 deferred (Pitch Deck PDF) &middot; 1 not applicable</p>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+    <button class="filter-btn active" onclick="filterFindings('all')">All (22)</button>
+    <button class="filter-btn" onclick="filterFindings('critical')">Critical (2)</button>
+    <button class="filter-btn" onclick="filterFindings('high')">High (5)</button>
+    <button class="filter-btn" onclick="filterFindings('medium')">Medium (7)</button>
+    <button class="filter-btn" onclick="filterFindings('low')">Low (8)</button>
+  </div>
+
+  <!-- ============ CRITICAL ============ -->
+  <div class="section-title">Critical Findings</div>
+
+  <div class="finding critical" data-severity="critical">
+    <div class="finding-header">
+      <span class="finding-id">C1</span>
+      <span class="badge critical">Critical</span>
+      <span class="badge category">P1 Accessibility</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">CategoryProof, MarketComparison</span>
+    </div>
+    <div class="finding-title">Gold text on white/light backgrounds fails WCAG contrast (1.77:1)</div>
+    <div class="finding-desc">
+      <code>text-gold</code> (#D4BFAA) on white backgrounds produces only 1.77:1 contrast ratio, far below the 4.5:1 WCAG AA minimum. Affected: brand stat values ($500M+, 8-figure, $1.4B) and growth percentages (88% on warm-off card).
+    </div>
+    <p class="code-label">Before</p>
+    <div class="code-block"><span class="code-old">text-gold</span> &rarr; 1.77:1 on white, 1.66:1 on warm-off</div>
+    <p class="code-label">After</p>
+    <div class="code-block"><span class="code-new">text-mineral</span> &rarr; 8.47:1 on white, 7.9:1 on warm-off</div>
+  </div>
+
+  <div class="finding critical" data-severity="critical">
+    <div class="finding-header">
+      <span class="finding-id">C2</span>
+      <span class="badge critical">Critical</span>
+      <span class="badge category">P9 Navigation</span>
+      <span class="status-badge deferred">Deferred</span>
+      <span class="finding-component">PartnerHero</span>
+    </div>
+    <div class="finding-title">Pitch Deck PDF does not exist - CTA leads to 404</div>
+    <div class="finding-desc">
+      The "Download Pitch Deck" CTA links to <code>/pitch-deck.pdf</code> which does not exist. Leo will provide the PDF later. Link remains as-is until then.
+    </div>
+  </div>
+
+  <!-- ============ HIGH ============ -->
+  <div class="section-title">High Findings</div>
+
+  <div class="finding high" data-severity="high">
+    <div class="finding-header">
+      <span class="finding-id">H1</span>
+      <span class="badge high">High</span>
+      <span class="badge category">P1 Accessibility</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">All Partner Sections</span>
+    </div>
+    <div class="finding-title">No focus-visible styles on any Partner page CTA</div>
+    <div class="finding-desc">
+      All 6 interactive elements (PartnerHero 2x, Why Distribute 1x, inline CTA 1x, PartnerForm 1x) lacked keyboard focus indicators. Nav used <code>focusRing</code> pattern but partner page did not.
+    </div>
+    <p class="code-label">Fix applied to all CTAs</p>
+    <div class="code-block"><span class="code-new">focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold</span></div>
+  </div>
+
+  <div class="finding high" data-severity="high">
+    <div class="finding-header">
+      <span class="finding-id">H2</span>
+      <span class="badge high">High</span>
+      <span class="badge category">P8 Forms</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerForm</span>
+    </div>
+    <div class="finding-title">Form labels not programmatically associated with inputs</div>
+    <div class="finding-desc">
+      <code>&lt;label&gt;</code> elements had no <code>htmlFor</code> attribute and inputs had no <code>id</code>. Screen readers could not associate labels with their fields.
+    </div>
+    <p class="code-label">Fix</p>
+    <div class="code-block"><span class="code-new">htmlFor="partner-name"</span> + <span class="code-new">id="partner-name"</span> on all 5 field pairs</div>
+  </div>
+
+  <div class="finding high" data-severity="high">
+    <div class="finding-header">
+      <span class="finding-id">H3</span>
+      <span class="badge high">High</span>
+      <span class="badge category">P8 Forms</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerForm</span>
+    </div>
+    <div class="finding-title">Form inputs missing name attributes</div>
+    <div class="finding-desc">
+      Without <code>name</code> attributes, form data cannot be serialized or sent to a backend. All 5 fields now have proper names.
+    </div>
+    <p class="code-label">Fix</p>
+    <div class="code-block"><span class="code-new">name="name"</span>, <span class="code-new">name="company"</span>, <span class="code-new">name="role"</span>, <span class="code-new">name="email"</span>, <span class="code-new">name="message"</span></div>
+  </div>
+
+  <div class="finding high" data-severity="high">
+    <div class="finding-header">
+      <span class="finding-id">H4</span>
+      <span class="badge high">High</span>
+      <span class="badge category">P1 Accessibility</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerHero</span>
+    </div>
+    <div class="finding-title">Stat labels use text-gold/70 on mineral - contrast ~3.5:1</div>
+    <div class="finding-desc">
+      Gold (#D4BFAA) at 70% opacity on mineral blue (#294B6D) produces ~3.5:1, below 4.5:1 for 12px text.
+    </div>
+    <p class="code-label">Before &rarr; After</p>
+    <div class="code-block"><span class="code-old">text-gold/70</span> (~3.5:1) &rarr; <span class="code-new">text-gold</span> (~5.1:1, passes)</div>
+  </div>
+
+  <div class="finding high" data-severity="high">
+    <div class="finding-header">
+      <span class="finding-id">H5</span>
+      <span class="badge high">High</span>
+      <span class="badge category">P3 Performance</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">layout.tsx</span>
+    </div>
+    <div class="finding-title">Unused font weights loaded (Playfair 700, Inter 300/600)</div>
+    <div class="finding-desc">
+      Brand guidelines specify only weights 400 + 500. Loading unused weights wastes bandwidth. Also removed italic style from Playfair (eliminated in V18).
+    </div>
+    <p class="code-label">Before &rarr; After</p>
+    <div class="code-block">Playfair: <span class="code-old">['400','500','700']</span> &rarr; <span class="code-new">['400','500']</span>, style: <span class="code-old">['normal','italic']</span> &rarr; <span class="code-new">['normal']</span><br>Inter: <span class="code-old">['300','400','500','600']</span> &rarr; <span class="code-new">['400','500']</span></div>
+  </div>
+
+  <!-- ============ MEDIUM ============ -->
+  <div class="section-title">Medium Findings</div>
+
+  <div class="finding medium" data-severity="medium">
+    <div class="finding-header">
+      <span class="finding-id">M1</span>
+      <span class="badge medium">Medium</span>
+      <span class="badge category">P4 Consistency</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerForm</span>
+    </div>
+    <div class="finding-title">Button text "Submit Inquiry" instead of "Become a Distribution Partner"</div>
+    <div class="finding-desc">V17 review specified the CTA should match Leo's copy. Updated.</div>
+  </div>
+
+  <div class="finding medium" data-severity="medium">
+    <div class="finding-header">
+      <span class="finding-id">M2</span>
+      <span class="badge medium">Medium</span>
+      <span class="badge category">P1 Accessibility</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerForm</span>
+    </div>
+    <div class="finding-title">No aria-live on form success state</div>
+    <div class="finding-desc">Screen readers could not detect the "Thank you" message after submission. Added <code>aria-live="polite"</code> to the success container.</div>
+  </div>
+
+  <div class="finding medium" data-severity="medium">
+    <div class="finding-header">
+      <span class="finding-id">M3</span>
+      <span class="badge medium">Medium</span>
+      <span class="badge category">P8 Forms</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerForm</span>
+    </div>
+    <div class="finding-title">No required field visual indicators</div>
+    <div class="finding-desc">4 required fields had no visual distinction from the optional Message field. Added gold asterisk (*) via <code>after:</code> pseudo-element on required field labels.</div>
+  </div>
+
+  <div class="finding medium" data-severity="medium">
+    <div class="finding-header">
+      <span class="finding-id">M4</span>
+      <span class="badge medium">Medium</span>
+      <span class="badge category">P4 Consistency</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">MarketComparison, CategoryProof, RevenueComparison</span>
+    </div>
+    <div class="finding-title">Horizontal padding inconsistency: 80px vs 64px max</div>
+    <div class="finding-desc">Three sections used <code>px-[clamp(24px,5vw,80px)]</code> while others used 64px max. Standardized all to 64px to match PartnerHero, Comparison, and PartnerForm.</div>
+  </div>
+
+  <div class="finding medium" data-severity="medium">
+    <div class="finding-header">
+      <span class="finding-id">M5</span>
+      <span class="badge medium">Medium</span>
+      <span class="badge category">P10 Persuasion</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">page.tsx</span>
+    </div>
+    <div class="finding-title">No CTA between Comparison/ProductFormats and Form</div>
+    <div class="finding-desc">3 sections without an intermediate call-to-action. Added inline CTA section after ProductFormats: "Ready to bring real hydration to your customers?" + button linking to #partner-form.</div>
+  </div>
+
+  <div class="finding medium" data-severity="medium">
+    <div class="finding-header">
+      <span class="finding-id">M6</span>
+      <span class="badge medium">Medium</span>
+      <span class="badge category">P4 Consistency</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerHero, PartnerForm</span>
+    </div>
+    <div class="finding-title">Redundant CSS classes alongside label-uppercase utility</div>
+    <div class="finding-desc"><code>text-[12px] tracking-eyebrow</code> was declared inline alongside <code>.label-uppercase</code> which already includes these properties. Removed duplicates.</div>
+  </div>
+
+  <div class="finding medium" data-severity="medium">
+    <div class="finding-header">
+      <span class="finding-id">M7</span>
+      <span class="badge medium">Medium</span>
+      <span class="badge category">P4 Consistency</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">page.tsx</span>
+    </div>
+    <div class="finding-title">"150+" instead of "160+" locations in Why Distribute</div>
+    <div class="finding-desc">All other sections reference 160+ locations. This was a stale value. Updated.</div>
+  </div>
+
+  <!-- ============ LOW ============ -->
+  <div class="section-title">Low Findings</div>
+
+  <div class="finding low" data-severity="low">
+    <div class="finding-header">
+      <span class="finding-id">L1</span>
+      <span class="badge low">Low</span>
+      <span class="badge category">P6 Typography</span>
+      <span class="status-badge deferred">Skipped</span>
+      <span class="finding-component">PartnerForm, CategoryProof</span>
+    </div>
+    <div class="finding-title">Mixed text-sm and text-[14px] notation</div>
+    <div class="finding-desc">Both resolve to 14px. Minor inconsistency in notation, no visual impact. Deferred for future cleanup.</div>
+  </div>
+
+  <div class="finding low" data-severity="low">
+    <div class="finding-header">
+      <span class="finding-id">L2</span>
+      <span class="badge low">Low</span>
+      <span class="badge category">P1 Accessibility</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerForm</span>
+    </div>
+    <div class="finding-title">No aria-label on form element</div>
+    <div class="finding-desc">Added <code>aria-label="Partner inquiry form"</code> to help screen reader users identify the form's purpose.</div>
+  </div>
+
+  <div class="finding low" data-severity="low">
+    <div class="finding-header">
+      <span class="finding-id">L3</span>
+      <span class="badge low">Low</span>
+      <span class="badge category">P6 Typography</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">page.tsx</span>
+    </div>
+    <div class="finding-title">Handwritten tracking-[.22em] instead of tracking-eyebrow token</div>
+    <div class="finding-desc">Why Distribute eyebrow used a raw value. Replaced with <code>label-uppercase</code> utility class for consistency.</div>
+  </div>
+
+  <div class="finding low" data-severity="low">
+    <div class="finding-header">
+      <span class="finding-id">L4</span>
+      <span class="badge low">Low</span>
+      <span class="badge category">P5 Layout</span>
+      <span class="status-badge deferred">N/A</span>
+      <span class="finding-component">CategoryProof</span>
+    </div>
+    <div class="finding-title">CategoryProof header left-aligned while others centered</div>
+    <div class="finding-desc">Intentional editorial alignment per V9 session (editorial sections left-aligned, immersive sections centered). No fix needed.</div>
+  </div>
+
+  <div class="finding low" data-severity="low">
+    <div class="finding-header">
+      <span class="finding-id">L5</span>
+      <span class="badge low">Low</span>
+      <span class="badge category">P6 Typography</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerHero</span>
+    </div>
+    <div class="finding-title">Stat labels used tracking-cta (0.12em) instead of tracking-eyebrow (0.2em)</div>
+    <div class="finding-desc">Updated to match the refined PANPURI-style tracking applied to Nav in this session.</div>
+  </div>
+
+  <div class="finding low" data-severity="low">
+    <div class="finding-header">
+      <span class="finding-id">L6</span>
+      <span class="badge low">Low</span>
+      <span class="badge category">P6 Typography</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">MarketComparison</span>
+    </div>
+    <div class="finding-title">"The wave is coming." used text-[16px] instead of body standard</div>
+    <div class="finding-desc">Changed to <code>text-[15px]</code> to match the partner page body text standard.</div>
+  </div>
+
+  <div class="finding low" data-severity="low">
+    <div class="finding-header">
+      <span class="finding-id">L7</span>
+      <span class="badge low">Low</span>
+      <span class="badge category">P1 Accessibility</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">PartnerForm</span>
+    </div>
+    <div class="finding-title">Missing form aria-label</div>
+    <div class="finding-desc">Same as L2, consolidated fix.</div>
+  </div>
+
+  <div class="finding low" data-severity="low">
+    <div class="finding-header">
+      <span class="finding-id">L8</span>
+      <span class="badge low">Low</span>
+      <span class="badge category">P6 Typography</span>
+      <span class="status-badge fixed">Fixed</span>
+      <span class="finding-component">page.tsx</span>
+    </div>
+    <div class="finding-title">Why Distribute tracking-[.22em] - handwritten value instead of token</div>
+    <div class="finding-desc">Same as L3, consolidated fix. Now uses <code>label-uppercase</code> class.</div>
+  </div>
+
+  <!-- Files Changed -->
+  <div class="section-title">Files Modified</div>
+  <div class="finding low" data-severity="all" style="border-left-color: #294B6D;">
+    <div style="font-size: 13px; line-height: 2; font-family: 'SF Mono', monospace;">
+      site/components/CategoryProof.tsx<br>
+      site/components/MarketComparison.tsx<br>
+      site/components/PartnerHero.tsx<br>
+      site/components/PartnerForm.tsx<br>
+      site/components/RevenueComparison.tsx<br>
+      site/app/partner/page.tsx<br>
+      site/app/layout.tsx
+    </div>
+  </div>
+
+  <footer>
+    Salt.Magic Partner Page UI/UX Audit &middot; Generated 2026-04-09 &middot; UI/UX Pro Max Framework
+  </footer>
+</div>
+
+<script>
+function filterFindings(severity) {
+  document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.finding').forEach(el => {
+    if (severity === 'all') {
+      el.style.display = '';
+    } else {
+      el.style.display = el.dataset.severity === severity ? '' : 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

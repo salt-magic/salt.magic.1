@@ -4,7 +4,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from './Motion'
 
 export default function MarketComparison() {
   return (
-    <section className="py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,80px)]">
+    <section className="py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,64px)]">
       <FadeIn className="max-w-[1100px] mx-auto">
         <div className="text-center mb-[clamp(32px,5vw,48px)]">
           <div className="gold-line" />
@@ -58,7 +58,7 @@ export default function MarketComparison() {
                   <span className="font-display text-h4 font-normal text-mineral">$21.3B</span>
                   <span className="text-[13px] text-ink-light">projected by 2034</span>
                 </div>
-                <span className="text-[12px] font-medium text-gold">88% growth</span>
+                <span className="text-[12px] font-medium text-mineral">88% growth</span>
               </div>
             </div>
           </StaggerItem>
@@ -101,9 +101,10 @@ export default function MarketComparison() {
         </StaggerContainer>
 
         <FadeIn className="text-center mt-8">
-          <p className="text-[16px] font-display text-mineral">
+          <p className="text-[15px] font-display text-mineral">
             The wave is coming.
           </p>
+
         </FadeIn>
       </FadeIn>
     </section>
