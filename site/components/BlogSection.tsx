@@ -14,7 +14,7 @@ export default function BlogSection() {
           Salt.Magic Blog
         </p>
         <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
-          Science-backed insights for <em>better hydration</em>
+          Science-backed insights for better hydration
         </h2>
       </FadeIn>
 

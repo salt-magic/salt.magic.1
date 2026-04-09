@@ -12,7 +12,7 @@ export default function RevenueComparison() {
             The Revenue Difference
           </p>
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
-            The Bottom Line: <em>4.4x More Revenue</em>
+            The Bottom Line: 4.4x More Revenue
           </h2>
           <p className="text-[15px] font-normal leading-relaxed text-ink-light max-w-[600px] mx-auto">
             We aren&apos;t selling an occasional sports recovery drink. We are selling a 365-day habit.

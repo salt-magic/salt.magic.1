@@ -30,7 +30,7 @@ export default function CategoryProof() {
             Category Proof
           </p>
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
-            Clean hydration builds <em>unicorns.</em>
+            Clean hydration builds unicorns.
           </h2>
           <p className="text-[15px] font-normal leading-relaxed text-ink-light max-w-[560px]">
             The biggest wellness brands of the last decade started exactly where Salt.Magic is now.

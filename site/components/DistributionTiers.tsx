@@ -42,7 +42,7 @@ export default function DistributionTiers() {
           Distribution Model
         </p>
         <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
-          Three paths to <em>partnership</em>
+          Three paths to partnership
         </h2>
       </FadeIn>
 

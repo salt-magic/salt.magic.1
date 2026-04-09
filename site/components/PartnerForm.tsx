@@ -23,7 +23,7 @@ export default function PartnerForm() {
             Get In Touch
           </p>
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
-            Become a <em>partner</em>
+            Become a partner
           </h2>
           <p className="text-sm font-normal text-ink-light mt-3">
             We&apos;ll respond within 48 hours.

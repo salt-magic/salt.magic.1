@@ -22,7 +22,7 @@ export default function LocationMap() {
           Our Network
         </p>
         <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
-          160+ locations across <em>Thailand</em>
+          160+ locations across Thailand
         </h2>
       </FadeIn>
 

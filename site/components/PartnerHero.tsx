@@ -16,7 +16,7 @@ export default function PartnerHero() {
             Distribution Partnership
           </p>
           <h1 className="headline-editorial text-white tracking-tight mb-5">
-            Capture the Next Wave<br className="hidden sm:inline" /> of <em>Wellness</em>
+            Capture the Next Wave<br className="hidden sm:inline" /> of Wellness
           </h1>
           <p className="text-[15px] font-normal leading-relaxed text-white/70 max-w-[560px] mx-auto mb-10">
             The global electrolyte market is exploding. Partner with Thailand&apos;s first

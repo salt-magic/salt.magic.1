@@ -31,7 +31,7 @@ export default function RevenueModel() {
             Revenue Model
           </p>
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
-            Built for <em>healthy margins</em>
+            Built for healthy margins
           </h2>
         </div>
 
