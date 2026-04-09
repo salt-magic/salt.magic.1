@@ -63,14 +63,14 @@ export default async function BlogArticlePage({
             <span className="px-3 py-1 bg-white/90 text-ink text-[11px] font-medium tracking-[.1em] uppercase rounded-full">
               {post.category}
             </span>
-            <span className="text-[13px] font-light text-white/80">
+            <span className="text-[13px] font-normal text-white/80">
               {post.date}
             </span>
           </div>
           <h1 className="headline-editorial text-white max-w-[800px] tracking-tight">
             {post.title}
           </h1>
-          <p className="text-[13px] font-light text-white/60 mt-4">
+          <p className="text-[13px] font-normal text-white/60 mt-4">
             {post.readTime}
           </p>
         </FadeIn>
@@ -82,13 +82,13 @@ export default async function BlogArticlePage({
           className="
             max-w-[680px] mx-auto px-[clamp(24px,5vw,64px)]
             pt-[clamp(60px,8vw,100px)] pb-[clamp(60px,8vw,100px)]
-            font-body text-[16px] font-light leading-relaxed text-ink-light
+            font-body text-[16px] font-normal leading-relaxed text-ink-light
             [&>p+p]:mt-6
             [&>h2]:font-display [&>h2]:text-[clamp(24px,3vw,32px)] [&>h2]:font-normal [&>h2]:text-mineral [&>h2]:mt-12 [&>h2]:mb-5 [&>h2]:leading-[1.2]
             [&>p.text-lg]:text-[18px] [&>p.text-lg]:font-normal [&>p.text-lg]:text-ink [&>p.text-lg]:mb-8
             [&>blockquote]:relative [&>blockquote]:my-12 [&>blockquote]:pl-0 [&>blockquote]:border-none [&>blockquote]:text-center
             [&>blockquote]:before:content-['\u201C'] [&>blockquote]:before:block [&>blockquote]:before:font-display [&>blockquote]:before:text-[80px] [&>blockquote]:before:leading-none [&>blockquote]:before:text-gold/30 [&>blockquote]:before:-mb-4
-            [&>blockquote]:font-display [&>blockquote]:text-[clamp(18px,2.5vw,22px)] [&>blockquote]:italic [&>blockquote]:text-mineral [&>blockquote]:leading-relaxed [&>blockquote]:max-w-[560px] [&>blockquote]:mx-auto
+            [&>blockquote]:font-display [&>blockquote]:text-[clamp(18px,2.5vw,22px)] [&>blockquote]:not-italic [&>blockquote]:text-mineral [&>blockquote]:leading-relaxed [&>blockquote]:max-w-[560px] [&>blockquote]:mx-auto
           "
           dangerouslySetInnerHTML={{ __html: post.content }}
         />

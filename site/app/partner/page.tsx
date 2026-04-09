@@ -45,21 +45,21 @@ export default function PartnerPage() {
               Why Distribute
             </p>
             <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
-              Why distribute <em className="italic">Salt.Magic?</em>
+              Why distribute Salt.Magic?
             </h2>
-            <p className="text-[15px] font-light leading-relaxed text-ink-light mb-8">
+            <p className="text-[15px] font-normal leading-relaxed text-ink-light mb-8">
               Bring Thailand&apos;s first sugar-free, flavorless daily electrolyte mineralizer to your customers.
             </p>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3 text-[15px] font-light text-ink-light leading-relaxed">
+              <li className="flex items-start gap-3 text-[15px] font-normal text-ink-light leading-relaxed">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2.5" />
                 <span><strong className="font-medium text-ink">35–40% retailer margins</strong></span>
               </li>
-              <li className="flex items-start gap-3 text-[15px] font-light text-ink-light leading-relaxed">
+              <li className="flex items-start gap-3 text-[15px] font-normal text-ink-light leading-relaxed">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2.5" />
                 <span><strong className="font-medium text-ink">90% customer retention</strong> across 150+ partner locations</span>
               </li>
-              <li className="flex items-start gap-3 text-[15px] font-light text-ink-light leading-relaxed">
+              <li className="flex items-start gap-3 text-[15px] font-normal text-ink-light leading-relaxed">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2.5" />
                 <span><strong className="font-medium text-ink">7x more magnesium</strong> than competitors. Zero sugar. Zero plastic waste.</span>
               </li>
@@ -67,7 +67,7 @@ export default function PartnerPage() {
             <div className="mt-10">
               <a
                 href="#partner-form"
-                className="inline-block px-8 py-3.5 bg-mineral text-white text-[12px] font-semibold tracking-cta uppercase rounded-pill hover:bg-mineral-light transition-colors duration-300"
+                className="inline-block px-8 py-3.5 bg-mineral text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-mineral-light transition-colors duration-300"
               >
                 Become a Distribution Partner
               </a>
@@ -94,7 +94,7 @@ export default function PartnerPage() {
           />
           <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 bg-gradient-to-t from-[rgba(26,50,72,0.85)] via-[rgba(26,50,72,0.4)] to-transparent">
             <h3 className="font-display text-[20px] font-normal text-white mb-1">Signature Glass Jar</h3>
-            <p className="text-[12px] font-light text-white/70">160g — 70 servings</p>
+            <p className="text-[12px] font-normal text-white/70">160g — 70 servings</p>
             <p className="text-[13px] font-medium text-golden-hour mt-1">MSRP 490 THB</p>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function PartnerPage() {
           />
           <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 bg-gradient-to-t from-[rgba(26,50,72,0.85)] via-[rgba(26,50,72,0.4)] to-transparent">
             <h3 className="font-display text-[20px] font-normal text-white mb-1">Travel Pouch</h3>
-            <p className="text-[12px] font-light text-white/70">16g — 30 servings</p>
+            <p className="text-[12px] font-normal text-white/70">16g — 30 servings</p>
             <p className="text-[13px] font-medium text-golden-hour mt-1">MSRP 290 THB</p>
           </div>
         </div>

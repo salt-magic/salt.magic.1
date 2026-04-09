@@ -42,7 +42,7 @@
   }
 
   .subheadline-light {
-    @apply font-body text-xl md:text-2xl font-light leading-relaxed;
+    @apply font-body text-xl md:text-2xl font-normal leading-relaxed;
   }
 
   .texture-linen {
