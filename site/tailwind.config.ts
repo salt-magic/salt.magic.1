@@ -46,6 +46,15 @@ const config: Config = {
         'eyebrow': '0.2em',
         'cta': '0.12em',
       },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        marquee: 'marquee 35s linear infinite',
+      },
     },
   },
   plugins: [],
