@@ -51,8 +51,8 @@ export default function WhySection() {
           <div className="relative overflow-hidden rounded-2xl aspect-[4/5] lg:aspect-auto lg:min-h-[600px]">
             <div className="absolute inset-0">
               <Image
-                src="/images/products/taylor-poolside.jpg"
-                alt="Salt.Magic glass jar by the pool - natural electrolytes for daily wellness"
+                src="/images/products/why-sachet-pouch.webp"
+                alt="Salt.Magic travel pouch with natural electrolytes on desk with sleep mask"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 55vw"
