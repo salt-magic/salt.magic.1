@@ -6,7 +6,7 @@ import { FadeIn } from './Motion'
 import { useReducedMotion } from 'framer-motion'
 
 const slides = [
-  { src: '/images/products/taylor-hero.jpg', alt: 'Salt.Magic — Natural Electrolytes glass jar in tropical water' },
+  { src: '/images/products/taylor-hero.jpg', alt: 'Salt.Magic - Natural Electrolytes glass jar in tropical water' },
   { src: '/images/products/greenery-jars.jpg', alt: 'Salt.Magic jars among tropical greenery' },
   { src: '/images/products/taylor-water-nature.jpg', alt: 'Salt.Magic jar in natural water among tropical plants' },
 ]
@@ -26,7 +26,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[100dvh] min-h-[600px] overflow-hidden">
-      {/* Slides — CSS transitions for mobile performance */}
+      {/* Slides - CSS transitions for mobile performance */}
       {slides.map((slide, i) => (
         <div
           key={slide.src}
@@ -46,14 +46,14 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* Warm overlay — lighter to let product imagery breathe */}
+      {/* Warm overlay - lighter to let product imagery breathe */}
       <div
         className="absolute inset-0 z-[1]"
         style={{
           background: 'linear-gradient(180deg, rgba(30,20,10,0.05) 0%, rgba(30,20,10,0.18) 30%, rgba(30,20,10,0.40) 55%, rgba(30,20,10,0.60) 100%)',
         }}
       />
-      {/* Film grain texture — hidden on mobile for performance */}
+      {/* Film grain texture - hidden on mobile for performance */}
       <div
         className="absolute inset-0 z-[2] pointer-events-none opacity-[0.04] mix-blend-overlay hidden md:block"
         style={{
@@ -62,7 +62,7 @@ export default function Hero() {
         }}
       />
 
-      {/* Arrows — hidden on mobile (too small, overlap text) */}
+      {/* Arrows - hidden on mobile (too small, overlap text) */}
       <button
         onClick={prev}
         className="hidden md:flex absolute left-[clamp(20px,4vw,56px)] top-1/2 -translate-y-1/2 z-10 bg-transparent border-none cursor-pointer group items-center justify-center min-h-[44px] min-w-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm"
@@ -86,7 +86,7 @@ export default function Hero() {
         </svg>
       </button>
 
-      {/* Content — centered */}
+      {/* Content - centered */}
       <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-[clamp(24px,6vw,80px)] pb-[clamp(80px,12vw,140px)]">
         <div className="max-w-[720px]">
           <FadeIn delay={0.1}>
@@ -103,7 +103,7 @@ export default function Hero() {
           </FadeIn>
           <FadeIn delay={0.35}>
             <p className="text-[17px] font-normal leading-relaxed text-white/90 mb-10 max-w-[520px] mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
-              85% of bottled water in Thailand is &ldquo;dead water&rdquo; &mdash; purified, but nutritionally empty. Your body deserves better.
+              85% of bottled water in Thailand is &ldquo;dead water&rdquo; - purified, but nutritionally empty. Your body deserves better.
             </p>
           </FadeIn>
           <FadeIn delay={0.45}>

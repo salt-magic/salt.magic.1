@@ -218,12 +218,12 @@ export default function Comparison() {
             onTouchEnd={onTouchEnd}
           >
             <div className="grid grid-cols-2">
-              {/* Salt.Magic — always visible */}
+              {/* Salt.Magic - always visible */}
               <div role="row" className="p-6 flex flex-col bg-white">
                 <ColContent col={hero} isHero />
               </div>
 
-              {/* Active competitor — swipeable */}
+              {/* Active competitor - swipeable */}
               <div
                 role="row"
                 className="p-6 flex flex-col bg-white/[0.12] backdrop-blur-lg border-l border-white/[0.12] relative"

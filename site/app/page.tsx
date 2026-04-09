@@ -23,24 +23,24 @@ export default function Home() {
     <>
       {/* ===== ATTENTION ===== */}
 
-      {/* 1. Hero — Emotional hook + primary CTA */}
+      {/* 1. Hero - Emotional hook + primary CTA */}
       <Hero />
 
-      {/* 2. Trust Band — Subtle social proof */}
+      {/* 2. Trust Band - Subtle social proof */}
       <TrustBand />
 
       {/* ===== INTEREST ===== */}
 
-      {/* 3. The Problem — Why your water is "dead" */}
+      {/* 3. The Problem - Why your water is "dead" */}
       <WhySection />
 
-      {/* 4. Social Proof — Numbers (after problem = credibility) */}
+      {/* 4. Social Proof - Numbers (after problem = credibility) */}
       <SocialProof />
 
-      {/* 4. The Formula — Split layout: image left, ingredients right */}
+      {/* 4. The Formula - Split layout: image left, ingredients right */}
       <section className="bg-warm-off">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] lg:min-h-[800px]">
-          {/* Image — left side */}
+          {/* Image - left side */}
           <div className="relative min-h-[300px] overflow-hidden">
             <Image
               src="/images/products/taylor-closeup.jpg"
@@ -61,7 +61,7 @@ export default function Home() {
             />
           </div>
 
-          {/* Content — right side */}
+          {/* Content - right side */}
           <div className="flex flex-col justify-center py-[56px] px-[24px] lg:pl-[40px] lg:pr-[64px]">
             <div className="gold-line" />
             <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-[20px]">
@@ -86,26 +86,26 @@ export default function Home() {
         <div className="w-12 h-px bg-gold" />
       </div>
 
-      {/* 5. Comparison — How we're different */}
+      {/* 5. Comparison - How we're different */}
       <Comparison />
 
       {/* ===== DESIRE ===== */}
 
-      {/* 6. Benefits — What it does for YOU */}
+      {/* 6. Benefits - What it does for YOU */}
       <Benefits />
 
-      {/* 7. For Everyone — Not just athletes */}
+      {/* 7. For Everyone - Not just athletes */}
       <ForEveryone />
 
-      {/* 8. Image Break — Visual desire moment */}
+      {/* 8. Image Break - Visual desire moment */}
       <ImageBreak
         src="/images/mood/marocmaroc-2.png"
-        alt="Artisanal wellness products by the beach — natural beauty ritual"
+        alt="Artisanal wellness products by the beach - natural beauty ritual"
       />
 
       {/* ===== ACTION ===== */}
 
-      {/* 9. Products — Shop now */}
+      {/* 9. Products - Shop now */}
       <section id="products" className="py-[clamp(48px,6vw,80px)]">
         <TextBlock eyebrow="Shop Salt.Magic" showGoldLine title={<>Ready to upgrade <em>your water?</em></>}>
           <p>Choose your daily ritual. Less than the cost of your morning coffee.</p>
@@ -116,7 +116,7 @@ export default function Home() {
 
       {/* ===== TRUST ===== */}
 
-      {/* 10. Testimonials — Real people */}
+      {/* 10. Testimonials - Real people */}
       <section className="bg-warm-off py-[clamp(48px,6vw,80px)]">
         <Testimonials />
       </section>
@@ -142,13 +142,13 @@ export default function Home() {
 
       {/* ===== FINAL CONVERSION ===== */}
 
-      {/* 15. CTA Banner — Last push */}
+      {/* 15. CTA Banner - Last push */}
       <CtaBanner />
 
-      {/* 16. Newsletter — Retention */}
+      {/* 16. Newsletter - Retention */}
       <Newsletter />
 
-      {/* 17. Partner Teaser — B2B hook (bottom placement) */}
+      {/* 17. Partner Teaser - B2B hook (bottom placement) */}
       <PartnerTeaser />
 
       {/* Bottom safe-area for sticky mobile CTA */}

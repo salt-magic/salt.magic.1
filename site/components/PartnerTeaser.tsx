@@ -15,7 +15,7 @@ export default function PartnerTeaser() {
       <FadeIn className="max-w-[1200px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(56px,8vw,80px)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 items-center">
 
-          {/* Left — Text */}
+          {/* Left - Text */}
           <div>
             <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
               For Business
@@ -34,7 +34,7 @@ export default function PartnerTeaser() {
             </Link>
           </div>
 
-          {/* Right — Stats */}
+          {/* Right - Stats */}
           <div className="flex gap-8 lg:gap-12">
             {stats.map((stat, i) => (
               <div

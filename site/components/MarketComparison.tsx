@@ -16,7 +16,7 @@ export default function MarketComparison() {
           </h2>
           <p className="text-[15px] font-normal leading-relaxed text-ink-light max-w-[640px] mx-auto">
             The US hydration market is already an <strong className="font-medium text-ink">$11.3B industry</strong> dominated by
-            daily wellness brands. Asia-Pacific is at $3.0B — surging with{' '}
+            daily wellness brands. Asia-Pacific is at $3.0B - surging with{' '}
             <strong className="font-medium text-ink">44% projected growth</strong>. Thailand is sitting exactly where the US was 7 years ago.
           </p>
         </div>

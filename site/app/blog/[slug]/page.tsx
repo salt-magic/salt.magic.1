@@ -17,10 +17,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params
   const post = getPostBySlug(slug)
-  if (!post) return { title: 'Not Found — Salt.Magic' }
+  if (!post) return { title: 'Not Found - Salt.Magic' }
 
   return {
-    title: `${post.title} — Salt.Magic`,
+    title: `${post.title} - Salt.Magic`,
     description: post.excerpt,
   }
 }
@@ -39,7 +39,7 @@ export default async function BlogArticlePage({
 
   return (
     <>
-      {/* Hero — full-width image with overlay */}
+      {/* Hero - full-width image with overlay */}
       <div className={`relative w-full min-h-[70vh] min-h-[480px] ${post.heroGradient}`}>
         {post.heroImage && (
           <Image

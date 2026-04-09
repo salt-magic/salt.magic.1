@@ -22,11 +22,11 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Salt.Magic — Thailand's Natural Electrolyte Mineralizer",
+  title: "Salt.Magic - Thailand's Natural Electrolyte Mineralizer",
   description:
-    "Salt.Magic restores essential minerals to your water with 3 natural ingredients — 312mg magnesium, zero sugar, zero additives. Trusted daily by thousands across Thailand.",
+    "Salt.Magic restores essential minerals to your water with 3 natural ingredients - 312mg magnesium, zero sugar, zero additives. Trusted daily by thousands across Thailand.",
   openGraph: {
-    title: "Salt.Magic — Thailand's Natural Electrolyte Mineralizer",
+    title: "Salt.Magic - Thailand's Natural Electrolyte Mineralizer",
     description:
       '3 natural minerals. Zero sugar. Zero additives. 312mg magnesium per serving. The daily electrolyte Thailand trusts.',
     type: 'website',
@@ -38,13 +38,13 @@ export const metadata: Metadata = {
         url: 'https://salt-magic.com/images/products/taylor-hero.jpg',
         width: 1200,
         height: 630,
-        alt: 'Salt.Magic — Natural Electrolyte Mineralizer',
+        alt: 'Salt.Magic - Natural Electrolyte Mineralizer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Salt.Magic — Thailand's Natural Electrolyte Mineralizer",
+    title: "Salt.Magic - Thailand's Natural Electrolyte Mineralizer",
     description:
       '3 natural minerals. Zero sugar. Zero additives. 312mg magnesium per serving.',
     images: ['https://salt-magic.com/images/products/taylor-hero.jpg'],

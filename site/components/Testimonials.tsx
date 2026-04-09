@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "My whole family uses it — even my kids don't notice it in their water. That's the whole point.",
+      "My whole family uses it - even my kids don't notice it in their water. That's the whole point.",
     author: 'Ploy',
     role: 'Mother of Three',
     location: 'Chiang Mai',
@@ -65,7 +65,7 @@ export default function Testimonials() {
       <FadeIn className="max-w-[1100px] mx-auto px-[clamp(24px,5vw,64px)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1.4fr] gap-0 lg:gap-[clamp(40px,5vw,64px)] items-start">
 
-          {/* Left — Headline + CTA */}
+          {/* Left - Headline + CTA */}
           <div className="mb-10 lg:mb-0">
             <h2 className="font-display text-h2 font-normal text-mineral tracking-tight">
               Look what our customers say
@@ -80,10 +80,10 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Divider line — desktop only */}
+          {/* Divider line - desktop only */}
           <div className="hidden lg:block w-px bg-border-warm self-stretch" />
 
-          {/* Right — Quote */}
+          {/* Right - Quote */}
           <div className="relative">
             {/* Decorative quote mark */}
             <span className="font-display text-[80px] md:text-[100px] text-gold/20 leading-none select-none absolute -top-6 left-0">
@@ -122,7 +122,7 @@ export default function Testimonials() {
               </AnimatePresence>
             </div>
 
-            {/* Indicators — desktop below quote */}
+            {/* Indicators - desktop below quote */}
             <div className="hidden lg:flex gap-2 mt-4">
               {testimonials.map((_, i) => (
                 <button
@@ -140,7 +140,7 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Indicators — mobile below quote */}
+          {/* Indicators - mobile below quote */}
           <div className="flex lg:hidden gap-2 mt-6">
             {testimonials.map((_, i) => (
               <button

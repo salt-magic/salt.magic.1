@@ -47,12 +47,12 @@ export default function WhySection() {
     <section id="why" ref={ref}>
       <div className="max-w-[1400px] mx-auto px-[clamp(24px,5vw,80px)] py-[clamp(48px,6vw,80px)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-[clamp(40px,6vw,80px)] items-center">
-          {/* Lifestyle photo — left side, rounded like Sakara */}
+          {/* Lifestyle photo - left side, rounded like Sakara */}
           <div className="relative overflow-hidden rounded-2xl aspect-[4/5] lg:aspect-auto lg:min-h-[600px]">
             <div className="absolute inset-0">
               <Image
                 src="/images/products/taylor-poolside.jpg"
-                alt="Salt.Magic glass jar by the pool — natural electrolytes for daily wellness"
+                alt="Salt.Magic glass jar by the pool - natural electrolytes for daily wellness"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 55vw"
@@ -61,7 +61,7 @@ export default function WhySection() {
             </div>
           </div>
 
-          {/* Content — right side */}
+          {/* Content - right side */}
           <motion.div
             style={{ opacity: textOpacity, y: textY }}
             className="flex flex-col justify-center"
@@ -79,7 +79,7 @@ export default function WhySection() {
               <div className="space-y-5 text-[15px] font-normal leading-[1.85] text-ink-light">
                 <p>
                   85% of bottled water in Thailand goes through reverse osmosis, stripping
-                  away essential natural minerals. The result is &ldquo;dead water&rdquo; — purified,
+                  away essential natural minerals. The result is &ldquo;dead water&rdquo; - purified,
                   but nutritionally empty.
                 </p>
                 <p>

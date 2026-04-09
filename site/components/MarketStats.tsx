@@ -14,7 +14,7 @@ const stats = [
   {
     value: '8.2%',
     label: 'Annual Growth',
-    desc: 'CAGR — one of the fastest-growing wellness categories',
+    desc: 'CAGR - one of the fastest-growing wellness categories',
   },
 ]
 

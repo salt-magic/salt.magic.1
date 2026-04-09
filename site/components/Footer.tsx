@@ -8,7 +8,7 @@ export default function Footer() {
 
         {/* Mobile layout */}
         <div className="lg:hidden">
-          {/* Logo + tagline — compact */}
+          {/* Logo + tagline - compact */}
           <div className="flex items-center gap-4 mb-8">
             <Image
               src="/images/logos/logo-transparent.png"
@@ -44,7 +44,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Newsletter — full width */}
+          {/* Newsletter - full width */}
           <div className="border-t border-white/[.07] pt-8 mb-8">
             <div className="text-[12px] font-medium text-golden-hour mb-3 font-display">
               Stay Hydrated
@@ -70,7 +70,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Desktop layout — unchanged */}
+        {/* Desktop layout - unchanged */}
         <div className="hidden lg:block">
           <div className="grid grid-cols-[2fr_1fr_1fr_1.5fr] gap-[clamp(24px,4vw,56px)] pb-12 border-b border-white/[.07]">
             {/* Brand */}

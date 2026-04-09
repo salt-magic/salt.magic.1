@@ -171,7 +171,7 @@ export default function Nav() {
           )}
         </button>
 
-        {/* Center logo — PNG with scroll color transition */}
+        {/* Center logo - PNG with scroll color transition */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -181,9 +181,9 @@ export default function Nav() {
           <Link
             href="/"
             className={`block h-full w-full ${focusRing}`}
-            aria-label="Salt.Magic — Back to top"
+            aria-label="Salt.Magic - Back to top"
           >
-            {/* White logo (visible when not scrolled) — with drop-shadow for readability */}
+            {/* White logo (visible when not scrolled) - with drop-shadow for readability */}
             <Image
               src="/images/logos/logo-transparent.png"
               alt="Salt.Magic"
@@ -245,7 +245,7 @@ export default function Nav() {
           </motion.div>
         </div>
 
-        {/* Mobile shop icon — links to products, avoids duplicate "Shop Now" with menu CTA */}
+        {/* Mobile shop icon - links to products, avoids duplicate "Shop Now" with menu CTA */}
         <a
           href="#products"
           className={`lg:hidden flex items-center justify-center min-h-[44px] min-w-[44px] transition-colors duration-300 ${focusRing} ${
@@ -261,7 +261,7 @@ export default function Nav() {
         </a>
       </div>
 
-      {/* Mobile menu — fullscreen overlay */}
+      {/* Mobile menu - fullscreen overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

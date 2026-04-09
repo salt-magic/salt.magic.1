@@ -10,7 +10,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
         href={`/blog/${post.slug}`}
         className="group block"
       >
-        {/* Image container — Luxo rounded style */}
+        {/* Image container - Luxo rounded style */}
         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5">
           {/* Hero image or gradient fallback */}
           {post.heroImage ? (

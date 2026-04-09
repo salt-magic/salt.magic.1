@@ -13,7 +13,7 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
   content: `
     <p class="text-lg">
       When most people think "electrolytes," they picture sports drinks, gym bags, and post-workout
-      recovery. But electrolytes aren't just for athletes — they're for everyone, every day.
+      recovery. But electrolytes aren't just for athletes - they're for everyone, every day.
     </p>
 
     <h2>The 365 vs 3-5 Problem</h2>
@@ -25,7 +25,7 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
     </p>
     <p>
       But your body doesn't only need electrolytes when you exercise. Magnesium, potassium, and
-      sodium are required for hundreds of daily functions — from nerve signaling to muscle
+      sodium are required for hundreds of daily functions - from nerve signaling to muscle
       relaxation to maintaining heart rhythm. These processes happen 365 days a year, not just
       on gym days.
     </p>
@@ -38,12 +38,12 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
     <h2>The Sugar Question</h2>
 
     <p>
-      Most sports electrolytes contain 11-27 grams of added sugar per serving. That's by design —
+      Most sports electrolytes contain 11-27 grams of added sugar per serving. That's by design -
       athletes need rapid glucose during and after exercise. But for daily wellness use, that sugar
       becomes a liability.
     </p>
     <p>
-      Drinking a sugary electrolyte mix every morning isn't hydration — it's a habit that adds
+      Drinking a sugary electrolyte mix every morning isn't hydration - it's a habit that adds
       100+ grams of unnecessary sugar to your weekly intake. Over a year, that's over 5 kilograms
       of sugar from your "health" drink alone.
     </p>
@@ -68,14 +68,14 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
       complicated mixing. Just add it to your morning water and forget about it.
     </p>
     <p>
-      Salt.Magic is formulated for this exact use case — 312mg magnesium, zero sugar, zero
+      Salt.Magic is formulated for this exact use case - 312mg magnesium, zero sugar, zero
       flavor, designed to dissolve completely in any beverage. It's not a sports recovery product.
       It's a daily mineral essential for everyone who drinks water.
     </p>
 
     <p class="mt-8">
       <a href="https://www.lazada.co.th/shop/salt-magic" target="_blank" rel="noopener noreferrer" class="inline-block text-sm font-semibold uppercase tracking-wider px-8 py-3 rounded-full bg-mineral text-white hover:bg-mineral-light transition-colors">
-        Start Your Daily Mineral Habit — Shop Salt.Magic
+        Start Your Daily Mineral Habit - Shop Salt.Magic
       </a>
     </p>
   `,

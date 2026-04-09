@@ -4,7 +4,7 @@ import BlogCard from '@/components/BlogCard'
 import { blogPosts } from '@/content/blog'
 
 export const metadata: Metadata = {
-  title: 'Hydration Science & Wellness — Salt.Magic Blog',
+  title: 'Hydration Science & Wellness - Salt.Magic Blog',
   description:
     'Science-backed insights on hydration, minerals, and daily wellness from Salt.Magic Thailand.',
 }
@@ -26,7 +26,7 @@ export default function BlogPage() {
         </p>
       </FadeIn>
 
-      {/* Grid — adapts columns to article count */}
+      {/* Grid - adapts columns to article count */}
       <StaggerContainer className={`grid gap-8 max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)] ${
         blogPosts.length <= 2
           ? 'grid-cols-1 sm:grid-cols-2 max-w-[800px]'

@@ -16,7 +16,7 @@ export default function RevenueComparison() {
           </h2>
           <p className="text-[15px] font-normal leading-relaxed text-ink-light max-w-[600px] mx-auto">
             We aren&apos;t selling an occasional sports recovery drink. We are selling a 365-day habit.
-            Daily wellness positioning isn&apos;t just better for your customers — it&apos;s significantly
+            Daily wellness positioning isn&apos;t just better for your customers - it&apos;s significantly
             better for your bottom line.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function RevenueComparison() {
               <div className="font-display text-stat font-normal text-white mb-1">
                 365
               </div>
-              <p className="text-[15px] font-normal text-white/70 mb-8">days per year — every single day</p>
+              <p className="text-[15px] font-normal text-white/70 mb-8">days per year - every single day</p>
 
               <div className="space-y-4">
                 <div className="flex justify-between items-baseline border-b border-white/10 pb-3">
@@ -67,7 +67,7 @@ export default function RevenueComparison() {
               <div className="font-display text-stat font-normal text-ink-light mb-1">
                 3–5
               </div>
-              <p className="text-[15px] font-normal text-ink-light mb-8">days per week — only after workouts</p>
+              <p className="text-[15px] font-normal text-ink-light mb-8">days per week - only after workouts</p>
 
               <div className="space-y-4">
                 <div className="flex justify-between items-baseline border-b border-border-warm pb-3">

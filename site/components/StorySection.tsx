@@ -23,12 +23,12 @@ export default function StorySection() {
       className="relative overflow-hidden bg-footer-dark"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
-        {/* Image side — full bleed */}
+        {/* Image side - full bleed */}
         <div className="relative h-[50vh] lg:h-auto overflow-hidden">
           <motion.div style={{ y: imageY }} className="absolute inset-[-10%]">
             <Image
               src="/images/products/taylor-water-nature.jpg"
-              alt="Salt.Magic jar in tropical water among natural plants — Koh Samui, Thailand"
+              alt="Salt.Magic jar in tropical water among natural plants - Koh Samui, Thailand"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -58,7 +58,7 @@ export default function StorySection() {
 
             <div className="space-y-5 text-[15px] font-normal leading-[1.85] text-white/70">
               <p>
-                Living on a tropical island, we drank more water than most — but still felt
+                Living on a tropical island, we drank more water than most - but still felt
                 constantly depleted. We finally tested it with a TDS meter, and the results
                 confirmed it: our daily &ldquo;purified&rdquo; water had virtually zero minerals.
               </p>

@@ -13,7 +13,7 @@ export const deadWaterCrisis: BlogPost = {
   content: `
     <p class="text-lg">
       Walk into any convenience store in Thailand and you'll find shelves lined with "purified" water.
-      Crystal clear. Lab-tested. Safe to drink. But there's something missing — literally.
+      Crystal clear. Lab-tested. Safe to drink. But there's something missing - literally.
     </p>
 
     <h2>The Reverse Osmosis Trap</h2>
@@ -24,8 +24,8 @@ export const deadWaterCrisis: BlogPost = {
       bacteria, heavy metals, and pesticides. That's the good part.
     </p>
     <p>
-      The problem? RO doesn't discriminate. It strips out <strong>everything</strong> — including
-      the essential minerals your body depends on. Calcium, magnesium, potassium, sodium — all
+      The problem? RO doesn't discriminate. It strips out <strong>everything</strong> - including
+      the essential minerals your body depends on. Calcium, magnesium, potassium, sodium - all
       reduced to near-zero levels. The result is what scientists call "dead water": purified but
       nutritionally empty.
     </p>
@@ -35,7 +35,7 @@ export const deadWaterCrisis: BlogPost = {
     <p>
       Your body uses magnesium in over 300 enzymatic reactions. It regulates muscle function,
       nerve signaling, blood sugar, and blood pressure. Potassium keeps your heart rhythm steady.
-      Sodium maintains fluid balance. These aren't luxury nutrients — they're non-negotiable for
+      Sodium maintains fluid balance. These aren't luxury nutrients - they're non-negotiable for
       basic bodily function.
     </p>
     <p>
@@ -67,7 +67,7 @@ export const deadWaterCrisis: BlogPost = {
       <li>Irregular heartbeat</li>
     </ul>
     <p>
-      They creep in slowly. Most people blame stress, aging, or their lifestyle — they rarely
+      They creep in slowly. Most people blame stress, aging, or their lifestyle - they rarely
       blame their water.
     </p>
 
@@ -75,7 +75,7 @@ export const deadWaterCrisis: BlogPost = {
 
     <p>
       The simplest solution is to add the minerals back. Not through sugary sports drinks or
-      neon-colored electrolyte packets designed for extreme athletes — but through a clean, daily
+      neon-colored electrolyte packets designed for extreme athletes - but through a clean, daily
       mineral protocol that dissolves invisibly in any water.
     </p>
     <p>
@@ -89,7 +89,7 @@ export const deadWaterCrisis: BlogPost = {
 
     <p class="mt-8">
       <a href="https://www.lazada.co.th/shop/salt-magic" target="_blank" rel="noopener noreferrer" class="inline-block text-sm font-semibold uppercase tracking-wider px-8 py-3 rounded-full bg-mineral text-white hover:bg-mineral-light transition-colors">
-        Upgrade Your Water Today — Shop Salt.Magic
+        Upgrade Your Water Today - Shop Salt.Magic
       </a>
     </p>
   `,
