@@ -12,7 +12,7 @@ export default function PartnerHero() {
     <section className="bg-mineral pt-[clamp(180px,22vw,260px)] pb-[clamp(100px,14vw,160px)] px-[clamp(24px,5vw,64px)]">
       <div className="max-w-[1000px] mx-auto text-center">
         <FadeIn>
-          <p className="label-uppercase text-[12px] tracking-eyebrow text-golden-hour mb-5">
+          <p className="label-uppercase text-[12px] tracking-eyebrow text-gold mb-5">
             Distribution Partnership
           </p>
           <h1 className="headline-editorial text-white tracking-tight mb-5">
@@ -25,7 +25,7 @@ export default function PartnerHero() {
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#partner-form"
-              className="px-8 py-3.5 bg-white text-mineral text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-gold-light transition-colors duration-300"
+              className="px-8 py-3.5 bg-white text-mineral text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-gold transition-colors duration-300"
             >
               Contact Us
             </a>

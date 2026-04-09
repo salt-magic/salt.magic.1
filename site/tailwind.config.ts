@@ -17,11 +17,9 @@ const config: Config = {
         'mineral': '#294B6D',
         'mineral-light': '#3D6588',
         'gold': '#D4BFAA',
-        'gold-light': '#E2D5C5',
         'sand': '#E5DDD2',
         'border-warm': '#E8DFD3',
         'warm-off': '#F9F7F4',
-        'golden-hour': '#E8C9A0',
       },
       borderRadius: {
         'pill': '30px',

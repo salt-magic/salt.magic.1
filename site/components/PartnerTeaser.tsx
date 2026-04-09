@@ -17,7 +17,7 @@ export default function PartnerTeaser() {
 
           {/* Left - Text */}
           <div>
-            <p className="label-uppercase text-golden-hour mb-5">
+            <p className="label-uppercase text-gold mb-5">
               For Business
             </p>
             <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-3">
@@ -43,7 +43,7 @@ export default function PartnerTeaser() {
                   i < stats.length - 1 ? 'pr-8 lg:pr-12 border-r border-white/15' : ''
                 }`}
               >
-                <div className="font-display text-h3 font-normal text-golden-hour leading-none mb-1.5 tracking-tight">
+                <div className="font-display text-h3 font-normal text-gold leading-none mb-1.5 tracking-tight">
                   {stat.value}
                 </div>
                 <div className="text-[12px] font-medium tracking-eyebrow uppercase text-white/50">

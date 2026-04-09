@@ -26,8 +26,8 @@ export default function RevenueComparison() {
           <StaggerItem>
             <div className="rounded-2xl bg-mineral p-8 text-white h-full">
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-[12px] font-medium uppercase tracking-cta text-golden-hour">Wellness</span>
-                <span className="text-[12px] font-medium tracking-cta uppercase px-2.5 py-1 rounded-full bg-golden-hour/20 text-golden-hour">
+                <span className="text-[12px] font-medium uppercase tracking-cta text-gold">Wellness</span>
+                <span className="text-[12px] font-medium tracking-cta uppercase px-2.5 py-1 rounded-full bg-gold/20 text-gold">
                   Salt.Magic
                 </span>
               </div>
@@ -44,7 +44,7 @@ export default function RevenueComparison() {
                 </div>
                 <div className="flex justify-between items-baseline border-b border-white/10 pb-3">
                   <span className="text-[13px] text-white/70">Customer LTV (1 year)</span>
-                  <span className="text-[15px] font-medium text-golden-hour">4,200 THB</span>
+                  <span className="text-[15px] font-medium text-gold">4,200 THB</span>
                 </div>
                 <div className="flex justify-between items-baseline">
                   <span className="text-[13px] text-white/70">Retention rate</span>

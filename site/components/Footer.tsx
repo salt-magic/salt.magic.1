@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Navigate + Connect side by side */}
           <div className="grid grid-cols-2 gap-8 mb-10">
             <div>
-              <div className="text-[12px] font-medium text-golden-hour mb-4 font-display">
+              <div className="text-[12px] font-medium text-gold mb-4 font-display">
                 Navigate
               </div>
               <a href="/#why" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors">About</a>
@@ -35,7 +35,7 @@ export default function Footer() {
               <Link href="/partner" className="block text-[13px] font-normal text-white/70 hover:text-gold transition-colors">Partner With Us</Link>
             </div>
             <div>
-              <div className="text-[12px] font-medium text-golden-hour mb-4 font-display">
+              <div className="text-[12px] font-medium text-gold mb-4 font-display">
                 Connect
               </div>
               <a href="mailto:leo@salt-magic.com" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors">leo@salt-magic.com</a>
@@ -46,7 +46,7 @@ export default function Footer() {
 
           {/* Newsletter - full width */}
           <div className="border-t border-white/[.07] pt-8 mb-8">
-            <div className="text-[12px] font-medium text-golden-hour mb-3 font-display">
+            <div className="text-[12px] font-medium text-gold mb-3 font-display">
               Stay Hydrated
             </div>
             <div className="flex gap-2">
@@ -101,7 +101,7 @@ export default function Footer() {
 
             {/* Navigate */}
             <div>
-              <div className="text-[12px] font-medium text-golden-hour mb-4 font-display">Navigate</div>
+              <div className="text-[12px] font-medium text-gold mb-4 font-display">Navigate</div>
               <a href="/#why" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">About</a>
               <a href="/#products" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">Products</a>
               <a href="/#story" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">Our Story</a>
@@ -111,7 +111,7 @@ export default function Footer() {
 
             {/* Connect */}
             <div>
-              <div className="text-[12px] font-medium text-golden-hour mb-4 font-display">Connect</div>
+              <div className="text-[12px] font-medium text-gold mb-4 font-display">Connect</div>
               <a href="mailto:leo@salt-magic.com" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">leo@salt-magic.com</a>
               <a href="tel:+66826020486" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">+66 826 020 486</a>
               <a href="https://www.instagram.com/saltmagic.electrolytes" target="_blank" rel="noopener noreferrer" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">@saltmagic.electrolytes</a>
@@ -119,7 +119,7 @@ export default function Footer() {
 
             {/* Newsletter */}
             <div>
-              <div className="text-[12px] font-medium text-golden-hour mb-4 font-display">Stay Hydrated</div>
+              <div className="text-[12px] font-medium text-gold mb-4 font-display">Stay Hydrated</div>
               <p className="text-[13px] font-normal text-white/70 mb-1.5">No spam, just pure hydration.</p>
               <div className="flex gap-2 mt-2.5">
                 <label htmlFor="footer-email" className="sr-only">Email address</label>

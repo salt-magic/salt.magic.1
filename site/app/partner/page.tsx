@@ -95,7 +95,7 @@ export default function PartnerPage() {
           <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 bg-gradient-to-t from-[rgba(26,50,72,0.85)] via-[rgba(26,50,72,0.4)] to-transparent">
             <h3 className="font-display text-[20px] font-normal text-white mb-1">Signature Glass Jar</h3>
             <p className="text-[12px] font-normal text-white/70">160g - 70 servings</p>
-            <p className="text-[13px] font-medium text-golden-hour mt-1">MSRP 490 THB</p>
+            <p className="text-[13px] font-medium text-gold mt-1">MSRP 490 THB</p>
           </div>
         </div>
         <div className="relative h-[380px] sm:h-auto overflow-hidden">
@@ -109,7 +109,7 @@ export default function PartnerPage() {
           <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 bg-gradient-to-t from-[rgba(26,50,72,0.85)] via-[rgba(26,50,72,0.4)] to-transparent">
             <h3 className="font-display text-[20px] font-normal text-white mb-1">Travel Pouch</h3>
             <p className="text-[12px] font-normal text-white/70">16g - 30 servings</p>
-            <p className="text-[13px] font-medium text-golden-hour mt-1">MSRP 290 THB</p>
+            <p className="text-[13px] font-medium text-gold mt-1">MSRP 290 THB</p>
           </div>
         </div>
       </section>

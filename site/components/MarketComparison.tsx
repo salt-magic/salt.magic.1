@@ -66,7 +66,7 @@ export default function MarketComparison() {
           {/* APAC */}
           <StaggerItem>
             <div className="rounded-2xl bg-mineral p-8 h-full text-white">
-              <p className="text-[12px] font-medium tracking-cta uppercase text-golden-hour mb-6">
+              <p className="text-[12px] font-medium tracking-cta uppercase text-gold mb-6">
                 Asia Pacific Today
               </p>
               <div className="font-display text-h1 font-normal mb-2">
@@ -77,14 +77,14 @@ export default function MarketComparison() {
               <div className="space-y-3">
                 {['Limited shelf presence in pharmacies', 'Still dominated by sugary sports drinks', 'Early stage = massive first-mover opportunity'].map((item, i) => (
                   <div key={item} className="flex items-start gap-2.5">
-                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className={`w-4 h-4 shrink-0 mt-0.5 ${i === 2 ? 'text-golden-hour' : 'text-white/70'}`} aria-hidden="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" className={`w-4 h-4 shrink-0 mt-0.5 ${i === 2 ? 'text-gold' : 'text-white/70'}`} aria-hidden="true">
                       {i === 2 ? (
                         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" />
                       ) : (
                         <path d="M8 3v10M4 8h8" strokeLinecap="round" />
                       )}
                     </svg>
-                    <span className={`text-[13px] font-normal ${i === 2 ? 'text-golden-hour font-medium' : 'text-white/70'}`}>{item}</span>
+                    <span className={`text-[13px] font-normal ${i === 2 ? 'text-gold font-medium' : 'text-white/70'}`}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -94,7 +94,7 @@ export default function MarketComparison() {
                   <span className="font-display text-h4 font-normal">$4.3B</span>
                   <span className="text-[13px] text-white/70">projected by 2030</span>
                 </div>
-                <span className="text-[12px] font-medium text-golden-hour">44% growth</span>
+                <span className="text-[12px] font-medium text-gold">44% growth</span>
               </div>
             </div>
           </StaggerItem>

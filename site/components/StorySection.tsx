@@ -45,7 +45,7 @@ export default function StorySection() {
         >
           <div className="max-w-[480px]">
             <div className="gold-line" />
-            <p className="label-uppercase text-golden-hour mb-5">
+            <p className="label-uppercase text-gold mb-5">
               Our Origin
             </p>
 
