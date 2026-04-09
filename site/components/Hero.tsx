@@ -87,22 +87,22 @@ export default function Hero() {
       </button>
 
       {/* Content — centered */}
-      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-[clamp(24px,6vw,80px)] pb-[clamp(80px,12vw,140px)]" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.4)' }}>
+      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-[clamp(24px,6vw,80px)] pb-[clamp(80px,12vw,140px)]">
         <div className="max-w-[720px]">
           <FadeIn delay={0.1}>
-            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-white/70 mb-4">
+            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-white/70 mb-4" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
               Mineralize Your Water, Everywhere.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <h1 className="headline-editorial text-white mb-6">
+            <h1 className="headline-editorial text-white mb-6" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.4)' }}>
               Your water is missing what
               <br />
               <em className="italic font-normal">your body needs most.</em>
             </h1>
           </FadeIn>
           <FadeIn delay={0.35}>
-            <p className="text-[17px] font-normal leading-relaxed text-white/90 mb-10 max-w-[520px] mx-auto">
+            <p className="text-[17px] font-normal leading-relaxed text-white/90 mb-10 max-w-[520px] mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
               85% of bottled water in Thailand is &ldquo;dead water&rdquo; &mdash; purified, but nutritionally empty. Your body deserves better.
             </p>
           </FadeIn>
