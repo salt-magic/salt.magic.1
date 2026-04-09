@@ -17,7 +17,7 @@ export default function PartnerTeaser() {
 
           {/* Left - Text */}
           <div>
-            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour mb-5">
+            <p className="label-uppercase text-golden-hour mb-5">
               For Business
             </p>
             <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-3">

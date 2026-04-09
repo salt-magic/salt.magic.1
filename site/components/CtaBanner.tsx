@@ -25,7 +25,7 @@ export default function CtaBanner() {
 
       <FadeIn className="relative z-10 max-w-[600px] mx-auto text-center px-[clamp(32px,6vw,80px)] py-[clamp(80px,10vw,120px)]">
         <div className="gold-line" />
-        <p className="text-[12px] font-medium tracking-eyebrow uppercase text-golden-hour mb-5">
+        <p className="label-uppercase text-golden-hour mb-5">
           Start Today
         </p>
         <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-6">

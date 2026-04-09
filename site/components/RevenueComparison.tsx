@@ -8,7 +8,7 @@ export default function RevenueComparison() {
       <FadeIn className="max-w-[1000px] mx-auto">
         <div className="text-center mb-[clamp(36px,5vw,48px)]">
           <div className="gold-line" />
-          <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
+          <p className="label-uppercase text-ink-light mb-5">
             The Revenue Difference
           </p>
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">

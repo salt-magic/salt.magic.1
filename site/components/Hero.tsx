@@ -90,7 +90,7 @@ export default function Hero() {
       <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-[clamp(24px,6vw,80px)] pb-[clamp(80px,12vw,140px)]">
         <div className="max-w-[720px]">
           <FadeIn delay={0.1}>
-            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-white/70 mb-4" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
+            <p className="label-uppercase text-white/70 mb-5" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
               Mineralize Your Water, Everywhere.
             </p>
           </FadeIn>
@@ -102,7 +102,7 @@ export default function Hero() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.35}>
-            <p className="text-[17px] font-normal leading-relaxed text-white/90 mb-10 max-w-[520px] mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
+            <p className="text-[15px] font-normal leading-relaxed text-white/90 mb-10 max-w-[520px] mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
               85% of bottled water in Thailand is &ldquo;dead water&rdquo; - purified, but nutritionally empty. Your body deserves better.
             </p>
           </FadeIn>
@@ -110,13 +110,13 @@ export default function Hero() {
             <div className="flex items-center justify-center gap-4">
               <a
                 href="#products"
-                className="inline-block text-[12px] font-medium uppercase tracking-cta px-9 py-4 rounded-pill bg-gold/90 text-footer-dark hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill bg-gold/90 text-footer-dark hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Bring Your Water Back to Life
               </a>
               <a
                 href="#why"
-                className="inline-block text-[12px] font-medium uppercase tracking-cta px-9 py-4 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Learn More
               </a>

@@ -12,7 +12,7 @@ export default function ForEveryone() {
           <FadeIn>
             <div className="max-w-[480px]">
               <div className="gold-line" />
-              <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
+              <p className="label-uppercase text-ink-light mb-5">
                 For Everyone
               </p>
               <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-3">

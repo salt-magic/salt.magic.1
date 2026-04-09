@@ -5,7 +5,7 @@ export default function Newsletter() {
     <section className="bg-warm-off py-[clamp(48px,6vw,80px)] px-[clamp(24px,5vw,80px)]">
       <FadeIn className="max-w-[560px] mx-auto text-center">
         <div className="gold-line" />
-        <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
+        <p className="label-uppercase text-ink-light mb-5">
           Stay Connected
         </p>
         <h2 className="font-display text-h2 font-normal text-mineral mb-4 tracking-tight">
@@ -32,7 +32,7 @@ export default function Newsletter() {
             placeholder="your@email.com"
             className="flex-1 py-3.5 px-5 bg-white border border-border-warm rounded-pill text-[15px] font-normal text-ink font-body outline-none placeholder:text-ink-faint focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
           />
-          <button className="py-3.5 px-7 bg-mineral border-none rounded-pill text-white text-[12px] font-medium tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold whitespace-nowrap">
+          <button className="py-3.5 px-8 bg-mineral border-none rounded-pill text-white text-[12px] font-medium tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold whitespace-nowrap">
             Unlock 10% Off
           </button>
         </div>

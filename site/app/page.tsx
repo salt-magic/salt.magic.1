@@ -61,13 +61,13 @@ export default function Home() {
           {/* Content - right side */}
           <div className="flex flex-col justify-center py-[56px] px-[24px] lg:pl-[40px] lg:pr-[64px]">
             <div className="gold-line" />
-            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-[20px]">
+            <p className="label-uppercase text-ink-light mb-5">
               The Formula
             </p>
             <h2 className="font-display text-h2 font-normal text-mineral mb-3 tracking-tight">
               The Invisible Upgrade
             </h2>
-            <p className="text-[17px] font-normal leading-relaxed text-ink/80 max-w-[460px] mb-[16px]">
+            <p className="text-[15px] font-normal leading-relaxed text-ink/80 max-w-[460px] mb-[16px]">
               Everything your water is missing. Nothing you can taste.
             </p>
             <p className="text-[15px] font-normal leading-[1.75] text-ink max-w-[460px] mb-[8px]">

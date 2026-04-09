@@ -55,7 +55,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
     <>
       <h3
         role="cell"
-        className={`text-[12px] font-medium uppercase tracking-eyebrow mb-7 pb-4 ${
+        className={`text-[12px] font-medium uppercase tracking-eyebrow mb-5 pb-4 ${
           isHero
             ? 'text-mineral border-b-2 border-gold'
             : 'text-white/60 border-b border-white/[0.12]'
@@ -106,7 +106,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
       <div className="mt-auto">
         <p
           role="cell"
-          className={`text-[14px] leading-relaxed pt-5 ${
+          className={`text-[13px] leading-relaxed pt-5 ${
             isHero
               ? 'font-display text-mineral border-t border-gold/25'
               : 'font-normal text-white/70 border-t border-white/[0.08]'

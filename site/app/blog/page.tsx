@@ -20,7 +20,7 @@ export default function BlogPage() {
         <h1 className="headline-editorial text-mineral tracking-tight">
           Hydration science & daily wellness
         </h1>
-        <p className="text-[16px] font-normal leading-relaxed text-ink-light max-w-[520px] mx-auto mt-5">
+        <p className="text-[15px] font-normal leading-relaxed text-ink-light max-w-[520px] mx-auto mt-5">
           Evidence-based insights on minerals, hydration, and why what you drink
           every day matters more than you think.
         </p>

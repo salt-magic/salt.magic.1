@@ -26,7 +26,7 @@ export default function CategoryProof() {
       <FadeIn className="max-w-[1100px] mx-auto">
         <div className="mb-[clamp(36px,5vw,48px)]">
           <div className="gold-line" />
-          <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-5">
+          <p className="label-uppercase text-ink-light mb-5">
             Category Proof
           </p>
           <h2 className="font-display text-h2 font-normal text-mineral tracking-tight mb-4">
@@ -45,7 +45,7 @@ export default function CategoryProof() {
                 <h3 className="text-[14px] font-medium text-mineral">
                   {brand.name}
                 </h3>
-                <p className="text-[14px] font-normal text-ink-light">
+                <p className="text-[13px] font-normal text-ink-light">
                   {brand.desc}
                 </p>
                 <span className="font-display text-[18px] font-normal text-gold">

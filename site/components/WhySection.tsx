@@ -68,7 +68,7 @@ export default function WhySection() {
           >
             <div className="max-w-[480px]">
               <div className="gold-line" />
-              <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-6">
+              <p className="label-uppercase text-ink-light mb-5">
                 The Problem
               </p>
 
