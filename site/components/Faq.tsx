@@ -5,10 +5,6 @@ import { FadeIn, motion, AnimatePresence } from './Motion'
 
 const faqs = [
   {
-    q: 'What is Salt.Magic made of?',
-    a: 'Exactly three ingredients: Magnesium Citrate (312mg), Potassium Citrate (160mg), and Pink Himalayan Salt (152mg). That\u2019s it. A 2-gram serving with absolutely no sugars, sweeteners, artificial flavors, colors, or preservatives.',
-  },
-  {
     q: 'Is Salt.Magic just salt?',
     a: 'No. Pink Himalayan salt makes up just 20% of the blend. The majority (over 50%) is Magnesium Citrate \u2014 the most highly bioavailable form of magnesium \u2014 and the rest is pure Potassium Citrate. No fillers.',
   },

@@ -89,16 +89,21 @@ export default function Hero() {
       {/* Content — centered */}
       <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-[clamp(24px,6vw,80px)] pb-[clamp(80px,12vw,140px)]" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.4)' }}>
         <div className="max-w-[720px]">
-          <FadeIn delay={0.15}>
+          <FadeIn delay={0.1}>
+            <p className="text-[12px] font-medium tracking-eyebrow uppercase text-white/70 mb-4">
+              Mineralize Your Water, Everywhere.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
             <h1 className="headline-editorial text-white mb-6">
-              Mineralize Your Water,
+              Your water is missing what
               <br />
-              <em className="italic font-normal">Everywhere.</em>
+              <em className="italic font-normal">your body needs most.</em>
             </h1>
           </FadeIn>
-          <FadeIn delay={0.3}>
-            <p className="text-[17px] font-normal leading-relaxed text-white mb-10 max-w-[480px] mx-auto">
-              Pure minerals. Zero sugar. Every glass. Every day.
+          <FadeIn delay={0.35}>
+            <p className="text-[17px] font-normal leading-relaxed text-white/90 mb-10 max-w-[520px] mx-auto">
+              85% of bottled water in Thailand is &ldquo;dead water&rdquo; &mdash; purified, but nutritionally empty. Your body deserves better.
             </p>
           </FadeIn>
           <FadeIn delay={0.45}>
@@ -107,7 +112,7 @@ export default function Hero() {
                 href="#products"
                 className="inline-block text-[12px] font-semibold uppercase tracking-cta px-9 py-4 rounded-pill bg-gold/90 text-footer-dark hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
-                Shop Now
+                Bring Your Water Back to Life
               </a>
               <a
                 href="#why"

@@ -67,11 +67,12 @@ export default function Home() {
             <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-[20px]">
               The Formula
             </p>
-            <h2 className="font-display text-h2 font-normal text-mineral mb-[16px] tracking-tight">
-              Everything your water is missing.
-              <br />
-              <em className="italic font-normal">Nothing you can taste.</em>
+            <h2 className="font-display text-h2 font-normal text-mineral mb-3 tracking-tight">
+              The Invisible <em className="italic font-normal">Upgrade</em>
             </h2>
+            <p className="text-[17px] font-light leading-relaxed text-ink/80 max-w-[460px] mb-[16px]">
+              Everything your water is missing. Nothing you can taste.
+            </p>
             <p className="text-[15px] font-light leading-[1.75] text-ink max-w-[460px] mb-[8px]">
               Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly, is completely flavorless, and delivers 7x more magnesium than leading competitors. Three natural ingredients. Zero junk.
             </p>
