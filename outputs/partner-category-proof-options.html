@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Category Proof — 3 Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #e8e8e8; }
+
+  :root {
+    --mineral: #294B6D;
+    --deep-navy: #1A3248;
+    --gold: #D4BFAA;
+    --golden-hour: #E8C9A0;
+    --warm-off: #F9F7F4;
+    --ink: #1a1a1a;
+    --ink-light: #6B7280;
+    --border-warm: #E5E0D8;
+  }
+
+  .option-label {
+    text-align: center;
+    padding: 48px 24px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #999;
+    background: #e8e8e8;
+  }
+  .option-label span {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    color: #bbb;
+    margin-top: 6px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section {
+    padding: clamp(48px, 6vw, 80px) clamp(24px, 5vw, 80px);
+  }
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .gold-line {
+    width: 48px;
+    height: 1px;
+    background: var(--golden-hour);
+    opacity: 0.5;
+    margin-bottom: 24px;
+  }
+  .gold-line.center { margin-left: auto; margin-right: auto; }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  h2 em { font-style: italic; }
+
+  /* =============================== */
+  /* OPTION A: Hell, Bordered Cards   */
+  /* =============================== */
+  .option-a { background: white; }
+  .option-a .header {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+  .option-a h2 { color: var(--mineral); margin-bottom: 16px; }
+  .option-a .body-text {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .brands-grid-a {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .brand-card-a {
+    border: 1px solid var(--border-warm);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .brand-card-a:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 32px rgba(212, 191, 170, 0.15);
+  }
+  .brand-card-a .brand-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--mineral);
+    margin-bottom: 12px;
+  }
+  .brand-card-a .brand-stat {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-weight: 400;
+    color: var(--gold);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .brand-card-a .brand-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-light);
+  }
+
+  /* =============================== */
+  /* OPTION B: Warm-Off, Horizontal   */
+  /* =============================== */
+  .option-b { background: var(--warm-off); }
+  .option-b .header {
+    text-align: left;
+    margin-bottom: clamp(36px, 5vw, 48px);
+  }
+  .option-b h2 { color: var(--mineral); margin-bottom: 12px; }
+  .option-b .body-text {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 560px;
+  }
+
+  .brands-list-b {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-warm);
+    border-radius: 16px;
+    overflow: hidden;
+    max-width: 800px;
+  }
+  .brand-row-b {
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 32px;
+    background: white;
+  }
+  .brand-row-b .brand-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mineral);
+  }
+  .brand-row-b .brand-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--ink-light);
+  }
+  .brand-row-b .brand-stat {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--gold);
+    white-space: nowrap;
+  }
+
+  /* =============================== */
+  /* OPTION C: Dark Mineral           */
+  /* =============================== */
+  .option-c { background: var(--mineral); color: white; }
+  .option-c .header {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+  .option-c h2 { color: white; margin-bottom: 16px; }
+  .option-c .body-text {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.7);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .brands-grid-c {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .brand-card-c {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: background 0.3s, border-color 0.3s;
+    cursor: default;
+  }
+  .brand-card-c:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(232, 201, 160, 0.2);
+  }
+  .brand-card-c .brand-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 12px;
+  }
+  .brand-card-c .brand-stat {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-weight: 400;
+    color: var(--golden-hour);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .brand-card-c .brand-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+  }
+
+  @media (max-width: 768px) {
+    .brands-grid-a, .brands-grid-c { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    .brand-row-b { grid-template-columns: 1fr; gap: 8px; }
+    .brand-row-b .brand-stat { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- OPTION A: Hell, Bordered Cards, 3 Brands     -->
+<!-- ============================================ -->
+<div class="option-label">
+  Option A — Hell + Bordered Cards
+  <span>Weisser BG, Leo's Headline "Clean hydration builds unicorns", 3 Brands in bordered Cards mit Gold-Akzent. Leichter Seitenrhythmus nach dunklem Hero + hellem Market.</span>
+</div>
+
+<section class="section option-a">
+  <div class="section-inner">
+    <div class="header">
+      <div class="gold-line center"></div>
+      <p class="eyebrow" style="color: var(--ink-light);">Category Proof</p>
+      <h2>Clean hydration builds <em>unicorns.</em></h2>
+      <p class="body-text">
+        The biggest wellness brands of the last decade started exactly where Salt.Magic is now.
+        Clean electrolytes are creating an entirely new, highly lucrative retail category.
+      </p>
+    </div>
+
+    <div class="brands-grid-a">
+      <div class="brand-card-a">
+        <div class="brand-name">Liquid IV</div>
+        <div class="brand-stat">Acquired by Unilever</div>
+        <div class="brand-desc">$500M+ deal</div>
+      </div>
+      <div class="brand-card-a">
+        <div class="brand-name">LMNT</div>
+        <div class="brand-stat">8-figure revenue</div>
+        <div class="brand-desc">Dominating DTC and retail</div>
+      </div>
+      <div class="brand-card-a">
+        <div class="brand-name">Liquid Death</div>
+        <div class="brand-stat">$1.4B valuation</div>
+        <div class="brand-desc">100K+ retail stores</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- OPTION B: Warm-Off, Editorial List           -->
+<!-- ============================================ -->
+<div class="option-label">
+  Option B — Editorial Rows
+  <span>Warm-off BG, links-ausgerichtet, Brands als horizontale Zeilen in einer gestapelten Liste. Kompakter, editorialer Look. Stat rechts als Gold-Akzent.</span>
+</div>
+
+<section class="section option-b">
+  <div class="section-inner">
+    <div class="header">
+      <div class="gold-line"></div>
+      <p class="eyebrow" style="color: var(--ink-light);">Category Proof</p>
+      <h2>Clean hydration builds <em>unicorns.</em></h2>
+      <p class="body-text">
+        The biggest wellness brands of the last decade started exactly where Salt.Magic is now.
+        Clean electrolytes are creating an entirely new, highly lucrative retail category.
+      </p>
+    </div>
+
+    <div class="brands-list-b">
+      <div class="brand-row-b">
+        <div class="brand-name">Liquid IV</div>
+        <div class="brand-desc">Acquired by Unilever</div>
+        <div class="brand-stat">$500M+</div>
+      </div>
+      <div class="brand-row-b">
+        <div class="brand-name">LMNT</div>
+        <div class="brand-desc">Dominating DTC and retail</div>
+        <div class="brand-stat">8-figure rev</div>
+      </div>
+      <div class="brand-row-b">
+        <div class="brand-name">Liquid Death</div>
+        <div class="brand-desc">100K+ retail stores</div>
+        <div class="brand-stat">$1.4B</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- OPTION C: Dunkel Mineral, Glass Cards        -->
+<!-- ============================================ -->
+<div class="option-label">
+  Option C — Dunkel Mineral + Glass Cards
+  <span>bg-mineral statt deep-navy (weniger schwer), Glassmorphism-Cards, Golden-Hour Stats. Einzige dunkle Section nach Hero fuer Kontrast-Moment.</span>
+</div>
+
+<section class="section option-c">
+  <div class="section-inner">
+    <div class="header">
+      <div class="gold-line center" style="background: var(--golden-hour);"></div>
+      <p class="eyebrow" style="color: var(--golden-hour);">Category Proof</p>
+      <h2>Clean hydration builds <em>unicorns.</em></h2>
+      <p class="body-text">
+        The biggest wellness brands of the last decade started exactly where Salt.Magic is now.
+        Clean electrolytes are creating an entirely new, highly lucrative retail category.
+      </p>
+    </div>
+
+    <div class="brands-grid-c">
+      <div class="brand-card-c">
+        <div class="brand-name">Liquid IV</div>
+        <div class="brand-stat">Acquired by Unilever</div>
+        <div class="brand-desc">$500M+ deal</div>
+      </div>
+      <div class="brand-card-c">
+        <div class="brand-name">LMNT</div>
+        <div class="brand-stat">8-figure revenue</div>
+        <div class="brand-desc">Dominating DTC and retail</div>
+      </div>
+      <div class="brand-card-c">
+        <div class="brand-name">Liquid Death</div>
+        <div class="brand-stat">$1.4B valuation</div>
+        <div class="brand-desc">100K+ retail stores</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,10 +1,10 @@
 import { FadeIn, StaggerContainer, StaggerItem } from './Motion'
 
 const highlights = [
-  { value: '$69.1B', label: 'Market by 2032' },
-  { value: '8.2%', label: 'Annual CAGR' },
   { value: '90%', label: 'Customer Retention' },
+  { value: '35-40%', label: 'Retailer Margins' },
   { value: '160+', label: 'Locations' },
+  { value: '5 Yrs', label: 'Proven Track Record' },
 ]
 
 export default function PartnerHero() {
@@ -16,11 +16,11 @@ export default function PartnerHero() {
             Distribution Partnership
           </p>
           <h1 className="headline-editorial text-white tracking-tight mb-5">
-            Grow with <em>Salt.Magic</em>
+            Capture the Next Wave<br className="hidden sm:inline" /> of <em>Wellness</em>
           </h1>
           <p className="text-[15px] font-light leading-relaxed text-white/70 max-w-[560px] mx-auto mb-10">
-            The global electrolyte market reaches $69.1B by 2032. APAC is 5-7 years behind
-            USA adoption — early partners capture first-mover advantage.
+            The global electrolyte market is exploding. Partner with Thailand&apos;s first
+            daily mineralizer and claim your first-mover advantage.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
@@ -29,9 +29,14 @@ export default function PartnerHero() {
             >
               Contact Us
             </a>
-            <span className="px-8 py-3.5 border border-white/30 text-white text-[12px] font-semibold tracking-cta uppercase rounded-pill opacity-50 cursor-default">
-              Download Deck (Coming Soon)
-            </span>
+            <a
+              href="/pitch-deck.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3.5 border border-white/30 text-white text-[12px] font-semibold tracking-cta uppercase rounded-pill hover:border-white/60 hover:bg-white/5 transition-colors duration-300"
+            >
+              Download Pitch Deck
+            </a>
           </div>
         </FadeIn>
 

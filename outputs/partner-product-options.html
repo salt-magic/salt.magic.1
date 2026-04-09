@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Partner Product Section — 3 Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #e8e8e8; }
+
+  :root {
+    --mineral: #294B6D;
+    --deep-navy: #1A3248;
+    --gold: #D4BFAA;
+    --golden-hour: #E8C9A0;
+    --warm-off: #F9F7F4;
+    --ink: #1a1a1a;
+    --ink-light: #6B7280;
+    --border-warm: #E5E0D8;
+  }
+
+  .option-label {
+    text-align: center;
+    padding: 48px 24px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #999;
+    background: #e8e8e8;
+  }
+  .option-label span {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    color: #bbb;
+    margin-top: 6px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gold-line {
+    width: 48px;
+    height: 1px;
+    background: var(--golden-hour);
+    opacity: 0.5;
+    margin-bottom: 24px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--mineral);
+  }
+  h2 em { font-style: italic; }
+
+  /* Fake product image */
+  .product-img {
+    background: linear-gradient(135deg, #3D6588 0%, #294B6D 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.3);
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Bullet with gold dot */
+  .bullet-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bullet-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+  .bullet-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 8px;
+  }
+  .bullet-list li strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* CTA */
+  .btn-mineral {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--mineral);
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .btn-mineral:hover { background: #1f3a55; }
+
+  /* Pull quote */
+  .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--mineral);
+    border-left: 2px solid var(--gold);
+    padding-left: 20px;
+    margin-top: 24px;
+  }
+
+  /* Stats row */
+  .stats-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 28px;
+  }
+  .stat-item .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--mineral);
+  }
+  .stat-item .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+  .stat-divider {
+    width: 1px;
+    background: var(--border-warm);
+  }
+
+  /* =============================== */
+  /* OPTION A: Editorial Split + Leo's Bullets + Pull Quote */
+  /* =============================== */
+  .option-a {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 70vh;
+    background: white;
+  }
+  .option-a .product-img {
+    min-height: 50vh;
+  }
+  .option-a .content {
+    display: flex;
+    align-items: center;
+    padding: clamp(40px, 6vw, 80px);
+  }
+  .option-a .content-inner {
+    max-width: 460px;
+  }
+
+  /* =============================== */
+  /* OPTION B: Full-Width Centered    */
+  /* =============================== */
+  .option-b {
+    background: white;
+    padding: clamp(48px, 6vw, 80px) clamp(24px, 5vw, 80px);
+  }
+  .option-b .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .option-b .header {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 56px);
+  }
+  .option-b .body-text {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 520px;
+    margin: 12px auto 0;
+  }
+  .option-b .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .option-b .feature-card {
+    text-align: center;
+    padding: 32px 20px;
+    border: 1px solid var(--border-warm);
+    border-radius: 16px;
+  }
+  .option-b .feature-card .feature-value {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 48px);
+    font-weight: 400;
+    color: var(--mineral);
+    margin-bottom: 4px;
+  }
+  .option-b .feature-card .feature-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 12px;
+  }
+  .option-b .feature-card .feature-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+  .option-b .cta-row {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  /* =============================== */
+  /* OPTION C: Editorial Split + Shift integrated */
+  /* =============================== */
+  .option-c-wrapper { background: white; }
+  .option-c {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 60vh;
+  }
+  .option-c .product-img {
+    min-height: 50vh;
+  }
+  .option-c .content {
+    display: flex;
+    align-items: center;
+    padding: clamp(40px, 6vw, 80px);
+  }
+  .option-c .content-inner {
+    max-width: 460px;
+  }
+
+  /* Shift banner integrated below */
+  .shift-banner {
+    background: var(--warm-off);
+    padding: 32px clamp(24px, 5vw, 80px);
+  }
+  .shift-banner .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .shift-banner .shift-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 20px);
+    color: var(--mineral);
+    max-width: 500px;
+  }
+  .shift-banner .shift-stats {
+    display: flex;
+    gap: 24px;
+    flex-shrink: 0;
+  }
+  .shift-banner .shift-stat {
+    text-align: center;
+  }
+  .shift-banner .shift-stat .val {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--mineral);
+  }
+  .shift-banner .shift-stat .lbl {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  @media (max-width: 768px) {
+    .option-a, .option-c { grid-template-columns: 1fr; }
+    .option-b .three-col { grid-template-columns: 1fr; max-width: 360px; }
+    .stats-row { flex-wrap: wrap; }
+    .shift-banner .inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- OPTION A: Editorial Split + Bullets + Quote  -->
+<!-- ============================================ -->
+<div class="option-label">
+  Option A — Editorial Split + Leo's Bullets
+  <span>Bild links, Leo's Copy rechts mit Gold-Bullet-Points, Pull-Quote von "The Shift" integriert, CTA "Become a Distribution Partner". Kein separater Shift-Section noetig.</span>
+</div>
+
+<section class="option-a">
+  <div class="product-img">Product Image (taylor-closeup.jpg)</div>
+  <div class="content">
+    <div class="content-inner">
+      <div class="gold-line"></div>
+      <p class="eyebrow" style="color: var(--ink-light);">Why Distribute</p>
+      <h2>Why distribute <em>Salt.Magic?</em></h2>
+      <p style="font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--ink-light); margin-top: 16px; margin-bottom: 24px;">
+        Bring Thailand's first sugar-free, flavorless daily electrolyte mineralizer to your customers.
+      </p>
+      <ul class="bullet-list">
+        <li>
+          <span class="bullet-dot"></span>
+          <span><strong>35-40% retailer margins</strong> across all distribution tiers</span>
+        </li>
+        <li>
+          <span class="bullet-dot"></span>
+          <span><strong>90% customer retention</strong> across 160+ partner locations</span>
+        </li>
+        <li>
+          <span class="bullet-dot"></span>
+          <span><strong>7x more magnesium</strong> than competitors. Zero sugar.</span>
+        </li>
+      </ul>
+      <p class="pull-quote">
+        We're not selling recovery — we're selling a 365-day habit.
+      </p>
+      <div style="margin-top: 32px;">
+        <a href="#partner-form" class="btn-mineral">Become a Distribution Partner</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- OPTION B: Full-Width + 3 Feature Cards       -->
+<!-- ============================================ -->
+<div class="option-label">
+  Option B — Centered + Feature Cards
+  <span>Zentriertes Layout, Leo's Copy als Subhead, 3 grosse Feature-Cards (Margins, Retention, Magnesium), CTA darunter. Kein Bild — reiner Data-Fokus.</span>
+</div>
+
+<section class="option-b">
+  <div class="inner">
+    <div class="header">
+      <div class="gold-line" style="margin-left: auto; margin-right: auto;"></div>
+      <p class="eyebrow" style="color: var(--ink-light);">Why Distribute</p>
+      <h2>Why distribute <em>Salt.Magic?</em></h2>
+      <p class="body-text">
+        Bring Thailand's first sugar-free, flavorless daily electrolyte mineralizer to your customers.
+      </p>
+    </div>
+
+    <div class="three-col">
+      <div class="feature-card">
+        <div class="feature-value">35-40%</div>
+        <div class="feature-label">Retailer Margins</div>
+        <div class="feature-desc">Healthy margins across all three distribution tiers</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-value">90%</div>
+        <div class="feature-label">Customer Retention</div>
+        <div class="feature-desc">Across 160+ partner locations in Thailand</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-value">7x</div>
+        <div class="feature-label">More Magnesium</div>
+        <div class="feature-desc">Than competitors. Zero sugar. Zero flavor.</div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <a href="#partner-form" class="btn-mineral">Become a Distribution Partner</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- OPTION C: Editorial Split + Shift as Banner  -->
+<!-- ============================================ -->
+<div class="option-label">
+  Option C — Editorial Split + Shift-Banner
+  <span>Bild links, Leo's Bullets rechts (wie A), PLUS ein kompakter Shift-Banner darunter als Uebergang zur naechsten Section. Zwei-teilig: Product + Shift in einem Flow.</span>
+</div>
+
+<div class="option-c-wrapper">
+  <section class="option-c">
+    <div class="product-img">Product Image (taylor-closeup.jpg)</div>
+    <div class="content">
+      <div class="content-inner">
+        <div class="gold-line"></div>
+        <p class="eyebrow" style="color: var(--ink-light);">Why Distribute</p>
+        <h2>Why distribute <em>Salt.Magic?</em></h2>
+        <p style="font-size: 15px; font-weight: 300; line-height: 1.7; color: var(--ink-light); margin-top: 16px; margin-bottom: 24px;">
+          Bring Thailand's first sugar-free, flavorless daily electrolyte mineralizer to your customers.
+        </p>
+        <ul class="bullet-list">
+          <li>
+            <span class="bullet-dot"></span>
+            <span><strong>35-40% retailer margins</strong> across all distribution tiers</span>
+          </li>
+          <li>
+            <span class="bullet-dot"></span>
+            <span><strong>90% customer retention</strong> across 160+ partner locations</span>
+          </li>
+          <li>
+            <span class="bullet-dot"></span>
+            <span><strong>7x more magnesium</strong> than competitors. Zero sugar.</span>
+          </li>
+        </ul>
+        <div style="margin-top: 32px;">
+          <a href="#partner-form" class="btn-mineral">Become a Distribution Partner</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shift as compact transition banner -->
+  <div class="shift-banner">
+    <div class="inner">
+      <p class="shift-text">
+        "The brands that win this decade aren't selling recovery — they're selling a daily habit."
+      </p>
+      <div class="shift-stats">
+        <div class="shift-stat">
+          <div class="val">365</div>
+          <div class="lbl">Days/Year</div>
+        </div>
+        <div class="shift-stat">
+          <div class="val">vs 3-5</div>
+          <div class="lbl">Workouts/Week</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
