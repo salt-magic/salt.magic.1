@@ -41,16 +41,18 @@ export default function CategoryProof() {
         <StaggerContainer className="flex flex-col gap-px bg-border-warm rounded-2xl overflow-hidden max-w-[800px]">
           {brands.map((brand) => (
             <StaggerItem key={brand.name}>
-              <div className="grid grid-cols-1 sm:grid-cols-[180px_1fr_auto] items-center gap-2 sm:gap-6 px-6 sm:px-8 py-5 sm:py-6 bg-white">
-                <h3 className="text-[14px] font-medium text-mineral">
-                  {brand.name}
-                </h3>
-                <p className="text-[13px] font-normal text-ink-light">
+              <div className="grid grid-cols-[1fr_auto] sm:grid-cols-[180px_1fr_auto] items-center gap-2 sm:gap-6 px-6 sm:px-8 py-5 sm:py-6 bg-white">
+                <div className="sm:contents">
+                  <h3 className="text-[14px] font-medium text-mineral">
+                    {brand.name}
+                  </h3>
+                  <span className="font-display text-[18px] font-normal text-mineral text-right sm:text-left">
+                    {brand.stat}
+                  </span>
+                </div>
+                <p className="text-[13px] font-normal text-ink-light col-span-2 sm:col-span-1">
                   {brand.desc}
                 </p>
-                <span className="font-display text-[18px] font-normal text-mineral">
-                  {brand.stat}
-                </span>
               </div>
             </StaggerItem>
           ))}

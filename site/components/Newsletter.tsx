@@ -24,7 +24,7 @@ export default function Newsletter() {
           Get our free Mineral Guide + 10% off your first order
         </div>
 
-        <div className="flex gap-3 max-w-[420px] mx-auto">
+        <div className="flex flex-col sm:flex-row gap-3 max-w-[420px] mx-auto">
           <label htmlFor="newsletter-email" className="sr-only">Email address</label>
           <input
             id="newsletter-email"

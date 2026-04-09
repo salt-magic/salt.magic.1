@@ -219,14 +219,14 @@ export default function Comparison() {
           >
             <div className="grid grid-cols-2">
               {/* Salt.Magic - always visible */}
-              <div role="row" className="p-6 flex flex-col bg-white">
+              <div role="row" className="p-4 sm:p-6 flex flex-col bg-white">
                 <ColContent col={hero} isHero />
               </div>
 
               {/* Active competitor - swipeable */}
               <div
                 role="row"
-                className="p-6 flex flex-col bg-white/[0.12] backdrop-blur-lg border-l border-white/[0.12] relative"
+                className="p-4 sm:p-6 flex flex-col bg-white/[0.12] backdrop-blur-lg border-l border-white/[0.12] relative"
               >
                 {/* Chevron nav */}
                 <button

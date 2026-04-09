@@ -22,10 +22,10 @@ export default function PartnerHero() {
             The global electrolyte market is exploding. Partner with Thailand&apos;s first
             daily mineralizer and claim your first-mover advantage.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <a
               href="#partner-form"
-              className="px-8 py-3.5 bg-white text-mineral text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+              className="w-full sm:w-auto text-center px-8 py-3.5 bg-white text-mineral text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
               Contact Us
             </a>
@@ -33,7 +33,7 @@ export default function PartnerHero() {
               href="/pitch-deck.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3.5 border border-white/30 text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:border-white/60 hover:bg-white/5 transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+              className="w-full sm:w-auto text-center px-8 py-3.5 border border-white/30 text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:border-white/60 hover:bg-white/5 transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
             >
               Download Pitch Deck
             </a>

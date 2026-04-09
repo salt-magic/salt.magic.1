@@ -60,7 +60,7 @@ export default async function BlogArticlePage({
         />
         <FadeIn className="absolute inset-0 flex flex-col items-center justify-end pb-[clamp(48px,8vw,100px)] px-[clamp(24px,5vw,64px)] text-center">
           <div className="flex items-center gap-3 mb-5">
-            <span className="px-3 py-1 bg-white/90 text-ink text-[11px] font-medium tracking-[.1em] uppercase rounded-full">
+            <span className="px-3 py-1 bg-white/90 text-ink text-[12px] font-medium tracking-[.1em] uppercase rounded-full">
               {post.category}
             </span>
             <span className="text-[13px] font-normal text-white/80">

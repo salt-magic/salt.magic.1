@@ -28,7 +28,7 @@ export default function ForEveryone() {
                 navigating a busy workday, your body burns through minerals every single day.
               </p>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="border border-border-warm rounded-xl p-4 text-center">
                   <p className="text-[12px] font-medium tracking-eyebrow uppercase text-ink-light mb-2">
                     The Old Way (Sports Drinks)

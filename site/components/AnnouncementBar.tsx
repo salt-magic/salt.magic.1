@@ -28,7 +28,7 @@ export default function AnnouncementBar() {
       {messages.map((msg, i) => (
         <span
           key={i}
-          className={`absolute uppercase tracking-cta text-[12px] font-medium text-white/90 transition-all duration-700 ease-out ${
+          className={`absolute uppercase tracking-cta text-[12px] font-medium text-white/90 transition-[opacity,transform] duration-700 ease-out ${
             i === active
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-1.5'
