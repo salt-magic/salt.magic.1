@@ -142,7 +142,7 @@ export default function Nav() {
               initial={{ opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`text-[13px] font-medium uppercase tracking-cta transition-colors duration-300 underline-offset-4 decoration-1 ${focusRing} ${
+              className={`text-[12px] font-normal uppercase tracking-eyebrow transition-colors duration-300 underline-offset-4 decoration-1 ${focusRing} ${
                 useDarkNav ? linkClassScrolled : linkClassTransparent
               } ${isActive(link.href) ? 'underline decoration-gold' : 'hover:underline'}`}
             >
@@ -222,7 +222,7 @@ export default function Nav() {
               >
                 <El
                   href={link.href}
-                  className={`text-[13px] font-medium uppercase tracking-cta transition-colors duration-300 underline-offset-4 decoration-1 ${focusRing} ${
+                  className={`text-[12px] font-normal uppercase tracking-eyebrow transition-colors duration-300 underline-offset-4 decoration-1 ${focusRing} ${
                     useDarkNav ? linkClassScrolled : linkClassTransparent
                   } ${isActive(link.href) ? 'underline decoration-gold' : 'hover:underline'}`}
                 >

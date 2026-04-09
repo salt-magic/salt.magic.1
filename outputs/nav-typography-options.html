@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic - Nav Typography Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@400;500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f5f3f0;
+    color: #3C3028;
+    padding: 40px 24px 80px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 8px;
+    color: #294B6D;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 48px;
+  }
+
+  /* Current (for reference) */
+  .current-label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #999;
+    margin-bottom: 16px;
+  }
+
+  /* Option card */
+  .option {
+    max-width: 1100px;
+    margin: 0 auto 56px;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  .option-header {
+    padding: 24px 32px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+  }
+  .option-header h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #294B6D;
+  }
+  .option-header .tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 100px;
+    background: #294B6D;
+    color: #fff;
+    letter-spacing: 0.04em;
+  }
+  .option-header .tag.ref {
+    background: #D4BFAA;
+    color: #3C3028;
+  }
+  .option-header .tag.current {
+    background: #e5e5e5;
+    color: #666;
+  }
+  .option-desc {
+    padding: 16px 32px 0;
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+  }
+
+  /* Nav simulation — transparent (hero) state */
+  .nav-demo {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, #294B6D 0%, #3D6588 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 48px;
+    overflow: hidden;
+  }
+  .nav-demo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><circle cx="200" cy="200" r="180" fill="none" stroke="white" stroke-opacity="0.03" stroke-width="1"/><circle cx="200" cy="200" r="120" fill="none" stroke="white" stroke-opacity="0.02" stroke-width="1"/></svg>') center/cover;
+  }
+  .nav-inner {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+  }
+  .nav-left { gap: 32px; }
+  .nav-right { gap: 32px; }
+  .nav-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 0.02em;
+  }
+  .nav-logo .dot { color: #D4BFAA; }
+  .shop-btn {
+    padding: 10px 24px;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    background: #D4BFAA;
+    color: #294B6D;
+  }
+
+  /* Nav link styles per option */
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+  .nav-link:hover { opacity: 0.7; }
+  .nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: #D4BFAA;
+    text-decoration-thickness: 1px;
+  }
+
+  /* CURRENT: Inter 13px uppercase, tracking 0.12em, weight 500 */
+  .style-current .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  /* OPTION A: Inter Mixed Case — Grown Alchemist / Cure Hydration inspired */
+  .style-a .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0.01em;
+  }
+
+  /* OPTION B: Cormorant Garamond Mixed Case — Editorial Serif */
+  .style-b .nav-link {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+
+  /* OPTION C: Inter Condensed Uppercase — Lighter, more open */
+  .style-c .nav-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  /* Scrolled (white bg) state */
+  .nav-demo-light {
+    height: 80px;
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+  .nav-demo-light .nav-link {
+    color: #3C3028;
+  }
+  .nav-demo-light .nav-link:hover { opacity: 0.5; }
+  .nav-demo-light .nav-link.active {
+    text-decoration-color: #294B6D;
+  }
+  .nav-demo-light .nav-logo {
+    color: #294B6D;
+  }
+  .nav-demo-light .shop-btn {
+    background: #294B6D;
+    color: #fff;
+  }
+
+  /* Specs table */
+  .specs {
+    padding: 20px 32px 24px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    border-top: 1px solid #f0f0f0;
+  }
+  .spec {
+    font-size: 12px;
+    color: #aaa;
+  }
+  .spec strong {
+    color: #666;
+    font-weight: 500;
+  }
+
+  /* State labels */
+  .state-label {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+  }
+  .nav-demo-light .state-label {
+    color: #ccc;
+  }
+
+  /* Reference note */
+  .ref-note {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<h1>Nav Typography Options</h1>
+<p class="subtitle">3 Optionen basierend auf Brand Guidelines + Referenzseiten (Grown Alchemist, Cure Hydration, PANPURI)</p>
+<p class="ref-note">
+  Referenz-Analyse: Beide Brands nutzen <strong>Mixed Case</strong> (kein Uppercase), <strong>Sans-Serif</strong>, <strong>Regular-Medium Weight</strong>, minimales Letter-Spacing.<br>
+  Das aktuelle Nav (Inter 13px Uppercase + 0.12em Tracking) wirkt im Vergleich zu breit und "schreierisch".
+</p>
+
+<!-- ============ CURRENT ============ -->
+<div class="option">
+  <div class="option-header">
+    <h2>Aktuell (Referenz)</h2>
+    <span class="tag current">Aktueller Stand</span>
+  </div>
+  <p class="option-desc">Inter 13px, Medium (500), Uppercase, 0.12em Tracking - das, was Leo nicht mag.</p>
+  <div class="nav-demo style-current">
+    <span class="state-label">Transparent State</span>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#" class="nav-link active">About</a>
+        <a href="#" class="nav-link">Products</a>
+      </div>
+      <div class="nav-logo">Salt<span class="dot">.</span>Magic</div>
+      <div class="nav-right">
+        <a href="#" class="nav-link">Story</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Partner</a>
+        <button class="shop-btn">Shop Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="nav-demo nav-demo-light style-current">
+    <span class="state-label">Scrolled State</span>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#" class="nav-link active">About</a>
+        <a href="#" class="nav-link">Products</a>
+      </div>
+      <div class="nav-logo">Salt<span class="dot">.</span>Magic</div>
+      <div class="nav-right">
+        <a href="#" class="nav-link">Story</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Partner</a>
+        <button class="shop-btn">Shop Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="specs">
+    <div class="spec"><strong>Font:</strong> Inter</div>
+    <div class="spec"><strong>Size:</strong> 13px</div>
+    <div class="spec"><strong>Weight:</strong> 500 (Medium)</div>
+    <div class="spec"><strong>Case:</strong> UPPERCASE</div>
+    <div class="spec"><strong>Tracking:</strong> 0.12em</div>
+  </div>
+</div>
+
+<!-- ============ OPTION A ============ -->
+<div class="option">
+  <div class="option-header">
+    <h2>Option A - Clean Sans-Serif</h2>
+    <span class="tag ref">Grown Alchemist / Cure</span>
+  </div>
+  <p class="option-desc">
+    Inter in Mixed Case, Regular Weight, kaum Letter-Spacing. Ruhig, modern, vertraut -
+    wie Grown Alchemist und Cure Hydration. Laesst das Logo und die Seiteninhalte sprechen.
+  </p>
+  <div class="nav-demo style-a">
+    <span class="state-label">Transparent State</span>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#" class="nav-link active">About</a>
+        <a href="#" class="nav-link">Products</a>
+      </div>
+      <div class="nav-logo">Salt<span class="dot">.</span>Magic</div>
+      <div class="nav-right">
+        <a href="#" class="nav-link">Story</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Partner</a>
+        <button class="shop-btn">Shop Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="nav-demo nav-demo-light style-a">
+    <span class="state-label">Scrolled State</span>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#" class="nav-link active">About</a>
+        <a href="#" class="nav-link">Products</a>
+      </div>
+      <div class="nav-logo">Salt<span class="dot">.</span>Magic</div>
+      <div class="nav-right">
+        <a href="#" class="nav-link">Story</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Partner</a>
+        <button class="shop-btn">Shop Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="specs">
+    <div class="spec"><strong>Font:</strong> Inter</div>
+    <div class="spec"><strong>Size:</strong> 15px</div>
+    <div class="spec"><strong>Weight:</strong> 400 (Regular)</div>
+    <div class="spec"><strong>Case:</strong> Mixed Case</div>
+    <div class="spec"><strong>Tracking:</strong> 0.01em</div>
+  </div>
+</div>
+
+<!-- ============ OPTION B ============ -->
+<div class="option">
+  <div class="option-header">
+    <h2>Option B - Editorial Serif</h2>
+    <span class="tag">Brand Guideline Alt</span>
+  </div>
+  <p class="option-desc">
+    Cormorant Garamond (die Alternative aus den Brand Guidelines) in Mixed Case. Elegant, editorial,
+    luxury - verstaerkt die "Elevated Natural Luxury" Positionierung. Ungewoehnlich fuer Navs, aber passend zum Playfair-Headline-System.
+  </p>
+  <div class="nav-demo style-b">
+    <span class="state-label">Transparent State</span>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#" class="nav-link active">About</a>
+        <a href="#" class="nav-link">Products</a>
+      </div>
+      <div class="nav-logo">Salt<span class="dot">.</span>Magic</div>
+      <div class="nav-right">
+        <a href="#" class="nav-link">Story</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Partner</a>
+        <button class="shop-btn">Shop Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="nav-demo nav-demo-light style-b">
+    <span class="state-label">Scrolled State</span>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#" class="nav-link active">About</a>
+        <a href="#" class="nav-link">Products</a>
+      </div>
+      <div class="nav-logo">Salt<span class="dot">.</span>Magic</div>
+      <div class="nav-right">
+        <a href="#" class="nav-link">Story</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Partner</a>
+        <button class="shop-btn">Shop Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="specs">
+    <div class="spec"><strong>Font:</strong> Cormorant Garamond</div>
+    <div class="spec"><strong>Size:</strong> 17px</div>
+    <div class="spec"><strong>Weight:</strong> 500 (Medium)</div>
+    <div class="spec"><strong>Case:</strong> Mixed Case</div>
+    <div class="spec"><strong>Tracking:</strong> 0.02em</div>
+  </div>
+</div>
+
+<!-- ============ OPTION C ============ -->
+<div class="option">
+  <div class="option-header">
+    <h2>Option C - Refined Uppercase</h2>
+    <span class="tag ref">PANPURI-nah</span>
+  </div>
+  <p class="option-desc">
+    Bleibt bei Uppercase, aber leichter: Regular statt Medium, breiteres Tracking (0.2em), kleinere Schrift (12px).
+    Wirkt feiner und luftiger als der aktuelle Stand - wie ein Fluester statt Ansage. PANPURI-typisch.
+  </p>
+  <div class="nav-demo style-c">
+    <span class="state-label">Transparent State</span>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#" class="nav-link active">About</a>
+        <a href="#" class="nav-link">Products</a>
+      </div>
+      <div class="nav-logo">Salt<span class="dot">.</span>Magic</div>
+      <div class="nav-right">
+        <a href="#" class="nav-link">Story</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Partner</a>
+        <button class="shop-btn">Shop Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="nav-demo nav-demo-light style-c">
+    <span class="state-label">Scrolled State</span>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="#" class="nav-link active">About</a>
+        <a href="#" class="nav-link">Products</a>
+      </div>
+      <div class="nav-logo">Salt<span class="dot">.</span>Magic</div>
+      <div class="nav-right">
+        <a href="#" class="nav-link">Story</a>
+        <a href="#" class="nav-link">Blog</a>
+        <a href="#" class="nav-link">Partner</a>
+        <button class="shop-btn">Shop Now</button>
+      </div>
+    </div>
+  </div>
+  <div class="specs">
+    <div class="spec"><strong>Font:</strong> Inter</div>
+    <div class="spec"><strong>Size:</strong> 12px</div>
+    <div class="spec"><strong>Weight:</strong> 400 (Regular)</div>
+    <div class="spec"><strong>Case:</strong> UPPERCASE</div>
+    <div class="spec"><strong>Tracking:</strong> 0.2em</div>
+  </div>
+</div>
+
+</body>
+</html>
