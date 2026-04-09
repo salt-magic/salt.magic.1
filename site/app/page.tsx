@@ -7,7 +7,7 @@ import ForEveryone from '@/components/ForEveryone'
 import Ingredients from '@/components/Ingredients'
 import Comparison from '@/components/Comparison'
 import Benefits from '@/components/Benefits'
-import SocialProof from '@/components/SocialProof'
+
 import Products from '@/components/Products'
 import Testimonials from '@/components/Testimonials'
 import BlogSection from '@/components/BlogSection'
@@ -33,9 +33,6 @@ export default function Home() {
 
       {/* 3. The Problem - Why your water is "dead" */}
       <WhySection />
-
-      {/* 4. Social Proof - Numbers (after problem = credibility) */}
-      <SocialProof />
 
       {/* 4. The Formula - Split layout: image left, ingredients right */}
       <section className="bg-warm-off">
