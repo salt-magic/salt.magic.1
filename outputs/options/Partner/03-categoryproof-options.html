@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Category Proof - Layout Options | Salt.Magic Partner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --mineral: #294B6D; --mineral-light: #3D6588; --gold: #D4BFAA; --warm-off: #F9F7F4; --warm-white: #FFFFFF; --ink: #3C3028; --ink-light: #5A4A3C; --ink-faint: #9B8E82; --border-warm: #E8DFD3; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+.page-header { background: var(--mineral); color: white; padding: 40px; text-align: center; }
+.page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+.page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 550px; margin: 0 auto; line-height: 1.6; }
+.page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+.option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+.option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+.option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+.option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+.option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+.frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+.frame-desktop { width: 900px; }
+.frame-mobile { width: 375px; }
+.frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+.frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+.frame-content { width: 100%; position: relative; overflow: hidden; }
+.divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+.divider hr { border: none; border-top: 1px solid var(--border-warm); }
+</style>
+</head>
+<body>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <h1>Category Proof - Layout Options</h1>
+  <p>Section 03 of the Partner page. "Clean hydration builds unicorns" - showcasing competitor success stories as market validation.</p>
+  <div class="current">Current: Stacked list with border separators on white bg</div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A: Trust Badge Cards -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by LMNT Wholesale</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Trust Badge Cards</span>
+  </div>
+  <p class="option-desc">3 prominent cards in a row on warm-off background. Each card features the brand name large, stat as a big Playfair number, and description below. Subtle gold top border on each card. Left-aligned section header.</p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: var(--warm-off); padding: 64px 72px;">
+        <!-- Eyebrow -->
+        <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 20px;">Category Proof</div>
+        <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 24px;"></div>
+        <!-- Headline -->
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: var(--ink); margin-bottom: 12px; line-height: 1.2;">Clean hydration builds unicorns.</h2>
+        <p style="font-size: 15px; color: var(--ink-light); line-height: 1.7; max-width: 600px; margin-bottom: 48px;">The biggest wellness brands of the last decade started exactly where Salt.Magic is now. Clean electrolytes are creating an entirely new, highly lucrative retail category.</p>
+
+        <!-- 3 Cards Row -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+          <!-- Card 1 -->
+          <div style="background: white; border-radius: 12px; padding: 36px 28px; border-top: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div style="font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; color: var(--mineral); margin-bottom: 8px;">$500M+</div>
+            <div style="font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 8px;">Liquid IV</div>
+            <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">Acquired by Unilever in a deal valued at over $500 million</div>
+          </div>
+          <!-- Card 2 -->
+          <div style="background: white; border-radius: 12px; padding: 36px 28px; border-top: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div style="font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; color: var(--mineral); margin-bottom: 8px;">8-Fig</div>
+            <div style="font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 8px;">LMNT</div>
+            <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">8-figure revenue, dominating DTC and retail channels</div>
+          </div>
+          <!-- Card 3 -->
+          <div style="background: white; border-radius: 12px; padding: 36px 28px; border-top: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div style="font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 400; color: var(--mineral); margin-bottom: 8px;">$1.4B</div>
+            <div style="font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 8px;">Liquid Death</div>
+            <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">$1.4B valuation with 100K+ retail stores worldwide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: var(--warm-off); padding: 40px 20px;">
+        <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px;">Category Proof</div>
+        <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 20px;"></div>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; color: var(--ink); margin-bottom: 12px; line-height: 1.2;">Clean hydration builds unicorns.</h2>
+        <p style="font-size: 14px; color: var(--ink-light); line-height: 1.7; margin-bottom: 32px;">The biggest wellness brands of the last decade started exactly where Salt.Magic is now. Clean electrolytes are creating an entirely new, highly lucrative retail category.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="background: white; border-radius: 12px; padding: 28px 20px; border-top: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--mineral); margin-bottom: 6px;">$500M+</div>
+            <div style="font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Liquid IV</div>
+            <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">Acquired by Unilever</div>
+          </div>
+          <div style="background: white; border-radius: 12px; padding: 28px 20px; border-top: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--mineral); margin-bottom: 6px;">8-Fig</div>
+            <div style="font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">LMNT</div>
+            <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">Dominating DTC and retail</div>
+          </div>
+          <div style="background: white; border-radius: 12px; padding: 28px 20px; border-top: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 400; color: var(--mineral); margin-bottom: 6px;">$1.4B</div>
+            <div style="font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Liquid Death</div>
+            <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">100K+ retail stores</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B: Editorial Case Studies -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by Grown Alchemist</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Editorial Case Studies</span>
+  </div>
+  <p class="option-desc">Magazine-style layout with large stat numbers left and brand details right. Horizontal rows with generous spacing, gold dot separators between rows. Clean white background.</p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: white; padding: 64px 72px;">
+        <!-- Eyebrow -->
+        <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 20px;">Category Proof</div>
+        <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 24px;"></div>
+        <!-- Headline -->
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: var(--ink); margin-bottom: 12px; line-height: 1.2;">Clean hydration builds unicorns.</h2>
+        <p style="font-size: 15px; color: var(--ink-light); line-height: 1.7; max-width: 550px; margin-bottom: 56px;">The biggest wellness brands of the last decade started exactly where Salt.Magic is now. Clean electrolytes are creating an entirely new, highly lucrative retail category.</p>
+
+        <!-- Row 1 -->
+        <div style="display: flex; align-items: baseline; gap: 48px; padding-bottom: 40px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 400; color: var(--mineral); min-width: 220px;">$500M+</div>
+          <div>
+            <div style="font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Liquid IV</div>
+            <div style="font-size: 14px; color: var(--ink-light); line-height: 1.6;">Acquired by Unilever in a landmark deal. Proved that clean hydration is a mainstream consumer category with mass-market potential.</div>
+          </div>
+        </div>
+
+        <!-- Gold Dot Separator -->
+        <div style="display: flex; align-items: center; gap: 12px; padding-bottom: 40px;">
+          <div style="flex: 1; height: 1px; background: var(--border-warm);"></div>
+          <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold);"></div>
+          <div style="flex: 1; height: 1px; background: var(--border-warm);"></div>
+        </div>
+
+        <!-- Row 2 -->
+        <div style="display: flex; align-items: baseline; gap: 48px; padding-bottom: 40px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 400; color: var(--mineral); min-width: 220px;">8-Figure</div>
+          <div>
+            <div style="font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">LMNT</div>
+            <div style="font-size: 14px; color: var(--ink-light); line-height: 1.6;">8-figure revenue dominating both DTC and retail channels. Built a cult following through clean ingredients and zero sugar.</div>
+          </div>
+        </div>
+
+        <!-- Gold Dot Separator -->
+        <div style="display: flex; align-items: center; gap: 12px; padding-bottom: 40px;">
+          <div style="flex: 1; height: 1px; background: var(--border-warm);"></div>
+          <div style="width: 6px; height: 6px; border-radius: 50%; background: var(--gold);"></div>
+          <div style="flex: 1; height: 1px; background: var(--border-warm);"></div>
+        </div>
+
+        <!-- Row 3 -->
+        <div style="display: flex; align-items: baseline; gap: 48px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 400; color: var(--mineral); min-width: 220px;">$1.4B</div>
+          <div>
+            <div style="font-size: 18px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Liquid Death</div>
+            <div style="font-size: 14px; color: var(--ink-light); line-height: 1.6;">$1.4 billion valuation with 100,000+ retail stores. Disrupted an entire category through bold branding and clean water.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: white; padding: 40px 20px;">
+        <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px;">Category Proof</div>
+        <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 20px;"></div>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; color: var(--ink); margin-bottom: 12px; line-height: 1.2;">Clean hydration builds unicorns.</h2>
+        <p style="font-size: 14px; color: var(--ink-light); line-height: 1.7; margin-bottom: 36px;">The biggest wellness brands of the last decade started exactly where Salt.Magic is now.</p>
+
+        <!-- Row 1 -->
+        <div style="padding-bottom: 28px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 400; color: var(--mineral); margin-bottom: 8px;">$500M+</div>
+          <div style="font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 4px;">Liquid IV</div>
+          <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">Acquired by Unilever in a landmark deal</div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px; padding-bottom: 28px;">
+          <div style="flex: 1; height: 1px; background: var(--border-warm);"></div>
+          <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold);"></div>
+          <div style="flex: 1; height: 1px; background: var(--border-warm);"></div>
+        </div>
+
+        <!-- Row 2 -->
+        <div style="padding-bottom: 28px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 400; color: var(--mineral); margin-bottom: 8px;">8-Figure</div>
+          <div style="font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 4px;">LMNT</div>
+          <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">Dominating DTC and retail channels</div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px; padding-bottom: 28px;">
+          <div style="flex: 1; height: 1px; background: var(--border-warm);"></div>
+          <div style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold);"></div>
+          <div style="flex: 1; height: 1px; background: var(--border-warm);"></div>
+        </div>
+
+        <!-- Row 3 -->
+        <div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 400; color: var(--mineral); margin-bottom: 8px;">$1.4B</div>
+          <div style="font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 4px;">Liquid Death</div>
+          <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">100K+ retail stores worldwide</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C: Logo Wall + Stats -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by Sakara Life</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Logo Wall + Stats</span>
+  </div>
+  <p class="option-desc">Centered layout on mineral-blue background. Brand names as large display text in white, stats and descriptions below each. Horizontal gold line separators create visual rhythm.</p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: var(--mineral); padding: 72px 72px; text-align: center;">
+        <!-- Eyebrow -->
+        <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px;">Category Proof</div>
+        <div style="width: 40px; height: 2px; background: var(--gold); margin: 0 auto 24px;"></div>
+        <!-- Headline -->
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: white; margin-bottom: 12px; line-height: 1.2;">Clean hydration builds unicorns.</h2>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 520px; margin: 0 auto 64px;">The biggest wellness brands of the last decade started exactly where Salt.Magic is now.</p>
+
+        <!-- Brand 1 -->
+        <div style="margin-bottom: 12px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; color: white; letter-spacing: 0.02em;">Liquid IV</div>
+          <div style="font-size: 28px; font-weight: 500; color: var(--gold); margin: 8px 0 4px; font-family: 'Playfair Display', serif;">$500M+</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6;">Acquired by Unilever</div>
+        </div>
+
+        <!-- Gold Line -->
+        <div style="width: 80px; height: 1px; background: var(--gold); margin: 32px auto;"></div>
+
+        <!-- Brand 2 -->
+        <div style="margin-bottom: 12px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; color: white; letter-spacing: 0.02em;">LMNT</div>
+          <div style="font-size: 28px; font-weight: 500; color: var(--gold); margin: 8px 0 4px; font-family: 'Playfair Display', serif;">8-Figure Revenue</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6;">Dominating DTC and retail</div>
+        </div>
+
+        <!-- Gold Line -->
+        <div style="width: 80px; height: 1px; background: var(--gold); margin: 32px auto;"></div>
+
+        <!-- Brand 3 -->
+        <div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; color: white; letter-spacing: 0.02em;">Liquid Death</div>
+          <div style="font-size: 28px; font-weight: 500; color: var(--gold); margin: 8px 0 4px; font-family: 'Playfair Display', serif;">$1.4B</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.6;">100K+ retail stores worldwide</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: var(--mineral); padding: 48px 20px; text-align: center;">
+        <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px;">Category Proof</div>
+        <div style="width: 40px; height: 2px; background: var(--gold); margin: 0 auto 20px;"></div>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 26px; color: white; margin-bottom: 12px; line-height: 1.2;">Clean hydration builds unicorns.</h2>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 48px;">The biggest wellness brands of the last decade started exactly where Salt.Magic is now.</p>
+
+        <div style="margin-bottom: 12px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; color: white;">Liquid IV</div>
+          <div style="font-size: 22px; font-weight: 500; color: var(--gold); margin: 6px 0 4px; font-family: 'Playfair Display', serif;">$500M+</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6);">Acquired by Unilever</div>
+        </div>
+
+        <div style="width: 60px; height: 1px; background: var(--gold); margin: 28px auto;"></div>
+
+        <div style="margin-bottom: 12px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; color: white;">LMNT</div>
+          <div style="font-size: 22px; font-weight: 500; color: var(--gold); margin: 6px 0 4px; font-family: 'Playfair Display', serif;">8-Figure</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6);">Dominating DTC and retail</div>
+        </div>
+
+        <div style="width: 60px; height: 1px; background: var(--gold); margin: 28px auto;"></div>
+
+        <div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 400; color: white;">Liquid Death</div>
+          <div style="font-size: 22px; font-weight: 500; color: var(--gold); margin: 6px 0 4px; font-family: 'Playfair Display', serif;">$1.4B</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.6);">100K+ retail stores</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D: Timeline / Momentum -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by Cure Hydration</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Timeline / Momentum</span>
+  </div>
+  <p class="option-desc">Left-aligned timeline with a gold connector line. Each brand appears as a milestone node with the stat in a gold circle, name and description beside it. Shows a progression and momentum narrative.</p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: var(--warm-off); padding: 64px 72px;">
+        <!-- Eyebrow -->
+        <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 20px;">Category Proof</div>
+        <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 24px;"></div>
+        <!-- Headline -->
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: var(--ink); margin-bottom: 12px; line-height: 1.2;">Clean hydration builds unicorns.</h2>
+        <p style="font-size: 15px; color: var(--ink-light); line-height: 1.7; max-width: 550px; margin-bottom: 56px;">The biggest wellness brands of the last decade started exactly where Salt.Magic is now. Clean electrolytes are creating an entirely new, highly lucrative retail category.</p>
+
+        <!-- Timeline -->
+        <div style="position: relative; padding-left: 100px;">
+          <!-- Gold connector line -->
+          <div style="position: absolute; left: 40px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--border-warm));"></div>
+
+          <!-- Node 1 -->
+          <div style="position: relative; margin-bottom: 56px;">
+            <!-- Circle -->
+            <div style="position: absolute; left: -100px; top: 0; width: 80px; height: 80px; border-radius: 50%; background: white; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--mineral);">$500M+</div>
+            </div>
+            <!-- Connector dot -->
+            <div style="position: absolute; left: -62px; top: 36px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
+            <!-- Content -->
+            <div style="padding-top: 8px; padding-left: 20px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 6px;">Liquid IV</div>
+              <div style="font-size: 14px; color: var(--ink-light); line-height: 1.6; max-width: 460px;">Acquired by Unilever in a deal valued at over $500 million. Proved that clean hydration is a mainstream consumer category.</div>
+            </div>
+          </div>
+
+          <!-- Node 2 -->
+          <div style="position: relative; margin-bottom: 56px;">
+            <div style="position: absolute; left: -100px; top: 0; width: 80px; height: 80px; border-radius: 50%; background: white; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--mineral);">8-Fig</div>
+            </div>
+            <div style="position: absolute; left: -62px; top: 36px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
+            <div style="padding-top: 8px; padding-left: 20px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 6px;">LMNT</div>
+              <div style="font-size: 14px; color: var(--ink-light); line-height: 1.6; max-width: 460px;">8-figure revenue, dominating both DTC and retail channels. Built a cult following through clean ingredients and zero sugar.</div>
+            </div>
+          </div>
+
+          <!-- Node 3 -->
+          <div style="position: relative;">
+            <div style="position: absolute; left: -100px; top: 0; width: 80px; height: 80px; border-radius: 50%; background: white; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--mineral);">$1.4B</div>
+            </div>
+            <div style="position: absolute; left: -62px; top: 36px; width: 8px; height: 8px; border-radius: 50%; background: var(--gold);"></div>
+            <div style="padding-top: 8px; padding-left: 20px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 6px;">Liquid Death</div>
+              <div style="font-size: 14px; color: var(--ink-light); line-height: 1.6; max-width: 460px;">$1.4 billion valuation with 100,000+ retail stores. Disrupted an entire category through bold branding and clean water.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: var(--warm-off); padding: 40px 20px;">
+        <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 16px;">Category Proof</div>
+        <div style="width: 40px; height: 2px; background: var(--gold); margin-bottom: 20px;"></div>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; color: var(--ink); margin-bottom: 12px; line-height: 1.2;">Clean hydration builds unicorns.</h2>
+        <p style="font-size: 14px; color: var(--ink-light); line-height: 1.7; margin-bottom: 36px;">The biggest wellness brands of the last decade started exactly where Salt.Magic is now.</p>
+
+        <!-- Mobile Timeline -->
+        <div style="position: relative; padding-left: 48px;">
+          <!-- Gold connector line -->
+          <div style="position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--border-warm));"></div>
+
+          <!-- Node 1 -->
+          <div style="position: relative; margin-bottom: 36px;">
+            <div style="position: absolute; left: -48px; top: 4px; width: 40px; height: 40px; border-radius: 50%; background: white; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 400; color: var(--mineral);">$500M</div>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 4px;">Liquid IV</div>
+            <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">Acquired by Unilever - $500M+ deal</div>
+          </div>
+
+          <!-- Node 2 -->
+          <div style="position: relative; margin-bottom: 36px;">
+            <div style="position: absolute; left: -48px; top: 4px; width: 40px; height: 40px; border-radius: 50%; background: white; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 400; color: var(--mineral);">8-Fig</div>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 4px;">LMNT</div>
+            <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">Dominating DTC and retail channels</div>
+          </div>
+
+          <!-- Node 3 -->
+          <div style="position: relative;">
+            <div style="position: absolute; left: -48px; top: 4px; width: 40px; height: 40px; border-radius: 50%; background: white; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+              <div style="font-family: 'Playfair Display', serif; font-size: 11px; font-weight: 400; color: var(--mineral);">$1.4B</div>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 4px;">Liquid Death</div>
+            <div style="font-size: 13px; color: var(--ink-light); line-height: 1.6;">100K+ retail stores worldwide</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>
+
+</body>
+</html>

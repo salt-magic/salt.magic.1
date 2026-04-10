@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Hero - Layout Options | Salt.Magic</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --mineral: #294B6D; --mineral-light: #3D6588; --gold: #D4BFAA; --warm-off: #F9F7F4; --warm-white: #FFFFFF; --ink: #3C3028; --ink-light: #5A4A3C; --ink-faint: #9B8E82; --border-warm: #E8DFD3; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+.page-header { background: var(--mineral); color: white; padding: 40px; text-align: center; }
+.page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+.page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 550px; margin: 0 auto; line-height: 1.6; }
+.page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+.option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+.option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+.option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+.option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+.option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+.frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+.frame-desktop { width: 900px; }
+.frame-mobile { width: 375px; }
+.frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+.frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+.frame-content { width: 100%; position: relative; overflow: hidden; }
+.divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+.divider hr { border: none; border-top: 1px solid var(--border-warm); }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Partner Hero Section</h1>
+  <p>4 layout options for the partner page hero. Each option uses Leo's approved copy with different visual treatments inspired by premium D2C/B2B brands.</p>
+  <span class="current">Current: Centered text on mineral-blue, stats bar below</span>
+</div>
+
+<!-- ============================================================ -->
+<!-- OPTION A -->
+<!-- ============================================================ -->
+<div class="option-section">
+  <div class="option-ref">Reference: LMNT Wholesale</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Full-Bleed Image Hero</span>
+  </div>
+  <p class="option-desc">Full-width product hero image as background with dark gradient overlay. Left-aligned text overlaid on the image. Stats as a floating glass-morphism bar at the bottom edge. High visual impact, product-forward.</p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="height: 540px; background: linear-gradient(135deg, #1a3a5c 0%, #294B6D 30%, #3D6588 60%, #4a7a9e 100%); position: relative; overflow: hidden;">
+        <!-- Simulated product image texture -->
+        <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 40%, rgba(212,191,170,0.15) 0%, transparent 60%), radial-gradient(ellipse at 30% 70%, rgba(61,101,136,0.3) 0%, transparent 50%);"></div>
+        <!-- Dark gradient overlay from bottom-left -->
+        <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(26,58,92,0.92) 0%, rgba(26,58,92,0.7) 40%, rgba(26,58,92,0.2) 70%, transparent 100%);"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,58,92,0.8) 0%, transparent 40%);"></div>
+
+        <!-- Text content left-aligned -->
+        <div style="position: relative; z-index: 2; padding: 80px 60px 0;">
+          <div style="font-family: Inter; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 20px;">Distribution Partnership</div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 48px; color: white; line-height: 1.15; max-width: 500px; margin-bottom: 20px;">Capture the Next Wave of Wellness</h2>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.75); max-width: 420px; line-height: 1.7; margin-bottom: 32px;">The global electrolyte market is exploding. Partner with Thailand's first daily mineralizer and claim your first-mover advantage.</p>
+          <div style="display: flex; gap: 12px;">
+            <div style="padding: 14px 32px; background: white; color: #294B6D; font-size: 13px; font-weight: 500; border-radius: 4px;">Contact Us</div>
+            <div style="padding: 14px 32px; border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 13px; font-weight: 500; border-radius: 4px;">Download Pitch Deck</div>
+          </div>
+        </div>
+
+        <!-- Glass-morphism stats bar -->
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; padding: 0 40px 30px;">
+          <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 24px 40px; display: flex; justify-content: space-between;">
+            <div style="text-align: center;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: white; font-weight: 400;">90%</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 4px; letter-spacing: 0.05em;">Customer Retention</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: white; font-weight: 400;">35-40%</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 4px; letter-spacing: 0.05em;">Retailer Margins</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: white; font-weight: 400;">160+</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 4px; letter-spacing: 0.05em;">Locations</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: white; font-weight: 400;">5 Yrs</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.55); margin-top: 4px; letter-spacing: 0.05em;">Proven Track Record</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="height: 700px; background: linear-gradient(135deg, #1a3a5c 0%, #294B6D 30%, #3D6588 60%, #4a7a9e 100%); position: relative; overflow: hidden;">
+        <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at 60% 30%, rgba(212,191,170,0.15) 0%, transparent 60%);"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,58,92,0.95) 0%, rgba(26,58,92,0.6) 50%, rgba(26,58,92,0.3) 100%);"></div>
+
+        <div style="position: relative; z-index: 2; padding: 60px 24px 0;">
+          <div style="font-family: Inter; font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 16px;">Distribution Partnership</div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 32px; color: white; line-height: 1.2; margin-bottom: 16px;">Capture the Next Wave of Wellness</h2>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 28px;">The global electrolyte market is exploding. Partner with Thailand's first daily mineralizer and claim your first-mover advantage.</p>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="padding: 14px 32px; background: white; color: #294B6D; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center;">Contact Us</div>
+            <div style="padding: 14px 32px; border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center;">Download Pitch Deck</div>
+          </div>
+        </div>
+
+        <!-- Stats 2x2 grid -->
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; z-index: 3; padding: 0 16px 24px;">
+          <div style="background: rgba(255,255,255,0.08); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="text-align: center;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: white;">90%</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 2px;">Customer Retention</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: white;">35-40%</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 2px;">Retailer Margins</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: white;">160+</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 2px;">Locations</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: white;">5 Yrs</div>
+              <div style="font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 2px;">Proven Track Record</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================================ -->
+<!-- OPTION B -->
+<!-- ============================================================ -->
+<div class="option-section">
+  <div class="option-ref">Reference: Sakara Life</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Split Hero</span>
+  </div>
+  <p class="option-desc">50/50 split layout. Left side: text content on warm-off background with gold line accent. Right side: product image area on mineral-blue. Stats inline below text. Balanced, editorial feel.</p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="height: 520px; display: flex;">
+        <!-- Left: Text -->
+        <div style="width: 50%; background: #F9F7F4; padding: 64px 48px; display: flex; flex-direction: column; justify-content: center;">
+          <div style="width: 32px; height: 2px; background: #D4BFAA; margin-bottom: 20px;"></div>
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9B8E82; margin-bottom: 16px;">Distribution Partnership</div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 40px; color: #294B6D; line-height: 1.15; margin-bottom: 18px;">Capture the Next Wave of Wellness</h2>
+          <p style="font-size: 15px; color: #5A4A3C; line-height: 1.7; margin-bottom: 28px; max-width: 380px;">The global electrolyte market is exploding. Partner with Thailand's first daily mineralizer and claim your first-mover advantage.</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px;">
+            <div style="padding: 14px 32px; background: #294B6D; color: white; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center; width: fit-content;">Contact Us</div>
+            <div style="padding: 14px 32px; border: 1px solid #294B6D; color: #294B6D; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center; width: fit-content;">Download Pitch Deck</div>
+          </div>
+          <!-- Stats inline -->
+          <div style="display: flex; gap: 24px; border-top: 1px solid #E8DFD3; padding-top: 20px;">
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">90%</div>
+              <div style="font-size: 10px; color: #9B8E82; margin-top: 2px; letter-spacing: 0.05em;">Retention</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">35-40%</div>
+              <div style="font-size: 10px; color: #9B8E82; margin-top: 2px; letter-spacing: 0.05em;">Margins</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">160+</div>
+              <div style="font-size: 10px; color: #9B8E82; margin-top: 2px; letter-spacing: 0.05em;">Locations</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">5 Yrs</div>
+              <div style="font-size: 10px; color: #9B8E82; margin-top: 2px; letter-spacing: 0.05em;">Track Record</div>
+            </div>
+          </div>
+        </div>
+        <!-- Right: Product image area -->
+        <div style="width: 50%; background: #294B6D; position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at center, #3D6588 0%, #294B6D 70%);"></div>
+          <!-- Product silhouette placeholder -->
+          <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 200px; height: 280px; background: linear-gradient(to top, rgba(212,191,170,0.12), rgba(212,191,170,0.04)); border-radius: 8px 8px 100px 100px;"></div>
+          <div style="position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); width: 120px; height: 200px; border: 1px solid rgba(212,191,170,0.15); border-radius: 4px 4px 60px 60px;"></div>
+          <!-- Subtle label -->
+          <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.25);">Product Photography</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="min-height: 700px;">
+        <!-- Image on top -->
+        <div style="height: 240px; background: #294B6D; position: relative; overflow: hidden;">
+          <div style="position: absolute; inset: 0; background: radial-gradient(ellipse at center, #3D6588 0%, #294B6D 70%);"></div>
+          <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); width: 100px; height: 160px; background: linear-gradient(to top, rgba(212,191,170,0.12), rgba(212,191,170,0.04)); border-radius: 4px 4px 50px 50px;"></div>
+          <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); width: 70px; height: 120px; border: 1px solid rgba(212,191,170,0.15); border-radius: 4px 4px 40px 40px;"></div>
+        </div>
+        <!-- Text below -->
+        <div style="background: #F9F7F4; padding: 32px 24px;">
+          <div style="width: 32px; height: 2px; background: #D4BFAA; margin-bottom: 16px;"></div>
+          <div style="font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9B8E82; margin-bottom: 12px;">Distribution Partnership</div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; color: #294B6D; line-height: 1.2; margin-bottom: 14px;">Capture the Next Wave of Wellness</h2>
+          <p style="font-size: 14px; color: #5A4A3C; line-height: 1.7; margin-bottom: 24px;">The global electrolyte market is exploding. Partner with Thailand's first daily mineralizer and claim your first-mover advantage.</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
+            <div style="padding: 14px 32px; background: #294B6D; color: white; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center;">Contact Us</div>
+            <div style="padding: 14px 32px; border: 1px solid #294B6D; color: #294B6D; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center;">Download Pitch Deck</div>
+          </div>
+          <!-- Stats 2x2 -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid #E8DFD3; padding-top: 20px;">
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: #294B6D;">90%</div>
+              <div style="font-size: 10px; color: #9B8E82; margin-top: 2px;">Retention</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: #294B6D;">35-40%</div>
+              <div style="font-size: 10px; color: #9B8E82; margin-top: 2px;">Margins</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: #294B6D;">160+</div>
+              <div style="font-size: 10px; color: #9B8E82; margin-top: 2px;">Locations</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: #294B6D;">5 Yrs</div>
+              <div style="font-size: 10px; color: #9B8E82; margin-top: 2px;">Track Record</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================================ -->
+<!-- OPTION C -->
+<!-- ============================================================ -->
+<div class="option-section">
+  <div class="option-ref">Reference: PANPURI</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Cinematic Gradient</span>
+  </div>
+  <p class="option-desc">Full-width gradient from mineral-blue to near-black. Large centered Playfair headline with maximum whitespace. Minimal body text. Stats as a separate warm-off band below the hero. Gold decorative line elements. Ultra-premium, cinematic feel.</p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <!-- Hero portion -->
+        <div style="height: 440px; background: linear-gradient(160deg, #294B6D 0%, #1e3a55 40%, #152a3e 80%, #0f1f2e 100%); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px;">
+          <!-- Gold decorative lines -->
+          <div style="position: absolute; top: 40px; left: 50%; transform: translateX(-50%); width: 1px; height: 40px; background: linear-gradient(to bottom, transparent, #D4BFAA);"></div>
+          <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 1px; height: 40px; background: linear-gradient(to top, transparent, #D4BFAA);"></div>
+
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 28px;">Distribution Partnership</div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 56px; color: white; line-height: 1.1; max-width: 650px; margin-bottom: 24px;">Capture the Next<br>Wave of Wellness</h2>
+          <div style="width: 40px; height: 1px; background: #D4BFAA; margin-bottom: 24px;"></div>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.6); max-width: 480px; line-height: 1.7; margin-bottom: 36px;">The global electrolyte market is exploding. Partner with Thailand's first daily mineralizer and claim your first-mover advantage.</p>
+          <div style="display: flex; gap: 12px;">
+            <div style="padding: 14px 36px; background: rgba(212,191,170,0.9); color: #294B6D; font-size: 13px; font-weight: 500; border-radius: 4px;">Contact Us</div>
+            <div style="padding: 14px 36px; border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 13px; font-weight: 500; border-radius: 4px;">Download Pitch Deck</div>
+          </div>
+        </div>
+        <!-- Stats band -->
+        <div style="background: #F9F7F4; padding: 32px 60px; display: flex; justify-content: space-between; border-top: 1px solid #E8DFD3;">
+          <div style="text-align: center; flex: 1;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">90%</div>
+            <div style="font-size: 11px; color: #9B8E82; margin-top: 4px; letter-spacing: 0.05em;">Customer Retention</div>
+          </div>
+          <div style="width: 1px; background: #E8DFD3;"></div>
+          <div style="text-align: center; flex: 1;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">35-40%</div>
+            <div style="font-size: 11px; color: #9B8E82; margin-top: 4px; letter-spacing: 0.05em;">Retailer Margins</div>
+          </div>
+          <div style="width: 1px; background: #E8DFD3;"></div>
+          <div style="text-align: center; flex: 1;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">160+</div>
+            <div style="font-size: 11px; color: #9B8E82; margin-top: 4px; letter-spacing: 0.05em;">Locations</div>
+          </div>
+          <div style="width: 1px; background: #E8DFD3;"></div>
+          <div style="text-align: center; flex: 1;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">5 Yrs</div>
+            <div style="font-size: 11px; color: #9B8E82; margin-top: 4px; letter-spacing: 0.05em;">Proven Track Record</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <!-- Hero -->
+        <div style="min-height: 480px; background: linear-gradient(160deg, #294B6D 0%, #1e3a55 40%, #152a3e 80%, #0f1f2e 100%); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 48px 24px;">
+          <div style="position: absolute; top: 28px; left: 50%; transform: translateX(-50%); width: 1px; height: 28px; background: linear-gradient(to bottom, transparent, #D4BFAA);"></div>
+
+          <div style="font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 20px;">Distribution Partnership</div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 34px; color: white; line-height: 1.15; margin-bottom: 18px;">Capture the Next Wave of Wellness</h2>
+          <div style="width: 32px; height: 1px; background: #D4BFAA; margin-bottom: 18px;"></div>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 28px;">The global electrolyte market is exploding. Partner with Thailand's first daily mineralizer.</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+            <div style="padding: 14px 36px; background: rgba(212,191,170,0.9); color: #294B6D; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center;">Contact Us</div>
+            <div style="padding: 14px 36px; border: 1px solid rgba(255,255,255,0.2); color: white; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center;">Download Pitch Deck</div>
+          </div>
+        </div>
+        <!-- Stats 2x2 -->
+        <div style="background: #F9F7F4; padding: 24px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid #E8DFD3;">
+          <div style="text-align: center;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">90%</div>
+            <div style="font-size: 10px; color: #9B8E82; margin-top: 2px;">Customer Retention</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">35-40%</div>
+            <div style="font-size: 10px; color: #9B8E82; margin-top: 2px;">Retailer Margins</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">160+</div>
+            <div style="font-size: 10px; color: #9B8E82; margin-top: 2px;">Locations</div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">5 Yrs</div>
+            <div style="font-size: 10px; color: #9B8E82; margin-top: 2px;">Proven Track Record</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================================ -->
+<!-- OPTION D -->
+<!-- ============================================================ -->
+<div class="option-section">
+  <div class="option-ref">Reference: Grown Alchemist</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Editorial Asymmetric</span>
+  </div>
+  <p class="option-desc">Asymmetric layout on warm-off background. Large headline takes 70% left, stats column takes 30% right. Mineral-blue headline with gold accents. Decorative gold line divider. Clean, editorial, and information-dense.</p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="height: 480px; background: #F9F7F4; padding: 72px 60px; display: flex; gap: 48px; position: relative;">
+        <!-- Gold decorative line top -->
+        <div style="position: absolute; top: 0; left: 60px; right: 60px; height: 3px; background: linear-gradient(to right, #D4BFAA, transparent 60%);"></div>
+
+        <!-- Left: 70% -->
+        <div style="flex: 7; display: flex; flex-direction: column; justify-content: center;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9B8E82; margin-bottom: 20px;">Distribution Partnership</div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 52px; color: #294B6D; line-height: 1.1; margin-bottom: 20px;">Capture the Next Wave of Wellness</h2>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin-bottom: 20px;"></div>
+          <p style="font-size: 15px; color: #5A4A3C; line-height: 1.7; margin-bottom: 32px; max-width: 460px;">The global electrolyte market is exploding. Partner with Thailand's first daily mineralizer and claim your first-mover advantage.</p>
+          <div style="display: flex; gap: 12px;">
+            <div style="padding: 14px 32px; background: #294B6D; color: white; font-size: 13px; font-weight: 500; border-radius: 4px;">Contact Us</div>
+            <div style="padding: 14px 32px; border: 1px solid #294B6D; color: #294B6D; font-size: 13px; font-weight: 500; border-radius: 4px;">Download Pitch Deck</div>
+          </div>
+        </div>
+
+        <!-- Right: 30% stats column -->
+        <div style="flex: 3; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid #E8DFD3; padding-left: 40px; gap: 28px;">
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: #294B6D; line-height: 1;">90%</div>
+            <div style="font-size: 12px; color: #9B8E82; margin-top: 4px; letter-spacing: 0.05em;">Customer Retention</div>
+          </div>
+          <div style="width: 24px; height: 1px; background: #D4BFAA;"></div>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: #294B6D; line-height: 1;">35-40%</div>
+            <div style="font-size: 12px; color: #9B8E82; margin-top: 4px; letter-spacing: 0.05em;">Retailer Margins</div>
+          </div>
+          <div style="width: 24px; height: 1px; background: #D4BFAA;"></div>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: #294B6D; line-height: 1;">160+</div>
+            <div style="font-size: 12px; color: #9B8E82; margin-top: 4px; letter-spacing: 0.05em;">Locations</div>
+          </div>
+          <div style="width: 24px; height: 1px; background: #D4BFAA;"></div>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: #294B6D; line-height: 1;">5 Yrs</div>
+            <div style="font-size: 12px; color: #9B8E82; margin-top: 4px; letter-spacing: 0.05em;">Proven Track Record</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #F9F7F4; padding: 40px 24px; position: relative;">
+        <div style="position: absolute; top: 0; left: 24px; right: 24px; height: 3px; background: linear-gradient(to right, #D4BFAA, transparent 60%);"></div>
+
+        <div style="font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #9B8E82; margin-bottom: 16px;">Distribution Partnership</div>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 32px; color: #294B6D; line-height: 1.15; margin-bottom: 16px;">Capture the Next Wave of Wellness</h2>
+        <div style="width: 32px; height: 2px; background: #D4BFAA; margin-bottom: 16px;"></div>
+        <p style="font-size: 14px; color: #5A4A3C; line-height: 1.7; margin-bottom: 24px;">The global electrolyte market is exploding. Partner with Thailand's first daily mineralizer and claim your first-mover advantage.</p>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px;">
+          <div style="padding: 14px 32px; background: #294B6D; color: white; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center;">Contact Us</div>
+          <div style="padding: 14px 32px; border: 1px solid #294B6D; color: #294B6D; font-size: 13px; font-weight: 500; border-radius: 4px; text-align: center;">Download Pitch Deck</div>
+        </div>
+
+        <!-- Stats stacked -->
+        <div style="border-top: 1px solid #E8DFD3; padding-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">90%</div>
+            <div style="font-size: 11px; color: #9B8E82; margin-top: 2px;">Customer Retention</div>
+          </div>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">35-40%</div>
+            <div style="font-size: 11px; color: #9B8E82; margin-top: 2px;">Retailer Margins</div>
+          </div>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">160+</div>
+            <div style="font-size: 11px; color: #9B8E82; margin-top: 2px;">Locations</div>
+          </div>
+          <div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">5 Yrs</div>
+            <div style="font-size: 11px; color: #9B8E82; margin-top: 2px;">Proven Track Record</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>
+
+</body>
+</html>

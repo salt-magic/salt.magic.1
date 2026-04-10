@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Section 12: Blog Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--mineral:#294B6D;--gold:#D4BFAA;--warm-off:#F9F7F4;--warm-white:#FFFFFF;--ink:#3C3028;--ink-light:#5A4A3C;--ink-faint:#9B8E82;--border-warm:#E8DFD3}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#f0ede8}
+  .page-header{background:var(--mineral);color:white;padding:40px;text-align:center}
+  .page-header h1{font-family:'Playfair Display',serif;font-weight:400;font-size:28px;margin-bottom:8px}
+  .page-header p{font-size:13px;color:rgba(255,255,255,0.65);max-width:600px;margin:0 auto;line-height:1.6}
+  .page-header .current{display:inline-block;margin-top:14px;padding:6px 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:16px;font-size:11px;color:rgba(255,255,255,0.5)}
+  .option-section{max-width:1400px;margin:40px auto;padding:0 24px}
+  .option-label{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .option-badge{background:var(--mineral);color:white;font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:16px}
+  .option-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--mineral)}
+  .option-desc{font-size:12px;color:var(--ink-light);margin-bottom:16px;line-height:1.6;max-width:650px}
+  .option-ref{font-size:10px;color:var(--ink-faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+  .viewport-row{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+  .frame{border-radius:10px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08);background:#fff;flex-shrink:0}
+  .frame-desktop{width:900px}.frame-mobile{width:375px}
+  .frame-bar{background:#e8e8e8;height:24px;display:flex;align-items:center;padding:0 10px;gap:5px}
+  .frame-dot{width:7px;height:7px;border-radius:50%;background:#ccc}
+  .frame-content{width:100%;position:relative;overflow:hidden}
+  .divider{max-width:1400px;margin:0 auto;padding:0 24px}.divider hr{border:none;border-top:1px solid var(--border-warm)}
+  .gold-line{width:36px;height:1px;background:var(--gold);margin-bottom:16px}
+
+  /* A: Featured + Small Grid */
+  .blog-a{background:var(--warm-white);padding:40px 48px}
+  .blog-a .header{text-align:center;margin-bottom:24px}
+  .blog-a .header .gold-line{margin:0 auto 16px}
+  .blog-a .s-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--mineral);margin-bottom:4px}
+  .blog-a .layout{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;max-width:780px;margin:0 auto}
+  .blog-a .featured{border-radius:12px;overflow:hidden;position:relative}
+  .blog-a .featured .img{height:100%;min-height:280px;background-size:cover;background-position:center}
+  .blog-a .featured .overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.6) 100%);display:flex;align-items:flex-end;padding:20px}
+  .blog-a .featured .title{font-family:'Playfair Display',serif;font-size:16px;color:white;line-height:1.3}
+  .blog-a .featured .date{font-size:10px;color:rgba(255,255,255,0.7);margin-bottom:6px}
+  .blog-a .small-card{border-radius:10px;overflow:hidden;border:1px solid var(--border-warm)}
+  .blog-a .small-img{height:120px;background-size:cover;background-position:center}
+  .blog-a .small-info{padding:14px}
+  .blog-a .small-date{font-size:10px;color:var(--ink-faint);margin-bottom:4px}
+  .blog-a .small-title{font-family:'Playfair Display',serif;font-size:13px;color:var(--mineral);line-height:1.3}
+  .blog-a .view-all{display:block;text-align:center;margin-top:18px;font-size:11px;color:var(--mineral);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--gold)}
+  .blog-a-mobile{padding:28px 16px}
+  .blog-a-mobile .layout{grid-template-columns:1fr;max-width:340px}
+  .blog-a-mobile .featured .img{min-height:180px}
+  .blog-a-mobile .s-h2{font-size:19px}
+
+  /* B: Equal Grid Cards */
+  .blog-b{background:var(--warm-white);padding:40px 48px}
+  .blog-b .header{text-align:center;margin-bottom:24px}
+  .blog-b .header .gold-line{margin:0 auto 16px}
+  .blog-b .s-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--mineral);margin-bottom:4px}
+  .blog-b .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin:0 auto}
+  .blog-b .card{border-radius:12px;overflow:hidden;border:1px solid var(--border-warm)}
+  .blog-b .card-img{height:160px;background-size:cover;background-position:center}
+  .blog-b .card-info{padding:16px}
+  .blog-b .card-date{font-size:10px;color:var(--ink-faint);margin-bottom:6px}
+  .blog-b .card-title{font-family:'Playfair Display',serif;font-size:14px;color:var(--mineral);line-height:1.3;margin-bottom:6px}
+  .blog-b .card-excerpt{font-size:11px;color:var(--ink-light);line-height:1.5}
+  .blog-b .card-link{display:block;margin-top:8px;font-size:10px;font-weight:500;color:var(--mineral)}
+  .blog-b .view-all{display:block;text-align:center;margin-top:18px;font-size:11px;color:var(--mineral);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--gold)}
+  .blog-b-mobile{padding:28px 16px}
+  .blog-b-mobile .grid{grid-template-columns:1fr;max-width:340px}
+  .blog-b-mobile .s-h2{font-size:19px}
+
+  /* C: Minimal Text List (No images) */
+  .blog-c{background:var(--warm-off);padding:40px 48px}
+  .blog-c .header{margin-bottom:24px;max-width:480px}
+  .blog-c .s-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--mineral);margin-bottom:4px}
+  .blog-c .list{max-width:600px}
+  .blog-c .list-item{padding:18px 0;border-bottom:1px solid var(--border-warm);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start}
+  .blog-c .list-date{font-size:10px;color:var(--ink-faint);margin-bottom:4px}
+  .blog-c .list-title{font-family:'Playfair Display',serif;font-size:15px;color:var(--mineral);line-height:1.3;margin-bottom:4px}
+  .blog-c .list-excerpt{font-size:11px;color:var(--ink-light);line-height:1.5;max-width:420px}
+  .blog-c .list-arrow{font-size:16px;color:var(--ink-faint);margin-top:4px}
+  .blog-c .view-all{display:inline-block;margin-top:16px;font-size:11px;color:var(--mineral);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--gold)}
+  .blog-c-mobile{padding:28px 16px}
+  .blog-c-mobile .list-item{grid-template-columns:1fr}
+  .blog-c-mobile .list-arrow{display:none}
+  .blog-c-mobile .s-h2{font-size:19px}
+
+  /* D: Dark Band */
+  .blog-d{background:var(--mineral);padding:36px 48px}
+  .blog-d .layout{display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:800px;margin:0 auto}
+  .blog-d .text-side{flex:1}
+  .blog-d .s-h2{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:rgba(255,255,255,0.9);margin-bottom:4px}
+  .blog-d .s-sub{font-size:12px;color:rgba(255,255,255,0.5)}
+  .blog-d .articles{display:flex;gap:12px;margin-top:14px}
+  .blog-d .art{padding:10px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);border-radius:8px;flex:1}
+  .blog-d .art-title{font-size:11px;color:rgba(255,255,255,0.75);line-height:1.4}
+  .blog-d .art-date{font-size:9px;color:rgba(255,255,255,0.35);margin-top:4px}
+  .blog-d .cta{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:10px 20px;border-radius:30px;text-decoration:none;background:rgba(212,191,170,0.9);color:var(--mineral);white-space:nowrap;flex-shrink:0}
+  .blog-d-mobile{padding:28px 16px}
+  .blog-d-mobile .layout{flex-direction:column;align-items:stretch}
+  .blog-d-mobile .articles{flex-direction:column}
+  .blog-d-mobile .s-h2{font-size:16px}
+
+  @media(max-width:1400px){.viewport-row{flex-direction:column;align-items:center}.frame-desktop{width:100%;max-width:900px}.frame-mobile{width:100%;max-width:375px}}
+</style>
+</head>
+<body>
+<div class="page-header">
+  <h1>Section 12: Blog Teaser</h1>
+  <p>4 Alternativen fuer den Blog-Teaser auf der Homepage. 2 Artikel verfuegbar.</p>
+  <div class="current">Aktuell: Zentrierter Header + Card-Grid (adaptive Spalten je nach Artikelzahl)</div>
+</div>
+
+<!-- A: Featured + Small -->
+<div class="option-section">
+  <div class="option-ref">Magazine-Style — 1 grosser Featured + 1 kleiner</div>
+  <div class="option-label"><span class="option-badge">Option A</span><span class="option-title">Featured Article + Companion</span></div>
+  <p class="option-desc">Erster Artikel als grosses Hero-Feature, zweiter als kleine Companion-Karte. Klare Hierarchie, Magazin-Feeling.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="blog-a">
+        <div class="header"><div class="gold-line"></div><div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px">Salt.Magic Blog</div><h2 class="s-h2">Science-backed insights for better hydration</h2></div>
+        <div class="layout">
+          <div class="featured"><div class="img" style="background-image:url('../../site/public/images/products/taylor-water.jpg')"></div><div class="overlay"><div><div class="date">March 26, 2026</div><div class="title">Why 85% of Thai Water is Dead Water</div></div></div></div>
+          <div>
+            <div class="small-card"><div class="small-img" style="background-image:url('../../site/public/images/products/yoga-sachet.webp')"></div><div class="small-info"><div class="small-date">March 24, 2026</div><div class="small-title">Wellness vs Sports Electrolytes: Why Daily Minerals Matter More</div></div></div>
+          </div>
+        </div>
+        <a class="view-all" href="#">View all articles &rarr;</a>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="blog-a blog-a-mobile">
+        <div class="header"><div class="gold-line" style="margin:0 auto 12px"></div><h2 class="s-h2">Hydration Science</h2></div>
+        <div class="layout">
+          <div class="featured"><div class="img" style="background-image:url('../../site/public/images/products/taylor-water.jpg')"></div><div class="overlay"><div><div class="date">Mar 26</div><div class="title">Why 85% of Thai Water is Dead Water</div></div></div></div>
+          <div class="small-card"><div class="small-img" style="background-image:url('../../site/public/images/products/yoga-sachet.webp')"></div><div class="small-info"><div class="small-title">Wellness vs Sports Electrolytes</div></div></div>
+        </div>
+        <a class="view-all" href="#">View all &rarr;</a>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<!-- B: Equal Grid -->
+<div class="option-section">
+  <div class="option-ref">Gleichwertige Cards — beide Artikel gleich prominent</div>
+  <div class="option-label"><span class="option-badge">Option B</span><span class="option-title">Equal Grid Cards</span></div>
+  <p class="option-desc">Beide Artikel als gleichgrosse Karten. Image + Title + Excerpt. Ausgewogen, demokratisch.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="blog-b">
+        <div class="header"><div class="gold-line"></div><div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px">Salt.Magic Blog</div><h2 class="s-h2">Science-backed insights for better hydration</h2></div>
+        <div class="grid">
+          <div class="card"><div class="card-img" style="background-image:url('../../site/public/images/products/taylor-water.jpg')"></div><div class="card-info"><div class="card-date">March 26, 2026</div><div class="card-title">Why 85% of Thai Water is Dead Water</div><div class="card-excerpt">Most bottled water in Thailand goes through reverse osmosis, stripping the minerals your body needs.</div><span class="card-link">Read more &rarr;</span></div></div>
+          <div class="card"><div class="card-img" style="background-image:url('../../site/public/images/products/yoga-sachet.webp')"></div><div class="card-info"><div class="card-date">March 24, 2026</div><div class="card-title">Wellness vs Sports Electrolytes</div><div class="card-excerpt">Sports electrolytes are for athletes. But what about the other 360 days a year?</div><span class="card-link">Read more &rarr;</span></div></div>
+        </div>
+        <a class="view-all" href="#">View all articles &rarr;</a>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="blog-b blog-b-mobile">
+        <div class="header"><div class="gold-line" style="margin:0 auto 12px"></div><h2 class="s-h2">Hydration Science</h2></div>
+        <div class="grid">
+          <div class="card"><div class="card-img" style="background-image:url('../../site/public/images/products/taylor-water.jpg')"></div><div class="card-info"><div class="card-title">Why 85% of Thai Water is Dead Water</div><span class="card-link">Read &rarr;</span></div></div>
+          <div class="card"><div class="card-img" style="background-image:url('../../site/public/images/products/yoga-sachet.webp')"></div><div class="card-info"><div class="card-title">Wellness vs Sports Electrolytes</div><span class="card-link">Read &rarr;</span></div></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<!-- C: Text List -->
+<div class="option-section">
+  <div class="option-ref">Minimal editorial — Nur Text, keine Bilder, clean</div>
+  <div class="option-label"><span class="option-badge">Option C</span><span class="option-title">Minimal Text List — Kein Bild</span></div>
+  <p class="option-desc">Rein typografische Liste. Datum, Titel, Excerpt. Pfeil rechts. PANPURI-Minimalismus. Lenkt nicht von der CTA-Section darunter ab.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="blog-c">
+        <div class="header"><div class="gold-line"></div><div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px">Salt.Magic Blog</div><h2 class="s-h2">Science-backed insights</h2></div>
+        <div class="list">
+          <div class="list-item"><div><div class="list-date">March 26, 2026</div><div class="list-title">Why 85% of Thai Water is Dead Water</div><div class="list-excerpt">Most bottled water in Thailand goes through reverse osmosis, stripping the very minerals your body needs.</div></div><span class="list-arrow">&rarr;</span></div>
+          <div class="list-item"><div><div class="list-date">March 24, 2026</div><div class="list-title">Wellness vs Sports Electrolytes: Why Daily Minerals Matter More</div><div class="list-excerpt">Sports electrolytes are designed for athletes. But what about the other 360 days a year?</div></div><span class="list-arrow">&rarr;</span></div>
+        </div>
+        <a class="view-all" href="#">View all articles &rarr;</a>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="blog-c blog-c-mobile" style="padding:28px 16px">
+        <div class="header"><div class="gold-line"></div><h2 class="s-h2">Hydration Science</h2></div>
+        <div class="list">
+          <div class="list-item"><div><div class="list-title" style="font-size:14px">Why 85% of Thai Water is Dead Water</div><div class="list-excerpt">Reverse osmosis strips the minerals your body needs.</div></div></div>
+          <div class="list-item"><div><div class="list-title" style="font-size:14px">Wellness vs Sports Electrolytes</div><div class="list-excerpt">What about the other 360 days a year?</div></div></div>
+        </div>
+        <a class="view-all" href="#">View all &rarr;</a>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<!-- D: Compact Dark Band -->
+<div class="option-section">
+  <div class="option-ref">Kompakter dunkler Streifen — Blog als Nebensache, nicht als Section</div>
+  <div class="option-label"><span class="option-badge">Option D</span><span class="option-title">Compact Dark Band</span></div>
+  <p class="option-desc">Blog als schmaler Mineral-Blue Streifen statt voller Section. Headline links, 2 Artikel-Snippets Mitte, CTA rechts. Spart vertikalen Platz.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="blog-d">
+        <div class="layout">
+          <div class="text-side">
+            <h2 class="s-h2">From the Blog</h2>
+            <p class="s-sub">Science-backed hydration insights</p>
+            <div class="articles">
+              <div class="art"><div class="art-title">Why 85% of Thai Water is Dead Water</div><div class="art-date">Mar 26, 2026</div></div>
+              <div class="art"><div class="art-title">Wellness vs Sports Electrolytes</div><div class="art-date">Mar 24, 2026</div></div>
+            </div>
+          </div>
+          <a class="cta" href="#">Read the Blog</a>
+        </div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="blog-d blog-d-mobile">
+        <div class="layout">
+          <div class="text-side">
+            <h2 class="s-h2">From the Blog</h2>
+            <div class="articles">
+              <div class="art"><div class="art-title">Why 85% of Thai Water is Dead Water</div></div>
+              <div class="art"><div class="art-title">Wellness vs Sports Electrolytes</div></div>
+            </div>
+          </div>
+          <a class="cta" href="#" style="text-align:center">Read the Blog</a>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:40px;text-align:center;color:var(--ink-faint);font-size:11px">Salt.Magic Section 12: Blog Options</div>
+</body></html>

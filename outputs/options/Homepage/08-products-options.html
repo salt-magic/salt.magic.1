@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Section 8: Products Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D; --mineral-light: #3D6588; --gold: #D4BFAA; --warm-off: #F9F7F4;
+    --warm-white: #FFFFFF; --ink: #3C3028; --ink-light: #5A4A3C; --ink-faint: #9B8E82; --border-warm: #E8DFD3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+
+  .page-header { background: var(--mineral); color: white; padding: 40px; text-align: center; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+  .page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+  .page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+
+  .option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+  .option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+  .option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+  .option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+  .option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+
+  .viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  .frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+  .frame-desktop { width: 900px; }
+  .frame-mobile { width: 375px; }
+  .frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+  .frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+  .frame-content { width: 100%; position: relative; overflow: hidden; }
+
+  .divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+  .divider hr { border: none; border-top: 1px solid var(--border-warm); }
+
+  .gold-line { width: 36px; height: 1px; background: var(--gold); margin-bottom: 16px; }
+  .eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+
+  /* =========================================== */
+  /* OPTION A: Featured Product Hero (LMNT)      */
+  /* =========================================== */
+  .prod-a {
+    background: var(--warm-white);
+    padding: 40px 48px;
+  }
+  .prod-a .header { text-align: center; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .prod-a .header .gold-line { margin: 0 auto 16px; }
+  .prod-a .s-h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--mineral); margin-bottom: 4px; line-height: 1.1; }
+  .prod-a .s-sub { font-size: 13px; color: var(--ink-light); }
+
+  .prod-a .featured {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 780px; margin: 0 auto;
+    border-radius: 16px; overflow: hidden; border: 1px solid var(--border-warm);
+  }
+  .prod-a .feat-img {
+    background-size: cover; background-position: center; min-height: 340px;
+  }
+  .prod-a .feat-info {
+    padding: 32px 28px; display: flex; flex-direction: column; justify-content: center;
+    background: var(--warm-off);
+  }
+  .prod-a .feat-tag {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-faint); margin-bottom: 10px;
+  }
+  .prod-a .feat-name {
+    font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400;
+    color: var(--mineral); margin-bottom: 8px; line-height: 1.15;
+  }
+  .prod-a .feat-price {
+    font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 2px;
+  }
+  .prod-a .feat-meta { font-size: 11px; color: var(--ink-light); margin-bottom: 12px; }
+  .prod-a .feat-desc { font-size: 12px; color: var(--ink-light); line-height: 1.6; margin-bottom: 6px; }
+  .prod-a .feat-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .prod-a .feat-cta {
+    display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 12px 28px; border-radius: 30px; text-decoration: none;
+    background: var(--mineral); color: white;
+  }
+
+  .prod-a .secondary {
+    display: flex; justify-content: center; gap: 16px; margin-top: 20px; max-width: 780px; margin-left: auto; margin-right: auto;
+  }
+  .prod-a .sec-card {
+    display: flex; align-items: center; gap: 14px; padding: 14px 18px;
+    border-radius: 10px; border: 1px solid var(--border-warm); background: var(--warm-off); flex: 1; max-width: 380px;
+  }
+  .prod-a .sec-img { width: 60px; height: 60px; border-radius: 8px; background-size: cover; background-position: center; flex-shrink: 0; }
+  .prod-a .sec-name { font-size: 12px; font-weight: 500; color: var(--mineral); }
+  .prod-a .sec-price { font-size: 11px; color: var(--ink-light); }
+
+  /* Mobile A */
+  .prod-a-mobile { padding: 28px 16px; }
+  .prod-a-mobile .featured { grid-template-columns: 1fr; }
+  .prod-a-mobile .feat-img { min-height: 220px; }
+  .prod-a-mobile .feat-info { padding: 20px 16px; }
+  .prod-a-mobile .feat-name { font-size: 19px; }
+  .prod-a-mobile .secondary { flex-direction: column; gap: 10px; }
+  .prod-a-mobile .s-h2 { font-size: 19px; }
+
+  /* =========================================== */
+  /* OPTION B: Clean Side-by-Side (Improved)     */
+  /* =========================================== */
+  .prod-b {
+    background: var(--warm-white);
+    padding: 40px 48px;
+  }
+  .prod-b .header { text-align: center; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .prod-b .header .gold-line { margin: 0 auto 16px; }
+  .prod-b .s-h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--mineral); margin-bottom: 4px; }
+  .prod-b .s-sub { font-size: 13px; color: var(--ink-light); }
+
+  .prod-b .usps {
+    display: flex; justify-content: center; gap: 24px; margin-bottom: 24px;
+  }
+  .prod-b .usp {
+    display: flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 500; color: var(--mineral);
+  }
+  .prod-b .usp-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+
+  .prod-b .cards {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 680px; margin: 0 auto;
+  }
+  .prod-b .card { text-align: center; }
+  .prod-b .card-img {
+    width: 100%; aspect-ratio: 3/4; border-radius: 14px; background-size: cover; background-position: center;
+    margin-bottom: 16px; box-shadow: 0 2px 16px rgba(60,48,40,0.06);
+  }
+  .prod-b .card-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 6px; }
+  .prod-b .card-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--mineral); margin-bottom: 8px; }
+  .prod-b .card-price { font-size: 15px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+  .prod-b .card-meta { font-size: 11px; color: var(--ink-light); margin-bottom: 10px; }
+  .prod-b .card-desc { font-size: 11px; color: var(--ink-light); line-height: 1.5; max-width: 260px; margin: 0 auto 6px; }
+  .prod-b .card-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .prod-b .card-cta {
+    display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 10px 24px; border-radius: 30px; text-decoration: none;
+    background: var(--mineral); color: white;
+  }
+
+  /* Mobile B */
+  .prod-b-mobile { padding: 28px 16px; }
+  .prod-b-mobile .cards { grid-template-columns: 1fr; max-width: 320px; }
+  .prod-b-mobile .card-name { font-size: 16px; }
+  .prod-b-mobile .usps { gap: 16px; flex-wrap: wrap; }
+  .prod-b-mobile .s-h2 { font-size: 19px; }
+
+  /* =========================================== */
+  /* OPTION C: Horizontal Bands (Editorial)      */
+  /* =========================================== */
+  .prod-c {
+    background: var(--warm-white);
+    padding: 40px 0;
+  }
+  .prod-c .header { text-align: left; margin-bottom: 28px; padding: 0 48px; max-width: 480px; }
+  .prod-c .s-h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--mineral); margin-bottom: 4px; }
+  .prod-c .s-sub { font-size: 13px; color: var(--ink-light); }
+
+  .prod-c .band {
+    display: grid; grid-template-columns: 1.2fr 1fr; min-height: 260px;
+  }
+  .prod-c .band.reversed { direction: rtl; }
+  .prod-c .band.reversed > * { direction: ltr; }
+  .prod-c .band-img { background-size: cover; background-position: center; }
+  .prod-c .band-info {
+    display: flex; align-items: center; padding: 28px 36px;
+  }
+  .prod-c .band:nth-child(3) .band-info { background: var(--warm-off); }
+  .prod-c .band-inner { max-width: 340px; }
+  .prod-c .band-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .prod-c .band-name { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); margin-bottom: 4px; }
+  .prod-c .band-price { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+  .prod-c .band-meta { font-size: 11px; color: var(--ink-light); margin-bottom: 10px; }
+  .prod-c .band-desc { font-size: 12px; color: var(--ink-light); line-height: 1.6; margin-bottom: 14px; }
+  .prod-c .band-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--mineral); text-decoration: none; border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+  }
+
+  /* Mobile C */
+  .prod-c-mobile .header { padding: 0 16px; }
+  .prod-c-mobile .band { grid-template-columns: 1fr; }
+  .prod-c-mobile .band.reversed { direction: ltr; }
+  .prod-c-mobile .band-img { min-height: 200px; }
+  .prod-c-mobile .band-info { padding: 20px 16px; }
+  .prod-c-mobile .band-name { font-size: 18px; }
+  .prod-c-mobile .s-h2 { font-size: 19px; }
+
+  /* =========================================== */
+  /* OPTION D: Dark Showcase (PANPURI Luxury)    */
+  /* =========================================== */
+  .prod-d {
+    background: var(--mineral);
+    padding: 40px 48px;
+  }
+  .prod-d .header { text-align: center; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .prod-d .header .gold-line { margin: 0 auto 16px; }
+  .prod-d .s-h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: rgba(255,255,255,0.9); margin-bottom: 4px; }
+  .prod-d .s-sub { font-size: 13px; color: rgba(255,255,255,0.5); }
+
+  .prod-d .cards {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 680px; margin: 0 auto;
+  }
+  .prod-d .card { text-align: center; }
+  .prod-d .card-img {
+    width: 100%; aspect-ratio: 3/4; border-radius: 14px; background-size: cover; background-position: center;
+    margin-bottom: 16px;
+  }
+  .prod-d .card-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .prod-d .card-name { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: rgba(255,255,255,0.9); margin-bottom: 8px; }
+  .prod-d .card-price { font-size: 15px; font-weight: 500; color: white; margin-bottom: 2px; }
+  .prod-d .card-meta { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 10px; }
+  .prod-d .card-desc { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.5; max-width: 260px; margin: 0 auto 6px; }
+  .prod-d .card-badge { font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+  .prod-d .card-cta {
+    display: inline-block; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 10px 24px; border-radius: 30px; text-decoration: none;
+    background: rgba(212,191,170,0.9); color: var(--mineral);
+  }
+
+  /* Mobile D */
+  .prod-d-mobile { padding: 28px 16px; }
+  .prod-d-mobile .cards { grid-template-columns: 1fr; max-width: 320px; }
+  .prod-d-mobile .card-name { font-size: 16px; }
+  .prod-d-mobile .s-h2 { font-size: 19px; }
+
+  @media (max-width: 1400px) {
+    .viewport-row { flex-direction: column; align-items: center; }
+    .frame-desktop { width: 100%; max-width: 900px; }
+    .frame-mobile { width: 100%; max-width: 375px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Section 8: Products</h1>
+  <p>4 Layout-Alternativen fuer die Produkt-Praesentation. Nur 2 Produkte (Glass Jar + Travel Pouch) — das beeinflusst die Layout-Strategie.</p>
+  <div class="current">Aktuell: 2-Spalten Grid, zentrierte Cards mit Bild, Underline-CTA "Shop on Lazada"</div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A: Featured Product Hero              -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von LMNT — Ein Produkt als Hero, das andere als Companion</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Featured Hero + Secondary Card</span>
+  </div>
+  <p class="option-desc">
+    Glass Jar als grosses Hero-Feature (Split: Bild links, Details rechts). Travel Pouch als kompakte Companion-Karte darunter.
+    Klare Hierarchie: Best Value Produkt dominiert. LMNT-Stil fokussierte Promotion.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="prod-a">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">Shop Salt.Magic</div>
+            <h2 class="s-h2">Ready to upgrade your water?</h2>
+            <p class="s-sub">Choose your daily ritual. Less than the cost of your morning coffee.</p>
+          </div>
+          <div class="featured">
+            <div class="feat-img" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')"></div>
+            <div class="feat-info">
+              <div>
+                <div class="feat-tag">Best Value</div>
+                <div class="feat-name">The Signature Glass Jar</div>
+                <div class="feat-price">490 THB</div>
+                <div class="feat-meta">Over 2 months of daily hydration (70 servings) - Just 7 THB per day</div>
+                <div class="feat-desc">A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Proudly crafted at our Koh Samui hub.</div>
+                <div class="feat-badge">Eco-friendly &amp; reusable</div>
+                <a class="feat-cta" href="#">Shop on Lazada</a>
+              </div>
+            </div>
+          </div>
+          <div class="secondary">
+            <div class="sec-card">
+              <div class="sec-img" style="background-image:url('../../site/public/images/products/sachet.jpg')"></div>
+              <div>
+                <div class="sec-name">The Travel Pouch — 290 THB</div>
+                <div class="sec-price">30 servings · 9.6 THB/day · Lightweight &amp; travel-ready</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="prod-a prod-a-mobile">
+          <div class="header">
+            <div class="gold-line" style="margin:0 auto 12px"></div>
+            <div class="eyebrow">Shop Salt.Magic</div>
+            <h2 class="s-h2">Ready to upgrade your water?</h2>
+          </div>
+          <div class="featured">
+            <div class="feat-img" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')"></div>
+            <div class="feat-info">
+              <div>
+                <div class="feat-tag">Best Value</div>
+                <div class="feat-name">The Signature Glass Jar</div>
+                <div class="feat-price">490 THB</div>
+                <div class="feat-meta">70 servings - Just 7 THB per day</div>
+                <div class="feat-badge">Eco-friendly &amp; reusable</div>
+                <a class="feat-cta" href="#">Shop on Lazada</a>
+              </div>
+            </div>
+          </div>
+          <div class="secondary">
+            <div class="sec-card">
+              <div class="sec-img" style="background-image:url('../../site/public/images/products/sachet.jpg')"></div>
+              <div><div class="sec-name">Travel Pouch — 290 THB</div><div class="sec-price">30 servings · Travel-ready</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B: Clean Side-by-Side + Button CTA    -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Verfeinertes aktuelles Layout — groessere Bilder, Pill-Button statt Underline-CTA</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Clean Side-by-Side — Verbessert</span>
+  </div>
+  <p class="option-desc">
+    Wie aktuell (2-Spalten), aber: groessere Produktbilder, Pill-Button CTAs statt Underline-Links,
+    USP-Badges oben, klarere Preise. Evolutionaere Verbesserung statt Revolution.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="prod-b">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">Shop Salt.Magic</div>
+            <h2 class="s-h2">Ready to upgrade your water?</h2>
+            <p class="s-sub">Choose your daily ritual. Less than your morning coffee.</p>
+          </div>
+          <div class="usps">
+            <div class="usp"><span class="usp-dot"></span>Zero Sugar</div>
+            <div class="usp"><span class="usp-dot"></span>100% Natural</div>
+            <div class="usp"><span class="usp-dot"></span>7x Magnesium</div>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="card-img" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')"></div>
+              <div class="card-tag">Best Value</div>
+              <div class="card-name">The Signature Glass Jar</div>
+              <div class="card-price">490 THB</div>
+              <div class="card-meta">70 servings - Just 7 THB per day</div>
+              <div class="card-desc">Premium glass jar with gold lid. Crafted at our Koh Samui hub.</div>
+              <div class="card-badge">Eco-friendly &amp; reusable</div>
+              <a class="card-cta" href="#">Shop on Lazada</a>
+            </div>
+            <div class="card">
+              <div class="card-img" style="background-image:url('../../site/public/images/products/sachet.jpg')"></div>
+              <div class="card-tag">Most Popular</div>
+              <div class="card-name">The Travel Pouch</div>
+              <div class="card-price">290 THB</div>
+              <div class="card-meta">30 servings - Just 9.6 THB per day</div>
+              <div class="card-desc">Resealable, GMP/HACCP-certified pouch for gym, office, or travel.</div>
+              <div class="card-badge">Lightweight &amp; travel-ready</div>
+              <a class="card-cta" href="#">Shop on Lazada</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="prod-b prod-b-mobile">
+          <div class="header">
+            <div class="gold-line" style="margin:0 auto 12px"></div>
+            <div class="eyebrow">Shop Salt.Magic</div>
+            <h2 class="s-h2">Ready to upgrade your water?</h2>
+          </div>
+          <div class="usps">
+            <div class="usp"><span class="usp-dot"></span>Zero Sugar</div>
+            <div class="usp"><span class="usp-dot"></span>Natural</div>
+            <div class="usp"><span class="usp-dot"></span>7x Mg</div>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="card-img" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')"></div>
+              <div class="card-tag">Best Value</div>
+              <div class="card-name">The Signature Glass Jar</div>
+              <div class="card-price">490 THB</div>
+              <div class="card-meta">70 servings - 7 THB/day</div>
+              <a class="card-cta" href="#">Shop on Lazada</a>
+            </div>
+            <div class="card">
+              <div class="card-img" style="background-image:url('../../site/public/images/products/sachet.jpg')"></div>
+              <div class="card-tag">Most Popular</div>
+              <div class="card-name">The Travel Pouch</div>
+              <div class="card-price">290 THB</div>
+              <div class="card-meta">30 servings - 9.6 THB/day</div>
+              <a class="card-cta" href="#">Shop on Lazada</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C: Horizontal Bands (Magazine)        -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Grown Alchemist — Alternierende Split-Baender, editorial</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Horizontal Bands — Alternierend</span>
+  </div>
+  <p class="option-desc">
+    Jedes Produkt als horizontaler Split-Streifen (Bild + Text), abwechselnd links/rechts.
+    Mehr Platz pro Produkt, Magazin-Feeling. Underline-CTA statt Button. Grown-Alchemist-Eleganz.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="prod-c">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">Shop Salt.Magic</div>
+            <h2 class="s-h2">Ready to upgrade your water?</h2>
+            <p class="s-sub">Choose your daily ritual.</p>
+          </div>
+          <div class="band">
+            <div class="band-img" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')"></div>
+            <div class="band-info">
+              <div class="band-inner">
+                <div class="band-tag">Best Value</div>
+                <div class="band-name">The Signature Glass Jar</div>
+                <div class="band-price">490 THB</div>
+                <div class="band-meta">Over 2 months of daily hydration (70 servings) - Just 7 THB per day</div>
+                <div class="band-desc">A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Proudly crafted at our Koh Samui hub.</div>
+                <a class="band-cta" href="#">Shop on Lazada <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="band reversed">
+            <div class="band-img" style="background-image:url('../../site/public/images/products/sachet.jpg')"></div>
+            <div class="band-info">
+              <div class="band-inner">
+                <div class="band-tag">Most Popular</div>
+                <div class="band-name">The Travel Pouch</div>
+                <div class="band-price">290 THB</div>
+                <div class="band-meta">A full month's supply (30 servings) - Just 9.6 THB per day</div>
+                <div class="band-desc">Your daily minerals, perfectly portable. A resealable, GMP/HACCP-certified pouch for your gym bag, office, or flights.</div>
+                <a class="band-cta" href="#">Shop on Lazada <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="prod-c prod-c-mobile">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">Shop Salt.Magic</div>
+            <h2 class="s-h2">Ready to upgrade your water?</h2>
+          </div>
+          <div class="band">
+            <div class="band-img" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')"></div>
+            <div class="band-info">
+              <div class="band-inner">
+                <div class="band-tag">Best Value</div>
+                <div class="band-name">Signature Glass Jar</div>
+                <div class="band-price">490 THB · 70 servings</div>
+                <a class="band-cta" href="#">Shop on Lazada <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="band">
+            <div class="band-img" style="background-image:url('../../site/public/images/products/sachet.jpg')"></div>
+            <div class="band-info">
+              <div class="band-inner">
+                <div class="band-tag">Most Popular</div>
+                <div class="band-name">Travel Pouch</div>
+                <div class="band-price">290 THB · 30 servings</div>
+                <a class="band-cta" href="#">Shop on Lazada <span>&rarr;</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D: Dark Showcase (PANPURI Luxury)     -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von PANPURI — Dunkler Premium-Hintergrund, Gold-Akzente</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Dark Showcase — Mineral Blue Luxury</span>
+  </div>
+  <p class="option-desc">
+    Mineral-Blue Hintergrund, Produkte als helle Cards mit Gold-Akzenten.
+    Premium-Feeling, erzeugt visuellen Bruch zu den hellen Sections. PANPURI Abendstimmung.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="prod-d">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow" style="color:var(--gold)">Shop Salt.Magic</div>
+            <h2 class="s-h2">Ready to upgrade your water?</h2>
+            <p class="s-sub">Choose your daily ritual. Less than your morning coffee.</p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="card-img" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')"></div>
+              <div class="card-tag">Best Value</div>
+              <div class="card-name">The Signature Glass Jar</div>
+              <div class="card-price">490 THB</div>
+              <div class="card-meta">70 servings - Just 7 THB per day</div>
+              <div class="card-desc">Premium glass jar with gold lid. Crafted at our Koh Samui hub.</div>
+              <div class="card-badge">Eco-friendly &amp; reusable</div>
+              <a class="card-cta" href="#">Shop on Lazada</a>
+            </div>
+            <div class="card">
+              <div class="card-img" style="background-image:url('../../site/public/images/products/sachet.jpg')"></div>
+              <div class="card-tag">Most Popular</div>
+              <div class="card-name">The Travel Pouch</div>
+              <div class="card-price">290 THB</div>
+              <div class="card-meta">30 servings - Just 9.6 THB per day</div>
+              <div class="card-desc">Resealable, GMP/HACCP-certified pouch for gym, office, or travel.</div>
+              <div class="card-badge">Lightweight &amp; travel-ready</div>
+              <a class="card-cta" href="#">Shop on Lazada</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="prod-d prod-d-mobile">
+          <div class="header">
+            <div class="gold-line" style="margin:0 auto 12px"></div>
+            <div class="eyebrow" style="color:var(--gold)">Shop Salt.Magic</div>
+            <h2 class="s-h2" style="font-size:19px">Ready to upgrade your water?</h2>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="card-img" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')"></div>
+              <div class="card-tag">Best Value</div>
+              <div class="card-name">Signature Glass Jar</div>
+              <div class="card-price">490 THB</div>
+              <div class="card-meta">70 servings - 7 THB/day</div>
+              <a class="card-cta" href="#">Shop on Lazada</a>
+            </div>
+            <div class="card">
+              <div class="card-img" style="background-image:url('../../site/public/images/products/sachet.jpg')"></div>
+              <div class="card-tag">Most Popular</div>
+              <div class="card-name">Travel Pouch</div>
+              <div class="card-price">290 THB</div>
+              <div class="card-meta">30 servings - 9.6 THB/day</div>
+              <a class="card-cta" href="#">Shop on Lazada</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:40px;text-align:center;color:var(--ink-faint);font-size:11px">
+  Salt.Magic Section 8: Products Options &mdash; Erstellt fuer Leo's Review
+</div>
+
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Section 6: Benefits Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --mineral-light: #3D6588;
+    --gold: #D4BFAA;
+    --warm-off: #F9F7F4;
+    --warm-white: #FFFFFF;
+    --ink: #3C3028;
+    --ink-light: #5A4A3C;
+    --ink-faint: #9B8E82;
+    --border-warm: #E8DFD3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+
+  .page-header { background: var(--mineral); color: white; padding: 40px; text-align: center; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+  .page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+  .page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+
+  .option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+  .option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+  .option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+  .option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+  .option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+
+  .viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  .frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+  .frame-desktop { width: 900px; }
+  .frame-mobile { width: 375px; }
+  .frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+  .frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+  .frame-content { width: 100%; position: relative; overflow: hidden; }
+
+  .divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+  .divider hr { border: none; border-top: 1px solid var(--border-warm); }
+
+  .gold-line { width: 36px; height: 1px; background: var(--gold); margin-bottom: 16px; }
+  .eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+  .s-h2 { font-family: 'Playfair Display', serif; font-weight: 400; color: var(--mineral); letter-spacing: -0.02em; line-height: 1.1; }
+  .s-sub { font-size: 13px; color: var(--ink-light); line-height: 1.6; }
+
+  /* Shared icon */
+  .b-icon {
+    width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .b-icon svg { width: 20px; height: 20px; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+
+  /* =========================================== */
+  /* OPTION A: Compact Icon Strip (Cure/LMNT)    */
+  /* =========================================== */
+  .ben-a {
+    background: var(--warm-off);
+    padding: 36px 48px;
+  }
+  .ben-a .header { text-align: center; margin-bottom: 28px; }
+  .ben-a .header .gold-line { margin: 0 auto 16px; }
+  .ben-a .s-h2 { font-size: 22px; margin-bottom: 6px; }
+
+  .ben-a .icon-strip {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; max-width: 720px; margin: 0 auto;
+  }
+  .ben-a .icon-item { text-align: center; }
+  .ben-a .icon-circle {
+    width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(212,191,170,0.3);
+    display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;
+  }
+  .ben-a .icon-circle svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+  .ben-a .icon-label {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-light); line-height: 1.3;
+  }
+
+  /* Mobile A */
+  .ben-a-mobile { padding: 28px 16px; }
+  .ben-a-mobile .icon-strip { grid-template-columns: repeat(3, 1fr); gap: 16px 12px; }
+  .ben-a-mobile .s-h2 { font-size: 19px; }
+
+  /* =========================================== */
+  /* OPTION B: 3-Column Card Grid                */
+  /* =========================================== */
+  .ben-b {
+    background: var(--warm-off);
+    padding: 40px 48px;
+  }
+  .ben-b .header { margin-bottom: 28px; }
+  .ben-b .s-h2 { font-size: 22px; margin-bottom: 6px; }
+
+  .ben-b .cards {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 780px;
+  }
+  .ben-b .card {
+    background: var(--warm-white); border-radius: 12px; padding: 24px 20px;
+    border: 1px solid var(--border-warm);
+  }
+  .ben-b .card .b-icon { background: rgba(212,191,170,0.1); margin-bottom: 12px; }
+  .ben-b .card .b-icon svg { stroke: var(--gold); }
+  .ben-b .card-title {
+    font-size: 13px; font-weight: 500; color: var(--mineral); margin-bottom: 6px;
+  }
+  .ben-b .card-desc {
+    font-size: 12px; color: var(--ink-light); line-height: 1.55;
+  }
+
+  /* Mobile B */
+  .ben-b-mobile { padding: 28px 16px; }
+  .ben-b-mobile .cards { grid-template-columns: 1fr; max-width: 320px; }
+  .ben-b-mobile .card { display: flex; gap: 14px; align-items: flex-start; padding: 16px; }
+  .ben-b-mobile .card .b-icon { margin-bottom: 0; }
+  .ben-b-mobile .s-h2 { font-size: 19px; }
+
+  /* =========================================== */
+  /* OPTION C: Numbered List (Sakara Pillars)    */
+  /* =========================================== */
+  .ben-c {
+    background: var(--warm-white);
+    padding: 40px 48px;
+  }
+  .ben-c .header { text-align: center; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .ben-c .header .gold-line { margin: 0 auto 16px; }
+  .ben-c .s-h2 { font-size: 22px; margin-bottom: 6px; }
+
+  .ben-c .list {
+    max-width: 560px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px;
+  }
+  .ben-c .list-item {
+    padding: 18px 0; border-bottom: 1px solid var(--border-warm);
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .ben-c .list-num {
+    font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 400;
+    color: var(--gold); line-height: 1; min-width: 28px;
+  }
+  .ben-c .list-title {
+    font-size: 13px; font-weight: 500; color: var(--mineral); margin-bottom: 4px;
+  }
+  .ben-c .list-desc {
+    font-size: 11px; color: var(--ink-light); line-height: 1.5;
+  }
+
+  /* Mobile C */
+  .ben-c-mobile { padding: 28px 16px; }
+  .ben-c-mobile .list { grid-template-columns: 1fr; max-width: 320px; }
+  .ben-c-mobile .s-h2 { font-size: 19px; }
+  .ben-c-mobile .list-num { font-size: 22px; }
+
+  /* =========================================== */
+  /* OPTION D: Split — Image + Benefit Stack     */
+  /* =========================================== */
+  .ben-d {
+    display: grid; grid-template-columns: 1fr 1.1fr;
+    background: var(--warm-off);
+  }
+  .ben-d .img-side {
+    background-size: cover; background-position: center; min-height: 480px;
+    position: relative;
+  }
+  .ben-d .img-side::after {
+    content: ''; position: absolute; top: 0; bottom: 0; right: 0; width: 20%;
+    background: linear-gradient(to right, transparent, var(--warm-off));
+  }
+  .ben-d .text-side {
+    display: flex; align-items: center; padding: 36px 36px;
+  }
+  .ben-d .text-inner { max-width: 400px; }
+  .ben-d .s-h2 { font-size: 22px; margin-bottom: 6px; }
+  .ben-d .s-sub { margin-bottom: 20px; font-size: 12px; }
+
+  .ben-d .stack { display: flex; flex-direction: column; gap: 0; }
+  .ben-d .stack-item {
+    display: flex; align-items: flex-start; gap: 12px; padding: 12px 0;
+    border-bottom: 1px solid var(--border-warm);
+  }
+  .ben-d .stack-item:last-child { border-bottom: none; }
+  .ben-d .stack-icon {
+    width: 36px; height: 36px; border-radius: 10px; background: rgba(212,191,170,0.12);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .ben-d .stack-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+  .ben-d .stack-title { font-size: 13px; font-weight: 500; color: var(--mineral); margin-bottom: 2px; }
+  .ben-d .stack-desc { font-size: 11px; color: var(--ink-light); line-height: 1.5; }
+
+  /* Mobile D */
+  .ben-d-mobile { grid-template-columns: 1fr; }
+  .ben-d-mobile .img-side { min-height: 220px; order: 1; }
+  .ben-d-mobile .img-side::after { display: none; }
+  .ben-d-mobile .text-side { padding: 24px 20px; order: 2; }
+  .ben-d-mobile .s-h2 { font-size: 19px; }
+
+  @media (max-width: 1400px) {
+    .viewport-row { flex-direction: column; align-items: center; }
+    .frame-desktop { width: 100%; max-width: 900px; }
+    .frame-mobile { width: 100%; max-width: 375px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Section 6: Benefits</h1>
+  <p>4 Layout-Alternativen fuer die 6 Benefits (True Hydration, Deeper Sleep, Focus, Travel, Performance, Hangover Defense).</p>
+  <div class="current">Aktuell: 2-Spalten Grid (Icon links, Text rechts), warm-off BG, 6 Items horizontal</div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A: Compact Icon Strip                 -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Cure Hydration + LMNT — Kompakte Icon-Reihe, nur Titel, keine Descriptions</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Compact Icon Strip — Weniger ist mehr</span>
+  </div>
+  <p class="option-desc">
+    6 Icons in einer Reihe mit kurzen Labels. Keine Descriptions — die Titel sprechen fuer sich.
+    Kompakteste Option, laesst die umliegenden Sections atmen. Wie Cure/LMNT es machen.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="ben-a">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">Daily Benefits</div>
+            <h2 class="s-h2">Feel the Difference</h2>
+            <p class="s-sub">What happens when your water actually works.</p>
+          </div>
+          <div class="icon-strip">
+            <div class="icon-item">
+              <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+              <div class="icon-label">True Hydration</div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg></div>
+              <div class="icon-label">Deeper Sleep</div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div class="icon-label">Sustained Focus</div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <div class="icon-label">Travel &amp; Heat Recovery</div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M8 6v12M16 6v12M8 12h8"/></svg></div>
+              <div class="icon-label">Peak Performance</div>
+            </div>
+            <div class="icon-item">
+              <div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M18 8L22 4 18 0"/><path d="M6 16L2 20l4 4"/><path d="M22 4H14a4 4 0 00-4 4v4a4 4 0 004 4h0"/></svg></div>
+              <div class="icon-label">Hangover Defense</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="ben-a ben-a-mobile">
+          <div class="header">
+            <div class="gold-line" style="margin:0 auto 12px"></div>
+            <div class="eyebrow">Daily Benefits</div>
+            <h2 class="s-h2">Feel the Difference</h2>
+          </div>
+          <div class="icon-strip">
+            <div class="icon-item"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div><div class="icon-label">True Hydration</div></div>
+            <div class="icon-item"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg></div><div class="icon-label">Deeper Sleep</div></div>
+            <div class="icon-item"><div class="icon-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div><div class="icon-label">Focus</div></div>
+            <div class="icon-item"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="icon-label">Recovery</div></div>
+            <div class="icon-item"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M8 6v12M16 6v12M8 12h8"/></svg></div><div class="icon-label">Performance</div></div>
+            <div class="icon-item"><div class="icon-circle"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="icon-label">Hangover</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B: 3-Column Card Grid                 -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Sakara Life Pillars — Cards mit Icon, Titel und Beschreibung</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">3-Column Card Grid — Volle Beschreibung</span>
+  </div>
+  <p class="option-desc">
+    6 weisse Karten auf warm-off BG in 3 Spalten. Jede Karte: Icon oben, Titel, Beschreibung.
+    Mehr Platz pro Benefit als das aktuelle 2-Spalten-Layout. Symmetrisch, aufgeraeumt.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="ben-b">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">Daily Benefits</div>
+            <h2 class="s-h2">Feel the Difference</h2>
+            <p class="s-sub">What happens when your water actually works.</p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+              <div class="card-title">True Hydration</div>
+              <div class="card-desc">Give your body the minerals it needs to actually absorb every drop.</div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg></div>
+              <div class="card-title">Deeper Sleep</div>
+              <div class="card-desc">Ease muscle tension, calm your nervous system, and wake up restored.</div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div class="card-title">Sustained Focus</div>
+              <div class="card-desc">Keep your mind sharp and concentration steady without the caffeine crash.</div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <div class="card-title">Travel &amp; Heat Recovery</div>
+              <div class="card-desc">Replenish vital electrolytes lost to tropical heat, long flights, or running empty.</div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M8 6v12M16 6v12"/><path d="M8 12h8" stroke-width="2"/></svg></div>
+              <div class="card-title">Peak Performance</div>
+              <div class="card-desc">Push harder and recover faster. Banish muscle cramps during exercise.</div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+              <div class="card-title">Hangover Defense</div>
+              <div class="card-desc">Instantly restore your mineral balance and bounce back faster.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="ben-b ben-b-mobile">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">Daily Benefits</div>
+            <h2 class="s-h2">Feel the Difference</h2>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+              <div><div class="card-title">True Hydration</div><div class="card-desc">Minerals to actually absorb every drop.</div></div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg></div>
+              <div><div class="card-title">Deeper Sleep</div><div class="card-desc">Calm your nervous system, wake up restored.</div></div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div><div class="card-title">Sustained Focus</div><div class="card-desc">Sharp mind without the caffeine crash.</div></div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <div><div class="card-title">Travel Recovery</div><div class="card-desc">Replenish electrolytes from heat and flights.</div></div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M8 6v12M16 6v12"/><path d="M8 12h8" stroke-width="2"/></svg></div>
+              <div><div class="card-title">Peak Performance</div><div class="card-desc">Push harder, recover faster.</div></div>
+            </div>
+            <div class="card">
+              <div class="b-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+              <div><div class="card-title">Hangover Defense</div><div class="card-desc">Restore mineral balance, bounce back.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C: Numbered List (Editorial)          -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Sakara "9 Pillars" — Nummerierte Editorial-Liste</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Numbered Editorial List</span>
+  </div>
+  <p class="option-desc">
+    Jeder Benefit nummeriert (1-6) in Playfair Gold-Ziffern, zweispaltige Liste.
+    Magazin-Feeling, elegante Typografie statt Icons. Weisser Hintergrund, clean.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="ben-c">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">Daily Benefits</div>
+            <h2 class="s-h2">Feel the Difference</h2>
+            <p class="s-sub">What happens when your water actually works.</p>
+          </div>
+          <div class="list">
+            <div class="list-item">
+              <span class="list-num">1</span>
+              <div><div class="list-title">True Hydration</div><div class="list-desc">Give your body the minerals it needs to actually absorb every drop of water.</div></div>
+            </div>
+            <div class="list-item">
+              <span class="list-num">2</span>
+              <div><div class="list-title">Deeper Sleep</div><div class="list-desc">Magnesium is nature's relaxant. Ease tension and wake up restored.</div></div>
+            </div>
+            <div class="list-item">
+              <span class="list-num">3</span>
+              <div><div class="list-title">Sustained Focus</div><div class="list-desc">Clear the brain fog. Sharp mind without caffeine crash.</div></div>
+            </div>
+            <div class="list-item">
+              <span class="list-num">4</span>
+              <div><div class="list-title">Travel &amp; Heat Recovery</div><div class="list-desc">Replenish electrolytes lost to tropical heat and long flights.</div></div>
+            </div>
+            <div class="list-item">
+              <span class="list-num">5</span>
+              <div><div class="list-title">Peak Performance</div><div class="list-desc">Push harder and recover faster. Banish cramps during exercise.</div></div>
+            </div>
+            <div class="list-item">
+              <span class="list-num">6</span>
+              <div><div class="list-title">Natural Hangover Defense</div><div class="list-desc">Instantly restore mineral balance and bounce back faster.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="ben-c ben-c-mobile">
+          <div class="header">
+            <div class="gold-line" style="margin:0 auto 12px"></div>
+            <div class="eyebrow">Daily Benefits</div>
+            <h2 class="s-h2">Feel the Difference</h2>
+          </div>
+          <div class="list">
+            <div class="list-item"><span class="list-num">1</span><div><div class="list-title">True Hydration</div><div class="list-desc">Minerals to absorb every drop.</div></div></div>
+            <div class="list-item"><span class="list-num">2</span><div><div class="list-title">Deeper Sleep</div><div class="list-desc">Nature's relaxant. Wake restored.</div></div></div>
+            <div class="list-item"><span class="list-num">3</span><div><div class="list-title">Sustained Focus</div><div class="list-desc">Sharp mind, no caffeine crash.</div></div></div>
+            <div class="list-item"><span class="list-num">4</span><div><div class="list-title">Travel Recovery</div><div class="list-desc">Replenish from heat and flights.</div></div></div>
+            <div class="list-item"><span class="list-num">5</span><div><div class="list-title">Peak Performance</div><div class="list-desc">Push harder, recover faster.</div></div></div>
+            <div class="list-item"><span class="list-num">6</span><div><div class="list-title">Hangover Defense</div><div class="list-desc">Restore balance, bounce back.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D: Split — Image + Benefit Stack      -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Grown Alchemist / Luxury Wellness — Lifestyle-Bild + vertikale Liste</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Lifestyle Split — Bild links, Benefits rechts</span>
+  </div>
+  <p class="option-desc">
+    Grosses Lifestyle-Foto links, Benefits als kompakte vertikale Liste rechts.
+    Emotionaler Kontext durch das Bild — die Benefits werden erlebbar statt nur gelesen.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="ben-d">
+          <div class="img-side" style="background-image:url('../../site/public/images/products/yoga-poolside-stretch.webp')"></div>
+          <div class="text-side">
+            <div class="text-inner">
+              <div class="gold-line"></div>
+              <div class="eyebrow">Daily Benefits</div>
+              <h2 class="s-h2" style="font-size:22px;margin-bottom:6px">Feel the Difference</h2>
+              <p class="s-sub" style="font-size:12px">What happens when your water actually works.</p>
+              <div class="stack">
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+                  <div><div class="stack-title">True Hydration</div><div class="stack-desc">Minerals to actually absorb every drop.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg></div>
+                  <div><div class="stack-title">Deeper Sleep</div><div class="stack-desc">Ease tension, calm your system, wake restored.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+                  <div><div class="stack-title">Sustained Focus</div><div class="stack-desc">Sharp mind without the caffeine crash.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                  <div><div class="stack-title">Travel &amp; Heat Recovery</div><div class="stack-desc">Replenish from tropical heat and long flights.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M8 6v12M16 6v12"/><path d="M8 12h8" stroke-width="2"/></svg></div>
+                  <div><div class="stack-title">Peak Performance</div><div class="stack-desc">Push harder, recover faster, banish cramps.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                  <div><div class="stack-title">Hangover Defense</div><div class="stack-desc">Restore mineral balance, bounce back.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="ben-d ben-d-mobile">
+          <div class="img-side" style="background-image:url('../../site/public/images/products/yoga-poolside-stretch.webp')"></div>
+          <div class="text-side">
+            <div class="text-inner">
+              <div class="gold-line"></div>
+              <div class="eyebrow">Daily Benefits</div>
+              <h2 class="s-h2" style="font-size:19px;margin-bottom:6px">Feel the Difference</h2>
+              <div class="stack">
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+                  <div><div class="stack-title">True Hydration</div><div class="stack-desc">Absorb every drop.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg></div>
+                  <div><div class="stack-title">Deeper Sleep</div><div class="stack-desc">Wake up restored.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg></div>
+                  <div><div class="stack-title">Sustained Focus</div><div class="stack-desc">No caffeine crash.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                  <div><div class="stack-title">Travel Recovery</div><div class="stack-desc">Heat &amp; flight recovery.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M8 6v12M16 6v12"/><path d="M8 12h8" stroke-width="2"/></svg></div>
+                  <div><div class="stack-title">Performance</div><div class="stack-desc">Push harder.</div></div>
+                </div>
+                <div class="stack-item">
+                  <div class="stack-icon"><svg viewBox="0 0 24 24" stroke="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                  <div><div class="stack-title">Hangover Defense</div><div class="stack-desc">Bounce back.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:40px;text-align:center;color:var(--ink-faint);font-size:11px">
+  Salt.Magic Section 6: Benefits Options &mdash; Erstellt fuer Leo's Review
+</div>
+
+</body>
+</html>

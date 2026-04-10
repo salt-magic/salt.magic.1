@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenue Section Options - Salt.Magic Partner Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --mineral: #294B6D; --mineral-light: #3D6588; --gold: #D4BFAA; --warm-off: #F9F7F4; --warm-white: #FFFFFF; --ink: #3C3028; --ink-light: #5A4A3C; --ink-faint: #9B8E82; --border-warm: #E8DFD3; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+.page-header { background: var(--mineral); color: white; padding: 40px; text-align: center; }
+.page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+.page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 550px; margin: 0 auto; line-height: 1.6; }
+.page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+.option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+.option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+.option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+.option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+.option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+.frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+.frame-desktop { width: 900px; }
+.frame-mobile { width: 375px; }
+.frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+.frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+.frame-content { width: 100%; position: relative; overflow: hidden; }
+.divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+.divider hr { border: none; border-top: 1px solid var(--border-warm); }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Revenue Section - Partner Page</h1>
+  <p>4 layout options for "The Bottom Line: 4.4x More Revenue" section. Each option shows the daily wellness vs traditional sports drink revenue comparison.</p>
+  <span class="current">Current: Two side-by-side cards (Salt.Magic dark + Traditional bordered)</span>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by LMNT</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Visual Bar Comparison</span>
+  </div>
+  <p class="option-desc">Horizontal bar charts make the 4.4x difference immediately visual. Salt.Magic bars stretch wide in mineral-blue while traditional bars stay short in muted grey. A gold circle highlights the multiplier. Left-aligned editorial header on warm-off background.</p>
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #F9F7F4; padding: 64px 80px;">
+        <!-- Eyebrow -->
+        <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">The Bottom Line</div>
+        <div style="width: 40px; height: 2px; background: #D4BFAA; margin-bottom: 24px;"></div>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: #294B6D; margin-bottom: 16px; line-height: 1.2;">4.4x More Revenue</h2>
+        <p style="font-size: 15px; color: #5A4A3C; max-width: 560px; line-height: 1.7; margin-bottom: 48px;">We aren't selling an occasional sports recovery drink. We are selling a 365-day habit. Daily wellness positioning isn't just better for your customers - it's significantly better for your bottom line.</p>
+
+        <!-- Bar Charts -->
+        <div style="display: flex; gap: 60px; align-items: flex-start;">
+          <!-- Bars Column -->
+          <div style="flex: 1;">
+            <!-- Purchase Frequency -->
+            <div style="margin-bottom: 32px;">
+              <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8E82; margin-bottom: 12px;">Purchase Frequency</div>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                <div style="font-size: 12px; color: #294B6D; font-weight: 500; width: 90px;">Salt.Magic</div>
+                <div style="flex: 1; background: #E8DFD3; border-radius: 4px; height: 32px; position: relative;">
+                  <div style="width: 100%; height: 100%; background: #294B6D; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px;">
+                    <span style="color: white; font-size: 13px; font-weight: 500;">365 days/year</span>
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="font-size: 12px; color: #9B8E82; width: 90px;">Traditional</div>
+                <div style="flex: 1; background: #E8DFD3; border-radius: 4px; height: 32px; position: relative;">
+                  <div style="width: 7%; height: 100%; background: #9B8E82; border-radius: 4px; display: flex; align-items: center; padding-left: 12px; min-width: 120px;">
+                    <span style="color: white; font-size: 13px; font-weight: 500;">3-5 days/week</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Retention -->
+            <div style="margin-bottom: 32px;">
+              <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8E82; margin-bottom: 12px;">Retention Rate</div>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                <div style="font-size: 12px; color: #294B6D; font-weight: 500; width: 90px;">Salt.Magic</div>
+                <div style="flex: 1; background: #E8DFD3; border-radius: 4px; height: 32px;">
+                  <div style="width: 90%; height: 100%; background: #294B6D; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px;">
+                    <span style="color: white; font-size: 13px; font-weight: 500;">90%</span>
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="font-size: 12px; color: #9B8E82; width: 90px;">Traditional</div>
+                <div style="flex: 1; background: #E8DFD3; border-radius: 4px; height: 32px;">
+                  <div style="width: 30%; height: 100%; background: #9B8E82; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px;">
+                    <span style="color: white; font-size: 13px; font-weight: 500;">25-35%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- LTV -->
+            <div>
+              <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8E82; margin-bottom: 12px;">Customer Lifetime Value</div>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                <div style="font-size: 12px; color: #294B6D; font-weight: 500; width: 90px;">Salt.Magic</div>
+                <div style="flex: 1; background: #E8DFD3; border-radius: 4px; height: 32px;">
+                  <div style="width: 100%; height: 100%; background: #294B6D; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px;">
+                    <span style="color: white; font-size: 13px; font-weight: 500;">4,200 THB</span>
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="font-size: 12px; color: #9B8E82; width: 90px;">Traditional</div>
+                <div style="flex: 1; background: #E8DFD3; border-radius: 4px; height: 32px;">
+                  <div style="width: 19%; height: 100%; background: #9B8E82; border-radius: 4px; display: flex; align-items: center; padding-left: 12px; min-width: 100px;">
+                    <span style="color: white; font-size: 13px; font-weight: 500;">800 THB</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4.4x Badge -->
+          <div style="flex-shrink: 0; display: flex; align-items: center; justify-content: center; padding-top: 60px;">
+            <div style="width: 100px; height: 100px; border-radius: 50%; background: #D4BFAA; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <span style="font-family: 'Playfair Display', serif; font-size: 32px; color: #294B6D; font-weight: 400; line-height: 1;">4.4x</span>
+              <span style="font-size: 10px; color: #294B6D; text-transform: uppercase; letter-spacing: 0.1em;">more</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #F9F7F4; padding: 40px 24px;">
+        <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">The Bottom Line</div>
+        <div style="width: 40px; height: 2px; background: #D4BFAA; margin-bottom: 20px;"></div>
+        <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; color: #294B6D; margin-bottom: 12px; line-height: 1.2;">4.4x More Revenue</h2>
+        <p style="font-size: 14px; color: #5A4A3C; line-height: 1.7; margin-bottom: 32px;">We aren't selling an occasional sports recovery drink. We are selling a 365-day habit.</p>
+
+        <!-- 4.4x Badge centered -->
+        <div style="text-align: center; margin-bottom: 32px;">
+          <div style="width: 80px; height: 80px; border-radius: 50%; background: #D4BFAA; display: inline-flex; flex-direction: column; align-items: center; justify-content: center;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 26px; color: #294B6D; font-weight: 400; line-height: 1;">4.4x</span>
+            <span style="font-size: 9px; color: #294B6D; text-transform: uppercase; letter-spacing: 0.1em;">more</span>
+          </div>
+        </div>
+
+        <!-- Stacked Bars -->
+        <div style="margin-bottom: 24px;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8E82; margin-bottom: 10px;">Purchase Frequency</div>
+          <div style="margin-bottom: 6px;">
+            <div style="font-size: 11px; color: #294B6D; font-weight: 500; margin-bottom: 4px;">Salt.Magic</div>
+            <div style="background: #E8DFD3; border-radius: 4px; height: 28px;">
+              <div style="width: 100%; height: 100%; background: #294B6D; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;">
+                <span style="color: white; font-size: 12px; font-weight: 500;">365 days/year</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 11px; color: #9B8E82; margin-bottom: 4px;">Traditional</div>
+            <div style="background: #E8DFD3; border-radius: 4px; height: 28px;">
+              <div style="width: 30%; height: 100%; background: #9B8E82; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; min-width: 100px;">
+                <span style="color: white; font-size: 12px;">3-5 days/wk</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8E82; margin-bottom: 10px;">Retention Rate</div>
+          <div style="margin-bottom: 6px;">
+            <div style="font-size: 11px; color: #294B6D; font-weight: 500; margin-bottom: 4px;">Salt.Magic</div>
+            <div style="background: #E8DFD3; border-radius: 4px; height: 28px;">
+              <div style="width: 90%; height: 100%; background: #294B6D; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;">
+                <span style="color: white; font-size: 12px; font-weight: 500;">90%</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 11px; color: #9B8E82; margin-bottom: 4px;">Traditional</div>
+            <div style="background: #E8DFD3; border-radius: 4px; height: 28px;">
+              <div style="width: 30%; height: 100%; background: #9B8E82; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;">
+                <span style="color: white; font-size: 12px;">25-35%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #9B8E82; margin-bottom: 10px;">Customer LTV</div>
+          <div style="margin-bottom: 6px;">
+            <div style="font-size: 11px; color: #294B6D; font-weight: 500; margin-bottom: 4px;">Salt.Magic</div>
+            <div style="background: #E8DFD3; border-radius: 4px; height: 28px;">
+              <div style="width: 100%; height: 100%; background: #294B6D; border-radius: 4px; display: flex; align-items: center; justify-content: flex-end; padding-right: 10px;">
+                <span style="color: white; font-size: 12px; font-weight: 500;">4,200 THB</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 11px; color: #9B8E82; margin-bottom: 4px;">Traditional</div>
+            <div style="background: #E8DFD3; border-radius: 4px; height: 28px;">
+              <div style="width: 19%; height: 100%; background: #9B8E82; border-radius: 4px; display: flex; align-items: center; padding-left: 8px; min-width: 80px;">
+                <span style="color: white; font-size: 12px;">800 THB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by Grown Alchemist</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Two-Column Table</span>
+  </div>
+  <p class="option-desc">Elegant comparison table with thin borders and a gold top accent on the Salt.Magic column. Clean, editorial feel with centered header. The 4.4x callout sits below the table as a quiet but powerful statement.</p>
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #FFFFFF; padding: 64px 80px;">
+        <div style="text-align: center; margin-bottom: 48px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">The Bottom Line</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 24px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: #294B6D; margin-bottom: 16px; line-height: 1.2;">4.4x More Revenue</h2>
+          <p style="font-size: 15px; color: #5A4A3C; max-width: 520px; margin: 0 auto; line-height: 1.7;">We aren't selling an occasional sports recovery drink. We are selling a 365-day habit. Daily wellness positioning isn't just better for your customers - it's significantly better for your bottom line.</p>
+        </div>
+
+        <!-- Table -->
+        <div style="max-width: 600px; margin: 0 auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+            <!-- Header -->
+            <thead>
+              <tr>
+                <th style="padding: 0; width: 33%;"></th>
+                <th style="padding: 0; width: 33.5%;">
+                  <div style="border-top: 3px solid #D4BFAA; padding: 16px 20px; text-align: center; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 16px; color: #294B6D; border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3; background: #F9F7F4;">Salt.Magic</div>
+                </th>
+                <th style="padding: 0; width: 33.5%;">
+                  <div style="border-top: 1px solid #E8DFD3; padding: 16px 20px; text-align: center; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 16px; color: #9B8E82; border-right: 1px solid #E8DFD3;">Traditional</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 18px 16px; border-bottom: 1px solid #E8DFD3; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9B8E82;">Frequency</td>
+                <td style="padding: 18px 20px; border-bottom: 1px solid #E8DFD3; border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3; text-align: center; color: #294B6D; font-weight: 500; background: rgba(249,247,244,0.5);">365 days/year</td>
+                <td style="padding: 18px 20px; border-bottom: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">3-5 days/week</td>
+              </tr>
+              <tr>
+                <td style="padding: 18px 16px; border-bottom: 1px solid #E8DFD3; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9B8E82;">Retention</td>
+                <td style="padding: 18px 20px; border-bottom: 1px solid #E8DFD3; border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3; text-align: center; color: #294B6D; font-weight: 500; background: rgba(249,247,244,0.5);">90%</td>
+                <td style="padding: 18px 20px; border-bottom: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">25-35%</td>
+              </tr>
+              <tr>
+                <td style="padding: 18px 16px; border-bottom: 1px solid #E8DFD3; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9B8E82;">Customer LTV</td>
+                <td style="padding: 18px 20px; border-bottom: 1px solid #E8DFD3; border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3; text-align: center; color: #294B6D; font-weight: 500; font-size: 16px; background: rgba(249,247,244,0.5);">4,200 THB</td>
+                <td style="padding: 18px 20px; border-bottom: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">800 THB</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- 4.4x Callout -->
+          <div style="text-align: center; margin-top: 36px; padding: 24px; border: 1px solid #E8DFD3; border-radius: 8px;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">4.4x</span>
+            <span style="font-size: 14px; color: #5A4A3C; margin-left: 8px;">more revenue per customer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #FFFFFF; padding: 40px 20px;">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">The Bottom Line</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 20px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 26px; color: #294B6D; margin-bottom: 12px; line-height: 1.2;">4.4x More Revenue</h2>
+          <p style="font-size: 14px; color: #5A4A3C; line-height: 1.7;">We are selling a 365-day habit. That's significantly better for your bottom line.</p>
+        </div>
+
+        <!-- Stacked comparison -->
+        <div style="border: 1px solid #E8DFD3; border-radius: 8px; overflow: hidden; margin-bottom: 20px;">
+          <!-- Salt.Magic -->
+          <div style="border-top: 3px solid #D4BFAA; padding: 20px; background: #F9F7F4;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 15px; color: #294B6D; margin-bottom: 16px; text-align: center;">Salt.Magic</div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82;">Frequency</span>
+              <span style="font-size: 14px; color: #294B6D; font-weight: 500;">365 days/year</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82;">Retention</span>
+              <span style="font-size: 14px; color: #294B6D; font-weight: 500;">90%</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82;">LTV</span>
+              <span style="font-size: 14px; color: #294B6D; font-weight: 500;">4,200 THB</span>
+            </div>
+          </div>
+          <!-- Traditional -->
+          <div style="padding: 20px; border-top: 1px solid #E8DFD3;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 15px; color: #9B8E82; margin-bottom: 16px; text-align: center;">Traditional</div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82;">Frequency</span>
+              <span style="font-size: 14px; color: #9B8E82;">3-5 days/week</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82;">Retention</span>
+              <span style="font-size: 14px; color: #9B8E82;">25-35%</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82;">LTV</span>
+              <span style="font-size: 14px; color: #9B8E82;">800 THB</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; padding: 20px; border: 1px solid #E8DFD3; border-radius: 8px;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 24px; color: #294B6D;">4.4x</span>
+          <span style="font-size: 13px; color: #5A4A3C; margin-left: 6px;">more revenue</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by Sakara</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Big Number Hero</span>
+  </div>
+  <p class="option-desc">The 4.4x takes center stage as a giant white Playfair number on mineral-blue background. Gold subtitle anchors the message. Two stat columns below show the data with Salt.Magic in white and Traditional faded to half opacity. Immersive and bold.</p>
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #294B6D; padding: 80px 80px; text-align: center;">
+        <!-- Big Number -->
+        <div style="font-family: 'Playfair Display', serif; font-size: 120px; color: white; font-weight: 400; line-height: 1; margin-bottom: 8px;">4.4x</div>
+        <div style="font-size: 18px; color: #D4BFAA; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px;">More Revenue Per Customer</div>
+        <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 24px;"></div>
+        <p style="font-size: 15px; color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 56px; line-height: 1.7;">We aren't selling an occasional sports recovery drink. We are selling a 365-day habit. Daily wellness positioning is significantly better for your bottom line.</p>
+
+        <!-- Two Stat Columns -->
+        <div style="display: flex; gap: 60px; justify-content: center; max-width: 600px; margin: 0 auto;">
+          <!-- Salt.Magic Column -->
+          <div style="flex: 1; text-align: center;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-bottom: 4px;">The Salt.Magic Way</div>
+            <div style="font-size: 12px; color: #D4BFAA; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 28px;">Daily Wellness</div>
+            <div style="margin-bottom: 24px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 32px; color: white; line-height: 1;">365</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px;">days/year</div>
+            </div>
+            <div style="margin-bottom: 24px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 32px; color: white; line-height: 1;">90%</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px;">retention</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 32px; color: white; line-height: 1;">4,200</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px;">THB lifetime value</div>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div style="width: 1px; background: rgba(255,255,255,0.15);"></div>
+
+          <!-- Traditional Column -->
+          <div style="flex: 1; text-align: center;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: rgba(255,255,255,0.5); margin-bottom: 4px;">The Old Way</div>
+            <div style="font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 28px;">Sports Drink</div>
+            <div style="margin-bottom: 24px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 32px; color: rgba(255,255,255,0.5); line-height: 1;">3-5</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 4px;">days/week</div>
+            </div>
+            <div style="margin-bottom: 24px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 32px; color: rgba(255,255,255,0.5); line-height: 1;">25-35%</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 4px;">retention</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 32px; color: rgba(255,255,255,0.5); line-height: 1;">800</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 4px;">THB lifetime value</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #294B6D; padding: 48px 24px; text-align: center;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 72px; color: white; font-weight: 400; line-height: 1; margin-bottom: 8px;">4.4x</div>
+        <div style="font-size: 14px; color: #D4BFAA; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px;">More Revenue Per Customer</div>
+        <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 20px;"></div>
+        <p style="font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 40px;">We are selling a 365-day habit. That's significantly better for your bottom line.</p>
+
+        <!-- Stacked Stats -->
+        <div style="text-align: center; margin-bottom: 32px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 16px; color: white; margin-bottom: 4px;">The Salt.Magic Way</div>
+          <div style="font-size: 11px; color: #D4BFAA; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px;">Daily Wellness</div>
+          <div style="display: flex; justify-content: space-around;">
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 26px; color: white;">365</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.5);">days/year</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 26px; color: white;">90%</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.5);">retention</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 26px; color: white;">4,200</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.5);">THB LTV</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.12); margin-bottom: 32px;"></div>
+
+        <div style="text-align: center;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 16px; color: rgba(255,255,255,0.5); margin-bottom: 4px;">The Old Way</div>
+          <div style="font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px;">Sports Drink</div>
+          <div style="display: flex; justify-content: space-around;">
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 26px; color: rgba(255,255,255,0.45);">3-5</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.25);">days/wk</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 26px; color: rgba(255,255,255,0.45);">25%</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.25);">retention</div>
+            </div>
+            <div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 26px; color: rgba(255,255,255,0.45);">800</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.25);">THB LTV</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by PANPURI</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Before/After Cards</span>
+  </div>
+  <p class="option-desc">Two overlapping cards create a visual "upgrade" narrative. The Traditional card sits behind in muted warm-off, while the Salt.Magic card overlaps in front with mineral-blue. A gold 4.4x badge floats between them. Each card shows 3 stats vertically.</p>
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #FFFFFF; padding: 64px 60px;">
+        <div style="text-align: center; margin-bottom: 48px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">The Bottom Line</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 24px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: #294B6D; margin-bottom: 16px; line-height: 1.2;">4.4x More Revenue</h2>
+          <p style="font-size: 15px; color: #5A4A3C; max-width: 520px; margin: 0 auto; line-height: 1.7;">We aren't selling an occasional sports recovery drink. We are selling a 365-day habit.</p>
+        </div>
+
+        <!-- Overlapping Cards -->
+        <div style="display: flex; justify-content: center; align-items: stretch; max-width: 700px; margin: 0 auto; position: relative;">
+          <!-- Traditional Card (behind) -->
+          <div style="width: 300px; background: #F9F7F4; border: 1px solid #E8DFD3; border-radius: 12px; padding: 36px 32px; position: relative; z-index: 1; margin-right: -20px; transform: translateY(16px);">
+            <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #9B8E82; margin-bottom: 4px;">The Old Way</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: #9B8E82; margin-bottom: 28px;">Traditional Sports Drink</div>
+
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #9B8E82; margin-bottom: 6px;">Purchase Frequency</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #9B8E82;">3-5 days/week</div>
+            </div>
+            <div style="width: 100%; height: 1px; background: #E8DFD3; margin-bottom: 24px;"></div>
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #9B8E82; margin-bottom: 6px;">Retention Rate</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #9B8E82;">25-35%</div>
+            </div>
+            <div style="width: 100%; height: 1px; background: #E8DFD3; margin-bottom: 24px;"></div>
+            <div>
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #9B8E82; margin-bottom: 6px;">Customer LTV</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #9B8E82;">800 THB</div>
+            </div>
+          </div>
+
+          <!-- 4.4x Badge (floating) -->
+          <div style="position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%);">
+            <div style="width: 72px; height: 72px; border-radius: 50%; background: #D4BFAA; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(0,0,0,0.12);">
+              <span style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D; font-weight: 400; line-height: 1;">4.4x</span>
+            </div>
+          </div>
+
+          <!-- Salt.Magic Card (in front) -->
+          <div style="width: 300px; background: #294B6D; border-radius: 12px; padding: 36px 32px; position: relative; z-index: 2; margin-left: -20px; box-shadow: 0 8px 32px rgba(41,75,109,0.25);">
+            <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 4px;">The Salt.Magic Way</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: white; margin-bottom: 28px;">Daily Wellness</div>
+
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 6px;">Purchase Frequency</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: white;">365 days/year</div>
+            </div>
+            <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.12); margin-bottom: 24px;"></div>
+            <div style="margin-bottom: 24px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 6px;">Retention Rate</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: white;">90%</div>
+            </div>
+            <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.12); margin-bottom: 24px;"></div>
+            <div>
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 6px;">Customer LTV</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: white;">4,200 THB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #FFFFFF; padding: 40px 20px;">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">The Bottom Line</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 20px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 26px; color: #294B6D; margin-bottom: 12px; line-height: 1.2;">4.4x More Revenue</h2>
+          <p style="font-size: 14px; color: #5A4A3C; line-height: 1.7;">We are selling a 365-day habit.</p>
+        </div>
+
+        <!-- Salt.Magic Card (first on mobile) -->
+        <div style="background: #294B6D; border-radius: 12px; padding: 28px 24px; margin-bottom: 0; position: relative; z-index: 2; box-shadow: 0 8px 32px rgba(41,75,109,0.25);">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 4px;">The Salt.Magic Way</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 16px; color: white; margin-bottom: 20px;">Daily Wellness</div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
+            <div>
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 4px;">Frequency</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: white;">365 days</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 4px;">Retention</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: white;">90%</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.5); margin-bottom: 4px;">LTV</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: white;">4,200 THB</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4.4x Badge -->
+        <div style="text-align: center; margin: -12px 0; position: relative; z-index: 3;">
+          <div style="width: 56px; height: 56px; border-radius: 50%; background: #D4BFAA; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+            <span style="font-family: 'Playfair Display', serif; font-size: 18px; color: #294B6D; font-weight: 400; line-height: 1;">4.4x</span>
+          </div>
+        </div>
+
+        <!-- Traditional Card -->
+        <div style="background: #F9F7F4; border: 1px solid #E8DFD3; border-radius: 12px; padding: 28px 24px; position: relative; z-index: 1;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #9B8E82; margin-bottom: 4px;">The Old Way</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 16px; color: #9B8E82; margin-bottom: 20px;">Traditional Sports Drink</div>
+          <div style="display: flex; justify-content: space-between;">
+            <div>
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #9B8E82; margin-bottom: 4px;">Frequency</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: #9B8E82;">3-5 days</div>
+            </div>
+            <div style="text-align: center;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #9B8E82; margin-bottom: 4px;">Retention</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: #9B8E82;">25-35%</div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #9B8E82; margin-bottom: 4px;">LTV</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: #9B8E82;">800 THB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>
+
+</body>
+</html>

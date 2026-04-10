@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Section 7: ForEveryone Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D; --mineral-light: #3D6588; --gold: #D4BFAA; --warm-off: #F9F7F4;
+    --warm-white: #FFFFFF; --ink: #3C3028; --ink-light: #5A4A3C; --ink-faint: #9B8E82; --border-warm: #E8DFD3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+
+  .page-header { background: var(--mineral); color: white; padding: 40px; text-align: center; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+  .page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+  .page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+
+  .option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+  .option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+  .option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+  .option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+  .option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+
+  .viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  .frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+  .frame-desktop { width: 900px; }
+  .frame-mobile { width: 375px; }
+  .frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+  .frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+  .frame-content { width: 100%; position: relative; overflow: hidden; }
+
+  .divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+  .divider hr { border: none; border-top: 1px solid var(--border-warm); }
+
+  .gold-line { width: 36px; height: 1px; background: var(--gold); margin-bottom: 16px; }
+  .eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+
+  /* =========================================== */
+  /* OPTION A: Full-Width Manifesto              */
+  /* =========================================== */
+  .fe-a {
+    background: var(--warm-white);
+    padding: 48px 48px;
+    text-align: center;
+  }
+  .fe-a .header { max-width: 560px; margin: 0 auto 32px; }
+  .fe-a .header .gold-line { margin: 0 auto 16px; }
+  .fe-a .s-h2 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; color: var(--mineral); margin-bottom: 6px; letter-spacing: -0.02em; line-height: 1.1; }
+  .fe-a .s-sub { font-size: 14px; color: var(--ink-light); margin-bottom: 14px; }
+  .fe-a .body { font-size: 13px; color: var(--ink-light); line-height: 1.7; max-width: 480px; margin: 0 auto; }
+
+  .fe-a .versus {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px;
+    max-width: 640px; margin: 0 auto; align-items: stretch;
+  }
+  .fe-a .vs-card { border-radius: 12px; padding: 24px 20px; text-align: center; }
+  .fe-a .vs-old { background: var(--warm-off); border: 1px solid var(--border-warm); }
+  .fe-a .vs-new { background: var(--mineral); color: white; }
+  .fe-a .vs-label {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 14px; padding-bottom: 10px;
+  }
+  .fe-a .vs-old .vs-label { color: var(--ink-faint); border-bottom: 1px solid var(--border-warm); }
+  .fe-a .vs-new .vs-label { color: var(--gold); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .fe-a .vs-list { list-style: none; text-align: left; }
+  .fe-a .vs-list li { font-size: 12px; line-height: 1.6; padding: 4px 0; display: flex; align-items: flex-start; gap: 8px; }
+  .fe-a .vs-old .vs-list li { color: var(--ink-light); }
+  .fe-a .vs-new .vs-list li { color: rgba(255,255,255,0.8); }
+  .fe-a .vs-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+  .fe-a .vs-old .vs-list li::before { background: var(--ink-faint); }
+  .fe-a .vs-new .vs-list li::before { background: var(--gold); }
+  .fe-a .vs-divider {
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif; font-size: 14px; color: var(--ink-faint);
+  }
+
+  /* Mobile A */
+  .fe-a-mobile { padding: 32px 16px; }
+  .fe-a-mobile .s-h2 { font-size: 21px; }
+  .fe-a-mobile .versus { grid-template-columns: 1fr; gap: 12px; max-width: 300px; }
+  .fe-a-mobile .vs-divider { display: none; }
+
+  /* =========================================== */
+  /* OPTION B: Audience Grid (Who uses it)       */
+  /* =========================================== */
+  .fe-b {
+    background: var(--warm-off);
+    padding: 40px 48px;
+  }
+  .fe-b .header { margin-bottom: 28px; max-width: 480px; }
+  .fe-b .s-h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--mineral); margin-bottom: 6px; line-height: 1.1; }
+  .fe-b .s-sub { font-size: 13px; color: var(--ink-light); line-height: 1.6; }
+  .fe-b .body { font-size: 12px; color: var(--ink-light); line-height: 1.7; max-width: 440px; margin-top: 10px; }
+
+  .fe-b .audience-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 720px; margin-top: 4px;
+  }
+  .fe-b .aud-card {
+    background: var(--warm-white); border-radius: 12px; padding: 20px 16px;
+    border: 1px solid var(--border-warm);
+  }
+  .fe-b .aud-emoji { font-size: 22px; margin-bottom: 8px; }
+  .fe-b .aud-who { font-size: 12px; font-weight: 500; color: var(--mineral); margin-bottom: 4px; }
+  .fe-b .aud-why { font-size: 11px; color: var(--ink-light); line-height: 1.5; }
+
+  /* Mobile B */
+  .fe-b-mobile { padding: 28px 16px; }
+  .fe-b-mobile .audience-grid { grid-template-columns: 1fr 1fr; max-width: 340px; }
+  .fe-b-mobile .s-h2 { font-size: 19px; }
+
+  /* =========================================== */
+  /* OPTION C: Daily Ritual Timeline             */
+  /* =========================================== */
+  .fe-c {
+    background: var(--warm-white);
+    padding: 40px 48px;
+  }
+  .fe-c .header { text-align: center; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .fe-c .header .gold-line { margin: 0 auto 16px; }
+  .fe-c .s-h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--mineral); margin-bottom: 6px; line-height: 1.1; }
+  .fe-c .s-sub { font-size: 13px; color: var(--ink-light); }
+  .fe-c .body { font-size: 12px; color: var(--ink-light); line-height: 1.7; max-width: 440px; margin: 10px auto 0; }
+
+  .fe-c .timeline {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 720px; margin: 0 auto;
+    position: relative;
+  }
+  .fe-c .timeline::before {
+    content: ''; position: absolute; top: 28px; left: 16.6%; right: 16.6%;
+    height: 1px; background: var(--gold); opacity: 0.4;
+  }
+  .fe-c .tl-item { text-align: center; padding: 0 16px; position: relative; }
+  .fe-c .tl-dot {
+    width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--gold); background: var(--warm-white);
+    margin: 0 auto 14px; position: relative; z-index: 1;
+  }
+  .fe-c .tl-time {
+    font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; color: var(--mineral); margin-bottom: 4px;
+  }
+  .fe-c .tl-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  .fe-c .tl-desc { font-size: 11px; color: var(--ink-light); line-height: 1.5; }
+  .fe-c .tl-img {
+    width: 100%; height: 120px; border-radius: 8px; margin-top: 12px;
+    background-size: cover; background-position: center;
+  }
+
+  /* Mobile C */
+  .fe-c-mobile { padding: 28px 16px; }
+  .fe-c-mobile .timeline { grid-template-columns: 1fr; gap: 20px; max-width: 280px; }
+  .fe-c-mobile .timeline::before { display: none; }
+  .fe-c-mobile .tl-item { display: flex; gap: 14px; text-align: left; padding: 0; }
+  .fe-c-mobile .tl-dot { margin: 4px 0 0; flex-shrink: 0; }
+  .fe-c-mobile .tl-img { display: none; }
+  .fe-c-mobile .s-h2 { font-size: 19px; }
+
+  /* =========================================== */
+  /* OPTION D: Split + Full-Width Comparison     */
+  /* =========================================== */
+  .fe-d-split {
+    display: grid; grid-template-columns: 1.1fr 1fr;
+    background: var(--warm-white);
+  }
+  .fe-d-split .img-side {
+    background-size: cover; background-position: center; min-height: 380px;
+  }
+  .fe-d-split .text-side {
+    display: flex; align-items: center; padding: 36px 36px;
+  }
+  .fe-d-split .text-inner { max-width: 380px; }
+  .fe-d-split .s-h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--mineral); margin-bottom: 6px; line-height: 1.1; }
+  .fe-d-split .s-sub { font-size: 13px; color: var(--ink-light); margin-bottom: 10px; }
+  .fe-d-split .body { font-size: 12px; color: var(--ink-light); line-height: 1.7; }
+
+  .fe-d-versus {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  }
+  .fe-d-versus .vs-side { padding: 24px 32px; }
+  .fe-d-versus .vs-old-side { background: var(--warm-off); }
+  .fe-d-versus .vs-new-side { background: var(--mineral); color: white; }
+  .fe-d-versus .vs-label {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .fe-d-versus .vs-old-side .vs-label { color: var(--ink-faint); }
+  .fe-d-versus .vs-new-side .vs-label { color: var(--gold); }
+  .fe-d-versus .vs-list { list-style: none; }
+  .fe-d-versus .vs-list li {
+    font-size: 12px; line-height: 1.6; padding: 5px 0; display: flex; align-items: flex-start; gap: 8px;
+  }
+  .fe-d-versus .vs-old-side .vs-list li { color: var(--ink-light); }
+  .fe-d-versus .vs-new-side .vs-list li { color: rgba(255,255,255,0.8); }
+  .fe-d-versus .vs-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+  .fe-d-versus .vs-old-side .vs-list li::before { background: var(--ink-faint); }
+  .fe-d-versus .vs-new-side .vs-list li::before { background: var(--gold); }
+
+  /* Mobile D */
+  .fe-d-mobile-split { grid-template-columns: 1fr; }
+  .fe-d-mobile-split .img-side { min-height: 200px; }
+  .fe-d-mobile-split .text-side { padding: 24px 20px; }
+  .fe-d-mobile-split .s-h2 { font-size: 19px; }
+  .fe-d-mobile-versus { grid-template-columns: 1fr; }
+  .fe-d-mobile-versus .vs-side { padding: 18px 20px; }
+
+  @media (max-width: 1400px) {
+    .viewport-row { flex-direction: column; align-items: center; }
+    .frame-desktop { width: 100%; max-width: 900px; }
+    .frame-mobile { width: 100%; max-width: 375px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Section 7: For Everyone</h1>
+  <p>4 Alternativen fuer die "Not a Sports Drink. A Daily Essential." Positionierung. Kein Referenz-Brand hat diese Section — einzigartiger Salt.Magic Differentiator.</p>
+  <div class="current">Aktuell: Split (Text links, Lifestyle-Bild rechts) + Mini-Vergleichskarten Old Way vs Salt.Magic Way</div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A: Full-Width Manifesto               -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Statement-zentriert — Lasse die Worte wirken ohne Ablenkung durch Bilder</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Full-Width Manifesto — Worte als Held</span>
+  </div>
+  <p class="option-desc">
+    Zentriertes Statement mit prominenter Headline. Old Way vs Salt.Magic Way als grosse, gleichwertige Karten mit "vs" dazwischen.
+    Kein Bild — pure Ueberzeugungskraft. Die Gegenueberstellung spricht fuer sich.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fe-a">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">For Everyone</div>
+            <h2 class="s-h2">Not a Sports Drink.<br>A Daily Essential.</h2>
+            <p class="s-sub">Pure hydration for daily life, not just game day.</p>
+            <p class="body">Most electrolytes are packed with sugar and designed for extreme athletes to use once in a while. Salt.Magic is designed for life. Whether you're intermittent fasting, surviving the tropical heat, traveling, or just navigating a busy workday — your body burns through minerals every single day.</p>
+          </div>
+          <div class="versus">
+            <div class="vs-card vs-old">
+              <div class="vs-label">The Old Way (Sports Drinks)</div>
+              <ul class="vs-list">
+                <li>Occasional use (3-5x a week)</li>
+                <li>Built for intense workouts</li>
+                <li>Loaded with sugar &amp; artificial colors</li>
+              </ul>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="vs-card vs-new">
+              <div class="vs-label">The Salt.Magic Way</div>
+              <ul class="vs-list">
+                <li>Daily essential (365 days a year)</li>
+                <li>Built for anyone who drinks water</li>
+                <li>Pure, invisible, natural minerals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fe-a fe-a-mobile">
+          <div class="header">
+            <div class="gold-line" style="margin:0 auto 12px"></div>
+            <div class="eyebrow">For Everyone</div>
+            <h2 class="s-h2">Not a Sports Drink.<br>A Daily Essential.</h2>
+            <p class="s-sub" style="font-size:12px">Pure hydration for daily life, not just game day.</p>
+            <p class="body" style="font-size:12px">Most electrolytes are packed with sugar and designed for extreme athletes. Salt.Magic is designed for life.</p>
+          </div>
+          <div class="versus">
+            <div class="vs-card vs-old">
+              <div class="vs-label">The Old Way</div>
+              <ul class="vs-list">
+                <li>Occasional use (3-5x a week)</li>
+                <li>Built for intense workouts</li>
+                <li>Loaded with sugar</li>
+              </ul>
+            </div>
+            <div class="vs-card vs-new">
+              <div class="vs-label">The Salt.Magic Way</div>
+              <ul class="vs-list">
+                <li>Daily essential (365 days/year)</li>
+                <li>Built for anyone</li>
+                <li>Pure, natural minerals</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B: Audience Grid                      -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Hydrant Benefit-Kategorien — Zeige WER es braucht statt warum</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Audience Grid — Wer braucht es?</span>
+  </div>
+  <p class="option-desc">
+    Statt Old Way vs New Way: 6 konkrete Zielgruppen als Karten. Jeder sieht sich selbst.
+    Office Workers, Parents, Travelers, Fasters, Athletes, Older Adults. Inklusiver Ansatz.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fe-b">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">For Everyone</div>
+            <h2 class="s-h2">Not a Sports Drink. A Daily Essential.</h2>
+            <p class="s-sub">Pure hydration for daily life, not just game day.</p>
+            <p class="body">Your body burns through minerals every single day. Here's who feels it most:</p>
+          </div>
+          <div class="audience-grid">
+            <div class="aud-card">
+              <div class="aud-who">Office Workers</div>
+              <div class="aud-why">8+ hours in air conditioning drains minerals through unseen dehydration.</div>
+            </div>
+            <div class="aud-card">
+              <div class="aud-who">Parents &amp; Families</div>
+              <div class="aud-why">Chaotic schedules mean you rarely drink enough mineralized water.</div>
+            </div>
+            <div class="aud-card">
+              <div class="aud-who">Travelers &amp; Expats</div>
+              <div class="aud-why">Tropical climates lose electrolytes through sweat at 2-3x the rate.</div>
+            </div>
+            <div class="aud-card">
+              <div class="aud-who">Intermittent Fasters</div>
+              <div class="aud-why">Your body depletes minerals rapidly without food intake to replace them.</div>
+            </div>
+            <div class="aud-card">
+              <div class="aud-who">Active Lifestyles</div>
+              <div class="aud-why">Clean recovery without the sugar crash of traditional sports drinks.</div>
+            </div>
+            <div class="aud-card">
+              <div class="aud-who">Older Adults</div>
+              <div class="aud-why">Natural mineral absorption decreases with age — daily supplementation helps.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fe-b fe-b-mobile">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">For Everyone</div>
+            <h2 class="s-h2">Not a Sports Drink.<br>A Daily Essential.</h2>
+            <p class="s-sub" style="font-size:12px">Who feels the difference most:</p>
+          </div>
+          <div class="audience-grid">
+            <div class="aud-card"><div class="aud-who">Office Workers</div><div class="aud-why">AC drains minerals all day.</div></div>
+            <div class="aud-card"><div class="aud-who">Parents</div><div class="aud-why">Chaotic schedules, no time to hydrate right.</div></div>
+            <div class="aud-card"><div class="aud-who">Travelers</div><div class="aud-why">Tropical heat = 2-3x mineral loss.</div></div>
+            <div class="aud-card"><div class="aud-who">Fasters</div><div class="aud-why">No food = rapid mineral depletion.</div></div>
+            <div class="aud-card"><div class="aud-who">Athletes</div><div class="aud-why">Clean recovery, zero sugar.</div></div>
+            <div class="aud-card"><div class="aud-who">Older Adults</div><div class="aud-why">Absorption decreases with age.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C: Daily Ritual Timeline              -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Lifestyle-Positionierung — Zeige Salt.Magic als Teil des Tagesablaufs</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Daily Ritual Timeline — Morgen, Mittag, Abend</span>
+  </div>
+  <p class="option-desc">
+    Statt Vergleich: zeige wie Salt.Magic in den Alltag passt. Drei Momente des Tages als Timeline.
+    Morning Water, Afternoon Recharge, Evening Wind-Down. Macht das Produkt zum Ritual.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fe-c">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">For Everyone</div>
+            <h2 class="s-h2">Not a Sports Drink. A Daily Essential.</h2>
+            <p class="s-sub">Pure hydration for daily life, not just game day.</p>
+            <p class="body">Salt.Magic is designed for life. Whether you're starting your day, pushing through the afternoon, or winding down — your body needs minerals every single day.</p>
+          </div>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-time">Morning</div>
+              <div class="tl-label">Start Mineralized</div>
+              <div class="tl-desc">Add to your first glass of water. Replenish minerals lost overnight. Start energized.</div>
+              <div class="tl-img" style="background-image:url('../../site/public/images/products/yoga-sachet.webp')"></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-time">Afternoon</div>
+              <div class="tl-label">Stay Sharp</div>
+              <div class="tl-desc">Beat the 3pm slump. Magnesium sustains focus and energy without caffeine.</div>
+              <div class="tl-img" style="background-image:url('../../site/public/images/products/taylor-poolside.jpg')"></div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-time">Evening</div>
+              <div class="tl-label">Wind Down</div>
+              <div class="tl-desc">Magnesium relaxes muscles and calms the nervous system. Sleep deeper tonight.</div>
+              <div class="tl-img" style="background-image:url('../../site/public/images/products/why-sachet-pouch.webp')"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fe-c fe-c-mobile">
+          <div class="header">
+            <div class="gold-line" style="margin:0 auto 12px"></div>
+            <div class="eyebrow">For Everyone</div>
+            <h2 class="s-h2">Not a Sports Drink.<br>A Daily Essential.</h2>
+            <p class="s-sub" style="font-size:12px">Your daily mineral ritual:</p>
+          </div>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-time">Morning</div>
+                <div class="tl-label">Start Mineralized</div>
+                <div class="tl-desc">First glass of water. Replenish overnight minerals.</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-time">Afternoon</div>
+                <div class="tl-label">Stay Sharp</div>
+                <div class="tl-desc">Beat the 3pm slump without caffeine.</div>
+              </div>
+            </div>
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div>
+                <div class="tl-time">Evening</div>
+                <div class="tl-label">Wind Down</div>
+                <div class="tl-desc">Magnesium relaxes muscles. Sleep deeper.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D: Split + Full-Width Comparison      -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Verbessertes aktuelles Layout — Bild links (groesser), Vergleich full-width darunter</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Image Split + Full-Width Versus Band</span>
+  </div>
+  <p class="option-desc">
+    Lifestyle-Bild links, Text rechts (wie aktuell aber gespiegelt). Darunter: Old Way vs Salt.Magic Way
+    als volle Breite Band — Old Way warm-off, Salt.Magic Way mineral-blue. Maximaler Kontrast.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fe-d-split">
+          <div class="img-side" style="background-image:url('../../site/public/images/products/poolside-yoga.webp')"></div>
+          <div class="text-side">
+            <div class="text-inner">
+              <div class="gold-line"></div>
+              <div class="eyebrow">For Everyone</div>
+              <h2 class="s-h2">Not a Sports Drink.<br>A Daily Essential.</h2>
+              <p class="s-sub">Pure hydration for daily life, not just game day.</p>
+              <p class="body">Most electrolytes are packed with sugar and designed for extreme athletes to use once in a while. Salt.Magic is designed for life. Whether you're intermittent fasting, surviving the tropical heat, or navigating a busy workday — your body burns through minerals every single day.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fe-d-versus">
+          <div class="vs-side vs-old-side">
+            <div class="vs-label">The Old Way (Sports Drinks)</div>
+            <ul class="vs-list">
+              <li>Occasional use (3-5x a week)</li>
+              <li>Built for intense workouts</li>
+              <li>Loaded with sugar &amp; artificial colors</li>
+            </ul>
+          </div>
+          <div class="vs-side vs-new-side">
+            <div class="vs-label">The Salt.Magic Way</div>
+            <ul class="vs-list">
+              <li>Daily essential (365 days a year)</li>
+              <li>Built for anyone who drinks water</li>
+              <li>Pure, invisible, natural minerals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fe-d-split fe-d-mobile-split">
+          <div class="img-side" style="background-image:url('../../site/public/images/products/poolside-yoga.webp')"></div>
+          <div class="text-side">
+            <div class="text-inner">
+              <div class="gold-line"></div>
+              <div class="eyebrow">For Everyone</div>
+              <h2 class="s-h2">Not a Sports Drink. A Daily Essential.</h2>
+              <p class="s-sub" style="font-size:12px">Pure hydration for daily life.</p>
+              <p class="body" style="font-size:11px">Your body burns through minerals every single day — not just on gym days.</p>
+            </div>
+          </div>
+        </div>
+        <div class="fe-d-versus fe-d-mobile-versus">
+          <div class="vs-side vs-old-side">
+            <div class="vs-label">The Old Way</div>
+            <ul class="vs-list">
+              <li>Occasional (3-5x a week)</li>
+              <li>For intense workouts</li>
+              <li>Loaded with sugar</li>
+            </ul>
+          </div>
+          <div class="vs-side vs-new-side">
+            <div class="vs-label">Salt.Magic Way</div>
+            <ul class="vs-list">
+              <li>Daily (365 days/year)</li>
+              <li>For anyone</li>
+              <li>Pure, natural minerals</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:40px;text-align:center;color:var(--ink-faint);font-size:11px">
+  Salt.Magic Section 7: ForEveryone Options &mdash; Erstellt fuer Leo's Review
+</div>
+
+</body>
+</html>

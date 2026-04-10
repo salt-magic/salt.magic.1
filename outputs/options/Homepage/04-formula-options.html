@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Section 4: Formula / Ingredients Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --mineral-light: #3D6588;
+    --gold: #D4BFAA;
+    --warm-off: #F9F7F4;
+    --warm-white: #FFFFFF;
+    --ink: #3C3028;
+    --ink-light: #5A4A3C;
+    --ink-faint: #9B8E82;
+    --border-warm: #E8DFD3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+
+  .page-header { background: var(--mineral); color: white; padding: 40px; text-align: center; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+  .page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+  .page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+
+  .option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+  .option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+  .option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+  .option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+  .option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+
+  .viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  .frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+  .frame-desktop { width: 900px; }
+  .frame-mobile { width: 375px; }
+  .frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+  .frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+  .frame-content { width: 100%; position: relative; overflow: hidden; }
+
+  .divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+  .divider hr { border: none; border-top: 1px solid var(--border-warm); }
+
+  /* Shared */
+  .gold-line { width: 36px; height: 1px; background: var(--gold); margin-bottom: 16px; }
+  .eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 12px; }
+  .s-h2 { font-family: 'Playfair Display', serif; font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; color: var(--mineral); }
+  .s-sub { font-size: 13px; color: var(--ink-light); line-height: 1.7; }
+
+  /* =========================================== */
+  /* OPTION A: 3 Vertical Cards (Aesop/PANPURI)  */
+  /* =========================================== */
+  .form-a {
+    background: var(--warm-off);
+    padding: 40px 48px;
+  }
+  .form-a .header { text-align: center; margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .form-a .header .gold-line { margin: 0 auto 16px; }
+  .form-a .s-h2 { font-size: 22px; margin-bottom: 8px; }
+  .form-a .s-sub { margin-bottom: 12px; }
+  .form-a .body-text { font-size: 12px; color: var(--ink-light); line-height: 1.7; max-width: 420px; margin: 0 auto; }
+
+  .form-a .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 720px; margin: 0 auto; }
+  .form-a .card {
+    background: var(--warm-white);
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    border: 1px solid var(--border-warm);
+  }
+  .form-a .card-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--mineral);
+    line-height: 1;
+  }
+  .form-a .card-unit {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+  }
+  .form-a .card-name {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mineral);
+    margin-bottom: 8px;
+  }
+  .form-a .card-benefit {
+    font-size: 12px;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+
+  /* Mobile A */
+  .form-a-mobile { padding: 28px 16px; }
+  .form-a-mobile .cards { grid-template-columns: 1fr; max-width: 300px; }
+  .form-a-mobile .card { padding: 20px 16px; display: flex; align-items: center; gap: 14px; text-align: left; }
+  .form-a-mobile .card-num { font-size: 28px; min-width: 60px; }
+  .form-a-mobile .card-unit { margin-bottom: 0; }
+  .form-a-mobile .card-left { min-width: 70px; text-align: center; }
+
+  /* =========================================== */
+  /* OPTION B: Full-Width Image + Floating List  */
+  /* =========================================== */
+  .form-b {
+    position: relative;
+    min-height: 480px;
+    background-size: cover;
+    background-position: center;
+  }
+  .form-b .fade-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(249,247,244,0.97) 0%, rgba(249,247,244,0.85) 45%, rgba(249,247,244,0.2) 75%, transparent 100%);
+  }
+  .form-b .content {
+    position: relative;
+    z-index: 1;
+    padding: 40px 48px;
+    max-width: 440px;
+  }
+  .form-b .s-h2 { font-size: 22px; margin-bottom: 6px; }
+  .form-b .s-sub { margin-bottom: 10px; font-size: 12px; }
+  .form-b .body-text { font-size: 12px; color: var(--ink-light); line-height: 1.7; margin-bottom: 24px; }
+
+  .form-b .ingredient-list { display: flex; flex-direction: column; gap: 0; }
+  .form-b .ing-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(212,191,170,0.25);
+  }
+  .form-b .ing-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--mineral);
+    line-height: 1;
+    min-width: 70px;
+  }
+  .form-b .ing-unit { font-size: 11px; color: var(--gold); font-weight: 500; }
+  .form-b .ing-info { flex: 1; }
+  .form-b .ing-name { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mineral); margin-bottom: 2px; }
+  .form-b .ing-benefit { font-size: 12px; color: var(--ink-light); line-height: 1.4; }
+
+  /* Mobile B */
+  .form-b-mobile { min-height: 0; }
+  .form-b-mobile .fade-overlay { background: linear-gradient(180deg, rgba(249,247,244,0.95) 0%, rgba(249,247,244,0.8) 70%, transparent 100%); }
+  .form-b-mobile .content { padding: 28px 20px; max-width: none; }
+  .form-b-mobile .s-h2 { font-size: 20px; }
+  .form-b-mobile .ing-num { font-size: 24px; min-width: 55px; }
+
+  /* =========================================== */
+  /* OPTION C: Centered Typographic (Magazine)   */
+  /* =========================================== */
+  .form-c {
+    background: var(--warm-white);
+    padding: 40px 48px;
+  }
+  .form-c .header {
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto 28px;
+  }
+  .form-c .header .gold-line { margin: 0 auto 16px; }
+  .form-c .s-h2 { font-size: 24px; margin-bottom: 8px; }
+  .form-c .s-sub { margin-bottom: 10px; }
+  .form-c .body-text { font-size: 12px; color: var(--ink-light); line-height: 1.7; max-width: 420px; margin: 0 auto 8px; }
+
+  .form-c .product-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 0 auto 28px;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--warm-off);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  }
+
+  .form-c .ingredients {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .form-c .ing-row {
+    display: grid;
+    grid-template-columns: 100px 1px 1fr;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-warm);
+    align-items: start;
+  }
+  .form-c .ing-left { text-align: right; }
+  .form-c .ing-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--mineral);
+    line-height: 1;
+  }
+  .form-c .ing-unit { font-size: 11px; color: var(--gold); font-weight: 500; }
+  .form-c .ing-divider { width: 1px; height: 100%; background: var(--gold); opacity: 0.4; min-height: 40px; }
+  .form-c .ing-right {}
+  .form-c .ing-name { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--mineral); margin-bottom: 4px; }
+  .form-c .ing-benefit { font-size: 12px; color: var(--ink-light); line-height: 1.5; }
+
+  /* Mobile C */
+  .form-c-mobile { padding: 28px 16px; }
+  .form-c-mobile .product-img { width: 120px; height: 120px; }
+  .form-c-mobile .s-h2 { font-size: 20px; }
+  .form-c-mobile .ing-row { grid-template-columns: 70px 1px 1fr; gap: 12px; padding: 14px 0; }
+  .form-c-mobile .ing-num { font-size: 24px; }
+
+  /* =========================================== */
+  /* OPTION D: Dark Immersive (Mineral Blue BG)  */
+  /* =========================================== */
+  .form-d {
+    background: var(--mineral);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .form-d .text-side {
+    padding: 40px 40px;
+    display: flex;
+    align-items: center;
+  }
+  .form-d .text-inner { max-width: 380px; }
+  .form-d .eyebrow-d { color: var(--gold); }
+  .form-d .s-h2 { font-size: 22px; color: rgba(255,255,255,0.9); margin-bottom: 6px; }
+  .form-d .s-sub { color: rgba(255,255,255,0.55); margin-bottom: 10px; font-size: 12px; }
+  .form-d .body-text { font-size: 12px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 24px; }
+
+  .form-d .ing-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .form-d .ing-num-wrap { min-width: 70px; display: flex; align-items: baseline; gap: 3px; }
+  .form-d .ing-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: white;
+    line-height: 1;
+  }
+  .form-d .ing-unit { font-size: 11px; color: var(--gold); font-weight: 500; }
+  .form-d .ing-name { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 2px; }
+  .form-d .ing-benefit { font-size: 11px; color: rgba(255,255,255,0.5); line-height: 1.4; }
+
+  .form-d .img-side {
+    background-size: cover;
+    background-position: center;
+    min-height: 440px;
+    position: relative;
+  }
+  .form-d .img-side::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0; width: 25%;
+    background: linear-gradient(to right, var(--mineral), transparent);
+  }
+
+  /* Mobile D */
+  .form-d-mobile {
+    grid-template-columns: 1fr;
+  }
+  .form-d-mobile .img-side { min-height: 200px; order: 1; }
+  .form-d-mobile .img-side::after { display: none; }
+  .form-d-mobile .text-side { padding: 28px 20px; order: 2; }
+  .form-d-mobile .s-h2 { font-size: 20px; }
+  .form-d-mobile .ing-num { font-size: 24px; }
+
+  @media (max-width: 1400px) {
+    .viewport-row { flex-direction: column; align-items: center; }
+    .frame-desktop { width: 100%; max-width: 900px; }
+    .frame-mobile { width: 100%; max-width: 375px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Section 4: The Formula / Ingredients</h1>
+  <p>4 Layout-Alternativen fuer die Ingredienzien-Praesentation. Gleicher Copy (Leo's Master Copy), verschiedene visuelle Ansaetze.</p>
+  <div class="current">Aktuell: Split — Produktbild links, Text + Ingredient-List rechts, warm-off BG</div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A: 3 Vertical Cards                   -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Aesop / PANPURI — Clean Product Cards</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">3 Ingredient Cards — Clean & Symmetrisch</span>
+  </div>
+  <p class="option-desc">
+    Jede Zutat als eigene Karte mit grosser Zahl, Name und Benefit. Zentriertes Header-Textblock darueber.
+    Kein Bild — pure Typografie und Whitespace. Apotheker-Aesthetic wie Aesop/PANPURI.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="form-a">
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">The Formula</div>
+            <h2 class="s-h2">The Invisible Upgrade</h2>
+            <p class="s-sub">Everything your water is missing. Nothing you can taste.</p>
+            <p class="body-text">Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly, is completely flavorless, and delivers 7x more magnesium than leading competitors. Three natural ingredients. Zero junk.</p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="card-num">312</div>
+              <div class="card-unit">mg</div>
+              <div class="card-name">Magnesium Citrate</div>
+              <div class="card-benefit">For deep sleep, fast muscle recovery, and calm, mental clarity.</div>
+            </div>
+            <div class="card">
+              <div class="card-num">160</div>
+              <div class="card-unit">mg</div>
+              <div class="card-name">Potassium Citrate</div>
+              <div class="card-benefit">For sustained energy, cramp prevention, and perfect hydration.</div>
+            </div>
+            <div class="card">
+              <div class="card-num">152</div>
+              <div class="card-unit">mg</div>
+              <div class="card-name">Pink Himalayan Salt</div>
+              <div class="card-benefit">For complete balance, delivering essential sodium and 84 vital trace minerals.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="form-a form-a-mobile">
+          <div class="header">
+            <div class="gold-line" style="margin:0 auto 12px"></div>
+            <div class="eyebrow">The Formula</div>
+            <h2 class="s-h2" style="font-size:19px">The Invisible Upgrade</h2>
+            <p class="s-sub" style="font-size:12px">Everything your water is missing. Nothing you can taste.</p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <div class="card-left">
+                <div class="card-num">312</div>
+                <div class="card-unit">mg</div>
+              </div>
+              <div>
+                <div class="card-name">Magnesium Citrate</div>
+                <div class="card-benefit">Deep sleep, fast recovery, mental clarity.</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-left">
+                <div class="card-num">160</div>
+                <div class="card-unit">mg</div>
+              </div>
+              <div>
+                <div class="card-name">Potassium Citrate</div>
+                <div class="card-benefit">Sustained energy, cramp prevention.</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-left">
+                <div class="card-num">152</div>
+                <div class="card-unit">mg</div>
+              </div>
+              <div>
+                <div class="card-name">Pink Himalayan Salt</div>
+                <div class="card-benefit">84 vital trace minerals, complete balance.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B: Full-Width Image + Floating List   -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Grown Alchemist — Produktbild atmet, Text als Layer</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Image Background + Fade-Overlay Text</span>
+  </div>
+  <p class="option-desc">
+    Grosses Produktfoto als voller Hintergrund. Text und Ingredienzien-Liste auf der linken Seite mit
+    weichem Fade-Overlay ins Bild. Produkt ist der Star, Ingredients begleiten.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="form-b" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')">
+          <div class="fade-overlay"></div>
+          <div class="content">
+            <div class="gold-line"></div>
+            <div class="eyebrow">The Formula</div>
+            <h2 class="s-h2">The Invisible Upgrade</h2>
+            <p class="s-sub">Everything your water is missing. Nothing you can taste.</p>
+            <p class="body-text">Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly, is completely flavorless, and delivers 7x more magnesium than leading competitors.</p>
+            <div class="ingredient-list">
+              <div class="ing-row">
+                <div><span class="ing-num">312</span> <span class="ing-unit">mg</span></div>
+                <div class="ing-info">
+                  <div class="ing-name">Magnesium Citrate</div>
+                  <div class="ing-benefit">For deep sleep, fast muscle recovery, and calm, mental clarity.</div>
+                </div>
+              </div>
+              <div class="ing-row">
+                <div><span class="ing-num">160</span> <span class="ing-unit">mg</span></div>
+                <div class="ing-info">
+                  <div class="ing-name">Potassium Citrate</div>
+                  <div class="ing-benefit">For sustained energy, cramp prevention, and perfect hydration.</div>
+                </div>
+              </div>
+              <div class="ing-row">
+                <div><span class="ing-num">152</span> <span class="ing-unit">mg</span></div>
+                <div class="ing-info">
+                  <div class="ing-name">Pink Himalayan Salt</div>
+                  <div class="ing-benefit">For complete balance, essential sodium and 84 trace minerals.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="form-b form-b-mobile" style="background-image:url('../../site/public/images/products/taylor-closeup.jpg')">
+          <div class="fade-overlay"></div>
+          <div class="content">
+            <div class="gold-line"></div>
+            <div class="eyebrow">The Formula</div>
+            <h2 class="s-h2">The Invisible Upgrade</h2>
+            <p class="s-sub" style="font-size:12px">Everything your water is missing. Nothing you can taste.</p>
+            <div class="ingredient-list">
+              <div class="ing-row">
+                <div><span class="ing-num">312</span> <span class="ing-unit">mg</span></div>
+                <div class="ing-info">
+                  <div class="ing-name">Magnesium Citrate</div>
+                  <div class="ing-benefit">Deep sleep, recovery, clarity.</div>
+                </div>
+              </div>
+              <div class="ing-row">
+                <div><span class="ing-num">160</span> <span class="ing-unit">mg</span></div>
+                <div class="ing-info">
+                  <div class="ing-name">Potassium Citrate</div>
+                  <div class="ing-benefit">Energy, cramp prevention.</div>
+                </div>
+              </div>
+              <div class="ing-row">
+                <div><span class="ing-num">152</span> <span class="ing-unit">mg</span></div>
+                <div class="ing-info">
+                  <div class="ing-name">Pink Himalayan Salt</div>
+                  <div class="ing-benefit">84 trace minerals, balance.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C: Centered Typographic (Magazine)    -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Luxury Skincare — Runde Produktshot + typografische Liste</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Centered Editorial mit Produkt-Medaillon</span>
+  </div>
+  <p class="option-desc">
+    Rundes Produktbild als Medaillon oben, zentrierter Text, dann Ingredients als Zahl | Divider | Text Grid.
+    Rein typografisch, weisser Hintergrund. Apotheker-Eleganz, Magazin-Feeling.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="form-c">
+          <div class="product-img" style="background-image:url('../../site/public/images/products/greenery-duo.jpg')"></div>
+          <div class="header">
+            <div class="gold-line"></div>
+            <div class="eyebrow">The Formula</div>
+            <h2 class="s-h2">The Invisible Upgrade</h2>
+            <p class="s-sub">Everything your water is missing. Nothing you can taste.</p>
+            <p class="body-text">Just 2 grams of pure, highly bioavailable minerals. Completely flavorless, 7x more magnesium than competitors. Three ingredients. Zero junk.</p>
+          </div>
+          <div class="ingredients">
+            <div class="ing-row">
+              <div class="ing-left">
+                <div class="ing-num">312</div>
+                <div class="ing-unit">mg</div>
+              </div>
+              <div class="ing-divider"></div>
+              <div class="ing-right">
+                <div class="ing-name">Magnesium Citrate</div>
+                <div class="ing-benefit">For deep sleep, fast muscle recovery, and calm, mental clarity.</div>
+              </div>
+            </div>
+            <div class="ing-row">
+              <div class="ing-left">
+                <div class="ing-num">160</div>
+                <div class="ing-unit">mg</div>
+              </div>
+              <div class="ing-divider"></div>
+              <div class="ing-right">
+                <div class="ing-name">Potassium Citrate</div>
+                <div class="ing-benefit">For sustained energy, cramp prevention, and perfect hydration.</div>
+              </div>
+            </div>
+            <div class="ing-row">
+              <div class="ing-left">
+                <div class="ing-num">152</div>
+                <div class="ing-unit">mg</div>
+              </div>
+              <div class="ing-divider"></div>
+              <div class="ing-right">
+                <div class="ing-name">Pink Himalayan Salt</div>
+                <div class="ing-benefit">For complete balance, delivering essential sodium and 84 vital trace minerals.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="form-c form-c-mobile">
+          <div class="product-img" style="background-image:url('../../site/public/images/products/greenery-duo.jpg')"></div>
+          <div class="header">
+            <div class="gold-line" style="margin:0 auto 12px"></div>
+            <div class="eyebrow">The Formula</div>
+            <h2 class="s-h2">The Invisible Upgrade</h2>
+            <p class="s-sub" style="font-size:12px">Everything your water is missing. Nothing you can taste.</p>
+          </div>
+          <div class="ingredients">
+            <div class="ing-row">
+              <div class="ing-left">
+                <div class="ing-num">312</div>
+                <div class="ing-unit">mg</div>
+              </div>
+              <div class="ing-divider"></div>
+              <div class="ing-right">
+                <div class="ing-name">Magnesium Citrate</div>
+                <div class="ing-benefit">Deep sleep, recovery, clarity.</div>
+              </div>
+            </div>
+            <div class="ing-row">
+              <div class="ing-left">
+                <div class="ing-num">160</div>
+                <div class="ing-unit">mg</div>
+              </div>
+              <div class="ing-divider"></div>
+              <div class="ing-right">
+                <div class="ing-name">Potassium Citrate</div>
+                <div class="ing-benefit">Energy, cramp prevention.</div>
+              </div>
+            </div>
+            <div class="ing-row">
+              <div class="ing-left">
+                <div class="ing-num">152</div>
+                <div class="ing-unit">mg</div>
+              </div>
+              <div class="ing-divider"></div>
+              <div class="ing-right">
+                <div class="ing-name">Pink Himalayan Salt</div>
+                <div class="ing-benefit">84 trace minerals, balance.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D: Dark Immersive (Mineral Blue)      -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von LMNT / Cure — Dunkler Premium-Hintergrund, helle Typografie</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Dark Split — Mineral Blue + Produktfoto</span>
+  </div>
+  <p class="option-desc">
+    Mineral-Blue Hintergrund mit weisser Typografie links, grosses Produktbild rechts mit Fade-Uebergang.
+    Premium-Feeling, Kontrast zu den hellen Sections davor und danach. Abendstimmung.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="form-d">
+          <div class="text-side">
+            <div class="text-inner">
+              <div class="gold-line"></div>
+              <div class="eyebrow eyebrow-d" style="color:var(--gold)">The Formula</div>
+              <h2 class="s-h2">The Invisible Upgrade</h2>
+              <p class="s-sub" style="color:rgba(255,255,255,0.55)">Everything your water is missing. Nothing you can taste.</p>
+              <p class="body-text">Just 2 grams of pure, highly bioavailable minerals. Completely flavorless, 7x more magnesium than competitors.</p>
+              <div>
+                <div class="ing-row">
+                  <div class="ing-num-wrap"><span class="ing-num">312</span><span class="ing-unit">mg</span></div>
+                  <div class="ing-info">
+                    <div class="ing-name">Magnesium Citrate</div>
+                    <div class="ing-benefit">Deep sleep, fast recovery, mental clarity.</div>
+                  </div>
+                </div>
+                <div class="ing-row">
+                  <div class="ing-num-wrap"><span class="ing-num">160</span><span class="ing-unit">mg</span></div>
+                  <div class="ing-info">
+                    <div class="ing-name">Potassium Citrate</div>
+                    <div class="ing-benefit">Sustained energy, cramp prevention.</div>
+                  </div>
+                </div>
+                <div class="ing-row">
+                  <div class="ing-num-wrap"><span class="ing-num">152</span><span class="ing-unit">mg</span></div>
+                  <div class="ing-info">
+                    <div class="ing-name">Pink Himalayan Salt</div>
+                    <div class="ing-benefit">84 trace minerals, complete balance.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="img-side" style="background-image:url('../../site/public/images/products/greenery-jars.jpg')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="form-d form-d-mobile">
+          <div class="img-side" style="background-image:url('../../site/public/images/products/greenery-jars.jpg');min-height:180px"></div>
+          <div class="text-side">
+            <div class="text-inner">
+              <div class="gold-line"></div>
+              <div class="eyebrow" style="color:var(--gold)">The Formula</div>
+              <h2 class="s-h2" style="color:rgba(255,255,255,0.9)">The Invisible Upgrade</h2>
+              <p class="s-sub" style="color:rgba(255,255,255,0.55);font-size:12px">Everything your water is missing.</p>
+              <div>
+                <div class="ing-row">
+                  <div class="ing-num-wrap"><span class="ing-num">312</span><span class="ing-unit">mg</span></div>
+                  <div class="ing-info">
+                    <div class="ing-name">Magnesium Citrate</div>
+                    <div class="ing-benefit">Sleep, recovery, clarity.</div>
+                  </div>
+                </div>
+                <div class="ing-row">
+                  <div class="ing-num-wrap"><span class="ing-num">160</span><span class="ing-unit">mg</span></div>
+                  <div class="ing-info">
+                    <div class="ing-name">Potassium Citrate</div>
+                    <div class="ing-benefit">Energy, cramp prevention.</div>
+                  </div>
+                </div>
+                <div class="ing-row">
+                  <div class="ing-num-wrap"><span class="ing-num">152</span><span class="ing-unit">mg</span></div>
+                  <div class="ing-info">
+                    <div class="ing-name">Pink Himalayan Salt</div>
+                    <div class="ing-benefit">84 trace minerals, balance.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:40px;text-align:center;color:var(--ink-faint);font-size:11px">
+  Salt.Magic Section 4: Formula / Ingredients Options &mdash; Erstellt fuer Leo's Review
+</div>
+
+</body>
+</html>

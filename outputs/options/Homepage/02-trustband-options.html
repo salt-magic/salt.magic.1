@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Section 2: TrustBand Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --mineral-light: #3D6588;
+    --gold: #D4BFAA;
+    --warm-off: #F9F7F4;
+    --warm-white: #FFFFFF;
+    --ink: #3C3028;
+    --ink-light: #5A4A3C;
+    --ink-faint: #9B8E82;
+    --border-warm: #E8DFD3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+
+  .page-header {
+    background: var(--mineral); color: white; padding: 40px; text-align: center;
+  }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+  .page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 550px; margin: 0 auto; line-height: 1.6; }
+  .page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+
+  .option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+  .option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+  .option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+  .option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+  .option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+
+  .viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  .frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+  .frame-desktop { width: 900px; }
+  .frame-mobile { width: 375px; }
+  .frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+  .frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+  .frame-content { width: 100%; position: relative; overflow: hidden; }
+
+  /* Context: fake hero above */
+  .fake-hero {
+    height: 120px;
+    background: linear-gradient(135deg, #294B6D 0%, #1a3a54 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 16px 24px;
+  }
+  .fake-hero span {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+  }
+  /* Context: fake next section below */
+  .fake-next {
+    height: 100px;
+    background: var(--warm-white);
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 24px;
+  }
+  .fake-next span {
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+  .divider hr { border: none; border-top: 1px solid var(--border-warm); }
+
+  /* =========================================== */
+  /* OPTION A: Stat Counters (Hydrant-inspired)  */
+  /* =========================================== */
+  .trust-a {
+    background: var(--warm-off);
+    border-top: 1px solid var(--border-warm);
+    border-bottom: 1px solid var(--border-warm);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+  }
+  .trust-a .stat {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .trust-a .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--mineral);
+    line-height: 1;
+  }
+  .trust-a .stat-label {
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+  }
+  .trust-a .stat-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* Mobile A */
+  .trust-a-mobile {
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    padding: 16px 20px;
+  }
+  .trust-a-mobile .stat-num { font-size: 18px; }
+
+  /* =========================================== */
+  /* OPTION B: Product Claim Icons (Cure-style)  */
+  /* =========================================== */
+  .trust-b {
+    background: var(--mineral);
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .trust-b .claim {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .trust-b .claim-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,191,170,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .trust-b .claim-icon svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .trust-b .claim-text {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    white-space: nowrap;
+  }
+
+  /* Mobile B */
+  .trust-b-mobile {
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    padding: 14px 16px;
+    justify-content: flex-start;
+  }
+  .trust-b-mobile .claim-icon { width: 24px; height: 24px; }
+  .trust-b-mobile .claim-icon svg { width: 12px; height: 12px; }
+  .trust-b-mobile .claim-text { font-size: 9px; }
+
+  /* =========================================== */
+  /* OPTION C: Location Strip (Sakara/Press)     */
+  /* =========================================== */
+  .trust-c {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border-warm);
+    padding: 20px 32px;
+    text-align: center;
+  }
+  .trust-c .trust-headline {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 12px;
+  }
+  .trust-c .locations {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .trust-c .loc {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-light);
+    letter-spacing: 0.02em;
+  }
+  .trust-c .loc-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* Mobile C */
+  .trust-c-mobile { padding: 16px 16px; }
+  .trust-c-mobile .loc { font-size: 11px; }
+
+  /* =========================================== */
+  /* OPTION D: Minimal Line (PANPURI elegance)   */
+  /* =========================================== */
+  .trust-d {
+    background: var(--warm-white);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+  .trust-d .line {
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .trust-d .trust-text {
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+  }
+  .trust-d .trust-text strong {
+    font-weight: 500;
+    color: var(--ink-light);
+  }
+
+  @media (max-width: 1400px) {
+    .viewport-row { flex-direction: column; align-items: center; }
+    .frame-desktop { width: 100%; max-width: 900px; }
+    .frame-mobile { width: 100%; max-width: 375px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Section 2: TrustBand</h1>
+  <p>4 Alternativen fuer den Trust-Indikator direkt nach dem Hero. Jede Option zeigt den Kontext (Hero darueber, WhySection darunter).</p>
+  <div class="current">Aktuell: Scrollender CSS-Marquee mit 16 Items (Metriken + Staedte)</div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A: Stat Counters                      -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Hydrant — "252K+ Customers / 17M+ Sticks / 94% 5-Star"</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Stat Counters</span>
+  </div>
+  <p class="option-desc">
+    3-4 grosse Zahlen nebeneinander, statisch. Sofort erfassbar, kein Scrollen noetig.
+    Warm-off Hintergrund, Playfair-Zahlen in Mineral Blue. Eleganter und ruhiger als Marquee.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fake-hero"><span>Hero Section</span></div>
+        <div class="trust-a">
+          <div class="stat">
+            <span class="stat-num">160+</span>
+            <span class="stat-label">Locations</span>
+          </div>
+          <div class="stat-dot"></div>
+          <div class="stat">
+            <span class="stat-num">90%</span>
+            <span class="stat-label">Customer Retention</span>
+          </div>
+          <div class="stat-dot"></div>
+          <div class="stat">
+            <span class="stat-num">5 Years</span>
+            <span class="stat-label">Trusted Daily</span>
+          </div>
+          <div class="stat-dot"></div>
+          <div class="stat">
+            <span class="stat-num">0g</span>
+            <span class="stat-label">Sugar</span>
+          </div>
+        </div>
+        <div class="fake-next"><span>The Problem — Why Section</span></div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fake-hero" style="height:80px"><span>Hero</span></div>
+        <div class="trust-a trust-a-mobile">
+          <div class="stat">
+            <span class="stat-num">160+</span>
+            <span class="stat-label">Locations</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">90%</span>
+            <span class="stat-label">Retention</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">5 Yrs</span>
+            <span class="stat-label">Trusted</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">0g</span>
+            <span class="stat-label">Sugar</span>
+          </div>
+        </div>
+        <div class="fake-next" style="height:60px"><span>The Problem</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B: Product Claim Icons                -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Cure Hydration — Horizontal Badge Strip auf Markenfarbe</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Product Claim Icons</span>
+  </div>
+  <p class="option-desc">
+    Horizontale Reihe mit Icon + Label auf Mineral-Blue Hintergrund. Fokus auf Produkt-Claims statt Metriken.
+    Erzeugt visuellen Kontrast zwischen Hero und dem hellen WhySection.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fake-hero"><span>Hero Section</span></div>
+        <div class="trust-b">
+          <div class="claim">
+            <div class="claim-icon"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+            <span class="claim-text">Zero Sugar</span>
+          </div>
+          <div class="claim">
+            <div class="claim-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg></div>
+            <span class="claim-text">100% Natural</span>
+          </div>
+          <div class="claim">
+            <div class="claim-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <span class="claim-text">7x Magnesium</span>
+          </div>
+          <div class="claim">
+            <div class="claim-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <span class="claim-text">Vegan &amp; Keto</span>
+          </div>
+          <div class="claim">
+            <div class="claim-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v4l3 3"/></svg></div>
+            <span class="claim-text">5 Years Trusted</span>
+          </div>
+        </div>
+        <div class="fake-next"><span>The Problem — Why Section</span></div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fake-hero" style="height:80px"><span>Hero</span></div>
+        <div class="trust-b trust-b-mobile">
+          <div class="claim">
+            <div class="claim-icon"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+            <span class="claim-text">Zero Sugar</span>
+          </div>
+          <div class="claim">
+            <div class="claim-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2.5 2.5L16 9"/></svg></div>
+            <span class="claim-text">100% Natural</span>
+          </div>
+          <div class="claim">
+            <div class="claim-icon"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <span class="claim-text">7x Magnesium</span>
+          </div>
+          <div class="claim">
+            <div class="claim-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <span class="claim-text">Vegan &amp; Keto</span>
+          </div>
+        </div>
+        <div class="fake-next" style="height:60px"><span>The Problem</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C: Location Strip (Press-style)       -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Sakara Life — Grayscale Press Logo Strip Muster</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Location Strip — Staedte als Trust-Signal</span>
+  </div>
+  <p class="option-desc">
+    Staedte-Namen aufgereiht wie Presse-Logos bei Sakara. Zentriert, statisch, dezent.
+    Kleine Ueberschrift "Trusted across Thailand" darueber. Gold-Dot Separatoren.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fake-hero"><span>Hero Section</span></div>
+        <div class="trust-c">
+          <div class="trust-headline">Trusted across Thailand &mdash; 160+ locations</div>
+          <div class="locations">
+            <span class="loc">Koh Samui</span><span class="loc-dot"></span>
+            <span class="loc">Bangkok</span><span class="loc-dot"></span>
+            <span class="loc">Chiang Mai</span><span class="loc-dot"></span>
+            <span class="loc">Phuket</span><span class="loc-dot"></span>
+            <span class="loc">Hua Hin</span><span class="loc-dot"></span>
+            <span class="loc">Koh Phangan</span><span class="loc-dot"></span>
+            <span class="loc">Pai</span><span class="loc-dot"></span>
+            <span class="loc">Koh Tao</span><span class="loc-dot"></span>
+            <span class="loc">Krabi</span><span class="loc-dot"></span>
+            <span class="loc">Khanom</span>
+          </div>
+        </div>
+        <div class="fake-next"><span>The Problem — Why Section</span></div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fake-hero" style="height:80px"><span>Hero</span></div>
+        <div class="trust-c trust-c-mobile">
+          <div class="trust-headline">Trusted across Thailand</div>
+          <div class="locations">
+            <span class="loc">Koh Samui</span><span class="loc-dot"></span>
+            <span class="loc">Bangkok</span><span class="loc-dot"></span>
+            <span class="loc">Chiang Mai</span><span class="loc-dot"></span>
+            <span class="loc">Phuket</span><span class="loc-dot"></span>
+            <span class="loc">Hua Hin</span><span class="loc-dot"></span>
+            <span class="loc">Pai</span>
+          </div>
+        </div>
+        <div class="fake-next" style="height:60px"><span>The Problem</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D: Minimal Line (PANPURI elegance)    -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von PANPURI — Ultra-minimal, maximale Eleganz</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Minimal Single Line</span>
+  </div>
+  <p class="option-desc">
+    Ein einziger Satz, flankiert von Gold-Linien. Kein Scrollen, keine Icons, keine Zahlen-Parade.
+    Der ruhigste Ansatz — laesst das Bild und die naechste Section fuer sich sprechen. PANPURI-Eleganz.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fake-hero"><span>Hero Section</span></div>
+        <div class="trust-d">
+          <div class="line"></div>
+          <span class="trust-text">Trusted daily by <strong>160+ locations</strong> across Thailand &mdash; <strong>5 years</strong>, <strong>90% retention</strong></span>
+          <div class="line"></div>
+        </div>
+        <div class="fake-next"><span>The Problem — Why Section</span></div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="fake-hero" style="height:80px"><span>Hero</span></div>
+        <div class="trust-d" style="padding:12px 16px">
+          <div class="line" style="width:20px"></div>
+          <span class="trust-text" style="font-size:10px; text-align:center">Trusted daily by <strong>160+ locations</strong> across Thailand</span>
+          <div class="line" style="width:20px"></div>
+        </div>
+        <div class="fake-next" style="height:60px"><span>The Problem</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:40px;text-align:center;color:var(--ink-faint);font-size:11px">
+  Salt.Magic Section 2: TrustBand Options &mdash; Erstellt fuer Leo's Review
+</div>
+
+</body>
+</html>

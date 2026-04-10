@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparison Section Options - Salt.Magic Partner Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --mineral: #294B6D; --mineral-light: #3D6588; --gold: #D4BFAA; --warm-off: #F9F7F4; --warm-white: #FFFFFF; --ink: #3C3028; --ink-light: #5A4A3C; --ink-faint: #9B8E82; --border-warm: #E8DFD3; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+.page-header { background: var(--mineral); color: white; padding: 40px; text-align: center; }
+.page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+.page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 550px; margin: 0 auto; line-height: 1.6; }
+.page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+.option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+.option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+.option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+.option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+.option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+.frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+.frame-desktop { width: 900px; }
+.frame-mobile { width: 375px; }
+.frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+.frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+.frame-content { width: 100%; position: relative; overflow: hidden; }
+.divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+.divider hr { border: none; border-top: 1px solid var(--border-warm); }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Comparison Section - Partner Page</h1>
+  <p>4 layout options for "The Clear Choice" comparison section. Shows Salt.Magic vs Sports Drinks vs Coconut Water vs Other Mixes across Sugar, Magnesium, and Ingredients.</p>
+  <span class="current">Current: 4-column grid on water image background (reused from homepage)</span>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by Grown Alchemist</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Clean Data Table</span>
+  </div>
+  <p class="option-desc">Minimal editorial table with thin borders and a gold top accent on the Salt.Magic column. Left-aligned header with gold line. Verdict row in Playfair at bottom. Clean, professional, easy to scan. On mobile, Salt.Magic column stays sticky while competitors scroll.</p>
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #FFFFFF; padding: 64px 60px;">
+        <!-- Header -->
+        <div style="margin-bottom: 40px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">How We Compare</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin-bottom: 24px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: #294B6D; margin-bottom: 12px; line-height: 1.2;">The Clear Choice</h2>
+          <p style="font-size: 15px; color: #5A4A3C; max-width: 440px; line-height: 1.7;">Maximum minerals. Zero junk. See how we stack up.</p>
+        </div>
+
+        <!-- Table -->
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <thead>
+            <tr>
+              <th style="width: 18%; padding: 0;"></th>
+              <th style="width: 20.5%; padding: 0;">
+                <div style="border-top: 3px solid #D4BFAA; padding: 16px 16px; text-align: center; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 15px; color: #294B6D; background: #F9F7F4; border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3;">Salt.Magic</div>
+              </th>
+              <th style="width: 20.5%; padding: 0;">
+                <div style="border-top: 1px solid #E8DFD3; padding: 16px 16px; text-align: center; font-size: 13px; font-weight: 500; color: #9B8E82;">Sports Drinks</div>
+              </th>
+              <th style="width: 20.5%; padding: 0;">
+                <div style="border-top: 1px solid #E8DFD3; padding: 16px 16px; text-align: center; font-size: 13px; font-weight: 500; color: #9B8E82;">Coconut Water</div>
+              </th>
+              <th style="width: 20.5%; padding: 0;">
+                <div style="border-top: 1px solid #E8DFD3; padding: 16px 16px; text-align: center; font-size: 13px; font-weight: 500; color: #9B8E82;">Other Mixes</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Sugar -->
+            <tr>
+              <td style="padding: 16px 12px; border-bottom: 1px solid #E8DFD3; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9B8E82;">Sugar</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #294B6D; font-weight: 500; background: rgba(249,247,244,0.5); border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3;">0g</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">27g+</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">28g</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">Up to 11g</td>
+            </tr>
+            <!-- Magnesium -->
+            <tr>
+              <td style="padding: 16px 12px; border-bottom: 1px solid #E8DFD3; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9B8E82;">Magnesium</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #294B6D; font-weight: 500; background: rgba(249,247,244,0.5); border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3;">312mg</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">0-25mg</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">~15mg</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">0-50mg</td>
+            </tr>
+            <!-- Ingredients -->
+            <tr>
+              <td style="padding: 16px 12px; border-bottom: 1px solid #E8DFD3; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9B8E82;">Ingredients</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #294B6D; font-weight: 500; font-size: 13px; background: rgba(249,247,244,0.5); border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3;">3 natural minerals</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82; font-size: 13px;">Artificial colors & flavors</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82; font-size: 13px;">Natural but unbalanced</td>
+              <td style="padding: 16px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82; font-size: 13px;">Synthetic blends</td>
+            </tr>
+            <!-- Verdict -->
+            <tr>
+              <td style="padding: 20px 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9B8E82;">Verdict</td>
+              <td style="padding: 20px 16px; text-align: center; background: rgba(249,247,244,0.5); border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3;">
+                <span style="font-family: 'Playfair Display', serif; font-size: 13px; color: #294B6D; line-height: 1.5;">Clean, daily hydration without the sugar crash.</span>
+              </td>
+              <td style="padding: 20px 16px; text-align: center;">
+                <span style="font-family: 'Playfair Display', serif; font-size: 13px; color: #9B8E82;">Glorified syrup.</span>
+              </td>
+              <td style="padding: 20px 16px; text-align: center;">
+                <span style="font-family: 'Playfair Display', serif; font-size: 13px; color: #9B8E82;">Too much sugar for daily hydration.</span>
+              </td>
+              <td style="padding: 20px 16px; text-align: center;">
+                <span style="font-family: 'Playfair Display', serif; font-size: 13px; color: #9B8E82;">Overpriced, under-dosed, full of fillers.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #FFFFFF; padding: 40px 20px;">
+        <div style="margin-bottom: 28px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">How We Compare</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin-bottom: 20px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 26px; color: #294B6D; margin-bottom: 10px;">The Clear Choice</h2>
+          <p style="font-size: 14px; color: #5A4A3C; line-height: 1.6;">Maximum minerals. Zero junk.</p>
+        </div>
+
+        <!-- Mobile: scrollable table -->
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 -20px; padding: 0 20px;">
+          <table style="min-width: 520px; border-collapse: collapse; font-size: 13px;">
+            <thead>
+              <tr>
+                <th style="width: 80px; padding: 0; position: sticky; left: 0; z-index: 1; background: white;"></th>
+                <th style="padding: 0; min-width: 110px;">
+                  <div style="border-top: 3px solid #D4BFAA; padding: 12px 10px; text-align: center; font-family: 'Playfair Display', serif; font-weight: 400; font-size: 14px; color: #294B6D; background: #F9F7F4; border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3;">Salt.Magic</div>
+                </th>
+                <th style="padding: 0; min-width: 110px;">
+                  <div style="border-top: 1px solid #E8DFD3; padding: 12px 10px; text-align: center; font-size: 12px; font-weight: 500; color: #9B8E82;">Sports Drinks</div>
+                </th>
+                <th style="padding: 0; min-width: 110px;">
+                  <div style="border-top: 1px solid #E8DFD3; padding: 12px 10px; text-align: center; font-size: 12px; font-weight: 500; color: #9B8E82;">Coconut Water</div>
+                </th>
+                <th style="padding: 0; min-width: 110px;">
+                  <div style="border-top: 1px solid #E8DFD3; padding: 12px 10px; text-align: center; font-size: 12px; font-weight: 500; color: #9B8E82;">Other Mixes</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding: 12px 8px; border-bottom: 1px solid #E8DFD3; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; position: sticky; left: 0; background: white;">Sugar</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #294B6D; font-weight: 500; background: rgba(249,247,244,0.5); border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3;">0g</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">27g+</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">28g</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">Up to 11g</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 8px; border-bottom: 1px solid #E8DFD3; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; position: sticky; left: 0; background: white;">Magnesium</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #294B6D; font-weight: 500; background: rgba(249,247,244,0.5); border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3;">312mg</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">0-25mg</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">~15mg</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82;">0-50mg</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 8px; border-bottom: 1px solid #E8DFD3; font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; position: sticky; left: 0; background: white;">Ingredients</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #294B6D; font-weight: 500; font-size: 12px; background: rgba(249,247,244,0.5); border-left: 1px solid #E8DFD3; border-right: 1px solid #E8DFD3;">3 natural minerals</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82; font-size: 12px;">Artificial colors & flavors</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82; font-size: 12px;">Natural but unbalanced</td>
+                <td style="padding: 12px 10px; border-bottom: 1px solid #E8DFD3; text-align: center; color: #9B8E82; font-size: 12px;">Synthetic blends</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Verdict below table on mobile -->
+        <div style="margin-top: 20px; padding: 16px; background: #F9F7F4; border-radius: 8px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 13px; color: #294B6D; line-height: 1.5;">Clean, daily hydration without the sugar crash.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by LMNT</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Hero Card + Competitors</span>
+  </div>
+  <p class="option-desc">Salt.Magic dominates as a large mineral-blue hero card with checkmarks. Competitors appear as smaller muted cards below. Bold, data-driven layout that makes Salt.Magic the obvious winner. On mobile, Salt.Magic card on top with competitors stacked below.</p>
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #F9F7F4; padding: 64px 60px;">
+        <!-- Header -->
+        <div style="text-align: center; margin-bottom: 48px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">How We Compare</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 24px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: #294B6D; margin-bottom: 12px;">The Clear Choice</h2>
+          <p style="font-size: 15px; color: #5A4A3C; line-height: 1.7;">Maximum minerals. Zero junk. See how we stack up.</p>
+        </div>
+
+        <!-- Salt.Magic Hero Card -->
+        <div style="background: #294B6D; border-radius: 12px; padding: 40px 48px; margin-bottom: 20px; display: flex; align-items: center; gap: 48px;">
+          <div style="flex-shrink: 0;">
+            <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 8px;">The Clear Choice</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: white; margin-bottom: 16px;">Salt.Magic</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 14px; color: rgba(255,255,255,0.7); max-width: 240px; line-height: 1.6;">Clean, daily hydration without the sugar crash.</div>
+          </div>
+          <div style="flex: 1; display: flex; gap: 32px;">
+            <div style="flex: 1; text-align: center; padding: 20px; background: rgba(255,255,255,0.06); border-radius: 8px;">
+              <div style="color: #D4BFAA; font-size: 20px; margin-bottom: 8px;">&#10003;</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 24px; color: white; margin-bottom: 4px;">0g</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Sugar</div>
+            </div>
+            <div style="flex: 1; text-align: center; padding: 20px; background: rgba(255,255,255,0.06); border-radius: 8px;">
+              <div style="color: #D4BFAA; font-size: 20px; margin-bottom: 8px;">&#10003;</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 24px; color: white; margin-bottom: 4px;">312mg</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Magnesium</div>
+            </div>
+            <div style="flex: 1; text-align: center; padding: 20px; background: rgba(255,255,255,0.06); border-radius: 8px;">
+              <div style="color: #D4BFAA; font-size: 20px; margin-bottom: 8px;">&#10003;</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 24px; color: white; margin-bottom: 4px;">3</div>
+              <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Natural minerals</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Competitor Cards Row -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+          <!-- Sports Drinks -->
+          <div style="background: white; border: 1px solid #E8DFD3; border-radius: 10px; padding: 24px;">
+            <div style="font-size: 14px; font-weight: 500; color: #9B8E82; margin-bottom: 16px;">Sports Drinks</div>
+            <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+              <div style="text-align: center; flex: 1;">
+                <div style="color: #9B8E82; font-size: 14px; margin-bottom: 4px;">&#10007;</div>
+                <div style="font-size: 16px; color: #9B8E82;">27g+</div>
+                <div style="font-size: 11px; color: #9B8E82;">sugar</div>
+              </div>
+              <div style="text-align: center; flex: 1;">
+                <div style="color: #9B8E82; font-size: 14px; margin-bottom: 4px;">&#10007;</div>
+                <div style="font-size: 16px; color: #9B8E82;">0-25mg</div>
+                <div style="font-size: 11px; color: #9B8E82;">magnesium</div>
+              </div>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82; border-top: 1px solid #E8DFD3; padding-top: 12px;">Glorified syrup.</div>
+          </div>
+          <!-- Coconut Water -->
+          <div style="background: white; border: 1px solid #E8DFD3; border-radius: 10px; padding: 24px;">
+            <div style="font-size: 14px; font-weight: 500; color: #9B8E82; margin-bottom: 16px;">Coconut Water</div>
+            <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+              <div style="text-align: center; flex: 1;">
+                <div style="color: #9B8E82; font-size: 14px; margin-bottom: 4px;">&#10007;</div>
+                <div style="font-size: 16px; color: #9B8E82;">28g</div>
+                <div style="font-size: 11px; color: #9B8E82;">sugar</div>
+              </div>
+              <div style="text-align: center; flex: 1;">
+                <div style="color: #9B8E82; font-size: 14px; margin-bottom: 4px;">&#10007;</div>
+                <div style="font-size: 16px; color: #9B8E82;">~15mg</div>
+                <div style="font-size: 11px; color: #9B8E82;">magnesium</div>
+              </div>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82; border-top: 1px solid #E8DFD3; padding-top: 12px;">Too much sugar for daily hydration.</div>
+          </div>
+          <!-- Other Mixes -->
+          <div style="background: white; border: 1px solid #E8DFD3; border-radius: 10px; padding: 24px;">
+            <div style="font-size: 14px; font-weight: 500; color: #9B8E82; margin-bottom: 16px;">Other Mixes</div>
+            <div style="display: flex; gap: 16px; margin-bottom: 16px;">
+              <div style="text-align: center; flex: 1;">
+                <div style="color: #9B8E82; font-size: 14px; margin-bottom: 4px;">&#10007;</div>
+                <div style="font-size: 16px; color: #9B8E82;">Up to 11g</div>
+                <div style="font-size: 11px; color: #9B8E82;">sugar</div>
+              </div>
+              <div style="text-align: center; flex: 1;">
+                <div style="color: #9B8E82; font-size: 14px; margin-bottom: 4px;">&#10007;</div>
+                <div style="font-size: 16px; color: #9B8E82;">0-50mg</div>
+                <div style="font-size: 11px; color: #9B8E82;">magnesium</div>
+              </div>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82; border-top: 1px solid #E8DFD3; padding-top: 12px;">Overpriced, under-dosed, full of fillers.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #F9F7F4; padding: 40px 20px;">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">How We Compare</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 20px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 26px; color: #294B6D; margin-bottom: 10px;">The Clear Choice</h2>
+          <p style="font-size: 14px; color: #5A4A3C; line-height: 1.6;">Maximum minerals. Zero junk.</p>
+        </div>
+
+        <!-- Salt.Magic Hero Card -->
+        <div style="background: #294B6D; border-radius: 12px; padding: 28px 24px; margin-bottom: 16px;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 6px;">The Clear Choice</div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: white; margin-bottom: 20px;">Salt.Magic</div>
+          <div style="display: flex; gap: 12px; margin-bottom: 16px;">
+            <div style="flex: 1; text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.06); border-radius: 8px;">
+              <div style="color: #D4BFAA; font-size: 16px; margin-bottom: 4px;">&#10003;</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: white;">0g</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.5);">Sugar</div>
+            </div>
+            <div style="flex: 1; text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.06); border-radius: 8px;">
+              <div style="color: #D4BFAA; font-size: 16px; margin-bottom: 4px;">&#10003;</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: white;">312mg</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.5);">Magnesium</div>
+            </div>
+            <div style="flex: 1; text-align: center; padding: 14px 8px; background: rgba(255,255,255,0.06); border-radius: 8px;">
+              <div style="color: #D4BFAA; font-size: 16px; margin-bottom: 4px;">&#10003;</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: white;">3</div>
+              <div style="font-size: 11px; color: rgba(255,255,255,0.5);">Minerals</div>
+            </div>
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.5;">Clean, daily hydration without the sugar crash.</div>
+        </div>
+
+        <!-- Competitor Cards Stacked -->
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div style="background: white; border: 1px solid #E8DFD3; border-radius: 10px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 14px; font-weight: 500; color: #9B8E82;">Sports Drinks</span>
+              <span style="font-size: 12px; color: #9B8E82;">27g+ sugar / 0-25mg mag</span>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82;">Glorified syrup.</div>
+          </div>
+          <div style="background: white; border: 1px solid #E8DFD3; border-radius: 10px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 14px; font-weight: 500; color: #9B8E82;">Coconut Water</span>
+              <span style="font-size: 12px; color: #9B8E82;">28g sugar / ~15mg mag</span>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82;">Too much sugar for daily hydration.</div>
+          </div>
+          <div style="background: white; border: 1px solid #E8DFD3; border-radius: 10px; padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 14px; font-weight: 500; color: #9B8E82;">Other Mixes</span>
+              <span style="font-size: 12px; color: #9B8E82;">Up to 11g / 0-50mg mag</span>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82;">Overpriced, under-dosed, full of fillers.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by Sakara</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Horizontal Scroll Cards</span>
+  </div>
+  <p class="option-desc">Four vertical cards side by side on warm-off background. Salt.Magic card is slightly taller with a gold border accent. Each card shows the brand category, stats, and verdict. Subtle shadows create depth. On mobile, cards scroll horizontally.</p>
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #F9F7F4; padding: 64px 40px;">
+        <!-- Header -->
+        <div style="text-align: center; margin-bottom: 48px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">How We Compare</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 24px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: #294B6D; margin-bottom: 12px;">The Clear Choice</h2>
+          <p style="font-size: 15px; color: #5A4A3C; line-height: 1.7;">Maximum minerals. Zero junk. See how we stack up.</p>
+        </div>
+
+        <!-- 4 Cards -->
+        <div style="display: flex; gap: 16px; align-items: flex-end;">
+          <!-- Salt.Magic Card (taller) -->
+          <div style="flex: 1; background: white; border: 2px solid #D4BFAA; border-radius: 12px; padding: 32px 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); margin-bottom: 16px;">
+            <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 6px;">Winner</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: #294B6D; margin-bottom: 24px;">Salt.Magic</div>
+            <div style="margin-bottom: 20px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 6px;">Sugar</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">0g</div>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 6px;">Magnesium</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 28px; color: #294B6D;">312mg</div>
+            </div>
+            <div style="margin-bottom: 20px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 6px;">Ingredients</div>
+              <div style="font-size: 14px; color: #294B6D; font-weight: 500;">3 natural minerals</div>
+            </div>
+            <div style="border-top: 1px solid #E8DFD3; padding-top: 16px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 13px; color: #294B6D; line-height: 1.5;">Clean, daily hydration without the sugar crash.</div>
+            </div>
+          </div>
+
+          <!-- Sports Drinks -->
+          <div style="flex: 1; background: white; border: 1px solid #E8DFD3; border-radius: 12px; padding: 28px 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div style="font-size: 15px; font-weight: 500; color: #9B8E82; margin-bottom: 20px;">Sports Drinks</div>
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Sugar</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">27g+</div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Magnesium</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">0-25mg</div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Ingredients</div>
+              <div style="font-size: 13px; color: #9B8E82;">Artificial colors & flavors</div>
+            </div>
+            <div style="border-top: 1px solid #E8DFD3; padding-top: 14px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82;">Glorified syrup.</div>
+            </div>
+          </div>
+
+          <!-- Coconut Water -->
+          <div style="flex: 1; background: white; border: 1px solid #E8DFD3; border-radius: 12px; padding: 28px 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div style="font-size: 15px; font-weight: 500; color: #9B8E82; margin-bottom: 20px;">Coconut Water</div>
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Sugar</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">28g</div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Magnesium</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">~15mg</div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Ingredients</div>
+              <div style="font-size: 13px; color: #9B8E82;">Natural but unbalanced</div>
+            </div>
+            <div style="border-top: 1px solid #E8DFD3; padding-top: 14px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82;">Too much sugar for daily hydration.</div>
+            </div>
+          </div>
+
+          <!-- Other Mixes -->
+          <div style="flex: 1; background: white; border: 1px solid #E8DFD3; border-radius: 12px; padding: 28px 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            <div style="font-size: 15px; font-weight: 500; color: #9B8E82; margin-bottom: 20px;">Other Mixes</div>
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Sugar</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">Up to 11g</div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Magnesium</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">0-50mg</div>
+            </div>
+            <div style="margin-bottom: 16px;">
+              <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Ingredients</div>
+              <div style="font-size: 13px; color: #9B8E82;">Synthetic blends</div>
+            </div>
+            <div style="border-top: 1px solid #E8DFD3; padding-top: 14px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82;">Overpriced, under-dosed, full of fillers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #F9F7F4; padding: 40px 0;">
+        <div style="text-align: center; margin-bottom: 32px; padding: 0 20px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #5A4A3C; margin-bottom: 8px;">How We Compare</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin: 0 auto 20px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 26px; color: #294B6D; margin-bottom: 10px;">The Clear Choice</h2>
+          <p style="font-size: 14px; color: #5A4A3C; line-height: 1.6;">Maximum minerals. Zero junk.</p>
+        </div>
+
+        <!-- Horizontal scroll -->
+        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; display: flex; gap: 12px; padding: 0 20px; scroll-snap-type: x mandatory;">
+          <!-- Salt.Magic -->
+          <div style="min-width: 240px; flex-shrink: 0; background: white; border: 2px solid #D4BFAA; border-radius: 12px; padding: 24px 20px; scroll-snap-align: start;">
+            <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 4px;">Winner</div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: #294B6D; margin-bottom: 18px;">Salt.Magic</div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Sugar</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">0g</div>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Magnesium</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #294B6D;">312mg</div>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Ingredients</div>
+              <div style="font-size: 13px; color: #294B6D; font-weight: 500;">3 natural minerals</div>
+            </div>
+            <div style="border-top: 1px solid #E8DFD3; padding-top: 12px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #294B6D; line-height: 1.5;">Clean, daily hydration.</div>
+            </div>
+          </div>
+          <!-- Sports Drinks -->
+          <div style="min-width: 220px; flex-shrink: 0; background: white; border: 1px solid #E8DFD3; border-radius: 12px; padding: 24px 20px; scroll-snap-align: start;">
+            <div style="font-size: 15px; font-weight: 500; color: #9B8E82; margin-bottom: 18px;">Sports Drinks</div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Sugar</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">27g+</div>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Magnesium</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">0-25mg</div>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Ingredients</div>
+              <div style="font-size: 13px; color: #9B8E82;">Artificial colors & flavors</div>
+            </div>
+            <div style="border-top: 1px solid #E8DFD3; padding-top: 12px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82;">Glorified syrup.</div>
+            </div>
+          </div>
+          <!-- Coconut Water -->
+          <div style="min-width: 220px; flex-shrink: 0; background: white; border: 1px solid #E8DFD3; border-radius: 12px; padding: 24px 20px; scroll-snap-align: start;">
+            <div style="font-size: 15px; font-weight: 500; color: #9B8E82; margin-bottom: 18px;">Coconut Water</div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Sugar</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">28g</div>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Magnesium</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">~15mg</div>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Ingredients</div>
+              <div style="font-size: 13px; color: #9B8E82;">Natural but unbalanced</div>
+            </div>
+            <div style="border-top: 1px solid #E8DFD3; padding-top: 12px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82;">Too much sugar.</div>
+            </div>
+          </div>
+          <!-- Other Mixes -->
+          <div style="min-width: 220px; flex-shrink: 0; background: white; border: 1px solid #E8DFD3; border-radius: 12px; padding: 24px 20px; scroll-snap-align: start; margin-right: 20px;">
+            <div style="font-size: 15px; font-weight: 500; color: #9B8E82; margin-bottom: 18px;">Other Mixes</div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Sugar</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">Up to 11g</div>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Magnesium</div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 22px; color: #9B8E82;">0-50mg</div>
+            </div>
+            <div style="margin-bottom: 14px;">
+              <div style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #9B8E82; margin-bottom: 4px;">Ingredients</div>
+              <div style="font-size: 13px; color: #9B8E82;">Synthetic blends</div>
+            </div>
+            <div style="border-top: 1px solid #E8DFD3; padding-top: 12px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 12px; color: #9B8E82;">Overpriced, full of fillers.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspired by PANPURI</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Focused Comparison Rows</span>
+  </div>
+  <p class="option-desc">Immersive mineral-blue background with white text. Three key comparison rows show Salt.Magic values prominently while competitors fade into lower opacity. Gold accents highlight Salt.Magic stats. Editorial verdict section below. On mobile, tighter spacing with same layout.</p>
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #294B6D; padding: 64px 60px;">
+        <!-- Header -->
+        <div style="margin-bottom: 48px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 8px;">How We Compare</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin-bottom: 24px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 36px; color: white; margin-bottom: 12px; line-height: 1.2;">The Clear Choice</h2>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.65); max-width: 400px; line-height: 1.7;">Maximum minerals. Zero junk. See how we stack up.</p>
+        </div>
+
+        <!-- Column Headers -->
+        <div style="display: grid; grid-template-columns: 140px 1fr 1fr 1fr 1fr; gap: 0; margin-bottom: 0; padding: 0 0 16px;">
+          <div></div>
+          <div style="text-align: center; font-family: 'Playfair Display', serif; font-size: 16px; color: #D4BFAA;">Salt.Magic</div>
+          <div style="text-align: center; font-size: 13px; color: rgba(255,255,255,0.4);">Sports Drinks</div>
+          <div style="text-align: center; font-size: 13px; color: rgba(255,255,255,0.4);">Coconut Water</div>
+          <div style="text-align: center; font-size: 13px; color: rgba(255,255,255,0.4);">Other Mixes</div>
+        </div>
+
+        <!-- Sugar Row -->
+        <div style="display: grid; grid-template-columns: 140px 1fr 1fr 1fr 1fr; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0;">
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: flex; align-items: center;">Sugar</div>
+          <div style="text-align: center;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: #D4BFAA; line-height: 1;">0g</div>
+          </div>
+          <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 18px; color: rgba(255,255,255,0.35);">27g+</span>
+          </div>
+          <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 18px; color: rgba(255,255,255,0.35);">28g</span>
+          </div>
+          <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 18px; color: rgba(255,255,255,0.35);">Up to 11g</span>
+          </div>
+        </div>
+
+        <!-- Magnesium Row -->
+        <div style="display: grid; grid-template-columns: 140px 1fr 1fr 1fr 1fr; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0;">
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: flex; align-items: center;">Magnesium</div>
+          <div style="text-align: center;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 36px; color: #D4BFAA; line-height: 1;">312mg</div>
+          </div>
+          <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 18px; color: rgba(255,255,255,0.35);">0-25mg</span>
+          </div>
+          <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 18px; color: rgba(255,255,255,0.35);">~15mg</span>
+          </div>
+          <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 18px; color: rgba(255,255,255,0.35);">0-50mg</span>
+          </div>
+        </div>
+
+        <!-- Ingredients Row -->
+        <div style="display: grid; grid-template-columns: 140px 1fr 1fr 1fr 1fr; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); padding: 24px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <div style="font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); display: flex; align-items: center;">Ingredients</div>
+          <div style="text-align: center;">
+            <div style="font-size: 15px; color: white; font-weight: 500;">3 natural minerals</div>
+          </div>
+          <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 14px; color: rgba(255,255,255,0.35);">Artificial colors & flavors</span>
+          </div>
+          <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 14px; color: rgba(255,255,255,0.35);">Natural but unbalanced</span>
+          </div>
+          <div style="text-align: center; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 14px; color: rgba(255,255,255,0.35);">Synthetic blends</span>
+          </div>
+        </div>
+
+        <!-- Verdict -->
+        <div style="margin-top: 36px; max-width: 500px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 20px; color: white; margin-bottom: 12px; line-height: 1.4;">Clean, daily hydration without the sugar crash.</div>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.7;">While others load up on sugar, artificial flavors, and synthetic fillers - Salt.Magic keeps it simple. Three natural minerals. Zero junk. Every day.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content" style="background: #294B6D; padding: 40px 20px;">
+        <div style="margin-bottom: 32px;">
+          <div style="font-family: Inter, sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #D4BFAA; margin-bottom: 8px;">How We Compare</div>
+          <div style="width: 40px; height: 2px; background: #D4BFAA; margin-bottom: 20px;"></div>
+          <h2 style="font-family: 'Playfair Display', serif; font-weight: 400; font-size: 26px; color: white; margin-bottom: 10px;">The Clear Choice</h2>
+          <p style="font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.6;">Maximum minerals. Zero junk.</p>
+        </div>
+
+        <!-- Sugar Row -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 12px;">Sugar</div>
+          <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 32px; color: #D4BFAA;">0g</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.5);">Salt.Magic</span>
+          </div>
+          <div style="display: flex; gap: 16px; font-size: 13px; color: rgba(255,255,255,0.3);">
+            <span>27g+ sports</span>
+            <span>28g coconut</span>
+            <span>11g mixes</span>
+          </div>
+        </div>
+
+        <!-- Magnesium Row -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding: 20px 0;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 12px;">Magnesium</div>
+          <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 8px;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 32px; color: #D4BFAA;">312mg</span>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.5);">Salt.Magic</span>
+          </div>
+          <div style="display: flex; gap: 16px; font-size: 13px; color: rgba(255,255,255,0.3);">
+            <span>0-25mg sports</span>
+            <span>~15mg coconut</span>
+            <span>0-50mg mixes</span>
+          </div>
+        </div>
+
+        <!-- Ingredients Row -->
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); padding: 20px 0;">
+          <div style="font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 12px;">Ingredients</div>
+          <div style="font-size: 15px; color: white; font-weight: 500; margin-bottom: 8px;">3 natural minerals</div>
+          <div style="font-size: 13px; color: rgba(255,255,255,0.3); line-height: 1.6;">vs artificial colors, unbalanced blends, and synthetic fillers</div>
+        </div>
+
+        <!-- Verdict -->
+        <div style="margin-top: 24px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 17px; color: white; margin-bottom: 10px; line-height: 1.4;">Clean, daily hydration without the sugar crash.</div>
+          <p style="font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.6;">Three natural minerals. Zero junk. Every day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 60px;"></div>
+
+</body>
+</html>

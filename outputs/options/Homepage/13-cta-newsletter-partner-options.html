@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Sections 13-15: CTA, Newsletter, PartnerTeaser Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--mineral:#294B6D;--mineral-light:#3D6588;--gold:#D4BFAA;--warm-off:#F9F7F4;--warm-white:#FFFFFF;--ink:#3C3028;--ink-light:#5A4A3C;--ink-faint:#9B8E82;--border-warm:#E8DFD3}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#f0ede8}
+  .page-header{background:var(--mineral);color:white;padding:40px;text-align:center}
+  .page-header h1{font-family:'Playfair Display',serif;font-weight:400;font-size:28px;margin-bottom:8px}
+  .page-header p{font-size:13px;color:rgba(255,255,255,0.65);max-width:600px;margin:0 auto;line-height:1.6}
+  .section-divider{max-width:1400px;margin:48px auto 0;padding:0 24px;text-align:center}
+  .section-divider h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:400;color:var(--mineral);margin-bottom:4px}
+  .section-divider p{font-size:12px;color:var(--ink-faint)}
+  .section-divider .current{display:inline-block;margin-top:10px;padding:5px 14px;background:var(--warm-off);border:1px solid var(--border-warm);border-radius:14px;font-size:10px;color:var(--ink-faint)}
+  .option-section{max-width:1400px;margin:32px auto;padding:0 24px}
+  .option-label{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .option-badge{background:var(--mineral);color:white;font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:16px}
+  .option-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--mineral)}
+  .option-desc{font-size:12px;color:var(--ink-light);margin-bottom:14px;line-height:1.6;max-width:600px}
+  .viewport-row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+  .frame{border-radius:10px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08);background:#fff;flex-shrink:0}
+  .frame-desktop{width:900px}.frame-mobile{width:375px}
+  .frame-bar{background:#e8e8e8;height:24px;display:flex;align-items:center;padding:0 10px;gap:5px}
+  .frame-dot{width:7px;height:7px;border-radius:50%;background:#ccc}
+  .frame-content{width:100%;position:relative;overflow:hidden}
+  .divider{max-width:1400px;margin:0 auto;padding:0 24px}.divider hr{border:none;border-top:1px solid var(--border-warm)}
+  .gold-line{width:36px;height:1px;background:var(--gold);margin-bottom:16px}
+  .cta-btn{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:12px 28px;border-radius:30px;text-decoration:none}
+
+  /* ==================== CTA BANNER OPTIONS ==================== */
+
+  /* CTA-A: Clean White Centered */
+  .cta-a{background:var(--warm-white);padding:48px;text-align:center;border-top:1px solid var(--border-warm);border-bottom:1px solid var(--border-warm)}
+  .cta-a .gold-line{margin:0 auto 16px}
+  .cta-a .s-h2{font-family:'Playfair Display',serif;font-size:24px;font-weight:400;color:var(--mineral);margin-bottom:6px}
+  .cta-a .s-sub{font-size:13px;color:var(--ink-light);margin-bottom:20px;max-width:400px;margin-left:auto;margin-right:auto}
+
+  /* CTA-B: Split with Image */
+  .cta-b{display:grid;grid-template-columns:1fr 1fr}
+  .cta-b .img-side{background-size:cover;background-position:center;min-height:280px}
+  .cta-b .text-side{display:flex;align-items:center;padding:32px 36px;background:var(--mineral)}
+  .cta-b .text-inner{max-width:340px}
+  .cta-b .s-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:rgba(255,255,255,0.9);margin-bottom:6px}
+  .cta-b .s-sub{font-size:12px;color:rgba(255,255,255,0.55);margin-bottom:18px;line-height:1.6}
+  .cta-b-mobile{grid-template-columns:1fr}
+  .cta-b-mobile .img-side{min-height:180px}
+  .cta-b-mobile .text-side{padding:24px 20px}
+  .cta-b-mobile .s-h2{font-size:19px}
+
+  /* CTA-C: Immersive Full-Width (like current) */
+  .cta-c{position:relative;min-height:300px;background-size:cover;background-position:center}
+  .cta-c .overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,50,72,0.88),rgba(41,75,109,0.85),rgba(61,101,136,0.82))}
+  .cta-c .content{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;min-height:300px;padding:40px;text-align:center}
+  .cta-c .s-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:white;margin-bottom:6px}
+  .cta-c .s-sub{font-size:12px;color:rgba(255,255,255,0.6);margin-bottom:18px;max-width:380px;margin-left:auto;margin-right:auto;line-height:1.6}
+  .cta-c-mobile .content{min-height:240px;padding:32px 20px}
+  .cta-c-mobile .s-h2{font-size:19px}
+
+  /* CTA-D: Minimal One-Liner */
+  .cta-d{background:var(--warm-off);padding:24px 48px;display:flex;align-items:center;justify-content:center;gap:24px;border-top:1px solid var(--border-warm);border-bottom:1px solid var(--border-warm)}
+  .cta-d .s-h2{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--mineral)}
+  .cta-d-mobile{flex-direction:column;gap:12px;padding:20px 16px;text-align:center}
+  .cta-d-mobile .s-h2{font-size:16px}
+
+  /* ==================== NEWSLETTER OPTIONS ==================== */
+
+  /* NL-A: Centered on warm-off (like current but cleaner) */
+  .nl-a{background:var(--warm-off);padding:36px 48px;text-align:center}
+  .nl-a .gold-line{margin:0 auto 16px}
+  .nl-a .s-h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--mineral);margin-bottom:4px}
+  .nl-a .s-sub{font-size:12px;color:var(--ink-light);margin-bottom:14px;max-width:380px;margin-left:auto;margin-right:auto}
+  .nl-a .offer{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(212,191,170,0.1);border-radius:16px;font-size:11px;font-weight:500;color:var(--mineral);margin-bottom:14px}
+  .nl-a .input-row{display:flex;gap:8px;max-width:380px;margin:0 auto}
+  .nl-a input{flex:1;padding:10px 16px;border:1px solid var(--border-warm);border-radius:30px;font-size:13px;font-family:inherit;outline:none}
+  .nl-a button{padding:10px 20px;border:none;border-radius:30px;background:var(--mineral);color:white;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit;white-space:nowrap}
+  .nl-a-mobile{padding:28px 16px}
+  .nl-a-mobile .input-row{flex-direction:column}
+  .nl-a-mobile .s-h2{font-size:18px}
+
+  /* NL-B: Dark Band */
+  .nl-b{background:var(--mineral);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .nl-b .s-h2{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:rgba(255,255,255,0.9)}
+  .nl-b .s-sub{font-size:11px;color:rgba(255,255,255,0.45)}
+  .nl-b .input-row{display:flex;gap:8px}
+  .nl-b input{padding:10px 16px;border:1px solid rgba(255,255,255,0.1);border-radius:30px;background:rgba(255,255,255,0.05);color:white;font-size:13px;font-family:inherit;outline:none;width:220px}
+  .nl-b input::placeholder{color:rgba(255,255,255,0.3)}
+  .nl-b button{padding:10px 20px;border:none;border-radius:30px;background:rgba(212,191,170,0.9);color:var(--mineral);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit;white-space:nowrap}
+  .nl-b-mobile{flex-direction:column;padding:24px 16px;text-align:center}
+  .nl-b-mobile .input-row{flex-direction:column;width:100%}
+  .nl-b-mobile input{width:100%}
+  .nl-b-mobile .s-h2{font-size:16px}
+
+  /* NL-C: Inline Minimal */
+  .nl-c{background:var(--warm-white);padding:20px 48px;display:flex;align-items:center;justify-content:center;gap:16px;border-top:1px solid var(--border-warm)}
+  .nl-c .label{font-size:12px;color:var(--ink-light);white-space:nowrap}
+  .nl-c input{padding:8px 14px;border:1px solid var(--border-warm);border-radius:30px;font-size:12px;font-family:inherit;outline:none;width:200px}
+  .nl-c button{padding:8px 16px;border:none;border-radius:30px;background:var(--mineral);color:white;font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+  .nl-c-mobile{flex-direction:column;gap:8px;padding:16px}
+
+  /* NL-D: Split with Image */
+  .nl-d{display:grid;grid-template-columns:1fr 1fr}
+  .nl-d .img-side{background-size:cover;background-position:center;min-height:240px}
+  .nl-d .text-side{display:flex;align-items:center;padding:28px 32px;background:var(--warm-off)}
+  .nl-d .text-inner{max-width:320px}
+  .nl-d .s-h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--mineral);margin-bottom:4px}
+  .nl-d .s-sub{font-size:11px;color:var(--ink-light);margin-bottom:12px;line-height:1.5}
+  .nl-d .input-row{display:flex;gap:8px}
+  .nl-d input{flex:1;padding:10px 14px;border:1px solid var(--border-warm);border-radius:30px;font-size:12px;font-family:inherit;outline:none}
+  .nl-d button{padding:10px 18px;border:none;border-radius:30px;background:var(--mineral);color:white;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit;white-space:nowrap}
+  .nl-d-mobile{grid-template-columns:1fr}
+  .nl-d-mobile .img-side{min-height:160px}
+  .nl-d-mobile .text-side{padding:20px 16px}
+  .nl-d-mobile .input-row{flex-direction:column}
+  .nl-d-mobile .s-h2{font-size:18px}
+
+  /* ==================== PARTNER TEASER OPTIONS ==================== */
+
+  /* PT-A: Full-Width Dark Band */
+  .pt-a{background:var(--mineral);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .pt-a .s-h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:rgba(255,255,255,0.9);margin-bottom:2px}
+  .pt-a .s-sub{font-size:12px;color:rgba(255,255,255,0.5)}
+  .pt-a .stats{display:flex;gap:24px}
+  .pt-a .stat-num{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--gold);line-height:1}
+  .pt-a .stat-label{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:2px}
+  .pt-a-mobile{flex-direction:column;padding:24px 16px;text-align:center}
+  .pt-a-mobile .stats{justify-content:center}
+  .pt-a-mobile .s-h2{font-size:18px}
+
+  /* PT-B: Card on warm-off (like current) */
+  .pt-b{background:var(--warm-off);padding:32px 48px}
+  .pt-b .card{background:var(--mineral);border-radius:14px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:800px;margin:0 auto}
+  .pt-b .s-h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:white;margin-bottom:2px}
+  .pt-b .s-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:12px}
+  .pt-b .stats{display:flex;gap:20px;margin-top:10px}
+  .pt-b .stat-num{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;color:var(--gold);line-height:1}
+  .pt-b .stat-label{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:2px}
+  .pt-b-mobile{padding:24px 16px}
+  .pt-b-mobile .card{flex-direction:column;text-align:center;padding:24px 20px}
+  .pt-b-mobile .stats{justify-content:center}
+  .pt-b-mobile .s-h2{font-size:18px}
+
+  /* PT-C: Minimal Text Link */
+  .pt-c{background:var(--warm-white);padding:20px 48px;display:flex;align-items:center;justify-content:center;gap:12px;border-top:1px solid var(--border-warm)}
+  .pt-c .label{font-size:12px;color:var(--ink-light)}
+  .pt-c .label strong{color:var(--mineral);font-weight:500}
+  .pt-c .link{font-size:11px;font-weight:500;color:var(--mineral);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--gold)}
+  .pt-c-mobile{flex-direction:column;gap:6px;padding:16px;text-align:center}
+
+  /* PT-D: Split with Product Image */
+  .pt-d{display:grid;grid-template-columns:1fr 1.2fr}
+  .pt-d .text-side{display:flex;align-items:center;padding:28px 32px;background:var(--mineral)}
+  .pt-d .text-inner{max-width:340px}
+  .pt-d .eyebrow{font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .pt-d .s-h2{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:rgba(255,255,255,0.9);margin-bottom:4px}
+  .pt-d .s-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:14px}
+  .pt-d .stats{display:flex;gap:16px;margin-bottom:16px}
+  .pt-d .stat-num{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);line-height:1}
+  .pt-d .stat-label{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:2px}
+  .pt-d .img-side{background-size:cover;background-position:center;min-height:280px}
+  .pt-d-mobile{grid-template-columns:1fr}
+  .pt-d-mobile .img-side{min-height:180px;order:1}
+  .pt-d-mobile .text-side{padding:24px 16px;order:2}
+  .pt-d-mobile .s-h2{font-size:18px}
+
+  @media(max-width:1400px){.viewport-row{flex-direction:column;align-items:center}.frame-desktop{width:100%;max-width:900px}.frame-mobile{width:100%;max-width:375px}}
+</style>
+</head>
+<body>
+<div class="page-header">
+  <h1>Sections 13-15: CTA, Newsletter, Partner Teaser</h1>
+  <p>Die letzten 3 Sections vor dem Footer — jeweils 4 Optionen. Diese Sections bilden zusammen den "Conversion Funnel" am Seitenende.</p>
+</div>
+
+<!-- ==================== SECTION 13: CTA BANNER ==================== -->
+<div class="section-divider">
+  <h2>Section 13: CTA Banner</h2>
+  <p>"Bring Your Water Back to Life" — letzter Push vor Newsletter</p>
+  <div class="current">Aktuell: Immersiver dunkler BG mit PANPURI-Silhouette, zentrierter Text</div>
+</div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option A</span><span class="option-title">Clean White — Typografie pur</span></div>
+  <p class="option-desc">Kein Bild, kein Overlay. Reine Typografie auf weissem BG. Maximal clean, laesst die Worte wirken.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="cta-a">
+        <div class="gold-line"></div>
+        <div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Start Today</div>
+        <h2 class="s-h2">Bring Your Water Back to Life</h2>
+        <p class="s-sub">Three ingredients. Zero compromise. Join thousands across Thailand who've made the daily switch.</p>
+        <a class="cta-btn" href="#" style="background:var(--mineral);color:white">Shop Salt.Magic on Lazada</a>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="cta-a" style="padding:32px 20px">
+        <div class="gold-line" style="margin:0 auto 12px"></div>
+        <h2 class="s-h2" style="font-size:20px">Bring Your Water Back to Life</h2>
+        <p class="s-sub" style="font-size:12px">Three ingredients. Zero compromise.</p>
+        <a class="cta-btn" href="#" style="background:var(--mineral);color:white">Shop on Lazada</a>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option B</span><span class="option-title">Split — Bild + Dark CTA</span></div>
+  <p class="option-desc">Lifestyle-Bild links, Mineral-Blue Text-Bereich rechts. Visuell + emotional.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="cta-b">
+        <div class="img-side" style="background-image:url('../../site/public/images/mood/panpuri-3.png')"></div>
+        <div class="text-side"><div class="text-inner">
+          <div class="gold-line"></div>
+          <div style="font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Start Today</div>
+          <h2 class="s-h2">Bring Your Water Back to Life</h2>
+          <p class="s-sub">Three ingredients. Zero compromise. Join thousands who've made the switch.</p>
+          <a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Shop Salt.Magic on Lazada</a>
+        </div></div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="cta-b cta-b-mobile">
+        <div class="img-side" style="background-image:url('../../site/public/images/mood/panpuri-3.png')"></div>
+        <div class="text-side"><div class="text-inner">
+          <div class="gold-line"></div>
+          <h2 class="s-h2">Bring Your Water Back to Life</h2>
+          <p class="s-sub">Three ingredients. Zero compromise.</p>
+          <a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Shop on Lazada</a>
+        </div></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option C</span><span class="option-title">Immersive Full-Width (wie aktuell)</span></div>
+  <p class="option-desc">Beibehalten des aktuellen Layouts — dunkles Overlay auf Lifestyle-Bild. Bewaeehrt, dramatisch.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="cta-c" style="background-image:url('../../site/public/images/mood/panpuri-3.png')">
+        <div class="overlay"></div>
+        <div class="content"><div>
+          <div class="gold-line" style="margin:0 auto 16px"></div>
+          <div style="font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Start Today</div>
+          <h2 class="s-h2">Bring Your Water Back to Life</h2>
+          <p class="s-sub">Three ingredients. Zero compromise. Join thousands across Thailand who've made the daily switch.</p>
+          <a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Shop Salt.Magic on Lazada</a>
+        </div></div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="cta-c cta-c-mobile" style="background-image:url('../../site/public/images/mood/panpuri-3.png')">
+        <div class="overlay"></div>
+        <div class="content"><div>
+          <div class="gold-line" style="margin:0 auto 12px"></div>
+          <h2 class="s-h2">Bring Your Water Back to Life</h2>
+          <a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Shop on Lazada</a>
+        </div></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option D</span><span class="option-title">Minimal One-Liner</span></div>
+  <p class="option-desc">Kompakteste Variante: ein Satz + Button. Spart vertikalen Platz, dient als sanfter Uebergang zu Newsletter.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="cta-d">
+        <h2 class="s-h2">Bring Your Water Back to Life</h2>
+        <a class="cta-btn" href="#" style="background:var(--mineral);color:white">Shop Salt.Magic on Lazada</a>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="cta-d cta-d-mobile">
+        <h2 class="s-h2">Bring Your Water Back to Life</h2>
+        <a class="cta-btn" href="#" style="background:var(--mineral);color:white">Shop on Lazada</a>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION 14: NEWSLETTER ==================== -->
+<div class="section-divider" style="margin-top:56px">
+  <h2>Section 14: Newsletter</h2>
+  <p>"Join the Ritual" — Email Signup + 10% Off Incentive</p>
+  <div class="current">Aktuell: Zentriert auf warm-off, Input + Button, Mineral Guide Offer</div>
+</div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option A</span><span class="option-title">Centered Clean (Verbessert)</span></div>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="nl-a">
+        <div class="gold-line"></div>
+        <div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px">Stay Connected</div>
+        <h2 class="s-h2">Join the Ritual</h2>
+        <p class="s-sub">Drop your email for exclusive wellness tips, product drops, and community offers.</p>
+        <div class="offer">Get our free Mineral Guide + 10% off</div>
+        <div class="input-row"><input type="email" placeholder="your@email.com"><button>Unlock 10% Off</button></div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="nl-a nl-a-mobile">
+        <div class="gold-line" style="margin:0 auto 12px"></div>
+        <h2 class="s-h2">Join the Ritual</h2>
+        <div class="offer" style="font-size:10px">Mineral Guide + 10% off</div>
+        <div class="input-row"><input type="email" placeholder="your@email.com"><button>Unlock 10% Off</button></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option B</span><span class="option-title">Dark Band — Mineral Blue</span></div>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="nl-b">
+        <div><h2 class="s-h2">Join the Ritual</h2><p class="s-sub">Free Mineral Guide + 10% off your first order</p></div>
+        <div class="input-row"><input type="email" placeholder="your@email.com"><button>Unlock 10% Off</button></div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="nl-b nl-b-mobile">
+        <div><h2 class="s-h2">Join the Ritual</h2><p class="s-sub">Mineral Guide + 10% off</p></div>
+        <div class="input-row"><input type="email" placeholder="your@email.com"><button>Unlock 10%</button></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option C</span><span class="option-title">Inline Minimal — Kein Header</span></div>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="nl-c">
+        <span class="label"><strong>Join the Ritual</strong> — Get 10% off your first order</span>
+        <input type="email" placeholder="your@email.com">
+        <button>Subscribe</button>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="nl-c nl-c-mobile">
+        <span class="label"><strong>Join the Ritual</strong> — 10% off</span>
+        <input type="email" placeholder="your@email.com" style="width:100%">
+        <button>Subscribe</button>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option D</span><span class="option-title">Split mit Lifestyle-Bild</span></div>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="nl-d">
+        <div class="img-side" style="background-image:url('../../site/public/images/products/beach-jar-sunset.webp')"></div>
+        <div class="text-side"><div class="text-inner">
+          <div class="gold-line"></div>
+          <h2 class="s-h2">Join the Ritual</h2>
+          <p class="s-sub">Get our free Mineral Guide + 10% off. No spam, just pure hydration.</p>
+          <div class="input-row"><input type="email" placeholder="your@email.com"><button>Unlock 10%</button></div>
+        </div></div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="nl-d nl-d-mobile">
+        <div class="img-side" style="background-image:url('../../site/public/images/products/beach-jar-sunset.webp')"></div>
+        <div class="text-side"><div class="text-inner">
+          <div class="gold-line"></div>
+          <h2 class="s-h2">Join the Ritual</h2>
+          <p class="s-sub">Mineral Guide + 10% off</p>
+          <div class="input-row"><input type="email" placeholder="your@email.com"><button>Unlock 10%</button></div>
+        </div></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SECTION 15: PARTNER TEASER ==================== -->
+<div class="section-divider" style="margin-top:56px">
+  <h2>Section 15: Partner Teaser</h2>
+  <p>"Stock Salt.Magic" — B2B Gateway am Seitenende</p>
+  <div class="current">Aktuell: Mineral-Blue Card auf warm-off BG mit Stats + CTA</div>
+</div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option A</span><span class="option-title">Full-Width Dark Band</span></div>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="pt-a">
+        <div><h2 class="s-h2">Stock Salt.Magic</h2><p class="s-sub">Join Thailand's fastest-growing daily hydration brand.</p></div>
+        <div class="stats">
+          <div><div class="stat-num">35-40%</div><div class="stat-label">Margins</div></div>
+          <div><div class="stat-num">90%</div><div class="stat-label">Retention</div></div>
+          <div><div class="stat-num">160+</div><div class="stat-label">Locations</div></div>
+        </div>
+        <a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Explore Partnership</a>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="pt-a pt-a-mobile">
+        <div><h2 class="s-h2">Stock Salt.Magic</h2><p class="s-sub">Thailand's fastest-growing hydration brand.</p></div>
+        <div class="stats">
+          <div><div class="stat-num">35-40%</div><div class="stat-label">Margins</div></div>
+          <div><div class="stat-num">90%</div><div class="stat-label">Retention</div></div>
+          <div><div class="stat-num">160+</div><div class="stat-label">Locations</div></div>
+        </div>
+        <a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Explore Partnership</a>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option B</span><span class="option-title">Contained Card (wie aktuell)</span></div>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="pt-b">
+        <div class="card">
+          <div><div style="font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">For Business</div><h2 class="s-h2">Stock Salt.Magic</h2><p class="s-sub">Join Thailand's fastest-growing daily hydration brand.</p><a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Explore Partnership</a></div>
+          <div class="stats">
+            <div><div class="stat-num">35-40%</div><div class="stat-label">Margins</div></div>
+            <div><div class="stat-num">90%</div><div class="stat-label">Retention</div></div>
+            <div><div class="stat-num">160+</div><div class="stat-label">Locations</div></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="pt-b pt-b-mobile">
+        <div class="card">
+          <div><div style="font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">For Business</div><h2 class="s-h2">Stock Salt.Magic</h2><p class="s-sub">Thailand's fastest-growing brand.</p><a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Explore Partnership</a></div>
+          <div class="stats">
+            <div><div class="stat-num">35-40%</div><div class="stat-label">Margins</div></div>
+            <div><div class="stat-num">90%</div><div class="stat-label">Retention</div></div>
+            <div><div class="stat-num">160+</div><div class="stat-label">Locations</div></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option C</span><span class="option-title">Minimal Text Link</span></div>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="pt-c">
+        <span class="label"><strong>For Business:</strong> Stock Salt.Magic — 35-40% margins, 90% retention, 160+ locations</span>
+        <a class="link" href="#">Explore Partnership &rarr;</a>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="pt-c pt-c-mobile">
+        <span class="label"><strong>For Business:</strong> Stock Salt.Magic</span>
+        <a class="link" href="#">Explore Partnership &rarr;</a>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<div class="option-section">
+  <div class="option-label"><span class="option-badge">Option D</span><span class="option-title">Split mit Produktbild</span></div>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="pt-d">
+        <div class="text-side"><div class="text-inner">
+          <div class="eyebrow">For Business</div>
+          <div class="gold-line"></div>
+          <h2 class="s-h2">Stock Salt.Magic</h2>
+          <p class="s-sub">Join Thailand's fastest-growing daily hydration brand.</p>
+          <div class="stats">
+            <div><div class="stat-num">35-40%</div><div class="stat-label">Margins</div></div>
+            <div><div class="stat-num">90%</div><div class="stat-label">Retention</div></div>
+            <div><div class="stat-num">160+</div><div class="stat-label">Locations</div></div>
+          </div>
+          <a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Explore Partnership</a>
+        </div></div>
+        <div class="img-side" style="background-image:url('../../site/public/images/products/greenery-jars.jpg')"></div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="pt-d pt-d-mobile">
+        <div class="img-side" style="background-image:url('../../site/public/images/products/greenery-jars.jpg')"></div>
+        <div class="text-side"><div class="text-inner">
+          <div class="eyebrow">For Business</div>
+          <h2 class="s-h2">Stock Salt.Magic</h2>
+          <div class="stats">
+            <div><div class="stat-num">35-40%</div><div class="stat-label">Margins</div></div>
+            <div><div class="stat-num">90%</div><div class="stat-label">Retention</div></div>
+          </div>
+          <a class="cta-btn" href="#" style="background:rgba(212,191,170,0.9);color:var(--mineral)">Explore Partnership</a>
+        </div></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:40px;text-align:center;color:var(--ink-faint);font-size:11px">Salt.Magic Sections 13-15: CTA, Newsletter, Partner Teaser Options</div>
+</body></html>

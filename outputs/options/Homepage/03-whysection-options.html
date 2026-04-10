@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Section 3: WhySection (The Problem) Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --mineral-light: #3D6588;
+    --gold: #D4BFAA;
+    --warm-off: #F9F7F4;
+    --warm-white: #FFFFFF;
+    --ink: #3C3028;
+    --ink-light: #5A4A3C;
+    --ink-faint: #9B8E82;
+    --border-warm: #E8DFD3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+
+  .page-header { background: var(--mineral); color: white; padding: 40px; text-align: center; }
+  .page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 28px; margin-bottom: 8px; }
+  .page-header p { font-size: 13px; color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+  .page-header .current { display: inline-block; margin-top: 14px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.5); }
+
+  .option-section { max-width: 1400px; margin: 40px auto; padding: 0 24px; }
+  .option-label { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+  .option-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--mineral); }
+  .option-desc { font-size: 12px; color: var(--ink-light); margin-bottom: 16px; line-height: 1.6; max-width: 650px; }
+  .option-ref { font-size: 10px; color: var(--ink-faint); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+
+  .viewport-row { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+  .frame { border-radius: 10px; overflow: hidden; box-shadow: 0 6px 30px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+  .frame-desktop { width: 900px; }
+  .frame-mobile { width: 375px; }
+  .frame-bar { background: #e8e8e8; height: 24px; display: flex; align-items: center; padding: 0 10px; gap: 5px; }
+  .frame-dot { width: 7px; height: 7px; border-radius: 50%; background: #ccc; }
+  .frame-content { width: 100%; position: relative; overflow: hidden; }
+
+  .divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+  .divider hr { border: none; border-top: 1px solid var(--border-warm); }
+
+  /* Shared elements */
+  .gold-line { width: 36px; height: 1px; background: var(--gold); margin-bottom: 16px; }
+  .eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; }
+  .section-h2 { font-family: 'Playfair Display', serif; font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; }
+  .section-body { font-size: 13px; line-height: 1.8; }
+  .badge-row { display: flex; gap: 16px; margin-top: 20px; }
+  .badge { text-align: center; }
+  .badge-circle { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(212,191,170,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; }
+  .badge-circle svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.2; stroke-linecap: round; stroke-linejoin: round; }
+  .badge-label { font-size: 9px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-faint); }
+
+  /* =========================================== */
+  /* OPTION A: Big Stat Statement (Cure-style)   */
+  /* =========================================== */
+  .why-a {
+    background: var(--warm-white);
+    padding: 48px 48px;
+    text-align: center;
+  }
+  .why-a .stat-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .why-a .stat-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 400;
+    color: var(--mineral);
+    line-height: 1;
+  }
+  .why-a .stat-context {
+    text-align: left;
+    max-width: 260px;
+  }
+  .why-a .stat-context p {
+    font-size: 14px;
+    color: var(--ink-light);
+    line-height: 1.5;
+  }
+  .why-a .stat-context strong { color: var(--ink); font-weight: 500; }
+  .why-a .section-h2 { font-size: 24px; color: var(--mineral); margin-bottom: 14px; }
+  .why-a .section-body { color: var(--ink-light); max-width: 520px; margin: 0 auto; }
+  .why-a .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    color: var(--mineral);
+    border-left: 2px solid rgba(212,191,170,0.4);
+    padding-left: 20px;
+    max-width: 440px;
+    margin: 24px auto 0;
+    text-align: left;
+    line-height: 1.5;
+  }
+  .why-a .img-strip {
+    height: 200px;
+    margin-top: 32px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Mobile A */
+  .why-a-mobile { padding: 32px 20px; }
+  .why-a-mobile .stat-big { font-size: 48px; }
+  .why-a-mobile .stat-hero { gap: 16px; }
+  .why-a-mobile .section-h2 { font-size: 20px; }
+  .why-a-mobile .img-strip { height: 140px; margin-top: 24px; }
+
+  /* =========================================== */
+  /* OPTION B: Reversed Split (Text L, Image R)  */
+  /* =========================================== */
+  .why-b {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    background: var(--warm-white);
+  }
+  .why-b .text-side {
+    display: flex;
+    align-items: center;
+    padding: 40px 40px;
+  }
+  .why-b .text-inner { max-width: 380px; }
+  .why-b .eyebrow { color: var(--ink-faint); }
+  .why-b .section-h2 { font-size: 22px; color: var(--mineral); margin-bottom: 12px; }
+  .why-b .section-body { color: var(--ink-light); margin-bottom: 14px; }
+  .why-b .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--mineral);
+    border-left: 2px solid rgba(212,191,170,0.4);
+    padding-left: 16px;
+    line-height: 1.5;
+    margin-top: 16px;
+  }
+  .why-b .img-side {
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+  }
+
+  /* Mobile B */
+  .why-b-mobile {
+    grid-template-columns: 1fr;
+  }
+  .why-b-mobile .text-side { padding: 28px 20px; order: 2; }
+  .why-b-mobile .img-side { min-height: 220px; order: 1; }
+  .why-b-mobile .section-h2 { font-size: 20px; }
+
+  /* =========================================== */
+  /* OPTION C: Stacked Editorial (LMNT-style)    */
+  /* =========================================== */
+  .why-c .img-top {
+    height: 260px;
+    background-size: cover;
+    background-position: center 40%;
+    position: relative;
+  }
+  .why-c .img-top::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(255,255,255,0.9) 100%);
+  }
+  .why-c .text-area {
+    background: var(--warm-white);
+    padding: 32px 48px 40px;
+    max-width: 580px;
+    margin: -40px auto 0;
+    position: relative;
+    z-index: 1;
+  }
+  .why-c .eyebrow { color: var(--ink-faint); text-align: center; }
+  .why-c .gold-line { margin: 0 auto 16px; }
+  .why-c .section-h2 { font-size: 22px; color: var(--mineral); margin-bottom: 14px; text-align: center; }
+  .why-c .section-body { color: var(--ink-light); text-align: left; margin-bottom: 0; }
+  .why-c .section-body + .section-body { margin-top: 12px; }
+  .why-c .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    color: var(--mineral);
+    text-align: center;
+    margin: 24px auto 0;
+    padding: 16px 24px;
+    background: var(--warm-off);
+    border-radius: 8px;
+    line-height: 1.5;
+    max-width: 440px;
+  }
+  .why-c .badge-row { justify-content: center; margin-top: 24px; }
+
+  /* Mobile C */
+  .why-c-mobile .img-top { height: 180px; }
+  .why-c-mobile .text-area { padding: 24px 20px 32px; margin-top: -32px; }
+  .why-c-mobile .section-h2 { font-size: 19px; }
+
+  /* =========================================== */
+  /* OPTION D: Card on Image (Immersive)         */
+  /* =========================================== */
+  .why-d {
+    position: relative;
+    min-height: 480px;
+    background-size: cover;
+    background-position: center;
+  }
+  .why-d .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(41,75,109,0.6) 0%, rgba(41,75,109,0.35) 50%, rgba(0,0,0,0.2) 100%);
+  }
+  .why-d .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 480px;
+    padding: 40px 48px;
+  }
+  .why-d .card {
+    max-width: 420px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    padding: 32px 28px;
+  }
+  .why-d .eyebrow { color: var(--ink-faint); }
+  .why-d .section-h2 { font-size: 22px; color: var(--mineral); margin-bottom: 12px; }
+  .why-d .section-body { color: var(--ink-light); font-size: 12px; }
+  .why-d .pull-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--mineral);
+    border-left: 2px solid var(--gold);
+    padding-left: 14px;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+  .why-d .badge-row { margin-top: 16px; gap: 12px; }
+  .why-d .badge-circle { width: 36px; height: 36px; }
+  .why-d .badge-circle svg { width: 16px; height: 16px; }
+
+  /* Mobile D */
+  .why-d-mobile { min-height: 0; }
+  .why-d-mobile .content { min-height: 0; padding: 20px 16px; }
+  .why-d-mobile .card { padding: 24px 20px; }
+  .why-d-mobile .section-h2 { font-size: 19px; }
+
+  @media (max-width: 1400px) {
+    .viewport-row { flex-direction: column; align-items: center; }
+    .frame-desktop { width: 100%; max-width: 900px; }
+    .frame-mobile { width: 100%; max-width: 375px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Section 3: WhySection (The Problem)</h1>
+  <p>4 Layout-Alternativen fuer die "Dead Water" Problem-Erklaerung. Gleicher Copy, verschiedene visuelle Hierarchien.</p>
+  <div class="current">Aktuell: Asymmetrischer Split — Lifestyle-Foto links (60%), Text rechts (40%), Parallax-Scroll</div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A: Big Stat Statement                 -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Cure Hydration — "75% of Americans are dehydrated"</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Big Stat Statement — Zahl als Held</span>
+  </div>
+  <p class="option-desc">
+    Die "85%" als riesige Zahl zentriert, sofortiger Aufmerksamkeitsfaenger. Text darunter erklaert das Problem.
+    Lifestyle-Bild als Streifen am Ende. Sehr direkt, daten-getrieben, Cure-Hydration-Stil.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="why-a">
+          <div class="gold-line" style="margin:0 auto 16px"></div>
+          <div class="eyebrow" style="color:var(--ink-faint)">The Problem</div>
+          <div class="stat-hero">
+            <span class="stat-big">85%</span>
+            <div class="stat-context">
+              <p>of bottled water in Thailand is <strong>"dead water"</strong> — purified through reverse osmosis, but <strong>nutritionally empty</strong>.</p>
+            </div>
+          </div>
+          <h2 class="section-h2">Your water is missing what your body needs most</h2>
+          <p class="section-body">Your body needs magnesium for energy, recovery, and daily vitality. Yet, the water you drink provides almost none of it, leaving you constantly depleted.</p>
+          <div class="pull-quote">50% of people worldwide are magnesium deficient. Your water could be why.</div>
+          <div class="badge-row" style="justify-content:center">
+            <div class="badge">
+              <div class="badge-circle"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+              <div class="badge-label">Zero Sugar</div>
+            </div>
+            <div class="badge">
+              <div class="badge-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 014 10 15 15 0 01-4 10 15 15 0 01-4-10A15 15 0 0112 2z"/></svg></div>
+              <div class="badge-label">100% Natural</div>
+            </div>
+            <div class="badge">
+              <div class="badge-circle"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+              <div class="badge-label">7x Magnesium</div>
+            </div>
+          </div>
+          <div class="img-strip" style="background-image:url('../../site/public/images/products/why-sachet-pouch.webp')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="why-a why-a-mobile">
+          <div class="gold-line" style="margin:0 auto 12px"></div>
+          <div class="eyebrow" style="color:var(--ink-faint)">The Problem</div>
+          <div class="stat-hero">
+            <span class="stat-big">85%</span>
+            <div class="stat-context">
+              <p style="font-size:12px">of Thai water is <strong>"dead water"</strong> — purified, but <strong>empty</strong>.</p>
+            </div>
+          </div>
+          <h2 class="section-h2">Your water is missing what your body needs most</h2>
+          <p class="section-body" style="font-size:12px">Your body needs magnesium for energy, recovery, and vitality. The water you drink provides almost none.</p>
+          <div class="img-strip" style="background-image:url('../../site/public/images/products/why-sachet-pouch.webp')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B: Reversed Split (Text L, Image R)   -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Grown Alchemist — Editorial Split, Text fuehrt</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Reversed Split — Text links, Bild rechts</span>
+  </div>
+  <p class="option-desc">
+    Spiegelung des aktuellen Layouts: Text links (Lesefluss-first), grosses Lifestyle-Bild rechts.
+    Natuerlicherer Lesefluss im westlichen Layout. Gleicher Content, andere Hierarchie.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="why-b">
+          <div class="text-side">
+            <div class="text-inner">
+              <div class="gold-line"></div>
+              <div class="eyebrow">The Problem</div>
+              <h2 class="section-h2">Your water is missing what your body needs most</h2>
+              <p class="section-body">85% of bottled water in Thailand goes through reverse osmosis, stripping away essential natural minerals. The result is "dead water" — purified, but nutritionally empty.</p>
+              <p class="section-body" style="margin-top:10px">Your body needs magnesium for energy, recovery, and daily vitality. Yet, the water you drink provides almost none of it, leaving you constantly depleted.</p>
+              <div class="pull-quote">50% of people worldwide are magnesium deficient. Your water could be why.</div>
+              <div class="badge-row">
+                <div class="badge">
+                  <div class="badge-circle"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+                  <div class="badge-label">Zero Sugar</div>
+                </div>
+                <div class="badge">
+                  <div class="badge-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 014 10 15 15 0 01-4 10 15 15 0 01-4-10A15 15 0 0112 2z"/></svg></div>
+                  <div class="badge-label">Natural</div>
+                </div>
+                <div class="badge">
+                  <div class="badge-circle"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                  <div class="badge-label">7x Mg</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="img-side" style="background-image:url('../../site/public/images/products/taylor-poolside.jpg')"></div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="why-b why-b-mobile">
+          <div class="text-side">
+            <div class="text-inner">
+              <div class="gold-line"></div>
+              <div class="eyebrow" style="color:var(--ink-faint)">The Problem</div>
+              <h2 class="section-h2">Your water is missing what your body needs most</h2>
+              <p class="section-body">85% of bottled water in Thailand is "dead water" — purified, but nutritionally empty.</p>
+              <div class="pull-quote" style="font-size:13px">50% of people worldwide are magnesium deficient.</div>
+            </div>
+          </div>
+          <div class="img-side" style="background-image:url('../../site/public/images/products/taylor-poolside.jpg')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C: Stacked Editorial (LMNT-style)     -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von LMNT — Magazine-Editorial: Bild oben, Text darunter zentriert</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Stacked Editorial — Bild-dann-Text</span>
+  </div>
+  <p class="option-desc">
+    Breites Lifestyle-Foto oben, zentrierter Text-Block darunter der ins Bild hineinragt.
+    Pull-Quote als hervorgehobener Kasten. Ruhig, editorial, wie ein Magazin-Artikel.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="why-c">
+          <div class="img-top" style="background-image:url('../../site/public/images/mood/alo-2.png')"></div>
+          <div class="text-area">
+            <div class="gold-line"></div>
+            <div class="eyebrow">The Problem</div>
+            <h2 class="section-h2">Your water is missing what your body needs most</h2>
+            <p class="section-body">85% of bottled water in Thailand goes through reverse osmosis, stripping away essential natural minerals. The result is "dead water" — purified, but nutritionally empty.</p>
+            <p class="section-body">Your body needs magnesium for energy, recovery, and daily vitality. Yet, the water you drink provides almost none of it, leaving you constantly depleted.</p>
+            <div class="pull-quote">50% of people worldwide are magnesium deficient. Your water could be why.</div>
+            <div class="badge-row">
+              <div class="badge">
+                <div class="badge-circle"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+                <div class="badge-label">Zero Sugar</div>
+              </div>
+              <div class="badge">
+                <div class="badge-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 014 10 15 15 0 01-4 10 15 15 0 01-4-10A15 15 0 0112 2z"/></svg></div>
+                <div class="badge-label">100% Natural</div>
+              </div>
+              <div class="badge">
+                <div class="badge-circle"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                <div class="badge-label">7x Magnesium</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="why-c why-c-mobile">
+          <div class="img-top" style="background-image:url('../../site/public/images/mood/alo-2.png')"></div>
+          <div class="text-area">
+            <div class="gold-line"></div>
+            <div class="eyebrow">The Problem</div>
+            <h2 class="section-h2">Your water is missing what your body needs most</h2>
+            <p class="section-body">85% of bottled water in Thailand is "dead water" — purified, but nutritionally empty.</p>
+            <div class="pull-quote" style="font-size:13px">50% of people are magnesium deficient. Your water could be why.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D: Card on Image (Immersive)          -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von PANPURI + Luxury Spa — Immersives Bild mit schwebendem Text-Card</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Floating Card on Image — Immersiv</span>
+  </div>
+  <p class="option-desc">
+    Grosses Lifestyle-Bild als voller Hintergrund. Weisse Karte schwebt darueber mit dem Problem-Text.
+    Bild dominiert die Flaeche, Text ist zurueckgenommen aber lesbar. Spa-Atmosphaere.
+  </p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="why-d" style="background-image:url('../../site/public/images/products/yoga-poolside-stretch.webp')">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="card">
+              <div class="gold-line"></div>
+              <div class="eyebrow">The Problem</div>
+              <h2 class="section-h2">Your water is missing what your body needs most</h2>
+              <p class="section-body">85% of bottled water in Thailand goes through reverse osmosis, stripping away essential natural minerals. The result is "dead water" — purified, but nutritionally empty.</p>
+              <p class="section-body" style="margin-top:10px">Your body needs magnesium for energy, recovery, and daily vitality. Yet, the water you drink provides almost none of it.</p>
+              <div class="pull-quote">50% of people worldwide are magnesium deficient. Your water could be why.</div>
+              <div class="badge-row">
+                <div class="badge">
+                  <div class="badge-circle"><svg viewBox="0 0 24 24"><path d="M12 2C12 2 5 9 5 14a7 7 0 0014 0c0-5-7-12-7-12z"/></svg></div>
+                  <div class="badge-label">Zero Sugar</div>
+                </div>
+                <div class="badge">
+                  <div class="badge-circle"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 014 10 15 15 0 01-4 10 15 15 0 01-4-10A15 15 0 0112 2z"/></svg></div>
+                  <div class="badge-label">Natural</div>
+                </div>
+                <div class="badge">
+                  <div class="badge-circle"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+                  <div class="badge-label">7x Mg</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content">
+        <div class="why-d why-d-mobile" style="background-image:url('../../site/public/images/products/yoga-poolside-stretch.webp')">
+          <div class="overlay"></div>
+          <div class="content">
+            <div class="card">
+              <div class="gold-line"></div>
+              <div class="eyebrow" style="color:var(--ink-faint)">The Problem</div>
+              <h2 class="section-h2">Your water is missing what your body needs most</h2>
+              <p class="section-body" style="font-size:12px">85% of Thai bottled water is "dead water" — purified, but nutritionally empty.</p>
+              <div class="pull-quote">50% are magnesium deficient. Your water could be why.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:40px;text-align:center;color:var(--ink-faint);font-size:11px">
+  Salt.Magic Section 3: WhySection Options &mdash; Erstellt fuer Leo's Review
+</div>
+
+</body>
+</html>

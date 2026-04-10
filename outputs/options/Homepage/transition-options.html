@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section Transition Options — Ingredients → Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #3C3028; background: #fff; }
+
+  /* ===== Label for each option ===== */
+  .option-label {
+    text-align: center;
+    padding: 40px 20px;
+    background: #294B6D;
+    color: white;
+  }
+  .option-label h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .option-label p {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ===== Fake Ingredients section (bottom portion) ===== */
+  .ingredients-end {
+    background: #F9F7F4;
+    padding: 40px 80px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 200px;
+  }
+  .ingredients-end .img-side {
+    background: url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=60') center/cover;
+    border-radius: 0;
+    min-height: 200px;
+    position: relative;
+  }
+  .ingredients-end .img-side::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 25%;
+    background: linear-gradient(to right, transparent, #F9F7F4);
+  }
+  .ingredients-end .content-side {
+    display: flex;
+    align-items: center;
+    padding-left: 48px;
+  }
+  .ingredient-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 400;
+    color: #294B6D;
+    min-width: 100px;
+  }
+  .num span { font-size: 13px; color: #D4BFAA; }
+  .ing-name {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #294B6D;
+    margin-bottom: 2px;
+  }
+  .ing-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(60,48,40,0.8);
+  }
+
+  /* ===== Fake Comparison section (top portion) ===== */
+  .comparison-start {
+    background: linear-gradient(180deg, #3a6d94 0%, #294B6D 40%, #1f3f5e 100%);
+    padding: 80px 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .comparison-start::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(126,176,212,0.3) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .comp-content { position: relative; z-index: 1; }
+  .gold-line { width: 48px; height: 1px; background: #D4BFAA; margin-bottom: 24px; }
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 20px;
+  }
+  .comp-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 16px;
+  }
+  .comp-h2 em { font-style: italic; }
+  .comp-sub {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.75);
+  }
+
+  /* ============================================ */
+  /* OPTION A: Clean white space + gold divider   */
+  /* ============================================ */
+  .transition-a {
+    background: white;
+    padding: 48px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .transition-a .divider {
+    width: 48px;
+    height: 1px;
+    background: #D4BFAA;
+  }
+
+  /* ============================================ */
+  /* OPTION B: Gradient fade within Comparison    */
+  /* ============================================ */
+  .comparison-start-b {
+    background: linear-gradient(180deg, #F9F7F4 0%, #c8d8e6 8%, #7aaac8 18%, #4a7ea5 30%, #294B6D 50%, #1f3f5e 100%);
+    padding: 120px 80px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .comparison-start-b::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 30%, rgba(126,176,212,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* ============================================ */
+  /* OPTION C: Narrow atmospheric image strip     */
+  /* ============================================ */
+  .transition-c {
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+  }
+  .transition-c .strip-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #F9F7F4 0%, #b8cfe0 30%, #7aaac8 60%, #4a7ea5 100%);
+  }
+  .transition-c .strip-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #F9F7F4 0%, transparent 40%, transparent 60%, rgba(41,75,109,0.4) 100%);
+  }
+  .transition-c .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+  }
+
+  /* ============================================ */
+  /* OPTION D: Overlap with dark bleeding up      */
+  /* ============================================ */
+  .ingredients-end-d {
+    background: #F9F7F4;
+    padding: 40px 80px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 200px;
+    position: relative;
+    z-index: 2;
+  }
+  .ingredients-end-d .img-side {
+    background: url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=60') center/cover;
+    min-height: 200px;
+    position: relative;
+  }
+  .ingredients-end-d .img-side::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; right: 0;
+    width: 25%;
+    background: linear-gradient(to right, transparent, #F9F7F4);
+  }
+  .ingredients-end-d .content-side {
+    display: flex;
+    align-items: center;
+    padding-left: 48px;
+    padding-bottom: 80px;
+  }
+  .comparison-start-d {
+    background: linear-gradient(180deg, #3a6d94 0%, #294B6D 40%, #1f3f5e 100%);
+    padding: 80px 80px 60px;
+    margin-top: -60px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .comparison-start-d::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 20%, rgba(126,176,212,0.3) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  /* Soft top edge */
+  .comparison-start-d::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(180deg, rgba(249,247,244,0.6) 0%, transparent 100%);
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .ingredients-end, .ingredients-end-d { grid-template-columns: 1fr; padding: 20px; }
+    .ingredients-end .content-side, .ingredients-end-d .content-side { padding-left: 0; }
+    .comparison-start, .comparison-start-b, .comparison-start-d { padding: 60px 24px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ==================== OPTION A ==================== -->
+<div class="option-label">
+  <h2>Option A — Clean Whitespace + Gold Divider</h2>
+  <p>Grown Alchemist Ansatz: Weissraum als Luxus-Signal. Klare Trennung, kein Versuch die Sections zu verbinden. Minimalistisch.</p>
+</div>
+
+<div class="ingredients-end">
+  <div class="img-side"></div>
+  <div class="content-side">
+    <div>
+      <div class="ingredient-row">
+        <div class="num">152<span> mg</span></div>
+        <div>
+          <div class="ing-name">Pink Himalayan Salt</div>
+          <div class="ing-desc">For complete balance, delivering essential sodium and 84 vital trace minerals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="transition-a">
+  <div class="divider"></div>
+</div>
+
+<div class="comparison-start">
+  <div class="comp-content">
+    <div class="gold-line"></div>
+    <p class="eyebrow">How We Compare</p>
+    <h2 class="comp-h2">The Clear <em>Choice</em></h2>
+    <p class="comp-sub">Maximum minerals. Zero junk. See how we stack up.</p>
+  </div>
+</div>
+
+
+<!-- ==================== OPTION B ==================== -->
+<div class="option-label">
+  <h2>Option B — Gradient Fade (Comparison fadet sich ein)</h2>
+  <p>Die Comparison-Section beginnt mit dem warm-off Farbton und fadet langsam in den dunklen Water-Background. Der Uebergang passiert INNERHALB der Section. Kein Spacer noetig.</p>
+</div>
+
+<div class="ingredients-end">
+  <div class="img-side"></div>
+  <div class="content-side">
+    <div>
+      <div class="ingredient-row">
+        <div class="num">152<span> mg</span></div>
+        <div>
+          <div class="ing-name">Pink Himalayan Salt</div>
+          <div class="ing-desc">For complete balance, delivering essential sodium and 84 vital trace minerals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-start-b">
+  <div class="comp-content">
+    <div class="gold-line"></div>
+    <p class="eyebrow">How We Compare</p>
+    <h2 class="comp-h2">The Clear <em>Choice</em></h2>
+    <p class="comp-sub">Maximum minerals. Zero junk. See how we stack up.</p>
+  </div>
+</div>
+
+
+<!-- ==================== OPTION C ==================== -->
+<div class="option-label">
+  <h2>Option C — Atmospheric Gradient Strip</h2>
+  <p>Ein schmaler Gradient-Streifen simuliert den Uebergang von warm-off in die Tiefe des Wassers. Wie ein visuelles "Eintauchen". Subtiler als B, eleganter als A.</p>
+</div>
+
+<div class="ingredients-end">
+  <div class="img-side"></div>
+  <div class="content-side">
+    <div>
+      <div class="ingredient-row">
+        <div class="num">152<span> mg</span></div>
+        <div>
+          <div class="ing-name">Pink Himalayan Salt</div>
+          <div class="ing-desc">For complete balance, delivering essential sodium and 84 vital trace minerals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="transition-c">
+  <div class="strip-bg"></div>
+  <div class="strip-overlay"></div>
+</div>
+
+<div class="comparison-start">
+  <div class="comp-content">
+    <div class="gold-line"></div>
+    <p class="eyebrow">How We Compare</p>
+    <h2 class="comp-h2">The Clear <em>Choice</em></h2>
+    <p class="comp-sub">Maximum minerals. Zero junk. See how we stack up.</p>
+  </div>
+</div>
+
+
+<!-- ==================== OPTION D ==================== -->
+<div class="option-label">
+  <h2>Option D — Overlap (Dunkel blutet nach oben)</h2>
+  <p>PANPURI-Ansatz: Die Comparison-Section schiebt sich mit negativem Margin unter die Ingredients-Section. Erzeugt Tiefe und einen nahtlosen Uebergang. Der dunkle Hintergrund fadet sanft unter dem hellen Content ein.</p>
+</div>
+
+<div class="ingredients-end-d">
+  <div class="img-side"></div>
+  <div class="content-side">
+    <div>
+      <div class="ingredient-row">
+        <div class="num">152<span> mg</span></div>
+        <div>
+          <div class="ing-name">Pink Himalayan Salt</div>
+          <div class="ing-desc">For complete balance, delivering essential sodium and 84 vital trace minerals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="comparison-start-d">
+  <div class="comp-content">
+    <div class="gold-line"></div>
+    <p class="eyebrow">How We Compare</p>
+    <h2 class="comp-h2">The Clear <em>Choice</em></h2>
+    <p class="comp-sub">Maximum minerals. Zero junk. See how we stack up.</p>
+  </div>
+</div>
+
+<div style="height: 100px; background: #1f3f5e;"></div>
+
+</body>
+</html>

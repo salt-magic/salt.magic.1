@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product Formats — 3 Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #e8e8e8; }
+
+  :root {
+    --mineral: #294B6D;
+    --deep-navy: #1A3248;
+    --gold: #D4BFAA;
+    --golden-hour: #E8C9A0;
+    --warm-off: #F9F7F4;
+    --ink: #1a1a1a;
+    --ink-light: #6B7280;
+    --border-warm: #E5E0D8;
+  }
+
+  .option-label {
+    text-align: center;
+    padding: 48px 24px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #999;
+    background: #e8e8e8;
+  }
+  .option-label span {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    color: #bbb;
+    margin-top: 6px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Fake product images */
+  .img-placeholder {
+    background: linear-gradient(135deg, #3D6588 0%, #294B6D 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.25);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* =============================== */
+  /* OPTION A: Labels Below Images    */
+  /* =============================== */
+  .option-a {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: white;
+  }
+  .option-a .format-item {
+    position: relative;
+  }
+  .option-a .img-placeholder {
+    height: 320px;
+  }
+  .option-a .format-info {
+    padding: 20px 24px 28px;
+    text-align: center;
+    background: white;
+  }
+  .option-a .format-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--mineral);
+    margin-bottom: 4px;
+  }
+  .option-a .format-spec {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-light);
+    margin-bottom: 2px;
+  }
+  .option-a .format-price {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gold);
+  }
+
+  /* =============================== */
+  /* OPTION B: Overlay on Image       */
+  /* =============================== */
+  .option-b {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .option-b .format-item {
+    position: relative;
+    overflow: hidden;
+  }
+  .option-b .img-placeholder {
+    height: 380px;
+  }
+  .option-b .format-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 32px 24px 24px;
+    background: linear-gradient(to top, rgba(26,50,72,0.85) 0%, rgba(26,50,72,0.4) 60%, transparent 100%);
+    color: white;
+  }
+  .option-b .format-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+  .option-b .format-spec {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+  }
+  .option-b .format-price {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--golden-hour);
+    margin-top: 4px;
+  }
+
+  /* =============================== */
+  /* OPTION C: Cards with Border      */
+  /* =============================== */
+  .option-c {
+    background: var(--warm-off);
+    padding: clamp(48px, 6vw, 80px) clamp(24px, 5vw, 80px);
+  }
+  .option-c .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .option-c .format-card {
+    background: white;
+    border: 1px solid var(--border-warm);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    cursor: default;
+  }
+  .option-c .format-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 32px rgba(212, 191, 170, 0.15);
+  }
+  .option-c .img-placeholder {
+    height: 240px;
+  }
+  .option-c .format-info {
+    padding: 20px 24px 24px;
+  }
+  .option-c .format-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--mineral);
+    margin-bottom: 4px;
+  }
+  .option-c .format-spec {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-light);
+  }
+  .option-c .format-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-warm);
+  }
+  .option-c .format-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--mineral);
+  }
+  .option-c .format-unit {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+  }
+
+  @media (max-width: 768px) {
+    .option-a, .option-b { grid-template-columns: 1fr; }
+    .option-a .img-placeholder, .option-b .img-placeholder { height: 260px; }
+    .option-c .grid { grid-template-columns: 1fr; max-width: 400px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================ -->
+<!-- OPTION A: Clean Labels Below                 -->
+<!-- ============================================ -->
+<div class="option-label">
+  Option A — Labels unter den Bildern
+  <span>Bilder bleiben edge-to-edge, darunter Name + Format + Preis auf weissem Hintergrund. Minimal, informativ.</span>
+</div>
+
+<section class="option-a">
+  <div class="format-item">
+    <div class="img-placeholder">greenery-jars.jpg</div>
+    <div class="format-info">
+      <div class="format-name">Signature Glass Jar</div>
+      <div class="format-spec">160g — 70 servings</div>
+      <div class="format-price">490 THB</div>
+    </div>
+  </div>
+  <div class="format-item">
+    <div class="img-placeholder">sachet.jpg</div>
+    <div class="format-info">
+      <div class="format-name">Travel Pouch</div>
+      <div class="format-spec">16g — 30 servings</div>
+      <div class="format-price">290 THB</div>
+    </div>
+  </div>
+  <div class="format-item">
+    <div class="img-placeholder">greenery-duo.jpg</div>
+    <div class="format-info">
+      <div class="format-name">Single Sachet</div>
+      <div class="format-spec">2g — 1 serving</div>
+      <div class="format-price">9–12 THB</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- OPTION B: Gradient Overlay on Image          -->
+<!-- ============================================ -->
+<div class="option-label">
+  Option B — Gradient-Overlay auf Bild
+  <span>Labels direkt auf dem Bild mit dunklem Gradient von unten. Immersiver, spart vertikalen Platz. Golden-Hour Preis als Akzent.</span>
+</div>
+
+<section class="option-b">
+  <div class="format-item">
+    <div class="img-placeholder">greenery-jars.jpg</div>
+    <div class="format-overlay">
+      <div class="format-name">Signature Glass Jar</div>
+      <div class="format-spec">160g — 70 servings</div>
+      <div class="format-price">MSRP 490 THB</div>
+    </div>
+  </div>
+  <div class="format-item">
+    <div class="img-placeholder">sachet.jpg</div>
+    <div class="format-overlay">
+      <div class="format-name">Travel Pouch</div>
+      <div class="format-spec">16g — 30 servings</div>
+      <div class="format-price">MSRP 290 THB</div>
+    </div>
+  </div>
+  <div class="format-item">
+    <div class="img-placeholder">greenery-duo.jpg</div>
+    <div class="format-overlay">
+      <div class="format-name">Single Sachet</div>
+      <div class="format-spec">2g — 1 serving</div>
+      <div class="format-price">MSRP 9–12 THB</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================ -->
+<!-- OPTION C: Rounded Cards with Price Row       -->
+<!-- ============================================ -->
+<div class="option-label">
+  Option C — Product Cards
+  <span>Nicht edge-to-edge, sondern als gerundete Cards mit Bild oben, Info unten, Preis-Zeile mit Border. Warm-off BG. E-Commerce-Stil.</span>
+</div>
+
+<section class="option-c">
+  <div class="grid">
+    <div class="format-card">
+      <div class="img-placeholder">greenery-jars.jpg</div>
+      <div class="format-info">
+        <div class="format-name">Signature Glass Jar</div>
+        <div class="format-spec">160g — 70 servings</div>
+        <div class="format-row">
+          <div class="format-price">490 THB</div>
+          <div class="format-unit">MSRP</div>
+        </div>
+      </div>
+    </div>
+    <div class="format-card">
+      <div class="img-placeholder">sachet.jpg</div>
+      <div class="format-info">
+        <div class="format-name">Travel Pouch</div>
+        <div class="format-spec">16g — 30 servings</div>
+        <div class="format-row">
+          <div class="format-price">290 THB</div>
+          <div class="format-unit">MSRP</div>
+        </div>
+      </div>
+    </div>
+    <div class="format-card">
+      <div class="img-placeholder">greenery-duo.jpg</div>
+      <div class="format-info">
+        <div class="format-name">Single Sachet</div>
+        <div class="format-spec">2g — 1 serving</div>
+        <div class="format-row">
+          <div class="format-price">9–12 THB</div>
+          <div class="format-unit">MSRP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

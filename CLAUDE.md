@@ -41,7 +41,13 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V20 Responsive Audit & Fixes (2026-04-10). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V22 Partner Section Options & Travel Sachet Rename (2026-04-10). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V22 Session (Partner Section Options & Copy Rename):
+- **8 Partner-Seite Layout-Options erstellt**: Fuer alle 8 Partner-Sections (Hero, Market, CategoryProof, WhyDistribute, Revenue, Comparison, ProductFormats, PartnerForm) je 4 Layout-Alternativen als HTML-Preview mit Desktop (900px) + Mobile (375px) Frames. Referenzen: LMNT, Sakara, PANPURI, Cure Hydration, Grown Alchemist. 4 parallele Agents, 32 Optionen insgesamt
+- **Outputs reorganisiert**: Alle HTML-Options in neuer `outputs/options/` Struktur — `Homepage/` (27 Dateien) und `Partner/` (14 Dateien). Alte `outputs/section-options/` entfernt
+- **"Travel Pouch" → "Travel Sachet" rename**: 6 Edits in 5 Dateien (Products.tsx, partner/page.tsx, layout.tsx JSON-LD, WhySection.tsx alt text, Faq.tsx answer). Homepage + Partner Page + SEO structured data konsistent umbenannt. Bild-Dateinamen (`sachet.jpg`, `why-sachet-pouch.webp`) unveraendert
+- **UI/UX Pro Max Skill** als neuer globaler Skill in `.claude/skills/ui-ux-pro-max/` fuer Design-System-Recherche und Layout-Intelligence
 
 Key Changes in V20 Session (Comprehensive Responsive Audit — UI/UX Pro Max):
 - **Full Responsive Audit**: Alle 35 Components und 4 Seiten (Homepage, Partner, Blog, Blog Detail) gegen UI/UX Pro Max Regeln geprueft

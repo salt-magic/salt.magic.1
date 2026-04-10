@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingredients Section — 3 Design Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: #3C3028; }
+
+  .label {
+    display: inline-block;
+    background: #294B6D;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 30px;
+    margin-bottom: 32px;
+  }
+
+  .separator {
+    height: 80px;
+    background: repeating-linear-gradient(45deg, #E8DFD3 0, #E8DFD3 1px, transparent 1px, transparent 10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .separator span {
+    background: white;
+    padding: 8px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5A4A3C;
+    border-radius: 30px;
+    border: 1px solid #E8DFD3;
+  }
+
+  /* Shared ingredient row styles */
+  .ingredient-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 28px 0;
+  }
+  .ingredient-row + .ingredient-row {
+    border-top: 1px solid rgba(212, 191, 170, 0.25);
+  }
+  .num-block {
+    min-width: 130px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 56px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .unit {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  .ingredient-name {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .ingredient-desc {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .gold-line {
+    width: 48px;
+    height: 1px;
+    margin-bottom: 24px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 4.5vw, 48px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+  h2 em { font-style: italic; }
+  .body-text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.85;
+    max-width: 520px;
+  }
+
+  /* ============== OPTION A: Dark Background ============== */
+  .option-a {
+    background: linear-gradient(135deg, #1A3248 0%, #294B6D 50%, #3D6588 100%);
+    padding: clamp(64px, 8vw, 100px) clamp(24px, 5vw, 80px);
+  }
+  .option-a .eyebrow { color: #E8C9A0; }
+  .option-a .gold-line { background: #E8C9A0; opacity: 0.5; }
+  .option-a h2 { color: white; }
+  .option-a .body-text { color: rgba(255,255,255,0.75); }
+  .option-a .num { color: #E8C9A0; }
+  .option-a .unit { color: rgba(232, 201, 160, 0.7); }
+  .option-a .ingredient-name { color: white; }
+  .option-a .ingredient-desc { color: rgba(255,255,255,0.7); }
+  .option-a .ingredient-row + .ingredient-row { border-color: rgba(232, 201, 160, 0.15); }
+
+  /* ============== OPTION B: Split with image ============== */
+  .option-b {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+    background: #F9F7F4;
+  }
+  @media (max-width: 768px) {
+    .option-b { grid-template-columns: 1fr; }
+  }
+  .option-b-image {
+    background: url('https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80') center/cover;
+    min-height: 400px;
+    position: relative;
+  }
+  .option-b-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 70%, #F9F7F4 100%);
+  }
+  .option-b-content {
+    padding: clamp(48px, 6vw, 80px) clamp(32px, 4vw, 64px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .option-b .eyebrow { color: #5A4A3C; }
+  .option-b .gold-line { background: #D4BFAA; }
+  .option-b h2 { color: #294B6D; }
+  .option-b .body-text { color: #3C3028; }
+  .option-b .num { color: #294B6D; }
+  .option-b .unit { color: #D4BFAA; }
+  .option-b .ingredient-name { color: #294B6D; }
+  .option-b .ingredient-desc { color: rgba(60, 48, 40, 0.75); }
+
+  /* ============== OPTION C: Accented numbers ============== */
+  .option-c {
+    background: #F9F7F4;
+    padding: clamp(64px, 8vw, 100px) clamp(24px, 5vw, 80px);
+    position: relative;
+    overflow: hidden;
+  }
+  .option-c::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 50%, rgba(212, 191, 170, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .option-c .eyebrow { color: #5A4A3C; }
+  .option-c .gold-line { background: #D4BFAA; }
+  .option-c h2 { color: #294B6D; }
+  .option-c .body-text { color: #3C3028; }
+  .option-c .num { color: #E8C9A0; }
+  .option-c .unit { color: #D4BFAA; }
+  .option-c .ingredient-name { color: #294B6D; }
+  .option-c .ingredient-desc { color: rgba(60, 48, 40, 0.8); }
+  .option-c .ingredient-row + .ingredient-row { border-color: #D4BFAA; border-top-width: 1px; }
+
+  .inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+  .ingredients-list { margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<!-- ============== OPTION A ============== -->
+<div class="separator"><span>Option A — Dark Background (Cure Hydration Stil)</span></div>
+
+<section class="option-a">
+  <div class="inner">
+    <div class="gold-line"></div>
+    <p class="eyebrow">The Formula</p>
+    <h2>Everything your water is missing.<br><em>Nothing you can taste.</em></h2>
+    <p class="body-text">
+      Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly,
+      is completely flavorless, and delivers 7x more magnesium than leading
+      competitors. Three natural ingredients. Zero junk.
+    </p>
+    <div class="ingredients-list">
+      <div class="ingredient-row">
+        <div class="num-block">
+          <span class="num">312</span>
+          <span class="unit">mg</span>
+        </div>
+        <div>
+          <div class="ingredient-name">Magnesium Citrate</div>
+          <div class="ingredient-desc">For deep sleep, fast muscle recovery, and calm, mental clarity.</div>
+        </div>
+      </div>
+      <div class="ingredient-row">
+        <div class="num-block">
+          <span class="num">160</span>
+          <span class="unit">mg</span>
+        </div>
+        <div>
+          <div class="ingredient-name">Potassium Citrate</div>
+          <div class="ingredient-desc">For sustained energy, cramp prevention, and perfect hydration.</div>
+        </div>
+      </div>
+      <div class="ingredient-row">
+        <div class="num-block">
+          <span class="num">152</span>
+          <span class="unit">mg</span>
+        </div>
+        <div>
+          <div class="ingredient-name">Pink Himalayan Salt</div>
+          <div class="ingredient-desc">For complete balance, delivering essential sodium and 84 vital trace minerals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== OPTION B ============== -->
+<div class="separator"><span>Option B — Split mit Bild (Grown Alchemist Stil)</span></div>
+
+<section class="option-b">
+  <div class="option-b-image"></div>
+  <div class="option-b-content">
+    <div class="gold-line"></div>
+    <p class="eyebrow">The Formula</p>
+    <h2>Everything your water is missing.<br><em>Nothing you can taste.</em></h2>
+    <p class="body-text" style="margin-bottom: 8px;">
+      Just 2 grams of pure, highly bioavailable minerals. Three natural ingredients. Zero junk.
+    </p>
+    <div class="ingredients-list">
+      <div class="ingredient-row">
+        <div class="num-block">
+          <span class="num">312</span>
+          <span class="unit">mg</span>
+        </div>
+        <div>
+          <div class="ingredient-name">Magnesium Citrate</div>
+          <div class="ingredient-desc">For deep sleep, fast muscle recovery, and calm, mental clarity.</div>
+        </div>
+      </div>
+      <div class="ingredient-row">
+        <div class="num-block">
+          <span class="num">160</span>
+          <span class="unit">mg</span>
+        </div>
+        <div>
+          <div class="ingredient-name">Potassium Citrate</div>
+          <div class="ingredient-desc">For sustained energy, cramp prevention, and perfect hydration.</div>
+        </div>
+      </div>
+      <div class="ingredient-row">
+        <div class="num-block">
+          <span class="num">152</span>
+          <span class="unit">mg</span>
+        </div>
+        <div>
+          <div class="ingredient-name">Pink Himalayan Salt</div>
+          <div class="ingredient-desc">For complete balance, delivering essential sodium and 84 vital trace minerals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== OPTION C ============== -->
+<div class="separator"><span>Option C — Akzentuierte Zahlen (PANPURI Stil)</span></div>
+
+<section class="option-c">
+  <div class="inner">
+    <div class="gold-line"></div>
+    <p class="eyebrow">The Formula</p>
+    <h2>Everything your water is missing.<br><em>Nothing you can taste.</em></h2>
+    <p class="body-text">
+      Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly,
+      is completely flavorless, and delivers 7x more magnesium than leading
+      competitors. Three natural ingredients. Zero junk.
+    </p>
+    <div class="ingredients-list">
+      <div class="ingredient-row">
+        <div class="num-block">
+          <span class="num">312</span>
+          <span class="unit">mg</span>
+        </div>
+        <div>
+          <div class="ingredient-name">Magnesium Citrate</div>
+          <div class="ingredient-desc">For deep sleep, fast muscle recovery, and calm, mental clarity.</div>
+        </div>
+      </div>
+      <div class="ingredient-row">
+        <div class="num-block">
+          <span class="num">160</span>
+          <span class="unit">mg</span>
+        </div>
+        <div>
+          <div class="ingredient-name">Potassium Citrate</div>
+          <div class="ingredient-desc">For sustained energy, cramp prevention, and perfect hydration.</div>
+        </div>
+      </div>
+      <div class="ingredient-row">
+        <div class="num-block">
+          <span class="num">152</span>
+          <span class="unit">mg</span>
+        </div>
+        <div>
+          <div class="ingredient-name">Pink Himalayan Salt</div>
+          <div class="ingredient-desc">For complete balance, delivering essential sodium and 84 vital trace minerals.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height: 80px; background: white;"></div>
+
+</body>
+</html>

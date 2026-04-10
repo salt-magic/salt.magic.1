@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic — Section 11: FAQ Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--mineral:#294B6D;--gold:#D4BFAA;--warm-off:#F9F7F4;--warm-white:#FFFFFF;--ink:#3C3028;--ink-light:#5A4A3C;--ink-faint:#9B8E82;--border-warm:#E8DFD3}
+  *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#f0ede8}
+  .page-header{background:var(--mineral);color:white;padding:40px;text-align:center}
+  .page-header h1{font-family:'Playfair Display',serif;font-weight:400;font-size:28px;margin-bottom:8px}
+  .page-header p{font-size:13px;color:rgba(255,255,255,0.65);max-width:600px;margin:0 auto;line-height:1.6}
+  .page-header .current{display:inline-block;margin-top:14px;padding:6px 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:16px;font-size:11px;color:rgba(255,255,255,0.5)}
+  .option-section{max-width:1400px;margin:40px auto;padding:0 24px}
+  .option-label{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .option-badge{background:var(--mineral);color:white;font-size:10px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;padding:5px 12px;border-radius:16px}
+  .option-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--mineral)}
+  .option-desc{font-size:12px;color:var(--ink-light);margin-bottom:16px;line-height:1.6;max-width:650px}
+  .option-ref{font-size:10px;color:var(--ink-faint);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+  .viewport-row{display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap}
+  .frame{border-radius:10px;overflow:hidden;box-shadow:0 6px 30px rgba(0,0,0,0.08);background:#fff;flex-shrink:0}
+  .frame-desktop{width:900px}.frame-mobile{width:375px}
+  .frame-bar{background:#e8e8e8;height:24px;display:flex;align-items:center;padding:0 10px;gap:5px}
+  .frame-dot{width:7px;height:7px;border-radius:50%;background:#ccc}
+  .frame-content{width:100%;position:relative;overflow:hidden}
+  .divider{max-width:1400px;margin:0 auto;padding:0 24px}.divider hr{border:none;border-top:1px solid var(--border-warm)}
+  .gold-line{width:36px;height:1px;background:var(--gold);margin-bottom:16px}
+
+  /* Shared FAQ item */
+  .faq-q{font-size:13px;font-weight:500;color:var(--mineral);padding:14px 0;border-bottom:1px solid var(--border-warm);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .faq-q .chevron{font-size:10px;color:var(--ink-faint);flex-shrink:0}
+  .faq-a{font-size:12px;color:var(--ink-light);line-height:1.6;padding:8px 0 14px;border-bottom:1px solid var(--border-warm)}
+
+  /* A: Two-Column FAQ */
+  .faq-a-wrap{background:var(--warm-off);padding:40px 48px}
+  .faq-a-wrap .header{text-align:center;margin-bottom:24px}
+  .faq-a-wrap .header .gold-line{margin:0 auto 16px}
+  .faq-a-wrap .s-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--mineral);margin-bottom:4px}
+  .faq-a-wrap .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;max-width:760px;margin:0 auto}
+  .faq-a-mobile .cols{grid-template-columns:1fr;max-width:340px}
+  .faq-a-mobile{padding:28px 16px}
+  .faq-a-mobile .s-h2{font-size:19px}
+
+  /* B: FAQ with sidebar image */
+  .faq-b-wrap{background:var(--warm-off);padding:40px 48px}
+  .faq-b-wrap .layout{display:grid;grid-template-columns:1fr 260px;gap:32px;max-width:800px;margin:0 auto;align-items:start}
+  .faq-b-wrap .s-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--mineral);margin-bottom:4px}
+  .faq-b-wrap .sidebar-img{width:100%;aspect-ratio:3/4;border-radius:12px;background-size:cover;background-position:center;position:sticky;top:20px}
+  .faq-b-mobile .layout{grid-template-columns:1fr;max-width:340px}
+  .faq-b-mobile .sidebar-img{display:none}
+  .faq-b-mobile{padding:28px 16px}
+  .faq-b-mobile .s-h2{font-size:19px}
+
+  /* C: Dark FAQ */
+  .faq-c-wrap{background:var(--mineral);padding:40px 48px}
+  .faq-c-wrap .header{text-align:center;margin-bottom:24px}
+  .faq-c-wrap .header .gold-line{margin:0 auto 16px}
+  .faq-c-wrap .s-h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:rgba(255,255,255,0.9);margin-bottom:4px}
+  .faq-c-wrap .faq-list{max-width:600px;margin:0 auto}
+  .faq-c-wrap .faq-q{color:rgba(255,255,255,0.85);border-bottom-color:rgba(255,255,255,0.08)}
+  .faq-c-wrap .faq-q .chevron{color:var(--gold)}
+  .faq-c-wrap .faq-a{color:rgba(255,255,255,0.55);border-bottom-color:rgba(255,255,255,0.08)}
+  .faq-c-mobile{padding:28px 16px}
+  .faq-c-mobile .s-h2{font-size:19px}
+
+  @media(max-width:1400px){.viewport-row{flex-direction:column;align-items:center}.frame-desktop{width:100%;max-width:900px}.frame-mobile{width:100%;max-width:375px}}
+</style>
+</head>
+<body>
+<div class="page-header">
+  <h1>Section 11: FAQ</h1>
+  <p>3 Layout-Alternativen fuer die 7 FAQ-Fragen. Gleiche Fragen/Antworten, anderes Layout.</p>
+  <div class="current">Aktuell: Zentrierter Accordion auf warm-off BG, max-width 660px</div>
+</div>
+
+<!-- A: Two-Column FAQ -->
+<div class="option-section">
+  <div class="option-ref">Zweispaltig — mehr Fragen sichtbar, weniger Scrollen</div>
+  <div class="option-label"><span class="option-badge">Option A</span><span class="option-title">Two-Column FAQ</span></div>
+  <p class="option-desc">Fragen auf 2 Spalten verteilt. Kompakter, weniger Scrollen noetig. Funktioniert gut bei 7+ Fragen.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="faq-a-wrap">
+        <div class="header"><div class="gold-line"></div><div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px">Questions</div><h2 class="s-h2">Got Questions? Let's clear the water.</h2></div>
+        <div class="cols">
+          <div>
+            <div class="faq-q"><span>Is Salt.Magic just salt?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-a">No. Pink Himalayan salt makes up just 20% of the blend. The majority is Magnesium Citrate — the most bioavailable form of magnesium.</div>
+            <div class="faq-q"><span>How do I use it?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>How does it compare to LMNT or Wilder?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Is it safe for children?</span><span class="chevron">&#9662;</span></div>
+          </div>
+          <div>
+            <div class="faq-q"><span>Where can I buy Salt.Magic?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Why is 85% of Thai water "dead water"?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-a">Most bottled water uses reverse osmosis. It removes bacteria but strips all natural minerals. Ultra-pure but nutritionally empty.</div>
+            <div class="faq-q"><span>Wellness vs sports electrolytes?</span><span class="chevron">&#9662;</span></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="faq-a-wrap faq-a-mobile">
+        <div class="header"><div class="gold-line" style="margin:0 auto 12px"></div><h2 class="s-h2">Got Questions?</h2></div>
+        <div class="cols">
+          <div>
+            <div class="faq-q"><span>Is Salt.Magic just salt?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>How do I use it?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Compare to LMNT?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Safe for children?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Where to buy?</span><span class="chevron">&#9662;</span></div>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<!-- B: FAQ with sidebar image -->
+<div class="option-section">
+  <div class="option-ref">Grown Alchemist — FAQ links, Produktbild rechts als Sidebar</div>
+  <div class="option-label"><span class="option-badge">Option B</span><span class="option-title">FAQ + Sidebar Image</span></div>
+  <p class="option-desc">FAQ-Accordion links, kleines Produktbild rechts als visueller Anker. Bild bleibt sticky beim Scrollen. Eleganter als reiner Text.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="faq-b-wrap">
+        <div class="layout">
+          <div>
+            <div class="gold-line"></div>
+            <div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px">Questions</div>
+            <h2 class="s-h2">Got Questions? Let's clear the water.</h2>
+            <div style="margin-top:16px">
+              <div class="faq-q"><span>Is Salt.Magic just salt?</span><span class="chevron">&#9662;</span></div>
+              <div class="faq-a">No. Pink Himalayan salt makes up just 20%. The majority is Magnesium Citrate — the most bioavailable form.</div>
+              <div class="faq-q"><span>How do I use it?</span><span class="chevron">&#9662;</span></div>
+              <div class="faq-q"><span>How does it compare to LMNT or Wilder?</span><span class="chevron">&#9662;</span></div>
+              <div class="faq-q"><span>Is it safe for children?</span><span class="chevron">&#9662;</span></div>
+              <div class="faq-q"><span>Where can I buy Salt.Magic?</span><span class="chevron">&#9662;</span></div>
+              <div class="faq-q"><span>Why is 85% of Thai water "dead water"?</span><span class="chevron">&#9662;</span></div>
+              <div class="faq-q"><span>Wellness vs sports electrolytes?</span><span class="chevron">&#9662;</span></div>
+            </div>
+          </div>
+          <div class="sidebar-img" style="background-image:url('../../site/public/images/products/greenery-duo.jpg')"></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="faq-b-wrap faq-b-mobile">
+        <div class="layout"><div>
+          <div class="gold-line"></div><h2 class="s-h2">Got Questions?</h2>
+          <div style="margin-top:12px">
+            <div class="faq-q"><span>Is Salt.Magic just salt?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>How do I use it?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Compare to LMNT?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Safe for children?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Where to buy?</span><span class="chevron">&#9662;</span></div>
+          </div>
+        </div></div>
+      </div></div>
+    </div>
+  </div>
+</div>
+<div class="divider"><hr></div>
+
+<!-- C: Dark FAQ -->
+<div class="option-section">
+  <div class="option-ref">PANPURI — Dunkler Hintergrund, Gold-Akzente, dramatischer Kontrast</div>
+  <div class="option-label"><span class="option-badge">Option C</span><span class="option-title">Dark FAQ — Mineral Blue</span></div>
+  <p class="option-desc">FAQ auf Mineral-Blue Hintergrund. Erzeugt visuellen Bruch vor dem finalen CTA/Newsletter/Footer Block. Eleganter Kontrast.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="faq-c-wrap">
+        <div class="header"><div class="gold-line" style="margin:0 auto 16px"></div><div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Questions</div><h2 class="s-h2">Got Questions? Let's clear the water.</h2></div>
+        <div class="faq-list">
+          <div class="faq-q"><span>Is Salt.Magic just salt?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-a">No. Pink Himalayan salt makes up just 20%. The majority is Magnesium Citrate — the most bioavailable form of magnesium.</div>
+          <div class="faq-q"><span>How do I use it?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-q"><span>How does it compare to imported brands like LMNT or Wilder?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-q"><span>Is it safe for children?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-q"><span>Where can I buy Salt.Magic?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-q"><span>Why is 85% of Thai water "dead water"?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-q"><span>What's the difference between wellness and sports electrolytes?</span><span class="chevron">&#9662;</span></div>
+        </div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div class="faq-c-wrap faq-c-mobile">
+        <div class="header"><div class="gold-line" style="margin:0 auto 12px"></div><h2 class="s-h2" style="font-size:19px">Got Questions?</h2></div>
+        <div class="faq-list">
+          <div class="faq-q"><span>Is Salt.Magic just salt?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-q"><span>How do I use it?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-q"><span>Compare to LMNT?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-q"><span>Safe for children?</span><span class="chevron">&#9662;</span></div>
+          <div class="faq-q"><span>Where to buy?</span><span class="chevron">&#9662;</span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- D: Split — FAQ + CTA -->
+<div class="option-section">
+  <div class="option-ref">FAQ links + Prominenter CTA rechts — verbindet Einwandbehandlung mit Conversion</div>
+  <div class="option-label"><span class="option-badge">Option D</span><span class="option-title">FAQ + CTA Split</span></div>
+  <p class="option-desc">FAQ-Accordion links, grosser CTA-Block rechts mit "Shop Now" und Trust-Stats. Beantworte Einwaende und konvertiere im selben Blick.</p>
+  <div class="viewport-row">
+    <div class="frame frame-desktop"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div style="background:var(--warm-off);padding:40px 48px">
+        <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:32px;max-width:820px;margin:0 auto;align-items:start">
+          <div>
+            <div class="gold-line"></div>
+            <div style="font-size:10px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:12px">Questions</div>
+            <h2 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:400;color:var(--mineral);margin-bottom:16px">Got Questions? Let's clear the water.</h2>
+            <div class="faq-q"><span>Is Salt.Magic just salt?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-a">No. Magnesium Citrate is 50%+ of the blend. Pink Himalayan salt is just 20%.</div>
+            <div class="faq-q"><span>How do I use it?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>How does it compare to LMNT?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Is it safe for children?</span><span class="chevron">&#9662;</span></div>
+            <div class="faq-q"><span>Where can I buy it?</span><span class="chevron">&#9662;</span></div>
+          </div>
+          <div style="background:var(--mineral);border-radius:14px;padding:28px 24px;text-align:center;position:sticky;top:20px">
+            <div style="font-family:'Playfair Display',serif;font-size:18px;color:rgba(255,255,255,0.9);margin-bottom:6px">Ready to try it?</div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-bottom:16px">Less than 7 THB per day</div>
+            <div style="display:flex;justify-content:center;gap:16px;margin-bottom:16px">
+              <div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold)">160+</div><div style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.4)">Locations</div></div>
+              <div style="text-align:center"><div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold)">90%</div><div style="font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.4)">Retention</div></div>
+            </div>
+            <a style="display:inline-block;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:12px 24px;border-radius:30px;text-decoration:none;background:rgba(212,191,170,0.9);color:var(--mineral)">Shop on Lazada</a>
+          </div>
+        </div>
+      </div></div>
+    </div>
+    <div class="frame frame-mobile"><div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content"><div style="background:var(--warm-off);padding:28px 16px">
+        <div class="gold-line"></div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:19px;font-weight:400;color:var(--mineral);margin-bottom:12px">Got Questions?</h2>
+        <div class="faq-q"><span>Is Salt.Magic just salt?</span><span class="chevron">&#9662;</span></div>
+        <div class="faq-q"><span>How do I use it?</span><span class="chevron">&#9662;</span></div>
+        <div class="faq-q"><span>Compare to LMNT?</span><span class="chevron">&#9662;</span></div>
+        <div class="faq-q"><span>Safe for children?</span><span class="chevron">&#9662;</span></div>
+        <div style="background:var(--mineral);border-radius:12px;padding:20px;text-align:center;margin-top:16px">
+          <div style="font-family:'Playfair Display',serif;font-size:16px;color:rgba(255,255,255,0.9);margin-bottom:10px">Ready to try it?</div>
+          <a style="display:inline-block;font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;padding:10px 20px;border-radius:30px;text-decoration:none;background:rgba(212,191,170,0.9);color:var(--mineral)">Shop on Lazada</a>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:40px;text-align:center;color:var(--ink-faint);font-size:11px">Salt.Magic Section 11: FAQ Options</div>
+</body></html>

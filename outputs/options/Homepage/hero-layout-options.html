@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic Hero Layout Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --mineral-light: #3D6588;
+    --gold: #D4BFAA;
+    --warm-off: #F9F7F4;
+    --warm-white: #FFFFFF;
+    --ink: #3C3028;
+    --ink-light: #5A4A3C;
+    --ink-faint: #9B8E82;
+    --border-warm: #E8DFD3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ink);
+    background: #f0ede8;
+  }
+
+  .page-header {
+    background: var(--mineral);
+    color: white;
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .page-header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .page-header p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+  .page-header .critique {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 20px;
+    background: rgba(212,191,170,0.2);
+    border: 1px solid rgba(212,191,170,0.3);
+    border-radius: 20px;
+    font-size: 13px;
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  /* Option wrapper */
+  .option-section {
+    max-width: 1400px;
+    margin: 48px auto;
+    padding: 0 24px;
+  }
+  .option-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .option-badge {
+    background: var(--mineral);
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+  }
+  .option-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--mineral);
+  }
+  .option-desc {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 700px;
+  }
+  .option-ref {
+    font-size: 11px;
+    color: var(--ink-faint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  /* Viewport frames */
+  .viewport-row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .frame {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+    background: #fff;
+    flex-shrink: 0;
+  }
+  .frame-desktop {
+    width: 900px;
+    height: 560px;
+  }
+  .frame-mobile {
+    width: 375px;
+    height: 560px;
+  }
+  .frame-bar {
+    background: #e8e8e8;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 6px;
+  }
+  .frame-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+  .frame-content {
+    width: 100%;
+    height: calc(100% - 28px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Hero image with real photos */
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Shared text styles */
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .hero-h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .hero-body {
+    font-size: 13px;
+    line-height: 1.65;
+    margin-top: 14px;
+  }
+  .hero-cta {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  .hero-cta-primary {
+    background: rgba(212,191,170,0.9);
+    color: var(--mineral);
+  }
+  .hero-cta-ghost {
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    margin-left: 8px;
+  }
+  .hero-cta-dark {
+    background: var(--mineral);
+    color: white;
+  }
+
+  /* Divider */
+  .divider {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  .divider hr {
+    border: none;
+    border-top: 1px solid var(--border-warm);
+  }
+
+  /* ================================ */
+  /* OPTION A: Bottom-Left Editorial  */
+  /* ================================ */
+  .opt-a .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 30%, rgba(15,25,35,0.55) 100%);
+  }
+  .opt-a .hero-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    max-width: 380px;
+    color: white;
+    z-index: 2;
+  }
+  .opt-a .hero-h1 { font-size: 28px; }
+  .opt-a .hero-eyebrow { color: var(--gold); }
+  .opt-a .hero-body { color: rgba(255,255,255,0.75); font-size: 12px; }
+  .opt-a .hero-indicators {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+  }
+  .opt-a .hero-dot {
+    width: 24px;
+    height: 2px;
+    border-radius: 1px;
+    background: rgba(255,255,255,0.3);
+  }
+  .opt-a .hero-dot.active { width: 36px; background: var(--gold); }
+
+  /* Mobile A */
+  .opt-a-mobile .hero-text {
+    bottom: 32px;
+    left: 20px;
+    right: 20px;
+    max-width: none;
+  }
+  .opt-a-mobile .hero-h1 { font-size: 24px; }
+
+  /* ================================ */
+  /* OPTION B: Split Layout           */
+  /* ================================ */
+  .opt-b .hero-split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    height: 100%;
+  }
+  .opt-b .hero-img-side {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+  .opt-b .hero-text-side {
+    display: flex;
+    align-items: center;
+    padding: 48px 40px;
+    background: var(--warm-off);
+  }
+  .opt-b .hero-text-side .hero-inner { max-width: 340px; }
+  .opt-b .hero-eyebrow { color: var(--ink-faint); }
+  .opt-b .hero-h1 { font-size: 26px; color: var(--mineral); }
+  .opt-b .hero-body { color: var(--ink-light); }
+  .opt-b .gold-line {
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  /* Mobile B */
+  .opt-b-mobile .hero-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55% 45%;
+  }
+  .opt-b-mobile .hero-text-side { padding: 28px 20px; }
+  .opt-b-mobile .hero-h1 { font-size: 22px; }
+
+  /* ================================ */
+  /* OPTION C: Floating Card          */
+  /* ================================ */
+  .opt-c .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(15,25,35,0.3) 100%);
+  }
+  .opt-c .hero-card {
+    position: absolute;
+    bottom: 36px;
+    left: 36px;
+    max-width: 320px;
+    padding: 28px 32px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 16px;
+    color: white;
+    z-index: 2;
+  }
+  .opt-c .hero-h1 { font-size: 22px; }
+  .opt-c .hero-eyebrow { color: var(--gold); font-size: 9px; }
+  .opt-c .hero-body { display: none; }
+  .opt-c .hero-cta { margin-top: 16px; font-size: 9px; padding: 10px 22px; }
+
+  /* Mobile C */
+  .opt-c-mobile .hero-card {
+    bottom: 24px;
+    left: 16px;
+    right: 16px;
+    max-width: none;
+  }
+
+  /* ================================ */
+  /* OPTION D: Text Below Image       */
+  /* ================================ */
+  .opt-d .hero-image-area {
+    position: relative;
+    height: 65%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+  .opt-d .hero-text-area {
+    height: 35%;
+    padding: 32px 48px;
+    display: flex;
+    align-items: center;
+    background: var(--warm-white);
+  }
+  .opt-d .hero-inner { max-width: 520px; }
+  .opt-d .hero-h1 { font-size: 26px; color: var(--mineral); }
+  .opt-d .hero-eyebrow { color: var(--ink-faint); }
+  .opt-d .hero-body { color: var(--ink-light); font-size: 12px; }
+  .opt-d .gold-line {
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  /* Mobile D */
+  .opt-d-mobile .hero-image-area { height: 55%; }
+  .opt-d-mobile .hero-text-area {
+    height: 45%;
+    padding: 24px 20px;
+  }
+  .opt-d-mobile .hero-h1 { font-size: 22px; }
+
+  /* ================================ */
+  /* OPTION E: Minimal Center         */
+  /* ================================ */
+  .opt-e .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(15,25,35,0.35) 100%);
+  }
+  .opt-e .hero-text {
+    position: absolute;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+  }
+  .opt-e .hero-h1 { font-size: 24px; white-space: nowrap; }
+  .opt-e .hero-eyebrow { display: none; }
+  .opt-e .hero-body { display: none; }
+  .opt-e .hero-cta { font-size: 9px; padding: 10px 24px; }
+  .opt-e .hero-indicators {
+    position: absolute;
+    bottom: 44px;
+    right: 40px;
+    display: flex;
+    gap: 6px;
+    z-index: 2;
+  }
+  .opt-e .hero-dot {
+    width: 24px;
+    height: 2px;
+    border-radius: 1px;
+    background: rgba(255,255,255,0.3);
+  }
+  .opt-e .hero-dot.active { width: 36px; background: var(--gold); }
+
+  /* Mobile E */
+  .opt-e-mobile .hero-text { bottom: 36px; }
+  .opt-e-mobile .hero-h1 { font-size: 20px; white-space: normal; max-width: 300px; }
+
+  /* ================================ */
+  /* OPTION F: Bottom Band            */
+  /* ================================ */
+  .opt-f .hero-image-area {
+    position: relative;
+    height: 70%;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+  .opt-f .hero-band {
+    height: 30%;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: var(--warm-off);
+    border-top: 1px solid var(--border-warm);
+  }
+  .opt-f .hero-band-left { flex: 1; }
+  .opt-f .hero-band-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-shrink: 0;
+  }
+  .opt-f .hero-h1 { font-size: 22px; color: var(--mineral); }
+  .opt-f .hero-eyebrow { color: var(--ink-faint); font-size: 9px; }
+  .opt-f .hero-body { color: var(--ink-light); font-size: 12px; max-width: 380px; }
+  .opt-f .hero-stat {
+    text-align: center;
+  }
+  .opt-f .hero-stat-num {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--mineral);
+    line-height: 1;
+  }
+  .opt-f .hero-stat-label {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-top: 4px;
+  }
+
+  /* Mobile F */
+  .opt-f-mobile .hero-image-area { height: 55%; }
+  .opt-f-mobile .hero-band {
+    height: 45%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 24px 20px;
+    gap: 16px;
+  }
+  .opt-f-mobile .hero-band-right { gap: 20px; }
+  .opt-f-mobile .hero-h1 { font-size: 20px; }
+  .opt-f-mobile .hero-stat-num { font-size: 22px; }
+
+  /* Responsive */
+  @media (max-width: 1400px) {
+    .viewport-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    .frame-desktop { width: 100%; max-width: 900px; }
+    .frame-mobile { width: 100%; max-width: 375px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Page Header -->
+<div class="page-header">
+  <h1>Hero Layout Alternativen</h1>
+  <p>6 Optionen die Leo's Kritik adressieren — basierend auf Referenzen von PANPURI, Cure Hydration, Grown Alchemist, Sakara Life und Luxury-Hospitality Patterns.</p>
+  <div class="critique">"I don't like the copy so prominent in the center of the screen."</div>
+</div>
+
+<!-- ============================================ -->
+<!-- OPTION A: Bottom-Left Editorial              -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Cure Hydration + PANPURI</div>
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Bottom-Left Editorial</span>
+  </div>
+  <p class="option-desc">
+    Text links unten statt zentriert. Kleinere, editorial anmutende Typografie. Bild dominiert 90% der Flaeche.
+    Slide-Indikatoren rechts unten. Leichterer Gradient-Overlay nur im unteren Bereich.
+  </p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-a">
+        <div class="hero-img" style="background-image:url('../site/public/images/products/beach-jar-sunset.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <div class="hero-eyebrow">Mineralize Your Water, Everywhere</div>
+          <h1 class="hero-h1">Your water is missing<br>what your body needs most.</h1>
+          <p class="hero-body">85% of bottled water in Thailand is "dead water" — purified, but nutritionally empty.</p>
+          <a class="hero-cta hero-cta-primary" href="#">Bring Your Water Back to Life</a>
+        </div>
+        <div class="hero-indicators">
+          <div class="hero-dot active"></div>
+          <div class="hero-dot"></div>
+          <div class="hero-dot"></div>
+          <div class="hero-dot"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-a opt-a-mobile">
+        <div class="hero-img" style="background-image:url('../site/public/images/products/beach-jar-sunset.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <div class="hero-eyebrow">Mineralize Your Water, Everywhere</div>
+          <h1 class="hero-h1">Your water is missing what your body needs most.</h1>
+          <p class="hero-body">85% of bottled water in Thailand is "dead water."</p>
+          <a class="hero-cta hero-cta-primary" href="#">Bring Your Water Back to Life</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION B: Split Layout                       -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Hydrant + Grown Alchemist</div>
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Split Layout — Bild & Text getrennt</span>
+  </div>
+  <p class="option-desc">
+    Klare Trennung: Produktbild links (60%), Text rechts auf warmem Hintergrund (40%).
+    Kein Overlay noetig. Text in Brand-Farben statt Weiss. Ruhiger, spa-artiger Eindruck.
+  </p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-b">
+        <div class="hero-split">
+          <div class="hero-img-side" style="background-image:url('../site/public/images/products/taylor-water-nature.jpg')"></div>
+          <div class="hero-text-side">
+            <div class="hero-inner">
+              <div class="gold-line"></div>
+              <div class="hero-eyebrow">Mineralize Your Water, Everywhere</div>
+              <h1 class="hero-h1">Your water is missing what your body needs most.</h1>
+              <p class="hero-body">85% of bottled water in Thailand is "dead water" — purified, but nutritionally empty. Your body deserves better.</p>
+              <div>
+                <a class="hero-cta hero-cta-dark" href="#">Bring Your Water Back to Life</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-b opt-b-mobile">
+        <div class="hero-split">
+          <div class="hero-img-side" style="background-image:url('../site/public/images/products/taylor-water-nature.jpg')"></div>
+          <div class="hero-text-side">
+            <div class="hero-inner">
+              <div class="gold-line"></div>
+              <div class="hero-eyebrow">Mineralize Your Water, Everywhere</div>
+              <h1 class="hero-h1">Your water is missing what your body needs most.</h1>
+              <p class="hero-body">85% of bottled water in Thailand is "dead water."</p>
+              <div>
+                <a class="hero-cta hero-cta-dark" href="#">Bring Your Water Back to Life</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION C: Floating Card                      -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Luxury Hospitality + Aman Resorts</div>
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Floating Glass Card</span>
+  </div>
+  <p class="option-desc">
+    Bild nimmt 100% ein. Eine kleine Glasmorphism-Karte schwebt ueber dem Bild — nur Headline + CTA, kein Body-Text.
+    Maximale Bildwirkung, minimaler Text-Footprint. Luxury-Hotel-Aesthetic.
+  </p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-c">
+        <div class="hero-img" style="background-image:url('../site/public/images/products/poolside-yoga.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-card">
+          <div class="hero-eyebrow">Mineralize Your Water</div>
+          <h1 class="hero-h1">Your water is missing what your body needs most.</h1>
+          <a class="hero-cta hero-cta-primary" href="#">Discover Salt.Magic</a>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-c opt-c-mobile">
+        <div class="hero-img" style="background-image:url('../site/public/images/products/poolside-yoga.webp')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-card">
+          <div class="hero-eyebrow">Mineralize Your Water</div>
+          <h1 class="hero-h1" style="font-size:19px">Your water is missing what your body needs most.</h1>
+          <a class="hero-cta hero-cta-primary" href="#">Discover Salt.Magic</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION D: Text Below Image                   -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Sakara Life + Aesop</div>
+  <div class="option-label">
+    <span class="option-badge">Option D</span>
+    <span class="option-title">Text Below Image — Klare Trennung</span>
+  </div>
+  <p class="option-desc">
+    Obere 65% reines Bild ohne Text-Overlay. Untere 35% saubere weisse Flaeche mit Copy.
+    Komplette Trennung von Bild und Text. Bild atmet frei, kein Overlay noetig.
+  </p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-d">
+        <div class="hero-image-area" style="background-image:url('../site/public/images/products/yoga-sachet.webp')"></div>
+        <div class="hero-text-area">
+          <div class="hero-inner">
+            <div class="gold-line"></div>
+            <div class="hero-eyebrow" style="color:var(--ink-faint)">Mineralize Your Water, Everywhere</div>
+            <h1 class="hero-h1">Your water is missing what your body needs most.</h1>
+            <p class="hero-body" style="color:var(--ink-light)">85% of bottled water in Thailand is "dead water" — purified, but nutritionally empty.</p>
+            <div>
+              <a class="hero-cta hero-cta-dark" href="#">Bring Your Water Back to Life</a>
+              <a class="hero-cta" href="#" style="color:var(--mineral);border-bottom:1px solid var(--gold);border-radius:0;padding:0 0 2px;margin-left:20px;font-size:10px">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-d opt-d-mobile">
+        <div class="hero-image-area" style="background-image:url('../site/public/images/products/yoga-sachet.webp')"></div>
+        <div class="hero-text-area">
+          <div class="hero-inner">
+            <div class="gold-line"></div>
+            <div class="hero-eyebrow" style="color:var(--ink-faint)">Mineralize Your Water</div>
+            <h1 class="hero-h1">Your water is missing what your body needs most.</h1>
+            <div>
+              <a class="hero-cta hero-cta-dark" href="#">Bring Your Water Back to Life</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION E: Minimal Center                     -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von LMNT + Apple</div>
+  <div class="option-label">
+    <span class="option-badge">Option E</span>
+    <span class="option-title">Minimal Center — Nur Headline + CTA</span>
+  </div>
+  <p class="option-desc">
+    Gleiche zentrierte Position wie aktuell, aber drastisch reduziert: kein Eyebrow, kein Body-Text.
+    Nur Headline + ein einziger CTA-Button. Leichterer Overlay. Bild wird zum Star.
+  </p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-e">
+        <div class="hero-img" style="background-image:url('../site/public/images/products/taylor-closeup.jpg')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <h1 class="hero-h1">Your water is missing what your body needs most.</h1>
+          <a class="hero-cta hero-cta-primary" href="#">Bring Your Water Back to Life</a>
+        </div>
+        <div class="hero-indicators">
+          <div class="hero-dot active"></div>
+          <div class="hero-dot"></div>
+          <div class="hero-dot"></div>
+          <div class="hero-dot"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-e opt-e-mobile">
+        <div class="hero-img" style="background-image:url('../site/public/images/products/taylor-closeup.jpg')"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <h1 class="hero-h1">Your water is missing what your body needs most.</h1>
+          <a class="hero-cta hero-cta-primary" href="#">Bring Your Water Back to Life</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"><hr></div>
+
+<!-- ============================================ -->
+<!-- OPTION F: Bottom Band                        -->
+<!-- ============================================ -->
+<div class="option-section">
+  <div class="option-ref">Inspiriert von Magazine Editorial + Luxury E-Commerce</div>
+  <div class="option-label">
+    <span class="option-badge">Option F</span>
+    <span class="option-title">Bottom Band mit Stats</span>
+  </div>
+  <p class="option-desc">
+    Obere 70% reines Bild. Untere 30% ein warmer Band mit Text links und Key-Stats rechts.
+    Verbindet Brand-Storytelling mit sofortigem Social Proof. Magazine-Editorial Anmutung.
+  </p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-f">
+        <div class="hero-image-area" style="background-image:url('../site/public/images/products/greenery-jars.jpg')"></div>
+        <div class="hero-band">
+          <div class="hero-band-left">
+            <div class="hero-eyebrow">Mineralize Your Water, Everywhere</div>
+            <h1 class="hero-h1">Your water is missing what<br>your body needs most.</h1>
+            <div style="margin-top:16px">
+              <a class="hero-cta hero-cta-dark" href="#" style="margin-top:0">Bring Your Water Back to Life</a>
+            </div>
+          </div>
+          <div class="hero-band-right">
+            <div class="hero-stat">
+              <div class="hero-stat-num">160+</div>
+              <div class="hero-stat-label">Locations</div>
+            </div>
+            <div style="width:1px;height:40px;background:var(--border-warm)"></div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">90%</div>
+              <div class="hero-stat-label">Retention</div>
+            </div>
+            <div style="width:1px;height:40px;background:var(--border-warm)"></div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">5 Yrs</div>
+              <div class="hero-stat-label">Trusted</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar"><div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div></div>
+      <div class="frame-content opt-f opt-f-mobile">
+        <div class="hero-image-area" style="background-image:url('../site/public/images/products/greenery-jars.jpg')"></div>
+        <div class="hero-band">
+          <div class="hero-band-left">
+            <div class="hero-eyebrow" style="color:var(--ink-faint)">Mineralize Your Water</div>
+            <h1 class="hero-h1">Your water is missing what your body needs most.</h1>
+            <div style="margin-top:12px">
+              <a class="hero-cta hero-cta-dark" href="#" style="margin-top:0">Bring Your Water Back to Life</a>
+            </div>
+          </div>
+          <div class="hero-band-right">
+            <div class="hero-stat">
+              <div class="hero-stat-num">160+</div>
+              <div class="hero-stat-label">Locations</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">90%</div>
+              <div class="hero-stat-label">Retention</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">5 Yrs</div>
+              <div class="hero-stat-label">Trusted</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="padding:48px;text-align:center;color:var(--ink-faint);font-size:12px">
+  Salt.Magic Hero Layout Options &mdash; Erstellt fuer Leo's Review
+</div>
+
+</body>
+</html>

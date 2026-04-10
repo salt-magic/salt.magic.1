@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products Section — PANPURI-inspired Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mineral: #294B6D;
+    --gold: #D4BFAA;
+    --golden-hour: #E8C9A0;
+    --ink: #3C3028;
+    --ink-light: #5A4A3C;
+    --warm-off: #F9F7F4;
+    --border-warm: #E8E2DA;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #fff; color: var(--ink); }
+
+  .option-label {
+    text-align: center;
+    padding: 60px 20px 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #999;
+  }
+  .option-label span {
+    display: block;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    font-weight: 400;
+    color: #666;
+    margin-top: 6px;
+  }
+
+  .divider {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid #E8E2DA;
+  }
+
+  /* Shared header */
+  .section-header {
+    text-align: center;
+    padding: 0 24px;
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+  .section-header .gold-line {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+  }
+  .section-header .eyebrow {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 20px;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 400;
+    color: var(--mineral);
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .section-header h2 em { font-style: italic; }
+  .section-header .sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--ink-light);
+  }
+
+  /* USP badges */
+  .usp-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: clamp(40px, 5vw, 64px);
+    flex-wrap: wrap;
+  }
+  .usp-row .usp {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--mineral);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .usp-row .usp .dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  /* Product image placeholder */
+  .product-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: var(--warm-off);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .product-img.no-radius { border-radius: 0; }
+  .product-img.cutout {
+    background: #fff;
+    aspect-ratio: 1/1;
+  }
+  .product-img.cutout img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+  }
+
+  /* Underline link CTA */
+  .cta-underline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mineral);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(41, 75, 109, 0.3);
+    padding-bottom: 4px;
+    transition: border-color 0.3s;
+  }
+  .cta-underline:hover { border-color: var(--mineral); }
+  .cta-underline svg { width: 14px; height: 14px; }
+
+  /* ============================================
+     OPTION A — Pure PANPURI
+     Maximal clean, no cards, no borders, floating
+     ============================================ */
+  .option-a {
+    padding: clamp(48px, 6vw, 80px) 0;
+    background: #fff;
+  }
+  .option-a .products-grid {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 5vw, 80px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 4vw, 80px);
+  }
+  .option-a .product {
+    text-align: center;
+  }
+  .option-a .product-img {
+    margin-bottom: 32px;
+    border-radius: 0;
+    background: var(--warm-off);
+  }
+  .option-a .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 2vw, 22px);
+    font-weight: 400;
+    color: var(--mineral);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .option-a .product-tag {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .option-a .product-price {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .option-a .product-meta {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-light);
+    margin-bottom: 16px;
+  }
+  .option-a .product-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 280px;
+    margin: 0 auto 8px;
+  }
+  .option-a .product-badge {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+  .option-a .product .cta-underline {
+    margin-top: 0;
+  }
+
+  /* ============================================
+     OPTION B — PANPURI + Subtle Divider
+     Same minimal feel but with a vertical gold
+     divider between products for elegance
+     ============================================ */
+  .option-b {
+    padding: clamp(48px, 6vw, 80px) 0;
+    background: #fff;
+  }
+  .option-b .products-grid {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 5vw, 80px);
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0;
+    align-items: start;
+  }
+  .option-b .gold-divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+    align-self: stretch;
+    margin: 60px clamp(24px, 3vw, 48px);
+  }
+  .option-b .product {
+    text-align: center;
+    padding: 0 clamp(8px, 1.5vw, 20px);
+  }
+  .option-b .product-img {
+    margin-bottom: 28px;
+    border-radius: 16px;
+    background: var(--warm-off);
+  }
+  .option-b .product-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 8px;
+  }
+  .option-b .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.2vw, 26px);
+    font-weight: 400;
+    color: var(--mineral);
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .option-b .product-price {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .option-b .product-meta {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+  .option-b .product-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 280px;
+    margin: 0 auto 6px;
+  }
+  .option-b .product-badge {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  /* ============================================
+     OPTION C — PANPURI on Warm Background
+     Products floating on warm-off with more
+     breathing room, editorial feel
+     ============================================ */
+  .option-c {
+    padding: clamp(48px, 6vw, 80px) 0;
+    background: var(--warm-off);
+  }
+  .option-c .products-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 5vw, 80px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 5vw, 80px);
+  }
+  .option-c .product {
+    text-align: center;
+  }
+  .option-c .product-img {
+    margin-bottom: 32px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(60, 48, 40, 0.06);
+  }
+  .option-c .product-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin-bottom: 8px;
+  }
+  .option-c .product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 2.2vw, 26px);
+    font-weight: 400;
+    color: var(--mineral);
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+  .option-c .product-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .option-c .product-meta {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--ink-light);
+    margin-bottom: 20px;
+  }
+  .option-c .product-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--ink-light);
+    max-width: 280px;
+    margin: 0 auto 6px;
+  }
+  .option-c .product-badge {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .option-a .products-grid,
+    .option-c .products-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+    .option-b .products-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+    }
+    .option-b .gold-divider {
+      width: 60%;
+      height: 1px;
+      margin: 32px auto;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     OPTION A — Pure PANPURI
+     ============================================ -->
+<div class="option-label">
+  OPTION A — PURE PANPURI
+  <span>Maximal clean. Keine Karten, keine Borders, keine Schatten. Produkt schwebt auf Weiss.</span>
+</div>
+
+<section class="option-a">
+  <div class="section-header">
+    <div class="gold-line"></div>
+    <p class="eyebrow">Shop Salt.Magic</p>
+    <h2>Ready to upgrade <em>your water?</em></h2>
+    <p class="sub">Choose your daily ritual. Less than the cost of your morning coffee.</p>
+  </div>
+
+  <div class="usp-row">
+    <div class="usp"><span class="dot"></span> Zero Sugar</div>
+    <div class="usp"><span class="dot"></span> 100% Natural</div>
+    <div class="usp"><span class="dot"></span> 7x Magnesium</div>
+  </div>
+
+  <div class="products-grid">
+    <div class="product">
+      <div class="product-img no-radius">
+        <img src="../site/public/images/products/taylor-closeup.jpg" alt="Signature Glass Jar">
+      </div>
+      <p class="product-name">The Signature Glass Jar</p>
+      <p class="product-tag">Best Value</p>
+      <p class="product-price">490 THB</p>
+      <p class="product-meta">Over 2 months of daily hydration (70 servings) — Just 7 THB per day</p>
+      <p class="product-desc">A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Proudly crafted at our Koh Samui hub.</p>
+      <p class="product-badge">Eco-friendly & reusable</p>
+      <a href="#" class="cta-underline">
+        Shop on Lazada
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="product">
+      <div class="product-img no-radius">
+        <img src="../site/public/images/products/sachet.jpg" alt="Travel Pouch">
+      </div>
+      <p class="product-name">The Travel Pouch</p>
+      <p class="product-tag">Most Popular</p>
+      <p class="product-price">290 THB</p>
+      <p class="product-meta">A full month's supply (30 servings) — Just 9.6 THB per day</p>
+      <p class="product-desc">Your daily minerals, perfectly portable. A resealable, GMP/HACCP-certified pouch built for your gym bag, office drawer, or long flights.</p>
+      <p class="product-badge">Lightweight & travel-ready</p>
+      <a href="#" class="cta-underline">
+        Shop on Lazada
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================
+     OPTION B — PANPURI + Gold Divider
+     ============================================ -->
+<div class="option-label">
+  OPTION B — PANPURI + GOLD DIVIDER
+  <span>Gleich minimal, aber ein vertikaler Gold-Divider zwischen den Produkten fuer mehr Eleganz.</span>
+</div>
+
+<section class="option-b">
+  <div class="section-header">
+    <div class="gold-line"></div>
+    <p class="eyebrow">Shop Salt.Magic</p>
+    <h2>Ready to upgrade <em>your water?</em></h2>
+    <p class="sub">Choose your daily ritual. Less than the cost of your morning coffee.</p>
+  </div>
+
+  <div class="usp-row">
+    <div class="usp"><span class="dot"></span> Zero Sugar</div>
+    <div class="usp"><span class="dot"></span> 100% Natural</div>
+    <div class="usp"><span class="dot"></span> 7x Magnesium</div>
+  </div>
+
+  <div class="products-grid">
+    <div class="product">
+      <div class="product-img">
+        <img src="../site/public/images/products/taylor-closeup.jpg" alt="Signature Glass Jar">
+      </div>
+      <p class="product-tag">Best Value</p>
+      <p class="product-name">The Signature Glass Jar</p>
+      <p class="product-price">490 THB</p>
+      <p class="product-meta">Over 2 months of daily hydration (70 servings)<br>Just 7 THB per day</p>
+      <p class="product-desc">A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Proudly crafted at our Koh Samui hub.</p>
+      <p class="product-badge">Eco-friendly & reusable</p>
+      <a href="#" class="cta-underline">
+        Shop on Lazada
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="gold-divider"></div>
+
+    <div class="product">
+      <div class="product-img">
+        <img src="../site/public/images/products/sachet.jpg" alt="Travel Pouch">
+      </div>
+      <p class="product-tag">Most Popular</p>
+      <p class="product-name">The Travel Pouch</p>
+      <p class="product-price">290 THB</p>
+      <p class="product-meta">A full month's supply (30 servings)<br>Just 9.6 THB per day</p>
+      <p class="product-desc">Your daily minerals, perfectly portable. A resealable, GMP/HACCP-certified pouch built for your gym bag, office drawer, or long flights.</p>
+      <p class="product-badge">Lightweight & travel-ready</p>
+      <a href="#" class="cta-underline">
+        Shop on Lazada
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ============================================
+     OPTION C — PANPURI on Warm Background
+     ============================================ -->
+<div class="option-label">
+  OPTION C — PANPURI AUF WARM BACKGROUND
+  <span>Produkte auf warm-off Hintergrund mit weissen Bild-Containern. Sanfter Schatten, editorial.</span>
+</div>
+
+<section class="option-c">
+  <div class="section-header">
+    <div class="gold-line"></div>
+    <p class="eyebrow">Shop Salt.Magic</p>
+    <h2>Ready to upgrade <em>your water?</em></h2>
+    <p class="sub">Choose your daily ritual. Less than the cost of your morning coffee.</p>
+  </div>
+
+  <div class="usp-row">
+    <div class="usp"><span class="dot"></span> Zero Sugar</div>
+    <div class="usp"><span class="dot"></span> 100% Natural</div>
+    <div class="usp"><span class="dot"></span> 7x Magnesium</div>
+  </div>
+
+  <div class="products-grid">
+    <div class="product">
+      <div class="product-img">
+        <img src="../site/public/images/products/taylor-closeup.jpg" alt="Signature Glass Jar">
+      </div>
+      <p class="product-tag">Best Value</p>
+      <p class="product-name">The Signature Glass Jar</p>
+      <p class="product-price">490 THB</p>
+      <p class="product-meta">Over 2 months of daily hydration (70 servings) — Just 7 THB per day</p>
+      <p class="product-desc">A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Proudly crafted at our Koh Samui hub.</p>
+      <p class="product-badge">Eco-friendly & reusable</p>
+      <a href="#" class="cta-underline">
+        Shop on Lazada
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <div class="product">
+      <div class="product-img">
+        <img src="../site/public/images/products/sachet.jpg" alt="Travel Pouch">
+      </div>
+      <p class="product-tag">Most Popular</p>
+      <p class="product-name">The Travel Pouch</p>
+      <p class="product-price">290 THB</p>
+      <p class="product-meta">A full month's supply (30 servings) — Just 9.6 THB per day</p>
+      <p class="product-desc">Your daily minerals, perfectly portable. A resealable, GMP/HACCP-certified pouch built for your gym bag, office drawer, or long flights.</p>
+      <p class="product-badge">Lightweight & travel-ready</p>
+      <a href="#" class="cta-underline">
+        Shop on Lazada
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div style="height: 80px;"></div>
+
+</body>
+</html>
