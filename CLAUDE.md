@@ -41,7 +41,15 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V19 KI Product Images & Hero Refresh (2026-04-09). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V20 Responsive Audit & Fixes (2026-04-10). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V20 Session (Comprehensive Responsive Audit — UI/UX Pro Max):
+- **Full Responsive Audit**: Alle 35 Components und 4 Seiten (Homepage, Partner, Blog, Blog Detail) gegen UI/UX Pro Max Regeln geprueft
+- **3 CRITICAL Fixes**: PartnerTeaser Stats overflow (grid-cols-3 statt flex auf Mobile), Newsletter Input+Button stacken (flex-col sm:flex-row), ForEveryone Mini-Cards stacken (grid-cols-1 sm:grid-cols-2)
+- **5 HIGH Fixes**: Comparison Mobile Padding (p-4 sm:p-6), PartnerHero Buttons stacken (flex-col sm:flex-row + w-full), CategoryProof Mobile Hierarchie (Name+Stat nebeneinander), Blog Detail 11px→12px (Minimum-Font-Regel), AnnouncementBar transition-all→transition-[opacity,transform]
+- **6 MEDIUM identifiziert** (nicht gefixt): Footer Mobile focus-visible, StorySection Landscape 50vh, Partner Image-first auf Mobile, Testimonials Grid Indicators, Blog 4-col Jump, Products Badge Spacing
+- **3 LOW identifiziert** (nicht gefixt): Badge Sizing, Marquee Doppel-Definition, ImageBreak Parallax auf Mobile
+- **7 Dateien geaendert**: PartnerTeaser, Newsletter, ForEveryone, Comparison, PartnerHero, CategoryProof, AnnouncementBar + blog/[slug]/page.tsx
 
 Key Changes in V19 Session (KI Product Images & Image Optimization):
 - **Image Optimizer Script**: `scripts/optimize-images.py` — Batch-Resize, WebP-Konvertierung, automatische Watermark-Entfernung (Gemini-Sterne + Letterbox-Balken). 87.5 MB → 1.4 MB (98.5% Ersparnis)
