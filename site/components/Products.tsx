@@ -17,9 +17,9 @@ const products = [
   },
   {
     image: '/images/products/sachet.jpg',
-    alt: 'Salt.Magic Travel Pouch',
+    alt: 'Salt.Magic Travel Sachet',
     tag: 'Most Popular',
-    name: 'The Travel Pouch',
+    name: 'The Travel Sachet',
     price: '290 THB',
     meta: "A full month's supply (30 servings) - Just 9.6 THB per day",
     desc: 'Your daily minerals, perfectly portable. A resealable, GMP/HACCP-certified pouch built for your gym bag, office drawer, or long flights.',

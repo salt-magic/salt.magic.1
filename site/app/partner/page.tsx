@@ -101,13 +101,13 @@ export default function PartnerPage() {
         <div className="relative h-[280px] sm:h-auto overflow-hidden">
           <Image
             src="/images/products/sachet.jpg"
-            alt="Travel Pouch - 16g, 30 servings, 290 THB"
+            alt="Travel Sachet - 16g, 30 servings, 290 THB"
             fill
             className="object-cover"
             sizes="(max-width: 640px) 100vw, 50vw"
           />
           <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 bg-gradient-to-t from-[rgba(26,50,72,0.85)] via-[rgba(26,50,72,0.4)] to-transparent">
-            <h3 className="font-display text-[20px] font-normal text-white mb-1">Travel Pouch</h3>
+            <h3 className="font-display text-[20px] font-normal text-white mb-1">Travel Sachet</h3>
             <p className="text-[12px] font-normal text-white/70">16g - 30 servings</p>
             <p className="text-[13px] font-medium text-gold mt-1">MSRP 290 THB</p>
           </div>

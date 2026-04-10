@@ -119,7 +119,7 @@ export default function RootLayout({
               {
                 '@context': 'https://schema.org',
                 '@type': 'Product',
-                name: 'Salt.Magic Travel Pouch',
+                name: 'Salt.Magic Travel Sachet',
                 description:
                   'Portable resealable pouch with 30 servings of natural electrolyte mineralizer. 312mg magnesium, zero sugar, GMP/HACCP certified.',
                 brand: { '@type': 'Brand', name: 'Salt.Magic' },

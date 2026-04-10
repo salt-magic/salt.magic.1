@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: 'How do I use it?',
-    a: 'Add one scoop (2g) or one travel pouch to any drink. It dissolves instantly and is completely flavorless. The Routine: Most of our users take 1\u20132 servings per day (once in the morning, once in the evening).',
+    a: 'Add one scoop (2g) or one travel sachet to any drink. It dissolves instantly and is completely flavorless. The Routine: Most of our users take 1\u20132 servings per day (once in the morning, once in the evening).',
   },
   {
     q: 'How does it compare to imported brands like LMNT or Wilder?',
