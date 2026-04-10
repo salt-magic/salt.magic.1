@@ -66,7 +66,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
 
       <div role="cell" className="mb-7">
         <div
-          className={`font-display text-h2 font-normal leading-none tracking-tight mb-1 ${
+          className={`font-display text-h4 md:text-h2 font-normal leading-none tracking-tight mb-1 ${
             isHero ? 'text-mineral' : 'text-white/95'
           }`}
         >
@@ -79,7 +79,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
 
       <div role="cell" className="mb-7">
         <div
-          className={`font-display text-h2 font-normal leading-none tracking-tight mb-1 ${
+          className={`font-display text-h4 md:text-h2 font-normal leading-none tracking-tight mb-1 ${
             isHero ? 'text-mineral' : 'text-white/95'
           }`}
         >
@@ -92,7 +92,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
 
       <div role="cell" className="mb-7">
         <div
-          className={`font-display text-h2 font-normal leading-tight mb-1 ${
+          className={`font-display text-h4 md:text-h2 font-normal leading-tight mb-1 ${
             isHero ? 'text-mineral' : 'text-white/95'
           }`}
         >
@@ -257,7 +257,7 @@ export default function Comparison() {
                   aria-current={i === activeComp ? 'true' : undefined}
                 >
                   <span
-                    className={`block h-[2px] rounded-full transition-all duration-300 ${
+                    className={`block h-[2px] rounded-full transition-[width,background-color] duration-300 ${
                       i === activeComp ? 'w-8 bg-gold' : 'w-4 bg-white/30'
                     }`}
                   />

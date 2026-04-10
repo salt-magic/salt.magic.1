@@ -23,7 +23,7 @@ export default function BlogSection() {
           ? 'grid-cols-1 sm:grid-cols-2 max-w-[700px]'
           : posts.length === 3
             ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1000px]'
-            : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-[1200px]'
+            : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-[1200px]'
       }`}>
         {posts.map((post) => (
           <BlogCard key={post.slug} post={post} />

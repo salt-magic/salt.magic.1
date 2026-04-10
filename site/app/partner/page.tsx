@@ -29,7 +29,7 @@ export default function PartnerPage() {
 
       {/* 5. Why Distribute - Leo's Copy */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[50vh]">
-        <div className="relative h-[50vh] lg:h-auto overflow-hidden">
+        <div className="relative h-[50vh] min-h-[280px] lg:h-auto lg:min-h-0 overflow-hidden">
           <Image
             src="/images/products/taylor-closeup.jpg"
             alt="Salt.Magic glass jar - natural electrolytes in tropical setting"
@@ -84,7 +84,7 @@ export default function PartnerPage() {
 
       {/* 9. Product Formats Break */}
       <section className="grid grid-cols-1 sm:grid-cols-2 min-h-[320px]">
-        <div className="relative h-[380px] sm:h-auto overflow-hidden">
+        <div className="relative h-[280px] sm:h-auto overflow-hidden">
           <Image
             src="/images/products/greenery-jars.jpg"
             alt="Signature Glass Jar - 160g, 70 servings, 490 THB"
@@ -98,7 +98,7 @@ export default function PartnerPage() {
             <p className="text-[13px] font-medium text-gold mt-1">MSRP 490 THB</p>
           </div>
         </div>
-        <div className="relative h-[380px] sm:h-auto overflow-hidden">
+        <div className="relative h-[280px] sm:h-auto overflow-hidden">
           <Image
             src="/images/products/sachet.jpg"
             alt="Travel Pouch - 16g, 30 servings, 290 THB"

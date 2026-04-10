@@ -50,7 +50,7 @@ export default function PartnerForm() {
                   type="text"
                   required
                   placeholder="Your name"
-                  className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-sm font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint"
+                  className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-base font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint"
                 />
               </div>
               <div>
@@ -63,7 +63,7 @@ export default function PartnerForm() {
                   type="text"
                   required
                   placeholder="Company name"
-                  className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-sm font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint"
+                  className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-base font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint"
                 />
               </div>
             </div>
@@ -78,7 +78,7 @@ export default function PartnerForm() {
                   type="text"
                   required
                   placeholder="Your role"
-                  className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-sm font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint"
+                  className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-base font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint"
                 />
               </div>
               <div>
@@ -91,7 +91,7 @@ export default function PartnerForm() {
                   type="email"
                   required
                   placeholder="you@company.com"
-                  className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-sm font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint"
+                  className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-base font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint"
                 />
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function PartnerForm() {
                 name="message"
                 rows={3}
                 placeholder="Tell us about your distribution interest..."
-                className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-sm font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint resize-none"
+                className="w-full py-3.5 px-4 bg-white border border-sand rounded-lg font-body text-base font-normal text-ink outline-none focus:border-mineral transition-colors placeholder:text-ink-faint resize-none"
               />
             </div>
             <button

@@ -22,9 +22,9 @@ export default function MarketComparison() {
         </div>
 
         {/* 85% Dead Water Callout */}
-        <div className="flex items-center justify-center gap-4 px-8 py-5 bg-white border border-border-warm rounded-xl mb-[clamp(32px,4vw,48px)] max-w-[600px] mx-auto">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 px-6 sm:px-8 py-5 bg-white border border-border-warm rounded-xl mb-[clamp(32px,4vw,48px)] max-w-[600px] mx-auto text-center sm:text-left">
           <span className="font-display text-[40px] font-normal text-mineral leading-none">85%</span>
-          <span className="text-[13px] font-normal text-ink-light leading-snug text-left">
+          <span className="text-[13px] font-normal text-ink-light leading-snug">
             of Thai bottled water is <strong className="font-medium text-ink">filtered, not mineralized</strong>.<br />
             The market is wide open for real hydration.
           </span>

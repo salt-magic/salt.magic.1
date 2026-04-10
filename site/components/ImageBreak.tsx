@@ -34,7 +34,7 @@ export default function ImageBreak({ src, alt, tall = false, padded = false, ove
   }
 
   return (
-    <ParallaxImage className={`relative w-full ${heightClass}`} offset={30}>
+    <ParallaxImage className={`relative w-full ${heightClass}`} offset={15}>
       <div className={`relative w-full ${heightClass}`}>
         <Image
           src={src}

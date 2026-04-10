@@ -40,7 +40,7 @@ export default async function BlogArticlePage({
   return (
     <>
       {/* Hero - full-width image with overlay */}
-      <div className={`relative w-full min-h-[70vh] min-h-[480px] ${post.heroGradient}`}>
+      <div className={`relative w-full min-h-[max(70vh,480px)] ${post.heroGradient}`}>
         {post.heroImage && (
           <Image
             src={post.heroImage}

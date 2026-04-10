@@ -35,15 +35,15 @@ export default function PartnerTeaser() {
           </div>
 
           {/* Right - Stats */}
-          <div className="grid grid-cols-3 gap-4 sm:flex sm:gap-8 lg:gap-12">
+          <div className="flex flex-col gap-3 sm:flex-row sm:gap-8 lg:gap-12">
             {stats.map((stat, i) => (
               <div
                 key={stat.label}
-                className={`text-center ${
+                className={`flex items-baseline gap-2 sm:block sm:text-center ${
                   i < stats.length - 1 ? 'sm:pr-8 lg:pr-12 sm:border-r border-white/15' : ''
                 }`}
               >
-                <div className="font-display text-h4 sm:text-h3 font-normal text-gold leading-none mb-1.5 tracking-tight">
+                <div className="font-display text-h4 sm:text-h3 font-normal text-gold leading-none sm:mb-1.5 tracking-tight">
                   {stat.value}
                 </div>
                 <div className="text-[12px] font-medium tracking-eyebrow uppercase text-white/50">

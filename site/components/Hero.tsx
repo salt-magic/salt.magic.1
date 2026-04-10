@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 import { FadeIn } from './Motion'
 import { useReducedMotion } from 'framer-motion'
@@ -15,9 +15,21 @@ const slides = [
 export default function Hero() {
   const [active, setActive] = useState(0)
   const reduced = useReducedMotion()
+  const touchStart = useRef(0)
 
   const next = useCallback(() => setActive((p) => (p + 1) % slides.length), [])
   const prev = useCallback(() => setActive((p) => (p - 1 + slides.length) % slides.length), [])
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientX
+  }
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchStart.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? next() : prev()
+    }
+  }
 
   useEffect(() => {
     if (reduced) return
@@ -26,7 +38,7 @@ export default function Hero() {
   }, [next, reduced])
 
   return (
-    <section className="relative min-h-[100dvh] min-h-[600px] overflow-hidden">
+    <section className="relative min-h-[max(100dvh,600px)] overflow-hidden" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
       {/* Slides - CSS transitions for mobile performance */}
       {slides.map((slide, i) => (
         <div

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <div className="pt-[clamp(140px,18vw,200px)] pb-[clamp(80px,12vw,140px)]">
+    <div className="pt-[clamp(160px,18vw,200px)] pb-[clamp(80px,12vw,140px)]">
       {/* Header */}
       <FadeIn className="text-center mb-[clamp(60px,10vw,100px)] px-[clamp(24px,5vw,64px)]">
         <p className="label-uppercase text-[12px] tracking-[.22em] text-ink-light mb-5">
@@ -32,7 +32,7 @@ export default function BlogPage() {
           ? 'grid-cols-1 sm:grid-cols-2 max-w-[800px]'
           : blogPosts.length === 3
             ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-[1100px]'
-            : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'
+            : 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
       }`}>
         {blogPosts.map((post) => (
           <BlogCard key={post.slug} post={post} />

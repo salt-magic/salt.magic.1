@@ -24,7 +24,7 @@ export default function StorySection() {
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
         {/* Image side - full bleed */}
-        <div className="relative h-[50vh] lg:h-auto overflow-hidden">
+        <div className="relative h-[50vh] min-h-[280px] lg:h-auto lg:min-h-0 overflow-hidden">
           <motion.div style={{ y: imageY }} className="absolute inset-[-10%]">
             <Image
               src="/images/products/taylor-water-nature.jpg"
