@@ -25,9 +25,10 @@ export default function ImageBreak({ src, alt, tall = false, padded = false, ove
             src={src}
             alt={alt}
             fill
-            className="object-cover"
+            className="object-cover saturate-[.7]"
             sizes="100vw"
           />
+          <div className="absolute inset-0 bg-mineral/20 mix-blend-multiply" />
         </div>
       </ScaleIn>
     )
@@ -40,9 +41,10 @@ export default function ImageBreak({ src, alt, tall = false, padded = false, ove
           src={src}
           alt={alt}
           fill
-          className="object-cover"
+          className="object-cover saturate-[.7]"
           sizes="100vw"
         />
+        <div className="absolute inset-0 bg-mineral/20 mix-blend-multiply" />
         {overlay && (
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end justify-center pb-16 px-8">
             <div className="text-center text-white">
