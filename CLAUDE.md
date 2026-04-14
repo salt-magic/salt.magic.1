@@ -41,7 +41,24 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V22 Partner Section Options & Travel Sachet Rename (2026-04-10). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V23 SEO Keyword Integration Strategy & Copy Review V2 (2026-04-14). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V23 Session (SEO Keyword Integration & Copy Review):
+- **SEO Copy Review V2 Dokument erstellt**: `outputs/Salt-Magic-SEO-Copy-Review-V2.docx` — 25 Sections (17 Homepage + 7 Partner + Appendix), pro Section "Current Copy" vs "Suggested Copy (SEO-Optimized)" mit Keyword-Highlighting in gruen/bold/unterstrichen
+- **50 SEO Keywords in 5 Clustern integriert**: Fasting & Clean Keto (10), Heavy Sweaters & Hot Climates (10), Clean Ingredients & Purity (10), Specific Formulation (10), Travel, Recovery & Wellness (10) + Geo-Targeting Thailand (empfohlen)
+- **3-Framework SEO Review**: SEO Content Optimizer + Generative Engine Optimization + Content Creation Skill — Score 68→82/100
+- **7 Sweeps Conversion Copywriting Pass**: Joanna Wiebe/Copyhackers Methodik (Clarity, Voice, Proof, Specificity, Stickiness, Emotion, Zero) auf alle Keyword-Vorschlaege angewendet
+- **Keyword-Integration Techniken**: "Object of action verb", "Think of it as", "Brand possessive", "Inside: reveal", "Contrast proof", "You'll actually benefit" — Keywords unsichtbar in natuerliche Copy eingebettet
+- **Critical Fixes**: "organic electrolyte powder" entfernt (FDA-Risiko), Meta Title/Description auf Zeichenlimit getrimmt, ForEveryone Body von 10→4 Keywords reduziert, FAQ Q8 von 7→3 Keywords
+- **H2 Keyword-Integration**: 4 von 12 H2s mit natuerlichen Keywords angereichert: "Balanced Electrolyte Formula You Can't Taste", "Clean Hydration, Clear Winner", "Ready to Try Natural Electrolyte Powder?", "Join the Natural Hydration Ritual"
+- **Geo-Targeting Thailand**: "best electrolytes in Thailand", "buy electrolytes in Thailand", "electrolyte distribution Thailand" in Meta, FAQ, Products, Partner Page
+- **Partner Page B2B-Keywords**: 7 Partner-Sections mit B2B-Keywords (electrolyte distribution Thailand, wellness brand partnership, retailer margins)
+- **GEO Key Facts Block**: Neue Section empfohlen fuer AI-Zitationsrate +35% (ChatGPT, Perplexity, Google AI Overviews)
+- **3 neue FAQ-Eintraege vorgeschlagen**: "Does Salt.Magic break a fast?", "Can I take Salt.Magic while traveling?", "Is Salt.Magic good for hangover recovery?"
+- **5 Blog-Themen vorgeschlagen**: Muay Thai Training, Fasting Without Electrolytes, Hot Yoga, Hangover Recovery, Travel Hydration
+- **Neue Scripts**: `scripts/create-seo-review-doc.js` (V2 Docx-Generator mit Keyword-Highlighting), `scripts/take-v2-screenshots.js` (Playwright Screenshots von V2 Website)
+- **Conversion Copywriting Skill installiert**: `conversion-copywriting` (Copyhackers/Joanna Wiebe) als globaler Skill
+- **V2 Screenshots**: 17 frische Desktop-Screenshots von salt-magic-website-v2.vercel.app in `outputs/v2-screenshots/`
 
 Key Changes in V22 Session (Partner Section Options & Copy Rename):
 - **8 Partner-Seite Layout-Options erstellt**: Fuer alle 8 Partner-Sections (Hero, Market, CategoryProof, WhyDistribute, Revenue, Comparison, ProductFormats, PartnerForm) je 4 Layout-Alternativen als HTML-Preview mit Desktop (900px) + Mobile (375px) Frames. Referenzen: LMNT, Sakara, PANPURI, Cure Hydration, Grown Alchemist. 4 parallele Agents, 32 Optionen insgesamt
