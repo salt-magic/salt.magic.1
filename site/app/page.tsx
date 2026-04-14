@@ -96,8 +96,8 @@ export default function Home() {
 
       {/* 8. Image Break - Visual desire moment */}
       <ImageBreak
-        src="/images/mood/marocmaroc-2.png"
-        alt="Artisanal wellness products by the beach - natural beauty ritual"
+        src="/images/mood/saltmagic-break.webp"
+        alt="Salt.Magic natural electrolyte products on a sandy beach"
       />
 
       {/* ===== ACTION ===== */}
