@@ -10,19 +10,19 @@ const products = [
     tag: 'Best Value',
     name: 'The Signature Glass Jar',
     price: '490 THB',
-    meta: 'Over 2 months of daily hydration (70 servings) - Just 7 THB per day',
-    desc: 'A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Proudly crafted at our Koh Samui hub.',
+    meta: 'Premium daily mineralizer in eco-friendly glass \u2014 made to live on your kitchen counter',
+    desc: 'A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Inside: a clean mineral salt complex that brings your water back to life. Three ingredients. Zero compromise. Proudly crafted at our Koh Samui hub.',
     badge: 'Eco-friendly & reusable',
     href: 'https://www.lazada.co.th/shop/salt-magic/',
   },
   {
-    image: '/images/products/sachet.jpg',
+    image: '/images/products/sachet-clean.webp',
     alt: 'Salt.Magic Travel Sachet',
     tag: 'Most Popular',
     name: 'The Travel Sachet',
     price: '290 THB',
-    meta: "A full month's supply (30 servings) - Just 9.6 THB per day",
-    desc: 'Your daily minerals, perfectly portable. A resealable, GMP/HACCP-certified pouch built for your gym bag, office drawer, or long flights.',
+    meta: 'One sachet, 20 days of optimized hydration \u2014 just 14.5 THB per day',
+    desc: 'Your daily minerals, perfectly portable. An unflavored mineral blend in a resealable, GMP/HACCP-certified pouch \u2014 built for the gym bag, office drawer, or long flights. Drop one scoop in any liter of water and sip all day, anywhere life takes you.',
     badge: 'Lightweight & travel-ready',
     href: 'https://www.lazada.co.th/shop/salt-magic/',
   },
@@ -52,7 +52,7 @@ const usps = [
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
       </svg>
     ),
-    label: '7x Magnesium',
+    label: 'Three Ingredients',
   },
 ]
 
