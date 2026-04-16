@@ -22,13 +22,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Salt.Magic - Thailand's Natural Electrolyte Mineralizer",
+  title: 'Salt.Magic | Natural Electrolytes - Thailand',
   description:
-    "Salt.Magic restores essential minerals to your water with 3 natural ingredients - 312mg magnesium, zero sugar, zero additives. Trusted daily by thousands across Thailand.",
+    "Salt.Magic is Thailand's premium natural electrolyte mineralizer. Three ingredients: Trimagnesium Citrate, Potassium Citrate, and Himalayan Pink Salt. Zero sugar, unflavored, additive free. Buy electrolytes in Thailand.",
   openGraph: {
-    title: "Salt.Magic - Thailand's Natural Electrolyte Mineralizer",
+    title: 'Salt.Magic | Natural Electrolytes - Thailand',
     description:
-      '3 natural minerals. Zero sugar. Zero additives. 312mg magnesium per serving. The daily electrolyte Thailand trusts.',
+      'Natural electrolytes with high-bioavailability magnesium, potassium, and pink Himalayan salt. Zero sugar, zero additives, zero fillers. Thailand\u2019s daily mineralizer.',
     type: 'website',
     url: 'https://salt-magic.com',
     siteName: 'Salt.Magic',
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Salt.Magic - Thailand's Natural Electrolyte Mineralizer",
+    title: 'Salt.Magic | Natural Electrolytes - Thailand',
     description:
-      '3 natural minerals. Zero sugar. Zero additives. 312mg magnesium per serving.',
+      'Three ingredients. Zero compromise. Thailand\u2019s clean daily mineralizer.',
     images: ['https://salt-magic.com/images/products/taylor-hero.jpg'],
   },
   robots: 'index, follow',
@@ -76,7 +76,7 @@ export default function RootLayout({
               url: 'https://salt-magic.com',
               logo: 'https://salt-magic.com/images/logo.png',
               description:
-                "Thailand's premier all-natural daily electrolyte mineralizer. Three natural ingredients, zero sugar, zero additives.",
+                "Thailand's premium all-natural daily electrolyte mineralizer. Three natural ingredients, zero sugar, zero additives.",
               foundingDate: '2021',
               foundingLocation: {
                 '@type': 'Place',
@@ -105,7 +105,7 @@ export default function RootLayout({
                 '@type': 'Product',
                 name: 'Salt.Magic Signature Glass Jar',
                 description:
-                  'Premium glass jar with 70 servings of natural electrolyte mineralizer. 312mg magnesium, zero sugar, flavorless. Crafted on Koh Samui.',
+                  'Signature Glass Jar \u2014 natural electrolyte mineralizer with Trimagnesium Citrate, Potassium Citrate, and Himalayan Pink Salt. Sugar free, flavorless, GMP/HACCP-certified manufacturing. Crafted on Koh Samui.',
                 brand: { '@type': 'Brand', name: 'Salt.Magic' },
                 offers: {
                   '@type': 'Offer',
@@ -121,7 +121,7 @@ export default function RootLayout({
                 '@type': 'Product',
                 name: 'Salt.Magic Travel Sachet',
                 description:
-                  'Portable resealable pouch with 30 servings of natural electrolyte mineralizer. 312mg magnesium, zero sugar, GMP/HACCP certified.',
+                  'Portable resealable pouch with 20 servings of natural electrolyte mineralizer. Three ingredients: Trimagnesium Citrate, Potassium Citrate, and Himalayan Pink Salt. Zero sugar, GMP/HACCP certified.',
                 brand: { '@type': 'Brand', name: 'Salt.Magic' },
                 offers: {
                   '@type': 'Offer',

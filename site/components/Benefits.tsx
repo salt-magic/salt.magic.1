@@ -11,7 +11,7 @@ const benefits = [
       </svg>
     ),
     title: 'True Hydration',
-    desc: 'Stop flushing water straight through your system. Give your body the minerals it needs to actually absorb every drop.',
+    desc: 'Stop flushing water straight through your system. Real cellular hydration means your body absorbs every drop \u2014 sip one liter from morning to night for steady, all-day balance.',
   },
   {
     icon: (
@@ -52,7 +52,7 @@ const benefits = [
       </svg>
     ),
     title: 'Peak Performance',
-    desc: 'Push harder and recover faster. Maintain your energy and banish muscle cramps during exercise.',
+    desc: 'Push harder and recover faster. Maintain your energy and prevent muscle cramps before, during, and after training.',
   },
   {
     icon: (
@@ -62,7 +62,7 @@ const benefits = [
       </svg>
     ),
     title: 'Natural Hangover Defense',
-    desc: 'Woke up severely dehydrated? Instantly restore your mineral balance and bounce back faster.',
+    desc: 'Woke up wrecked? Alcohol strips magnesium, potassium, and sodium overnight. Salt.Magic restores the exact minerals you lost \u2014 fast, natural recovery.',
   },
 ]
 

@@ -32,7 +32,7 @@ export default function CtaBanner() {
           Bring Your Water Back to Life
         </h2>
         <p className="text-[15px] font-normal text-white/80 mb-10 max-w-[420px] mx-auto leading-relaxed">
-          Three ingredients. Zero compromise. Join thousands across Thailand who&apos;ve made the daily switch.
+          Three ingredients. Zero compromise. Thousands across Thailand sip this clean mineral formula every day &mdash; and never go back.
         </p>
         <a
           href="https://www.lazada.co.th/shop/salt-magic/"

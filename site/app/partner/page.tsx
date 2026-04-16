@@ -61,7 +61,7 @@ export default function PartnerPage() {
               </li>
               <li className="flex items-start gap-3 text-[15px] font-normal text-ink-light leading-relaxed">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2.5" />
-                <span><strong className="font-medium text-ink">7x more magnesium</strong> than competitors. Zero sugar. Zero plastic waste.</span>
+                <span><strong className="font-medium text-ink">Cardiovascularly responsible sodium (189mg)</strong> &mdash; safe for daily, all-day use. Three ingredients. Zero compromise.</span>
               </li>
             </ul>
             <div className="mt-10">

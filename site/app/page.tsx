@@ -71,7 +71,7 @@ export default function Home() {
               Everything your water is missing. Nothing you can taste.
             </p>
             <p className="text-[15px] font-normal leading-[1.75] text-ink max-w-[460px] mb-[8px]">
-              Just 2 grams of pure, highly bioavailable minerals. It dissolves instantly, is completely flavorless, and delivers 7x more magnesium than leading competitors. Three natural ingredients. Zero junk.
+              Just 3 grams &mdash; three natural ingredients in clinically meaningful doses. Trimagnesium Citrate Anhydrous for true bioavailability, Potassium Citrate for natural fluid balance, and Himalayan Pink Salt for essential trace minerals. Dissolves instantly. Completely unflavored. Zero junk.
             </p>
             <Ingredients />
           </div>

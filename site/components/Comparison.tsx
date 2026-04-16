@@ -17,9 +17,9 @@ const hero: Column = {
   name: 'Salt.Magic',
   sugar: '0g',
   sugarLabel: 'sugar',
-  magnesium: '312mg',
+  magnesium: '135mg',
   ingredients: '3 natural minerals',
-  verdict: 'Clean, daily hydration without the sugar crash.',
+  verdict: 'Clean, daily hydration. Cardiovascularly responsible sodium that\u2019s safe to sip all day.',
 }
 
 const competitors: Column[] = [
@@ -44,8 +44,8 @@ const competitors: Column[] = [
     sugar: 'Up to 11g',
     sugarLabel: 'added sugar',
     magnesium: '0\u201350mg',
-    ingredients: 'Synthetic blends',
-    verdict: 'Under-dosed and often full of fillers.',
+    ingredients: 'Often filled with maltodextrin',
+    verdict: 'Under-dosed, with carb fillers that can spike glucose.',
   },
 ]
 
@@ -267,8 +267,8 @@ export default function Comparison() {
           </div>
 
           {/* Footnote */}
-          <p className="text-left text-[12px] tracking-cta uppercase text-white/50 mt-8">
-            Based on a 2g serving of Salt.Magic vs typical 16oz servings
+          <p className="text-left text-[12px] tracking-cta uppercase text-white/70 mt-8">
+            Based on a 3g serving of Salt.Magic vs typical 16oz servings
           </p>
         </div>
       </div>

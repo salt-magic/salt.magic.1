@@ -41,7 +41,21 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V23 SEO Keyword Integration Strategy & Copy Review V2 (2026-04-14). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V25 Kovic-Formel + Sodium-USP Positionierung (2026-04-16). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V25 Session (Kovic-Formel + Sodium-USP + Sip-All-Day Positionierung):
+- **Drei E-Mails von Leo eingearbeitet**: (1) Sodium-USP & Water-Optimization-Positionierung, (2) Neue FDA-konforme Formel von Kovic, (3) Premium Marketing Strategy (Clean Label + Gourmet/Boots + Sip All Day)
+- **Neue Formel von Kovic** (FDA-konform, ersetzt frueheren Marketing-Stand): 3g Serving, **532mg Potassium Citrate** (15% DV, jetzt quantitativ fuehrend), **189mg Sodium** aus Pink Himalayan Salt (8% DV, USP), **135mg Magnesium** als Trimagnesium Citrate Anhydrous (32% DV, hoch bioverfuegbar). Travel Sachet 60g/3g = **20 Servings** (war 30 bei 2g)
+- **Sodium-USP**: 189mg vs Konkurrenz 1000mg+ — "cardiovascularly responsible", "safe to sip all day", Multi-Sachet-Lifestyle. Anti-Maltodextrin-Differenzierung (vs Wilder)
+- **Positionierungs-Shift**: "Water Optimization" / "Sip All Day" statt "Sports Drink". "Three Ingredients. Zero Compromise." als offizielles Brand-Statement (Clean Label Authority)
+- **V24-Klassifizierungs-Pipeline (vorbereitend)**: `outputs/V24-leo-inline-annotations.md` (22 Annotationen), `V24-action-buckets.md` (5 Buckets), `V24-leo-feedback-compare.md` (Live-Site vs Notes), `V24-suggested-copy-with-notes.md`, `V24-final-copy.md`, `V24-global-copy-rules.md`
+- **V25 Master-Outputs**: `outputs/V25-final-copy.md` (komplette neue Copy pro Section, 8 TBD-Marker), `V25-global-copy-rules.md` (G1-G14 Regeln + Q2/Q7 offen), `V25-leo-klaerung-mail.md` (Mail-Entwurf an Leo mit 8 priorisierten Fragen)
+- **Neue Skripte**: `scripts/extract-leo-annotations.py` (python-docx + difflib Diff-Extraktor), `scripts/extract-suggested-copy.py` (Docx-Section-Parser)
+- **Components aktualisiert (12)**: Hero (Three Ingredients Body), WhySection (Badge "Three Ingredients" statt "7x Magnesium"), Ingredients (Reihenfolge K→Na→Mg + neue Werte + subtitle-Feld mit Daily Values), Comparison (135mg Mg, Maltodextrin-Erwaehnung, Footnote 3g, Sodium-USP-Verdict), Products (Sachet 30→20 Servings, 14.5 THB/day, "One sachet, 20 days of optimized hydration"-Tagline, Glass Jar "clean mineral salt complex" Description), Faq (alle 7 Q&A neu + 3 neue Q8/Q9/Q10), ForEveryone (Sodium-USP indirekt + Sip All Day), Benefits (Card 1/5/6 angeschaerft), CtaBanner ("sip" statt "drink"), page.tsx Formula Body, partner/page.tsx Why-Distribute Bullet, layout.tsx Meta + JSON-LD (premier→premium, Sachet 30→20)
+- **8 offene Klaerungspunkte mit Leo (per Mail raus)**: Q1 Glass Jar Servings bei 3g (70 oder 46?), Q2 "7x Magnesium" Claim (streichen/umformulieren?), Q3 Multi-Sachet Tageslimit, Q4 Gourmet/Boots Pitches sichtbar?, Q5 CategoryProof Brand-Namen, Q6 GEO Key Facts Block sichtbar/sr-only?, Q7 "pharmaceutical-grade" rechtlich OK?, Q8 Glass Jar Tagline analog Sachet?
+- **Kovic ersetzt Di-Well als primaerer B2B-Sachet-Produzent** (FDA-konforme Formel-Spec). FDA-Status weiterhin "in progress" — "FDA approved" darf NOCH NICHT in Website-Copy
+- **Defaults bei offenen Klaerungspunkten** (vor Go-Live mit Leo verifizieren): "Three Ingredients" statt "7x Magnesium" (Q2), Glass Jar Meta ohne Servings-Zahl (Q1), FAQ Q2 ohne harten Multi-Sachet-Tageslimit (Q3), "raw/clean mineral salt complex" + "clinically meaningful doses" statt "pharmaceutical-grade" (Q7)
+- **Offen**: Blog-Artikel `dead-water-crisis.ts` + `wellness-vs-sports-electrolytes.ts` enthalten noch alte 312mg-Werte — eigener Edit-Sweep nach Leos Antwort. CategoryProof Brand-Namen + GEO Key Facts Block + Gourmet/Boots-Section auf Partner-Page warten auf Leo
 
 Key Changes in V23 Session (SEO Keyword Integration & Copy Review):
 - **SEO Copy Review V2 Dokument erstellt**: `outputs/Salt-Magic-SEO-Copy-Review-V2.docx` — 25 Sections (17 Homepage + 7 Partner + Appendix), pro Section "Current Copy" vs "Suggested Copy (SEO-Optimized)" mit Keyword-Highlighting in gruen/bold/unterstrichen

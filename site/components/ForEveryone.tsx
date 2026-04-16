@@ -22,10 +22,12 @@ export default function ForEveryone() {
                 Pure hydration for daily life, not just game day.
               </p>
               <p className="text-[15px] font-normal leading-[1.8] text-ink-light mb-8">
-                Most electrolytes are packed with sugar and designed for extreme athletes
-                to use once in a while. Salt.Magic is designed for life. Whether you&apos;re
-                intermittent fasting, surviving the tropical heat, traveling, or just
-                navigating a busy workday, your body burns through minerals every single day.
+                Most electrolytes are packed with sugar &mdash; or so much sodium they&apos;re
+                unsafe to drink more than once. Salt.Magic is different. Whether you&apos;re
+                intermittent fasting, training in tropical heat, sweating through hot yoga,
+                or just navigating a busy workday, your body burns through minerals every
+                single day. One clean, invisible formula for all of it &mdash; built to sip
+                all day, every day.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -46,7 +48,7 @@ export default function ForEveryone() {
                   <ul className="space-y-1 text-[13px] font-normal text-ink-light">
                     <li>Daily essential (365 days a year)</li>
                     <li>Built for anyone who drinks water</li>
-                    <li>Pure, invisible, natural minerals</li>
+                    <li>Pure, cardiovascularly responsible minerals</li>
                   </ul>
                 </div>
               </div>

@@ -116,7 +116,7 @@ export default function Hero() {
           </FadeIn>
           <FadeIn delay={0.35}>
             <p className="text-[15px] font-normal leading-relaxed text-white/90 mb-8 md:mb-10 max-w-[520px] mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
-              85% of bottled water in Thailand is &ldquo;dead water&rdquo; - purified, but nutritionally empty. Your body deserves better.
+              85% of bottled water in Thailand is &ldquo;dead water&rdquo; - purified, but nutritionally empty. One scoop brings it back to life. Three ingredients. Zero compromise.
             </p>
           </FadeIn>
           <FadeIn delay={0.45}>
