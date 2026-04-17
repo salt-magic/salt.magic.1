@@ -8,13 +8,13 @@ const products = [
     margin: '30-40%',
   },
   {
-    name: 'Paper Sachet (16g)',
+    name: 'Travel Sachet (60g)',
     msrp: '290 THB',
     wholesale: '174-203 THB',
     margin: '30-40%',
   },
   {
-    name: 'Single Sachet (2g)',
+    name: 'Single Sachet (3g)',
     msrp: '9-12 THB',
     wholesale: '5-8 THB',
     margin: '30-40%',

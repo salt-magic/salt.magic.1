@@ -79,8 +79,7 @@ export const deadWaterCrisis: BlogPost = {
       mineral protocol that dissolves invisibly in any water.
     </p>
     <p>
-      Salt.Magic was created for exactly this purpose: 312mg of magnesium, plus essential potassium
-      and sodium, in a flavorless 2-gram serving. No sugar. No additives. No taste.
+      Salt.Magic was created for exactly this purpose: 135mg of highly bioavailable magnesium (as Trimagnesium Citrate), 532mg potassium, and 189mg sodium from Pink Himalayan Salt, in a flavorless 3-gram serving. No sugar. No additives. No taste.
     </p>
     <p>
       Just the essential minerals your water should have had in the first place. Because the water

@@ -68,7 +68,7 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
       complicated mixing. Just add it to your morning water and forget about it.
     </p>
     <p>
-      Salt.Magic is formulated for this exact use case - 312mg magnesium, zero sugar, zero
+      Salt.Magic is formulated for this exact use case - 135mg magnesium (as Trimagnesium Citrate), 532mg potassium, and 189mg sodium, zero sugar, zero
       flavor, designed to dissolve completely in any beverage. It's not a sports recovery product.
       It's a daily mineral essential for everyone who drinks water.
     </p>
