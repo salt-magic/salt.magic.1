@@ -9,10 +9,10 @@ export default function Newsletter() {
           Stay Connected
         </p>
         <h2 className="font-display text-h2 font-normal text-mineral mb-4 tracking-tight">
-          Join the Ritual
+          Join the Natural Hydration Ritual
         </h2>
         <p className="text-[15px] font-normal text-ink-light mb-6">
-          Drop your email below for exclusive wellness tips, product drops, and community offers. No spam, just pure hydration.
+          Drop your email for wellness tips, hydration science, and member-only offers. No spam, no fluff, just what works.
         </p>
 
         {/* Lead magnet incentive */}

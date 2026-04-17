@@ -80,11 +80,14 @@ export default function WhySection() {
                 <p>
                   85% of bottled water in Thailand goes through reverse osmosis, stripping
                   away essential natural minerals. The result is &ldquo;dead water&rdquo; - purified,
-                  but nutritionally empty.
+                  but nutritionally empty. When hydration for hot weather matters most, the
+                  water you rely on delivers the least.
                 </p>
                 <p>
-                  Your body needs magnesium for energy, recovery, and daily vitality. Yet, the
-                  water you drink provides almost none of it, leaving you constantly depleted.
+                  Your body needs magnesium for energy, recovery, and daily vitality. Without
+                  it, true cellular hydration never happens - you lose trace minerals through
+                  sweat, air conditioning, and everyday stress, and your body can&apos;t replace
+                  them from water alone.
                 </p>
               </div>
 

@@ -19,7 +19,7 @@ const hero: Column = {
   sugarLabel: 'sugar',
   magnesium: '135mg',
   ingredients: '3 natural minerals',
-  verdict: 'Clean, daily hydration. Cardiovascularly responsible sodium that\u2019s safe to sip all day.',
+  verdict: 'A clean hydration mix you can sip every day. No sweeteners. No artificial anything. Cardiovascularly responsible sodium \u2014 the way electrolytes should be.',
 }
 
 const competitors: Column[] = [
@@ -37,7 +37,7 @@ const competitors: Column[] = [
     sugarLabel: 'sugar',
     magnesium: '~15mg',
     ingredients: 'Natural, but unbalanced',
-    verdict: 'Too much sugar for optimal daily hydration.',
+    verdict: 'Too much sugar for optimal daily hydration. Not suitable for fasting or keto.',
   },
   {
     name: 'Other Mixes',
@@ -45,7 +45,7 @@ const competitors: Column[] = [
     sugarLabel: 'added sugar',
     magnesium: '0\u201350mg',
     ingredients: 'Often filled with maltodextrin',
-    verdict: 'Under-dosed, with carb fillers that can spike glucose.',
+    verdict: 'Under-dosed, with carb fillers like maltodextrin that spike glucose. Read the label.',
   },
 ]
 
@@ -181,10 +181,10 @@ export default function Comparison() {
                 How We Compare
               </p>
               <h2 className="font-display text-h2 font-normal text-white tracking-tight mb-6">
-                The Clear Choice
+                Clean Hydration, Clear Winner
               </h2>
               <p className="text-[15px] font-normal leading-relaxed text-white/70 max-w-[520px]">
-                Maximum minerals. Zero junk. See how we stack up.
+                Whether you want the best electrolytes for athletes, fasting, or daily wellness in Thailand - here&apos;s how we stack up. Maximum minerals. Zero junk.
               </p>
             </div>
           </FadeIn>

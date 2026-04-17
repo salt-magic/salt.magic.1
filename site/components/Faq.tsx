@@ -21,8 +21,8 @@ const faqs = [
     a: 'Yes, these are natural minerals safe for all ages. We recommend a half-serving (1.5g) for children. As always, consult your pediatrician for specific health conditions.',
   },
   {
-    q: 'Where can I buy Salt.Magic?',
-    a: 'You can order directly on Lazada for nationwide delivery, or find us in 160+ locations across Thailand, including Bangkok, Phuket, Koh Samui, Chiang Mai, Hua Hin, Pattaya, and Krabi.',
+    q: 'Where can I buy electrolytes in Thailand?',
+    a: 'You can buy Salt.Magic on Lazada for nationwide delivery, or find us in 160+ locations across Thailand \u2014 including Bangkok, Phuket, Koh Samui, Chiang Mai, Hua Hin, Pattaya, and Krabi. The best electrolytes in Thailand, available wherever you are.',
   },
   {
     q: 'Why do you say 85% of Thai water is "dead water"?',

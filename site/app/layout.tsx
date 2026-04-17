@@ -22,11 +22,11 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Salt.Magic | Natural Electrolytes - Thailand',
+  title: "Salt.Magic - Thailand's Premium Natural Electrolytes",
   description:
     "Salt.Magic is Thailand's premium natural electrolyte mineralizer. Three ingredients: Trimagnesium Citrate, Potassium Citrate, and Himalayan Pink Salt. Zero sugar, unflavored, additive free. Buy electrolytes in Thailand.",
   openGraph: {
-    title: 'Salt.Magic | Natural Electrolytes - Thailand',
+    title: "Salt.Magic - Thailand's Premium Natural Electrolytes",
     description:
       'Natural electrolytes with high-bioavailability magnesium, potassium, and pink Himalayan salt. Zero sugar, zero additives, zero fillers. Thailand\u2019s daily mineralizer.',
     type: 'website',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Salt.Magic | Natural Electrolytes - Thailand',
+    title: "Salt.Magic - Thailand's Premium Natural Electrolytes",
     description:
       'Three ingredients. Zero compromise. Thailand\u2019s clean daily mineralizer.',
     images: ['https://salt-magic.com/images/products/taylor-hero.jpg'],

@@ -104,8 +104,8 @@ export default function Home() {
 
       {/* 9. Products - Shop now */}
       <section id="products" className="py-[clamp(48px,6vw,80px)]">
-        <TextBlock eyebrow="Shop Salt.Magic" showGoldLine title="Ready to upgrade your water?">
-          <p>Choose your daily ritual. Less than the cost of your morning coffee.</p>
+        <TextBlock eyebrow="Shop Salt.Magic" showGoldLine title="Ready to Try Natural Electrolytes?">
+          <p>Choose your daily ritual. Your natural electrolyte mineralizer in Thailand - built to sip all day, every day.</p>
         </TextBlock>
         <div className="h-[clamp(32px,4vw,48px)]" />
         <Products />

@@ -104,7 +104,7 @@ export default function Hero() {
         <div className="max-w-[720px]">
           <FadeIn delay={0.1}>
             <p className="label-uppercase text-white/70 mb-5" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
-              Mineralize Your Water, Everywhere.
+              Natural Electrolytes - Mineralize Your Water, Everywhere.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -116,7 +116,7 @@ export default function Hero() {
           </FadeIn>
           <FadeIn delay={0.35}>
             <p className="text-[15px] font-normal leading-relaxed text-white/90 mb-8 md:mb-10 max-w-[520px] mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
-              85% of bottled water in Thailand is &ldquo;dead water&rdquo; - purified, but nutritionally empty. One scoop brings it back to life. Three ingredients. Zero compromise.
+              85% of bottled water in Thailand is &ldquo;dead water&rdquo; - purified, but nutritionally empty. One scoop brings it back to life. Three ingredients. Zero compromise. Just minerals your body actually absorbs.
             </p>
           </FadeIn>
           <FadeIn delay={0.45}>

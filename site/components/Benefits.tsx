@@ -40,7 +40,7 @@ const benefits = [
       </svg>
     ),
     title: 'Travel & Heat Recovery',
-    desc: 'Replenish vital electrolytes lost to tropical heat, long flights, or simply running empty.',
+    desc: 'Tropical heat, long flights, running empty \u2014 your body loses electrolytes faster than you replace them. The hydration for hot weather and travel you actually need.',
   },
   {
     icon: (

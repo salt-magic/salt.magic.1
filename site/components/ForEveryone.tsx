@@ -24,8 +24,8 @@ export default function ForEveryone() {
               <p className="text-[15px] font-normal leading-[1.8] text-ink-light mb-8">
                 Most electrolytes are packed with sugar &mdash; or so much sodium they&apos;re
                 unsafe to drink more than once. Salt.Magic is different. Whether you&apos;re
-                intermittent fasting, training in tropical heat, sweating through hot yoga,
-                or just navigating a busy workday, your body burns through minerals every
+                intermittent fasting, training Muay Thai in the tropical heat, heavy
+                sweating through hot yoga, or simply navigating a busy workday, your body burns through minerals every
                 single day. One clean, invisible formula for all of it &mdash; built to sip
                 all day, every day.
               </p>
