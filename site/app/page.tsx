@@ -40,8 +40,8 @@ export default function Home() {
           {/* Image - left side */}
           <div className="relative min-h-[300px] overflow-hidden">
             <Image
-              src="/images/products/taylor-closeup.jpg"
-              alt="Salt.Magic glass jar with natural electrolytes"
+              src="/images/products/duo-jar-sachet-bamboo.webp"
+              alt="Salt.Magic Glass Jar and Travel Sachet on bamboo terrace"
               fill
               className="object-cover object-center"
               sizes="(min-width: 1024px) 50vw, 100vw"
