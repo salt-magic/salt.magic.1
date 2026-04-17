@@ -6,10 +6,9 @@ import { FadeIn } from './Motion'
 import { useReducedMotion } from 'framer-motion'
 
 const slides = [
-  { src: '/images/products/beach-jar-sunset.webp', alt: 'Salt.Magic glass jar on beach at golden hour sunset' },
-  { src: '/images/products/yoga-sachet.webp', alt: 'Woman holding Salt.Magic sachet in yoga studio' },
-  { src: '/images/products/poolside-yoga.webp', alt: 'Woman relaxing poolside after yoga session' },
-  { src: '/images/products/taylor-water-nature.jpg', alt: 'Salt.Magic jar in natural water among tropical plants' },
+  { src: '/images/products/hero-sachet.webp', alt: 'Salt.Magic sachet lifestyle hero image' },
+  { src: '/images/products/hero-new-2.webp', alt: 'Salt.Magic lifestyle hero image' },
+  { src: '/images/products/hero-new-3.webp', alt: 'Salt.Magic lifestyle hero image' },
 ]
 
 export default function Hero() {

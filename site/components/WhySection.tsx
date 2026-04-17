@@ -52,7 +52,7 @@ export default function WhySection() {
             <div className="absolute inset-0">
               <Image
                 src="/images/products/why-sachet-pouch.webp"
-                alt="Salt.Magic travel sachet with natural electrolytes on desk with sleep mask"
+                alt="Salt.Magic natural electrolyte sachet beside a glass of mineralized water - magnesium, potassium, and pink Himalayan salt for daily hydration in Thailand"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 55vw"
