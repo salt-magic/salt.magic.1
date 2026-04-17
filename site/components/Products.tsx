@@ -5,7 +5,7 @@ import { StaggerContainer, StaggerItem, motion } from './Motion'
 
 const products = [
   {
-    image: '/images/products/taylor-closeup.jpg',
+    image: '/images/products/glass-jar-final.webp',
     alt: 'Salt.Magic Signature Glass Jar close-up',
     tag: 'Best Value',
     name: 'The Signature Glass Jar',
@@ -75,14 +75,18 @@ export default function Products() {
             <StaggerItem key={product.name}>
               <a href={product.href} target="_blank" rel="noopener noreferrer" className="block text-center group">
                 {/* Image */}
-                <div className="overflow-hidden rounded-[20px] mb-8 bg-warm-off shadow-[0_2px_20px_rgba(60,48,40,0.06)]">
-                  <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}>
+                <div className="overflow-hidden rounded-[20px] mb-8 bg-white shadow-[0_2px_20px_rgba(60,48,40,0.06)]">
+                  <motion.div
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
+                    className="aspect-[3/4] flex items-center justify-center p-8 sm:p-10"
+                  >
                     <Image
                       src={product.image}
                       alt={product.alt}
                       width={550}
                       height={733}
-                      className="w-full aspect-[3/4] object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </motion.div>
                 </div>
