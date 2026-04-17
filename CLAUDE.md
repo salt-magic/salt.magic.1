@@ -41,7 +41,19 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V25 Kovic-Formel + Sodium-USP Positionierung (2026-04-16). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V26 Hero Carousel Refresh (2026-04-17). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V26 Session (Hero Carousel Refresh, WhySection & Glass-Jar Swap, Repo Public):
+- **Hero Carousel neu bestueckt**: Von 4 alten Slides auf 3 neue KI-generierte Lifestyle-Bilder — `hero-sachet.webp` (Sachet neben Wasserglas, Hero Sachet-Quelle), `hero-new-2.webp` (hf_20260417_141151), `hero-new-3.webp` (hf_20260409_054324)
+- **Alte Hero-Bilder geloescht**: `beach-jar-sunset.webp`, `yoga-sachet.webp`, `poolside-yoga.webp`, `hero-new-1.webp` — `taylor-water-nature.jpg` bleibt (noch in StorySection genutzt)
+- **WhySection Bild ersetzt**: `why-sachet-pouch.webp` ueberschrieben mit neuem Sachet-Shot (hf_20260417_151057). Alt-Text SEO-optimiert mit Keywords: "natural electrolyte sachet, mineralized water, magnesium, potassium, pink Himalayan salt, daily hydration, Thailand"
+- **Glass Jar Produktbild komplett neu**: `glass-jar-final.webp` ersetzt `taylor-closeup.jpg` in Products.tsx. Quelle: `reference/product-pics/NEU/salt magic jar new.png` (schwarzer BG). Python-Pipeline (PIL + numpy): Flood-Fill BG-Removal von Ecken, Content auf 72% Canvas-Hoehe skaliert fuer Size-Paritaet mit Travel Sachet (PANPURI-Stil), 1-px Gaussian Feather Anti-Alias, WebP Quality 88, 1200x1600 final (100 KB)
+- **Products.tsx Card-Layout**: von `bg-warm-off` + `aspect-[3/4] object-cover` auf `bg-white` + `aspect-[3/4] flex items-center justify-center p-8 sm:p-10` + `object-contain` fuer sauberes Product-Photo-Framing
+- **Neue Bilder optimiert** (alle WebP, Quality 100, max-width 2752px): Hero Sachet (11.5 MB → 499 KB), hf_20260417_135956 (7.2 MB → 750 KB), hf_20260417_141151 (1.6 MB → 254 KB), hf_20260417_151057 (1.4 MB → 199 KB)
+- **Referenz-Ordner**: `reference/product-pics/NEU/` (Kopien der 2 neuen Hero-Quellen + Glass Jar Source), `reference/product-pics/KI Product bilder/weboptimiert/` (alle optimierten WebPs)
+- **Leo's GitHub-Repo (`salt-magic/salt.magic.1`) ist jetzt PUBLIC**: loest Vercel Hobby-Plan Block fuer Commits von Kerstin (Monstera-creator-01). Vorher: "Deployment Blocked" da Kerstin nicht Contributor auf Leos Vercel
+- **Git Remote-Setup dokumentiert**: `git push v2 main` pusht simultan zu `salt-magic-website-v2.git` (Kerstin) UND `salt.magic.1.git` (Leo). `origin` (V1) bleibt unberuehrt
+- **Commits dieser Session**: 53423af (Glass Jar swap + Size-Paritaet), 22725fa (Hero + WhySection Photo refresh), 72bd6e1 (empty trigger-commit nach Repo-Public-Switch)
 
 Key Changes in V25 Session (Kovic-Formel + Sodium-USP + Sip-All-Day Positionierung):
 - **Drei E-Mails von Leo eingearbeitet**: (1) Sodium-USP & Water-Optimization-Positionierung, (2) Neue FDA-konforme Formel von Kovic, (3) Premium Marketing Strategy (Clean Label + Gourmet/Boots + Sip All Day)
