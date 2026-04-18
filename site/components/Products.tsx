@@ -13,7 +13,7 @@ const products = [
     meta: 'Premium daily mineralizer in eco-friendly glass \u2014 made to live on your kitchen counter',
     desc: 'A beautiful, premium glass jar with a gold lid, designed to live on your kitchen counter. Inside: a clean mineral salt complex that brings your water back to life. Three ingredients. Zero compromise. Proudly crafted at our Koh Samui hub.',
     badge: 'Eco-friendly & reusable',
-    href: 'https://www.lazada.co.th/shop/salt-magic/',
+    href: 'https://www.lazada.co.th/products/saltmagic-natural-electrolytes-jar-140g-i5485961672-s23279174700.html',
   },
   {
     image: '/images/products/sachet-clean.webp',
@@ -24,7 +24,7 @@ const products = [
     meta: 'One sachet, 20 days of optimized hydration \u2014 just 14.5 THB per day',
     desc: 'Your daily minerals, perfectly portable. An unflavored mineral blend in a resealable, GMP/HACCP-certified pouch \u2014 built for the gym bag, office drawer, or long flights. Drop one scoop in any liter of water and sip all day, anywhere life takes you.',
     badge: 'Lightweight & travel-ready',
-    href: 'https://www.lazada.co.th/shop/salt-magic/',
+    href: 'https://www.lazada.co.th/products/saltmagic-natural-electrolytes-sachet-60g-i5486254021-s23279401671.html',
   },
 ]
 
