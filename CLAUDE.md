@@ -54,6 +54,7 @@ Key Changes in V26 Session (Hero Carousel Refresh, WhySection & Glass-Jar Swap, 
 - **Leo's GitHub-Repo (`salt-magic/salt.magic.1`) ist jetzt PUBLIC**: loest Vercel Hobby-Plan Block fuer Commits von Kerstin (Monstera-creator-01). Vorher: "Deployment Blocked" da Kerstin nicht Contributor auf Leos Vercel
 - **Git Remote-Setup dokumentiert**: `git push v2 main` pusht simultan zu `salt-magic-website-v2.git` (Kerstin) UND `salt.magic.1.git` (Leo). `origin` (V1) bleibt unberuehrt
 - **Commits dieser Session**: 53423af (Glass Jar swap + Size-Paritaet), 22725fa (Hero + WhySection Photo refresh), 72bd6e1 (empty trigger-commit nach Repo-Public-Switch)
+- **Lazada Produkt-Links spezifiziert** (2026-04-18, Commit dc606a4): Glass Jar und Travel Sachet CTAs in `Products.tsx` verlinken jetzt direkt auf die jeweilige Lazada-Produktseite statt auf die Shop-Uebersicht. Gleiche URLs auch im Product JSON-LD (`layout.tsx`). Share-Tracking-Parameter (`dsource=share`, `laz_token` etc.) wurden entfernt — nur kanonische Produkt-URLs. Andere generische "Shop Now"-CTAs (CtaBanner, StickyMobileCta, Blog-Artikel, Footer) zeigen weiterhin auf `/shop/salt-magic/` (Uebersicht) — offen, ob die auch auf ein spezifisches Produkt zeigen sollen
 
 Key Changes in V25 Session (Kovic-Formel + Sodium-USP + Sip-All-Day Positionierung):
 - **Drei E-Mails von Leo eingearbeitet**: (1) Sodium-USP & Water-Optimization-Positionierung, (2) Neue FDA-konforme Formel von Kovic, (3) Premium Marketing Strategy (Clean Label + Gourmet/Boots + Sip All Day)
