@@ -40,7 +40,7 @@ export default function Footer() {
               </div>
               <a href="mailto:leo@salt-magic.com" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">leo@salt-magic.com</a>
               <a href="tel:+66826020486" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">+66 826 020 486</a>
-              <a href="https://www.instagram.com/saltmagic.electrolytes" className="block text-[13px] font-normal text-white/70 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">@saltmagic.electrolytes</a>
+              <a href="https://www.instagram.com/saltmagic.electrolytes?igsh=dDNldDlmbXoyc2w5" target="_blank" rel="noopener noreferrer" className="block text-[13px] font-normal text-white/70 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">@saltmagic.electrolytes</a>
             </div>
           </div>
 
@@ -88,7 +88,7 @@ export default function Footer() {
                 No sugar. No flavors. No waste.
               </p>
               <div className="flex gap-2 mt-5">
-                <a href="https://www.instagram.com/saltmagic.electrolytes" className="text-white/70 hover:text-gold transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm" aria-label="Instagram">
+                <a href="https://www.instagram.com/saltmagic.electrolytes?igsh=dDNldDlmbXoyc2w5" target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-gold transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm" aria-label="Instagram">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5" />
                     <circle cx="12" cy="12" r="5" />
@@ -114,7 +114,7 @@ export default function Footer() {
               <div className="text-[12px] font-medium text-gold mb-4 font-display">Connect</div>
               <a href="mailto:leo@salt-magic.com" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">leo@salt-magic.com</a>
               <a href="tel:+66826020486" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">+66 826 020 486</a>
-              <a href="https://www.instagram.com/saltmagic.electrolytes" target="_blank" rel="noopener noreferrer" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">@saltmagic.electrolytes</a>
+              <a href="https://www.instagram.com/saltmagic.electrolytes?igsh=dDNldDlmbXoyc2w5" target="_blank" rel="noopener noreferrer" className="block text-[13px] font-normal text-white/70 mb-2.5 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">@saltmagic.electrolytes</a>
             </div>
 
             {/* Newsletter */}
