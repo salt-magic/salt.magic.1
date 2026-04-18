@@ -64,8 +64,14 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="border-t border-white/[.07] pt-6 flex justify-between text-xs font-normal text-white/70">
+          <div className="border-t border-white/[.07] pt-6 flex justify-between items-center text-xs font-normal text-white/70">
             <span>Made on Koh Samui</span>
+            <Link
+              href="/privacy"
+              className="text-white/70 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+            >
+              Privacy
+            </Link>
             <span>&copy; 2026 Salt.Magic</span>
           </div>
         </div>
@@ -137,8 +143,14 @@ export default function Footer() {
           </div>
 
           {/* Bottom bar */}
-          <div className="flex justify-between pt-6 text-xs font-normal text-white/70">
+          <div className="flex justify-between items-center pt-6 text-xs font-normal text-white/70">
             <span>Made on Koh Samui, Thailand</span>
+            <Link
+              href="/privacy"
+              className="text-white/70 hover:text-gold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+            >
+              Privacy
+            </Link>
             <span>&copy; 2026 Salt.Magic</span>
           </div>
         </div>

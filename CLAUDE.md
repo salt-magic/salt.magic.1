@@ -41,7 +41,25 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V26 Hero Carousel Refresh (2026-04-17). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V27 Privacy Policy Seite (2026-04-18). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V27 Session (Privacy Policy Seite):
+- **Neue Route `/privacy`**: PDPA-konforme Datenschutzerklaerung mit 16 Sections, Content 1:1 aus `outputs/Salt-Magic-Privacy-Policy-v1.docx` (Leos Go-Live-Version)
+- **Editorial-Layout**: Header-Section mit Gold-Line + Eyebrow + Playfair H1 auf `bg-warm-off`, Reading-Column `max-w-[680px]` fuer Content, Section-Separatoren via `<hr className="border-border-warm">`
+- **Typografie-Rollen**: Playfair fuer H1/H2/H3, Inter fuer Body/Listen. H2 `clamp(22px,2.8vw,30px)`, H3 `clamp(17px,2vw,20px)`. `font-normal`/`font-medium` only (V18 Token-Policy)
+- **Purpose-Legal-Basis-Tabelle (Sec. 4)**: Responsive Grid `grid-cols-1 sm:grid-cols-[3fr_2fr]` mit `role="table"`/`role="row"`/`role="cell"` + Header-Row in `bg-mineral/5`, Gold-Separatoren zwischen Zeilen
+- **Email-Split pro Section**: `info@salt-magic.com` in Sec. 1 (Data Controller) + Sec. 16 (Final Contact), `leo@salt-magic.com` in Sec. 6 (Contact Processing) + Sec. 8 (Newsletter Withdrawal) + Sec. 12 (Rights) - genau wie die Docx
+- **Director "Kawin Tanomsat"** in Sec. 1 eingetragen
+- **Sec. 7.3-7.6 als aktive Sub-Sections gerendert** (GA4, Meta Pixel Facebook/Instagram, Google Maps, YouTube) - Docx-Vorgabe trotz Sec. 7.2 "Currently: none"
+- **Anchor-Links durchgehend**: `id="data-controller"`, `id="cookies"`, `id="newsletter"`, `id="cross-border"`, `id="external-redirects"` etc. + interne Cross-Refs ("see Section 8" → `href="#newsletter"`)
+- **Externe Links** mit `target="_blank" rel="noopener noreferrer"` + `aria-label="... (opens in new window)"` fuer PDPC, Resend, Mailchimp
+- **Kontakt-Card (Sec. 16)**: `bg-warm-off` Card mit Gold-Line, Playfair-Firmenname, Adresse + info@ Email-Link
+- **Footer Bottom-Bar erweitert** (Mobile + Desktop in `site/components/Footer.tsx`): Drei-Element-Flex mit `<Link href="/privacy">Privacy</Link>` zwischen "Made on Koh Samui" und Copyright
+- **Sitemap erweitert** (`site/app/sitemap.ts`): `/privacy` Eintrag mit `priority: 0.3` + `changeFrequency: 'yearly'`
+- **Metadata**: Title "Privacy Policy - Salt.Magic", `robots: 'index, follow'`, Canonical-URL `https://salt-magic.com/privacy`
+- **Build gruen**: `npm run build` erzeugt `/privacy` als statische Route (138 B, First Load JS 87.4 kB)
+- **Bewusst NICHT implementiert**: Cookie-Banner (Policy Sec. 7.2 sagt "Currently: none"), DPO-Fussnote (nicht in Docx), Terms-of-Service- und Imprint-Seiten (separater Auftrag), Newsletter-Consent-Checkbox im Footer-Form (offen bis Backend live)
+- **Offene Folgeaufgaben**: Thai-Anwalt-Review der Policy vor Public-Go-Live (Leo), Terms + Imprint als weitere Legal-Seiten, Newsletter-Form Consent-Checkbox + Privacy-Link-Verknuepfung wenn Mailchimp-Backend live geht
 
 Key Changes in V26 Session (Hero Carousel Refresh, WhySection & Glass-Jar Swap, Repo Public):
 - **Hero Carousel neu bestueckt**: Von 4 alten Slides auf 3 neue KI-generierte Lifestyle-Bilder — `hero-sachet.webp` (Sachet neben Wasserglas, Hero Sachet-Quelle), `hero-new-2.webp` (hf_20260417_141151), `hero-new-3.webp` (hf_20260409_054324)
