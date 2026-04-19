@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>ImageBreak Filter Options — Salt.Magic</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: Inter, system-ui, sans-serif; background: #FFFFFF; color: #3C3028; }
+
+  h1 { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 28px; text-align: center; padding: 40px 20px 10px; color: #294B6D; }
+  .subtitle { text-align: center; font-size: 13px; color: #7A7268; padding-bottom: 40px; }
+
+  .option { margin-bottom: 60px; }
+  .option-header { display: flex; align-items: baseline; gap: 12px; padding: 0 40px; margin-bottom: 16px; }
+  .option-label { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #294B6D; background: #294B6D15; padding: 4px 10px; border-radius: 4px; }
+  .option-title { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 400; color: #3C3028; }
+  .option-desc { font-size: 13px; color: #7A7268; padding: 0 40px; margin-bottom: 20px; line-height: 1.6; }
+  .option-css { font-size: 12px; color: #294B6D; padding: 8px 16px; margin: 0 40px 20px; background: #F9F7F4; border-radius: 6px; font-family: 'Courier New', monospace; display: inline-block; }
+
+  .image-strip { position: relative; width: 100%; height: 400px; overflow: hidden; }
+  .image-strip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* Option A: Dezent */
+  .filter-a img { filter: saturate(0.7); }
+  .filter-a .overlay { position: absolute; inset: 0; background: #294B6D; opacity: 0.20; mix-blend-mode: multiply; }
+
+  /* Option B: Staerker gedaempft */
+  .filter-b img { filter: saturate(0.7); }
+  .filter-b .overlay-1 { position: absolute; inset: 0; background: #294B6D; opacity: 0.30; mix-blend-mode: multiply; }
+  .filter-b .overlay-2 { position: absolute; inset: 0; background: #D4BFAA; opacity: 0.20; mix-blend-mode: overlay; }
+
+  /* Context sections */
+  .context-section { padding: 60px 40px; text-align: center; }
+  .context-section.warm-off { background: #F9F7F4; }
+  .context-section.white { background: #FFFFFF; }
+  .context-label { font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #7A7268; margin-bottom: 12px; }
+  .context-heading { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: #3C3028; }
+
+  .divider { height: 1px; background: #D4BFAA40; margin: 0 40px; }
+
+  @media (max-width: 768px) {
+    .option-header { padding: 0 20px; }
+    .option-desc { padding: 0 20px; }
+    .option-css { margin: 0 20px 20px; }
+    .image-strip { height: 280px; }
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<h1>ImageBreak Filter-Optionen</h1>
+<p class="subtitle">Salzkristall-Foto mit Brand-konformen Filtern — im Kontext der umliegenden Sections</p>
+
+<!-- ============ ORIGINAL (kein Filter) ============ -->
+<div class="option">
+  <div class="option-header">
+    <span class="option-label">Aktuell</span>
+    <span class="option-title">Ohne Filter (Raw)</span>
+  </div>
+  <p class="option-desc">Unbehandeltes Foto — zu vibrant, bricht den gedaempften Brand-Flow.</p>
+
+  <div class="context-section warm-off">
+    <p class="context-label">For Everyone</p>
+    <p class="context-heading">Not a Sports Drink. A Daily Essential.</p>
+  </div>
+  <div class="image-strip">
+    <img src="../reference/product-pics/Canva-Bilder/saltmagic.png" alt="Salt crystals — no filter">
+  </div>
+  <div class="context-section white">
+    <p class="context-label">Shop Salt.Magic</p>
+    <p class="context-heading">Ready to upgrade your water?</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============ OPTION A ============ -->
+<div class="option">
+  <div class="option-header">
+    <span class="option-label">Option A</span>
+    <span class="option-title">Dezenter Warm-Overlay (empfohlen)</span>
+  </div>
+  <p class="option-desc">Saettigung auf 70% reduziert + leichter Mineral Blue Overlay (20%, multiply). Daempft das Pink, haelt die Kristall-Textur sichtbar.</p>
+  <div class="option-css">saturate(.7) + bg-mineral/20 mix-blend-multiply</div>
+
+  <div class="context-section warm-off">
+    <p class="context-label">For Everyone</p>
+    <p class="context-heading">Not a Sports Drink. A Daily Essential.</p>
+  </div>
+  <div class="image-strip filter-a">
+    <img src="../reference/product-pics/Canva-Bilder/saltmagic.png" alt="Salt crystals — Option A">
+    <div class="overlay"></div>
+  </div>
+  <div class="context-section white">
+    <p class="context-label">Shop Salt.Magic</p>
+    <p class="context-heading">Ready to upgrade your water?</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ============ OPTION B ============ -->
+<div class="option">
+  <div class="option-header">
+    <span class="option-label">Option B</span>
+    <span class="option-title">Staerker gedaempft — Mineral + Gold</span>
+  </div>
+  <p class="option-desc">Saettigung auf 70% + staerkerer Mineral Blue Overlay (30%, multiply) + warmer Gold Overlay (20%, overlay). Mutet das Bild deutlich in Richtung Brand-Palette.</p>
+  <div class="option-css">saturate(.7) + bg-mineral/30 multiply + bg-gold/20 overlay</div>
+
+  <div class="context-section warm-off">
+    <p class="context-label">For Everyone</p>
+    <p class="context-heading">Not a Sports Drink. A Daily Essential.</p>
+  </div>
+  <div class="image-strip filter-b">
+    <img src="../reference/product-pics/Canva-Bilder/saltmagic.png" alt="Salt crystals — Option B">
+    <div class="overlay-1"></div>
+    <div class="overlay-2"></div>
+  </div>
+  <div class="context-section white">
+    <p class="context-label">Shop Salt.Magic</p>
+    <p class="context-heading">Ready to upgrade your water?</p>
+  </div>
+</div>
+
+</body>
+</html>
