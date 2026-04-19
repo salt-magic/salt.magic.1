@@ -4,10 +4,10 @@ import { FadeIn } from './Motion'
 export default function CtaBanner() {
   return (
     <section className="relative overflow-hidden">
-      {/* PANPURI-inspired silhouette background */}
+      {/* Editorial lifestyle background */}
       <div className="absolute inset-0">
         <Image
-          src="/images/mood/panpuri-3.png"
+          src="/images/mood/cta-banner-bg.webp"
           alt=""
           fill
           className="object-cover"
