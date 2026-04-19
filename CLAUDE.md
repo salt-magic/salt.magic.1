@@ -41,7 +41,19 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V27 Privacy Policy Seite (2026-04-18). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V28 DNS Migration Namecheap → Vercel (2026-04-19). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V28 Session (DNS Migration Namecheap → Vercel):
+- **Domain-Migration durchgezogen**: Apex `salt-magic.com` + `www.salt-magic.com` zeigen jetzt auf Vercel statt Lovable. Namecheap bleibt Registrar + DNS-Authority (A-Record-Methode, nicht Nameserver-Switch)
+- **DNS-Records geaendert**: Apex A-Record `185.158.133.1` (Lovable) → `216.198.79.1` (Vercel). `www` A-Record geloescht, durch CNAME `d1c6af0a970f4ef8.vercel-dns-017.com` ersetzt (Vercel projektspezifisch)
+- **MX-Records unveraendert**: Alle 5 Google Workspace MX-Records (aspmx.l.google.com, alt1-4) stehen 1:1. `info@salt-magic.com` + `leo@salt-magic.com` laufen weiter via Gmail. SPF TXT + Google-Site-Verification TXT ebenfalls unveraendert
+- **Vercel Primary-Domain umgestellt**: War vorher `salt-magic.com` → 307 Redirect auf `www.salt-magic.com`. Jetzt Apex als Production gesetzt, `www` bekommt 308 Permanent Redirect auf Apex
+- **308 statt 307 Redirect**: Vercel-Default war 307 Temporary, bewusst auf 308 Permanent umgestellt fuer SEO-Konsolidierung (Google uebertraegt Ranking-Signale dauerhaft auf Apex)
+- **SSL-Zertifikate automatisch provisioniert** durch Vercel auf beiden Domains (`Strict-Transport-Security: max-age=63072000`)
+- **Funktionstest 2026-04-19**: `curl -skI https://salt-magic.com` → 200 OK (Server: Vercel, X-Vercel-Cache: HIT). `curl -skI https://www.salt-magic.com` → 308 Permanent Redirect, Location: `https://salt-magic.com/`
+- **Pre-Flight-Audit-Dokument**: `outputs/domain-migration-audit.md` mit BEFORE (Lovable-Stand), Sicherheitszone (MX/TXT/NS unveraendert), Aktionszone (nur A + CNAME), AFTER (verifizierte Ziel-Werte), Rollback-Werte
+- **SEO-Konsolidierung**: Aller organischer Traffic und alle Backlinks fliessen jetzt auf canonical `salt-magic.com`. Konsistent mit Privacy Policy canonical, Sitemap, JSON-LD
+- **Offen**: Optional Test-Mail an info@/leo@ zur Bestaetigung (technisch redundant da MX unveraendert)
 
 Key Changes in V27 Session (Privacy Policy Seite):
 - **Neue Route `/privacy`**: PDPA-konforme Datenschutzerklaerung mit 16 Sections, Content 1:1 aus `outputs/Salt-Magic-Privacy-Policy-v1.docx` (Leos Go-Live-Version)
