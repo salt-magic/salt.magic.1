@@ -125,7 +125,7 @@ export default function Hero() {
       </button>
 
       {/* Content - stacked below image on mobile (warm-off card), overlayed on desktop */}
-      <div className="relative z-10 bg-warm-off md:bg-transparent md:absolute md:inset-0 md:min-h-[100dvh] flex flex-col flex-shrink-0 md:items-center md:justify-end text-left md:text-center px-6 md:px-[clamp(24px,6vw,80px)] pt-5 pb-5 md:pt-0 md:pb-[clamp(80px,12vw,140px)]">
+      <div className="relative z-10 bg-warm-off md:bg-transparent md:absolute md:inset-0 md:min-h-[100dvh] flex flex-col flex-shrink-0 md:items-center md:justify-end text-left md:text-center px-6 md:px-[clamp(24px,6vw,80px)] pt-5 pb-5 md:pt-0 md:pb-[clamp(40px,6vw,80px)]">
         <div className="w-full md:max-w-[720px] md:mx-auto">
           <FadeIn delay={0.1}>
             <div className="flex items-center gap-3 mb-3 md:mb-5 md:justify-center">
