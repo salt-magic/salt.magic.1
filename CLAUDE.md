@@ -41,7 +41,16 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V29 Nav Logo Fix + Responsive-Audit-Sweep (2026-04-20). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V30 Leo-Onboarding-Vorbereitung (2026-04-20). Einschulung mit Leo geplant fuer Freitag 2026-04-24. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V30 Session (Leo Onboarding Prep fuer Freitag Einschulung):
+- **Neue Datei `outputs/leo-onboarding-freitag.md`**: Schritt-fuer-Schritt Setup-Anleitung fuer Leo (Anfaenger, kein Techniker). Claude Desktop App hat er bereits — Anleitung deckt Git + Node + GitHub CLI Installation, `gh auth login` (statt PAT), `git clone` von `salt-magic/salt.magic.1.git`, Projekt-Zuordnung in Desktop App, Dev-Server-Start per Claude-Anweisung, erste Test-Aenderung + Commit + Push
+- **Entscheidungen waehrend Entwurf**:
+  1. Personal Access Token verworfen — `gh auth login` ist moderner und funktioniert auch mit private Repos
+  2. Option B (lokales Setup mit Desktop App) gewaehlt ueber Web-App-Variante, weil Leo die Desktop App bereits hat und lokale Dev-Server-Preview (localhost:3000, sofortige Updates) fuer Feedback-Loop besser ist als Vercel-Preview-PRs
+  3. Anleitung deckt Mac + Windows parallel ab (unbekannt was Leo nutzt)
+  4. Repo soll erstmal public bleiben waehrend Einschulung — Private-Switch + Vercel-Pro-Upgrade spaeter als zweiter Schritt, um zwei Unbekannte gleichzeitig zu vermeiden
+- **Offen fuer Freitag**: Exakter Button-Name in Claude Desktop App fuer "Add Project" / "Open Folder" (Version-abhaengig, Kerstin checkt vor Termin); Ablauf 1:1 durchspielen; wenn alles glatt lief, Follow-up-Anleitung fuer Tag 2 (Git-Branches, PRs) erwaegen
 
 Key Changes in V29 Session (Nav Logo Bug Fix + Comprehensive Responsive Sweep):
 - **Leos Bug-Report**: Logo sah auf Hero verrutscht/kontrastarm aus. Root-Cause-Kaskade identifiziert:
