@@ -157,7 +157,7 @@ export default function Nav() {
 
   return (
     <header
-      className={`fixed left-0 right-0 z-50 transition-[top,background-color,box-shadow] duration-500 ${
+      className={`fixed left-0 right-0 transition-[top,background-color,box-shadow] duration-500 ${mobileOpen ? 'z-[70]' : 'z-50'} ${
         scrolled
           ? 'top-0 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)] lg:bg-white/90 lg:backdrop-blur-[20px]'
           : mobileOpen
@@ -308,8 +308,37 @@ export default function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-            className="fixed inset-0 top-0 bg-white z-40 lg:hidden flex flex-col items-center justify-center"
+            className="fixed inset-0 top-0 bg-white z-[70] lg:hidden flex flex-col items-center justify-center"
           >
+            {/* Menu header: logo centered + close button right */}
+            <div className="absolute top-0 left-0 right-0 h-[116px] flex items-center justify-between px-[clamp(24px,5vw,64px)]">
+              <div className="min-h-[44px] min-w-[44px]" aria-hidden="true" />
+              <Link
+                href="/"
+                onClick={() => setMobileOpen(false)}
+                className={`flex-shrink-0 relative h-[100px] w-[100px] block ${focusRing}`}
+                aria-label="Salt.Magic - Back to top"
+              >
+                <Image
+                  src="/images/logos/logo-transparent.png"
+                  alt="Salt.Magic"
+                  width={100}
+                  height={100}
+                  className="w-full h-full"
+                  priority
+                />
+              </Link>
+              <button
+                onClick={() => setMobileOpen(false)}
+                className={`flex items-center justify-center bg-transparent border-none cursor-pointer min-h-[44px] min-w-[44px] text-ink ${focusRing}`}
+                aria-label="Close menu"
+              >
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+                  <line x1="3" y1="3" x2="15" y2="15" />
+                  <line x1="15" y1="3" x2="3" y2="15" />
+                </svg>
+              </button>
+            </div>
             <nav className="flex flex-col items-center gap-2">
               {allLinks.map((link, i) => (
                 <motion.div
