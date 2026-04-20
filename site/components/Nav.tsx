@@ -167,7 +167,7 @@ export default function Nav() {
               : 'top-9 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)]'
       }`}
     >
-      <div className="relative w-full max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)] h-24 flex items-center justify-between">
+      <div className="relative w-full max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)] h-[80px] lg:h-[116px] flex items-center justify-between">
         {/* Left links (desktop) */}
         <div className="hidden lg:flex items-center gap-[clamp(20px,2.5vw,40px)] flex-1">
           {leftLinks.map((link, i) => (
@@ -211,7 +211,7 @@ export default function Nav() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="flex-shrink-0 relative h-[100px] w-[100px]"
+          className="flex-shrink-0 relative h-[64px] w-[64px] lg:h-[100px] lg:w-[100px]"
         >
           <Link
             href="/"
@@ -224,7 +224,7 @@ export default function Nav() {
               alt="Salt.Magic"
               width={100}
               height={100}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-500 brightness-0 invert drop-shadow-[0_1px_6px_rgba(0,0,0,.4)] ${
+              className={`absolute inset-0 w-full h-full transition-opacity duration-500 brightness-0 invert drop-shadow-[0_2px_14px_rgba(0,0,0,.6)] ${
                 useDarkNav || mobileOpen ? 'opacity-0' : 'opacity-100'
               }`}
               priority
@@ -308,7 +308,7 @@ export default function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-            className="fixed inset-0 top-0 bg-white z-[-1] lg:hidden flex flex-col items-center justify-center"
+            className="fixed inset-0 top-0 bg-white z-40 lg:hidden flex flex-col items-center justify-center"
           >
             <nav className="flex flex-col items-center gap-2">
               {allLinks.map((link, i) => (

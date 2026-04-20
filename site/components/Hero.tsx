@@ -92,6 +92,14 @@ export default function Hero() {
         }}
       />
 
+      {/* Top scrim - ensures Nav/logo contrast against warm Hero slides */}
+      <div
+        className="absolute top-0 inset-x-0 h-[140px] md:h-[180px] z-[3] pointer-events-none"
+        style={{
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.16) 50%, transparent 100%)',
+        }}
+      />
+
       {/* Arrows - desktop only */}
       <button
         onClick={prev}

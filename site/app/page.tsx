@@ -57,7 +57,7 @@ export default function Home() {
 
       {/* 4. The Formula - Split layout: image left, ingredients right */}
       <section className="bg-warm-off">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] lg:min-h-[800px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] lg:min-h-[640px] xl:min-h-[720px]">
           {/* Image - left side */}
           <div className="relative min-h-[300px] overflow-hidden">
             <Image
@@ -101,7 +101,7 @@ export default function Home() {
 
       {/* Gold divider */}
       <div className="py-[clamp(40px,5vw,56px)] flex items-center justify-center bg-warm-off" aria-hidden="true">
-        <div className="w-12 h-px bg-gold" />
+        <div className="w-[clamp(48px,6vw,96px)] h-px bg-gold" />
       </div>
 
       {/* 5. Comparison - How we're different */}

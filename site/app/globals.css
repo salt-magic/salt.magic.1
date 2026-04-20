@@ -60,15 +60,6 @@
     border-radius: inherit;
   }
 
-  .section-fade-to-warm {
-    height: 1px;
-    background: transparent;
-  }
-
-  .section-fade-from-warm {
-    height: 1px;
-    background: transparent;
-  }
 }
 
 @layer utilities {
