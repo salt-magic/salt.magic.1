@@ -30,9 +30,9 @@ export default function Newsletter() {
             id="newsletter-email"
             type="email"
             placeholder="your@email.com"
-            className="flex-1 py-3.5 px-5 bg-white border border-border-warm rounded-pill text-[15px] font-normal text-ink font-body outline-none placeholder:text-ink-faint focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
+            className="flex-1 min-h-[44px] py-3.5 px-5 bg-white border border-border-warm rounded-pill text-[15px] font-normal text-ink font-body outline-none placeholder:text-ink-faint focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold"
           />
-          <button className="py-3.5 px-8 bg-mineral border-none rounded-pill text-white text-[12px] font-medium tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold whitespace-nowrap">
+          <button className="min-h-[44px] py-3.5 px-8 bg-mineral border-none rounded-pill text-white text-[12px] font-medium tracking-cta uppercase cursor-pointer font-body hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold whitespace-nowrap">
             Unlock 10% Off
           </button>
         </div>
