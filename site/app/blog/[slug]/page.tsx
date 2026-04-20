@@ -22,7 +22,7 @@ export async function generateMetadata({
   const url = `https://salt-magic.com/blog/${post.slug}`
   const ogImage = post.heroImage
     ? `https://salt-magic.com${post.heroImage}`
-    : 'https://salt-magic.com/images/products/taylor-hero.jpg'
+    : 'https://salt-magic.com/images/products/salt-magic-og.jpg'
 
   return {
     title: `${post.title} - Salt.Magic`,

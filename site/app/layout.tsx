@@ -36,10 +36,10 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: 'https://salt-magic.com/images/products/taylor-hero.jpg',
+        url: 'https://salt-magic.com/images/products/salt-magic-og.jpg',
         width: 1200,
         height: 630,
-        alt: 'Salt.Magic - Natural Electrolyte Mineralizer',
+        alt: 'Salt.Magic Natural Electrolytes - glass jar and travel sachet',
       },
     ],
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: 'Salt.Magic | Natural Electrolyte Mineralizer - Thailand',
     description:
       'Natural electrolyte mineralizer \u2014 135mg Trimagnesium Citrate, 532mg Potassium, zero sugar, unflavored. Thailand\u2019s clean hydration ritual.',
-    images: ['https://salt-magic.com/images/products/taylor-hero.jpg'],
+    images: ['https://salt-magic.com/images/products/salt-magic-og.jpg'],
   },
   robots: 'index, follow',
   authors: [{ name: 'Salt.Magic' }],
