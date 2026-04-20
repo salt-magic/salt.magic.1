@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salt.Magic Partner - Contact Section (Mailto) Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --mineral: #294B6D;
+  --mineral-light: #3D6588;
+  --gold: #D4BFAA;
+  --warm-off: #F9F7F4;
+  --warm-white: #FFFFFF;
+  --ink: #3C3028;
+  --ink-light: #5A4A3C;
+  --ink-faint: #9B8E82;
+  --border-warm: #E8DFD3;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: #f0ede8; }
+
+/* Page chrome */
+.page-header { background: var(--mineral); color: white; padding: 48px 40px; text-align: center; }
+.page-header h1 { font-family: 'Playfair Display', serif; font-weight: 400; font-size: 30px; margin-bottom: 10px; }
+.page-header p { font-size: 13px; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto; line-height: 1.65; }
+.page-header .current { display: inline-block; margin-top: 16px; padding: 6px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; }
+
+.option-section { max-width: 1400px; margin: 56px auto; padding: 0 24px; }
+.option-label { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.option-badge { background: var(--mineral); color: white; font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; padding: 5px 12px; border-radius: 16px; }
+.option-ref-chip { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); padding: 4px 10px; border: 1px solid var(--border-warm); border-radius: 12px; background: white; }
+.option-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 400; color: var(--mineral); }
+.option-desc { font-size: 13px; color: var(--ink-light); margin-bottom: 20px; line-height: 1.65; max-width: 720px; }
+.viewport-row { display: flex; gap: 24px; align-items: flex-start; flex-wrap: wrap; }
+.frame { border-radius: 12px; overflow: hidden; box-shadow: 0 6px 40px rgba(0,0,0,0.08); background: #fff; flex-shrink: 0; }
+.frame-desktop { width: 900px; max-width: 100%; }
+.frame-mobile { width: 375px; }
+.frame-bar { background: #e8e8e8; height: 26px; display: flex; align-items: center; padding: 0 12px; gap: 6px; }
+.frame-dot { width: 8px; height: 8px; border-radius: 50%; background: #c8c8c8; }
+.frame-label { margin-left: auto; font-size: 10px; color: #888; letter-spacing: 0.08em; text-transform: uppercase; }
+.frame-content { width: 100%; position: relative; overflow: hidden; }
+.divider { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+.divider hr { border: none; border-top: 1px solid var(--border-warm); }
+
+/* Shared section-content tokens (mirrors Salt.Magic component styles) */
+.sm-eyebrow { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; }
+.sm-eyebrow-ink { color: var(--ink-light); }
+.sm-eyebrow-gold { color: var(--gold); }
+.sm-h2 { font-family: 'Playfair Display', serif; font-weight: 400; color: var(--mineral); letter-spacing: -0.01em; line-height: 1.15; }
+.sm-h2-white { color: white; }
+.sm-gold-line { width: 24px; height: 1px; background: var(--gold); margin-bottom: 16px; }
+.sm-pill-mineral { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; background: var(--mineral); color: white; border-radius: 999px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; }
+.sm-pill-mineral:hover { background: var(--mineral-light); }
+.sm-pill-gold { display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; background: var(--gold); color: var(--mineral); border-radius: 999px; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: filter 0.3s; }
+.sm-pill-gold:hover { filter: brightness(0.95); }
+.sm-icon-mail { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* === Option A: Quiet Editorial === */
+.opt-a {
+  background: var(--warm-off);
+  padding: 100px 40px;
+  text-align: center;
+}
+.opt-a-mobile { padding: 64px 24px; }
+.opt-a-inner { max-width: 560px; margin: 0 auto; }
+.opt-a .sm-gold-line { margin-left: auto; margin-right: auto; }
+.opt-a-h2 { font-size: 42px; margin-bottom: 16px; }
+.opt-a-mobile .opt-a-h2 { font-size: 30px; }
+.opt-a-sub { font-size: 15px; font-weight: 400; color: var(--ink-light); line-height: 1.65; margin-bottom: 36px; }
+.opt-a-mobile .opt-a-sub { font-size: 14px; margin-bottom: 28px; }
+.opt-a-phone { margin-top: 20px; font-size: 13px; color: var(--ink-light); }
+.opt-a-phone a { color: var(--ink-light); text-decoration: none; border-bottom: 1px solid var(--border-warm); padding-bottom: 2px; }
+
+/* === Option B: Immersive Dark Banner === */
+.opt-b {
+  background: var(--mineral);
+  background-image:
+    radial-gradient(ellipse at top left, rgba(61,101,136,0.4), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(26,40,60,0.5), transparent 60%);
+  padding: 120px 40px;
+  text-align: center;
+  position: relative;
+}
+.opt-b-mobile { padding: 80px 24px; }
+.opt-b-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 2; }
+.opt-b-eyebrow { margin-bottom: 24px; display: block; }
+.opt-b-h2 { font-size: 48px; margin-bottom: 20px; line-height: 1.1; }
+.opt-b-mobile .opt-b-h2 { font-size: 32px; }
+.opt-b-sub { font-size: 16px; font-weight: 400; color: rgba(255,255,255,0.7); line-height: 1.65; margin-bottom: 40px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.opt-b-mobile .opt-b-sub { font-size: 14px; margin-bottom: 32px; }
+.opt-b-channels { margin-top: 28px; display: flex; align-items: center; justify-content: center; gap: 16px; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); flex-wrap: wrap; }
+.opt-b-channels a { color: rgba(255,255,255,0.85); text-decoration: none; }
+.opt-b-channels a:hover { color: white; }
+.opt-b-channels .dot { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); }
+.opt-b-mobile .opt-b-channels { flex-direction: column; gap: 10px; }
+.opt-b-mobile .opt-b-channels .dot { display: none; }
+
+/* === Option C: Editorial Split Card === */
+.opt-c {
+  background: var(--warm-off);
+  padding: 96px 40px;
+}
+.opt-c-mobile { padding: 56px 20px; }
+.opt-c-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid var(--border-warm);
+  border-radius: 18px;
+  padding: 56px 64px;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 48px;
+  align-items: start;
+}
+.opt-c-mobile .opt-c-card {
+  padding: 36px 28px;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  border-radius: 14px;
+}
+.opt-c-h2 { font-size: 36px; margin-bottom: 14px; }
+.opt-c-mobile .opt-c-h2 { font-size: 26px; }
+.opt-c-para { font-size: 15px; font-weight: 400; color: var(--ink-light); line-height: 1.7; margin-bottom: 24px; }
+.opt-c-mobile .opt-c-para { font-size: 14px; }
+.opt-c-include-label { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); margin-bottom: 14px; }
+.opt-c-include { list-style: none; padding: 0; }
+.opt-c-include li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--ink-light); line-height: 1.6; margin-bottom: 10px; }
+.opt-c-include li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin-top: 8px; flex-shrink: 0; }
+.opt-c-action {
+  background: var(--warm-off);
+  border-radius: 14px;
+  padding: 32px 28px;
+}
+.opt-c-action-label { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 18px; }
+.opt-c-action .sm-pill-mineral { width: 100%; justify-content: center; padding: 16px 24px; box-sizing: border-box; }
+.opt-c-divider { width: 100%; height: 1px; background: var(--gold); margin: 22px 0 18px; opacity: 0.5; }
+.opt-c-phone-line { font-size: 13px; color: var(--ink-light); margin-bottom: 10px; }
+.opt-c-phone-line strong { color: var(--ink); font-weight: 500; }
+.opt-c-phone-line a { color: var(--ink-light); text-decoration: none; border-bottom: 1px solid var(--border-warm); }
+.opt-c-micro { font-size: 12px; color: var(--ink-faint); letter-spacing: 0.03em; margin-top: 14px; }
+
+/* Footer legend */
+.legend { max-width: 1400px; margin: 24px auto 80px; padding: 24px; background: white; border-radius: 12px; border: 1px solid var(--border-warm); }
+.legend h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 500; color: var(--mineral); margin-bottom: 10px; }
+.legend p { font-size: 12px; color: var(--ink-light); line-height: 1.65; margin-bottom: 8px; }
+.legend code { background: var(--warm-off); padding: 2px 6px; border-radius: 4px; font-size: 11px; color: var(--mineral); }
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>Partner Contact Section - Mailto Variant</h1>
+  <p>Ersetzt das nicht-funktionale PartnerForm durch eine Contact-Section mit Mailto-Button. Drei Design-Optionen fuer Leo zum Auswaehlen. Klickbare Buttons oeffnen das Default-Mailprogramm mit vorausgefuelltem Subject + Body.</p>
+  <span class="current">Currently on Partner Page: PartnerForm.tsx (non-functional)</span>
+</header>
+
+<!-- OPTION A -->
+<section class="option-section">
+  <div class="option-label">
+    <span class="option-badge">Option A</span>
+    <span class="option-title">Quiet Editorial</span>
+    <span class="option-ref-chip">Ref: PANPURI / Aesop</span>
+  </div>
+  <p class="option-desc">
+    Ruhig, zentriert, whitespace-heavy. Folgt dem PANPURI-Minimalism-Prinzip: Ein klarer Call, viel Luft, kein Visual-Noise. Konsistent mit der bestehenden warm-off Section-Ruhe auf der Partner-Page. <strong>Beste Wahl wenn:</strong> Der Rest der Page bereits viel kommuniziert hat und die Kontaktstelle bewusst heruntergefahren sein soll.
+  </p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar">
+        <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+        <span class="frame-label">Desktop - 900px</span>
+      </div>
+      <div class="frame-content">
+        <div class="opt-a">
+          <div class="opt-a-inner">
+            <div class="sm-gold-line"></div>
+            <p class="sm-eyebrow sm-eyebrow-ink" style="margin-bottom: 20px;">Get In Touch</p>
+            <h2 class="sm-h2 opt-a-h2">Let&apos;s talk distribution</h2>
+            <p class="opt-a-sub">Pharmacy chains, wellness retailers, or international distributors - reach out directly and we reply within 48 hours.</p>
+            <a class="sm-pill-mineral" href="mailto:info@salt-magic.com?subject=Partner%20Inquiry%20-%20%5BCompany%5D&body=Hi%20Leo%2C%0A%0ACompany%3A%20%0ARole%3A%20%0ADistribution%20tier%20of%20interest%3A%20%5Bnational%20%2F%20regional%20%2F%20boutique%5D%0ATarget%20markets%20or%20store%20count%3A%20%0A%0ABrief%20on%20our%20interest%3A%0A">
+              <svg class="sm-icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              Email info@salt-magic.com
+            </a>
+            <p class="opt-a-phone">or call <a href="tel:+66826020486">+66 82 602 0486</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar">
+        <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+        <span class="frame-label">Mobile - 375px</span>
+      </div>
+      <div class="frame-content">
+        <div class="opt-a opt-a-mobile">
+          <div class="opt-a-inner">
+            <div class="sm-gold-line"></div>
+            <p class="sm-eyebrow sm-eyebrow-ink" style="margin-bottom: 18px;">Get In Touch</p>
+            <h2 class="sm-h2 opt-a-h2">Let&apos;s talk distribution</h2>
+            <p class="opt-a-sub">Pharmacy chains, wellness retailers, or distributors - we reply within 48 hours.</p>
+            <a class="sm-pill-mineral" href="mailto:info@salt-magic.com?subject=Partner%20Inquiry%20-%20%5BCompany%5D&body=Hi%20Leo%2C%0A%0A" style="padding: 14px 22px; font-size: 11px;">
+              <svg class="sm-icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              Email info@salt-magic.com
+            </a>
+            <p class="opt-a-phone">or <a href="tel:+66826020486">+66 82 602 0486</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- OPTION B -->
+<section class="option-section">
+  <div class="option-label">
+    <span class="option-badge">Option B</span>
+    <span class="option-title">Immersive Dark Banner</span>
+    <span class="option-ref-chip">Ref: CtaBanner / Cure Hydration</span>
+  </div>
+  <p class="option-desc">
+    Dunkle Full-Width-Destination mit Mineral-Blue BG und Gold-Button. Starker brand-moment am Seitenende, fuehlt sich wie eine bewusste Einladung an. Nutzt die Business-Claims (35-40% Margins, 90% Retention, 160+ Locations) als Subheadline, um den Button mit Gravitas zu laden. <strong>Beste Wahl wenn:</strong> Die Partner-Section ein bewusster Schlussakkord sein soll, der die Page auf einem hohen Ton beendet.
+  </p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar">
+        <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+        <span class="frame-label">Desktop - 900px</span>
+      </div>
+      <div class="frame-content">
+        <div class="opt-b">
+          <div class="opt-b-inner">
+            <p class="sm-eyebrow sm-eyebrow-gold opt-b-eyebrow">Partner Inquiries</p>
+            <h2 class="sm-h2 sm-h2-white opt-b-h2">Bring Salt.Magic to your customers</h2>
+            <p class="opt-b-sub">Thailand&apos;s first sugar-free daily electrolyte mineralizer. 35-40% margins, 90% customer retention, 160+ locations - and counting.</p>
+            <a class="sm-pill-gold" href="mailto:info@salt-magic.com?subject=Partner%20Inquiry%20-%20%5BCompany%5D&body=Hi%20Leo%2C%0A%0ACompany%3A%20%0ARole%3A%20%0ADistribution%20tier%20of%20interest%3A%20%5Bnational%20%2F%20regional%20%2F%20boutique%5D%0ATarget%20markets%20or%20store%20count%3A%20%0A%0ABrief%20on%20our%20interest%3A%0A">
+              <svg class="sm-icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              Email info@salt-magic.com
+            </a>
+            <div class="opt-b-channels">
+              <a href="mailto:info@salt-magic.com">Email</a>
+              <span class="dot"></span>
+              <a href="https://wa.me/66826020486">WhatsApp</a>
+              <span class="dot"></span>
+              <a href="tel:+66826020486">+66 82 602 0486</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar">
+        <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+        <span class="frame-label">Mobile - 375px</span>
+      </div>
+      <div class="frame-content">
+        <div class="opt-b opt-b-mobile">
+          <div class="opt-b-inner">
+            <p class="sm-eyebrow sm-eyebrow-gold opt-b-eyebrow" style="margin-bottom: 18px;">Partner Inquiries</p>
+            <h2 class="sm-h2 sm-h2-white opt-b-h2">Bring Salt.Magic to your customers</h2>
+            <p class="opt-b-sub">35-40% margins. 90% retention. 160+ locations - and counting.</p>
+            <a class="sm-pill-gold" href="mailto:info@salt-magic.com?subject=Partner%20Inquiry%20-%20%5BCompany%5D" style="padding: 14px 22px; font-size: 11px;">
+              <svg class="sm-icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              Email info@salt-magic.com
+            </a>
+            <div class="opt-b-channels">
+              <a href="mailto:info@salt-magic.com">Email</a>
+              <a href="https://wa.me/66826020486">WhatsApp</a>
+              <a href="tel:+66826020486">+66 82 602 0486</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- OPTION C -->
+<section class="option-section">
+  <div class="option-label">
+    <span class="option-badge">Option C</span>
+    <span class="option-title">Editorial Split Card</span>
+    <span class="option-ref-chip">Ref: Sakara Life B2B / Grown Alchemist</span>
+  </div>
+  <p class="option-desc">
+    Magazine-style weisser Card mit 2 Spalten: Copy links (erklaert was reingehoert), Action-Card rechts (Button + Phone + Response-Time). Hoechste Informationsdichte, hilft dem Partner konkret beim Verfassen der Mail. <strong>Beste Wahl wenn:</strong> Das Ziel ist, qualifizierte Leads zu bekommen - Partner sehen, welche Infos sie reinschreiben sollten, und die Inbox kommt sauberer an.
+  </p>
+
+  <div class="viewport-row">
+    <!-- Desktop -->
+    <div class="frame frame-desktop">
+      <div class="frame-bar">
+        <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+        <span class="frame-label">Desktop - 900px</span>
+      </div>
+      <div class="frame-content">
+        <div class="opt-c">
+          <div class="opt-c-card">
+            <div>
+              <div class="sm-gold-line"></div>
+              <p class="sm-eyebrow sm-eyebrow-ink" style="margin-bottom: 16px;">Partner Inquiries</p>
+              <h2 class="sm-h2 opt-c-h2">Let&apos;s talk distribution</h2>
+              <p class="opt-c-para">Reach out directly with a short intro. We reply within 48 hours with next steps, wholesale pricing, and a sample dispatch where appropriate.</p>
+              <p class="opt-c-include-label">What to include</p>
+              <ul class="opt-c-include">
+                <li>Company name + your role</li>
+                <li>Distribution tier of interest (national / regional / boutique)</li>
+                <li>Target markets or store count</li>
+              </ul>
+            </div>
+            <div class="opt-c-action">
+              <p class="opt-c-action-label">Contact</p>
+              <a class="sm-pill-mineral" href="mailto:info@salt-magic.com?subject=Partner%20Inquiry%20-%20%5BCompany%5D&body=Hi%20Leo%2C%0A%0ACompany%3A%20%0ARole%3A%20%0ADistribution%20tier%20of%20interest%3A%20%5Bnational%20%2F%20regional%20%2F%20boutique%5D%0ATarget%20markets%20or%20store%20count%3A%20%0A%0ABrief%20on%20our%20interest%3A%0A">
+                <svg class="sm-icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                Email us
+              </a>
+              <div class="opt-c-divider"></div>
+              <p class="opt-c-phone-line"><strong>Phone:</strong> <a href="tel:+66826020486">+66 82 602 0486</a></p>
+              <p class="opt-c-micro">48-hour response time</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="frame frame-mobile">
+      <div class="frame-bar">
+        <div class="frame-dot"></div><div class="frame-dot"></div><div class="frame-dot"></div>
+        <span class="frame-label">Mobile - 375px</span>
+      </div>
+      <div class="frame-content">
+        <div class="opt-c opt-c-mobile">
+          <div class="opt-c-card">
+            <div>
+              <div class="sm-gold-line"></div>
+              <p class="sm-eyebrow sm-eyebrow-ink" style="margin-bottom: 14px;">Partner Inquiries</p>
+              <h2 class="sm-h2 opt-c-h2">Let&apos;s talk distribution</h2>
+              <p class="opt-c-para">Reach out with a short intro. We reply within 48 hours with next steps, wholesale pricing, and a sample dispatch.</p>
+              <p class="opt-c-include-label">What to include</p>
+              <ul class="opt-c-include">
+                <li>Company name + your role</li>
+                <li>Distribution tier (national / regional / boutique)</li>
+                <li>Target markets or store count</li>
+              </ul>
+            </div>
+            <div class="opt-c-action">
+              <p class="opt-c-action-label">Contact</p>
+              <a class="sm-pill-mineral" href="mailto:info@salt-magic.com?subject=Partner%20Inquiry%20-%20%5BCompany%5D" style="font-size: 11px; padding: 14px 18px;">
+                <svg class="sm-icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                Email us
+              </a>
+              <div class="opt-c-divider"></div>
+              <p class="opt-c-phone-line"><strong>Phone:</strong> <a href="tel:+66826020486">+66 82 602 0486</a></p>
+              <p class="opt-c-micro">48-hour response time</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Legend -->
+<div class="legend">
+  <h3>Wichtig zum Testen</h3>
+  <p><strong>Alle Mailto-Buttons sind funktional.</strong> Klick oeffnet dein Default-Mailprogramm (Gmail im Browser, Outlook, Apple Mail, etc.) mit vorausgefuelltem Subject und Body.</p>
+  <p><strong>Body-Template:</strong></p>
+  <p style="margin-left: 16px;"><code>Hi Leo, / Company: / Role: / Distribution tier of interest: [national / regional / boutique] / Target markets or store count: / Brief on our interest:</code></p>
+  <p><strong>Fallback:</strong> User ohne Mailprogramm-Handler sehen trotzdem die Email-Adresse sichtbar als Text bzw. koennen die Phone-Nummer nutzen. Option B bietet zusaetzlich WhatsApp.</p>
+  <p><strong>Entscheidung:</strong> Leo waehlt eine Option - dann Umsetzung in React (PartnerForm.tsx ersetzen durch neue PartnerContact.tsx, Import in partner/page.tsx tauschen).</p>
+</div>
+
+</body>
+</html>

@@ -5,7 +5,7 @@ import MarketComparison from '@/components/MarketComparison'
 import CategoryProof from '@/components/CategoryProof'
 import RevenueComparison from '@/components/RevenueComparison'
 import Comparison from '@/components/Comparison'
-import PartnerForm from '@/components/PartnerForm'
+import PartnerContact from '@/components/PartnerContact'
 
 export const metadata: Metadata = {
   title: 'Partner With Us - Salt.Magic Distribution',
@@ -66,7 +66,7 @@ export default function PartnerPage() {
             </ul>
             <div className="mt-10">
               <a
-                href="#partner-form"
+                href="#partner-contact"
                 className="inline-block px-8 py-3.5 bg-mineral text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Become a Distribution Partner
@@ -120,16 +120,16 @@ export default function PartnerPage() {
           Ready to bring real hydration to your customers?
         </p>
         <a
-          href="#partner-form"
+          href="#partner-contact"
           className="inline-block px-8 py-3.5 bg-mineral text-white text-[12px] font-medium tracking-cta uppercase rounded-pill hover:bg-mineral-light transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
         >
           Become a Distribution Partner
         </a>
       </section>
 
-      {/* 10. Contact Form */}
+      {/* 10. Contact - Mailto */}
       <section className="bg-warm-off">
-        <PartnerForm />
+        <PartnerContact />
       </section>
     </>
   )
