@@ -8,9 +8,9 @@ import Comparison from '@/components/Comparison'
 import PartnerContact from '@/components/PartnerContact'
 
 export const metadata: Metadata = {
-  title: 'Partner With Us - Salt.Magic Distribution',
+  title: 'Partner With Us | Electrolyte Distribution Thailand - Salt.Magic',
   description:
-    "Join Thailand's fastest-growing electrolyte brand. 35-40% margins, 90% customer retention, 160+ locations.",
+    "Partner with Thailand's fastest-growing electrolyte mineralizer brand. 35-40% retailer margins, 90% customer retention, 160+ locations. Wellness brand partnership for pharmacies and retailers.",
 }
 
 export default function PartnerPage() {
