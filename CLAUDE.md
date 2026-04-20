@@ -41,7 +41,21 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V28 DNS Migration Namecheap → Vercel (2026-04-19). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V29 Nav Logo Fix + Responsive-Audit-Sweep (2026-04-20). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V29 Session (Nav Logo Bug Fix + Comprehensive Responsive Sweep):
+- **Leos Bug-Report**: Logo sah auf Hero verrutscht/kontrastarm aus. Root-Cause-Kaskade identifiziert:
+  1. Nav-Container `h-24` (96px) vs Logo `h-[100px]` → 2px Overflow oben (in AnnouncementBar) und unten (in Section darunter)
+  2. Weisses Logo auf warm-beigen Hero-Slide-Toenen (yoga-sachet.webp) → niedriger Kontrast, Logo wirkt "floating"
+  3. Mobile-Menu-Overlay hatte `z-[-1]` → Menu lag hinter Page-Content, war unsichtbar
+- **V29 Commit (3140719)**: Nav-Container `h-[80px] lg:h-[100px]`, Logo `h-[68px] lg:h-[88px]` (erst-Fix), Mobile-Menu `z-[-1]` → `z-40`, Top-Scrim im Hero (`h-[140px] md:h-[180px]` linear-gradient 38%→16%→transparent) fuer Logo-Kontrast, Drop-Shadow verstaerkt auf `0_2px_14px_rgba(0,0,0,.6)`, AnnouncementBar `whitespace-nowrap` + `text-[11px] sm:text-[12px]` + `px-3`, Formula-Section `lg:min-h-[800px]` → `lg:min-h-[640px] xl:min-h-[720px]`, Gold-Divider w-12 → clamp, tote `.section-fade-to/from-warm` CSS entfernt
+- **V29.1 Commit (81792fe)**: Nach Kerstin-Feedback "Logo zu klein auf Mobile" → Nav auf `h-[116px]` ueberall, Logo `h-[100px] w-[100px]` ueberall (premium Brand-Feel konsistent wie LMNT/PANPURI). Comparison Mobile-Carousel: `p-4 sm:p-6` → `p-3 sm:p-6`, `min-w-0` gegen Grid-Overflow, Verdict-Text `text-[12px] sm:text-[13px]` + `break-words`. Blog-Grid 4+ Posts: `md:grid-cols-3 lg:grid-cols-4` → `lg:grid-cols-3 xl:grid-cols-4` (fix Orphan-Row bei 768px iPad)
+- **V29.2 Commit (1a03b1c)**: `min-h-[44px]` explizit auf Newsletter-Input + Button, PartnerHero Contact/Pitch-Deck Buttons (defensive gegen Line-Height-Quirks die Touch-Target unter 44px drueckten). Audit-Re-measurement: Testimonials-Indicators (252px in 272px = OK), PartnerHero 2x2 Stats bei 768px (fits), Product-Formats 1-col bei 414px (280px h-ratio ok) sind KEINE echten Bugs — Agent-Audit war ueberkonservativ
+- **V29.3 Commit (77926e3)**: SocialProof `grid-cols-2 lg:grid-cols-4` → `grid-cols-2 md:grid-cols-4` (fix Luecke bei iPad 768-1023), ForEveryone Old-Way-vs-Salt.Magic-Way Cards `grid-cols-1 sm:grid-cols-2` → `grid-cols-2` (immer 2-col, passt auch auf 320px), Hero-Body-Text `text-[13.5px] md:text-[15px]` → `text-[13.5px] sm:text-[14.5px] md:text-[15px]` (Zwischen-scaling fuer Landscape-Mobile + Tablet)
+- **V29.4 Commit (813002c)**: Hero Desktop-Bottom-Padding `md:pb-[clamp(80px,12vw,140px)]` → `md:pb-[clamp(40px,6vw,80px)]` nach Kerstin-Feedback "Copy jetzt zu hoch". Groessere Nav (116px) + Top-Scrim machte visuell top-heavy, Content rutschte gefuehlt hoch. Jetzt Content ~60px tiefer am unteren Rand
+- **Responsive-Audit-Ergebnis**: 6 CRITICAL, 5 HIGH, 3 MEDIUM Bugs ueber 8 Viewports (320/375/414/768/1024/1280/1440/1920) identifiziert und behoben. Landscape-Mobile Hero-Fix (`landscape:min-h-0`) war in V29-Erstversuch drin, dann revertiert weil Tailwind `landscape:` auch auf Desktop-Monitore wirkt (orientation=landscape) und Hero kollabierte
+- **Neuer Plan**: `plans/2026-04-20-bitte-nimm-den-ux-polymorphic-charm.md` mit Root-Cause-Analyse + 11 priorisierten Responsive-Fixes + Test-Plan
+- **Offen**: Keine Responsive-Bugs mehr nach V29.4. Folgeaufgaben bleiben: Leos 8 V25-Klaerungen, Blog-Artikel Mg-Werte-Update (312mg → 135mg), Terms + Imprint Seiten, Newsletter-Consent-Checkbox wenn Mailchimp-Backend live, PartnerForm Backend-Integration
 
 Key Changes in V28 Session (DNS Migration Namecheap → Vercel):
 - **Domain-Migration durchgezogen**: Apex `salt-magic.com` + `www.salt-magic.com` zeigen jetzt auf Vercel statt Lovable. Namecheap bleibt Registrar + DNS-Authority (A-Record-Methode, nicht Nameserver-Switch)
