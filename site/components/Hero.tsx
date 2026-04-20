@@ -6,9 +6,21 @@ import { FadeIn } from './Motion'
 import { useReducedMotion } from 'framer-motion'
 
 const slides = [
-  { src: '/images/products/hero-sachet.webp', alt: 'Salt.Magic sachet lifestyle hero image' },
-  { src: '/images/products/hero-new-2.webp', alt: 'Salt.Magic lifestyle hero image' },
-  { src: '/images/products/hero-new-3.webp', alt: 'Salt.Magic lifestyle hero image' },
+  {
+    src: '/images/products/hero-sachet.webp',
+    alt: 'Salt.Magic sachet tucked in yoga leggings pocket',
+    imgClass: 'object-cover object-[22%_50%] md:object-[25%_35%]',
+  },
+  {
+    src: '/images/products/hero-new-2.webp',
+    alt: 'Salt.Magic glass jar on beach at sunset',
+    imgClass: 'object-cover object-[62%_62%] md:object-[60%_55%]',
+  },
+  {
+    src: '/images/products/hero-new-3.webp',
+    alt: 'Woman stretching poolside for daily hydration ritual',
+    imgClass: 'object-cover object-[50%_32%] md:object-[center_35%]',
+  },
 ]
 
 export default function Hero() {
@@ -37,44 +49,50 @@ export default function Hero() {
   }, [next, reduced])
 
   return (
-    <section className="relative min-h-[max(100dvh,600px)] overflow-hidden" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
-      {/* Slides - CSS transitions for mobile performance */}
-      {slides.map((slide, i) => (
-        <div
-          key={slide.src}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
-            i === active ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <Image
-            src={slide.src}
-            alt={slide.alt}
-            fill
-            priority={i === 0}
-            className="object-cover object-center md:object-[center_35%]"
-            sizes="100vw"
-            quality={85}
-          />
-        </div>
-      ))}
+    <section
+      className="relative overflow-hidden flex flex-col h-[100dvh] min-h-[620px] md:block md:h-auto md:min-h-[max(100dvh,600px)]"
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+    >
+      {/* Image stage: flex-1 on mobile (fills remaining viewport), absolute fill on desktop */}
+      <div className="relative flex-1 min-h-[240px] md:absolute md:inset-0 md:flex-none md:min-h-0">
+        {slides.map((slide, i) => (
+          <div
+            key={slide.src}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-out ${
+              i === active ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={i === 0}
+              className={slide.imgClass}
+              sizes="100vw"
+              quality={85}
+            />
+          </div>
+        ))}
+      </div>
 
-      {/* Warm overlay - lighter to let product imagery breathe */}
+      {/* Warm overlay - desktop only, mobile shows clean image */}
       <div
-        className="absolute inset-0 z-[1]"
+        className="hidden md:block absolute inset-0 z-[1]"
         style={{
           background: 'linear-gradient(180deg, rgba(30,20,10,0.05) 0%, rgba(30,20,10,0.18) 30%, rgba(30,20,10,0.40) 55%, rgba(30,20,10,0.60) 100%)',
         }}
       />
-      {/* Film grain texture - hidden on mobile for performance */}
+      {/* Film grain texture - desktop only */}
       <div
-        className="absolute inset-0 z-[2] pointer-events-none opacity-[0.04] mix-blend-overlay hidden md:block"
+        className="hidden md:block absolute inset-0 z-[2] pointer-events-none opacity-[0.04] mix-blend-overlay"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
           backgroundSize: '128px 128px',
         }}
       />
 
-      {/* Arrows - hidden on mobile (too small, overlap text) */}
+      {/* Arrows - desktop only */}
       <button
         onClick={prev}
         className="hidden md:flex absolute left-[clamp(20px,4vw,56px)] top-1/2 -translate-y-1/2 z-10 bg-transparent border-none cursor-pointer group items-center justify-center min-h-[44px] min-w-[44px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold rounded-sm"
@@ -98,37 +116,40 @@ export default function Hero() {
         </svg>
       </button>
 
-      {/* Content - centered */}
-      <div className="relative z-10 h-full min-h-[100dvh] flex flex-col items-center justify-end text-center px-5 md:px-[clamp(24px,6vw,80px)] pb-16 md:pb-[clamp(80px,12vw,140px)]">
-        <div className="max-w-[720px]">
+      {/* Content - stacked below image on mobile (warm-off card), overlayed on desktop */}
+      <div className="relative z-10 bg-warm-off md:bg-transparent md:absolute md:inset-0 md:min-h-[100dvh] flex flex-col flex-shrink-0 md:items-center md:justify-end text-left md:text-center px-6 md:px-[clamp(24px,6vw,80px)] pt-5 pb-5 md:pt-0 md:pb-[clamp(80px,12vw,140px)]">
+        <div className="w-full md:max-w-[720px] md:mx-auto">
           <FadeIn delay={0.1}>
-            <p className="label-uppercase text-white/70 mb-5" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
-              Natural Electrolytes - Mineralize Your Water, Everywhere.
-            </p>
+            <div className="flex items-center gap-3 mb-3 md:mb-5 md:justify-center">
+              <span className="block md:hidden h-px w-6 bg-gold flex-shrink-0" />
+              <p className="label-uppercase text-ink-light md:text-white/70 md:[text-shadow:0_1px_8px_rgba(0,0,0,0.4)]">
+                Natural Electrolytes - Mineralize Your Water, Everywhere.
+              </p>
+            </div>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <h1 className="headline-editorial text-white mb-6" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.4)' }}>
+            <h1 className="font-display font-normal text-[clamp(26px,7.5vw,32px)] leading-[1.15] tracking-tight md:text-display md:leading-[1.05] md:tracking-normal text-mineral md:text-white mb-3 md:mb-6 md:[text-shadow:0_2px_20px_rgba(0,0,0,0.5),0_1px_6px_rgba(0,0,0,0.4)]">
               Your water is missing what
               <br />
               your body needs most.
             </h1>
           </FadeIn>
           <FadeIn delay={0.35}>
-            <p className="text-[15px] font-normal leading-relaxed text-white/90 mb-8 md:mb-10 max-w-[520px] mx-auto" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
+            <p className="text-[13.5px] leading-[1.5] md:text-[15px] md:leading-relaxed font-normal text-ink-light md:text-white/90 mb-4 md:mb-10 md:max-w-[520px] md:mx-auto md:[text-shadow:0_1px_8px_rgba(0,0,0,0.4)]">
               85% of bottled water in Thailand is &ldquo;dead water&rdquo; - purified, but nutritionally empty. One scoop brings it back to life. Three ingredients. Zero compromise. Just minerals your body actually absorbs.
             </p>
           </FadeIn>
           <FadeIn delay={0.45}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center md:justify-center gap-2.5 sm:gap-4 w-full sm:w-auto">
               <a
                 href="#products"
-                className="inline-block w-full sm:w-auto text-center text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill bg-gold/90 text-mineral hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block w-full sm:w-auto text-center text-[12px] font-medium uppercase tracking-cta px-8 py-3 md:py-3.5 rounded-pill bg-mineral md:bg-gold/90 text-white md:text-mineral hover:bg-mineral-light md:hover:bg-gold transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Bring Your Water Back to Life
               </a>
               <a
                 href="#why"
-                className="inline-block w-full sm:w-auto text-center text-[12px] font-medium uppercase tracking-cta px-8 py-3.5 rounded-pill border border-white/25 text-white hover:bg-white hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                className="inline-block w-full sm:w-auto text-center text-[12px] font-medium uppercase tracking-cta px-8 py-3 md:py-3.5 rounded-pill border border-mineral/30 md:border-white/25 text-mineral md:text-white hover:bg-mineral md:hover:bg-white hover:text-white md:hover:text-mineral transition-colors duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
               >
                 Learn More
               </a>
@@ -137,7 +158,7 @@ export default function Hero() {
         </div>
 
         {/* Slide indicators */}
-        <div className="mt-8 flex gap-2 justify-center">
+        <div className="mt-4 md:mt-8 flex gap-2 justify-start md:justify-center">
           {slides.map((_, i) => (
             <button
               key={i}
@@ -147,7 +168,9 @@ export default function Hero() {
               aria-current={i === active ? 'true' : undefined}
             >
               <span className={`block h-[2px] rounded-full transition-[width,background-color] duration-500 ${
-                i === active ? 'w-10 bg-gold' : 'w-6 bg-white/30'
+                i === active
+                  ? 'w-10 bg-mineral md:bg-gold'
+                  : 'w-6 bg-mineral/25 md:bg-white/30'
               }`} />
             </button>
           ))}

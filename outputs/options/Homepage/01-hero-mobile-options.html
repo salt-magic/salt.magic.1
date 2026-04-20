@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Hero Mobile Options - Salt.Magic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mineral:#294B6D;
+    --mineral-light:#3D6588;
+    --gold:#D4BFAA;
+    --warm-off:#F9F7F4;
+    --warm-white:#FFFFFF;
+    --ink:#3C3028;
+    --ink-light:#6B5D52;
+    --border-warm:rgba(60,48,40,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{font-family:'Inter',sans-serif;color:var(--ink);background:#E8E4DD;-webkit-font-smoothing:antialiased}
+  body{padding:48px 24px;min-height:100vh}
+
+  /* ---- Page header ---- */
+  .page-header{max-width:1280px;margin:0 auto 48px;text-align:center}
+  .page-header .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-light);margin-bottom:12px}
+  .page-header h1{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(28px,4vw,40px);color:var(--mineral);margin-bottom:14px}
+  .page-header p{font-size:15px;line-height:1.6;color:var(--ink-light);max-width:680px;margin:0 auto}
+  .gold-line{width:48px;height:1px;background:var(--gold);margin:0 auto 24px}
+
+  /* ---- Options grid ---- */
+  .options{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:1400px;margin:0 auto}
+  @media (max-width:1100px){.options{grid-template-columns:1fr;gap:64px}}
+
+  .option{display:flex;flex-direction:column;align-items:center}
+  .option-label{margin-bottom:24px;text-align:center}
+  .option-label .tag{display:inline-block;background:var(--mineral);color:#fff;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:12px}
+  .option-label h2{font-family:'Playfair Display',serif;font-weight:500;font-size:22px;color:var(--mineral);margin-bottom:8px}
+  .option-label p{font-size:13px;line-height:1.55;color:var(--ink-light);max-width:340px;margin:0 auto}
+  .option-meta{margin-top:18px;font-size:12px;color:var(--ink-light);text-align:center;max-width:340px;line-height:1.6}
+  .option-meta strong{color:var(--ink);font-weight:500}
+
+  /* ---- Phone frame ---- */
+  .phone{
+    width:375px;height:812px;
+    background:#000;
+    border-radius:42px;
+    padding:10px;
+    box-shadow:0 24px 60px rgba(0,0,0,.18), 0 6px 16px rgba(0,0,0,.08);
+    flex-shrink:0;
+  }
+  .screen{
+    width:100%;height:100%;
+    border-radius:32px;
+    overflow:hidden;
+    position:relative;
+    background:var(--warm-white);
+  }
+
+  /* ---- Shared chrome (announcement, nav) ---- */
+  .ann-bar{
+    position:absolute;top:0;left:0;right:0;
+    background:var(--mineral);color:#fff;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    text-align:center;padding:10px 16px;z-index:30;
+    font-weight:500;
+  }
+  .nav{
+    position:absolute;top:36px;left:0;right:0;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 18px;z-index:25;
+  }
+  .nav-icon{width:24px;height:24px;color:#fff;opacity:.95}
+  .nav-icon svg{width:100%;height:100%}
+  .nav-logo{display:flex;flex-direction:column;align-items:center;gap:2px;color:#fff}
+  .nav-logo .drop{width:18px;height:22px;background:#fff;mask:radial-gradient(circle at 50% 65%,transparent 28%,#000 30%);-webkit-mask:radial-gradient(circle at 50% 65%,transparent 28%,#000 30%);clip-path:path('M9 0 C 9 0, 0 12, 0 16 A 9 9 0 0 0 18 16 C 18 12, 9 0, 9 0 Z')}
+  .nav-logo .name{font-family:'Playfair Display',serif;font-size:13px;letter-spacing:.02em;font-weight:400}
+
+  /* Image placeholder (simulates beach scene) */
+  .hero-img{
+    position:absolute;left:0;right:0;
+    background:
+      linear-gradient(180deg, #C9A678 0%, #B08960 30%, #8B6F4E 55%, #6B5340 78%, #4A3A2A 100%);
+    overflow:hidden;
+  }
+  .hero-img::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at 50% 25%, rgba(232,201,160,.55) 0%, transparent 55%),
+      radial-gradient(ellipse at 30% 70%, rgba(60,40,20,.25) 0%, transparent 50%);
+  }
+  .hero-img::after{
+    content:"hero-sachet.webp";
+    position:absolute;bottom:10px;right:14px;
+    font-size:10px;color:rgba(255,255,255,.55);
+    letter-spacing:.08em;text-transform:uppercase;
+    font-family:'Inter',sans-serif;
+  }
+  .sachet-mock{
+    position:absolute;left:50%;top:42%;
+    transform:translate(-50%,-50%);
+    width:70px;height:100px;
+    background:linear-gradient(180deg, #f4ede2 0%, #e8dcc8 60%, #d4c4a8 100%);
+    border-radius:6px;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-size:9px;color:var(--mineral);
+    letter-spacing:.05em;
+  }
+
+  /* ---- Shared content typography ---- */
+  .eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+  .h1-editorial{font-family:'Playfair Display',serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
+  .body{font-size:13px;line-height:1.55;font-weight:400}
+
+  .btn{display:inline-block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:14px 22px;border-radius:999px;text-decoration:none;text-align:center;cursor:pointer;border:1px solid transparent;width:100%}
+  .btn-primary{background:var(--gold);color:var(--mineral)}
+  .btn-ghost-light{border-color:rgba(255,255,255,.4);color:#fff;background:transparent}
+  .btn-ghost-dark{border-color:var(--mineral);color:var(--mineral);background:transparent}
+
+  .indicators{display:flex;gap:8px;justify-content:center}
+  .indicator{height:2px;border-radius:1px;transition:width .3s}
+  .indicator.dark{background:rgba(60,48,40,.25)}
+  .indicator.dark.active{background:var(--mineral);width:32px!important}
+  .indicator.light{background:rgba(255,255,255,.35)}
+  .indicator.light.active{background:var(--gold);width:32px!important}
+
+  /* =====================================================
+     OPTION A — Stacked Editorial Split (Image 55% + Content 45%)
+     ===================================================== */
+  .opt-a .hero-img{top:64px;height:55%;}
+  .opt-a .ann-bar{position:absolute}
+  .opt-a-content{
+    position:absolute;left:0;right:0;bottom:0;
+    height:calc(45% - 64px);
+    background:var(--warm-off);
+    padding:28px 24px 20px;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .opt-a-content .eyebrow-row{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .opt-a-content .eyebrow-row .line{width:24px;height:1px;background:var(--gold)}
+  .opt-a-content .eyebrow{color:var(--ink-light)}
+  .opt-a-content h1{
+    font-family:'Playfair Display',serif;font-weight:400;
+    color:var(--mineral);
+    font-size:26px;line-height:1.15;
+    margin-bottom:14px;
+  }
+  .opt-a-content .body{color:var(--ink-light);margin-bottom:18px;font-size:13px;line-height:1.5}
+  .opt-a-content .ctas{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+  .opt-a-content .indicators{margin-top:auto}
+
+  /* =====================================================
+     OPTION B — Compact Editorial (Headline only on image, body below)
+     ===================================================== */
+  .opt-b .hero-img{top:64px;height:62%;}
+  .opt-b .hero-overlay{
+    position:absolute;left:0;right:0;top:64px;height:62%;
+    background:linear-gradient(180deg, rgba(40,30,20,.10) 0%, rgba(40,30,20,.05) 35%, rgba(40,30,20,.45) 100%);
+    z-index:5;
+  }
+  .opt-b .hero-text{
+    position:absolute;left:0;right:0;
+    bottom:calc(38% - 64px + 22px);
+    z-index:8;
+    padding:0 24px;text-align:center;
+  }
+  .opt-b .hero-text .eyebrow{
+    color:#fff;opacity:.92;margin-bottom:12px;display:block;
+    text-shadow:0 1px 6px rgba(0,0,0,.3);
+  }
+  .opt-b .hero-text h1{
+    color:#fff;font-size:30px;line-height:1.08;
+    text-shadow:0 2px 14px rgba(0,0,0,.45);
+  }
+  .opt-b-content{
+    position:absolute;left:0;right:0;bottom:0;
+    height:calc(38% - 64px);
+    background:var(--warm-white);
+    padding:24px 24px 18px;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .opt-b-content .body{color:var(--ink-light);margin-bottom:14px;font-size:13px;text-align:center}
+  .opt-b-content .ctas{display:flex;flex-direction:column;gap:8px}
+  .opt-b-content .ctas .btn{padding:13px 22px}
+  .opt-b-content .scroll-hint{
+    text-align:center;font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-light);margin-top:auto;display:flex;align-items:center;gap:6px;justify-content:center;
+  }
+  .opt-b-content .scroll-hint::after{content:"";width:1px;height:14px;background:var(--gold)}
+  .opt-b .indicators{position:absolute;bottom:calc(38% - 64px + 8px);left:50%;transform:translateX(-50%);z-index:9}
+
+  /* =====================================================
+     OPTION C — Bottom Sheet (Image full-bleed + glass sheet)
+     ===================================================== */
+  .opt-c .hero-img{top:0;height:100%;}
+  .opt-c .top-shade{
+    position:absolute;left:0;right:0;top:0;height:140px;z-index:5;
+    background:linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,.15) 60%, transparent 100%);
+  }
+  .opt-c-sheet{
+    position:absolute;left:0;right:0;bottom:0;
+    height:46%;
+    background:rgba(249,247,244,.96);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border-radius:24px 24px 0 0;
+    padding:22px 24px 18px;
+    z-index:10;
+    box-shadow:0 -8px 30px rgba(0,0,0,.10);
+    display:flex;flex-direction:column;
+  }
+  .opt-c-sheet .handle{
+    width:40px;height:4px;background:rgba(60,48,40,.18);border-radius:2px;
+    margin:0 auto 16px;
+  }
+  .opt-c-sheet .eyebrow-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;justify-content:center}
+  .opt-c-sheet .eyebrow-row .line{width:20px;height:1px;background:var(--gold)}
+  .opt-c-sheet .eyebrow{color:var(--ink-light)}
+  .opt-c-sheet h1{
+    font-family:'Playfair Display',serif;font-weight:400;color:var(--mineral);
+    font-size:24px;line-height:1.18;text-align:center;margin-bottom:12px;
+  }
+  .opt-c-sheet .body{color:var(--ink-light);font-size:12.5px;text-align:center;margin-bottom:14px;line-height:1.5}
+  .opt-c-sheet .ctas{display:flex;flex-direction:column;gap:9px;margin-bottom:14px}
+  .opt-c-sheet .indicators{margin-top:auto}
+
+  /* Selection helpers */
+  .opt-pros{margin-top:16px;text-align:left;background:#fff;border:1px solid var(--border-warm);border-radius:8px;padding:14px 16px;font-size:12px;line-height:1.65;width:340px}
+  .opt-pros strong{font-family:'Playfair Display',serif;font-weight:500;color:var(--mineral);font-size:13px;display:block;margin-bottom:6px}
+  .opt-pros ul{list-style:none;padding:0}
+  .opt-pros li{padding-left:14px;position:relative;color:var(--ink-light)}
+  .opt-pros li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:1px;background:var(--gold)}
+  .opt-pros .con{color:#9b6f5a;margin-top:8px}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <div class="eyebrow">UI/UX Pro Max - Mobile Hero Options</div>
+  <h1>Hero Mobile - 3 Optionen</h1>
+  <div class="gold-line"></div>
+  <p>Aktuelles Problem: Bild verschwindet auf 375px komplett unter Overlay + Text. Drei Loesungswege - jeweils mit dem Ziel, dass das Lifestyle-Bild wieder sichtbar wird und gleichzeitig die Headline lesbar bleibt.</p>
+</header>
+
+<div class="options">
+
+  <!-- =================== OPTION A =================== -->
+  <div class="option">
+    <div class="option-label">
+      <span class="tag">Option A</span>
+      <h2>Stacked Editorial Split</h2>
+      <p>Bild oben (55%), Content unten in warm-off Card (45%). Klare Trennung wie Sakara / PANPURI.</p>
+    </div>
+
+    <div class="phone opt-a">
+      <div class="screen">
+        <div class="ann-bar">Mineralize Your Water, Everywhere.</div>
+        <div class="nav">
+          <div class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+          <div class="nav-logo"><div class="drop"></div><div class="name">Salt.Magic</div></div>
+          <div class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 7h12l-1.5 12h-9L6 7z M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
+        </div>
+
+        <div class="hero-img">
+          <div class="sachet-mock">SALT<br/>MAGIC</div>
+        </div>
+
+        <div class="opt-a-content">
+          <div>
+            <div class="eyebrow-row">
+              <span class="line"></span>
+              <span class="eyebrow">Natural Electrolytes</span>
+            </div>
+            <h1>Your water is missing<br/>what your body needs.</h1>
+            <p class="body">85% of bottled water in Thailand is dead water. One scoop brings it back to life.</p>
+            <div class="ctas">
+              <a class="btn btn-primary">Bring Your Water Back</a>
+              <a class="btn btn-ghost-dark">Learn More</a>
+            </div>
+          </div>
+          <div class="indicators">
+            <span class="indicator dark active" style="width:24px"></span>
+            <span class="indicator dark" style="width:16px"></span>
+            <span class="indicator dark" style="width:16px"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="opt-pros">
+      <strong>Warum Option A</strong>
+      <ul>
+        <li>Bild zu 100% sichtbar, keine Overlay-Hacks</li>
+        <li>Text auf hellem BG = perfekte Lesbarkeit ohne text-shadow</li>
+        <li>Kleinere Headline (26px) wirkt eleganter, weniger gedrueckt</li>
+        <li>Editorial-Feel passt zu Brand-Tonalitaet</li>
+      </ul>
+      <div class="con">Trade-off: weniger immersiv als Full-Bleed, kein "Wow"-Moment beim Scroll-Start</div>
+    </div>
+  </div>
+
+  <!-- =================== OPTION B =================== -->
+  <div class="option">
+    <div class="option-label">
+      <span class="tag">Option B</span>
+      <h2>Compact Image-Hero</h2>
+      <p>Bild dominiert (62%), nur Eyebrow + Headline ueber Bild, Body + CTAs unten. Cure Hydration Stil.</p>
+    </div>
+
+    <div class="phone opt-b">
+      <div class="screen">
+        <div class="ann-bar">Mineralize Your Water, Everywhere.</div>
+        <div class="nav">
+          <div class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+          <div class="nav-logo"><div class="drop"></div><div class="name">Salt.Magic</div></div>
+          <div class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 7h12l-1.5 12h-9L6 7z M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
+        </div>
+
+        <div class="hero-img">
+          <div class="sachet-mock">SALT<br/>MAGIC</div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-text">
+          <span class="eyebrow">Natural Electrolytes</span>
+          <h1>Your water is missing<br/>what your body needs.</h1>
+        </div>
+
+        <div class="indicators">
+          <span class="indicator light active" style="width:24px"></span>
+          <span class="indicator light" style="width:16px"></span>
+          <span class="indicator light" style="width:16px"></span>
+        </div>
+
+        <div class="opt-b-content">
+          <p class="body">85% of bottled water in Thailand is dead water. Three ingredients. Zero compromise.</p>
+          <div class="ctas">
+            <a class="btn btn-primary">Bring Your Water Back to Life</a>
+            <a class="btn btn-ghost-dark">Learn More</a>
+          </div>
+          <div class="scroll-hint">Scroll</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="opt-pros">
+      <strong>Warum Option B</strong>
+      <ul>
+        <li>Bild bleibt Hero (62%), aber unteres Drittel ist clean</li>
+        <li>Nur Headline auf Bild = wenig Overlay noetig (max 45% am Boden)</li>
+        <li>Bewahrt Drama des Lifestyle-Shots</li>
+        <li>Body + CTAs auf hellem BG = klar lesbar, keine Schatten</li>
+      </ul>
+      <div class="con">Trade-off: Visueller Bruch im Bildbereich, Indicator-Position braucht Feinjustierung</div>
+    </div>
+  </div>
+
+  <!-- =================== OPTION C =================== -->
+  <div class="option">
+    <div class="option-label">
+      <span class="tag">Option C</span>
+      <h2>Bottom Sheet Glass</h2>
+      <p>Bild full-bleed im Hintergrund, Content in einem warm-off Bottom Sheet mit gerundeten Ecken. App-Feel.</p>
+    </div>
+
+    <div class="phone opt-c">
+      <div class="screen">
+        <div class="hero-img">
+          <div class="sachet-mock">SALT<br/>MAGIC</div>
+        </div>
+        <div class="top-shade"></div>
+
+        <div class="ann-bar" style="background:rgba(41,75,109,.85);backdrop-filter:blur(8px)">Mineralize Your Water, Everywhere.</div>
+        <div class="nav">
+          <div class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg></div>
+          <div class="nav-logo"><div class="drop"></div><div class="name">Salt.Magic</div></div>
+          <div class="nav-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 7h12l-1.5 12h-9L6 7z M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
+        </div>
+
+        <div class="opt-c-sheet">
+          <div class="handle"></div>
+          <div class="eyebrow-row">
+            <span class="line"></span>
+            <span class="eyebrow">Natural Electrolytes</span>
+            <span class="line"></span>
+          </div>
+          <h1>Your water is missing<br/>what your body needs.</h1>
+          <p class="body">85% of bottled water in Thailand is dead water. One scoop brings it back.</p>
+          <div class="ctas">
+            <a class="btn btn-primary">Bring Your Water Back to Life</a>
+            <a class="btn btn-ghost-dark">Learn More</a>
+          </div>
+          <div class="indicators">
+            <span class="indicator dark active" style="width:24px"></span>
+            <span class="indicator dark" style="width:16px"></span>
+            <span class="indicator dark" style="width:16px"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="opt-pros">
+      <strong>Warum Option C</strong>
+      <ul>
+        <li>Bild zu ~54% sichtbar, full-bleed = maximale Immersion</li>
+        <li>Glass-Sheet hebt Content optisch ab, wirkt premium</li>
+        <li>Sehr modern (App-Aesthetik a la Aesop, Jacquemus Mobile)</li>
+        <li>Sheet-Handle hint auf "mehr unten" - elegantes Scroll-Cue</li>
+      </ul>
+      <div class="con">Trade-off: backdrop-filter perf-Kosten auf alten Geraeten, am wenigsten klassisch-editorial</div>
+    </div>
+  </div>
+
+</div>
+
+<div style="max-width:760px;margin:64px auto 0;padding:24px 28px;background:var(--warm-off);border:1px solid var(--border-warm);border-radius:12px;font-size:13px;line-height:1.7;color:var(--ink-light)">
+  <div style="font-family:'Playfair Display',serif;font-size:16px;color:var(--mineral);margin-bottom:8px">Empfehlung</div>
+  <p><strong style="color:var(--ink)">Option A</strong> ist die sicherste Wahl: maximale Lesbarkeit, kein Overlay-Konflikt, Bild zu 100% sichtbar, passt zur PANPURI/Sakara-Referenz aus den Brand-Guidelines. <strong style="color:var(--ink)">Option C</strong> ist die mutigste und modernste - aber riskanter, weil Bottom-Sheet-Aesthetik nicht zwingend zur Editorial-Tonalitaet der Brand passt. <strong style="color:var(--ink)">Option B</strong> ist der Mittelweg: behaelt das immersive Lifestyle-Drama oben, schafft aber unten einen klaren Lese-Bereich.</p>
+  <p style="margin-top:10px">Nach Leos Auswahl setze ich die Variante in <code style="background:#fff;padding:2px 6px;border-radius:4px;font-size:12px">site/components/Hero.tsx</code> nur fuer Mobile (Desktop bleibt unveraendert) per Tailwind Breakpoint <code style="background:#fff;padding:2px 6px;border-radius:4px;font-size:12px">md:</code> um.</p>
+</div>
+
+</body>
+</html>
