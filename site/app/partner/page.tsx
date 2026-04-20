@@ -31,8 +31,8 @@ export default function PartnerPage() {
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[50vh]">
         <div className="relative h-[50vh] min-h-[280px] lg:h-auto lg:min-h-0 overflow-hidden">
           <Image
-            src="/images/products/taylor-closeup.jpg"
-            alt="Salt.Magic glass jar - natural electrolytes in tropical setting"
+            src="/images/products/salt-magic-yogi.webp"
+            alt="Salt.Magic customer in wellness setting - daily natural electrolyte ritual"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -86,10 +86,10 @@ export default function PartnerPage() {
       <section className="grid grid-cols-1 sm:grid-cols-2 min-h-[320px]">
         <div className="relative h-[280px] sm:h-auto overflow-hidden">
           <Image
-            src="/images/products/greenery-jars.jpg"
+            src="/images/products/glass-jar-studio-front.webp"
             alt="Signature Glass Jar - 160g, 70 servings, 490 THB"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             sizes="(max-width: 640px) 100vw, 50vw"
           />
           <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-16 bg-gradient-to-t from-[rgba(26,50,72,0.85)] via-[rgba(26,50,72,0.4)] to-transparent">
@@ -100,7 +100,7 @@ export default function PartnerPage() {
         </div>
         <div className="relative h-[280px] sm:h-auto overflow-hidden">
           <Image
-            src="/images/products/sachet.jpg"
+            src="/images/products/sachet-lifestyle-greenery.webp"
             alt="Travel Sachet - 60g, 20 servings, 290 THB"
             fill
             className="object-cover"

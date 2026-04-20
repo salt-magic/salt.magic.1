@@ -19,9 +19,29 @@ export async function generateMetadata({
   const post = getPostBySlug(slug)
   if (!post) return { title: 'Not Found - Salt.Magic' }
 
+  const url = `https://salt-magic.com/blog/${post.slug}`
+  const ogImage = post.heroImage
+    ? `https://salt-magic.com${post.heroImage}`
+    : 'https://salt-magic.com/images/products/taylor-hero.jpg'
+
   return {
     title: `${post.title} - Salt.Magic`,
     description: post.excerpt,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.excerpt,
+      url,
+      siteName: 'Salt.Magic',
+      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: [ogImage],
+    },
   }
 }
 

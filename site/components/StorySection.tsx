@@ -52,7 +52,7 @@ export default function StorySection() {
             <h2 className="font-display text-h2 font-normal text-white/90 tracking-tight mb-3">
               The Koh Samui Story
             </h2>
-            <p className="text-[15px] font-normal text-white/60 mb-8">
+            <p className="text-[15px] font-normal text-white/75 mb-8">
               We noticed something was wrong with our water.
             </p>
 

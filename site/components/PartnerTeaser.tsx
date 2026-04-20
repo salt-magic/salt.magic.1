@@ -46,7 +46,7 @@ export default function PartnerTeaser() {
                 <div className="font-display text-h4 sm:text-h3 font-normal text-gold leading-none sm:mb-1.5 tracking-tight">
                   {stat.value}
                 </div>
-                <div className="text-[12px] font-medium tracking-eyebrow uppercase text-white/50">
+                <div className="text-[12px] font-medium tracking-eyebrow uppercase text-white/80">
                   {stat.label}
                 </div>
               </div>

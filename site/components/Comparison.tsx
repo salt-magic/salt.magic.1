@@ -58,7 +58,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
         className={`text-[12px] font-medium uppercase tracking-eyebrow mb-5 pb-4 ${
           isHero
             ? 'text-mineral border-b-2 border-gold'
-            : 'text-white/60 border-b border-white/[0.12]'
+            : 'text-white/80 border-b border-white/[0.12]'
         }`}
       >
         {col.name}
@@ -231,7 +231,7 @@ export default function Comparison() {
                 {/* Chevron nav */}
                 <button
                   onClick={next}
-                  className="absolute top-6 right-5 min-h-[44px] min-w-[44px] flex items-center justify-center text-white/50 hover:text-white/80 transition-colors"
+                  className="absolute top-6 right-5 min-h-[44px] min-w-[44px] flex items-center justify-center text-white/70 hover:text-white transition-colors"
                   aria-label="Next competitor"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

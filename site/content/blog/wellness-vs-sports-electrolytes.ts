@@ -9,7 +9,7 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
   date: 'March 24, 2026',
   readTime: '3 min read',
   heroGradient: 'bg-gradient-to-br from-[#3D6588] via-[#5A7A96] to-gold',
-  heroImage: '/images/mood/alo-3.png',
+  heroImage: '/images/mood/alo-3.webp',
   content: `
     <p class="text-lg">
       When most people think "electrolytes," they picture sports drinks, gym bags, and post-workout

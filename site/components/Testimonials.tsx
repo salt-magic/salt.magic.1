@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useReducedMotion } from 'framer-motion'
 import { FadeIn, motion, AnimatePresence } from './Motion'
 
@@ -46,9 +46,14 @@ export default function Testimonials() {
   const [active, setActive] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
   const reduced = useReducedMotion()
+  const touchStart = useRef(0)
 
   const next = useCallback(() => {
     setActive((prev) => (prev + 1) % testimonials.length)
+  }, [])
+
+  const prev = useCallback(() => {
+    setActive((p) => (p - 1 + testimonials.length) % testimonials.length)
   }, [])
 
   useEffect(() => {
@@ -57,10 +62,23 @@ export default function Testimonials() {
     return () => clearInterval(timer)
   }, [next, isPaused, reduced])
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientX
+  }
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    const diff = touchStart.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) {
+      diff > 0 ? next() : prev()
+    }
+  }
+
   return (
     <section
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
     >
       <FadeIn className="max-w-[1100px] mx-auto px-[clamp(24px,5vw,64px)]">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1.4fr] gap-0 lg:gap-[clamp(40px,5vw,64px)] items-start">

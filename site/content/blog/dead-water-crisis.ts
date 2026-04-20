@@ -9,7 +9,7 @@ export const deadWaterCrisis: BlogPost = {
   date: 'March 26, 2026',
   readTime: '4 min read',
   heroGradient: 'bg-gradient-to-br from-mineral via-mineral-light to-mineral/70',
-  heroImage: '/images/mood/marocmaroc-1.png',
+  heroImage: '/images/mood/marocmaroc-1.webp',
   content: `
     <p class="text-lg">
       Walk into any convenience store in Thailand and you'll find shelves lined with "purified" water.
