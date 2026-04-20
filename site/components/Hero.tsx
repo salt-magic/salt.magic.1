@@ -143,7 +143,7 @@ export default function Hero() {
             </h1>
           </FadeIn>
           <FadeIn delay={0.35}>
-            <p className="text-[13.5px] leading-[1.5] md:text-[15px] md:leading-relaxed font-normal text-ink-light md:text-white/90 mb-4 md:mb-10 md:max-w-[520px] md:mx-auto md:[text-shadow:0_1px_8px_rgba(0,0,0,0.4)]">
+            <p className="text-[13.5px] sm:text-[14.5px] leading-[1.5] md:text-[15px] md:leading-relaxed font-normal text-ink-light md:text-white/90 mb-4 md:mb-10 md:max-w-[520px] md:mx-auto md:[text-shadow:0_1px_8px_rgba(0,0,0,0.4)]">
               85% of bottled water in Thailand is &ldquo;dead water&rdquo; - purified, but nutritionally empty. One scoop brings it back to life. Three ingredients. Zero compromise. Just minerals your body actually absorbs.
             </p>
           </FadeIn>
