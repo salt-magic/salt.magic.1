@@ -106,7 +106,7 @@ function ColContent({ col, isHero }: { col: Column; isHero: boolean }) {
       <div className="mt-auto">
         <p
           role="cell"
-          className={`text-[13px] leading-relaxed pt-5 ${
+          className={`text-[12px] sm:text-[13px] leading-relaxed pt-5 break-words ${
             isHero
               ? 'font-display text-mineral border-t border-gold/25'
               : 'font-normal text-white/70 border-t border-white/[0.08]'
@@ -219,14 +219,14 @@ export default function Comparison() {
           >
             <div className="grid grid-cols-2">
               {/* Salt.Magic - always visible */}
-              <div role="row" className="p-4 sm:p-6 flex flex-col bg-white">
+              <div role="row" className="p-3 sm:p-6 flex flex-col bg-white min-w-0">
                 <ColContent col={hero} isHero />
               </div>
 
               {/* Active competitor - swipeable */}
               <div
                 role="row"
-                className="p-4 sm:p-6 flex flex-col bg-white/[0.12] backdrop-blur-lg border-l border-white/[0.12] relative"
+                className="p-3 sm:p-6 flex flex-col bg-white/[0.12] backdrop-blur-lg border-l border-white/[0.12] relative min-w-0"
               >
                 {/* Chevron nav */}
                 <button

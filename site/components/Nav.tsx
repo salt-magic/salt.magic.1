@@ -167,7 +167,7 @@ export default function Nav() {
               : 'top-9 bg-white shadow-[0_1px_0_rgba(0,0,0,.06)]'
       }`}
     >
-      <div className="relative w-full max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)] h-[80px] lg:h-[116px] flex items-center justify-between">
+      <div className="relative w-full max-w-[1400px] mx-auto px-[clamp(24px,5vw,64px)] h-[116px] flex items-center justify-between">
         {/* Left links (desktop) */}
         <div className="hidden lg:flex items-center gap-[clamp(20px,2.5vw,40px)] flex-1">
           {leftLinks.map((link, i) => (
@@ -211,7 +211,7 @@ export default function Nav() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="flex-shrink-0 relative h-[64px] w-[64px] lg:h-[100px] lg:w-[100px]"
+          className="flex-shrink-0 relative h-[100px] w-[100px]"
         >
           <Link
             href="/"
