@@ -41,7 +41,21 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V30 Leo-Onboarding-Vorbereitung (2026-04-20). Einschulung mit Leo geplant fuer Freitag 2026-04-24. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V30.1 Claude Code Pro Uncertainty (2026-04-22). Einschulung mit Leo Freitag 2026-04-24. Anthropic hat 21.04.2026 Claude Code aus Pro-Plan entfernt (A/B-Test) — Leo-Zugang via Desktop App muss vor Freitag verifiziert werden, API-Key-Fallback vorbereitet. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V30.1 Session (Claude Code Pro Uncertainty — 2026-04-22):
+- **Auslöser**: Kerstins Screenshot von claude.com/pricing zeigte Claude Code ❌ bei Pro, ✓ erst ab Max 5x ($100/Monat)
+- **Recherche-Ergebnis (22.04.2026, mehrere Quellen)**: Anthropic hat am oder um den 21.04.2026 Claude Code stillschweigend aus Pro entfernt. KEIN offizieller Blogpost/Tweet/Mail. Einziges Statement: Amol Avasare (Anthropic Head of Growth) gegenueber Journalist: "Wir testen das auf ~2% neuer Pro-Signups. Existing Pro/Max-User nicht betroffen"
+- **Widerspruch**: Anthropic-eigene Support-Docs + Pricing-Seite teilweise schon auf "Pro ohne Claude Code" geaendert — widerspricht 2%-Test-Aussage. Hacker News Thread (item 47854477) live: manche Pro-User haben noch Zugang (charliebwrites, anakaine), andere sehen Pricing-Seite ohne Claude Code (maxall4, dnw). Anthropic A/B-testet die Pricing-Seite selbst
+- **Bei meinem direkten Fetch von claude.com/pricing am 22.04.2026**: Stand "Pro: Includes Claude Code" — also andere Variante als Kerstins Screenshot. Die Seite ist unzuverlaessig, verschiedene User-Buckets sehen verschiedene Versionen
+- **Kerstin hat Max-Plan** (nicht Pro) → ihr Code-Tab in der Desktop App ist KEIN Beweis fuer Pro-User
+- **Leo hat Pro seit einigen Wochen** → wahrscheinlich "existing user" → 80% Chance dass Claude Code in Desktop App vorhanden. Aber keine Langzeit-Garantie: Anthropic hat bei OpenClaw <24h Vorwarnung gegeben
+- **Optionen fuer Leos Einschulung Freitag**:
+  1. Verify-First: Leo oeffnet Desktop App → Code-Tab mit `</>`-Icon sichtbar? Wenn ja, Anleitung leicht anpassen ("Code-Tab oeffnen → Select folder → salt.magic.1" statt "Add Project")
+  2. Fallback: API-Key ueber console.anthropic.com (~5-20$/Monat bei light use), Budget-Limit setzbar
+  3. Max-Plan ($100/Monat) — von Leo/Kerstin abgelehnt
+- **Empfehlung**: Anleitung `outputs/leo-onboarding-freitag.md` zweigleisig schreiben (Hauptweg Desktop App, Fallback-Sektion API-Key) um Leo gegen kuenftige Policy-Aenderungen abzusichern
+- **Offen**: Kerstin muss Leo fragen, ob Code-Tab in Desktop App sichtbar ist → danach Anleitung entsprechend anpassen. In dieser Session keine Datei-Aenderungen (reine Research-Session)
 
 Key Changes in V30 Session (Leo Onboarding Prep fuer Freitag Einschulung):
 - **Neue Datei `outputs/leo-onboarding-freitag.md`**: Schritt-fuer-Schritt Setup-Anleitung fuer Leo (Anfaenger, kein Techniker). Claude Desktop App hat er bereits — Anleitung deckt Git + Node + GitHub CLI Installation, `gh auth login` (statt PAT), `git clone` von `salt-magic/salt.magic.1.git`, Projekt-Zuordnung in Desktop App, Dev-Server-Start per Claude-Anweisung, erste Test-Aenderung + Commit + Push
