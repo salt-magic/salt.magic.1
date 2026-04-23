@@ -41,7 +41,38 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V30.1 Claude Code Pro Uncertainty (2026-04-22). Einschulung mit Leo Freitag 2026-04-24. Anthropic hat 21.04.2026 Claude Code aus Pro-Plan entfernt (A/B-Test) — Leo-Zugang via Desktop App muss vor Freitag verifiziert werden, API-Key-Fallback vorbereitet. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V31 Trockenuebung Leo Onboarding (2026-04-23). Kerstin hat Leo-Flow als Trockenuebung in eigener Claude Desktop App durchgespielt, 14 Erkenntnisse gesammelt, englische HTML-Anleitung fuer Leo Freitag erstellt. Leo hat bestaetigt dass Claude-Code-Tab in seiner Desktop App sichtbar ist → V30.1-Pro-Plan-Unsicherheit entschaerft, API-Key-Fallback nicht mehr noetig. Einschulung 2026-04-24. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V31 Session (Leo Onboarding Dry Run — 2026-04-23):
+- **Anlass**: Vor Freitags-Einschulung von Leo wollte Kerstin die urspruengliche Anleitung `outputs/leo-onboarding-freitag.md` selbst durchspielen (als ob sie Leo waere), um Stolperstellen zu identifizieren. Plan: `C:\Users\offic\.claude\plans\ich-m-chte-heute-bei-declarative-storm.md`
+- **Setup**: Kerstin legte frischen Ordner `C:\Users\offic\Desktop\leo-TEST\` an, oeffnete ihn via "Select folder..." in Desktop App Code-Tab, liess Claude Leos Repo `salt-magic/salt.magic.1.git` reinclonen. Separat von v2-Workspace, kein Kreuzkontakt
+- **Leo-Flow komplett durchlaufen**: Tools-Install-Check (alles schon da) → gh auth status → git clone (Claude brauchte init+pull Workaround wegen `.claude/` Ordner) → pwd verifiziert (`/c/Users/offic/Desktop/leo-TEST`) → npm install + dev server auf `localhost:3001` (3000 war von v2 belegt) → Hot-Reload-Test mit "(V31 TEST)" in Hero → Rollback → echter Commit mit `<!-- V31 Dry Run ... -->` HTML-Kommentar in CLAUDE.md → Push zu Leos Repo → Vercel-Deploy verifiziert auf salt-magic.com (unveraendert, da CLAUDE.md nicht im Build)
+- **Commit-Hash**: `4391437 V31 dry run: Kerstin verified Leo onboarding flow` auf Leos Repo; via `git merge --ff-only leo/main` in v2-Workspace gepullt
+- **14 Erkenntnisse fuer die Anleitung**:
+  1. Button heisst **"Select folder..."** (nicht "Add Project" wie frueher vermutet) — unten ueber Chat-Input
+  2. Der ausgewaehlte Ordner-Name wird direkt im Button angezeigt (Orientierungshilfe)
+  3. Session bekommt automatisch einen Namen aus der ersten Anfrage, erscheint links unter "Recents"
+  4. Desktop App Titelleiste zeigt **Repo-Name**, nicht Ordner-Name (kosmetisch verwirrend)
+  5. **Dependencies via Chat installierbar**: `Please install git, node, gh` — kein Browser-Download noetig. Bei Leo wird `winget install` ausgefuehrt, UAC-Popup kommt
+  6. `npm install` dauert 2-3 Minuten beim ersten Mal — Anleitung muss sagen "ist nicht eingefroren, einfach warten"
+  7. Wenn Port 3000 belegt ist, wechselt Next.js automatisch auf 3001 etc. Leo muss die URL aus dem Chat nehmen, nicht hardcoded 3000 aufrufen
+  8. **Slash-Commands (`/create-plan`, `/implement` etc.) funktionieren nicht im Desktop-App-Autocomplete-Dropdown** — die Dateien sind da, werden aber nicht erkannt. Workaround: `Follow instructions in .claude/commands/create-plan.md for this change`
+  9. **Desktop App legt automatisch Side-Branches an** (`claude/pensive-haslett-faa873` etc.) bei komplexeren Aenderungen — Leo kann explizit `work directly on main, no side branch` sagen
+  10. **Cleanup-Skill**: `Clean up the experimental branch and go back to main` funktioniert reibungslos
+  11. Desktop App nutzt **Git Worktrees** (nicht simple Branches), physisch unter `.claude/worktrees/` — fortgeschritten, muss Leo nicht verstehen
+  12. Claude fragt vor destruktiven Ops (cd, rm, git branch -D) immer um Erlaubnis — **Allow once** statt "Always allow"
+  13. Autocomplete-Dropdown fuer Slash-Commands zeigt nur globale Commands aus `~/.claude/commands/`, nicht Projekt-Commands
+  14. Windows File-Lock auf geloeschten Worktree-Ordnern ist harmlos (leerer Ordner bleibt, verschwindet nach Session-Ende)
+- **Luecke in alter Anleitung aufgedeckt**: **Git-Identitaet setzen** (`git config --global user.name` + `user.email`) fehlte komplett. Ohne diesen Schritt scheitert Leos erster Commit mit "Author identity unknown"-Error. In neue HTML-Anleitung als eigene Section eingebaut
+- **Neue Anleitung erstellt**: `outputs/leo-onboarding.html` — komplett auf Englisch, Salt.Magic-Branding (Mineral Blue + Gold, Playfair + Inter Fonts), 12 Sections (Prep → Code Tab → Folder → Install → Git Identity → GitHub Login → Clone → Dev Server → First Edit with Safety Net → Commit/Push → Quick Reference Card → Troubleshooting) + Final Checklist zum Abhaken. Gestylte Prompt-Boxen "TYPE THIS IN THE CHAT", Callout-Boxen (Info/Tip/Warning/Danger), Reference-Card mit Cheat-Sheet-Tabellen, responsive fuer Laptop + Mobile. Standalone HTML (inline CSS, nur Google Fonts extern)
+- **Alte Anleitung `outputs/leo-onboarding-freitag.md`** bleibt bestehen als deutsches Pendant, koennte bei naechster Gelegenheit auf V31-Stand aktualisiert oder geloescht werden
+- **V30.1 Pro-Plan-Unsicherheit aufgeloest**: Leo bestaetigt dass Code-Tab bei ihm sichtbar ist (Anthropic's "existing Pro user nicht betroffen"-Aussage stimmt fuer ihn). API-Key-Fallback-Pfad bleibt dokumentiert in `outputs/leo-onboarding-freitag.md`, wird Freitag voraussichtlich nicht gebraucht
+- **leo-TEST Ordner** bleibt auf Kerstins Desktop als Sandbox fuer zukuenftige Tests; kann bei Bedarf manuell geloescht werden
+- **Offene Punkte**:
+  - Donnerstag Abend: Kerstin fragt Leo kurz ob "/" im Chat-Input ein Autocomplete-Dropdown zeigt (und falls ja, ob /create-plan/etc. drin sind) → das finalisiert ob Anleitungs-Workaround gebraucht wird
+  - Freitag live mit Leo: er durchlaeuft die neue HTML-Anleitung als primary guide, Kerstin hilft
+  - Falls Freitag glatt: naechster Follow-up-Block "Tag 2: Branches, PRs, Vercel Preview Deployments" als separate Anleitung
+  - HTML-Kommentar `<!-- V31 Dry Run ... -->` am Ende von CLAUDE.md kann irgendwann entfernt werden (optional, harmlos)
 
 Key Changes in V30.1 Session (Claude Code Pro Uncertainty — 2026-04-22):
 - **Auslöser**: Kerstins Screenshot von claude.com/pricing zeigte Claude Code ❌ bei Pro, ✓ erst ab Max 5x ($100/Monat)
