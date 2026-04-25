@@ -100,6 +100,7 @@
     opacity: 0.85;
     max-width: 560px;
     font-weight: 300;
+    color: var(--warm-white);
   }
 
   .meta-row {
@@ -423,6 +424,7 @@
     margin-bottom: 20px;
   }
 
+  .reference-card p { color: var(--warm-white); }
   .reference-card table { color: var(--warm-white); }
   .reference-card table th {
     background: rgba(255,255,255,0.1);
@@ -721,15 +723,20 @@
 
   <p>Every change you make gets a name tag — so others can see "Leo made this change on Thursday at 3pm". You set this up once, then forget about it.</p>
 
+  <div class="callout info">
+    <span class="callout-label">Use your GitHub email</span>
+    <p>The email you use here <strong>must match an email verified on your GitHub account</strong>. Otherwise your commits appear in the repository but won't be linked to your GitHub profile (no avatar, no contributor stats). If you're not sure which email you used, check at <a href="https://github.com/settings/emails" target="_blank">github.com/settings/emails</a>.</p>
+  </div>
+
   <h3>Type this in the chat</h3>
 
   <div class="code-block prompt">Please set my git identity globally:
 - Name: Leo [your surname]
-- Email: leo@salt-magic.com
+- Email: saltmagic.th@gmail.com
 
 Then confirm by showing me the output of "git config --global --list | grep user".</div>
 
-  <p>Replace <code class="inline">[your surname]</code> with your actual surname. Press Enter.</p>
+  <p>Replace <code class="inline">[your surname]</code> with your actual surname. The email <code class="inline">saltmagic.th@gmail.com</code> is the one registered with your GitHub account — leave that as is. Press Enter.</p>
 
   <div class="callout danger">
     <span class="callout-label">Don't skip this</span>
@@ -906,7 +913,149 @@ Then confirm by showing me the output of "git config --global --list | grep user
   </div>
 </section>
 
-<!-- 11 Reference Card -->
+<div class="section-divider"></div>
+
+<!-- 11 Changing Text -->
+<section id="changing-text">
+  <span class="section-number">11</span>
+  <h2 class="section-title">Changing text on the website</h2>
+
+  <p>Want to tweak a headline? Fix a typo? Rewrite a whole section? You don't touch any files yourself. You describe what you want in plain English, and Claude makes the edit. Here's the pattern.</p>
+
+  <h3>Step 1 — See it before you change it</h3>
+  <p>Open the live site (<a href="https://salt-magic.com" target="_blank">salt-magic.com</a>) or your local preview (<code class="inline">localhost:3000</code>). Find the text you want to change. Note which <strong>page</strong> it's on (Home, Partner, Blog, Privacy) and which <strong>section</strong> (Hero, Formula, FAQ, Footer, etc.).</p>
+
+  <h3>Step 2 — Type this in the chat</h3>
+
+  <div class="code-block prompt">On the homepage, in the [Hero / Formula / FAQ / ...] section, change this text:
+
+"[paste the exact current text here]"
+
+to:
+
+"[paste the new text here]"
+
+Work directly on main, no side branch. Show me the change in my browser first - don't commit yet.</div>
+
+  <div class="callout tip">
+    <span class="callout-label">Copy the exact current text</span>
+    <p>The easier you make it for Claude to find the text, the faster it edits. Copy-paste the current sentence from your browser. Don't paraphrase.</p>
+  </div>
+
+  <h3>Step 3 — Verify in the browser</h3>
+  <p>Your local preview auto-refreshes within 1-2 seconds. Read the new text in context. If it doesn't feel right, just say:</p>
+  <div class="code-block prompt">Make it shorter / punchier / more formal / friendlier.</div>
+  <p>Iterate as many times as you want — nothing is live yet.</p>
+
+  <h3>Step 4 — Commit and push</h3>
+  <p>Once happy:</p>
+  <div class="code-block prompt">Looks good. Please commit with the message "Update [section] copy" and push to origin main.</div>
+  <p>Live in ~60 seconds on <a href="https://salt-magic.com" target="_blank">salt-magic.com</a>.</p>
+
+  <div class="callout info">
+    <span class="callout-label">What you can change this way</span>
+    <p>Any visible text: headlines, paragraphs, button labels, FAQ answers, product descriptions, footer links, meta titles (the tab name in the browser), SEO descriptions (what Google shows in search results).</p>
+  </div>
+
+  <div class="callout warning">
+    <span class="callout-label">What you should NOT change casually</span>
+    <ul style="margin: 6px 0 0 0; padding-left: 20px;">
+      <li>Prices (e.g., "290 THB") — these are tied to Lazada listings</li>
+      <li>Legal pages (Privacy Policy, Terms) — review by a lawyer first</li>
+      <li>Product claims ("FDA approved", "pharmaceutical-grade") — FDA approval is still in progress, be careful with claims</li>
+    </ul>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- 12 Changing Photos -->
+<section id="changing-photos">
+  <span class="section-number">12</span>
+  <h2 class="section-title">Changing photos on the website</h2>
+
+  <p>Replacing an image is two moves: (1) get your new photo into the project folder, (2) tell Claude to swap it. Claude handles the rest — resizing, converting to WebP (a modern fast format), SEO-friendly naming, and updating the code. You never open Photoshop.</p>
+
+  <div class="callout info">
+    <span class="callout-label">Why WebP?</span>
+    <p>WebP is 30-60% smaller than JPEG or PNG at the same quality. Faster-loading website = better Google ranking + happier visitors. Our optimizer script does this automatically.</p>
+  </div>
+
+  <h3>Step 1 — Drop your photo into the "new" folder</h3>
+  <p>In your file explorer (Windows Explorer or Mac Finder), navigate to:</p>
+  <div class="code-block">salt.magic.1 / site / public / images / new</div>
+  <p>If the <code class="inline">new</code> folder doesn't exist yet, create it. Copy or drag your photo into that folder. It can be any format (JPG, PNG, HEIC from your iPhone, etc.) and any size — even a 10 MB original from your camera is fine.</p>
+
+  <div class="callout tip">
+    <span class="callout-label">Descriptive filenames help</span>
+    <p>Instead of <code class="inline">IMG_2847.jpg</code>, rename to <code class="inline">leo-holding-sachet-beach.jpg</code> before dropping it in. This becomes part of the SEO-friendly final filename.</p>
+  </div>
+
+  <h3>Step 2 — Tell Claude which image to replace</h3>
+
+  <div class="code-block prompt">I've dropped a new photo in site/public/images/new/ called "[your-filename.jpg]".
+
+Please replace the [Hero sachet image / WhySection photo / Glass Jar product photo / ...] with this new one.
+
+Alt-text for SEO: "[one sentence describing what's in the photo, using 1-2 natural keywords - see examples below]"
+
+After the swap:
+1. Optimize the new image (WebP, max 2000px wide, quality 88)
+2. Move it to the correct production folder
+3. Update the component to use the new file
+4. Delete the original from public/images/new/
+5. Show me the page in my browser so I can verify</div>
+
+  <h3>Step 3 — What Claude does behind the scenes</h3>
+  <ol>
+    <li>Runs the Salt.Magic image optimizer (<code class="inline">scripts/optimize-images.py</code>) — resizes, strips watermarks if any, converts to WebP</li>
+    <li>Moves the optimized file into the right folder (e.g., <code class="inline">site/public/images/products/</code>)</li>
+    <li>Updates the React component (e.g., <code class="inline">Hero.tsx</code>) with the new path and your alt-text</li>
+    <li>Hot-reloads your browser so you see the change immediately</li>
+  </ol>
+
+  <div class="callout warning">
+    <span class="callout-label">First-time setup</span>
+    <p>The very first time you swap a photo, Claude may need to install three Python libraries (<code class="inline">Pillow</code>, <code class="inline">opencv-python</code>, <code class="inline">numpy</code>). This takes 1-2 minutes. Only happens once — every swap after that is instant.</p>
+  </div>
+
+  <h3>Step 4 — Writing good alt-text (SEO)</h3>
+  <p>Alt-text is the sentence screen readers read aloud for blind users, and what Google uses to understand your image. Two rules:</p>
+  <ul>
+    <li><strong>Describe what's in the photo</strong> (first priority)</li>
+    <li><strong>Weave in 1-2 natural keywords</strong> (without stuffing)</li>
+  </ul>
+
+  <p style="margin-top: 16px;"><strong style="color: var(--success);">Good examples:</strong></p>
+  <ul>
+    <li><em>"Salt.Magic travel sachet next to coconut water on a Koh Samui beach"</em></li>
+    <li><em>"Glass jar of natural electrolyte powder on a linen cloth"</em></li>
+    <li><em>"Woman in yoga pose drinking mineralized water, Koh Samui wellness retreat"</em></li>
+  </ul>
+
+  <p style="margin-top: 16px;"><strong style="color: var(--danger);">Bad examples:</strong></p>
+  <ul>
+    <li><em>"electrolytes thailand best natural hydration buy online"</em> — keyword stuffing, Google penalizes this</li>
+    <li><em>"image.jpg"</em> — tells Google nothing</li>
+  </ul>
+
+  <h3>Step 5 — Commit and push</h3>
+  <p>Once you've confirmed the new photo looks right in your browser:</p>
+  <div class="code-block prompt">Perfect. Commit with the message "Replace [which image]" and push to origin main.</div>
+  <p>Live on <a href="https://salt-magic.com" target="_blank">salt-magic.com</a> in ~60 seconds.</p>
+
+  <div class="callout danger">
+    <span class="callout-label">Don't commit the "new" folder</span>
+    <p>The <code class="inline">site/public/images/new/</code> folder is a staging area only. Claude should always delete the original file after optimization. If you ever see it still sitting in <code class="inline">new/</code> after a swap, tell Claude: <em>"Delete the original from public/images/new/"</em>.</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="callout-label">Swap several photos at once</span>
+    <p>Drop multiple images into <code class="inline">new/</code>, then tell Claude all the swaps in one message. Example: <em>"Replace the Hero with new/beach-sunset.jpg, the WhySection photo with new/yoga-stretch.jpg, and the Glass Jar product shot with new/jar-white-bg.png."</em> Claude batches the work.</p>
+  </div>
+</section>
+
+<!-- Reference Card -->
 <section id="reference">
   <div class="reference-card">
     <span class="eyebrow" style="color: var(--gold); padding-left: 56px;">Quick Reference</span>
@@ -942,6 +1091,10 @@ Then confirm by showing me the output of "git config --global --list | grep user
       <tr>
         <td>Small text change</td>
         <td><em>"Change X to Y in [section]. Work on main, no branch."</em></td>
+      </tr>
+      <tr>
+        <td>Swap a photo</td>
+        <td>Drop photo in <code class="inline">public/images/new/</code>, then <em>"Replace the [Hero image] with new/[filename]. Alt-text: [one sentence]."</em></td>
       </tr>
       <tr>
         <td>Larger change (multiple files)</td>
@@ -992,9 +1145,9 @@ Then confirm by showing me the output of "git config --global --list | grep user
   </div>
 </section>
 
-<!-- 12 Troubleshooting -->
+<!-- 13 Troubleshooting -->
 <section id="troubleshooting">
-  <span class="section-number">12</span>
+  <span class="section-number">13</span>
   <h2 class="section-title">If something goes wrong</h2>
 
   <h3>Claude asks for permission before running something</h3>
@@ -1024,6 +1177,23 @@ Then confirm by showing me the output of "git config --global --list | grep user
 
   <h3>Empty folder stuck on Windows</h3>
   <p>If Claude says "I couldn't fully delete a folder because Windows has a lock on it" — it's harmless. Once the Desktop App closes, you can delete the empty folder manually via File Explorer.</p>
+
+  <h3>The new photo didn't replace the old one</h3>
+  <p>Your browser might be caching the old image. Hard-refresh with <code class="inline">Ctrl+Shift+R</code> (Windows) or <code class="inline">Cmd+Shift+R</code> (Mac). If still wrong, ask Claude:</p>
+  <div class="code-block prompt">Show me which image file the [Hero / WhySection / ...] component is actually importing right now. If it's still the old one, fix the import.</div>
+
+  <h3>My new photo looks blurry or pixelated</h3>
+  <p>Usually means the original was too small. The optimizer resizes <em>down</em> but never up. Minimum source: 2000px wide for hero images, 1200px wide for card images. If your source is smaller, ask Claude:</p>
+  <div class="code-block prompt">The new photo looks pixelated. How wide is the source file I dropped in? If it's under 2000px, tell me and I'll provide a higher-resolution version.</div>
+
+  <h3>I changed some text but it still shows the old version</h3>
+  <p>Two causes:</p>
+  <ul>
+    <li><strong>Browser cache</strong> — hard-refresh with <code class="inline">Ctrl+Shift+R</code> / <code class="inline">Cmd+Shift+R</code></li>
+    <li><strong>Not yet deployed</strong> — pushes take ~60 seconds to go live. Check <a href="https://vercel.com" target="_blank">vercel.com</a> or just wait a minute</li>
+  </ul>
+  <p>If neither works:</p>
+  <div class="code-block prompt">Please confirm: was my last text change actually committed and pushed? Show me "git log -3 --oneline" and the relevant line from the component file.</div>
 </section>
 
 <!-- Final Checklist -->

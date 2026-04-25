@@ -41,7 +41,25 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V31 Trockenuebung Leo Onboarding (2026-04-23). Kerstin hat Leo-Flow als Trockenuebung in eigener Claude Desktop App durchgespielt, 14 Erkenntnisse gesammelt, englische HTML-Anleitung fuer Leo Freitag erstellt. Leo hat bestaetigt dass Claude-Code-Tab in seiner Desktop App sichtbar ist → V30.1-Pro-Plan-Unsicherheit entschaerft, API-Key-Fallback nicht mehr noetig. Einschulung 2026-04-24. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V32 Leo Onboarding Live-Tag (2026-04-24, Freitag). Kerstin hat Leos Einschulung via Google Meet durchgefuehrt, parallel die HTML-Anleitung um zwei kritische Sections erweitert (Photo-Swap + Text-Change-Workflow), CSS-Bug auf dunklen Sections gefixt und Leos GitHub-Email als Default in die Git-Identity-Section eingetragen. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V32 Session (Leo Onboarding Live-Tag — 2026-04-24):
+- **Anlass**: Live-Einschulung mit Leo via Google Meet. Kerstin nutzt die Session, um die V31-HTML-Anleitung um zwei fehlende Workflow-Sections zu erweitern, die Leo nach dem Setup brauchen wird (Fotos austauschen, Text aendern)
+- **Section 11 NEU "Changing text on the website"**: 4-Schritt-Workflow (im Browser finden → Prompt mit altem+neuem Text formulieren → lokal verifizieren via Hot-Reload → commit/push). Mit Tipps zum Copy-Paste der Original-Sentences und Warnung vor Aenderungen an Preisen, Legal-Pages und FDA-Claims
+- **Section 12 NEU "Changing photos on the website"**: 5-Schritt-Workflow ueber `site/public/images/new/` als Staging-Folder. Leo droppt Bild dort rein, Claude faehrt `scripts/optimize-images.py` (WebP, max 2000px, Quality 88, Auto-Watermark-Removal), verschiebt in Production-Folder, updated Component, setzt SEO-Alt-Text. Erklaerung warum WebP (30-60% kleiner als JPEG/PNG), erste-Mal-pip-install-Warnung (Pillow + opencv-python + numpy), Alt-Text-Guide mit guten/schlechten Beispielen, Batch-Swap-Tipp fuer mehrere Bilder gleichzeitig
+- **Troubleshooting umnummeriert** von Section 12 auf Section 13. Drei neue Cases: "New photo didn't replace old one" (Browser-Cache, Hard-Refresh), "Photo looks pixelated" (Source unter 2000px), "Text changed but still shows old version" (Browser-Cache vs. nicht-deployed)
+- **Cheat Sheet erweitert**: "Swap a photo"-Zeile mit Minimal-Prompt-Template eingefuegt zwischen "Small text change" und "Larger change"
+- **CSS-Bug gefixt**: Globale `p { color: var(--ink) }` Regel ueberschrieb Inheritance auf dunklen Sections (Header-Mineral-Blue + Reference-Card-Mineral-Blue). Subheadline und Reference-Card-Paragraphen waren dunkel auf dunkel — unlesbar. Fix: explizites `color: var(--warm-white)` auf `header p` und `.reference-card p` hinzugefuegt
+- **Section 05 Git Identity korrigiert**: Default-Email war hardcoded `leo@salt-magic.com`. Kerstin hat im Meet bestaetigt dass Leos GitHub-Account auf `saltmagic.th@gmail.com` registriert ist → diese Email als neuer Default eingesetzt. Plus Info-Callout der erklaert warum die Email mit einer bei GitHub verifizierten Email matchen MUSS (sonst werden Commits zwar im Repo gespeichert, aber nicht Leos GitHub-Profil mit Avatar/Contributor-Stats zugeordnet) + Link zu github.com/settings/emails
+- **HTML-Anleitung gewachsen**: 1058 → 1221 Zeilen, 13 nummerierte Sections (vorher 12). Reference Card bleibt unnummeriert zwischen Section 12 (Photos) und Section 13 (Troubleshooting)
+- **Live-Support waehrend Meet**: Bei Leo lief `winget install`-Pfad nicht direkt durch — Claude verwies stattdessen auf git-scm.com/install/windows. Kerstin hatte Optionen-Triage angefordert. Empfehlung an Kerstin: (a) Permission-Popup im Chat suchen + "Allow once" klicken, (b) explizite Erlaubnis im Prompt geben ("ask — I will approve it"), oder (c) Fallback manueller Git-Installer von git-scm.com (Defaults durchklicken, ~5 Min). Verlauf der Live-Session nach dem Hinweis nicht in dieser Session-Memory
+- **Offene Punkte**:
+  - Verlauf der Live-Einschulung mit Leo nach winget-Issue ist offen (Kerstin weiss Bescheid)
+  - Falls Leo glatt durch ist: Tag-2-Anleitung "Branches, PRs, Vercel Preview Deployments" als separates HTML
+  - V25 Klaerungsfragen an Leo (8 offen, siehe `outputs/V25-leo-klaerung-mail.md`)
+  - Blog-Artikel Mg-Werte-Update (312mg → 135mg)
+  - Terms + Imprint Seiten, Newsletter-Consent (wenn Mailchimp-Backend live)
+  - PartnerForm Backend-Integration
 
 Key Changes in V31 Session (Leo Onboarding Dry Run — 2026-04-23):
 - **Anlass**: Vor Freitags-Einschulung von Leo wollte Kerstin die urspruengliche Anleitung `outputs/leo-onboarding-freitag.md` selbst durchspielen (als ob sie Leo waere), um Stolperstellen zu identifizieren. Plan: `C:\Users\offic\.claude\plans\ich-m-chte-heute-bei-declarative-storm.md`
