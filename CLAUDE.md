@@ -41,7 +41,27 @@ Claude should always orient via `/prime` at session start, then act with full aw
 
 **Design references:** Luxo Webflow Template (V1 Basis), dann V2 Upgrade basierend auf Grown Alchemist, Sakara Life, PANPURI, Cure Hydration — "Elevated Natural Luxury" Stilrichtung
 
-**Current status:** V32 Leo Onboarding Live-Tag (2026-04-24, Freitag). Kerstin hat Leos Einschulung via Google Meet durchgefuehrt, parallel die HTML-Anleitung um zwei kritische Sections erweitert (Photo-Swap + Text-Change-Workflow), CSS-Bug auf dunklen Sections gefixt und Leos GitHub-Email als Default in die Git-Identity-Section eingetragen. Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+**Current status:** V33 Blog Hero Image Swap (2026-04-27). Kerstin hat beide Blog-Beitragsbilder durch neue KI-generierte Lifestyle-Photos ersetzt, BlogPost-Interface um `heroImageAlt` Feld fuer SEO-optimierten Alt-Text erweitert, neuen `site/public/images/blog/` Ordner als semantischen Production-Folder fuer Blog-Heroes etabliert, und direkt zu Leos Repo gepusht (v2-Remote ist nach versehentlicher Loeschung des `salt-magic-website-v2` Backup-Repos kaputt). Next.js 14 + Tailwind CSS + Framer Motion unter `site/`.
+
+Key Changes in V33 Session (Blog Hero Image Swap — 2026-04-27):
+- **Anlass**: Kerstin will beide Blog-Hero-Images austauschen (fungieren auch als Thumbnails in der Blog-Listing). Quelle: neue KI-generierte Lifestyle-Photos aus dem `reference/product-pics/KI Product bilder/weboptimiert/` Ordner
+- **Bild 1 (Wellness vs Sports Electrolytes)**: `hf_20260409_054324_a819f5c8-9547-4a62-bfdb-aee2c13797a8.webp` (Frau in Pool-Yoga-Stretch, 104 KB) → kopiert nach `site/public/images/blog/wellness-sports-electrolytes.webp`. Hinweis: Gleiches Bild laeuft bereits im Hero-Carousel der Homepage als `hero-new-3.webp` — visuelle Doppelung von Kerstin akzeptiert
+- **Bild 2 (Dead Water Crisis)**: `hf_20260409_052350_f00ea31b-a40b-4052-b874-00a5acef7a6e.webp` (Salt.Magic Sachet "Natural Electrolytes" am Strand mit Muscheln, Thai-Coast-Setting, 176 KB) → kopiert nach `site/public/images/blog/dead-water-crisis.webp`. Zeigt das Produkt als Loesung fuer "dead water" Thematik
+- **Neuer Production-Folder `site/public/images/blog/`** angelegt: vorher gab es nur `images/mood/`, `images/products/`, `images/logos/` — Blog-Heroes lagen im `mood/` Ordner gemischt mit Reference-Images. Sauberer separater Ordner fuer Blog-Assets
+- **BlogPost-Interface erweitert** (`site/content/blog/index.ts`): neues optionales Feld `heroImageAlt?: string`. Vorher wurde durchgaengig `post.title` als Alt-Text fuer Image + OG-Image verwendet — Title und Alt waren identisch, suboptimal fuer SEO
+- **3 Render-Stellen umgestellt** auf `post.heroImageAlt ?? post.title` Fallback: BlogCard-Thumbnail (`site/components/BlogCard.tsx:19`), Blog-Detail-Hero-Image (`site/app/blog/[slug]/page.tsx:67`), OG-Image-Alt (`site/app/blog/[slug]/page.tsx:37`)
+- **SEO-Alt-Texts** mit Artikel-Keywords:
+  - Wellness vs Sports: "Woman in a poolside yoga stretch under blue sky - daily mineral hydration and wellness electrolytes for everyday energy, not just post-workout recovery"
+  - Dead Water: "Salt.Magic natural electrolyte sachet on a sandy Thai beach with seashells - re-mineralizing solution for Thailand reverse osmosis dead water and daily magnesium, potassium, sodium hydration"
+- **Direkt zu Leos Repo gepusht** (`git push leo main`): Commit `275f8f9` auf `salt-magic/salt.magic.1.git`. Vercel-Deployment auf salt-magic.com triggert automatisch
+- **`v2`-Remote ist defekt**: Erste Push-URL `Monstera-creator-01/salt-magic-website-v2.git` gibt 404 zurueck weil Kerstin das Backup-Repo versehentlich auf GitHub geloescht hat. `git push v2 main` schlaegt deshalb fehl bevor die zweite URL (Leos Repo) erreicht wird. Recovery moeglich ueber https://github.com/settings/deleted_repositories (90-Tage-Frist) — Kerstin restored das Repo selbst beim naechsten Github-Login, dann funktioniert `git push v2 main` wieder ohne Remote-Aenderung
+- **Dev-Server-Test**: `localhost:3000/blog`, `/blog/wellness-vs-sports-electrolytes`, `/blog/dead-water-crisis` alle erfolgreich gerendert. Beim ersten Aufruf des Detail-Views war Hero-Image kurz nicht sichtbar (Compile-Verzoegerung), nach kurzem Warten stand alles
+- **Offene Punkte**:
+  - v2-Repo wiederherstellen via GitHub Settings → Deleted Repositories, danach `git push v2 main` nachfahren um Backup-Remote zu re-syncen
+  - V25 Klaerungsfragen an Leo (8 offen, siehe `outputs/V25-leo-klaerung-mail.md`)
+  - Blog-Artikel Mg-Werte-Update (312mg → 135mg) — Body-Copy in beiden Artikeln laeuft noch mit alten Werten
+  - Terms + Imprint Seiten, Newsletter-Consent-Checkbox (wartet auf Mailchimp-Backend)
+  - PartnerForm Backend-Integration
 
 Key Changes in V32 Session (Leo Onboarding Live-Tag — 2026-04-24):
 - **Anlass**: Live-Einschulung mit Leo via Google Meet. Kerstin nutzt die Session, um die V31-HTML-Anleitung um zwei fehlende Workflow-Sections zu erweitern, die Leo nach dem Setup brauchen wird (Fotos austauschen, Text aendern)
