@@ -7,6 +7,7 @@ export interface BlogPost {
   readTime: string
   heroGradient: string
   heroImage?: string
+  heroImageAlt?: string
   content: string
 }
 

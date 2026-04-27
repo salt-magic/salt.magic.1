@@ -9,7 +9,9 @@ export const wellnessVsSportsElectrolytes: BlogPost = {
   date: 'March 24, 2026',
   readTime: '3 min read',
   heroGradient: 'bg-gradient-to-br from-[#3D6588] via-[#5A7A96] to-gold',
-  heroImage: '/images/mood/alo-3.webp',
+  heroImage: '/images/blog/wellness-sports-electrolytes.webp',
+  heroImageAlt:
+    'Woman in a poolside yoga stretch under blue sky - daily mineral hydration and wellness electrolytes for everyday energy, not just post-workout recovery',
   content: `
     <p class="text-lg">
       When most people think "electrolytes," they picture sports drinks, gym bags, and post-workout

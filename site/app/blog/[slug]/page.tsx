@@ -34,7 +34,7 @@ export async function generateMetadata({
       description: post.excerpt,
       url,
       siteName: 'Salt.Magic',
-      images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
+      images: [{ url: ogImage, width: 1200, height: 630, alt: post.heroImageAlt ?? post.title }],
     },
     twitter: {
       card: 'summary_large_image',
@@ -64,7 +64,7 @@ export default async function BlogArticlePage({
         {post.heroImage && (
           <Image
             src={post.heroImage}
-            alt={post.title}
+            alt={post.heroImageAlt ?? post.title}
             fill
             priority
             className="object-cover"
