@@ -18,7 +18,7 @@ const hero: Column = {
   sugar: '0g',
   sugarLabel: 'sugar',
   magnesium: '135mg',
-  ingredients: '3 natural minerals',
+  ingredients: 'natural minerals',
   verdict: 'A clean hydration mix you can sip every day. No sweeteners. No artificial anything. Cardiovascularly responsible sodium \u2014 the way electrolytes should be.',
 }
 
