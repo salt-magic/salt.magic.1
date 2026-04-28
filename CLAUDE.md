@@ -577,3 +577,4 @@ If yes, update the relevant sections. This file must always reflect the current 
 - All content should align with Salt.Magic brand guidelines
 - When design references arrive, add them to this file or `reference/mood-board/`
 <!-- V31 Dry Run — Kerstin verified Leo onboarding flow on 2026-04-23 -->
+[first edit test by Leo]
